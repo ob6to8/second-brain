@@ -29,6 +29,72 @@
     "file": "articles/ai/persistent-memory-for-openclaw-mem0-plugin.md"
   },
   {
+    "title": "Everything Claude Code — Complete Configuration Repository",
+    "url": "https://github.com/affaan-m/everything-claude-code",
+    "aliases": [
+      "everything claude code",
+      "affaan claude code configs"
+    ],
+    "tags": [
+      "ai",
+      "claude-code",
+      "agentic-coding",
+      "agent-config",
+      "coding-agents",
+      "mcp",
+      "hooks"
+    ],
+    "source": "GitHub",
+    "authors": [
+      "affaan-m"
+    ],
+    "date_published": "",
+    "date_captured": "2026-02-25",
+    "summary": "Massive Claude Code plugin repo (50K+ stars) with 13 agents, 48+ skills, 32+ slash commands, hooks, and rules. Production-ready configs for TDD, code review, security, multi-agent orchestration, and continuous learning. Created by an Anthropic hackathon winner.\n",
+    "content_type": "article",
+    "word_count": 800,
+    "related": [
+      "[[longform-guide-everything-claude-code]]",
+      "[[context-engineering-and-persistent-agent-memory]]",
+      "[[state-of-agentic-coding-ep3-armin-ben]]"
+    ],
+    "file": "articles/ai/everything-claude-code-config-repo.md"
+  },
+  {
+    "title": "The Longform Guide to Everything Claude Code",
+    "url": "https://x.com/affaanmustafa/status/2014040193557471352",
+    "aliases": [
+      "everything claude code longform",
+      "affaan claude code guide"
+    ],
+    "tags": [
+      "ai",
+      "claude-code",
+      "context-engineering",
+      "agent-memory",
+      "token-optimization",
+      "agentic-coding",
+      "hooks",
+      "subagents",
+      "evals"
+    ],
+    "source": "X (article)",
+    "authors": [
+      "affaan-m (cogsec)"
+    ],
+    "date_published": "2026-01-21",
+    "date_captured": "2026-02-25",
+    "summary": "Deep guide to advanced Claude Code patterns from 10+ months of daily use. Covers context/memory management (session files, hooks, strategic compaction), token optimization (subagent model selection, modular codebases), verification loops (checkpoint vs continuous evals), parallelization (worktrees, cascade method), and sub-agent orchestration (iterative retrieval, sequential phases).\n",
+    "content_type": "article",
+    "word_count": 4500,
+    "related": [
+      "[[everything-claude-code-config-repo]]",
+      "[[context-engineering-and-persistent-agent-memory]]",
+      "[[state-of-agentic-coding-ep3-armin-ben]]"
+    ],
+    "file": "articles/ai/longform-guide-everything-claude-code.md"
+  },
+  {
     "title": "State Of Agentic Coding #3 with Armin and Ben",
     "url": "https://www.youtube.com/watch?v=b0SYAChbOlc",
     "aliases": [
