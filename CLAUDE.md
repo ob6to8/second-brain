@@ -2,27 +2,33 @@
 
 Markdown-based personal knowledge base. Obsidian-compatible vault.
 
-## Status
-**Bootstrapping** — plan written at `plans/001-second-brain-init.md`, not yet executed.
+## Ingestion Workflow
+1. User provides a URL
+2. Detect content type (article, YouTube video, paper)
+3. Fetch content: `./scripts/ingest.sh <url>` for raw text, or WebFetch for articles
+4. Generate frontmatter from template (`templates/<type>.md`) — summary, tags, metadata
+5. Choose directory based on primary topic tag (e.g., `articles/ai/`, `videos/`)
+6. Create the `.md` file with frontmatter + extracted body
+7. Run `./scripts/build-index.sh` to update `index.json`
+8. Commit the new note
 
-## What This Will Be
-- Ingest web content (articles, YouTube, papers) via URL
-- Extract text, generate YAML frontmatter (summary, tags, metadata)
-- Organize into topic-based directories
-- Maintain `index.json` catalog of all frontmatter for scanning
-- Valid Obsidian vault (open repo root in Obsidian)
+## Conventions
+- Filenames: kebab-case, derived from title
+- Tags: lowercase, hyphenated (e.g., `multi-agent`, not `MultiAgent`)
+- Directories: created on demand when a new top-level tag emerges
+- Wikilinks: use `[[filename]]` (no path prefix) — Obsidian resolves these
+- Summaries: 2-3 sentences max, written for scanning
+- Always check `index.json` for existing related notes before creating a new one
 
-## Next Step
-Execute `plans/001-second-brain-init.md`:
-1. Create templates (article, video, paper)
-2. Write ingestion script (`scripts/ingest.sh`)
-3. Write index generator (`scripts/build-index.sh`)
-4. Set up directory structure
-5. Test with first URL
+## Reading the Brain
+- Load `index.json` first to see all notes
+- Only read full `.md` files when the user asks about a specific topic
 
-## Conventions (once built)
-- Filenames: kebab-case from title
-- Tags: lowercase, hyphenated
-- Frontmatter summaries: 2-3 sentences max
-- Wikilinks: `[[filename]]` (no path prefix)
-- Load `index.json` first to scan the brain, only read full files when needed
+## Scripts
+- `scripts/ingest.sh <url>` — fetch raw content (article/YouTube/arxiv), print to stdout
+- `scripts/build-index.sh` — regenerate `index.json` from all frontmatter
+
+## Dependencies
+- `yt-dlp` — YouTube transcript extraction
+- `jq` — JSON processing
+- `yq` — YAML frontmatter parsing
