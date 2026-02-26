@@ -8,6 +8,7 @@ set -euo pipefail
 #
 # Detects content type:
 #   - YouTube URLs → transcript via yt-dlp
+#   - Reddit URLs  → post + comments via JSON API
 #   - arxiv URLs   → PDF abstract page (text extraction)
 #   - Everything else → article text via curl
 
@@ -26,6 +27,11 @@ check_dep() {
 is_youtube() {
   local url="$1"
   [[ "$url" =~ (youtube\.com|youtu\.be) ]]
+}
+
+is_reddit() {
+  local url="$1"
+  [[ "$url" =~ (reddit\.com|redd\.it) ]]
 }
 
 is_arxiv() {
@@ -70,6 +76,48 @@ fetch_youtube() {
   ' "$vtt_file"
 }
 
+fetch_reddit() {
+  local url="$1"
+  check_dep jq
+
+  # Strip trailing slash, append .json
+  local json_url
+  json_url="${url%/}.json"
+
+  local raw
+  raw=$(curl -sL --max-time 30 -A "Mozilla/5.0 (compatible; SecondBrain/1.0)" "$json_url")
+
+  # Extract post title and body
+  local title selftext author
+  title=$(echo "$raw" | jq -r '.[0].data.children[0].data.title // empty')
+  selftext=$(echo "$raw" | jq -r '.[0].data.children[0].data.selftext // empty')
+  author=$(echo "$raw" | jq -r '.[0].data.children[0].data.author // empty')
+
+  echo "# $title"
+  echo ""
+  echo "**Author:** u/$author"
+  echo ""
+  echo "$selftext"
+  echo ""
+
+  # Extract top-level comments (skip AutoModerator, limit to top 15)
+  local comments
+  comments=$(echo "$raw" | jq -r '
+    [.[1].data.children[]
+     | select(.kind == "t1")
+     | .data
+     | select(.author != "AutoModerator")
+    ] | sort_by(-.score) | .[:15][] |
+    "---\n**\(.author)** (score: \(.score)):\n\(.body)\n"
+  ' 2>/dev/null)
+
+  if [[ -n "$comments" ]]; then
+    echo "## Comments"
+    echo ""
+    echo "$comments"
+  fi
+}
+
 fetch_article() {
   local url="$1"
 
@@ -105,6 +153,9 @@ url="$1"
 if is_youtube "$url"; then
   echo "# Content-Type: video" >&2
   fetch_youtube "$url"
+elif is_reddit "$url"; then
+  echo "# Content-Type: article" >&2
+  fetch_reddit "$url"
 elif is_arxiv "$url"; then
   echo "# Content-Type: paper" >&2
   fetch_arxiv "$url"

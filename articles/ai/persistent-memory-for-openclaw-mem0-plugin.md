@@ -1,17 +1,17 @@
 ---
-title: "We built persistent memory for Cline — Here's what we learned"
+title: "We built persistent memory for OpenClaw — Here's what we learned"
 url: "https://www.reddit.com/r/openclaw/comments/1regq4c/we_built_persistent_memory_for_openclaw_heres/"
-aliases: ["mem0 cline plugin", "cline persistent memory"]
-tags: [ai, agent-memory, context-engineering, cline, mem0, vector-search]
+aliases: ["mem0 openclaw plugin", "openclaw persistent memory"]
+tags: [ai, agent-memory, context-engineering, openclaw, mem0, vector-search]
 source: "r/openclaw (Reddit)"
 authors: ["singh_taranjeet"]
 date_published: "2025-02-26"
 date_captured: "2026-02-25"
 summary: >
-  Mem0 team describes building a Cline plugin that moves memory outside the
+  Mem0 team describes building a OpenClaw plugin that moves memory outside the
   context window — auto-recall injects relevant memories each turn, auto-capture
   persists new facts after each response. Claims this solves compaction-induced
-  forgetting. Community pushback notes Cline already has built-in vector + SQLite
+  forgetting. Community pushback notes OpenClaw already has built-in vector + SQLite
   memory that survives compaction.
 content_type: article
 word_count: 1200
@@ -21,7 +21,7 @@ related:
 
 ## Key Claims
 
-Cline agents are stateless between sessions. The default memory (MEMORY.md files) lives inside the context window, so context compaction can summarize, rewrite, or drop it.
+OpenClaw agents are stateless between sessions. The default memory (MEMORY.md files) lives inside the context window, so context compaction can summarize, rewrite, or drop it.
 
 The Mem0 plugin moves memory **outside the context window** via two automatic processes:
 
@@ -51,8 +51,8 @@ Can run fully local: Ollama for embeddings, Qdrant for vectors, Anthropic for LL
 
 Several commenters pushed back on the premise:
 
-- **nightofgrim**: "Cline already does this [...] The markdown files are just a mechanism for the agent to write things down for them to be indexed properly."
-- **sprfrkr**: "When compaction runs, anything important in context gets written to MEMORY.md before compaction occurs and added to embeddings semantic search (if enabled) for lifetime retrieval." Links to Cline's built-in vector + SQLite memory docs.
+- **nightofgrim**: "OpenClaw already does this [...] The markdown files are just a mechanism for the agent to write things down for them to be indexed properly."
+- **sprfrkr**: "When compaction runs, anything important in context gets written to MEMORY.md before compaction occurs and added to embeddings semantic search (if enabled) for lifetime retrieval." Links to OpenClaw's built-in vector + SQLite memory docs.
 - **iridescent_herb**: Compared mem0, memos, and hindsight — mem0 worked best out of the box. Asked about multi-agent isolation.
 
 ## Interesting Comment: 3-Layer Codex Card System
