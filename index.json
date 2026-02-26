@@ -1,1 +1,53 @@
-[]
+[
+  {
+    "title": "We built persistent memory for Cline — Here's what we learned",
+    "url": "https://www.reddit.com/r/openclaw/comments/1regq4c/we_built_persistent_memory_for_openclaw_heres/",
+    "aliases": [
+      "mem0 cline plugin",
+      "cline persistent memory"
+    ],
+    "tags": [
+      "ai",
+      "agent-memory",
+      "context-engineering",
+      "cline",
+      "mem0",
+      "vector-search"
+    ],
+    "source": "r/openclaw (Reddit)",
+    "authors": [
+      "singh_taranjeet"
+    ],
+    "date_published": "2025-02-26",
+    "date_captured": "2026-02-25",
+    "summary": "Mem0 team describes building a Cline plugin that moves memory outside the context window — auto-recall injects relevant memories each turn, auto-capture persists new facts after each response. Claims this solves compaction-induced forgetting. Community pushback notes Cline already has built-in vector + SQLite memory that survives compaction.\n",
+    "content_type": "article",
+    "word_count": 1200,
+    "related": [
+      "[[context-engineering-and-persistent-agent-memory]]"
+    ],
+    "file": "articles/ai/persistent-memory-for-cline-mem0-plugin.md"
+  },
+  {
+    "title": "Context engineering and persistent agent memory",
+    "tags": [
+      "ai",
+      "context-engineering",
+      "llm-architecture",
+      "agent-memory",
+      "simon-willison",
+      "llm-cli"
+    ],
+    "participants": [
+      "mark",
+      "claude"
+    ],
+    "date_started": "2026-02-25",
+    "date_captured": "2026-02-25",
+    "summary": "Investigation into why LLM conversations are ephemeral by default, whether the context window is an artificial constraint masking a persistence problem, and how Simon Willison's llm CLI could architect truly persistent exchanges where every round is atomically saved.\n",
+    "content_type": "conversation",
+    "seed_question": "Why do we do context engineering such that an ephemeral chat transcript is built and then an ad hoc attempt is made to persist its learnings?",
+    "related": [],
+    "file": "conversations/context-engineering-and-persistent-agent-memory.md"
+  }
+]
