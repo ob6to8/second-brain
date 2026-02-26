@@ -29,6 +29,36 @@
     "file": "articles/ai/persistent-memory-for-openclaw-mem0-plugin.md"
   },
   {
+    "title": "State Of Agentic Coding #3 with Armin and Ben",
+    "url": "https://www.youtube.com/watch?v=b0SYAChbOlc",
+    "aliases": [
+      "agentic coding ep3",
+      "armin ronacher ben agentic coding"
+    ],
+    "tags": [
+      "ai",
+      "agentic-coding",
+      "claude-code",
+      "opus-4-6",
+      "coding-agents",
+      "harnesses",
+      "personal-agents",
+      "ide-vs-cli"
+    ],
+    "channel": "Armin Ronacher",
+    "date_published": "2026-02-16",
+    "date_captured": "2026-02-25",
+    "summary": "Armin Ronacher and Ben discuss the state of agentic coding in Feb 2026: Opus 4.6 and fast mode impressions, the explosion of harnesses (Codex, Pi, Toad), OpenClaw/personal agents going mainstream, the IDE-to-CLI shift, code quality concerns, and whether the job becomes requirements engineering.\n",
+    "duration": "59:01",
+    "content_type": "video",
+    "word_count": 11517,
+    "related": [
+      "[[persistent-memory-for-openclaw-mem0-plugin]]",
+      "[[context-engineering-and-persistent-agent-memory]]"
+    ],
+    "file": "videos/state-of-agentic-coding-ep3-armin-ben.md"
+  },
+  {
     "title": "Context engineering and persistent agent memory",
     "tags": [
       "ai",

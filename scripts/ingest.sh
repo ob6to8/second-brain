@@ -46,7 +46,7 @@ fetch_youtube() {
   # Extract transcript (auto-generated or manual) as plain text
   local tmpdir
   tmpdir=$(mktemp -d)
-  trap 'rm -rf "$tmpdir"' EXIT
+  trap 'rm -rf "${tmpdir:-}"' EXIT
 
   yt-dlp \
     --write-auto-sub \
@@ -64,16 +64,17 @@ fetch_youtube() {
     exit 1
   fi
 
-  # Strip VTT formatting: remove headers, timestamps, duplicates
-  awk '
-    /^[0-9]{2}:[0-9]{2}/ { next }
-    /^$/ { next }
-    /^WEBVTT/ { next }
-    /^Kind:/ { next }
-    /^Language:/ { next }
-    /^NOTE/ { next }
-    !seen[$0]++ { print }
-  ' "$vtt_file"
+  # Strip VTT formatting: remove inline tags, headers, timestamps, duplicates
+  sed 's/<[^>]*>//g' "$vtt_file" \
+    | awk '
+      /^WEBVTT/ { next }
+      /^Kind:/ { next }
+      /^Language:/ { next }
+      /^NOTE/ { next }
+      /^[0-9][0-9]:[0-9][0-9]/ { next }
+      /^ *$/ { next }
+      !seen[$0]++ { print }
+    '
 }
 
 fetch_reddit() {
