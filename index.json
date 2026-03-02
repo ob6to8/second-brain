@@ -1,5 +1,28 @@
 [
   {
+    "title": "macOS System Data Disk Cleanup — Tools and Techniques",
+    "url": "https://news.ycombinator.com/item?id=47218288",
+    "aliases": [
+      "macos disk space",
+      "system data cleanup"
+    ],
+    "tags": [
+      "macos",
+      "disk-management",
+      "dev-tools",
+      "cli"
+    ],
+    "source": "Hacker News",
+    "authors": [],
+    "date_published": "2026-03-02",
+    "date_captured": "2026-03-02",
+    "summary": "Curated tips from an HN thread on reclaiming macOS disk space consumed by opaque \"System Data.\" Covers GUI tools (GrandPerspective, DaisyDisk), CLI tools (ncdu, dust, du), Finder tricks, and an advanced SIP-disable technique.\n",
+    "content_type": "article",
+    "word_count": 450,
+    "related": [],
+    "file": "articles/macos/macos-system-data-disk-cleanup.md"
+  },
+  {
     "title": "We built persistent memory for OpenClaw — Here's what we learned",
     "url": "https://www.reddit.com/r/openclaw/comments/1regq4c/we_built_persistent_memory_for_openclaw_heres/",
     "aliases": [
