@@ -35,7 +35,9 @@ Assertions are atomic claims in the knowledge base. They form a directed acyclic
 
 ## Evidence Object
 
-Each entry in the `evidence` array:
+Each entry in the `evidence` array. The `source` field can be either:
+- A **wikilink** (`[[source-id]]`) — creates an edge in the DAG index
+- An **inline context string** (`"Reasoning: ..."`) — for axioms or reasoning that don't reference a file. These do NOT create edges.
 
 | Field | Type | Description |
 |---|---|---|
