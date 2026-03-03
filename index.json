@@ -31,6 +31,21 @@
       "file": "sources/basic-memory-mcp-knowledge-graph.md"
     },
     {
+      "id": "cli-mcp-conversation",
+      "type": "source",
+      "source_type": "conversation",
+      "title": "CLI-MCP: Why CLIs Subsume MCP and the Convention That Bridges Them",
+      "tags": [
+        "cli",
+        "mcp",
+        "shell",
+        "tool-discovery",
+        "llm-tooling",
+        "architecture"
+      ],
+      "file": "sources/cli-mcp-conversation.md"
+    },
+    {
       "id": "context-engineering-and-persistent-agent-memory",
       "type": "source",
       "source_type": "conversation",
@@ -134,6 +149,19 @@
         "cli"
       ],
       "file": "sources/macos-system-data-disk-cleanup.md"
+    },
+    {
+      "id": "mcp-is-dead-long-live-the-cli",
+      "type": "source",
+      "source_type": "article",
+      "title": "MCP is dead. Long live the CLI.",
+      "tags": [
+        "mcp",
+        "cli",
+        "llm-tooling",
+        "shell"
+      ],
+      "file": "sources/mcp-is-dead-long-live-the-cli.md"
     },
     {
       "id": "openclaw-memory-architecture",
