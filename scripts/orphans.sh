@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ "${1:-}" == "--describe" ]]; then
+  cat <<'JSON'
+{ "name": "orphans", "description": "Find unconnected nodes: assertions with no dependents, sources with no evidence links", "parameters": {} }
+JSON
+  exit 0
+fi
+
 # orphans.sh — Find unconnected nodes in the knowledge DAG.
 # Lists assertions with no dependents and sources with no evidence links.
 #

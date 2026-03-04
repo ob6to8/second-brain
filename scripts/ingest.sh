@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ "${1:-}" == "--describe" ]]; then
+  cat <<'JSON'
+{ "name": "ingest", "description": "Fetch raw content from a URL (YouTube, Reddit, arxiv, article) and print to stdout", "parameters": { "url": "string (required)" } }
+JSON
+  exit 0
+fi
+
 # ingest.sh — Fetch raw content from a URL and print to stdout.
 # Claude handles frontmatter generation, tagging, and file placement.
 #

@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ "${1:-}" == "--describe" ]]; then
+  cat <<'JSON'
+{ "name": "deps", "description": "Walk the assertion DAG upward, showing dependency tree and evidence sources", "parameters": { "assertion-id": "string (required)" } }
+JSON
+  exit 0
+fi
+
 # deps.sh — Walk the assertion DAG upward from a given assertion.
 # Shows dependency tree (deps) and evidence sources at leaf nodes.
 #

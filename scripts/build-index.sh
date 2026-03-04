@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ "${1:-}" == "--describe" ]]; then
+  cat <<'JSON'
+{ "name": "build-index", "description": "Regenerate index.json from sources/ and assertions/ frontmatter", "parameters": {} }
+JSON
+  exit 0
+fi
+
 # build-index.sh — Regenerate index.json from sources/ and assertions/.
 # Builds three arrays: sources, assertions, edges (the DAG).
 # Edges derived from evidence[].source, deps[], and supersedes wikilinks.

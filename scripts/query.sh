@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ "${1:-}" == "--describe" ]]; then
+  cat <<'JSON'
+{ "name": "query", "description": "Search the knowledge base by tag, claim, type, tier, confidence, or full-text", "parameters": { "tag": "string", "claim": "string", "type": "source|assertion", "tier": "primitive|compound", "text": "string", "confidence": "string" } }
+JSON
+  exit 0
+fi
+
 # query.sh — Search the knowledge base.
 # Queries index.json via jq, falls back to rg for full-text search.
 #

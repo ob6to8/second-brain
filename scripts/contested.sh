@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ "${1:-}" == "--describe" ]]; then
+  cat <<'JSON'
+{ "name": "contested", "description": "Find contested and low-confidence assertions needing attention", "parameters": {} }
+JSON
+  exit 0
+fi
+
 # contested.sh — Find assertions needing attention.
 # Lists contested and low-confidence assertions.
 #
