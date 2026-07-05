@@ -610,4 +610,38 @@ The thread teamscript should be verbatim for agent responses, not summaries. Kee
 
 When done, commit, push, pr
 
-**Agent:** Explained branch restart (re-point the merged branch at `origin/main` with `checkout -B`; old commits already live in `main`; force-with-lease push; any new PR is a new PR). Regenerated this archive with verbatim agent responses, created the `/persist-thread` skill encoding the flow, registered it in the skills-registry policy, recompiled `CLAUDE.md`, committed, pushed, and opened the follow-up PR.
+**Agent:**
+
+Done — [PR #2](https://github.com/ob6to8/second-brain/pull/2) is open. Recapping the whole turn:
+
+**"Restart that branch," precisely:** the merged PR froze `claude/move-code-deprecated-l4z8y2`'s old history into `main`, so new work must not stack on it. Restarting = re-pointing the same branch name at the tip of `main` (`git fetch origin main && git checkout -B claude/move-code-deprecated-l4z8y2 origin/main`), then pushing with `--force-with-lease` — safe here because the remote branch held only already-merged commits, so nothing is lost. The result: this follow-up PR shows only the new diff instead of re-proposing everything from PR #1. That's exactly what I did this turn.
+
+**Verbatim transcript:** regenerated `meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md` — all 16 exchanges now carry my responses word-for-word (tables, code blocks, options lists intact) instead of summaries, with the numbered turn headings kept. Tool calls/outputs stay omitted; question cards, webhooks, and multi-part turns get brief italic stage notes. The frontmatter provenance now states the verbatim convention.
+
+**`/persist-thread` skill:** created at `.claude/skills/persist-thread/SKILL.md`, encoding the full flow — date-prefixed filename under `meta/threads/`, the verbatim/omission content rules, numbered headings, update-in-place per session (no duplicate archives), index/log maintenance, gate checks, and an honesty rule: never reconstruct dialogue that's been lost from context. Registered in the skills-registry policy and `CLAUDE.md` recompiled, so §6 of the contract now lists it.
+
+**Shipped:** all gates passed (format, contract/registry `--check`, `brain.verify`, 14 tests), committed as `22fbf4e`, force-with-lease pushed, PR #2 opened against `main`.
+
+Want me to babysit this PR too (subscribe for CI/review events until it's merged)?
+
+---
+
+## 17 — PR #2 merged
+
+**Operator:** Merged
+
+**Agent:**
+
+PR #2 is merged — the verbatim thread archive and `/persist-thread` skill are now on `main`.
+
+The brain's full toolkit as of now: `/intake` (capture), `/render-contract` (recompile the contract), `/persist-thread` (archive conversations), backed by the Elixir gauntlet (`brain.id` / `brain.registry` / `brain.verify` / `brain.evidence` / `brain.contract`) enforced in CI and the SessionStart hook provisioning Elixir in every future web session.
+
+Nothing left open on my side. Whenever follow-up work starts, the branch gets restarted from `main` again first. Natural next builds when you feel like it: supersession semantics for ids/edges, or just start feeding it — `/intake` something and let the taxonomy grow.
+
+---
+
+## 18 — /persist-thread
+
+**Operator:** *(Invoked the `/persist-thread` skill — its first use.)*
+
+**Agent:** *(This archive was extended in place through exchange 17 by that invocation — turn 16's entry upgraded from a pre-delivery summary to the verbatim message, exchanges 17–18 appended — followed by the closing status report to the operator.)*

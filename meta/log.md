@@ -4,6 +4,8 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-05
 
+- First `/persist-thread` invocation: extended the bootstrap thread archive in place
+  through the PR #2 merge (exchanges 16–18; turn 16 upgraded to verbatim).
 - Regenerated the bootstrap thread archive with **verbatim** agent responses
   (previously condensed) and added the `/persist-thread` skill encoding the
   archival flow (exchanges only, verbatim, no tool calls, numbered turn
