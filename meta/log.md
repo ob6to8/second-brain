@@ -4,6 +4,12 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-05
 
+- Regenerated the bootstrap thread archive with **verbatim** agent responses
+  (previously condensed) and added the `/persist-thread` skill encoding the
+  archival flow (exchanges only, verbatim, no tool calls, numbered turn
+  headings); registered it in the skills-registry policy and recompiled
+  `CLAUDE.md`.
+
 - Created `meta/threads/` and archived the bootstrap conversation:
   [2026-07-05 — greenfield OKF bootstrap and verification layer](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md).
 - Added the **identity & verification** contract section with two policies:
