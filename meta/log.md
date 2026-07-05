@@ -4,6 +4,9 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-05
 
+- Final `/persist-thread` for the bootstrap session: extended the archive through
+  exchange 25 (commit-identity hook exchanges, PR #3, filename question) and closed
+  the thread. The record is complete.
 - First `/persist-thread` invocation: extended the bootstrap thread archive in place
   through the PR #2 merge (exchanges 16–18; turn 16 upgraded to verbatim).
 - Regenerated the bootstrap thread archive with **verbatim** agent responses

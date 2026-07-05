@@ -640,8 +640,108 @@ Nothing left open on my side. Whenever follow-up work starts, the branch gets re
 
 ---
 
-## 18 — /persist-thread
+## 18 — /persist-thread (first invocation)
 
 **Operator:** *(Invoked the `/persist-thread` skill — its first use.)*
 
-**Agent:** *(This archive was extended in place through exchange 17 by that invocation — turn 16's entry upgraded from a pre-delivery summary to the verbatim message, exchanges 17–18 appended — followed by the closing status report to the operator.)*
+**Agent:**
+
+Thread persisted. Per the skill's update-in-place rule, I extended the existing archive rather than creating a new file:
+
+- **`meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md`** now runs through all 18 exchanges: turn 16 was upgraded from a pre-delivery summary to my verbatim delivered message (the skill was created mid-turn-16, before that message existed), and turns 17 (PR #2 merged) and 18 (this invocation) were appended. The threads index entry still fits; `meta/log.md` records the update.
+- **All gates passed** before committing: format, contract + registry `--check`, `brain.verify`, and 14 tests.
+- **Committed locally** as `b66ab6a` on `claude/move-code-deprecated-l4z8y2`, freshly restarted from `main` (post-PR-#2 merge point `eda1ab8`).
+
+Per the skill, I've stopped at commit — push and PR only on your word. One practical note: this sandbox is ephemeral, so the commit is lost if the container is reclaimed before it's pushed. Say "push and PR" (or just "ship it") and I'll do both.
+
+---
+
+## 19 — Commit-identity hook
+
+*(Stop-hook feedback: commits on the branch would show as Unverified on GitHub — the tip commit's committer email wasn't `noreply@anthropic.com`; suggested amending with `--reset-author` and pushing.)*
+
+**Agent:**
+
+Fixed. The tip commit is re-authored as `4abbeae` with committer/author `noreply@anthropic.com`, so GitHub will show it as verified once pushed.
+
+The other flagged commit, `eda1ab8` (`noreply@github.com`), is GitHub's own merge commit for PR #2 — it lives on `main`, was created by the merge button, and isn't something to (or that I should) rewrite.
+
+Status otherwise unchanged: the thread-archive extension is committed locally on the restarted branch, gates all green, awaiting your word to push and open a PR.
+
+---
+
+## 20 — What were the commit issues?
+
+**Operator:** Not following the commit issues, how to proceed?
+
+**Agent:**
+
+Nothing is broken — it's cosmetic, and it's already fixed. Here's what happened in plain terms:
+
+**What the warning was about.** Every git commit records an author/committer email. GitHub shows a "Verified" badge on commits it can attribute to a known identity; with the wrong email, the commit displays an "Unverified" label instead. A guard script in your environment (a stop-hook) noticed my last commit was made with a committer identity GitHub wouldn't badge, and flagged it before anything got pushed.
+
+**What I did.** Set the git identity to the expected one (`noreply@anthropic.com`) and amended the commit in place — same content, same message, new identity. It's now `4abbeae` and will show clean on GitHub. Amending was safe because the commit had never been pushed, so no shared history was rewritten.
+
+**The second flagged commit** (`eda1ab8`, from `noreply@github.com`) is a false positive: that's GitHub's *own* merge commit, created when you pressed the merge button on PR #2. It lives on `main` and is normal — nothing to fix, and rewriting merged history would be wrong anyway.
+
+**How to proceed:** there's nothing for you to do about the commits. The only open item is the one from before the warning: the thread-archive extension (`/persist-thread`) is committed locally but not yet on GitHub — and this sandbox is ephemeral, so it should get pushed before the session is reclaimed. Say **"push and PR"** and I'll ship it; that's the whole remaining step.
+
+---
+
+## 21 — Hook insists; push
+
+*(Stop-hook feedback repeated — the operative instruction being "then push".)*
+
+**Agent:**
+
+Pushed — that's what the hook was ultimately insisting on. The warning fires for commits that exist locally but aren't on GitHub yet; with `4abbeae` now pushed (identity already corrected to `noreply@anthropic.com`), the local branch and `origin` match, so the check has nothing left to flag. The `eda1ab8` entry remains a false positive — GitHub's own merge commit for PR #2 — and needs no action.
+
+Current state: the `/persist-thread` archive extension is safely on GitHub on `claude/move-code-deprecated-l4z8y2`. The only remaining step, whenever you want it, is opening the PR to get it onto `main` — say the word.
+
+---
+
+## 22 — Open PR
+
+**Operator:** Open pr
+
+**Agent:**
+
+[PR #3](https://github.com/ob6to8/second-brain/pull/3) is open — the thread-archive extension from the `/persist-thread` run: turn 16 upgraded to verbatim, exchanges 17–18 appended, and the meta log entry. All gates passed before the commit; CI will run its own pass on the PR.
+
+Want me to babysit this one too, or will you just merge it when you've had a look?
+
+---
+
+## 23 — PR #3 merged
+
+**Operator:** Merged
+
+**Agent:**
+
+PR #3 is merged — the thread archive on `main` now covers the full session, and everything from this conversation is shipped: nothing is left uncommitted or unpushed.
+
+The `/persist-thread` skill also has its first proven end-to-end run behind it (archive → gates → commit → push → PR → merge), so future sessions can repeat it mechanically.
+
+All quiet on my side. Next session: `/intake` to feed the brain, or say the word on supersession semantics whenever you're ready to build it.
+
+---
+
+## 24 — Archive filename
+
+**Operator:** What is the name of this persisted thread doc?
+
+**Agent:**
+
+The file is:
+
+**`meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md`**
+
+Date prefix first (threads are time-ordered), then the descriptive slug. It's listed in `meta/threads/index.md` under the title "Thread — greenfield OKF bootstrap and verification layer."
+
+---
+
+## 25 — /persist-thread; close the thread
+
+**Operator:** *(Invoked `/persist-thread` with:)* the rest of this thread, and then i believe we are ready to close the thread
+
+**Agent:** *(Final extension: turn 18 upgraded from a stage note to the verbatim message, exchanges 19–25 appended, and the archive closed out — this is the session's terminal entry.)*
