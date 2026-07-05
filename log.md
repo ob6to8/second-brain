@@ -4,6 +4,8 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-05
 
+- Dropped the `link` type: a web resource enters the brain only once processed into a
+  `reference`; bare URLs are not filed. Removed the `link`/`reference` distinction.
 - Policy update to the operating contract: create the natural directory path even for a
   single concept; new top-level dirs still ratified, subdirs autonomous. Added `claim`
   and `link` types and `provenance` / `verified` frontmatter fields.

@@ -89,6 +89,10 @@ Arbitrary extra keys are allowed and must be preserved.
   (begin with `/`, e.g. `[OKF](/references/open-knowledge-format.md)`). Links are
   untyped edges; the prose carries the meaning. Broken links are tolerated but avoid
   creating them.
+- **Links must be processed, not parked.** A web resource enters the brain only once it
+  has been **processed into a `reference`** (fetched and summarized/captured). Do not
+  file bare, unprocessed URLs as their own concepts — process it now, or don't file it.
+  (There is deliberately no lightweight "bookmark" type.)
 - **Oversized linked resources**: if a linked source is too large to reasonably copy,
   **write a faithful summary** as the concept body and **persist the link** in the
   `resource` frontmatter field (and/or `# Citations`) so nothing is lost.
@@ -110,9 +114,7 @@ Seed vocabulary:
   the `verified` field; may graduate to `concept` once confirmed).
 - `concept` — a definition or mental model (established/accepted).
 - `reference` — external material you have **captured and summarized** (article, doc,
-  video, thread).
-- `link` — a **pointer** to a web resource with a brief annotation; lighter than
-  `reference` (not yet fully distilled — a bookmark / read-later).
+  video, thread). A bare URL becomes a `reference` only once processed — see §3.
 - `source` — a primary source citation (paper, book, dataset).
 - `person` — a person.
 - `project` — an active, goal-bounded effort.
