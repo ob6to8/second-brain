@@ -5,7 +5,6 @@ title: Claude Code on the web docs — environment caching (filesystem snapshots
 description: Verbatim passages establishing that Anthropic snapshots the filesystem per environment after the setup script runs, reuses the snapshot for later sessions, captures files not processes, and rebuilds on config change or after roughly seven days.
 resource: https://code.claude.com/docs/en/claude-code-on-the-web#environment-caching
 provenance: "Verbatim excerpts extracted from the resource URL (Anthropic, 'Use Claude Code on the web')"
-verified: true
 tags: [claude-code, cloud, caching, snapshots, environments, warm-start]
 timestamp: 2026-07-06
 ---

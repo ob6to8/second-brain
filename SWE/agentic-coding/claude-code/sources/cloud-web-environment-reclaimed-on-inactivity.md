@@ -5,7 +5,6 @@ title: Claude Code on the web docs — environments are reclaimed after inactivi
 description: Verbatim passages establishing that cloud sessions stop after a period of inactivity and the underlying environment is reclaimed, and that the VM clones from GitHub rather than the local machine so local commits must be pushed first.
 resource: https://code.claude.com/docs/en/claude-code-on-the-web#environment-expired
 provenance: "Verbatim excerpts extracted from the resource URL (Anthropic, 'Use Claude Code on the web')"
-verified: true
 tags: [claude-code, cloud, ephemeral, lifecycle, environments]
 timestamp: 2026-07-06
 ---

@@ -5,7 +5,6 @@ title: Claude Code on the web docs — user-level settings don't carry to cloud;
 description: Verbatim passages establishing that user-level ~/.claude settings and hooks don't carry over to cloud sessions, and that in the cloud, hooks come from the repository and from the organization's server-managed settings.
 resource: https://code.claude.com/docs/en/claude-code-on-the-web#setup-scripts-vs-sessionstart-hooks
 provenance: "Verbatim excerpts extracted from the resource URL (Anthropic, 'Use Claude Code on the web')"
-verified: true
 tags: [claude-code, cloud, hooks, settings, server-managed-settings]
 timestamp: 2026-07-06
 ---

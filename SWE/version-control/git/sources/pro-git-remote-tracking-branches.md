@@ -5,7 +5,6 @@ title: Pro Git — remote-tracking branches and fetch
 description: Verbatim passages from the Pro Git book establishing that fetch moves remote-tracking pointers and does not modify local branches or the working directory.
 resource: https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches
 provenance: "Verbatim excerpts extracted from the resource URL (Pro Git, 2nd ed., §3.5)"
-verified: true
 tags: [git, fetch, remote-tracking, branches]
 timestamp: 2026-07-05
 ---

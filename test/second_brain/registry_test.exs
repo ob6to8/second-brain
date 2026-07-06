@@ -54,14 +54,17 @@ defmodule SecondBrain.RegistryTest do
   end
 
   describe "Verifier.run/1" do
-    test "passes a grounded, well-formed bundle", %{tmp_dir: dir} do
+    test "passes a well-formed bundle: statement verified via a link-storing capture", %{
+      tmp_dir: dir
+    } do
+      # A capture: stores a link, so it is evidence — never itself `verified`.
       write_concept(dir, "src.md",
         type: "source",
         id: "sb:aaaaaa",
-        verified: true,
         resource: "https://example.org/doc"
       )
 
+      # An agent statement: verified via an evidence edge to the capture.
       write_concept(dir, "claim.md",
         type: "concept",
         id: "sb:bbbbbb",
@@ -72,17 +75,24 @@ defmodule SecondBrain.RegistryTest do
       assert Verifier.run(dir) == :ok
     end
 
-    test "flags missing id, dangling edge, unverified target, and ungrounded verified", %{
+    test "flags missing id, dangling edge, verified capture, and evidence-less verified", %{
       tmp_dir: dir
     } do
       write_concept(dir, "no-id.md", type: "note")
-      write_concept(dir, "unverified-src.md", type: "source", id: "sb:cccccc")
+
+      # verified: true on a link-storing capture is a defect.
+      write_concept(dir, "verified-capture.md",
+        type: "source",
+        id: "sb:cccccc",
+        verified: true,
+        resource: "https://example.org/x"
+      )
 
       write_concept(dir, "bad-claim.md",
         type: "concept",
         id: "sb:dddddd",
         verified: true,
-        verified_by: "[sb:ffffff, sb:cccccc]"
+        verified_by: "[sb:ffffff]"
       )
 
       write_concept(dir, "ungrounded.md", type: "claim", id: "sb:eeeeee", verified: true)
@@ -92,8 +102,8 @@ defmodule SecondBrain.RegistryTest do
 
       assert joined =~ "no-id.md: missing stable `id`"
       assert joined =~ "verified_by sb:ffffff does not resolve"
-      assert joined =~ "sb:cccccc (unverified-src.md) is not itself verified"
-      assert joined =~ "ungrounded.md: verified: true but no grounding"
+      assert joined =~ "verified-capture.md: verified: true but stores a link"
+      assert joined =~ "ungrounded.md: verified: true but no evidence"
     end
   end
 end

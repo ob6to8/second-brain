@@ -110,7 +110,8 @@ mitigation is needed.
 ## Grounding
 
 Documented items above are grounded in these captured primary-source excerpts
-(verbatim, `verified: true`), under
+(verbatim quotes carrying the official `resource` URL — trusted evidence, not
+themselves verified statements), under
 [`sources/`](/SWE/agentic-coding/claude-code/sources/index.md):
 
 - `sb:863b32` — environments carry config; each session gets a fresh VM

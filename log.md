@@ -4,6 +4,21 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- Reframed the verification model: verification is **only for agent-authored
+  statements**; link-storing captures (`source`/`reference`) can never be
+  `verified: true`, and `verified: true` now requires `verified_by` (not a `resource`)
+  with targets that need only exist. Dropped `verified` from all 9 captures and updated
+  the verifier + tests. See [meta/log.md](/meta/log.md).
+- `/intake`: filed `SWE/testing/how-to-test-features-not-code.md` (`sb:a5ea86`, type
+  `reference`, `verified: false`) — matklad's "test features, not code" methodology
+  (the `check` chokepoint, sans-IO logic, data-driven and expect tests, generative
+  testing). Filed alongside and cross-linked with the purity/extent reference in the
+  existing `SWE/testing/`.
+- `/intake`: filed `SWE/testing/unit-vs-integration-purity-and-extent.md` (`sb:73115b`,
+  type `reference`, `verified: false`) — matklad's argument to replace the unit/integration
+  dichotomy with two axes, purity and extent. Created the `SWE/testing/` subtree
+  (autonomous — under the established `SWE/` domain) with its `index.md`; added it to
+  `SWE/index.md`.
 - Grounded the CCR architecture note (`sb:52aefa`) against the official "Use Claude
   Code on the web" docs: captured five verbatim `type: source` excerpts under
   `SWE/agentic-coding/claude-code/sources/` (`sb:863b32`, `sb:eb418b`, `sb:3420c8`,

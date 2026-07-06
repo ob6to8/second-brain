@@ -5,7 +5,6 @@ title: Claude Code on the web docs — credentials and signing keys never inside
 description: Verbatim passages establishing that sensitive credentials such as git credentials or signing keys are never inside the sandbox, authentication is handled through a secure proxy with scoped credentials, and pushes are restricted to the current working branch.
 resource: https://code.claude.com/docs/en/claude-code-on-the-web#security-and-isolation
 provenance: "Verbatim excerpts extracted from the resource URL (Anthropic, 'Use Claude Code on the web')"
-verified: true
 tags: [claude-code, cloud, credentials, signing, security, proxy, isolation]
 timestamp: 2026-07-06
 ---

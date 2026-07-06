@@ -18,8 +18,8 @@ Frontmatter fields:
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
 | `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
-| `verified` | Recommended for claims | Boolean. `false` = asserted but not independently fact-checked; `true` = confirmed **and grounded** (requires `resource` or `verified_by`). Default `false` for AI-generated statements. |
-| `verified_by` | When verified via evidence | Inline YAML list of stable ids of the `verified: true` concepts (typically `source` excerpts) that jointly support this one. The only committed representation of evidence edges. |
+| `verified` | Only on agent statements | Boolean, and **only for agent-authored statements** (`claim`/`note`/`concept`). `false` = asserted but not checked; `true` = checked and backed by a non-empty `verified_by`. **Omit** on captures — a concept that stores a link (`resource`) is not verifiable. Default `false` for AI-generated statements. |
+| `verified_by` | When verified via evidence | Inline YAML list of stable ids (typically `source` captures) that jointly support this statement; targets must **exist** (they need not themselves be `verified`). The only committed representation of evidence edges. |
 | `tags` | Recommended | YAML list of categorization strings. |
 | `timestamp` | Recommended | ISO 8601 datetime of last meaningful change. |
 

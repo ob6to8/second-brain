@@ -46,8 +46,8 @@ Frontmatter fields:
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
 | `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
-| `verified` | Recommended for claims | Boolean. `false` = asserted but not independently fact-checked; `true` = confirmed **and grounded** (requires `resource` or `verified_by`). Default `false` for AI-generated statements. |
-| `verified_by` | When verified via evidence | Inline YAML list of stable ids of the `verified: true` concepts (typically `source` excerpts) that jointly support this one. The only committed representation of evidence edges. |
+| `verified` | Only on agent statements | Boolean, and **only for agent-authored statements** (`claim`/`note`/`concept`). `false` = asserted but not checked; `true` = checked and backed by a non-empty `verified_by`. **Omit** on captures — a concept that stores a link (`resource`) is not verifiable. Default `false` for AI-generated statements. |
+| `verified_by` | When verified via evidence | Inline YAML list of stable ids (typically `source` captures) that jointly support this statement; targets must **exist** (they need not themselves be `verified`). The only committed representation of evidence edges. |
 | `tags` | Recommended | YAML list of categorization strings. |
 | `timestamp` | Recommended | ISO 8601 datetime of last meaningful change. |
 
@@ -193,22 +193,31 @@ _Source: [`meta/policy/controlled-type-vocabulary.md`](/meta/policy/controlled-t
 _Source: [`meta/policy/stable-identity.md`](/meta/policy/stable-identity.md)_
 
 - **Provenance and verification are orthogonal.** `provenance` records where a
-  statement came from and is **immutable history** — verifying a claim never
+  statement came from and is **immutable history** — verifying a statement never
   rewrites its provenance.
-- **`verified: true` requires grounding.** A concept may be marked verified only when
-  it has a `resource` (it *is* primary evidence — e.g. a verbatim excerpt of an
-  official document) or a non-empty `verified_by` (derived evidence). Ungrounded
-  "verified" is a defect; `mix brain.verify` enforces this.
+- **Verification is only for agent-authored statements.** `verified: true` applies
+  to a statement the agent distilled from a thread (a `claim`, `note`, or `concept`)
+  and asserts it has been **checked against evidence**. A concept that stores a
+  link — anything carrying a `resource` — is a **capture**, not a statement:
+  verification is **not possible** for it, so a capture never carries `verified`
+  (omit the field). `mix brain.verify` rejects `verified: true` on any concept that
+  has a `resource`.
+- **`verified: true` requires evidence, never its own link.** A verified statement
+  must carry a non-empty `verified_by` pointing at the captures (and/or other
+  statements) that support it. Storing a `resource` on the statement itself proves
+  nothing and is disallowed. `mix brain.verify` enforces both halves.
 - **Evidence edges live in `verified_by` only** — an inline list of stable ids whose
-  targets must exist and be themselves `verified: true`. Do not duplicate the edge
-  list in prose: the verification narrative is **derived on demand**
-  (`mix brain.evidence <id>`), never committed, so there is exactly one source of
-  truth for what supports a concept.
+  targets must **exist**. Targets are typically `source` captures, which are *not*
+  themselves `verified` — they are trusted evidence, not verified statements. Do not
+  duplicate the edge list in prose: the verification narrative is **derived on
+  demand** (`mix brain.evidence <id>`), never committed, so there is exactly one
+  source of truth for what supports a statement.
 - **Verify technical claims from primary sources.** Extract the supporting passages
-  from authoritative documentation into `type: source` concepts (verbatim quotes;
-  `resource` = the official URL; provenance = extracted from that resource), then
-  aggregate them via `verified_by` on the claim. A `claim` that becomes grounded
-  this way may graduate to `concept`.
+  from authoritative documentation into `type: source` captures (verbatim quotes;
+  `resource` = the official URL; provenance = extracted from that resource). The
+  capture stores the link and text but is **not** marked `verified`. Aggregate the
+  captures via `verified_by` on the claim, which flips the **claim** to
+  `verified: true`. A `claim` grounded this way may graduate to `concept`.
 
 _Source: [`meta/policy/verification-grounding.md`](/meta/policy/verification-grounding.md)_
 

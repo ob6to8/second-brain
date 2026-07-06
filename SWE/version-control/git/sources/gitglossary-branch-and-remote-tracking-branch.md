@@ -5,7 +5,6 @@ title: gitglossary — branch head and remote-tracking branch
 description: Verbatim official glossary definitions establishing that a branch head moves forward with development and a remote-tracking branch follows another repository without local modifications.
 resource: https://git-scm.com/docs/gitglossary
 provenance: "Verbatim excerpts extracted from the resource URL (gitglossary man page)"
-verified: true
 tags: [git, branches, refs, remote-tracking, glossary]
 timestamp: 2026-07-05
 ---

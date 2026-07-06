@@ -2,7 +2,20 @@
 
 Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
-## 2026-07-05
+## 2026-07-06
+
+- **Reframed the verification model** (operator directive): verification applies
+  **only to agent-authored statements**; a concept that stores a link (`resource`)
+  is a *capture* and can never be `verified: true`. Rewrote
+  `meta/policy/verification-grounding.md` and the `verified`/`verified_by` rows of
+  `meta/policy/frontmatter-schema.md`; `verified: true` now requires a non-empty
+  `verified_by` (never its own `resource`), and `verified_by` targets need only
+  **exist** (they are no longer required to be themselves verified). Updated
+  `SecondBrain.Verifier` and its tests accordingly, dropped the `verified` field
+  from all 9 `source`/`reference` captures (2 git + 5 CCR sources, 2 matklad
+  references), and recompiled `CLAUDE.md` + `meta/registry.md`. The git concept
+  `sb:4c9e1f` stays `verified: true` (agent statement grounded via `verified_by`);
+  its source targets are now unverified captures, which the new rules permit.
 
 - Final `/persist-thread` for the bootstrap session: extended the archive through
   exchange 25 (commit-identity hook exchanges, PR #3, filename question) and closed

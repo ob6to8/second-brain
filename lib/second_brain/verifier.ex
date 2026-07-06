@@ -8,11 +8,14 @@ defmodule SecondBrain.Verifier do
        (OKF conformance) — surfaced via `SecondBrain.Registry.scan/1`.
     2. Every bundle concept carries a stable `id` matching `sb:[0-9a-f]{6}`;
        ids are unique.
-    3. Every `verified_by` reference resolves to an existing id, and every
-       referenced concept is itself `verified: true`.
-    4. `verified: true` requires grounding: the concept must have a `resource`
-       (primary evidence, e.g. a source excerpt's official URL) or a non-empty
-       `verified_by` (derived evidence). No ungrounded "verified".
+    3. Every `verified_by` reference resolves to an existing id. (Targets are
+       typically `source` captures, which are not themselves `verified` — they
+       are trusted evidence, not verified statements.)
+    4. Verification is only for agent-authored statements. A concept that stores
+       a link (has a `resource`) is a capture and cannot be `verified: true`.
+    5. `verified: true` requires evidence: a non-empty `verified_by`. A statement
+       is never "grounded" by a `resource` of its own — storing a link proves
+       nothing.
   """
 
   alias SecondBrain.Registry
@@ -47,16 +50,23 @@ defmodule SecondBrain.Verifier do
 
   defp edge_errors(%{verified_by: refs, path: path}, by_id) do
     Enum.flat_map(refs, fn ref ->
-      case by_id[ref] do
-        nil -> ["#{path}: verified_by #{ref} does not resolve to any concept"]
-        %{verified: true} -> []
-        %{path: target} -> ["#{path}: verified_by #{ref} (#{target}) is not itself verified"]
-      end
+      if Map.has_key?(by_id, ref),
+        do: [],
+        else: ["#{path}: verified_by #{ref} does not resolve to any concept"]
     end)
   end
 
-  defp grounding_errors(%{verified: true, resource: nil, verified_by: [], path: path}) do
-    ["#{path}: verified: true but no grounding (needs `resource` or `verified_by`)"]
+  # A concept that stores a link is a capture, not a verifiable statement.
+  defp grounding_errors(%{verified: true, resource: res, path: path}) when not is_nil(res) do
+    [
+      "#{path}: verified: true but stores a link (`resource`) — captures are " <>
+        "trusted evidence, not verifiable statements"
+    ]
+  end
+
+  # A verified statement must be backed by evidence, never by its own link.
+  defp grounding_errors(%{verified: true, verified_by: [], path: path}) do
+    ["#{path}: verified: true but no evidence (needs a non-empty `verified_by`)"]
   end
 
   defp grounding_errors(_), do: []
