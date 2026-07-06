@@ -4,6 +4,17 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- Research spike into **agentic "looping"**: filed 16 primary sources as `reference`
+  captures under the new `SWE/agentic-coding/agentic-loop/` subtree (autonomous — under
+  the established `SWE/` domain), spanning foundations (ReAct `sb:f63910`), canonical
+  framing (Anthropic `sb:06d95d`, OpenAI `sb:a030d9`, Thorsten Ball `sb:8e885f`,
+  smolagents `sb:f948df`), loop anatomy (Kinney `sb:97d2a8`, Dibia `sb:3fd44a`, Oracle
+  `sb:592342`, Willison `sb:a832e0`), the "loop engineering" lexicon (Willison `sb:3384ba`,
+  LangChain `sb:1aefe2`, Dubois `sb:01bb9a`, Ronacher `sb:d580ce`), and control-flow/
+  autonomy/context (12-factor `sb:b6353e`, Ralph `sb:276c61`, Anthropic context
+  engineering `sb:c0961a`). Each distilled with a verbatim thesis quote; sources
+  gathered via parallel research subagents. Added the directory `index.md` (defining
+  intro + categorized listing) and linked it from the agentic-coding index.
 - Reframed the verification model: verification is **only for agent-authored
   statements**; link-storing captures (`source`/`reference`) can never be
   `verified: true`, and `verified: true` now requires `verified_by` (not a `resource`)
