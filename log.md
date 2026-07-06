@@ -16,6 +16,11 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
   ROI runway" + HN discussion; Alderson "AI margin collapse"/GLM-5.2 + HN discussion)
   do not fit any existing directory and await operator ratification of a new
   top-level domain before filing.
+- `/intake`: filed `SWE/agentic-coding/code-context/gitnexus.md` (`sb:b89ea1`, type
+  `reference`) — GitNexus, a client-side code knowledge-graph tool that serves codebase
+  context (calls, imports, clusters, execution flows) to coding agents over MCP. Created
+  the `SWE/agentic-coding/code-context/` subtree (autonomous — under the established
+  `SWE/` domain) with its `index.md`; cross-linked to the context-engineering reference.
 - Research spike into **agentic "looping"**: filed 16 primary sources as `reference`
   captures under the new `SWE/agentic-coding/agentic-loop/` subtree (autonomous — under
   the established `SWE/` domain), spanning foundations (ReAct `sb:f63910`), canonical
