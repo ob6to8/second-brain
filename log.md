@@ -4,6 +4,18 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- `/intake`: filed two LLM-engineering references — `SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md`
+  (`sb:41be22`, Kapa.ai's cheap-LLM RAG chunk pruning) and
+  `SWE/llm-engineering/kv-cache-compression-history.md` (`sb:266c5e`, Martin Alderson's
+  MQA→GQA→MLA→quantization history) — and one agent-framework reference,
+  `SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration.md` (`sb:eeb2bb`,
+  an Elixir agent-orchestration library on LangChain). Created two new autonomous
+  subtrees: `SWE/llm-engineering/` (new sibling under `SWE/`) and
+  `SWE/agentic-coding/frameworks/` (subdir under the established `agentic-coding`
+  domain). Two economics-of-AI sources from the same intake batch (Apollo/Slok "AI
+  ROI runway" + HN discussion; Alderson "AI margin collapse"/GLM-5.2 + HN discussion)
+  do not fit any existing directory and await operator ratification of a new
+  top-level domain before filing.
 - Research spike into **agentic "looping"**: filed 16 primary sources as `reference`
   captures under the new `SWE/agentic-coding/agentic-loop/` subtree (autonomous — under
   the established `SWE/` domain), spanning foundations (ReAct `sb:f63910`), canonical

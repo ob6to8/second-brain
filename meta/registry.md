@@ -34,6 +34,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:3420c8` | [SWE/agentic-coding/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity](/SWE/agentic-coding/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity.md) | source |  |
 | `sb:863b32` | [SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config](/SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config.md) | source |  |
 | `sb:3f35e1` | [SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud](/SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud.md) | source |  |
+| `sb:eeb2bb` | [SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration](/SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
+| `sb:266c5e` | [SWE/llm-engineering/kv-cache-compression-history](/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
+| `sb:41be22` | [SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
 | `sb:a5ea86` | [SWE/testing/how-to-test-features-not-code](/SWE/testing/how-to-test-features-not-code.md) | reference |  |
 | `sb:73115b` | [SWE/testing/unit-vs-integration-purity-and-extent](/SWE/testing/unit-vs-integration-purity-and-extent.md) | reference |  |
 | `sb:4c9e1f` | [SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch](/SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch.md) | concept | true |

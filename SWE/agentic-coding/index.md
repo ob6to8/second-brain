@@ -7,3 +7,4 @@ change.
 
 - [agentic-loop](/SWE/agentic-coding/agentic-loop/index.md) — the core execution loop of an LLM agent (reason→act→observe) and the "loop engineering" lexicon around it
 - [claude-code](/SWE/agentic-coding/claude-code/index.md) — Anthropic's Claude Code agent: CLI, cloud runtime, configuration
+- [frameworks](/SWE/agentic-coding/frameworks/index.md) — libraries for building and orchestrating agents
