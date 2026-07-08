@@ -22,8 +22,8 @@ record so it can be resumed from the record instead of from memory.
   batch (a text block under ~300 chars that is followed by a tool call). Longer
   blocks, and any block not followed by a tool (the turn's closing response),
   are kept; turns with no tool calls keep all their text. Drop system reminders
-  and slash-command wrappers. (`/persist-thread`, by contrast, keeps everything
-  **verbatim** — the two are different tools for different needs.)
+  and slash-command wrappers. `/capture` is the sole session-persistence skill:
+  it distills rather than dumping a raw verbatim transcript.
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `sb:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it

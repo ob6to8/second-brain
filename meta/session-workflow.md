@@ -97,11 +97,9 @@ pre-tool blocks and any block not followed by a tool are kept; a turn with no
 tool calls keeps all its text. This is the functional spec of Composable
 Beliefs' `transcript_hook.py`, re-homed as an **on-demand skill** rather than a
 per-turn Stop hook — so there is no crash-safe draft lane and no git
-auto-staging to maintain.
-
-Contrast [`/persist-thread`](/.claude/skills/persist-thread/SKILL.md): it keeps
-the exchange **verbatim** (an archive). `/capture` **distills and routes** (a
-working record). Both live in `meta/threads/`; they are different tools.
+auto-staging to maintain. It is the brain's sole session-persistence skill: it
+**distills and routes** (a working record) rather than dumping a raw verbatim
+transcript.
 
 ### 3b. The routing ledger — a router, never a digest
 

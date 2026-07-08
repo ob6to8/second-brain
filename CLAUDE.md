@@ -249,13 +249,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 - **`/render-contract`** — recompile `CLAUDE.md` from `meta/policy/*.md` after editing
   any policy. See `.claude/skills/render-contract/SKILL.md`. `CLAUDE.md` is a
   generated artifact — never hand-edit it.
-- **`/persist-thread`** — archive the current conversation into `meta/threads/` as a
-  date-prefixed record: exchanges only, operator and agent text **verbatim**, no tool
-  calls, numbered turn headings. See `.claude/skills/persist-thread/SKILL.md`.
-- **`/capture`** — render the current session into a **distilled** thread doc under
-  `meta/threads/` (substantive responses only), then a routing ledger and route tags
-  over the frozen body. Differs from `/persist-thread`: capture distills and routes,
-  persist-thread keeps everything verbatim. See `.claude/skills/capture/SKILL.md`.
+- **`/capture`** — persist the current session as a **distilled** thread doc under
+  `meta/threads/`: substantive exchanges only (tool calls, reasoning, and short
+  pre-tool narration stripped), then a routing ledger and route tags over the frozen
+  body. This is the session-persistence skill. See `.claude/skills/capture/SKILL.md`.
 - **`/summarize-technical`** — produce a three-part layered breakdown of a technical
   paper/article/spec: a plain-language summary, a glossary of its key technical terms,
   then an integrated technical summary reusing those terms. See
@@ -283,8 +280,8 @@ record so it can be resumed from the record instead of from memory.
   batch (a text block under ~300 chars that is followed by a tool call). Longer
   blocks, and any block not followed by a tool (the turn's closing response),
   are kept; turns with no tool calls keep all their text. Drop system reminders
-  and slash-command wrappers. (`/persist-thread`, by contrast, keeps everything
-  **verbatim** — the two are different tools for different needs.)
+  and slash-command wrappers. `/capture` is the sole session-persistence skill:
+  it distills rather than dumping a raw verbatim transcript.
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `sb:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it

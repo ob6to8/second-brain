@@ -11,8 +11,9 @@ went, and **route tags** that materialize each topic's excerpts into the
 `concept` docs they feed.
 
 This is **on-demand**, run **once at session close** (or when asked) — not a
-per-turn hook. Contrast with `/persist-thread`, which keeps the whole exchange
-**verbatim**; `/capture` **distills** (substantive responses only) and **routes**.
+per-turn hook. It is the brain's session-persistence skill: it **distills**
+(substantive exchanges, tool-call noise stripped) and **routes**, rather than
+dumping a raw verbatim transcript.
 
 ## File
 

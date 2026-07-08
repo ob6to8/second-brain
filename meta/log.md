@@ -2,6 +2,17 @@
 
 Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
+## 2026-07-09
+
+- **Retired `/persist-thread`** in favour of `/capture`. The two overlapped
+  (both persist a session into `meta/threads/`); `/capture` supersedes it —
+  same home, but distilled + routed + route-tagged instead of raw verbatim.
+  Deleted `.claude/skills/persist-thread/`, removed it from the skills-registry
+  policy, and cleared the contrast references in `session-capture`,
+  `route-tagging`'s guide (`meta/session-workflow.md`), and the `/capture`
+  skill; recompiled `CLAUDE.md`. Historical mentions in this log and the
+  2026-07-05 thread are left as-is (frozen records).
+
 ## 2026-07-08
 
 - Added the **GitHub Pages site generator**: a dependency-free static-site build
