@@ -1,6 +1,6 @@
 ---
 name: capture
-description: Render the current session into a distilled thread doc under meta/threads/ — substantive responses only (reasoning/tool-calls/narration stripped) — then a routing ledger and route tags over the frozen body. Use at session close, or when the operator says "capture this" / "capture the session".
+description: Render the current session into a distilled thread doc under meta/threads/ — keep every exchange, dropping only tool calls, reasoning, and short pre-tool narration — then a routing ledger and route tags over the frozen body. Use at session close, or when the operator says "capture this" / "capture the session".
 ---
 
 # /capture — freeze a session into a distilled, routed thread doc
@@ -11,8 +11,9 @@ went, and **route tags** that materialize each topic's excerpts into the
 `concept` docs they feed.
 
 This is **on-demand**, run **once at session close** (or when asked) — not a
-per-turn hook. Contrast with `/persist-thread`, which keeps the whole exchange
-**verbatim**; `/capture` **distills** (substantive responses only) and **routes**.
+per-turn hook. It is the brain's session-persistence skill: it **distills**
+(substantive exchanges, tool-call noise stripped) and **routes**, rather than
+dumping a raw verbatim transcript.
 
 ## File
 
@@ -39,20 +40,28 @@ timestamp: <ISO 8601 date>
 
 ### 1. The render (keep/strip rules)
 
-Render the conversation as `## User` / `## Assistant` sections. For **each
-assistant turn keep only the substantive response** and drop the noise:
+Render the conversation as `## User` / `## Assistant` sections. **Keep every
+exchange** — operator messages and assistant responses — and drop *only* the
+noise. There are exactly three drops:
 
-- Drop all reasoning/thinking, all tool calls, and all tool results.
-- Drop short **pre-tool narration** — a text block **under ~300 chars that is
-  followed by a tool call** ("Let me check X", "Now running…"). Keep longer
-  pre-tool blocks (a real analysis given before the action) and **any block not
-  followed by a tool** (the turn's closing response).
-- A turn with **no tool calls** keeps all its text.
-- Drop system reminders and slash-command wrappers (anything that reads as a
-  `<…>`-prefixed system block).
-- Operator messages are kept as said. If part of the conversation was summarized
-  away and is no longer available, say so in an italic note — never invent
-  dialogue.
+- **Tool calls and tool results** — always dropped.
+- **Reasoning / thinking blocks** — always dropped.
+- **Short pre-tool narration** — an assistant text block that is *both* under
+  ~300 chars *and* followed by a tool call later in the same turn ("Let me check
+  X", "Now running…"). This is the *only* text drop, and it fires only on that
+  conjunction.
+
+Everything else is kept: any block **≥ ~300 chars** (even mid-turn, before a
+tool call); any block **in isolation** — nothing after it in the turn calls a
+tool, e.g. the turn's closing reply or a standalone short remark — **even when
+short**; and **all** text in a turn that makes no tool calls. Operator messages
+are kept as said, dropping only empty ones and `<…>`-prefixed system reminders /
+slash-command wrappers. If part of the conversation was summarized away and is no
+longer available, say so in an italic note — never invent dialogue.
+
+This is the exact rule from Composable Beliefs' `transcript_hook.py` (a block is
+dropped iff `len(strip) < 300 and followed_by_tool`), so a short statement is
+dropped *only* as a pre-tool lead-in — never in isolation.
 
 Two ways to produce it: **render-from-context** (preferred — you hold the
 conversation, so write the render applying the rules above), or **parse-the-log**

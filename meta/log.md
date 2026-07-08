@@ -2,6 +2,33 @@
 
 Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
+## 2026-07-09
+
+- **Retired `/persist-thread`** in favour of `/capture`. The two overlapped
+  (both persist a session into `meta/threads/`); `/capture` supersedes it —
+  same home, but distilled + routed + route-tagged instead of raw verbatim.
+  Deleted `.claude/skills/persist-thread/`, removed it from the skills-registry
+  policy, and cleared the contrast references in `session-capture`,
+  `route-tagging`'s guide (`meta/session-workflow.md`), and the `/capture`
+  skill; recompiled `CLAUDE.md`. Historical mentions in this log and the
+  2026-07-05 thread are left as-is (frozen records).
+- **Clarified the `/capture` keep/strip rule** to match cb `transcript_hook.py`
+  exactly and read as an *inclusion* rule: keep **every** exchange, dropping only
+  tool calls/results, reasoning/thinking, and short pre-tool narration (a block
+  *both* `< ~300` chars *and* followed by a tool call). A short block **in
+  isolation** — not followed by a tool — is kept, as are longer blocks and all
+  text in tool-less turns. Fixed the misleading "keep only the substantive
+  response" framing in the `session-capture` policy, the `/capture` skill, and
+  `meta/session-workflow.md`; recompiled `CLAUDE.md`. No behaviour change — the
+  rule was already correct in the verifier's sense; this removes an ambiguous
+  reading that could have over-dropped short standalone replies.
+- Created the **`meta/verification-flows/`** namespace (operator-directed):
+  hands-on *did-it-work?* walkthroughs for each multi-step flow — who does what
+  (operator invokes/ratifies; the agent executes), how to invoke, and exactly
+  what to check. First entry: `session-capture-routing-route-tags.md`, which
+  corrects an earlier chat framing that cast agent steps (routing, tagging,
+  minting, materializing) as operator to-dos. Listed in `meta/index.md`.
+
 ## 2026-07-08
 
 - **Removed the operator's email address** from the operating contract

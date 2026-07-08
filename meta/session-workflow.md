@@ -90,18 +90,19 @@ is frozen when written, and tagging + ledger + materialization happen over it.
 ### 3a. Capture — a distilled render, not a verbatim archive
 
 `/capture` writes the thread doc directly from the conversation it already holds.
-For each assistant turn it keeps **only the substantive response** and drops the
-noise (all reasoning, all tool calls/results, and short "let me check X"
-narration — a text block under ~300 chars *followed by a tool call*). Longer
-pre-tool blocks and any block not followed by a tool are kept; a turn with no
-tool calls keeps all its text. This is the functional spec of Composable
-Beliefs' `transcript_hook.py`, re-homed as an **on-demand skill** rather than a
-per-turn Stop hook — so there is no crash-safe draft lane and no git
-auto-staging to maintain.
-
-Contrast [`/persist-thread`](/.claude/skills/persist-thread/SKILL.md): it keeps
-the exchange **verbatim** (an archive). `/capture` **distills and routes** (a
-working record). Both live in `meta/threads/`; they are different tools.
+It **keeps every exchange** and drops only three things: tool calls and results;
+reasoning/thinking; and short pre-tool narration — an assistant text block that
+is *both* under ~300 chars *and* followed by a tool call. Everything else
+survives: any longer block (even mid-turn, before a tool), any block **in
+isolation** (nothing after it in the turn calls a tool — a closing reply or a
+standalone short remark) **even when short**, and all text in a tool-less turn.
+This is the exact rule from Composable Beliefs' `transcript_hook.py` — a block is
+dropped iff `len(strip) < 300 and followed_by_tool`, so a short statement is
+dropped *only* as a pre-tool lead-in, never in isolation — re-homed as an
+**on-demand skill** rather than a per-turn Stop hook, so there is no crash-safe
+draft lane and no git auto-staging to maintain. It is the brain's sole
+session-persistence skill: it **distills and routes** rather than dumping a raw
+verbatim transcript.
 
 ### 3b. The routing ledger — a router, never a digest
 

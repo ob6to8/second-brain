@@ -11,6 +11,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 - [session-workflow.md](/meta/session-workflow.md) — end-to-end guide to session capture, the routing ledger, route tags, and `mix brain.route_tags` (the pipeline, data model, invariants, and the Composable Beliefs port)
 - [threads](/meta/threads/index.md) — archived operator–agent conversations (exchanges only)
 - [tutorials](/meta/tutorials/index.md) — long-form explanatory notes on how the tooling and governance work
+- [verification-flows](/meta/verification-flows/index.md) — hands-on walkthroughs for running and verifying each multi-step flow (who does what + what to check)
 
 ## Related tooling (not part of the knowledge bundle)
 
