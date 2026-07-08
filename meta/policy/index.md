@@ -36,3 +36,8 @@ that section.
 
 ## skills
 - [skills-registry](/meta/policy/skills-registry.md) — available skills and where new ones go
+
+## session-workflow
+- [session-capture](/meta/policy/session-capture.md) — `/capture` renders a session into a distilled thread doc, on demand
+- [routing-ledger](/meta/policy/routing-ledger.md) — the per-thread `## Routing` dispatch table (pointers and states only)
+- [route-tagging](/meta/policy/route-tagging.md) — `<routes ref="sb:…">` tags materialize a re-derivable excerpt log into each concept

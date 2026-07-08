@@ -249,6 +249,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 - **`/persist-thread`** — archive the current conversation into `meta/threads/` as a
   date-prefixed record: exchanges only, operator and agent text **verbatim**, no tool
   calls, numbered turn headings. See `.claude/skills/persist-thread/SKILL.md`.
+- **`/capture`** — render the current session into a **distilled** thread doc under
+  `meta/threads/` (substantive responses only), then a routing ledger and route tags
+  over the frozen body. Differs from `/persist-thread`: capture distills and routes,
+  persist-thread keeps everything verbatim. See `.claude/skills/capture/SKILL.md`.
 - **`/summarize-technical`** — produce a three-part layered breakdown of a technical
   paper/article/spec: a plain-language summary, a glossary of its key technical terms,
   then an integrated technical summary reusing those terms. See
@@ -257,3 +261,110 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 
 _Source: [`meta/policy/skills-registry.md`](/meta/policy/skills-registry.md)_
+
+---
+
+## 8. Session capture, routing & route tags
+
+A working session (a **thread**) is non-linear: it touches many matters, pauses
+some on open questions, and routes each matter's synthesized content into a
+durable per-topic page. **`/capture`** freezes that session into a readable
+record so it can be resumed from the record instead of from memory.
+
+- **On demand, not a hook.** Capture is an agent-invoked skill you run once, at
+  session close (or when you say "capture this") — never a per-turn hook. See
+  `.claude/skills/capture/SKILL.md`.
+- **A distilled render, not a verbatim archive.** For each assistant turn keep
+  **only the substantive response** and drop the noise: reasoning, tool calls
+  and results, and the short "let me check X" narration that precedes a tool
+  batch (a text block under ~300 chars that is followed by a tool call). Longer
+  blocks, and any block not followed by a tool (the turn's closing response),
+  are kept; turns with no tool calls keep all their text. Drop system reminders
+  and slash-command wrappers. (`/persist-thread`, by contrast, keeps everything
+  **verbatim** — the two are different tools for different needs.)
+- **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
+  `type: reference`, in the governance namespace (no `sb:` id). It carries, in
+  order: frontmatter, a short narrative section (what the session was, where it
+  landed), the **routing ledger** (`## Routing`), then the `## User`/`##
+  Assistant` render body. Route tags are applied last, over the now-frozen body.
+- **Freeze then tag.** Because capture runs once at close, the body is frozen
+  when written; tagging and ledger upkeep are one finalization motion over that
+  frozen body, not a per-turn rewrite.
+
+_Source: [`meta/policy/session-capture.md`](/meta/policy/session-capture.md)_
+
+Every captured thread carries a **`## Routing`** section: a per-thread dispatch
+table with one row per topic the session touched. It is a **router, never a
+digest** — it answers exactly one question: *what would I need to know to reply
+to this thread without re-reading it?*
+
+Four columns:
+
+| Column | Holds |
+|--------|-------|
+| **Topic** | what the strand is about, one line |
+| **State** | `open` (live) · `paused` (waiting on a dangling question) · `closed` (resolved; nothing further expected) |
+| **Routed to** | a markdown link to the `concept` doc that absorbed the strand's content, or `unrouted` |
+| **Dangling** | the open question, when `open`/`paused` (else `-`) |
+
+- **Pointers and states only — never content.** Synthesized content lands in the
+  routed-to `concept` doc; if it also lived in the ledger the ledger would become
+  a stale shadow copy of that doc. State (the strand) and routed-to (the
+  dispatch) are orthogonal: a strand can be routed yet still `open`, or `closed`
+  and `unrouted`.
+- **Routed-to targets are `concept` docs**, linked by bundle-absolute path
+  (e.g. `[foo](/SWE/…/foo.md)`). The route-tagging cross-check reads this column
+  to confirm every concept-routed row is covered by a tag (see the route-tagging
+  policy).
+- **In-doc, maintained at capture time.** The ledger is a section of the thread
+  doc itself (not a sibling file), written and updated by `/capture` in the same
+  motion that routes content — routing and ledger update are one act, not a
+  regeneration step that can be forgotten.
+
+_Source: [`meta/policy/routing-ledger.md`](/meta/policy/routing-ledger.md)_
+
+Mark each region of a finalized thread body with the concept(s) its content
+feeds, so a matter's cross-thread discussion aggregates into one place. The tag
+is an inline `<routes ref="...">` region, applied over the **frozen** body as
+the last motion of `/capture`.
+
+```
+<routes ref="sb:4c9e1f lib/second_brain/route_tags.ex">
+... one paragraph, feeding a concept and back-linking a code path ...
+</routes>
+```
+
+Settled properties:
+
+- **Keyed on canonical ids, never free-text topics.** A ref is a concept's
+  stable **`sb:` id** (the aggregating sink — it accretes the log) or a **path**
+  (a non-aggregating back-link to code or a file — no log). Ids, not phrases, so
+  two threads about the same matter emit the same string and the cross-thread
+  join is exact. This mirrors the identity rule that typed edges reference ids,
+  not paths.
+- **Per-paragraph, multi-ref, lifted whole.** A paragraph feeding two matters
+  carries both refs on one region (never nested regions). The tag boundary *is*
+  the auditable selection — no within-region trimming. A region must not cross a
+  `## User`/`## Assistant` turn boundary.
+
+**The doc-side log.** Each referenced concept carries a
+**`## Thread excerpts — route-tagged log`** section: an append-only, per-thread,
+date-stamped block for every thread that tags it, each block lifting the tagged
+regions whole (ATX headers demoted to bold). Each block quotes a *frozen* thread,
+so it never goes stale; the section is **generated, not hand-kept** — `mix
+brain.route_tags --materialize` writes it from the current tags.
+
+**The verifier owns it.** `mix brain.route_tags` (see `SecondBrain.RouteTags`)
+runs beside `mix brain.verify` in CI and the pre-commit hook. It re-derives each
+sink's log from the current tags and **fails on divergence**, converting the
+log's freshness from procedural to structural, and checks tag wellformedness,
+ref resolution, and per-sink block presence. Tag *coverage* — whether every
+feeding paragraph was tagged — has no mechanical oracle and stays editorial; a
+routing-ledger cross-check lifts it to row granularity and **warns** (never
+fails).
+
+**Freeze on matter-resolution.** A concept accepts new excerpt blocks while its
+matter is unresolved and freezes acceptance when the matter resolves — per
+matter, not on archival.
+
+_Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_

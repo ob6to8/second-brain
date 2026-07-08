@@ -25,7 +25,8 @@ defmodule SecondBrain.Contract do
     {"type-vocabulary", "Controlled `type` vocabulary"},
     {"verification", "Identity & verification"},
     {"conformance", "Conformance (keep the bundle valid)"},
-    {"skills", "Skills"}
+    {"skills", "Skills"},
+    {"session-workflow", "Session capture, routing & route tags"}
   ]
 
   @banner """

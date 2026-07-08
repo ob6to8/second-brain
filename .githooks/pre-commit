@@ -20,5 +20,8 @@ mix brain.registry --check
 echo "pre-commit: mix brain.verify"
 mix brain.verify
 
+echo "pre-commit: mix brain.route_tags"
+mix brain.route_tags
+
 echo "pre-commit: mix test"
 mix test

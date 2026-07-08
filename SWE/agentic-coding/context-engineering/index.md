@@ -4,6 +4,10 @@ How to structure, curate, and manage the context an LLM conversation or agent
 holds — distinct from the [agentic-loop](/SWE/agentic-coding/agentic-loop/index.md)'s
 tool-calling mechanics.
 
+## Concepts
+
+- [Routing non-linear work sessions — per-topic pages plus a dispatch ledger](/SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions.md) — synthesize each topic into a durable per-topic page and track dispatch in a per-thread ledger of pointers/states; the durable-artifact analogue of conversation-tree branching. `sb:d479e3` _(concept)_
+
 ## References
 
 - [Conversation Tree Architecture — branching context to avoid logical context poisoning](/SWE/agentic-coding/context-engineering/conversation-tree-architecture.md) — structures conversations as trees with selective downstream/upstream context flow between branches. `sb:784985` _(reference)_

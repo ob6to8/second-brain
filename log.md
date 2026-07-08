@@ -2,6 +2,25 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-08
+
+- **Adopted a session-capture / routing-ledger / route-tagging workflow** from the
+  Composable Beliefs repo, at the OKF floor (the belief DAG was out of scope).
+  Added three `type: policy` docs under a new `session-workflow` contract section
+  (`session-capture`, `routing-ledger`, `route-tagging`), the **`/capture`** skill
+  (`.claude/skills/capture/`), and registered `/capture` in the skills registry;
+  recompiled `CLAUDE.md`. Ported cb's `route_tags.ex` verifier to
+  `SecondBrain.RouteTags` + **`mix brain.route_tags`** (wired into CI and the
+  pre-commit hook beside `mix brain.verify`), adapting cb's flat slugs / `cb:bNNN`
+  belief ids to this bundle: a route-tag ref is now a concept's **`sb:` id** (the
+  aggregating sink) or a **path** (a non-aggregating back-link); threads under
+  `meta/threads/` are tag *sources*. Filed the transferable concept
+  [routing non-linear work sessions](/SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions.md)
+  (`sb:d479e3`) and the first worked-example thread
+  [2026-07-08-adopt-session-capture-routing-and-route-tags](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md),
+  whose route tag materialized the concept's `## Thread excerpts — route-tagged log`
+  section. All gates green.
+
 ## 2026-07-06
 
 - `/intake`: re-fetched Anthropic's "Effective context engineering for AI agents"

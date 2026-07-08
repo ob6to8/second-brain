@@ -20,8 +20,13 @@ taxonomy. This is where the rules that compile into the operating contract live.
     edge resolution, and grounding of every `verified: true`.
   - `mix brain.evidence <sb:id|path>` — derive a concept's verification narrative
     (the prose is never committed; only the edges are).
+  - `mix brain.route_tags [--materialize]` — verify `<routes ref="sb:…">` tags on
+    threads and the excerpt logs they materialize into concepts (re-derives each
+    log from the current tags and fails on divergence); `--materialize` writes the
+    log sections from the tags.
 - `.github/workflows/ci.yml` — CI enforcement on every push/PR: compile, format check,
-  tests, and `mix brain.contract --check` (blocks a stale or hand-edited `CLAUDE.md`).
+  tests, `mix brain.contract --check` (blocks a stale or hand-edited `CLAUDE.md`),
+  `mix brain.verify`, and `mix brain.route_tags`.
 - `.githooks/pre-commit` — optional fast local mirror of CI. Enable once with
   `git config core.hooksPath .githooks`.
 - `.claude/hooks/session-start.sh` — installs Elixir in Claude-on-web sandboxes so the
