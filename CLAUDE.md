@@ -249,6 +249,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 - **`/persist-thread`** — archive the current conversation into `meta/threads/` as a
   date-prefixed record: exchanges only, operator and agent text **verbatim**, no tool
   calls, numbered turn headings. See `.claude/skills/persist-thread/SKILL.md`.
+- **`/summarize-technical`** — produce a three-part layered breakdown of a technical
+  paper/article/spec: a plain-language summary, a glossary of its key technical terms,
+  then an integrated technical summary reusing those terms. See
+  `.claude/skills/summarize-technical/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 

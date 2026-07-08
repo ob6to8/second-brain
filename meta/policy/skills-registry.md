@@ -6,7 +6,7 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-05
+timestamp: 2026-07-06
 ---
 - **`/intake`** — process pasted content into one or more filed concepts. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -17,5 +17,9 @@ timestamp: 2026-07-05
 - **`/persist-thread`** — archive the current conversation into `meta/threads/` as a
   date-prefixed record: exchanges only, operator and agent text **verbatim**, no tool
   calls, numbered turn headings. See `.claude/skills/persist-thread/SKILL.md`.
+- **`/summarize-technical`** — produce a three-part layered breakdown of a technical
+  paper/article/spec: a plain-language summary, a glossary of its key technical terms,
+  then an integrated technical summary reusing those terms. See
+  `.claude/skills/summarize-technical/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.

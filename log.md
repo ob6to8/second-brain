@@ -4,6 +4,38 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- Applied the new `/summarize-technical` skill to the two just-filed
+  context-engineering references, updating each in place (per update-in-place —
+  no new files): `SWE/agentic-coding/context-engineering/conversation-tree-architecture.md`
+  (`sb:784985`) and `SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md`
+  (`sb:649457`) now each carry a plain-language summary, a glossary of the
+  paper's key technical terms, and an integrated technical summary reusing that
+  vocabulary, replacing their prior single-pass distilled bodies. Frontmatter,
+  ids, and citations unchanged. See [meta/log.md](/meta/log.md) for the new
+  skill itself.
+
+- `/intake`: filed `SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md`
+  (`sb:649457`, type `reference`) — Michael Coen's paper (arXiv:2512.17083v3)
+  separating boundary *scoring* from boundary *selection* in dialogue topic
+  segmentation, showing that sweeping boundary density (BOR) changes W-F1 more
+  than switching segmentation methods does, and introducing purity/coverage
+  diagnostics to distinguish granularity mismatch from genuine detection failure.
+  Summarized (dense empirical paper with many tables); full text linked as
+  `resource`. Read from an uploaded PDF (installed `poppler-utils` after a stale-apt
+  failure, fixed with `--allow-releaseinfo-change` per the known issue in `sb:52aefa`).
+  Filed alongside and cross-linked with the existing Conversation Tree Architecture
+  reference in `SWE/agentic-coding/context-engineering/`.
+
+- `/intake`: filed `SWE/agentic-coding/context-engineering/conversation-tree-architecture.md`
+  (`sb:784985`, type `reference`) — Hemanth & Saha's Conversation Tree Architecture
+  proposal (arXiv:2603.21278v1): structuring LLM conversations as branching trees with
+  selective downstream/upstream context flow to avoid "logical context poisoning".
+  Summarized (an academic paper; full text linked as `resource`) — flagged as a
+  framework proposal with a working prototype, not yet empirically validated. Created
+  the `SWE/agentic-coding/context-engineering/` subtree (autonomous — under the
+  established `agentic-coding` domain) with its `index.md`; cross-linked the existing
+  Anthropic context-engineering reference in `agentic-loop/`.
+
 - **Operator-ratified new top-level domain**: `ai-industry/` — market, economic, and
   competitive analysis of the AI industry, distinct from `SWE/` (building software
   with/for AI). Filed the two sources this domain was proposed for:

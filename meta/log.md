@@ -4,6 +4,12 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-06
 
+- Added the **`/summarize-technical`** skill (`.claude/skills/summarize-technical/SKILL.md`):
+  produces a three-part layered breakdown of a technical source — a plain-language
+  summary, a glossary of its key technical terms, then an integrated technical
+  summary reusing that vocabulary. Registered in `meta/policy/skills-registry.md`
+  and recompiled into `CLAUDE.md`.
+
 - **Reframed the verification model** (operator directive): verification applies
   **only to agent-authored statements**; a concept that stores a link (`resource`)
   is a *capture* and can never be `verified: true`. Rewrote
