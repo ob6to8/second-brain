@@ -15,6 +15,10 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   Long-form explanatory notes about the tooling/governance, distinct from `policy`
   (contract rules) and `threads` (verbatim archives). Listed both under
   `meta/index.md`.
+- **Ratified a new `tutorial` type** (operator-directed): added it to
+  `meta/policy/controlled-type-vocabulary.md` and recompiled `CLAUDE.md`
+  (`mix brain.contract`); re-typed the tutorial above from `note` to `tutorial`
+  and gave the type a badge color in the site generator.
 
 ## 2026-07-06
 

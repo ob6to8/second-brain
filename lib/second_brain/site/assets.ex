@@ -201,6 +201,7 @@ defmodule SecondBrain.Site.Assets do
     .type-area    { --tc: #0969da; }
     .type-snippet { --tc: #6e7781; }
     .type-policy  { --tc: #9a6700; }
+    .type-tutorial { --tc: #1f883d; }
     .badge[class*="type-"] {
       color: var(--tc); border-color: color-mix(in srgb, var(--tc) 40%, var(--border));
       background: color-mix(in srgb, var(--tc) 12%, transparent);

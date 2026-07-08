@@ -1,5 +1,5 @@
 ---
-type: note
+type: tutorial
 title: Why the brain's toolchain runs offline in CI and any sandbox
 description: The mix brain.* tooling (including the GitHub Pages site generator) has zero external dependencies, so once an Elixir/OTP runtime exists it needs no network — which is what a restricted CI runner and a no-egress, snapshot-booted Claude Code sandbox both require.
 tags: [meta, tooling, ci, sandbox, elixir, dependency-free, offline, github-actions]
