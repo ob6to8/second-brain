@@ -4,6 +4,24 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- `/intake`: re-fetched Anthropic's "Effective context engineering for AI agents"
+  (`sb:c0961a`, already filed) and researched its currency as requested — no new
+  concept created (dedup), but **updated it in place** with a "2026 currency check"
+  section: verdict is still accurate and reinforced rather than superseded. Found
+  that Anthropic shipped a Context Editing API + Memory Tool the *same day* as the
+  essay, productizing its "compaction" and "structured note-taking" techniques into
+  literal API primitives (29%/39% performance gains, 84% token reduction per
+  Anthropic's own benchmarks); that Chroma's independent "context rot" research
+  empirically corroborates the essay's attention-budget thesis; and that
+  just-in-time retrieval guidance has been refined toward hybrid preload+JIT
+  strategies rather than reversed. No direct critique of the essay's core framing
+  found. Filed the two grounding sources as new references:
+  `SWE/agentic-coding/context-engineering/claude-context-editing-and-memory-tool.md`
+  (`sb:bf8a85`) and `SWE/agentic-coding/context-engineering/context-rot-chroma-research.md`
+  (`sb:77d68a`), both cross-linked to `sb:c0961a` and to each other.
+
+## 2026-07-06
+
 - Applied the new `/summarize-technical` skill to the two just-filed
   context-engineering references, updating each in place (per update-in-place —
   no new files): `SWE/agentic-coding/context-engineering/conversation-tree-architecture.md`
