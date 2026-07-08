@@ -4,6 +4,18 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-08
 
+- **Ratified a new `methodology` type** (operator-approved) and added it to the
+  controlled vocabulary in `meta/policy/controlled-type-vocabulary.md` — a
+  repeatable, prescriptive procedure/playbook, distinct from `note` (an idea) and
+  `concept` (a mental model). Recompiled `CLAUDE.md`. Retyped
+  `SWE/testing/elixir-second-brain-testing-methodology.md` (`sb:d58da3`)
+  `note` → `methodology`; aligned its tags (`test-strategy` → `test-design`,
+  dropped the now-redundant `methodology` tag). Added reciprocal "Applied in"
+  back-links from both matklad references (`sb:a5ea86`, `sb:73115b`) to the
+  methodology, and relabeled the `SWE/testing/index.md` section
+  Notes → Methodologies. Left `verified: false` (grounding it via `verified_by`
+  the two references remains an open option). Regenerated `meta/registry.md`.
+
 - Synthesized the two matklad testing references already filed under `SWE/testing/`
   ("How to Test" `sb:a5ea86` and "Purity and Extent" `sb:73115b`) into an
   agent-facing **testing methodology** for this repo's dependency-free Elixir

@@ -25,6 +25,9 @@ Seed vocabulary:
 - `project` — an active, goal-bounded effort.
 - `area` — an ongoing responsibility or domain (no end state).
 - `snippet` — a reusable command, code fragment, or template.
+- `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
+  *how-to* for carrying out a recurring task (distinct from a `note`, which merely
+  records an idea, and a `concept`, which defines a mental model).
 - `policy` — a governance rule for how the brain operates; the source from which
   `CLAUDE.md` is compiled (lives under `meta/policy/`).
 

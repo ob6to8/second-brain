@@ -3,9 +3,9 @@
 Software testing — test design, strategy, and the properties that make tests fast
 and reliable.
 
-## Notes
+## Methodologies
 
-- [Testing methodology for the Second Brain Elixir tooling](/SWE/testing/elixir-second-brain-testing-methodology.md) — agent-facing synthesis of the two matklad essays, applied to this repo: purity decides `async`/`tmp_dir`, test observable contracts not internals, funnel cases through shared fixture builders, golden-test the generated artifacts, and reach for properties on universal invariants. `sb:d58da3` _(note)_
+- [Testing methodology for the Second Brain Elixir tooling](/SWE/testing/elixir-second-brain-testing-methodology.md) — agent-facing synthesis of the two matklad essays, applied to this repo: purity decides `async`/`tmp_dir`, test observable contracts not internals, funnel cases through shared fixture builders, golden-test the generated artifacts, and reach for properties on universal invariants. `sb:d58da3` _(methodology)_
 
 ## References
 
