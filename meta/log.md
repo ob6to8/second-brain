@@ -2,6 +2,24 @@
 
 Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
+## 2026-07-08
+
+- Added the **GitHub Pages site generator**: a dependency-free static-site build
+  (`mix brain.site`, in `SecondBrain.Site` / `SecondBrain.Markdown`) that renders
+  the bundle into a navigable knowledge base, deployed by
+  `.github/workflows/pages.yml`. Added a `mix brain.site` smoke-check step to
+  `ci.yml`, gitignored `_site/`, and documented it in the README.
+- Created the **`meta/tutorials/`** namespace (operator-directed) with its
+  `index.md`, and filed the first tutorial —
+  [Why the brain's toolchain runs offline in CI and any sandbox](/meta/tutorials/why-the-toolchain-runs-offline.md).
+  Long-form explanatory notes about the tooling/governance, distinct from `policy`
+  (contract rules) and `threads` (verbatim archives). Listed both under
+  `meta/index.md`.
+- **Ratified a new `tutorial` type** (operator-directed): added it to
+  `meta/policy/controlled-type-vocabulary.md` and recompiled `CLAUDE.md`
+  (`mix brain.contract`); re-typed the tutorial above from `note` to `tutorial`
+  and gave the type a badge color in the site generator.
+
 ## 2026-07-06
 
 - Added the **`/summarize-technical`** skill (`.claude/skills/summarize-technical/SKILL.md`):

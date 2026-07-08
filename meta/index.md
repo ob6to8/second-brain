@@ -9,6 +9,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 - [preamble.md](/meta/preamble.md) — fixed framing text prepended to the compiled contract
 - [registry.md](/meta/registry.md) — **generated** stable-id → concept view (`mix brain.registry`)
 - [threads](/meta/threads/index.md) — archived operator–agent conversations (exchanges only)
+- [tutorials](/meta/tutorials/index.md) — long-form explanatory notes on how the tooling and governance work
 
 ## Related tooling (not part of the knowledge bundle)
 
@@ -20,8 +21,13 @@ taxonomy. This is where the rules that compile into the operating contract live.
     edge resolution, and grounding of every `verified: true`.
   - `mix brain.evidence <sb:id|path>` — derive a concept's verification narrative
     (the prose is never committed; only the edges are).
+  - `mix brain.site [--out DIR]` — render the bundle into a static, navigable site
+    (deployed to GitHub Pages); see the [tutorials](/meta/tutorials/index.md).
 - `.github/workflows/ci.yml` — CI enforcement on every push/PR: compile, format check,
-  tests, and `mix brain.contract --check` (blocks a stale or hand-edited `CLAUDE.md`).
+  tests, `mix brain.contract --check`, `mix brain.registry --check`, `mix brain.verify`,
+  and a `mix brain.site` build (blocks a stale contract/registry or a broken build).
+- `.github/workflows/pages.yml` — builds `mix brain.site` and deploys to GitHub Pages
+  on every push to `main`.
 - `.githooks/pre-commit` — optional fast local mirror of CI. Enable once with
   `git config core.hooksPath .githooks`.
 - `.claude/hooks/session-start.sh` — installs Elixir in Claude-on-web sandboxes so the

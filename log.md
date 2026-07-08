@@ -2,6 +2,17 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-08
+
+- Ratified a new top-level domain **`knowledge-management/`** (operator-approved) —
+  knowledge representation, PKM, and knowledge formats. Filed its first concept,
+  [Open Knowledge Format (OKF)](/knowledge-management/open-knowledge-format.md)
+  (`sb:24bd1e`, `type: reference`), which now holds the canonical OKF spec URL.
+  Repointed every internal "Open Knowledge Format" mention — the root `index.md`,
+  `README.md`, and `meta/preamble.md` (→ recompiled `CLAUDE.md`) — from the raw
+  external URL to this node, so the link is processed once and referenced everywhere.
+  Listed the new domain in the root `index.md`; regenerated `meta/registry.md`.
+
 ## 2026-07-06
 
 - `/intake`: re-fetched Anthropic's "Effective context engineering for AI agents"

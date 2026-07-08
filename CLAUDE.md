@@ -8,7 +8,7 @@
 # Operating Contract — Second Brain (OKF)
 
 This repository is a personal **second brain** stored as an
-[Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog)
+[Open Knowledge Format](/knowledge-management/open-knowledge-format.md)
 (**OKF v0.1**) bundle. Every agent that operates here — including fresh, sandboxed
 agents spun up from the Claude Code app — MUST read and follow this contract. It is
 the backbone that keeps the brain consistent as it grows.
@@ -169,6 +169,9 @@ Seed vocabulary:
 - `snippet` — a reusable command, code fragment, or template.
 - `policy` — a governance rule for how the brain operates; the source from which
   `CLAUDE.md` is compiled (lives under `meta/policy/`).
+- `tutorial` — a long-form explanatory note meant to be read start to finish (the
+  "why"/"how" behind the tooling or a topic); distinct from a terse `note` and from
+  a `reference` capture of external material (lives under `meta/tutorials/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
 

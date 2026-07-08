@@ -4,7 +4,7 @@ okf_version: "0.1"
 
 # Second Brain
 
-An [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog)
+An [Open Knowledge Format](/knowledge-management/open-knowledge-format.md)
 (OKF v0.1) bundle. This file is the bundle-root index — the entry point for
 progressive disclosure. Agents and humans start here and navigate down.
 
@@ -16,6 +16,7 @@ emerges as knowledge is filed and evolves collaboratively; see the
 
 - [SWE](/SWE/index.md) — software engineering knowledge
 - [ai-industry](/ai-industry/index.md) — market, economic, and competitive analysis of the AI industry
+- [knowledge-management](/knowledge-management/index.md) — knowledge representation, PKM, and knowledge formats (incl. OKF, the format this brain uses)
 
 ### Meta / governance
 

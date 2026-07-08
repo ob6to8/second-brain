@@ -27,5 +27,8 @@ Seed vocabulary:
 - `snippet` — a reusable command, code fragment, or template.
 - `policy` — a governance rule for how the brain operates; the source from which
   `CLAUDE.md` is compiled (lives under `meta/policy/`).
+- `tutorial` — a long-form explanatory note meant to be read start to finish (the
+  "why"/"how" behind the tooling or a topic); distinct from a terse `note` and from
+  a `reference` capture of external material (lives under `meta/tutorials/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
