@@ -18,6 +18,64 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   right first move is synonym-expanded intake dedup + a repeatable recall probe
   (both zero-dependency), with cached brute-force embedding dedup as a later Tier 2,
   and a standalone vector DB rejected at this corpus's scale.
+- **Collapsed the `spec` genre into `plan`** (operator-directed) — the `spec` type
+  / `meta/specs/` namespace this branch added and the `plan` type / `meta/plans/`
+  namespace from `main` were near-duplicates (both "a design/decision record for a
+  proposed change to the brain/tooling"). Unified on **`plan`/`meta/plans/`** as the
+  survivor: moved the flows design doc to
+  [meta/plans/flows-genre-and-scenario-testing.md](/meta/plans/flows-genre-and-scenario-testing.md)
+  (retyped `spec`→`plan`, `status: approved`→`done`), removed the `spec` type from
+  the controlled vocabulary and the `meta/specs/` namespace, renamed the
+  `persist-specs` policy → [persist-plans](/meta/policy/persist-plans.md) (retargeted
+  to `type: plan` / `meta/plans/`), repointed all links, and recompiled `CLAUDE.md`.
+  Earlier 2026-07-09 log entries that describe creating `meta/specs/` are frozen
+  history (their narrative is left as-is; the moved doc's link now resolves to
+  `meta/plans/`).
+- **Added the second flow: `/intake`** (per the flows plan, completing its planned
+  scope). Filed [meta/flows/intake.md](/meta/flows/intake.md) — the file-by-file
+  touch-sequence of an `/intake` run (paste → distill + dedup → file by taxonomy →
+  mint id → compile registry → verify → reserved files), with the judgment/spine
+  split, actor boundaries, gate suite, and invariants. Added the scenario test
+  `test/second_brain/intake_scenario_test.exs`: an in-code fixture (a `source`
+  capture + a grounded `claim`) that compiles the registry and asserts the render
+  **byte-exact** plus `verify` clean, with two red guardrails (a concept missing an
+  id is flagged; a capture marked `verified: true` is rejected). Added a See-also
+  from the `/intake` skill and updated the spec status (both flows now built).
+- **Built the `flows` genre and collapsed the capture docs into it** (per the
+  approved [flows spec](/meta/plans/flows-genre-and-scenario-testing.md), build
+  order §9). Created `meta/flows/` with its `index.md` and the first flow doc
+  [session-capture](/meta/flows/session-capture.md) — the file-by-file
+  touch-sequence of a `/capture` run, plus pipeline, data model, actor
+  boundaries, gate suite, and invariants. Added the scenario test
+  `test/second_brain/capture_scenario_test.exs`: plain ExUnit over a `:tmp_dir`
+  fixture that drives `RouteTags.materialize/1` and asserts the materialized log
+  section **byte-exact** (co-feed lift, ATX→bold demotion, ordering) — pinning the
+  transform against a wrong-but-self-consistent change the `log fidelity`
+  self-check can't catch. **Collapsed** `meta/session-workflow.md` and
+  `meta/verification-flows/` into the flow doc (both removed), repointed
+  `meta/index.md`, added a See-also from the `/capture` skill, and updated the
+  spec's status. Flow docs live in the governance namespace (`type: note`, no
+  `sb:` id), so no registry/contract change; all gates green including the new
+  scenario.
+- **Established the `meta/specs/` genre + a persist-specs policy** (operator-directed):
+  design specs and implementation plans the operator approves are now persisted as
+  `type: spec` docs under `meta/specs/` (governance namespace, no `sb:` id) rather
+  than left in chat or the reclaimed scratchpad. Ratified a new `spec` type in
+  `controlled-type-vocabulary`, added `persist-specs` under the *filing* contract
+  section (order 6), created `meta/specs/index.md`, and recompiled `CLAUDE.md`.
+  First spec filed: [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md)
+  (`status: approved`) — the collapse of the capture flow's three prose docs into
+  one `meta/flows/` doc backed by an ExUnit scenario, with the commissioned harness
+  research spike folded in (it *adjusted* the plan: in-code fixtures + structured
+  assertions over on-disk whole-tree golden). Build not yet started.
+- Added the tutorial
+  [The three bundle scanners — Registry, Verifier, and RouteTags](/meta/tutorials/the-three-bundle-scanners.md)
+  (operator-requested): how `Registry.scan/1` is the one crawler (wildcard +
+  directory-exclusion + frontmatter parse), the Verifier layers rules over the same
+  corpus, and RouteTags adds a second surface over `meta/threads` and rejoins the
+  governance and knowledge namespaces by stable id — and why everything under an
+  excluded directory (e.g. `test/` fixtures) is invisible to all three. Listed in
+  `meta/tutorials/index.md`.
 - Filed the tutorial
   [How the Pages deploy is gated on a verified bundle](/meta/tutorials/gating-the-pages-deploy-on-a-verified-bundle.md)
   (`type: tutorial`) explaining the mechanics of the `pages.yml` deploy gate:

@@ -143,3 +143,9 @@ after any tag edit so the log stays re-derivable.
 - The excerpt log is **append-only** and generated; let `--materialize` own it.
 - A concept freezes excerpt acceptance when its matter resolves (per matter, not
   on archival) — do not append to a resolved matter's log.
+
+## See also
+
+[meta/flows/session-capture.md](/meta/flows/session-capture.md) — the end-to-end
+flow (pipeline, data model, touch-sequence, actor boundaries, gate suite, and the
+scenario test), for the *why* behind this procedure.
