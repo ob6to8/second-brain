@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- **Added the second flow: `/intake`** (per the flows spec, completing its planned
+  scope). Filed [meta/flows/intake.md](/meta/flows/intake.md) — the file-by-file
+  touch-sequence of an `/intake` run (paste → distill + dedup → file by taxonomy →
+  mint id → compile registry → verify → reserved files), with the judgment/spine
+  split, actor boundaries, gate suite, and invariants. Added the scenario test
+  `test/second_brain/intake_scenario_test.exs`: an in-code fixture (a `source`
+  capture + a grounded `claim`) that compiles the registry and asserts the render
+  **byte-exact** plus `verify` clean, with two red guardrails (a concept missing an
+  id is flagged; a capture marked `verified: true` is rejected). Added a See-also
+  from the `/intake` skill and updated the spec status (both flows now built).
 - **Built the `flows` genre and collapsed the capture docs into it** (per the
   approved [flows spec](/meta/specs/flows-genre-and-scenario-testing.md), build
   order §9). Created `meta/flows/` with its `index.md` and the first flow doc

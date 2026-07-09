@@ -9,10 +9,11 @@ timestamp: 2026-07-09
 
 # Spec — the `flows` genre + formal scenario testing
 
-**Status:** approved. Capture flow **built** (2026-07-09) per §9 — `meta/flows/`
-genre created, `session-capture` flow doc + scenario test landed, and
-`session-workflow.md` + `verification-flows/` collapsed in. `/intake` remains the
-next target.
+**Status:** approved and **built** (2026-07-09) per §9. `meta/flows/` genre
+created; both planned flows landed with their scenario tests — `session-capture`
+(collapsing `session-workflow.md` + `verification-flows/`) and `intake`. The
+genre's planned scope is complete; further flows (e.g. the contract-render or
+site-build pipelines) are additive follow-ups, not part of this spec.
 **Branch of record:** `claude/flows-paths-documentation-b6mzee`.
 **Decisions:** capture-first collapse · scenario tests over the deterministic
 spine · **in-code fixtures + structured/targeted assertions** (not on-disk

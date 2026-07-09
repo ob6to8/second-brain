@@ -30,3 +30,8 @@ that proves it. The genre itself was designed in
   materialized excerpt log: the pipeline, data model, invariants, the
   touch-sequence, actor boundaries, the gate suite, and the scenario test that
   pins the spine.
+- [Intake — capture pasted material into a filed concept](/meta/flows/intake.md) —
+  driving pasted material through `/intake` → distill + dedup → file by the
+  taxonomy → mint id → compile registry → verify: the touch-sequence, the
+  judgment/spine split, actor boundaries, the identity gate suite, and the
+  scenario test that pins the spine.
