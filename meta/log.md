@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- Captured the session thread
+  [vector-DB recall evaluation and the `analysis` type](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)
+  (`/capture`, parse-the-log render): stress-tested a prior "not yet" call on adding
+  a vector DB via a dedup-recall probe over the live corpus (grep already misses
+  existing concepts *semantically*), landing on fix-intake-first (no vector DB), then
+  ratified the `analysis` type and filed the finding. Routing ledger has two closed
+  strands (the evaluation → the analysis doc; the `analysis` type → the vocabulary),
+  with one dangling follow-up (Tier-1: synonym-expansion `/intake` dedup +
+  `mix brain.dedup_probe`); path-ref route tags back-link the analysis answer and the
+  type-ratification region to their sinks. Listed it in the threads index.
 - **Ratified the `analysis` type** (operator directive) and created the
   `meta/analysis/` namespace with its `index.md`. An `analysis` is a point-in-time
   evaluation / decision-support write-up — a question investigated against evidence,
