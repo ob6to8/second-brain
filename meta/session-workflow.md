@@ -87,22 +87,24 @@ is frozen when written, and tagging + ledger + materialization happen over it.
 
 ## 3. The four moving parts
 
-### 3a. Capture — a distilled render, not a verbatim archive
+### 3a. Capture — retained responses verbatim, only the noise stripped
 
-`/capture` writes the thread doc directly from the conversation it already holds.
-It **keeps every exchange** and drops only three things: tool calls and results;
-reasoning/thinking; and short pre-tool narration — an assistant text block that
-is *both* under ~300 chars *and* followed by a tool call. Everything else
-survives: any longer block (even mid-turn, before a tool), any block **in
+`/capture` writes the thread doc from the conversation (or, most faithfully, by
+parsing the host session log). It **keeps every exchange** and drops only three
+things: tool calls and results; reasoning/thinking; and short pre-tool narration —
+an assistant text block that is *both* under ~300 chars *and* followed by a tool
+call. **Everything it keeps is reproduced verbatim** — the delivered text of each
+operator message and agent response, never summarized or paraphrased. Everything
+else survives: any longer block (even mid-turn, before a tool), any block **in
 isolation** (nothing after it in the turn calls a tool — a closing reply or a
 standalone short remark) **even when short**, and all text in a tool-less turn.
 This is the exact rule from Composable Beliefs' `transcript_hook.py` — a block is
 dropped iff `len(strip) < 300 and followed_by_tool`, so a short statement is
 dropped *only* as a pre-tool lead-in, never in isolation — re-homed as an
 **on-demand skill** rather than a per-turn Stop hook, so there is no crash-safe
-draft lane and no git auto-staging to maintain. It is the brain's sole
-session-persistence skill: it **distills and routes** rather than dumping a raw
-verbatim transcript.
+draft lane and no git auto-staging to maintain. "Distilled" means the *noise* is
+dropped, not that the kept text is condensed: it is the brain's sole
+session-persistence skill, and it **renders and routes** rather than digesting.
 
 ### 3b. The routing ledger — a router, never a digest
 

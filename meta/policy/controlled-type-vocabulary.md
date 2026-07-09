@@ -30,5 +30,10 @@ Seed vocabulary:
 - `tutorial` — a long-form explanatory note meant to be read start to finish (the
   "why"/"how" behind the tooling or a topic); distinct from a terse `note` and from
   a `reference` capture of external material (lives under `meta/tutorials/`).
+- `issue` — a tracked operational problem, defect, or open concern about how the
+  brain or its tooling/automation behaves, recorded for future reference and
+  follow-up. Carries a `status` (`open`/`resolved`/`wontfix`); distinct from a
+  `policy` (a rule) and a `note` (a distilled idea) — an issue is a *problem to
+  track* (lives under `meta/issues/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.

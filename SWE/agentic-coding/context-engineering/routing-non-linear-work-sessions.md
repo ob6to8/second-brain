@@ -68,18 +68,19 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:d479e3`]**  (co-feeds: `lib/second_brain/route_tags.ex`)
+**[`sb:d479e3`]**
 
-The core idea being adopted is worth stating independently of the tooling: a
-single working session is non-linear — it opens many matters, pauses some on open
-questions, and routes each matter's synthesized content into a durable per-topic
-page. Two mechanisms manage that. The **routing ledger** is a per-thread table of
-pointers and states — never content — so the session is resumable from the table
-instead of from memory; it stays a router, not a digest, precisely because
-content is homed in the per-topic pages and only *pointed at* here. **Route tags**
-then mark each region of the frozen session with the page(s) it feeds, and those
-marks materialize an append-only, dated excerpt log into each page — making the
-routing auditable, because what a page left out is now a visible tag boundary
-rather than a hidden editorial cut. A verifier re-derives each log from the
-current tags and fails on divergence, so the log is structural, not a copy someone
-must remember to refresh.
+A single working session (a "thread") is non-linear: it touches many topics,
+pauses some on open questions, and routes each topic's synthesized content into
+a durable per-topic page. The mechanisms:
+
+  1. SESSION CAPTURE renders the conversation into a readable `thread` doc -
+     substantive responses only, the reasoning/tool-call noise stripped.
+  2. ROUTING LEDGER - a per-thread table (pointers + states, never content), so
+     a multi-topic thread can be resumed from the table instead of from memory.
+  3. PROTO-BELIEF DOCUMENTS - the durable per-matter page where synthesized
+     content actually lands. In OKF terms THIS IS A `concept` DOC.
+  4. ROUTE TAGS - `<routes ref="...">` regions marked on the finalized thread
+     body that mechanically materialize an append-only, date-stamped excerpt
+     log into each referenced concept doc, plus a verifier that re-derives the
+     log from the tags and fails on divergence.

@@ -2,6 +2,22 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-09
+
+- Ratified a new top-level **`inbox/`** namespace (operator-approved) — a daily
+  candidate feed of news, articles, papers, and resources matched against the
+  taxonomy, grouped by category and reason-tagged
+  (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). It is a **non-bundle**
+  namespace like `meta/`: candidates carry no `sb:` ids and are never verified, so
+  `inbox` was added to `SecondBrain.Registry`'s excluded dirs (keeping it out of
+  `mix brain.verify`/`registry`/`route_tags`); the static-site generator still renders
+  it. Added the **`/news`** skill (`.claude/skills/news/`), registered it in the skills
+  registry, and recompiled `CLAUDE.md`. Seeded the namespace with `inbox/index.md`,
+  `inbox/log.md`, and the first digest
+  [2026-07-09](/inbox/2026-07-09.md) (7 items across ai-industry, SWE, and
+  knowledge-management). Intake stays the sole path into the bundle: `/news` proposes,
+  `/intake` files.
+
 ## 2026-07-08
 
 - **Adopted a session-capture / routing-ledger / route-tagging workflow** from the

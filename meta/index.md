@@ -5,6 +5,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 
 ## Contents
 
+- [issues](/meta/issues/index.md) — tracked operational problems and open concerns about the brain's tooling/automation (`type: issue`, each with a `status`)
 - [policy](/meta/policy/index.md) — the `type: policy` rules that compile into `/CLAUDE.md`
 - [preamble.md](/meta/preamble.md) — fixed framing text prepended to the compiled contract
 - [registry.md](/meta/registry.md) — **generated** stable-id → concept view (`mix brain.registry`)

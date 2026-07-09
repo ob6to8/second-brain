@@ -50,3 +50,15 @@ read.
 
 Open Knowledge Format — GoogleCloudPlatform/knowledge-catalog:
 <https://github.com/GoogleCloudPlatform/knowledge-catalog>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:24bd1e">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-05-greenfield-okf-bootstrap-and-verification-layer (2026-07-05)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:24bd1e`]**
+
+I've read the full **OKF v0.1 spec**, so these are grounded in it. A bundle is just a directory of markdown concept files (YAML frontmatter with a mandatory `type` field + a markdown body), with reserved `index.md` (progressive-disclosure listings) and `log.md` (chronological history) allowed at any level, and `okf_version` declared in the root `index.md`.

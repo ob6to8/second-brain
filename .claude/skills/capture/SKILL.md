@@ -1,9 +1,9 @@
 ---
 name: capture
-description: Render the current session into a distilled thread doc under meta/threads/ — keep every exchange, dropping only tool calls, reasoning, and short pre-tool narration — then a routing ledger and route tags over the frozen body. Use at session close, or when the operator says "capture this" / "capture the session".
+description: Render the current session into a thread doc under meta/threads/ — keep every retained exchange verbatim, dropping only tool calls, reasoning, and short pre-tool narration — then a routing ledger and route tags over the frozen body. Use at session close, or when the operator says "capture this" / "capture the session".
 ---
 
-# /capture — freeze a session into a distilled, routed thread doc
+# /capture — freeze a session into a verbatim, routed thread doc
 
 Turn the current working session into one **thread** record: a clean read of
 what was actually said, a per-thread **routing ledger** of where each topic
@@ -11,9 +11,9 @@ went, and **route tags** that materialize each topic's excerpts into the
 `concept` docs they feed.
 
 This is **on-demand**, run **once at session close** (or when asked) — not a
-per-turn hook. It is the brain's session-persistence skill: it **distills**
-(substantive exchanges, tool-call noise stripped) and **routes**, rather than
-dumping a raw verbatim transcript.
+per-turn hook. It is the brain's session-persistence skill: it keeps substantive
+exchanges **verbatim** (only tool-call noise stripped) and **routes** — it strips
+noise, it does not summarize what it keeps.
 
 ## File
 
@@ -31,7 +31,7 @@ dumping a raw verbatim transcript.
 type: reference
 title: Thread — <descriptive name>
 description: <one sentence: what the session covered and where it landed>
-provenance: "Claude Code session (<model name(s)>), <date>; distilled render — substantive responses only, reasoning/tool calls/narration stripped"
+provenance: "Claude Code session (<model name(s)>), <date>; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, <topic tags>]
 timestamp: <ISO 8601 date>
 ```
@@ -42,7 +42,8 @@ timestamp: <ISO 8601 date>
 
 Render the conversation as `## User` / `## Assistant` sections. **Keep every
 exchange** — operator messages and assistant responses — and drop *only* the
-noise. There are exactly three drops:
+noise, reproducing **everything kept verbatim** (the delivered text, never
+summarized or paraphrased). There are exactly three drops:
 
 - **Tool calls and tool results** — always dropped.
 - **Reasoning / thinking blocks** — always dropped.
@@ -63,9 +64,12 @@ This is the exact rule from Composable Beliefs' `transcript_hook.py` (a block is
 dropped iff `len(strip) < 300 and followed_by_tool`), so a short statement is
 dropped *only* as a pre-tool lead-in — never in isolation.
 
-Two ways to produce it: **render-from-context** (preferred — you hold the
-conversation, so write the render applying the rules above), or **parse-the-log**
-if a host session log is available (apply the same rules).
+Two ways to produce it. **Parse-the-log** is the most faithful when a host
+session log is available (e.g. `~/.claude/projects/<project>/<session>.jsonl`):
+extract the verbatim text blocks and apply the drop rule mechanically, so the
+retained text is exact. **Render-from-context** otherwise — you hold the
+conversation, so reproduce the delivered text verbatim; never paraphrase from
+memory.
 
 ### 2. Narrative section
 
@@ -133,7 +137,9 @@ after any tag edit so the log stays re-derivable.
 
 ## Rules
 
-- Never invent or embellish — distillation drops noise, it does not add content.
+- Never invent, embellish, or summarize — retained operator messages and agent
+  responses are reproduced **verbatim**; dropping noise is the only editing, and
+  it neither adds nor condenses what remains.
 - The excerpt log is **append-only** and generated; let `--materialize` own it.
 - A concept freezes excerpt acceptance when its matter resolves (per matter, not
   on archival) — do not append to a resolved matter's log.

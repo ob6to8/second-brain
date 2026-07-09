@@ -18,7 +18,7 @@ defmodule SecondBrain.Registry do
   alias SecondBrain.Frontmatter
 
   @id_format ~r/^sb:[0-9a-f]{6}$/
-  @excluded_dirs ~w(.git .github .githooks .claude _build deps tmp lib test meta deprecated)
+  @excluded_dirs ~w(.git .github .githooks .claude _build deps tmp lib test meta deprecated inbox)
   @excluded_files ~w(index.md log.md README.md CLAUDE.md)
 
   defmodule Entry do

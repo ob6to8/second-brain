@@ -14,6 +14,30 @@ calls, tool outputs, and brief between-tool status notes are omitted. Where a
 turn's displayed text came in two parts (an up-front analysis and a closing
 summary), both are included in order.
 
+## Routing
+
+*Retrofitted 2026-07-09 over the frozen body ([routing-ledger](/meta/policy/routing-ledger.md)).*
+This bootstrap session mostly built the brain's **governance/tooling** — homed in
+`meta/` (the policies, the contract compiler, the stable-id registry and
+verifier) and the repo itself, none of which are `concept` sinks — so those
+strands are legitimately `unrouted`. Only the definition of *what an OKF bundle
+is* feeds a knowledge concept.
+
+| Topic | State | Routed to | Dangling |
+|---|---|---|---|
+| Archive the legacy repo into `deprecated/` | closed | `unrouted` | - |
+| What an OKF bundle is (the format itself) | closed | [open knowledge format](/knowledge-management/open-knowledge-format.md) | - |
+| `/intake` skill design (flow, I/O, distill-don't-dump) | closed | `unrouted` | - |
+| Filing policy: full-depth dirs; the `claim` type; `provenance`/`verified` | closed | `unrouted` | - |
+| Taxonomy persistence — the tree is the taxonomy | closed | `unrouted` | - |
+| Links enter only once processed into a `reference` | closed | `unrouted` | - |
+| Governance namespace `meta/`; policy as OKF docs; `CLAUDE.md` compiled | closed | `unrouted` | - |
+| Elixir contract compiler (`mix brain.contract`) | closed | `unrouted` | - |
+| SessionStart hook vs CI enforcement | closed | `unrouted` | - |
+| Verify from primary sources; DRY; id-based edges over brittle paths | closed | `unrouted` | - |
+| Stable-id registry (`mix brain.registry`) + grounded verifier | closed | `unrouted` | - |
+| Thread archival + `/persist-thread`; PR babysitting and merges | closed | `unrouted` | - |
+
 ---
 
 ## 1 — Archive the legacy repo
@@ -54,7 +78,11 @@ I expect the overall directory structure to evolve organically over time. This s
 
 The interactive question card failed to render (a transient permission-stream error). Rather than retry it, here are the same decisions in plain text — answer inline however you like (e.g. "1a, 2 blank, 3 auto-file, 4 all three").
 
+<routes ref="sb:24bd1e">
+
 I've read the full **OKF v0.1 spec**, so these are grounded in it. A bundle is just a directory of markdown concept files (YAML frontmatter with a mandatory `type` field + a markdown body), with reserved `index.md` (progressive-disclosure listings) and `log.md` (chronological history) allowed at any level, and `okf_version` declared in the root `index.md`.
+
+</routes>
 
 **1. Where does the knowledge bundle live?**
 - **a) Repo root is the bundle** — concepts/`index.md`/`log.md` at root; `.claude/` and `deprecated/` sit alongside. The whole repo *is* the brain.
