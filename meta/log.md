@@ -5,6 +5,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 ## 2026-07-09
 
 - Captured the session thread
+  [2026-07-09 — daily news-inbox Routine](/meta/threads/2026-07-09-daily-news-inbox-routine.md)
+  (`/capture`): a short session that created the claude-code-remote Routine
+  `trig_01PAiKWrWgVs4djSkhELoLYw` (fresh session daily at 13:00 UTC, cron `0 13 * * *`)
+  to run `/news` and push the day's inbox digest to `main`. This is the standing
+  automation for the daily feed the prior thread's Routing left paused. No repo code
+  changed; one closed, unrouted strand with a path-ref back-link to `news/SKILL.md`.
+  Listed it in the threads index.
+- Captured the session thread
   [2026-07-09 — home-page news-filter inbox](/meta/threads/2026-07-09-home-page-news-filter-inbox.md)
   (`/capture`, parse-the-log render): verbatim retained exchanges, a routing ledger
   (feature + tutorial closed; daily Routine paused, PR open), and path-ref route tags
