@@ -15,6 +15,8 @@ Alex Kladov (matklad) on how to structure a test suite. The measure of a good
 suite is **how easily it lets you change the software** — not coverage numbers or
 testing dogma. Related: his later reframing of test taxonomy into
 [purity and extent](/SWE/testing/unit-vs-integration-purity-and-extent.md).
+Applied to this repo in
+[the Second Brain testing methodology](/SWE/testing/elixir-second-brain-testing-methodology.md).
 
 ## Thesis — test features, not code
 
