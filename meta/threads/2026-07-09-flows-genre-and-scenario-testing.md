@@ -522,3 +522,20 @@ Confirmed — PR #23 is merged into `main` (`06b17ce`), and `git log origin/main
 Since the PR for `claude/flows-paths-documentation-b6mzee` is now merged, that branch is finished — I won't stack new commits on it. If you have follow-up work, I'll restart the branch fresh from the updated `main` (`git checkout -B claude/flows-paths-documentation-b6mzee origin/main`) and any new PR will be a genuinely new one.
 
 Nothing outstanding on my end. The one still-open idea from earlier, if you ever want it: the `future-beliefs`/plans note about the flows genre generalizing to other tool pipelines (contract-render, site-build) — otherwise we're done here.
+
+## Assistant
+
+Session captured and pushed (`42044ef`).
+
+**The thread** — `meta/threads/2026-07-09-flows-genre-and-scenario-testing.md`:
+- **Parse-the-log render** from the host `.jsonl` (818 lines), so the retained text is mechanically exact — all **18 operator messages** and **22 agent turns** verbatim, with tool calls/results, reasoning, and `<300`-char pre-tool narration dropped, and the `/capture` slash-command wrapper stripped.
+- **Eight-row routing ledger**, mostly `unrouted` — honestly reflecting that the session was overwhelmingly governance/tooling homed in `meta/` (matching the bootstrap-thread precedent). The one knowledge feed — the dependency-free-testing strand — routes to the ExUnit reference.
+- **One route-tag region** (the research-spike verdict paragraph) feeding both `SWE/testing` captures `sb:f6e843` and `sb:b1ba4b`; their excerpt logs were materialized, giving a real tag→log round-trip.
+
+**Reserved files** — threads index, `meta/log.md` (capture entry), and root `log.md` (the two references' excerpt logs changed) all updated.
+
+**Verification** — `mix brain.route_tags` green (10 regions across 6 threads, 4 sink appends, fidelity clean), full gate suite green (78 tests, 111 site pages).
+
+**Procedure notes:**
+- Per the merged-PR rule, I **restarted the branch from `main`** before capturing (PR #23 was merged), so this capture sits on fresh history atop the merge — not stacked on the finished branch. Any PR opened for it would be a new PR.
+- I pushed (not just committed) since this remote environment reclaims containers and the whole session's cadence has been commit+push. If you'd rather keep captures local until you say so, tell me and I'll hold the push next time.
