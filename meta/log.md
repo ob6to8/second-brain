@@ -4,6 +4,20 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- **Ratified the `analysis` type** (operator directive) and created the
+  `meta/analysis/` namespace with its `index.md`. An `analysis` is a point-in-time
+  evaluation / decision-support write-up — a question investigated against evidence,
+  yielding findings and a recommendation — distinct from a `plan` (intended work),
+  `tutorial` (explanatory), and `note` (an idea). Added the type to
+  `meta/policy/controlled-type-vocabulary.md` and recompiled `CLAUDE.md`.
+- Filed the first analysis,
+  [Would a vector DB improve recall as this bundle scales?](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md)
+  (`type: analysis`): a reproducible dedup-recall probe over the live 39-concept
+  corpus shows grep already misses existing concepts on natural-phrasing queries
+  (~6 of 14) — a *semantic* (synonym/jargon) failure, not typographic. Concludes the
+  right first move is synonym-expanded intake dedup + a repeatable recall probe
+  (both zero-dependency), with cached brute-force embedding dedup as a later Tier 2,
+  and a standalone vector DB rejected at this corpus's scale.
 - **Collapsed the `spec` genre into `plan`** (operator-directed) — the `spec` type
   / `meta/specs/` namespace this branch added and the `plan` type / `meta/plans/`
   namespace from `main` were near-duplicates (both "a design/decision record for a

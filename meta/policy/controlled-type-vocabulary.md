@@ -44,5 +44,11 @@ Seed vocabulary:
   (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an `issue`
   (a *problem* to track) and a `methodology` (a *repeatable* how-to) — a plan is a
   *one-off intended change* (lives under `meta/plans/`).
+- `analysis` — a point-in-time evaluation or decision-support write-up: a question
+  investigated against evidence (often the live bundle itself), yielding findings and
+  a recommendation, filed so the reasoning and its conclusion persist. Distinct from a
+  `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
+  `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
+  (lives under `meta/analysis/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
