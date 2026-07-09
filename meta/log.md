@@ -4,6 +4,12 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- Captured the session thread
+  [2026-07-09 — home-page news-filter inbox](/meta/threads/2026-07-09-home-page-news-filter-inbox.md)
+  (`/capture`, parse-the-log render): verbatim retained exchanges, a routing ledger
+  (feature + tutorial closed; daily Routine paused, PR open), and path-ref route tags
+  back-linking the finding regions to the tutorial/`registry.ex` and the skill-purpose
+  answer to `news/SKILL.md`. Listed it in the threads index.
 - Filed the tutorial
   [Bundle scope and non-bundle namespaces](/meta/tutorials/bundle-scope-and-non-bundle-namespaces.md)
   (`type: tutorial`) — how the four independent scanners (identity/verify,
