@@ -28,6 +28,13 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   what to check. First entry: `session-capture-routing-route-tags.md`, which
   corrects an earlier chat framing that cast agent steps (routing, tagging,
   minting, materializing) as operator to-dos. Listed in `meta/index.md`.
+- **First real `/capture`** (dogfood): regenerated
+  [2026-07-08-adopt-session-capture-routing-and-route-tags](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md)
+  in place from this session's live context — superseding the hand-authored
+  worked-example version with a genuine distilled render of the whole session
+  (the port through all the refinements), an expanded routing ledger, and the
+  same `sb:d479e3` route tag re-materialized (log block unchanged). Until now the
+  skill had never been run; this is its first invocation.
 
 ## 2026-07-08
 
