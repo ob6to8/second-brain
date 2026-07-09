@@ -23,7 +23,7 @@ assigns all of its steps 1–5 to the agent.
 | Actor | Does |
 |-------|------|
 | **Operator** | invokes `/capture` (and `/intake` first, if raw material must be filed); answers ratification questions — a **new top-level directory** or a **new `type`** need operator sign-off (contract §2 and §4); reviews the result |
-| **Agent** | writes the distilled render; drafts the `## Routing` ledger; creates/updates the `concept` sinks and mints their ids (`mix brain.id`); tags the frozen body; runs `mix brain.route_tags --materialize`; runs the gates |
+| **Agent** | writes the render (retained messages **verbatim**, noise stripped); drafts the `## Routing` ledger; creates/updates the `concept` sinks and mints their ids (`mix brain.id`); tags the frozen body; runs `mix brain.route_tags --materialize`; runs the gates |
 
 So the operator's hands-on part is short: **invoke, ratify any shape change,
 review.** Everything under "The flow" below is the agent's.
@@ -33,9 +33,9 @@ review.** Everything under "The flow" below is the agent's.
 Resume the session so the agent holds the conversation, confirm `main` is merged
 in, then invoke **`/capture`**. The agent then, per the skill:
 
-1. **Renders** the distilled `## User`/`## Assistant` body — keeps every exchange,
-   dropping only tool calls/results, reasoning, and short pre-tool narration
-   (a block *both* `< ~300` chars *and* followed by a tool call).
+1. **Renders** the `## User`/`## Assistant` body — keeps every exchange
+   **verbatim**, dropping only tool calls/results, reasoning, and short pre-tool
+   narration (a block *both* `< ~300` chars *and* followed by a tool call).
 2. Writes **frontmatter** + a short **narrative** section.
 3. Drafts the **`## Routing` ledger** — one row per topic, pointers and states
    only.

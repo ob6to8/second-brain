@@ -274,16 +274,19 @@ record so it can be resumed from the record instead of from memory.
 - **On demand, not a hook.** Capture is an agent-invoked skill you run once, at
   session close (or when you say "capture this") — never a per-turn hook. See
   `.claude/skills/capture/SKILL.md`.
-- **A distilled render, not a verbatim dump.** Keep **every exchange** and drop
-  *only*: tool calls and results; reasoning/thinking; and an assistant text block
-  that is *both* under ~300 chars *and* followed by a tool call (short pre-tool
-  narration). Everything else is kept — any longer block, any block *in isolation*
-  (nothing after it in the turn calls a tool: a closing reply or standalone remark)
-  **even when short**, and all text in a tool-less turn. Operator messages are kept
-  as said, minus empty ones and `<…>`-prefixed system/slash wrappers. The drop rule
-  is exactly cb `transcript_hook.py`'s `len < 300 and followed_by_tool`. `/capture`
-  is the sole session-persistence skill: it distills rather than dumping a raw
-  transcript.
+- **Retained text is verbatim; only the noise is stripped.** Keep **every
+  exchange** and drop *only*: tool calls and results; reasoning/thinking; and an
+  assistant text block that is *both* under ~300 chars *and* followed by a tool
+  call (short pre-tool narration). **Everything kept is reproduced verbatim** —
+  the delivered text of each operator message and agent response, never summarized
+  or paraphrased. Everything else is kept — any longer block, any block *in
+  isolation* (nothing after it in the turn calls a tool: a closing reply or
+  standalone remark) **even when short**, and all text in a tool-less turn.
+  Operator messages are kept as said, minus empty ones and `<…>`-prefixed
+  system/slash wrappers. The drop rule is exactly cb `transcript_hook.py`'s
+  `len < 300 and followed_by_tool`. "Distilled" here means the *noise* is dropped,
+  not that the kept text is condensed; `/capture` strips noise, not substance, and
+  is the sole session-persistence skill.
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `sb:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
