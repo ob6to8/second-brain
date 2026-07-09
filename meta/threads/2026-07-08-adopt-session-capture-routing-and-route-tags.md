@@ -28,9 +28,11 @@ sinks. Delivered: `SecondBrain.RouteTags` + `mix brain.route_tags` (five checks 
 `--materialize`), the `/capture` skill, three `session-workflow` policies, the
 `meta/session-workflow.md` guide, and `meta/verification-flows/`; `/persist-thread`
 retired; the `/capture` keep/strip rule aligned exactly to cb's
-`transcript_hook.py`. Landed as **PR #13** (the port) and **PR #15** (the
-refinements). Open: the 2026-07-05 verbatim thread still needs a ledger+tags
-retrofit.
+`transcript_hook.py`. Landed as **PR #13** (the port), **PR #15** (the
+refinements), and **PR #17** (the first real `/capture`, the backlog retrofit,
+and a git-verification tutorial). The backlog is now clear: the 2026-07-05
+verbatim thread was retrofitted with a routing ledger and a route tag over its
+frozen body, and this session was itself captured — the skill's first real run.
 
 ## Routing
 
@@ -47,7 +49,11 @@ retrofit.
 | `meta/verification-flows/` namespace + walkthrough | closed | `unrouted` | - |
 | Operator-vs-agent execution framing (who runs the flow) | closed | `unrouted` | - |
 | PR #15 opened & merged | closed | `unrouted` | - |
-| Process the thread backlog via `/capture` | paused | `unrouted` | `/capture` renders from the current session only; the 2026-07-05 verbatim thread (made by the retired `/persist-thread`) still needs a ledger+tags retrofit over its frozen body |
+| Process the thread backlog via `/capture` | closed | `unrouted` | Each backlog thread is captured from inside its own session (`/capture` renders current context only) |
+| First real `/capture` — dogfood this session | closed | `unrouted` | - |
+| Retrofit the 2026-07-05 bootstrap thread over its frozen body | closed | `unrouted` | - |
+| Git commit verification — author/committer, signatures, "Verified" | closed | `unrouted` | - |
+| PR #17 opened | closed | `unrouted` | - |
 
 ## User
 
@@ -291,3 +297,78 @@ whatever we did next would be its first real invocation.
 *(Invoked `/capture` — this render is the result: the first real run of the skill,
 capturing this session and superseding the hand-authored worked-example version of
 this doc in place.)*
+
+## Assistant
+
+*(The commit for the capture above was flagged by a git stop-hook as unverified;
+re-authored it to `noreply@anthropic.com`.)*
+
+## User
+
+Push
+
+## Assistant
+
+Pushed `b4c6c67` (the first `/capture`) — a fast-forward, one commit ahead of
+`main`, verified-clean.
+
+## User
+
+Retrofit
+Then - create a tutorial explaining what's occurring with "The tip commit is now
+b4c6c67 with both author and committer set to noreply@anthropic.com, so GitHub
+will show it as verified"
+
+## Assistant
+
+**Retrofit:** added a `## Routing` ledger and a route tag over the *frozen body*
+of the 2026-07-05 verbatim thread — no re-render. That session mostly built
+governance/tooling homed in `meta/` (not concept sinks), so 11 of 12 rows are
+`unrouted`; turn 2's definition of *what an OKF bundle is* is route-tagged to the
+OKF concept (`sb:24bd1e`), whose excerpt log I materialized. All five checks
+green.
+
+<routes ref="sb:d479e3">
+
+A refinement the retrofit surfaced: not every thread routes richly to concepts. A
+session that mostly builds governance or tooling homes its content in policies,
+code, and the contract — none of which are concept sinks — so its routing ledger
+is legitimately almost all `unrouted` and its route tags are sparse. Routing
+density tracks how much *durable knowledge* (versus process) a session produced; a
+thin ledger is a signal about the session, not a failure of tagging.
+
+</routes>
+
+**Tutorial:** wrote `meta/tutorials/what-makes-a-commit-verified-on-github.md`,
+and deliberately corrected my own shorthand: GitHub's "Verified" is a
+cryptographic **signature** check bound to the committer email, not the email
+itself. Re-authoring to `noreply@anthropic.com` doesn't *make* a commit verified —
+it puts it on the identity this environment signs for. Plus the golden rule: only
+rewrite unpushed commits.
+
+*(The stop-hook then flagged the two follow-up commits as unsigned; I re-created
+the still-unpushed commits via `git rebase --exec … origin/<branch>`, leaving the
+already-pushed `b4c6c67` untouched, then pushed — a live demonstration of the
+tutorial's own rule.)*
+
+## User
+
+Open a PR for these three commits
+
+## Assistant
+
+Opened PR #17 — the first real `/capture`, the 2026-07-05 retrofit, and the
+git-verification tutorial; base `main`, three commits, body grouped
+commit-by-commit with the green verification run.
+
+## User
+
+Actually i believe we need to run /capture again to now capture the recent
+exchanges
+
+## Assistant
+
+*(Ran `/capture` again — extended this same thread doc in place with the exchanges
+since the first capture: the push, the retrofit, the tutorial, the two
+commit-signing fixes, and PR #17. Ledger and narrative refreshed; the `sb:d479e3`
+excerpt log re-materialized to pick up the new routing-density insight above.)*

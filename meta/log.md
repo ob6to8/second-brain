@@ -51,6 +51,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   signature attach, and the only-rewrite-unpushed-commits rule. Corrects an
   earlier chat shorthand that implied the email itself makes a commit verified.
   Listed in `meta/tutorials/index.md`.
+- **Second `/capture` (extend-in-place)**: re-ran capture on the adopt thread to
+  cover the exchanges since the first run (the push, the retrofit, the tutorial,
+  the two commit-signing fixes, PR #17). Refreshed the ledger (backlog row now
+  `closed`; five new rows) and narrative, and added one route tag carrying a new
+  routing-technique insight — *routing density tracks durable knowledge vs
+  process; a thin ledger is a signal, not a tagging failure* — to `sb:d479e3`,
+  whose excerpt log now lifts two regions. Confirms `/capture` extends a session's
+  existing thread doc in place rather than forking a new one.
 
 ## 2026-07-08
 

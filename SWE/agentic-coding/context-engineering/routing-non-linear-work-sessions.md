@@ -66,7 +66,7 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 
 ### 2026-07-08-adopt-session-capture-routing-and-route-tags (2026-07-08)
 
-1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
 **[`sb:d479e3`]**  (co-feeds: `lib/second_brain/route_tags.ex`)
 
@@ -83,3 +83,14 @@ routing auditable, because what a page left out is now a visible tag boundary
 rather than a hidden editorial cut. A verifier re-derives each log from the
 current tags and fails on divergence, so the log is structural, not a copy someone
 must remember to refresh.
+
+---
+
+**[`sb:d479e3`]**
+
+A refinement the retrofit surfaced: not every thread routes richly to concepts. A
+session that mostly builds governance or tooling homes its content in policies,
+code, and the contract — none of which are concept sinks — so its routing ledger
+is legitimately almost all `unrouted` and its route tags are sparse. Routing
+density tracks how much *durable knowledge* (versus process) a session produced; a
+thin ledger is a signal about the session, not a failure of tagging.
