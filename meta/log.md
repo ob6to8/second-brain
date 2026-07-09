@@ -5,6 +5,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 ## 2026-07-09
 
 - Captured the session thread
+  [2026-07-09 — remove operator email from operating contract](/meta/threads/2026-07-09-remove-operator-email-from-contract.md)
+  (`/capture`, parse-the-log render): the short session that removed the operator's
+  email from `meta/preamble.md`/`CLAUDE.md`, then found the change had already
+  merged to `main` via PR #14 (branch fast-forwarded to equal `main`, nothing new
+  to commit or PR). All three strands closed and `unrouted` — a purely
+  operational/governance session with no `concept` sinks, so no route tags. Listed
+  it in the threads index.
+- Captured the session thread
   [2026-07-09 — news Routine verification, issue tracking, and /news featuring docs](/meta/threads/2026-07-09-news-routine-issue-and-featuring.md)
   (`/capture`, parse-the-log render): verified the daily Routine, found its automated
   fires land nothing on `main` (suspected env-wide approval gate), then the governance
