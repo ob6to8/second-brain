@@ -154,10 +154,44 @@ The value delivered is **explorability + an integrity floor**, not a score:
    supersession, no staleness, no scores.
 4. Evaluate whether it earns its keep before widening.
 
+## Addendum — stabilization reframing (2026-07-10)
+
+A follow-on evaluation,
+[CB's overlay as a failure-chain stabilizer](/meta/analysis/cb-epistemic-overlay-as-failure-chain-stabilizer.md),
+re-examined CB against the five-stage 500+ failure chain
+([field-comparison analysis](/meta/analysis/comparison-with-the-2026-second-brain-field.md))
+and feeds three updates into this plan, still `proposed`:
+
+1. **Motivation upgrade.** The overlay's primary value is not
+   explorability-plus-integrity but *stabilization*: it mechanically covers stage 3
+   (cross-reference drift — supersede an attestation and the affected set is the
+   transitive closure of dependents, computed not guessed) and stage 5 (trust
+   collapse — per-statement epistemic state makes distrust local and calibrated).
+   It does nothing for stage 2 (dedup — see the
+   [dedup recall probe plan](/meta/plans/dedup-recall-probe.md), which stays prior
+   work); the two are complements.
+2. **Open question 2 has CB's current answer.** Per the current glossary, deps is
+   "the only kind of edge the DAG has" — typing lives on *nodes*, one edge kind.
+   Attestations carry no deps; aggregations/inferences require them. So: one `deps`
+   edge beside (or subsuming) `verified_by`; no edge-type zoo.
+3. **Open question 3 flips.** For the stabilization purpose, supersession is the
+   mechanism, not a deferrable phase — a groundedness-only v1 delivers audit but
+   not anti-drift. Sequence supersession-for-statements in. CB's **dep-repoint**
+   (atomic drop-plus-add swinging a dep from a superseded node to its successor) is
+   the most import-worthy operational primitive identified.
+
+Caveat carried over: the analysis's source-staleness check found CB's *thesis doc*
+had drifted from its schema (deprecated type names, missing edge rules) — a live
+stage-3 demonstration inside CB itself. Enforcement in the gate suite is the
+stabilizer; an advisory DAG rots like advisory anything.
+
 # Citations
 
 - Comparison basis: [Composable Beliefs](https://github.com/composablebeliefs/composable-beliefs)
-  (`okf/standard/types.md`; the four structural types; `docs/composable-beliefs-thesis.md`).
+  (`okf/standard/types.md`; the four structural types; `docs/glossary.md` for the
+  current schema — the thesis doc `docs/composable-beliefs-thesis.md` was found
+  stale on 2026-07-10 and should not be treated as authoritative).
 - Prior in-bundle decisions this builds on: the `methodology` type ratification and the
   "type an edge only when a machine must traverse it" link-model principle (see the
   `stable-identity` and `filenames-and-cross-linking` policies).
+- Follow-on evaluation: [CB's overlay as a failure-chain stabilizer](/meta/analysis/cb-epistemic-overlay-as-failure-chain-stabilizer.md).

@@ -4,6 +4,19 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **New analysis: [Would CB's four-typed DAG, as an overlay, stabilize this knowledge base against the failure chain?](/meta/analysis/cb-epistemic-overlay-as-failure-chain-stabilizer.md)**
+  Evaluates Composable Beliefs' epistemic layer as an add-on overlay against the
+  five-stage failure chain: a genuine mechanical stabilizer for stage 3 (drift →
+  bounded traversal of dependents on supersession) and stage 5 (trust → per-statement
+  epistemic state), no help for stage 2 (dedup stays the unguarded gate), portable
+  as a format but host-native in enforcement and edge-authoring. Includes a
+  source-staleness check prompted by the operator (CB's thesis doc used deprecated
+  type names): two claims corrected against the current glossary — CB *does* have
+  per-type dep rules, and *does* position itself as an "opt-in ceiling" over OKF —
+  and CB's dep-repoint primitive surfaced as the top import candidate. Appended a
+  stabilization-reframing addendum to the [epistemic overlay plan](/meta/plans/epistemic-overlay.md)
+  (motivation upgrade; Q2 answered — one `deps` edge kind, typing on nodes; Q3
+  flipped — supersession is load-bearing). Listed in the analysis index.
 - **New plan: [Dedup recall probe](/meta/plans/dedup-recall-probe.md)** (`status:
   proposed`). Commissioned by the operator following the eval-suitability
   analysis; executes recommendation 1 of the vector-DB recall analysis. Specifies
