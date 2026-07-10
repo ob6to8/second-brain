@@ -1,13 +1,13 @@
 ---
 type: reference
-title: "2026-07-09 — vector-DB recall evaluation and the `analysis` type"
+title: 2026-07-09-vector-db-recall-evaluation-and-analysis-type
 description: Stress-tested whether a vector DB would improve recall as the bundle scales; a dedup-recall probe over the live corpus showed grep already misses existing concepts semantically, landing on fix-intake-first (no vector DB), then filed the finding as the first `analysis`-type doc and ratified that type.
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, recall, dedup, vector-database, embeddings, search, intake, governance]
 timestamp: 2026-07-09
 ---
 
-# 2026-07-09 — vector-DB recall evaluation and the `analysis` type
+# 2026-07-09-vector-db-recall-evaluation-and-analysis-type
 
 ## Where this landed
 
