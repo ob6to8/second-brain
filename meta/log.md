@@ -4,6 +4,15 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **`/capture` of this session** → thread
+  [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)
+  (render-from-context; retained operator messages and closing replies verbatim,
+  short pre-tool narration/tool noise stripped). Seven-row routing ledger, all
+  closed — two `unrouted` (the namespacing Q&A and the PR-#31 open/merge), the rest
+  path-routed to the touched skill/policy/flow files (governance namespace, no `sb:`
+  sinks, so no concept excerpt logs materialized). Listed in the threads index.
+  `mix brain.route_tags` verifies clean. Captured as the first step of a
+  `/create-pull-request` run.
 - **`/create-pull-request` now runs `/capture` first.** Prepended a full `/capture`
   step (render the frozen thread doc, routing ledger, route tags, then
   `mix brain.route_tags --materialize`/verify) ahead of the commit, so the session
