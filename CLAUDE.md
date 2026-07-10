@@ -311,6 +311,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). Writes to
   the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
   file one into the brain. See `.claude/skills/news/SKILL.md`.
+- **`/create-pull-request`** — commit the current working changes, push the branch,
+  and open a pull request. Invoking the skill **is** the authorization to open the PR
+  (no separate confirmation gate); PR-template detection and the GitHub MCP tools
+  handle the rest. See `.claude/skills/create-pull-request/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 

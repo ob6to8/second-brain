@@ -3,7 +3,7 @@ type: note
 title: Intake — capture pasted material into a filed concept
 description: The end-to-end flow for turning pasted material (text, links, notes) into one or more distilled, filed OKF concepts — the file-by-file touch-sequence of an /intake run, the judgment/spine split, actor boundaries, the identity gate suite, and the scenario test that pins the deterministic spine.
 tags: [meta, governance, intake, filing, identity, flow, workflow]
-timestamp: 2026-07-09
+timestamp: 2026-07-10
 ---
 
 # Intake — capture pasted material into a filed concept
@@ -85,7 +85,7 @@ gate), or `editorial` (a judgment with no mechanical oracle).
 | 2 | agent | Gather: resolve any links (fetch + summarize; persist oversized sources as `resource`/`# Citations`) | — (reads external) | editorial |
 | 3 | agent | Segment into one or several concepts | — | editorial |
 | 4 | agent | **Dedup** — search the bundle for an existing concept on the subject | — (reads bundle) | editorial |
-| 5 | agent | Distill and write the concept (frontmatter + clean body, cross-links) — or update an existing one in place | `<concept>.md` (new/updated) | scenario (conformance) |
+| 5 | agent | Distill and write the concept (frontmatter + clean body, cross-links) — or update an existing one in place. For a **technical paper/article/spec**, the distill action delegates to [`/summarize-technical`](/.claude/skills/summarize-technical/SKILL.md), whose three-part breakdown *is* the body | `<concept>.md` (new/updated) | scenario (conformance) |
 | 5a | operator | Ratify a **shape change** — a new top-level directory or a new `type` | — | editorial |
 | 6 | tool | `mix brain.id` — mint a stable `sb:` id if the concept lacks one | `<concept>.md` (id line) | scenario |
 | 7 | tool | `mix brain.registry` — compile the id→path view | `meta/registry.md` | **scenario** |
@@ -105,7 +105,11 @@ Condensed; the rules live in the linked policies.
   title, a one-sentence `description`, a clean body; the original stays as a
   `resource` URI and/or under `# Citations`. See
   [distill-dont-dump](/meta/policy/distill-dont-dump.md) and
-  [link-processing](/meta/policy/link-processing.md).
+  [link-processing](/meta/policy/link-processing.md). For a **technical
+  paper/article/spec**, distillation delegates to
+  [`/summarize-technical`](/.claude/skills/summarize-technical/SKILL.md) — its
+  layered breakdown (plain-language summary → key terms → technical summary) *is*
+  the distilled body — rather than writing flat prose.
 - **Update in place, don't fragment.** Search first; if a concept on the subject
   exists, merge into it and bump `timestamp` rather than creating a near-duplicate.
   See [update-in-place](/meta/policy/update-in-place.md).

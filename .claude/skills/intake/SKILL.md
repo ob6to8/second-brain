@@ -55,6 +55,14 @@ For **each** concept:
   - Body: distilled prose. Use conventional headings where helpful
     (`# Schema`, `# Examples`, `# Citations`). Keep raw source material under
     `# Citations` or as the `resource` link — not as the whole body.
+  - **Technical sources → layered breakdown.** When the concept captures a
+    technical paper, article, or spec substantial enough to warrant it (typically
+    a `reference` or `source`), build the body with
+    **[`/summarize-technical`](../summarize-technical/SKILL.md)** instead of flat
+    prose — its three-part structure (plain-language summary → key terms →
+    technical summary) *is* the distilled body. Invoke it as this step's distill
+    action, then continue to the directory/write steps below. Skip it for short
+    notes, snippets, people, and projects, where plain distilled prose is right.
   - Cross-link related existing concepts with bundle-absolute markdown links (`/…`).
 
 ### 5. Choose the directory (taxonomy protocol)

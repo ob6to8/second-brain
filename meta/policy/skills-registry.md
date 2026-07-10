@@ -6,7 +6,7 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-06
+timestamp: 2026-07-10
 ---
 - **`/intake`** — process pasted content into one or more filed concepts. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -27,5 +27,9 @@ timestamp: 2026-07-06
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). Writes to
   the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
   file one into the brain. See `.claude/skills/news/SKILL.md`.
+- **`/create-pull-request`** — commit the current working changes, push the branch,
+  and open a pull request. Invoking the skill **is** the authorization to open the PR
+  (no separate confirmation gate); PR-template detection and the GitHub MCP tools
+  handle the rest. See `.claude/skills/create-pull-request/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
