@@ -6,7 +6,7 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-06
+timestamp: 2026-07-10
 ---
 - **`/intake`** — process pasted content into one or more filed concepts. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -27,5 +27,9 @@ timestamp: 2026-07-06
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). Writes to
   the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
   file one into the brain. See `.claude/skills/news/SKILL.md`.
+- **`/create-pull-request`** — commit the current working changes and push the branch,
+  then **ask** the operator whether to open a pull request (opening it only on an
+  explicit yes; the commit+push is autonomous, the PR is gated). See
+  `.claude/skills/create-pull-request/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
