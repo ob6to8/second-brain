@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- **`/capture` of this session** → thread
+  [2026-07-09 — the flows genre, scenario testing, and the plan-genre collapse](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md)
+  (parse-the-log render from the host `.jsonl`, so all 18 operator messages and 22
+  agent turns are verbatim). Eight-row routing ledger — mostly `unrouted` (the
+  session was overwhelmingly governance/tooling homed in `meta/`), with the
+  dependency-free-testing strand routed to the ExUnit reference and one route-tag
+  region (the research-spike verdict) feeding both `SWE/testing` captures
+  (`sb:f6e843`, `sb:b1ba4b`), whose excerpt logs were materialized. Listed in the
+  threads index. (Captured post-merge on the branch restarted from `main`.) Title
+  later aligned to the filename-stem convention adopted in PR #25.
 - Captured the session thread
   [vector-DB recall evaluation and the `analysis` type](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)
   (`/capture`, parse-the-log render): stress-tested a prior "not yet" call on adding

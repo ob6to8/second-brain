@@ -44,3 +44,21 @@ needed.
 - snapshy (ExUnit snapshot matcher): <https://github.com/DCzajkowski/snapshy>
 - assert_value (interactive expected-value updates) — a further hex-dependency
   example in the same category.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:b1ba4b">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-09-flows-genre-and-scenario-testing (2026-07-09)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:b1ba4b`]**  (co-feeds: `sb:f6e843`)
+
+**3 — Research spike — important, and I want to be straight with you: it did *not* cleanly reaffirm. Verdict was "adjust (mostly reaffirm)."** What it upheld: plain ExUnit + `@tag :tmp_dir`, no external dep, no DSL, no custom mix runner — that half was correct. What it corrected, and which I folded into the persisted spec before saving it:
+- **Drop whole-tree byte-exact golden as the primary oracle** — brittle, invites blind-approval of golden diffs, and for RouteTags re-encodes logic the tool already self-checks.
+- **Keep fixtures in-code** (heredocs), not on-disk `before/expected/` trees.
+- **Primary oracle = structured + targeted assertions** (matching the existing tests), with the transform-pinning need met by a *targeted* in-code expected-output assertion rather than a whole-tree snapshot. Reserve golden narrowly for large opaque renders (the Site HTML), dep-free, behind `UPDATE_GOLDEN`, normalized.
+- **`steps.md` becomes a human-readable table in the flow doc, not a machine-parsed artifact** — which also deletes the warn-check task from the earlier plan.
+
+My original "only golden catches a wrong-but-consistent transform" justification survived in *substance* (self-consistency checks genuinely can't pin the transform) but was over-built in *mechanism*; the spec's §1 now states the corrected version, and §8 records the spike's verdict + sources as provenance.
