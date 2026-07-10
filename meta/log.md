@@ -2,6 +2,14 @@
 
 Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
+## 2026-07-10
+
+- **Added the `/sync-main` skill** (`.claude/skills/sync-main/SKILL.md`): fetch (or
+  pull) `origin/main` and merge it into the current working branch, with conflict
+  surfacing and network-failure retries; refuses to run on `main` itself. Registered
+  it in the [skills registry policy](/meta/policy/skills-registry.md) and recompiled
+  `CLAUDE.md` via `mix brain.contract`.
+
 ## 2026-07-09
 
 - **`/capture` of this session** → thread
