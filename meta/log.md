@@ -4,6 +4,18 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- Captured the session thread
+  [2026-07-09 — live-render appraisal and Pages-site hardening](/meta/threads/2026-07-09-live-render-appraisal-and-pages-hardening.md)
+  (`/capture`, parse-the-log render): the session that produced PR #16. Built a
+  parallel `mix brain.render` generator, then abandoned it on finding the shipped
+  `mix brain.site`; appraised both, ported two safety fixes (deploy-gating on
+  `verify`, link-href escaping) + table alignment + Pages auto-enable, and wrote
+  the deploy-gating tutorial. Routing ledger: all strands closed (two routed to
+  the gating tutorial, the rest thread-specific/unrouted); path-ref route tags
+  back-link the gating and href-escaping regions to the tutorial, `pages.yml`, and
+  `markdown.ex` (no `sb:` sinks, so no concept excerpt logs materialized). Listed
+  it in the threads index. Dropped the Fable-5 usage-limit notice and the
+  mid-session model switch to Opus 4.8 as an italic editorial note.
 - **`/capture` of this session** → thread
   [2026-07-09 — the flows genre, scenario testing, and the plan-genre collapse](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md)
   (parse-the-log render from the host `.jsonl`, so all 18 operator messages and 22
