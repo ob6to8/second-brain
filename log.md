@@ -2,6 +2,17 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-10
+
+- **Seeded the bundle-root [glossary](/glossary.md)** — a single cross-domain
+  running glossary (`type: concept`), accreted by the new
+  [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md) skill: one
+  alphabetical entry per technical term, each citing the threads/papers/posts it
+  was seen in; pointer entries defer to filed concepts instead of duplicating
+  them. Listed it under a "Cross-domain" heading in the root `index.md`, minted
+  its id, and regenerated `meta/registry.md`. No entries yet. See
+  [meta/log.md](/meta/log.md) for the skill entry.
+
 ## 2026-07-09
 
 - **Route-tagged excerpt logs materialized** into the two `SWE/testing` references

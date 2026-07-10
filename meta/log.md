@@ -4,6 +4,19 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **New skill `/add-to-glossary`.** Scans a persisted thread (`meta/threads/`), a
+  paper, a post, or a filed concept; extracts the technical terms it actually
+  uses (same selection bar as `/summarize-technical`'s key-terms section); and
+  merges distilled one-to-three-sentence definitions into the bundle-root
+  [glossary](/glossary.md) — one entry per term, alphabetical, with a *Seen in:*
+  citation line, dedup/merge on existing entries, pointer entries for terms
+  canonically defined by filed concepts or the operating contract, and a
+  graduation path (`/intake`) for entries that outgrow the glossary. Markdown
+  only, deliberately no `glossary.json` — the glossary is a bundle concept and
+  flows through verify/registry/site tooling. Registered it in
+  [skills-registry](/meta/policy/skills-registry.md) and re-rendered `CLAUDE.md`
+  via `mix brain.contract`; seeded the empty `/glossary.md` scaffold (id minted,
+  registry regenerated).
 - **`/capture` of this session** → thread
   [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)
   (render-from-context; retained operator messages and closing replies verbatim,
