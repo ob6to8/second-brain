@@ -1,13 +1,13 @@
 ---
 type: reference
-title: Thread — the flows genre, scenario testing, and the plan-genre collapse
+title: 2026-07-09-flows-genre-and-scenario-testing
 description: Designed and built the meta/flows/ genre (per-flow touch-sequence docs backed by ExUnit scenario tests over each flow's deterministic spine), proving it on /capture and /intake; ran a harness research spike, intook its sources, added the three-scanners tutorial, and unified the spec genre into main's plan genre. Landed as PR #23.
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped (parse-the-log render)"
 tags: [meta, thread, flows, scenario-testing, plans, intake, testing, elixir]
 timestamp: 2026-07-09
 ---
 
-# Thread — the flows genre, scenario testing, and the plan-genre collapse
+# 2026-07-09-flows-genre-and-scenario-testing
 
 ## Where this landed
 

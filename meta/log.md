@@ -12,7 +12,20 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   dependency-free-testing strand routed to the ExUnit reference and one route-tag
   region (the research-spike verdict) feeding both `SWE/testing` captures
   (`sb:f6e843`, `sb:b1ba4b`), whose excerpt logs were materialized. Listed in the
-  threads index. (Captured post-merge on the branch restarted from `main`.)
+  threads index. (Captured post-merge on the branch restarted from `main`.) Title
+  later aligned to the filename-stem convention adopted in PR #25.
+- Captured the session thread
+  [vector-DB recall evaluation and the `analysis` type](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)
+  (`/capture`, parse-the-log render): stress-tested a prior "not yet" call on adding
+  a vector DB via a dedup-recall probe over the live corpus (grep already misses
+  existing concepts *semantically*), landing on fix-intake-first (no vector DB), then
+  ratified the `analysis` type and filed the finding. Routing ledger has two closed
+  strands (the evaluation → the analysis doc; the `analysis` type → the vocabulary),
+  with one dangling follow-up (Tier-1: synonym-expansion `/intake` dedup +
+  `mix brain.dedup_probe`); path-ref route tags back-link the analysis answer and the
+  type-ratification region to their sinks. Listed it in the threads index. Also
+  adopted the filename-stem thread-title convention (no "Thread", em-dashes, or
+  spaces) in the `/capture` skill.
 - `/capture` — froze the GitHub Pages / OKF-node session into
   [2026-07-09 — GitHub Pages knowledge-base site, offline-toolchain tutorial, and the OKF node](/meta/threads/2026-07-09-github-pages-knowledge-base-site.md)
   (parse-the-log render of the host session jsonl, so retained text is exact).
