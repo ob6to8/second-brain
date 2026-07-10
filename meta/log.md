@@ -4,6 +4,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **`/capture` of this session** → thread
+  [2026-07-10-sync-branch-with-main-skill](/meta/threads/2026-07-10-sync-branch-with-main-skill.md)
+  (parse-the-log render from the host `.jsonl`; both operator messages and both
+  agent closing replies verbatim, all short pre-tool narration dropped). Two-row
+  routing ledger, both `closed` and `unrouted` — a governance/tooling session
+  whose artifact is the skill file + skills-registry policy, with no `sb:` concept
+  sink; a path-ref route tag back-links the two delivery regions to
+  `.claude/skills/sync-branch-with-main/SKILL.md`. Listed in the threads index.
 - **Added the `/sync-branch-with-main` skill**
   (`.claude/skills/sync-branch-with-main/SKILL.md`): fetch (or pull) `origin/main` and
   merge it into the current working branch, with conflict surfacing and
