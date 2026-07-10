@@ -4,6 +4,13 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **New tutorial: the agent's branch lifecycle across merged PRs.** Filed
+  [branch-lifecycle-across-merged-prs](/meta/tutorials/branch-lifecycle-across-merged-prs.md)
+  (`type: tutorial`) — why a session pins one designated branch name, how a merged
+  PR forces that branch to restart from the default branch under the same name (new
+  PR each cycle, never a reopen), and why auto-deleting the merged head branch makes
+  the restart a clean create rather than a force-push over a stale tip. Listed in the
+  tutorials index.
 - **`/capture` of this session** → thread
   [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)
   (render-from-context; retained operator messages and closing replies verbatim,
