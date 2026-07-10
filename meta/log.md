@@ -4,6 +4,15 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **New tutorial: [Why a true merge (not a squash) keeps cited commits
+  reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md).**
+  Written from a session quote about deliberately true-merging a port branch
+  because `PLAN.md` cites its commits (`0fdee9e..e6ae1f9`) by SHA. Unpacks git
+  reachability (branch deletion removes a ref, never commits), contrasts what
+  true merge / squash / rebase each do to a branch's original SHAs, and lands
+  the rule: SHA citations in durable docs make history load-bearing, so
+  true-merge (or tag the tip) before deleting the branch. Listed in the
+  tutorials index.
 - **`/capture` of this session** → thread
   [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)
   (render-from-context; retained operator messages and closing replies verbatim,
