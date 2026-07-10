@@ -25,6 +25,9 @@ Seed vocabulary:
 - `project` — an active, goal-bounded effort.
 - `area` — an ongoing responsibility or domain (no end state).
 - `snippet` — a reusable command, code fragment, or template.
+- `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
+  *how-to* for carrying out a recurring task (distinct from a `note`, which merely
+  records an idea, and a `concept`, which defines a mental model).
 - `policy` — a governance rule for how the brain operates; the source from which
   `CLAUDE.md` is compiled (lives under `meta/policy/`).
 - `tutorial` — a long-form explanatory note meant to be read start to finish (the
@@ -35,5 +38,17 @@ Seed vocabulary:
   follow-up. Carries a `status` (`open`/`resolved`/`wontfix`); distinct from a
   `policy` (a rule) and a `note` (a distilled idea) — an issue is a *problem to
   track* (lives under `meta/issues/`).
+- `plan` — intended work on the brain or its tooling: a design/decision record for a
+  proposed change, capturing motivation, the shape of the change, scope boundaries,
+  and open questions, so a future session can execute it. Carries a `status`
+  (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an `issue`
+  (a *problem* to track) and a `methodology` (a *repeatable* how-to) — a plan is a
+  *one-off intended change* (lives under `meta/plans/`).
+- `analysis` — a point-in-time evaluation or decision-support write-up: a question
+  investigated against evidence (often the live bundle itself), yielding findings and
+  a recommendation, filed so the reasoning and its conclusion persist. Distinct from a
+  `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
+  `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
+  (lives under `meta/analysis/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.

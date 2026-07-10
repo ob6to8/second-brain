@@ -1,0 +1,267 @@
+---
+type: note
+title: Session capture, routing & route tags — flow
+description: The end-to-end flow for turning a non-linear working session into a distilled thread doc, a routing ledger, and route tags that materialize a re-derivable excerpt log into each concept — the pipeline, data model, the file-by-file touch-sequence, actor boundaries, the gate suite, and the scenario test that pins the deterministic spine.
+tags: [meta, governance, threads, capture, routing, route-tagging, flow, workflow]
+timestamp: 2026-07-09
+---
+
+# Session capture, routing & route tags — flow
+
+The connective doc for one subsystem: turning a non-linear working **session**
+into a durable, auditable record. It narrates the whole flow end to end — what
+happens, in what order, to which files — and points at the three artifacts that
+make it work. It does **not** restate the rules or the procedure; those have
+homes.
+
+> **The three artifacts (and the sources of truth — point, don't restate):**
+> - **Rules** → the `session-workflow` policies:
+>   [session-capture](/meta/policy/session-capture.md) ·
+>   [routing-ledger](/meta/policy/routing-ledger.md) ·
+>   [route-tagging](/meta/policy/route-tagging.md) (compiled into
+>   [`/CLAUDE.md`](/CLAUDE.md) §8).
+> - **Procedure** → the [`/capture` skill](/.claude/skills/capture/SKILL.md).
+> - **Mechanism + proof** → [`SecondBrain.RouteTags`](/lib/second_brain/route_tags.ex)
+>   / [`mix brain.route_tags`](/lib/mix/tasks/brain.route_tags.ex), pinned by the
+>   scenario [`test/second_brain/capture_scenario_test.exs`](/test/second_brain/capture_scenario_test.exs).
+
+---
+
+## 1. The problem
+
+A working session (a **thread**) is non-linear. It opens several matters, spins
+off side quests, pauses strands on an unanswered question, and resolves others.
+Left in the raw transcript, that state lives only in your head: to reply you must
+re-read the whole thread and reconstruct which strands dangle and where each
+one's conclusions went.
+
+Three things are missing, and this flow supplies each:
+
+1. a **readable record** of what was actually said (not the reasoning/tool noise);
+2. a **dispatch map** of which strands opened, paused, or routed where; and
+3. an **audit trail** from each region of the session to the durable page it feeds.
+
+The transferable idea behind it is filed as a concept:
+[routing non-linear work sessions](/SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions.md)
+(`sb:d479e3`). This page is the *implementation* of that idea in this bundle.
+
+---
+
+## 2. The pipeline
+
+```
+   a working session
+          │
+          ▼
+   ┌──────────────┐   /capture (on-demand skill, once at close)
+   │   CAPTURE     │   keep every exchange verbatim; drop reasoning,
+   │  (distill)    │   tool calls/results, <300-char pre-tool narration,
+   └──────┬───────┘   system/slash wrappers
+          │  writes
+          ▼
+   meta/threads/YYYY-MM-DD-<slug>.md   (type: reference, governance, no sb: id)
+   ┌───────────────────────────────────────────────┐
+   │ frontmatter                                    │
+   │ ## <narrative>   — what it was, where it landed │
+   │ ## Routing       — the LEDGER (pointers+states) │◄── router, never a digest
+   │ ## User / ## Assistant   — the frozen render    │
+   │   <routes ref="sb:… path/…"> … </routes>        │◄── ROUTE TAGS on frozen body
+   └──────┬─────────────────────────────────────────┘
+          │  mix brain.route_tags --materialize
+          ▼
+   the referenced concept docs (the SINKS, each with an sb: id)
+   ┌───────────────────────────────────────────────┐
+   │ … the concept body …                           │
+   │ ## Thread excerpts — route-tagged log           │◄── append-only, dated,
+   │   ### <thread-slug> (<date>)                    │    GENERATED from the tags
+   │   **[`sb:…`]** (co-feeds: …) + region, whole    │
+   └──────┬─────────────────────────────────────────┘
+          │  mix brain.route_tags   (CI + pre-commit)
+          ▼
+   re-derives each log from the current tags → FAILS on divergence
+```
+
+Everything downstream of the frozen body is one **finalization motion**: because
+`/capture` runs once at close, there is no per-turn rewrite to fight — the body
+is frozen when written, and tagging + ledger + materialization happen over it.
+
+---
+
+## 3. The touch-sequence (a canonical run)
+
+Every file a single `/capture` run touches, in order. **Actor** is who performs
+the step (see §5 for the boundary); **Checked by** is `scenario` (covered by the
+CI scenario test over the deterministic spine), `tool` (a `mix brain.*` gate), or
+`editorial` (a human/agent judgment with no mechanical oracle).
+
+| # | Actor | Action | Files touched | Checked by |
+|---|-------|--------|---------------|------------|
+| 1 | agent | Render the distilled `## User`/`## Assistant` body — keep every exchange verbatim, drop tool calls/results, reasoning, and `<300`-char pre-tool narration | `meta/threads/<slug>.md` (new) | editorial |
+| 2 | agent | Write frontmatter + the short narrative section | `meta/threads/<slug>.md` | tool (verify: parseable frontmatter) |
+| 3 | agent | Draft the `## Routing` ledger — one row per topic, pointers + states only | `meta/threads/<slug>.md` | editorial (pointers-only) |
+| 4 | agent | Route each topic: create/update the target `concept` doc and mint its id | `<concept>.md`, `meta/registry.md` (via `mix brain.id` + `mix brain.registry`) | tool (registry/verify) |
+| 4a | operator | Ratify any **shape change** raised in step 4 — a new top-level dir or a new `type` | — | editorial |
+| 5 | agent | Tag the frozen body with each sink's `sb:` id (+ optional path back-links) | `meta/threads/<slug>.md` | scenario + tool |
+| 6 | tool | `mix brain.route_tags --materialize` — write each fed concept's excerpt log from the tags | `<concept>.md` (log section) | **scenario** |
+| 7 | tool | `mix brain.route_tags` + the gate suite — verify, fail on divergence | — (reads all of the above) | tool |
+
+Steps 5→6 are the **deterministic spine** the scenario test drives end to end;
+steps 1–4 carry the agent judgment that only the skill and editorial review can
+hold (§5, §9).
+
+---
+
+## 4. The four moving parts
+
+Condensed; the rules live in the linked policies.
+
+- **Capture — retained responses verbatim, only the noise stripped.** `/capture`
+  keeps *every* exchange and drops only three things: tool calls/results;
+  reasoning; and short pre-tool narration (a block *both* `< ~300` chars *and*
+  followed by a tool call). Everything kept is reproduced **verbatim** — never
+  summarized. "Distilled" means the *noise* is dropped. The exact rule is
+  Composable Beliefs' `transcript_hook.py` `len < 300 and followed_by_tool`; a
+  short block *in isolation* is kept. See
+  [session-capture](/meta/policy/session-capture.md).
+- **The routing ledger — a router, never a digest.** A `## Routing` table, one row
+  per topic: `Topic | State (open/paused/closed) | Routed to ([concept] or
+  unrouted) | Dangling`. It holds **pointers and states only, never synthesized
+  content** — that lives in the sink. State and routed-to are orthogonal. See
+  [routing-ledger](/meta/policy/routing-ledger.md).
+- **The concept sink — the per-matter aggregating page.** A `concept` doc with a
+  stable `sb:` id; every thread routing to it appends a dated block to its
+  `## Thread excerpts — route-tagged log`. It **accepts appends while its matter is
+  unresolved and freezes on resolution** — per matter, not on archival.
+- **Route tags — the located, auditable back-edge.** Over the frozen body,
+  `<routes ref="sb:… path/…"> … </routes>` marks each region with the concept(s)
+  it feeds. Keyed on canonical ids (so two threads emit the *same* string and the
+  join is exact); per-paragraph, multi-ref, lifted whole; never crossing a
+  `## User`/`## Assistant` boundary. See
+  [route-tagging](/meta/policy/route-tagging.md).
+
+---
+
+## 5. Actor boundaries — who does what
+
+The flow is **agent-executed**. The operator's hands-on part is short: **invoke,
+ratify any shape change, review.**
+
+| Actor | Does |
+|-------|------|
+| **Operator** | invokes `/capture` (and `/intake` first, if raw material must be filed); ratifies a **new top-level directory** or a **new `type`** (contract §2, §4); reviews the result |
+| **Agent** | writes the distilled render; drafts the `## Routing` ledger; creates/updates the concept sinks and mints their ids; tags the frozen body; runs `mix brain.route_tags --materialize`; runs the gates |
+
+A common earlier confusion was to cast the agent's mechanical steps (routing,
+tagging, minting, materializing) as operator to-dos. They are not — the
+[skill](/.claude/skills/capture/SKILL.md) assigns all of steps 1–6 to the agent.
+
+---
+
+## 6. The data model & ref kinds
+
+| Thing | Where it lives | Identified by | Role |
+|-------|----------------|---------------|------|
+| Thread | `meta/threads/*.md` (`type: reference`) | filename slug + date | **source** of tags; not a bundle concept, no `sb:` id |
+| Ledger | `## Routing` in the thread | — | per-thread dispatch (pointers + states) |
+| Concept | anywhere in the tree (`type: concept`) | **`sb:` id** | aggregating **sink**; accretes the excerpt log |
+| Excerpt log | `## Thread excerpts — route-tagged log` in the concept | — | generated from tags; verifier-owned |
+| Route tag | `<routes ref="…">` region in the frozen body | its ref set | the located back-edge |
+
+**`classify_ref/1` recognises exactly two kinds** (see
+[`route_tags.ex`](/lib/second_brain/route_tags.ex)): `sb:…` → **`{:doc, id}`**, an
+aggregating concept sink that accretes a log block; anything else →
+**`{:path, ref}`**, a back-link that must resolve to a real file but accretes
+**no** log. This is the one substantive adaptation from the source repo (§8).
+
+---
+
+## 7. The tooling: `mix brain.route_tags`
+
+Runs beside `mix brain.verify` in [CI](/.github/workflows/ci.yml) and the
+[pre-commit hook](/.githooks/pre-commit).
+
+```
+mix brain.route_tags               # verify; exits non-zero on any :fail
+mix brain.route_tags --materialize # (re)generate each fed concept's log, then verify
+```
+
+The five checks, in order (a `:fail` fails the task; a `:warn` never does):
+
+| Check | Level | What it enforces | If red |
+|-------|-------|------------------|--------|
+| **tag wellformedness** | fail | regions line-anchored & outside fenced code, balanced, never nested, never crossing a turn boundary, non-empty ref set | fix the offending tag region |
+| **ref resolution** | fail | every ref resolves — `sb:` ids to a concept, paths to a real file | mint the id / fix the path |
+| **sink logs** | fail | every concept a tagged thread feeds carries a dated block for that thread | run `--materialize` |
+| **log fidelity** | fail | each block equals its re-derivation from the current tags; a block for a thread that no longer tags the sink is an **orphan** | re-run `--materialize` |
+| **ledger cross-check** | warn | every concept-routed ledger row is covered by ≥1 tag | add a tag, or accept the warn |
+
+**Why the split.** Log *completeness for tags that exist* is mechanizable, so the
+first four **fail**. Tag *coverage* — did you tag every paragraph that feeds a
+matter — has no mechanical oracle and stays editorial, so the cross-check only
+**warns**.
+
+**`--materialize`** makes the log *generated, not hand-kept*: it writes each fed
+concept's log from the current tags (canonical `derive_block/3` format), and the
+verifier is the structural backstop — edit a tagged paragraph without
+re-materializing and **log fidelity goes red**.
+
+---
+
+## 8. Invariants & provenance
+
+**Invariants** (the whole point): the ledger holds pointers and states only; refs
+are canonical ids, never free-text; the routed-to sink is the aggregating ref (a
+path is a non-aggregating back-link); tags are lifted whole (the boundary is the
+selection); the excerpt log is append-only, date-stamped, and quotes a *frozen*
+thread, its completeness closed by re-derivation; a concept freezes excerpt
+acceptance when its matter resolves.
+
+**Provenance.** Adapted from [Composable Beliefs](https://github.com/composablebeliefs/composable-beliefs)
+at the **OKF floor only** (the belief DAG was out of scope). The key adaptation is
+the ref model: cb resolves doc refs by *flat slug* because its proto-beliefs share
+one directory; this bundle spreads concepts across a deep tree and gives each a
+stable `sb:` id, and its contract already says *typed edges reference ids, not
+paths* — so the aggregating sink ref here is the **`sb:` id**, and `classify_ref/1`
+collapses to two kinds instead of three. cb's capture Stop-**hook** became an
+on-demand **skill**; `mix cb.verify.route_tags` became **`mix brain.route_tags`**.
+
+---
+
+## 9. Verify — the scenario, the gates, and the editorial spot-checks
+
+**The scenario test pins the spine.**
+[`test/second_brain/capture_scenario_test.exs`](/test/second_brain/capture_scenario_test.exs)
+drives steps 5→6 on an in-code fixture bundle: it tags two threads (one with a
+multi-ref, ATX-header-bearing region) feeding one concept sink, runs
+`RouteTags.materialize/1`, and asserts (a) only the fed sink is rewritten, (b) the
+materialized log section is **byte-exact** — co-feed line, ATX→bold demotion,
+count line, and alpha-before-beta ordering — and (c) `run_checks/1` is all `:ok`.
+The byte-exact assertion is what pins the transform against a *wrong-but-self-
+consistent* change, which the `log fidelity` self-check structurally cannot catch
+(it re-derives both sides from the same tags). Why it's shaped this way — in-code
+fixtures and structured/targeted assertions rather than on-disk whole-tree
+golden — is recorded, with the research spike, in
+[the spec](/meta/plans/flows-genre-and-scenario-testing.md).
+
+**The gate suite** (or just `./.githooks/pre-commit`, which mirrors CI):
+
+```
+mix format --check-formatted
+mix compile --warnings-as-errors
+mix brain.contract --check      # only if policies changed
+mix brain.registry --check      # must pass if new concept ids were minted
+mix brain.verify                # ids, edges, grounding
+mix brain.route_tags            # the 5 route-tag checks
+mix test                        # includes the capture scenario
+```
+
+**The editorial spot-checks the machine can't judge** — the three axes with no
+mechanical oracle: the ledger is pointers-only (no copied synthesized content);
+each routed-to concept actually picked up its dated block; and **coverage** — did
+every paragraph that genuinely feeds a matter get tagged (the cross-check only
+catches whole *rows* with zero tags, and only warns).
+
+**Reference instance.** The scenario fixture is the canonical green example. The
+first *live* end-to-end instance is thread
+[2026-07-08-adopt-session-capture-routing-and-route-tags](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md)
+↔ concept `sb:d479e3` — read them side by side to see a real tag → log round trip.

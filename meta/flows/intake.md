@@ -1,0 +1,222 @@
+---
+type: note
+title: Intake — capture pasted material into a filed concept
+description: The end-to-end flow for turning pasted material (text, links, notes) into one or more distilled, filed OKF concepts — the file-by-file touch-sequence of an /intake run, the judgment/spine split, actor boundaries, the identity gate suite, and the scenario test that pins the deterministic spine.
+tags: [meta, governance, intake, filing, identity, flow, workflow]
+timestamp: 2026-07-09
+---
+
+# Intake — capture pasted material into a filed concept
+
+The connective doc for the primary way knowledge enters the brain: turning
+whatever the operator pasted into properly-distilled, properly-filed OKF
+concept(s). It narrates the whole flow end to end — what happens, in what order,
+to which files — and points at the three artifacts that make it work. It does
+**not** restate the rules or the procedure; those have homes.
+
+> **The three artifacts (and the sources of truth — point, don't restate):**
+> - **Rules** → the filing + identity policies:
+>   [distill-dont-dump](/meta/policy/distill-dont-dump.md) ·
+>   [update-in-place](/meta/policy/update-in-place.md) ·
+>   [link-processing](/meta/policy/link-processing.md) ·
+>   [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md) ·
+>   [stable-identity](/meta/policy/stable-identity.md) ·
+>   [verification-grounding](/meta/policy/verification-grounding.md).
+> - **Procedure** → the [`/intake` skill](/.claude/skills/intake/SKILL.md).
+> - **Mechanism + proof** → [`SecondBrain.Registry`](/lib/second_brain/registry.ex)
+>   / [`SecondBrain.Verifier`](/lib/second_brain/verifier.ex) and the
+>   `mix brain.id` / `mix brain.registry` / `mix brain.verify` tasks, pinned by the
+>   scenario [`test/second_brain/intake_scenario_test.exs`](/test/second_brain/intake_scenario_test.exs).
+
+---
+
+## 1. The problem
+
+Raw material — a pasted article, a link, a clipping, a chat excerpt — is not
+knowledge until it is *distilled* (the signal extracted from the noise) and
+*filed* (placed where the tree says it belongs, with a stable identity and clean
+frontmatter). Left as a dump, it fragments the brain and rots. Intake is the
+single disciplined path from paste to a filed concept that the rest of the
+toolchain (registry, verifier, site) will accept.
+
+---
+
+## 2. The pipeline
+
+```
+   pasted material (text · links · notes)
+          │
+          ▼
+   ┌──────────────┐   /intake (on-demand skill)
+   │   DISTILL     │   resolve links (fetch+summarize); segment into concepts;
+   │  + DEDUP      │   SEARCH first — update in place, don't fragment
+   └──────┬───────┘
+          │  writes / updates
+          ▼
+   a concept doc, filed by the taxonomy protocol
+   ┌───────────────────────────────────────────────┐
+   │ frontmatter (type, title, description, …)      │
+   │ distilled body; links → resource / # Citations │◄── distill, don't dump
+   └──────┬─────────────────────────────────────────┘
+          │  mix brain.id          (mint sb: id if absent)
+          │  mix brain.registry    (compile id→path view)
+          ▼
+   meta/registry.md   (the generated identity view)
+          │  mix brain.verify      (conformance · id format · edges · grounding)
+          ▼
+   reserved files updated: the dir's index.md + the nearest log.md
+```
+
+The **deterministic spine** is the bottom half — id → registry → verify. The top
+half (resolve, segment, dedup, distill, choose directory) is agent judgment with
+no mechanical oracle.
+
+---
+
+## 3. The touch-sequence (a canonical run)
+
+Every file a single `/intake` run touches, in order. **Checked by** is `scenario`
+(covered by the CI scenario over the deterministic spine), `tool` (a `mix brain.*`
+gate), or `editorial` (a judgment with no mechanical oracle).
+
+| # | Actor | Action | Files touched | Checked by |
+|---|-------|--------|---------------|------------|
+| 1 | operator | Paste material after `/intake` (or the agent asks what to capture) | — | — |
+| 2 | agent | Gather: resolve any links (fetch + summarize; persist oversized sources as `resource`/`# Citations`) | — (reads external) | editorial |
+| 3 | agent | Segment into one or several concepts | — | editorial |
+| 4 | agent | **Dedup** — search the bundle for an existing concept on the subject | — (reads bundle) | editorial |
+| 5 | agent | Distill and write the concept (frontmatter + clean body, cross-links) — or update an existing one in place | `<concept>.md` (new/updated) | scenario (conformance) |
+| 5a | operator | Ratify a **shape change** — a new top-level directory or a new `type` | — | editorial |
+| 6 | tool | `mix brain.id` — mint a stable `sb:` id if the concept lacks one | `<concept>.md` (id line) | scenario |
+| 7 | tool | `mix brain.registry` — compile the id→path view | `meta/registry.md` | **scenario** |
+| 8 | tool | `mix brain.verify` — conformance, id format, edge resolution, grounding | — (reads all) | **scenario** + tool |
+| 9 | agent | Maintain reserved files: the dir's `index.md`, the nearest `log.md` (and root `index.md` for a new top-level dir) | `index.md`, `log.md` | editorial |
+
+Steps 6→8 are the spine the scenario drives; steps 2–5 and 9 carry the judgment
+that only the skill and editorial review can hold (§5, §9).
+
+---
+
+## 4. The moving parts
+
+Condensed; the rules live in the linked policies.
+
+- **Distill, don't dump.** Capture the *knowledge*, not the raw noise — a clear
+  title, a one-sentence `description`, a clean body; the original stays as a
+  `resource` URI and/or under `# Citations`. See
+  [distill-dont-dump](/meta/policy/distill-dont-dump.md) and
+  [link-processing](/meta/policy/link-processing.md).
+- **Update in place, don't fragment.** Search first; if a concept on the subject
+  exists, merge into it and bump `timestamp` rather than creating a near-duplicate.
+  See [update-in-place](/meta/policy/update-in-place.md).
+- **File by the taxonomy protocol.** Filing into an existing directory, or
+  creating subdirectories under an established top-level domain, is **autonomous**;
+  a **new top-level directory** (or a new `type`) is a shape change the agent
+  **proposes and waits** for the operator to ratify. See
+  [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md).
+- **Join the identity layer.** Every bundle concept carries an immutable `sb:` id;
+  `meta/registry.md` is the compiled id→path view. Captures (anything with a
+  `resource`) are never `verified`; an agent statement marked `verified: true`
+  needs a non-empty `verified_by`. See
+  [stable-identity](/meta/policy/stable-identity.md) and
+  [verification-grounding](/meta/policy/verification-grounding.md).
+
+---
+
+## 5. Actor boundaries — who does what
+
+The flow is **agent-executed**. The operator's part is short: **paste, ratify any
+shape change, review.**
+
+| Actor | Does |
+|-------|------|
+| **Operator** | pastes the material; ratifies a **new top-level directory** or a **new `type`** (contract §2, §4); reviews the result |
+| **Agent** | resolves links; segments; dedups; distills and writes/updates the concept; mints the id and compiles the registry; runs the verifier; maintains `index.md` and `log.md` |
+
+---
+
+## 6. The data model
+
+Intake produces **bundle concepts** — markdown files with YAML frontmatter, an
+`sb:` id, and a body, filed anywhere in the knowledge tree. The identity layer
+that receives them is the same one the [three bundle
+scanners](/meta/tutorials/the-three-bundle-scanners.md) tutorial describes:
+`Registry.scan/1` enumerates them (a fresh concept is in scope the moment it lands
+in a non-excluded directory), the registry compiles their ids, and the verifier
+validates each. Governance namespaces (`meta/`, `inbox/`, …) are **not** intake
+targets — `/intake` files knowledge, not governance.
+
+---
+
+## 7. The tooling: `brain.id` · `brain.registry` · `brain.verify`
+
+```
+mix brain.id         # insert a minted `id: sb:xxxxxx` into every concept lacking one
+mix brain.registry   # compile meta/registry.md (id→path); --check guards it in CI
+mix brain.verify     # conformance, id uniqueness/format, verified_by edges, grounding
+```
+
+- **`mix brain.id`** scans the bundle, and for each concept with no id inserts a
+  freshly minted one as the first frontmatter line (existing ids are immutable and
+  never touched). The mint is random, so its *value* isn't pinned — only that a
+  well-formed id results.
+- **`mix brain.registry`** renders the id→path view; **`--check`** fails CI if the
+  on-disk view is stale — the same generated-not-hand-kept discipline as the
+  contract and the route-tag logs.
+- **`mix brain.verify`** enforces the five identity/grounding rules (see
+  [`verifier.ex`](/lib/second_brain/verifier.ex)): non-empty `type`; present,
+  well-formed id; every `verified_by` resolves; a capture (`resource`) is never
+  `verified: true`; and `verified: true` requires a non-empty `verified_by`.
+
+---
+
+## 8. Invariants
+
+- **Distilled, not dumped** — the knowledge is extracted; the source is a link,
+  not the body.
+- **One concept per subject** — search-first dedup keeps the brain from
+  fragmenting.
+- **Ids are immutable** — minted once, never changed or reused, even across a move
+  or rename; the registry view moves, the id doesn't.
+- **Captures aren't statements** — anything storing a `resource` is trusted
+  evidence, never `verified`; verification is only for agent-authored statements,
+  and only via `verified_by`.
+- **Reserved files stay current** — the dir's `index.md` and the nearest `log.md`
+  are updated in the same motion as the filing.
+
+---
+
+## 9. Verify — the scenario, the gates, and the editorial spot-checks
+
+**The scenario test pins the spine.**
+[`test/second_brain/intake_scenario_test.exs`](/test/second_brain/intake_scenario_test.exs)
+builds an in-code fixture representing a real intake output — a `source` capture
+and a `claim` distilled from it and grounded via `verified_by` — then compiles the
+registry and asserts: (a) `Registry.check/1` round-trips; (b) the rendered
+registry is **byte-exact** for both rows (id, path, type, and the `verified`
+column); and (c) `Verifier.run/1` is clean. Two red guardrails encode intake's
+mechanical handoffs: a concept written **without an id** makes the verifier flag
+it (the cue to run `mix brain.id`), and a **capture marked `verified: true`** is
+rejected. Id minting itself is random and deliberately not pinned. Why the harness
+is shaped this way — in-code fixtures + structured/targeted assertions — is in
+[the spec](/meta/plans/flows-genre-and-scenario-testing.md).
+
+**The gate suite** (or just `./.githooks/pre-commit`, which mirrors CI):
+
+```
+mix format --check-formatted
+mix compile --warnings-as-errors
+mix brain.registry --check      # must pass — a new id was minted
+mix brain.verify                # conformance, ids, edges, grounding
+mix brain.route_tags            # unaffected unless a thread tags the new concept
+mix test                        # includes the intake scenario
+```
+
+**The editorial spot-checks the machine can't judge** — the axes with no
+mechanical oracle: was the material genuinely *distilled* (not dumped); was dedup
+done (no near-duplicate created); and does the chosen directory actually fit the
+taxonomy (or should a new one have been proposed for ratification).
+
+**Reference instance.** The scenario fixture is the canonical green example. Any
+freshly intook reference in the tree — e.g. the two `SWE/testing/` captures filed
+during the flows-spec research spike — is a real worked instance of steps 5–9.

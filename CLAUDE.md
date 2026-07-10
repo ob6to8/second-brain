@@ -146,6 +146,35 @@ _Source: [`meta/policy/link-processing.md`](/meta/policy/link-processing.md)_
 
 _Source: [`meta/policy/maintain-reserved-files.md`](/meta/policy/maintain-reserved-files.md)_
 
+**Persist plans; don't leave them in the conversation.** A design spec or
+implementation plan is a durable record of *decisions and their rationale* — the
+shape of a change, the alternatives weighed, and the build order. That record must
+survive the session that produced it. Chat scrolls off and the agent scratchpad is
+session-isolated and reclaimed, so a plan that lives only there is lost the moment
+the session ends.
+
+- **When.** Whenever the operator approves a plan of any substance — a new
+  subsystem, a genre or policy change, a multi-step build — persist it before
+  acting on it. A throwaway one-liner is not a plan; a design worth a review pass
+  is.
+- **Where.** As a `type: plan` document under [`meta/plans/`](/meta/plans/index.md)
+  (governance namespace — no `sb:` id, outside the identity registry, like
+  `tutorials` and `threads`). Filename is a kebab-case slug of the title.
+- **What it holds.** The problem, the decisions and their reasoning, the artifact
+  shape, and the build order — plus any commissioned design review (e.g. a
+  research spike) recorded with its verdict, so the *why-it's-shaped-this-way*
+  travels with the plan. Deferred phases (things planned but not yet built) stay in
+  the same doc under an explicit "deferred" heading until they graduate into their
+  own plan when built.
+- **Lifecycle.** A plan carries a `status` (`proposed` · `accepted` · `in-progress`
+  · `done` · `superseded`). Done and superseded plans are kept, not deleted — the
+  decision history is the point.
+- **Reserved files.** After adding or updating a plan, update
+  [`meta/plans/index.md`](/meta/plans/index.md) and append a dated entry to the
+  nearest `log.md`, same as any filed document.
+
+_Source: [`meta/policy/persist-plans.md`](/meta/policy/persist-plans.md)_
+
 ---
 
 ## 4. Controlled `type` vocabulary
@@ -167,6 +196,9 @@ Seed vocabulary:
 - `project` — an active, goal-bounded effort.
 - `area` — an ongoing responsibility or domain (no end state).
 - `snippet` — a reusable command, code fragment, or template.
+- `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
+  *how-to* for carrying out a recurring task (distinct from a `note`, which merely
+  records an idea, and a `concept`, which defines a mental model).
 - `policy` — a governance rule for how the brain operates; the source from which
   `CLAUDE.md` is compiled (lives under `meta/policy/`).
 - `tutorial` — a long-form explanatory note meant to be read start to finish (the
@@ -177,6 +209,18 @@ Seed vocabulary:
   follow-up. Carries a `status` (`open`/`resolved`/`wontfix`); distinct from a
   `policy` (a rule) and a `note` (a distilled idea) — an issue is a *problem to
   track* (lives under `meta/issues/`).
+- `plan` — intended work on the brain or its tooling: a design/decision record for a
+  proposed change, capturing motivation, the shape of the change, scope boundaries,
+  and open questions, so a future session can execute it. Carries a `status`
+  (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an `issue`
+  (a *problem* to track) and a `methodology` (a *repeatable* how-to) — a plan is a
+  *one-off intended change* (lives under `meta/plans/`).
+- `analysis` — a point-in-time evaluation or decision-support write-up: a question
+  investigated against evidence (often the live bundle itself), yielding findings and
+  a recommendation, filed so the reasoning and its conclusion persist. Distinct from a
+  `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
+  `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
+  (lives under `meta/analysis/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
 

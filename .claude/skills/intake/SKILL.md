@@ -92,3 +92,9 @@ Summarize concisely:
 - Never create a new directory or a new `type` without operator ratification.
 - Keep every concept OKF-conformant: parseable frontmatter, non-empty `type`.
 - Never touch `deprecated/`.
+
+## See also
+
+[meta/flows/intake.md](/meta/flows/intake.md) — the end-to-end flow (pipeline,
+data model, touch-sequence, actor boundaries, gate suite, and the scenario test),
+for the *why* behind this procedure.

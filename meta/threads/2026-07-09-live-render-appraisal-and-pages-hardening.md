@@ -1,13 +1,13 @@
 ---
 type: reference
-title: "Thread — live-render appraisal and Pages-site hardening (PR #16)"
+title: 2026-07-09-live-render-appraisal-and-pages-hardening
 description: Built a parallel mix brain.render site generator, then — on finding the other thread had already shipped mix brain.site to main — abandoned it, appraised the shipped version, and instead landed two safety fixes (deploy-gating on verify, link-href escaping) plus a tutorial as PR #16.
 provenance: "Claude Code session (Claude Fable 5, then Claude Opus 4.8 after a mid-session model switch), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, github-pages, ci, site-generator, markdown, tooling]
 timestamp: 2026-07-09
 ---
 
-# Thread — live-render appraisal and Pages-site hardening (PR #16)
+# 2026-07-09-live-render-appraisal-and-pages-hardening
 
 ## Where this landed
 
