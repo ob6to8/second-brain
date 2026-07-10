@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **New tutorial: [the gate suite — what the checks prove and where they run](/meta/tutorials/the-gate-suite-and-where-it-runs.md).**
+  Explains the repository's integrity gates as an enforcement surface: the eight
+  CI checks grouped into four kinds (build; generated-artifact freshness via
+  `--check`; bundle validation via `mix brain.verify` / `mix brain.route_tags`; the
+  `mix brain.site` render), what turns each red and its fix, and the three widening
+  scopes they run at (an agent's scoped manual pass — the "all three gates pass"
+  subset — the opt-in pre-commit hook, and the authoritative CI job). Complements
+  [the three bundle scanners](/meta/tutorials/the-three-bundle-scanners.md) (which
+  covers the scanner *architecture*) by cross-linking to it rather than duplicating.
+  Listed in the tutorials index.
 - **New `todo` type + `meta/todos/` genre + `/todo` skill.** Added `todo` to the
   [controlled type vocabulary](/meta/policy/controlled-type-vocabulary.md) — a
   lightweight actionable task item carrying a `status` (`open`/`done`/`cancelled`),
