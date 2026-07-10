@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **`/capture` of the field-comparison / evals / CB-overlay session** → thread
+  [2026-07-10-field-comparison-evals-and-cb-overlay-execution-path](/meta/threads/2026-07-10-field-comparison-evals-and-cb-overlay-execution-path.md)
+  (render-from-context; retained operator messages and substantive responses
+  verbatim, tool noise and short pre-tool narration stripped). Six-row routing
+  ledger — four closed (the two field/failure-chain strands, eval suitability,
+  the CB stabilizer), one paused (dedup-recall-probe plan awaiting ratification),
+  one open (the two-thread execution path, to be launched from the plan's
+  addendum). All route tags are path back-links to governance docs (analyses and
+  plans — no `sb:` sinks), so no concept excerpt logs materialized. Listed in the
+  threads index. Captured as the first step of a `/create-pull-request` run.
 - **Execution-path addendum on the [epistemic overlay plan](/meta/plans/epistemic-overlay.md).**
   Ratified the two-thread path for executing the plan: Thread A imports CB's
   usable content as freshness-vetted `source`/`reference` captures under
