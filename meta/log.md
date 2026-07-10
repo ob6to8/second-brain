@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **`/capture` of this session** → thread
+  [2026-07-10-add-to-glossary-skill-and-pr-wiring](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
+  (render-from-context; retained operator messages and closing replies verbatim,
+  tool noise and short pre-tool narration stripped). Four-row routing ledger, all
+  closed — one `unrouted` (running `/create-pull-request` itself), the rest routed
+  to the two skill files and the [glossary](/glossary.md). One region tagged to
+  `sb:0b648f`, materializing the glossary's first excerpt-log block; listed in the
+  threads index. Ran as step 1 of a `/create-pull-request` invocation, whose new
+  step 2 (`/add-to-glossary` over this thread doc) then executed for the first
+  time — see the root `log.md` for the seeded entries.
 - **`/create-pull-request` now glossaries the captured thread.** Inserted a step
   between capture and commit: run
   [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md) over the thread

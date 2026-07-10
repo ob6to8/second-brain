@@ -4,6 +4,15 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-10
 
+- **First `/add-to-glossary` run** — over the thread
+  [2026-07-10-add-to-glossary-skill-and-pr-wiring](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md),
+  as step 2 of a `/create-pull-request` invocation (the new wiring's first live
+  exercise). Seeded the [glossary](/glossary.md) (`sb:0b648f`) with its first
+  seven entries: two definitions for terms the session coined (*graduation*,
+  *pointer entry*, deferring to the skill doc) and five pointer entries for
+  contract machinery the thread used (*concept (OKF)*, *route tag*,
+  *stable id*, *thread doc*, *verified_by* — each a one-line gloss plus a link
+  to its defining policy).
 - **Seeded the bundle-root [glossary](/glossary.md)** — a single cross-domain
   running glossary (`type: concept`), accreted by the new
   [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md) skill: one
