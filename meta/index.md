@@ -5,14 +5,15 @@ taxonomy. This is where the rules that compile into the operating contract live.
 
 ## Contents
 
+- [analysis](/meta/analysis/index.md) — point-in-time evaluations and decision-support write-ups on questions about the brain (`type: analysis`)
+- [flows](/meta/flows/index.md) — per-flow connective docs: the file-by-file touch-sequence of a canonical run, tying together the skill, the CI-checked scenario, and the why (supersedes the old `session-workflow.md` guide + `verification-flows/`)
 - [issues](/meta/issues/index.md) — tracked operational problems and open concerns about the brain's tooling/automation (`type: issue`, each with a `status`)
+- [plans](/meta/plans/index.md) — design/decision records for proposed changes to the brain or its tooling (`type: plan`, each with a `status`)
 - [policy](/meta/policy/index.md) — the `type: policy` rules that compile into `/CLAUDE.md`
 - [preamble.md](/meta/preamble.md) — fixed framing text prepended to the compiled contract
 - [registry.md](/meta/registry.md) — **generated** stable-id → concept view (`mix brain.registry`)
-- [session-workflow.md](/meta/session-workflow.md) — end-to-end guide to session capture, the routing ledger, route tags, and `mix brain.route_tags` (the pipeline, data model, invariants, and the Composable Beliefs port)
 - [threads](/meta/threads/index.md) — archived operator–agent conversations (exchanges only)
 - [tutorials](/meta/tutorials/index.md) — long-form explanatory notes on how the tooling and governance work
-- [verification-flows](/meta/verification-flows/index.md) — hands-on walkthroughs for running and verifying each multi-step flow (who does what + what to check)
 
 ## Related tooling (not part of the knowledge bundle)
 

@@ -91,6 +91,17 @@ defmodule SecondBrain.MarkdownTest do
       html = Markdown.to_html("[x](/a/b.md#sec)", root_prefix: "")
       assert html =~ ~s(<a href="a/b.html#sec">x</a>)
     end
+
+    test "href with & is escaped to valid HTML" do
+      assert Markdown.to_html("[x](https://e.com/?a=1&b=2)") =~
+               ~s(<a href="https://e.com/?a=1&amp;b=2">x</a>)
+    end
+
+    test "a double-quote in an href cannot break out of the attribute" do
+      html = Markdown.to_html(~s{[x](https://e.com/a"onmouseover=alert(1))})
+      refute html =~ ~s(a"onmouseover)
+      assert html =~ "&quot;onmouseover"
+    end
   end
 
   describe "lists" do
@@ -123,6 +134,19 @@ defmodule SecondBrain.MarkdownTest do
       html = Markdown.to_html("| a | b |\n|---|---|\n| 1 | 2 |")
       assert html =~ "<th>a</th><th>b</th>"
       assert html =~ "<td>1</td><td>2</td>"
+    end
+
+    test "table column alignment from the separator row" do
+      html = Markdown.to_html("| l | c | r |\n|:--|:-:|--:|\n| 1 | 2 | 3 |")
+      assert html =~ ~s(<th style="text-align:left">l</th>)
+      assert html =~ ~s(<th style="text-align:center">c</th>)
+      assert html =~ ~s(<th style="text-align:right">r</th>)
+      assert html =~ ~s(<td style="text-align:right">3</td>)
+    end
+
+    test "a lone pipe row without a separator is a paragraph, not a hang" do
+      assert Markdown.to_html("| Attached to | The env | Your repo |") ==
+               "<p>| Attached to | The env | Your repo |</p>"
     end
 
     test "HTML comments are dropped" do

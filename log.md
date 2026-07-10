@@ -4,6 +4,44 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-09
 
+- **Route-tagged excerpt logs materialized** into the two `SWE/testing` references
+  [ExUnit dependency-free fixtures and diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
+  (`sb:f6e843`) and
+  [Elixir snapshot/approval-testing libraries require a dependency](/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md)
+  (`sb:b1ba4b`) by the `/capture` of the flows-genre session (thread
+  `2026-07-09-flows-genre-and-scenario-testing`) — the research-spike verdict
+  region feeds both. See [meta/log.md](/meta/log.md) for the capture entry.
+- [Open Knowledge Format (OKF)](/knowledge-management/open-knowledge-format.md)
+  (`sb:24bd1e`) gained a thread-excerpt log section from the `/capture` of the
+  GitHub Pages / OKF-node session (route-tagged; materialized by
+  `mix brain.route_tags`). Content-only; no frontmatter change.
+- **Intook the outside references that informed the flows-spec harness design**
+  (operator-directed), into `SWE/testing/`:
+  [ExUnit ships dependency-free fixtures and diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
+  (`sb:f6e843`) and
+  [Elixir snapshot/approval-testing libraries require a dependency](/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md)
+  (`sb:b1ba4b`) — two `reference` captures distilled from the ExUnit docs, the
+  Elixir issue tracker, and the mneme/snapshy/assert_value repos during the
+  test-harness research spike. Each carries an `# Influence` back-link to the spec
+  ([flows-genre-and-scenario-testing](/meta/plans/flows-genre-and-scenario-testing.md)),
+  and the spike section of that spec now links forward to both — bidirectional
+  traceability from a design decision to the resources that drove it. Minted ids
+  and regenerated `meta/registry.md`.
+- **Ratified a new `plan` type** (operator-approved) and a `meta/plans/` namespace —
+  intended work on the brain/tooling as design/decision records, each carrying a
+  `status` (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an
+  `issue` (a problem) and a `methodology` (a repeatable how-to). Added it to the
+  controlled vocabulary, seeded `meta/plans/index.md`, registered it in `meta/index.md`,
+  and recompiled `CLAUDE.md`. Filed the first plan,
+  [epistemic overlay](/meta/plans/epistemic-overlay.md) (`status: proposed`) — a
+  frontmatter-native overlay promoting the latent attestation/aggregation/inference/
+  prescription structure to a first-class, queryable layer over existing concepts, with
+  an integrity-checking `mix brain.graph`, explicitly bounding out atomization and
+  strength-as-count. Derived from a deep comparison against the Composable Beliefs repo
+  (the diagnosis: CB is well-engineered but carries three uncommitted purposes on one
+  substrate; its four-type epistemic layer is the one genuinely universal piece this
+  brain is already using implicitly).
+
 - Ratified a new top-level **`inbox/`** namespace (operator-approved) — a daily
   candidate feed of news, articles, papers, and resources matched against the
   taxonomy, grouped by category and reason-tagged
@@ -45,6 +83,33 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
   `README.md`, and `meta/preamble.md` (→ recompiled `CLAUDE.md`) — from the raw
   external URL to this node, so the link is processed once and referenced everywhere.
   Listed the new domain in the root `index.md`; regenerated `meta/registry.md`.
+
+- **Ratified a new `methodology` type** (operator-approved) and added it to the
+  controlled vocabulary in `meta/policy/controlled-type-vocabulary.md` — a
+  repeatable, prescriptive procedure/playbook, distinct from `note` (an idea) and
+  `concept` (a mental model). Recompiled `CLAUDE.md`. Retyped
+  `SWE/testing/elixir-second-brain-testing-methodology.md` (`sb:d58da3`)
+  `note` → `methodology`; aligned its tags (`test-strategy` → `test-design`,
+  dropped the now-redundant `methodology` tag). Added reciprocal "Applied in"
+  back-links from both matklad references (`sb:a5ea86`, `sb:73115b`) to the
+  methodology, and relabeled the `SWE/testing/index.md` section
+  Notes → Methodologies. Left `verified: false` (grounding it via `verified_by`
+  the two references remains an open option). Regenerated `meta/registry.md`.
+
+- Synthesized the two matklad testing references already filed under `SWE/testing/`
+  ("How to Test" `sb:a5ea86` and "Purity and Extent" `sb:73115b`) into an
+  agent-facing **testing methodology** for this repo's dependency-free Elixir
+  tooling: `SWE/testing/elixir-second-brain-testing-methodology.md` (`sb:d58da3`,
+  `type: methodology`). Maps each essay principle onto the actual modules — purity ladder →
+  `async: true` for `Frontmatter`/`Policy` vs. `async: false` + `@moduletag :tmp_dir`
+  for the IO-touching `Registry`/`Contract`/`Verifier`; test-features-not-code →
+  assert on error strings / rendered output and inject `root` rather than mocking
+  `File`; the `check` chokepoint → the existing `write_concept`/`write_policy`
+  builders (promote to `test/support/` when shared); golden/snapshot tests → the
+  `write`/`check` round-trip on the generated `CLAUDE.md` and `meta/registry.md`;
+  and a generative-testing ladder (properties for `mint`/frontmatter round-trip,
+  exhaustive enumeration for the `type` vocab), noting StreamData would be a new dep
+  to ratify. Updated `SWE/testing/index.md` and regenerated `meta/registry.md`.
 
 ## 2026-07-06
 

@@ -19,6 +19,9 @@ noise, it does not summarize what it keeps.
 
 - **Path**: `meta/threads/YYYY-MM-DD-<slug>.md` — date first (threads are
   time-ordered), then a kebab-case slug for what the session accomplished.
+- **Title = the filename stem.** The frontmatter `title` (and the body `# H1`)
+  is exactly the filename without `.md` — e.g. `2026-07-09-flows-genre-and-scenario-testing`:
+  date-prefixed kebab-case, **no `Thread` prefix, no em-dashes, no spaces**.
 - **Type**: `reference`, governance namespace (`meta/`) — **no `sb:` id**; the
   registry and `mix brain.verify` ignore it. Threads are tag *sources*; the
   `concept` docs they route to (which carry `sb:` ids) are the sinks.
@@ -29,7 +32,7 @@ noise, it does not summarize what it keeps.
 
 ```yaml
 type: reference
-title: Thread — <descriptive name>
+title: <YYYY-MM-DD-kebab-slug>   # = filename stem; no "Thread", no em-dashes, no spaces
 description: <one sentence: what the session covered and where it landed>
 provenance: "Claude Code session (<model name(s)>), <date>; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, <topic tags>]
@@ -143,3 +146,9 @@ after any tag edit so the log stays re-derivable.
 - The excerpt log is **append-only** and generated; let `--materialize` own it.
 - A concept freezes excerpt acceptance when its matter resolves (per matter, not
   on archival) — do not append to a resolved matter's log.
+
+## See also
+
+[meta/flows/session-capture.md](/meta/flows/session-capture.md) — the end-to-end
+flow (pipeline, data model, touch-sequence, actor boundaries, gate suite, and the
+scenario test), for the *why* behind this procedure.

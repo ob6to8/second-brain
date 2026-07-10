@@ -4,6 +4,139 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- `/capture`: froze the testing-methodology / types / Composable-Beliefs session into
+  [2026-07-09-testing-methodology-types-and-cb-epistemic-overlay](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md).
+  Two regions route-tagged to the testing methodology (`sb:d58da3`) — materializing its
+  `## Thread excerpts — route-tagged log` — plus six path back-links to the
+  `epistemic-overlay` plan. Routing ledger has six strands (five closed, the plan
+  paused on its open questions). `mix brain.route_tags` verifies clean. Listed the
+  thread in `meta/threads/index.md`.
+
+- Captured the session thread
+  [2026-07-09 — live-render appraisal and Pages-site hardening](/meta/threads/2026-07-09-live-render-appraisal-and-pages-hardening.md)
+  (`/capture`, parse-the-log render): the session that produced PR #16. Built a
+  parallel `mix brain.render` generator, then abandoned it on finding the shipped
+  `mix brain.site`; appraised both, ported two safety fixes (deploy-gating on
+  `verify`, link-href escaping) + table alignment + Pages auto-enable, and wrote
+  the deploy-gating tutorial. Routing ledger: all strands closed (two routed to
+  the gating tutorial, the rest thread-specific/unrouted); path-ref route tags
+  back-link the gating and href-escaping regions to the tutorial, `pages.yml`, and
+  `markdown.ex` (no `sb:` sinks, so no concept excerpt logs materialized). Listed
+  it in the threads index. Dropped the Fable-5 usage-limit notice and the
+  mid-session model switch to Opus 4.8 as an italic editorial note.
+- **`/capture` of this session** → thread
+  [2026-07-09 — the flows genre, scenario testing, and the plan-genre collapse](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md)
+  (parse-the-log render from the host `.jsonl`, so all 18 operator messages and 22
+  agent turns are verbatim). Eight-row routing ledger — mostly `unrouted` (the
+  session was overwhelmingly governance/tooling homed in `meta/`), with the
+  dependency-free-testing strand routed to the ExUnit reference and one route-tag
+  region (the research-spike verdict) feeding both `SWE/testing` captures
+  (`sb:f6e843`, `sb:b1ba4b`), whose excerpt logs were materialized. Listed in the
+  threads index. (Captured post-merge on the branch restarted from `main`.) Title
+  later aligned to the filename-stem convention adopted in PR #25.
+- Captured the session thread
+  [vector-DB recall evaluation and the `analysis` type](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)
+  (`/capture`, parse-the-log render): stress-tested a prior "not yet" call on adding
+  a vector DB via a dedup-recall probe over the live corpus (grep already misses
+  existing concepts *semantically*), landing on fix-intake-first (no vector DB), then
+  ratified the `analysis` type and filed the finding. Routing ledger has two closed
+  strands (the evaluation → the analysis doc; the `analysis` type → the vocabulary),
+  with one dangling follow-up (Tier-1: synonym-expansion `/intake` dedup +
+  `mix brain.dedup_probe`); path-ref route tags back-link the analysis answer and the
+  type-ratification region to their sinks. Listed it in the threads index. Also
+  adopted the filename-stem thread-title convention (no "Thread", em-dashes, or
+  spaces) in the `/capture` skill.
+- `/capture` — froze the GitHub Pages / OKF-node session into
+  [2026-07-09 — GitHub Pages knowledge-base site, offline-toolchain tutorial, and the OKF node](/meta/threads/2026-07-09-github-pages-knowledge-base-site.md)
+  (parse-the-log render of the host session jsonl, so retained text is exact).
+  Routing ledger has six closed strands (the site generator, the offline
+  tutorial, the `tutorial` type, the OKF node, the Pages-enable fix, and the
+  stop-hook false alarm); route tags back-link the tooling/tutorial/vocabulary
+  regions and materialize two excerpts into the OKF node (`sb:24bd1e`). Listed it
+  in the threads index; all gates green (`mix brain.route_tags`). The site work
+  itself shipped earlier as PRs #11/#12 — this is its session record.
+- **Ratified the `analysis` type** (operator directive) and created the
+  `meta/analysis/` namespace with its `index.md`. An `analysis` is a point-in-time
+  evaluation / decision-support write-up — a question investigated against evidence,
+  yielding findings and a recommendation — distinct from a `plan` (intended work),
+  `tutorial` (explanatory), and `note` (an idea). Added the type to
+  `meta/policy/controlled-type-vocabulary.md` and recompiled `CLAUDE.md`.
+- Filed the first analysis,
+  [Would a vector DB improve recall as this bundle scales?](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md)
+  (`type: analysis`): a reproducible dedup-recall probe over the live 39-concept
+  corpus shows grep already misses existing concepts on natural-phrasing queries
+  (~6 of 14) — a *semantic* (synonym/jargon) failure, not typographic. Concludes the
+  right first move is synonym-expanded intake dedup + a repeatable recall probe
+  (both zero-dependency), with cached brute-force embedding dedup as a later Tier 2,
+  and a standalone vector DB rejected at this corpus's scale.
+- **Collapsed the `spec` genre into `plan`** (operator-directed) — the `spec` type
+  / `meta/specs/` namespace this branch added and the `plan` type / `meta/plans/`
+  namespace from `main` were near-duplicates (both "a design/decision record for a
+  proposed change to the brain/tooling"). Unified on **`plan`/`meta/plans/`** as the
+  survivor: moved the flows design doc to
+  [meta/plans/flows-genre-and-scenario-testing.md](/meta/plans/flows-genre-and-scenario-testing.md)
+  (retyped `spec`→`plan`, `status: approved`→`done`), removed the `spec` type from
+  the controlled vocabulary and the `meta/specs/` namespace, renamed the
+  `persist-specs` policy → [persist-plans](/meta/policy/persist-plans.md) (retargeted
+  to `type: plan` / `meta/plans/`), repointed all links, and recompiled `CLAUDE.md`.
+  Earlier 2026-07-09 log entries that describe creating `meta/specs/` are frozen
+  history (their narrative is left as-is; the moved doc's link now resolves to
+  `meta/plans/`).
+- **Added the second flow: `/intake`** (per the flows plan, completing its planned
+  scope). Filed [meta/flows/intake.md](/meta/flows/intake.md) — the file-by-file
+  touch-sequence of an `/intake` run (paste → distill + dedup → file by taxonomy →
+  mint id → compile registry → verify → reserved files), with the judgment/spine
+  split, actor boundaries, gate suite, and invariants. Added the scenario test
+  `test/second_brain/intake_scenario_test.exs`: an in-code fixture (a `source`
+  capture + a grounded `claim`) that compiles the registry and asserts the render
+  **byte-exact** plus `verify` clean, with two red guardrails (a concept missing an
+  id is flagged; a capture marked `verified: true` is rejected). Added a See-also
+  from the `/intake` skill and updated the spec status (both flows now built).
+- **Built the `flows` genre and collapsed the capture docs into it** (per the
+  approved [flows spec](/meta/plans/flows-genre-and-scenario-testing.md), build
+  order §9). Created `meta/flows/` with its `index.md` and the first flow doc
+  [session-capture](/meta/flows/session-capture.md) — the file-by-file
+  touch-sequence of a `/capture` run, plus pipeline, data model, actor
+  boundaries, gate suite, and invariants. Added the scenario test
+  `test/second_brain/capture_scenario_test.exs`: plain ExUnit over a `:tmp_dir`
+  fixture that drives `RouteTags.materialize/1` and asserts the materialized log
+  section **byte-exact** (co-feed lift, ATX→bold demotion, ordering) — pinning the
+  transform against a wrong-but-self-consistent change the `log fidelity`
+  self-check can't catch. **Collapsed** `meta/session-workflow.md` and
+  `meta/verification-flows/` into the flow doc (both removed), repointed
+  `meta/index.md`, added a See-also from the `/capture` skill, and updated the
+  spec's status. Flow docs live in the governance namespace (`type: note`, no
+  `sb:` id), so no registry/contract change; all gates green including the new
+  scenario.
+- **Established the `meta/specs/` genre + a persist-specs policy** (operator-directed):
+  design specs and implementation plans the operator approves are now persisted as
+  `type: spec` docs under `meta/specs/` (governance namespace, no `sb:` id) rather
+  than left in chat or the reclaimed scratchpad. Ratified a new `spec` type in
+  `controlled-type-vocabulary`, added `persist-specs` under the *filing* contract
+  section (order 6), created `meta/specs/index.md`, and recompiled `CLAUDE.md`.
+  First spec filed: [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md)
+  (`status: approved`) — the collapse of the capture flow's three prose docs into
+  one `meta/flows/` doc backed by an ExUnit scenario, with the commissioned harness
+  research spike folded in (it *adjusted* the plan: in-code fixtures + structured
+  assertions over on-disk whole-tree golden). Build not yet started.
+- Added the tutorial
+  [The three bundle scanners — Registry, Verifier, and RouteTags](/meta/tutorials/the-three-bundle-scanners.md)
+  (operator-requested): how `Registry.scan/1` is the one crawler (wildcard +
+  directory-exclusion + frontmatter parse), the Verifier layers rules over the same
+  corpus, and RouteTags adds a second surface over `meta/threads` and rejoins the
+  governance and knowledge namespaces by stable id — and why everything under an
+  excluded directory (e.g. `test/` fixtures) is invisible to all three. Listed in
+  `meta/tutorials/index.md`.
+- Filed the tutorial
+  [How the Pages deploy is gated on a verified bundle](/meta/tutorials/gating-the-pages-deploy-on-a-verified-bundle.md)
+  (`type: tutorial`) explaining the mechanics of the `pages.yml` deploy gate:
+  GitHub Actions runs each workflow in isolation, so a `needs:` can't reach from
+  `pages.yml` into `ci.yml`'s `verify` job; the fix repeats the bundle-integrity
+  checks (`brain.contract --check`, `brain.registry --check`, `brain.verify`,
+  `brain.route_tags`) inside the Pages build job before `mix brain.site`, and a
+  non-zero exit fails `build` so `deploy` (which `needs` it) is skipped — making
+  the live site reachable only for a verified bundle. Listed it in
+  `meta/tutorials/index.md`. Accompanies the deploy-gating change in PR #16.
 - Captured the session thread
   [2026-07-09 — remove operator email from operating contract](/meta/threads/2026-07-09-remove-operator-email-from-contract.md)
   (`/capture`, parse-the-log render): the short session that removed the operator's

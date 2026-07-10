@@ -29,8 +29,31 @@ jobs:
           otp-version: "25"
           elixir-version: "1.14"
 
+      # Gate the deploy on the same integrity checks CI runs, so the live site
+      # is only ever a render of a valid, verified bundle. pages.yml is a
+      # separate workflow from ci.yml and cannot depend on its jobs, so the
+      # checks are repeated here rather than referenced.
+      - name: CLAUDE.md is compiled and current
+        run: mix brain.contract --check
+
+      - name: Registry is compiled and current
+        run: mix brain.registry --check
+
+      - name: Bundle verifies (ids, evidence edges, grounding)
+        run: mix brain.verify
+
+      - name: Route tags verify (tags, refs, sink logs, log fidelity)
+        run: mix brain.route_tags
+
       - name: Build the static site
         run: mix brain.site
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          # Enable Pages on first run so the initial deploy doesn't require a
+          # manual Settings → Pages toggle.
+          enablement: true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

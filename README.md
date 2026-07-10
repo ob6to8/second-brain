@@ -41,5 +41,8 @@ Open `_site/index.html` (serve over HTTP — e.g. `python3 -m http.server -d _si
 and deployed by [`.github/workflows/pages.yml`](.github/workflows/pages.yml) on every
 push to `main`.
 
-> **Enable it once:** in the repository's **Settings → Pages**, set **Source** to
-> **GitHub Actions**. The workflow then publishes the site on each push to `main`.
+The workflow enables Pages automatically on its first run (via
+`actions/configure-pages`) and gates the deploy on the same integrity checks CI
+runs (`brain.verify` et al.), so only a valid, verified bundle is published. If
+your organization restricts automatic enablement, set **Settings → Pages →
+Source** to **GitHub Actions** once by hand.

@@ -167,14 +167,15 @@ defmodule SecondBrain.Markdown do
     line =~ ~r/^\|?[\s:|-]+\|[\s:|-]*$/ and String.contains?(line, "-")
   end
 
-  defp take_table([header, _sep | rest], ctx) do
+  defp take_table([header, sep | rest], ctx) do
     {rows, rest} = Enum.split_while(rest, &(String.trim(&1) != "" and String.contains?(&1, "|")))
 
-    head = row_cells(header) |> Enum.map_join("", &"<th>#{inline(&1, ctx)}</th>")
+    aligns = sep |> row_cells() |> Enum.map(&alignment/1)
+    head = header |> cells_with_aligns(aligns) |> Enum.map_join("", &cell("th", &1, ctx))
 
     body =
       Enum.map_join(rows, "", fn row ->
-        cells = row_cells(row) |> Enum.map_join("", &"<td>#{inline(&1, ctx)}</td>")
+        cells = row |> cells_with_aligns(aligns) |> Enum.map_join("", &cell("td", &1, ctx))
         "<tr>#{cells}</tr>"
       end)
 
@@ -183,6 +184,25 @@ defmodule SecondBrain.Markdown do
 
     {html, rest}
   end
+
+  # GitHub-style column alignment from the separator row's `:` markers.
+  defp alignment(spec) do
+    case {String.starts_with?(spec, ":"), String.ends_with?(spec, ":")} do
+      {true, true} -> "center"
+      {false, true} -> "right"
+      {true, false} -> "left"
+      _ -> nil
+    end
+  end
+
+  defp cells_with_aligns(row, aligns) do
+    Enum.zip(row_cells(row), Stream.concat(aligns, Stream.cycle([nil])))
+  end
+
+  defp cell(tag, {text, nil}, ctx), do: "<#{tag}>#{inline(text, ctx)}</#{tag}>"
+
+  defp cell(tag, {text, align}, ctx),
+    do: ~s(<#{tag} style="text-align:#{align}">#{inline(text, ctx)}</#{tag}>)
 
   defp row_cells(row) do
     row
@@ -351,7 +371,11 @@ defmodule SecondBrain.Markdown do
     |> Enum.with_index()
     |> Enum.reduce({text, []}, fn {[full, label, href], i}, {acc, map} ->
       token = @sep <> "L#{i}" <> @sep
-      anchor = ~s(<a href="#{rewrite_href(href, ctx)}">#{inline(label, ctx)}</a>)
+      # Escape the rewritten href: links are lifted out before the document-wide
+      # escape pass, so an unescaped URL containing `"` would break out of the
+      # attribute (and `&` would be invalid HTML). Escaping here keeps the anchor
+      # opaque to markdown while still being safe HTML.
+      anchor = ~s(<a href="#{escape(rewrite_href(href, ctx))}">#{inline(label, ctx)}</a>)
       {String.replace(acc, full, token, global: false), [{token, anchor} | map]}
     end)
   end
