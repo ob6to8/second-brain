@@ -4,6 +4,21 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Glossaried the
+  [deprecated-triage thread](/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md)**
+  (`/add-to-glossary` via `/create-pull-request`) — four new terms:
+  [agent memory](/glossary/agent-memory.md) (`sb:37a83f`),
+  [assertion graph](/glossary/assertion-graph.md) (`sb:ac22a3`),
+  [BM25](/glossary/bm25.md) (`sb:068a32`), and
+  [hybrid search](/glossary/hybrid-search.md) (`sb:3983f2`). Glossary now
+  73 terms.
+
+- **Route-tagged excerpt log added to
+  [ai-agent-memory-management-markdown-files](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md)**
+  (`sb:41a1e3`) — materialized from the captured
+  [deprecated-triage thread](/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md)'s
+  intake region via `mix brain.route_tags --materialize`.
+
 - **Deleted the legacy machinery from `deprecated/`** (operator-directed) —
   removed the old assertion-graph system's code and generated artifacts:
   `scripts/`, `schema/`, `templates/`, `publish/`, `.claude/` skills,

@@ -55,9 +55,12 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:07610c` | [ai-industry/ai-margin-collapse-glm-5-2](/ai-industry/ai-margin-collapse-glm-5-2.md) | reference |  |
 | `sb:2867ac` | [ai-industry/ai-roi-runway-outside-tech-sector](/ai-industry/ai-roi-runway-outside-tech-sector.md) | reference |  |
 | `sb:0b648f` | [glossary](/glossary.md) | concept | false |
+| `sb:37a83f` | [glossary/agent-memory](/glossary/agent-memory.md) | concept | false |
 | `sb:73e13b` | [glossary/analysis-type](/glossary/analysis-type.md) | concept | false |
 | `sb:98ec38` | [glossary/approval-gate](/glossary/approval-gate.md) | concept | false |
 | `sb:e2377d` | [glossary/approximate-nearest-neighbor](/glossary/approximate-nearest-neighbor.md) | concept | false |
+| `sb:ac22a3` | [glossary/assertion-graph](/glossary/assertion-graph.md) | concept | false |
+| `sb:068a32` | [glossary/bm25](/glossary/bm25.md) | concept | false |
 | `sb:ee8dfd` | [glossary/candidate-feed](/glossary/candidate-feed.md) | concept | false |
 | `sb:21854a` | [glossary/ci-smoke-check](/glossary/ci-smoke-check.md) | concept | false |
 | `sb:23f009` | [glossary/compiled-contract](/glossary/compiled-contract.md) | concept | false |
@@ -82,6 +85,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:61877f` | [glossary/golden-test](/glossary/golden-test.md) | concept | false |
 | `sb:0c8532` | [glossary/graduation](/glossary/graduation.md) | concept | false |
 | `sb:8fda94` | [glossary/html-escaping](/glossary/html-escaping.md) | concept | false |
+| `sb:3983f2` | [glossary/hybrid-search](/glossary/hybrid-search.md) | concept | false |
 | `sb:5b2e0f` | [glossary/inbox-namespace](/glossary/inbox-namespace.md) | concept | false |
 | `sb:e9a82b` | [glossary/issue-type](/glossary/issue-type.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |

@@ -81,3 +81,15 @@ for this brain's own analysis of when that stops sufficing.
 Yaohua Chen, "AI Agent Memory Management: When Markdown Files Are All You
 Need", DEV Community, 2026-02-18 —
 <https://dev.to/imaginex/ai-agent-memory-management-when-markdown-files-are-all-you-need-5ekk>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:41a1e3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-11-deprecated-directory-triage-and-machinery-deletion (2026-07-11)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:41a1e3`]**
+
+**Intake result.** `deprecated/sources/ai-agent-memory-markdown-files.md` is now migrated into the bundle as [`SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md`](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md) (`sb:41a1e3`, `type: reference`). I re-fetched the dev.to article rather than just copying the legacy capture, which added detail the old summary lacked (the author's name, Manus's `task_plan.md`/`notes.md`/deliverables pattern, and OpenClaw's 70:30 vector-to-BM25 weighting at 89% recall). It's cross-linked to the Anthropic memory-tool reference and the context-engineering essay, and the provenance records the migration from the legacy bundle. Directory `index.md`, root `log.md`, and `meta/registry.md` are updated; `mix brain.verify`, `brain.route_tags`, and `brain.contract --check` all pass. Committed and pushed to `claude/deprecated-directory-deletion-myusjh` (no PR opened — say the word or run `/create-pull-request` when you want one).

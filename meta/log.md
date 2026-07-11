@@ -4,6 +4,13 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Captured [`2026-07-11-deprecated-directory-triage-and-machinery-deletion`](/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md)**
+  — the session that migrated the first legacy source out of `deprecated/`
+  (`sb:41a1e3`) and deleted the old assertion-graph machinery, keeping the
+  content pending triage. Route-tagged the intake region to `sb:41a1e3`
+  (excerpt log materialized) and the triage/deletion regions to
+  `deprecated/README.md` as path back-links. One open matter in the ledger:
+  the remaining migration (13 sources, 9 assertions, URL backlog, old plans).
 - **Captured [`2026-07-11-glossary-backfill-from-thread-docs`](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md)**
   — the session that ran `/add-to-glossary` over the eleven previously-unprocessed
   thread docs, growing the [glossary](/glossary.md) from 7 to 68 terms (46 new
