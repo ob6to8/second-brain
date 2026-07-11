@@ -92,6 +92,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:bf0524` | [glossary/plan-type](/glossary/plan-type.md) | concept | false |
 | `sb:78580d` | [glossary/plugin](/glossary/plugin.md) | concept | false |
 | `sb:393e3d` | [glossary/pointer-entry](/glossary/pointer-entry.md) | concept | false |
+| `sb:fa15e7` | [glossary/policy-type](/glossary/policy-type.md) | concept | false |
 | `sb:4849ca` | [glossary/property-based-testing](/glossary/property-based-testing.md) | concept | false |
 | `sb:573229` | [glossary/proto-belief-document](/glossary/proto-belief-document.md) | concept | false |
 | `sb:ea7acc` | [glossary/provenance](/glossary/provenance.md) | concept | false |

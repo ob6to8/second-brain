@@ -4,6 +4,16 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Added the missing [policy (type)](/glossary/policy-type.md) glossary entry**
+  (`sb:fa15e7`) — a pointer entry deferring to the
+  [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md), filling
+  the gap where every other governance type (`plan`, `issue`, `methodology`,
+  `tutorial`, `analysis`) already had one. Prompted by an operator question on
+  *doctrine* vs. *policy*: the brain's vocabulary uses `policy` for standing
+  governance rules and does not use the term *doctrine* anywhere; no `doctrine`
+  entry was added (nothing in the bundle uses the term — the glossary defines
+  terms sources actually use). Glossary now 70 terms.
+
 - **Resolved: skill commands stay out of the glossary** (operator-ratified) —
   settled the paused matter from the
   [glossary-backfill thread](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md).
