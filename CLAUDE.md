@@ -221,6 +221,11 @@ Seed vocabulary:
   `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
   `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
   (lives under `meta/analysis/`).
+- `todo` — a lightweight actionable task item: a single thing to be done, tracked
+  until it is finished. Carries a `status` (`open`/`done`/`cancelled`). Distinct from
+  an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
+  record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
+  complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
 
@@ -325,6 +330,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   it feeds ship in the same PR. Invoking the skill **is** the authorization to open the PR
   (no separate confirmation gate); PR-template detection and the GitHub MCP tools
   handle the rest. See `.claude/skills/create-pull-request/SKILL.md`.
+- **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
+  a subcommand argument: `/todo create <title>` files a new open todo (and maintains
+  the index + `log.md`); `/todo list` shows the todos grouped by `status`. See
+  `.claude/skills/todo/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 

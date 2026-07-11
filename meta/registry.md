@@ -111,6 +111,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:4e01f8` | [glossary/self-consistency-check](/glossary/self-consistency-check.md) | concept | false |
 | `sb:98acc0` | [glossary/semantic-search](/glossary/semantic-search.md) | concept | false |
 | `sb:243d56` | [glossary/session-capture](/glossary/session-capture.md) | concept | false |
+| `sb:6f2442` | [glossary/session-init-digest](/glossary/session-init-digest.md) | concept | false |
 | `sb:71f38a` | [glossary/sessionstart-hook](/glossary/sessionstart-hook.md) | concept | false |
 | `sb:aa0003` | [glossary/skill](/glossary/skill.md) | concept | false |
 | `sb:3be9b0` | [glossary/skill-namespacing](/glossary/skill-namespacing.md) | concept | false |

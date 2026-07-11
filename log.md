@@ -39,6 +39,12 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
   entry was added (nothing in the bundle uses the term — the glossary defines
   terms sources actually use). Glossary now 70 terms.
 
+- **Glossary: session-init terminology** — scanned the
+  [session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)
+  per `/create-pull-request`'s glossary step. Added
+  [session-init digest](/glossary/session-init-digest.md) (`sb:6f2442`);
+  extended [SessionStart hook](/glossary/sessionstart-hook.md) with the
+  context-injection nuance (hook stdout briefs the agent) and a third citation.
 - **Resolved: skill commands stay out of the glossary** (operator-ratified) —
   settled the paused matter from the
   [glossary-backfill thread](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md).
