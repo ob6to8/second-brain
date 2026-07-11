@@ -69,6 +69,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:048bca` | [glossary/deploy-gating](/glossary/deploy-gating.md) | concept | false |
 | `sb:d18504` | [glossary/deterministic-spine](/glossary/deterministic-spine.md) | concept | false |
 | `sb:d4fc9d` | [glossary/digest](/glossary/digest.md) | concept | false |
+| `sb:6a9e78` | [glossary/doctrine](/glossary/doctrine.md) | concept | false |
 | `sb:da21de` | [glossary/embeddings](/glossary/embeddings.md) | concept | false |
 | `sb:f727fe` | [glossary/epistemic-overlay](/glossary/epistemic-overlay.md) | concept | false |
 | `sb:9e1592` | [glossary/exunit](/glossary/exunit.md) | concept | false |
@@ -92,6 +93,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:bf0524` | [glossary/plan-type](/glossary/plan-type.md) | concept | false |
 | `sb:78580d` | [glossary/plugin](/glossary/plugin.md) | concept | false |
 | `sb:393e3d` | [glossary/pointer-entry](/glossary/pointer-entry.md) | concept | false |
+| `sb:fa15e7` | [glossary/policy-type](/glossary/policy-type.md) | concept | false |
 | `sb:4849ca` | [glossary/property-based-testing](/glossary/property-based-testing.md) | concept | false |
 | `sb:573229` | [glossary/proto-belief-document](/glossary/proto-belief-document.md) | concept | false |
 | `sb:ea7acc` | [glossary/provenance](/glossary/provenance.md) | concept | false |

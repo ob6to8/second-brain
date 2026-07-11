@@ -23,6 +23,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [deploy gating](/glossary/deploy-gating.md) — gating a deploy on verification passing, so a failed check skips publish and the last good deploy stays live
 - [deterministic spine](/glossary/deterministic-spine.md) — the input-determined, mechanical part of a workflow that a conventional test can pin
 - [digest](/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
+- [doctrine](/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
 - [embeddings](/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [epistemic overlay](/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
 - [ExUnit](/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
@@ -45,6 +46,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [parse-the-log](/glossary/parse-the-log.md) — capturing a session by parsing the host log file (exact delivered text) vs. reconstructing from context
 - [plan (type)](/glossary/plan-type.md) — controlled type: a one-off design/decision record for an intended change, with a status
 - [plugin](/glossary/plugin.md) — a distributable bundle of Claude Code skills; its skills get an automatic `plugin-name:` namespace
+- [policy (type)](/glossary/policy-type.md) — controlled type: a standing governance rule for how the brain operates, under `meta/policy/`; the source `CLAUDE.md` is compiled from
 - [pointer entry](/glossary/pointer-entry.md) — an entry for a term canonically defined elsewhere: one-line gloss + link, never a duplicate definition
 - [property-based testing](/glossary/property-based-testing.md) — testing that asserts invariants over many generated inputs, not hand-picked examples
 - [proto-belief document](/glossary/proto-belief-document.md) — cb's per-matter accreting page; maps onto this brain's per-topic `concept` sink

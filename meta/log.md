@@ -4,6 +4,13 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Captured [`2026-07-11-doctrine-vs-policy-and-glossary-cross-linking`](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md)**
+  — the session that filled the missing [policy (type)](/glossary/policy-type.md)
+  glossary entry, added [doctrine](/glossary/doctrine.md) on operator direction,
+  and ratified the prose-first cross-linking convention (See also fallback; no
+  `related:` typed edge) now codified in `/add-to-glossary`. Route-tagged to the
+  glossary hub (`sb:0b648f`) and the two new entries (`sb:fa15e7`, `sb:6a9e78`);
+  `mix brain.route_tags --materialize` appended their excerpt blocks.
 - **Captured [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)**
   — the session that built the session-init digest (entry below). Ledger: the
   tooling and hook strands closed (`unrouted`; path back-links), one dangling
