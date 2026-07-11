@@ -129,7 +129,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:4f4baf` | [glossary/verification-grounding](/glossary/verification-grounding.md) | concept | false |
 | `sb:c6e78a` | [glossary/verified-by](/glossary/verified-by.md) | concept | false |
 | `sb:59895a` | [knowledge-management/argumentation/assurance-cases-and-gsn](/knowledge-management/argumentation/assurance-cases-and-gsn.md) | reference |  |
+| `sb:01e477` | [knowledge-management/argumentation/gsn-community-standard](/knowledge-management/argumentation/gsn-community-standard.md) | source |  |
 | `sb:5c3ab0` | [knowledge-management/argumentation/toulmin-model-of-argument](/knowledge-management/argumentation/toulmin-model-of-argument.md) | reference |  |
+| `sb:d82615` | [knowledge-management/knowledge-representation/de-kleer-1986-an-assumption-based-tms](/knowledge-management/knowledge-representation/de-kleer-1986-an-assumption-based-tms.md) | source |  |
+| `sb:601006` | [knowledge-management/knowledge-representation/doyle-1979-a-truth-maintenance-system](/knowledge-management/knowledge-representation/doyle-1979-a-truth-maintenance-system.md) | source |  |
 | `sb:8255b8` | [knowledge-management/knowledge-representation/first-order-logic-and-owl](/knowledge-management/knowledge-representation/first-order-logic-and-owl.md) | reference |  |
 | `sb:401ff6` | [knowledge-management/knowledge-representation/truth-maintenance-systems](/knowledge-management/knowledge-representation/truth-maintenance-systems.md) | reference |  |
 | `sb:24bd1e` | [knowledge-management/open-knowledge-format](/knowledge-management/open-knowledge-format.md) | reference |  |

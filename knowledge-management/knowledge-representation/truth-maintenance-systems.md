@@ -122,5 +122,7 @@ and the [derived analysis-mode plan](/meta/plans/belief-decomposition-analysis-m
 
 - Reason maintenance — Wikipedia:
   <https://en.wikipedia.org/wiki/Reason_maintenance>
-- Jon Doyle, "A Truth Maintenance System," *Artificial Intelligence* 12(3), 1979.
-- Johan de Kleer, "An Assumption-based TMS," *Artificial Intelligence* 28(2), 1986.
+- Jon Doyle, "A Truth Maintenance System," *Artificial Intelligence* 12(3), 1979
+  — [captured passages](/knowledge-management/knowledge-representation/doyle-1979-a-truth-maintenance-system.md).
+- Johan de Kleer, "An Assumption-based TMS," *Artificial Intelligence* 28(2), 1986
+  — [captured passages](/knowledge-management/knowledge-representation/de-kleer-1986-an-assumption-based-tms.md).

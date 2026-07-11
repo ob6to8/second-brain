@@ -4,6 +4,17 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Three primary-source captures filed** (`type: source`), grounding the TMS
+  and GSN references in their actual primary documents rather than
+  encyclopedic summaries:
+  [Doyle 1979](/knowledge-management/knowledge-representation/doyle-1979-a-truth-maintenance-system.md)
+  and [de Kleer 1986](/knowledge-management/knowledge-representation/de-kleer-1986-an-assumption-based-tms.md)
+  under `knowledge-representation/`, and the
+  [GSN Community Standard V1](/knowledge-management/argumentation/gsn-community-standard.md)
+  under `argumentation/` — each holding verbatim key passages with the
+  official DOI/URL as `resource`. (GSN V3 is current but registration-gated;
+  the openly served V1 was captured, with V3 noted.) Both reference docs'
+  citations now link the captures.
 - **Layered breakdowns for the five prior-art references** — ran
   `/summarize-technical` over the same day's five intakes
   ([TMS](/knowledge-management/knowledge-representation/truth-maintenance-systems.md),

@@ -111,4 +111,5 @@ GSN's intellectual ancestor.
 - Goal structuring notation — Wikipedia:
   <https://en.wikipedia.org/wiki/Goal_structuring_notation>
 - GSN Community Standard (Assurance Case Working Group, Safety-Critical
-  Systems Club): <https://scsc.uk/gsn>
+  Systems Club): <https://scsc.uk/gsn> —
+  [captured passages from Version 1](/knowledge-management/argumentation/gsn-community-standard.md).
