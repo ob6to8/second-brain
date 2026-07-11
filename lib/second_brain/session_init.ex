@@ -119,13 +119,27 @@ defmodule SecondBrain.SessionInit do
         |> Enum.map(&String.trim/1)
 
       case cells do
-        ["Topic" | _] -> []
-        [<<":", _::binary>> | _] -> []
-        [<<"-", _::binary>>, _, _, _] -> []
-        [topic, state, routed_to, dangling] ->
-          [%{topic: topic, state: String.downcase(state), routed_to: routed_to, dangling: dangling}]
+        ["Topic" | _] ->
+          []
 
-        _ -> []
+        [<<":", _::binary>> | _] ->
+          []
+
+        [<<"-", _::binary>>, _, _, _] ->
+          []
+
+        [topic, state, routed_to, dangling] ->
+          [
+            %{
+              topic: topic,
+              state: String.downcase(state),
+              routed_to: routed_to,
+              dangling: dangling
+            }
+          ]
+
+        _ ->
+          []
       end
     end)
   end
@@ -231,7 +245,12 @@ defmodule SecondBrain.SessionInit do
   defp candidates(issues, plans, strands) do
     issue_cands =
       Enum.map(issues, fn d ->
-        %{class: :issue, path: d.rel_path, routed_to: nil, label: "**#{d.title}** (`/#{d.rel_path}`)"}
+        %{
+          class: :issue,
+          path: d.rel_path,
+          routed_to: nil,
+          label: "**#{d.title}** (`/#{d.rel_path}`)"
+        }
       end)
 
     plan_cands =
@@ -243,7 +262,12 @@ defmodule SecondBrain.SessionInit do
             _ -> :plan_proposed
           end
 
-        %{class: class, path: d.rel_path, routed_to: nil, label: "**#{d.title}** (`/#{d.rel_path}`)"}
+        %{
+          class: class,
+          path: d.rel_path,
+          routed_to: nil,
+          label: "**#{d.title}** (`/#{d.rel_path}`)"
+        }
       end)
 
     strand_cands =
@@ -255,7 +279,12 @@ defmodule SecondBrain.SessionInit do
             _ -> :strand_dangling
           end
 
-        %{class: class, path: nil, routed_to: row.routed_to, label: "#{truncate(row.topic)} (`/#{row.thread}`)"}
+        %{
+          class: class,
+          path: nil,
+          routed_to: row.routed_to,
+          label: "#{truncate(row.topic)} (`/#{row.thread}`)"
+        }
       end)
 
     issue_cands ++ plan_cands ++ strand_cands

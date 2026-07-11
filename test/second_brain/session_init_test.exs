@@ -27,19 +27,33 @@ defmodule SecondBrain.SessionInitTest do
 
   test "collects open issues, active plans, and pending strands", %{tmp_dir: dir} do
     write_doc(dir, "meta/issues/broken.md",
-      type: "issue", title: "Broken thing", description: "It broke.", status: "open", timestamp: "2026-07-09"
+      type: "issue",
+      title: "Broken thing",
+      description: "It broke.",
+      status: "open",
+      timestamp: "2026-07-09"
     )
 
     write_doc(dir, "meta/issues/fixed.md",
-      type: "issue", title: "Fixed thing", status: "resolved", timestamp: "2026-07-08"
+      type: "issue",
+      title: "Fixed thing",
+      status: "resolved",
+      timestamp: "2026-07-08"
     )
 
     write_doc(dir, "meta/plans/next.md",
-      type: "plan", title: "Next plan", description: "Do it.", status: "proposed", timestamp: "2026-07-09"
+      type: "plan",
+      title: "Next plan",
+      description: "Do it.",
+      status: "proposed",
+      timestamp: "2026-07-09"
     )
 
     write_doc(dir, "meta/plans/shipped.md",
-      type: "plan", title: "Shipped plan", status: "done", timestamp: "2026-07-01"
+      type: "plan",
+      title: "Shipped plan",
+      status: "done",
+      timestamp: "2026-07-01"
     )
 
     write_thread(dir, "meta/threads/2026-07-09-a.md", [
@@ -57,11 +71,17 @@ defmodule SecondBrain.SessionInitTest do
 
   test "report ranks issues above strands above proposed plans", %{tmp_dir: dir} do
     write_doc(dir, "meta/issues/broken.md",
-      type: "issue", title: "Broken thing", status: "open", timestamp: "2026-07-09"
+      type: "issue",
+      title: "Broken thing",
+      status: "open",
+      timestamp: "2026-07-09"
     )
 
     write_doc(dir, "meta/plans/next.md",
-      type: "plan", title: "Next plan", status: "proposed", timestamp: "2026-07-09"
+      type: "plan",
+      title: "Next plan",
+      status: "proposed",
+      timestamp: "2026-07-09"
     )
 
     write_thread(dir, "meta/threads/2026-07-09-a.md", [
@@ -76,7 +96,12 @@ defmodule SecondBrain.SessionInitTest do
     assert report =~ "## Dangling strands (todos from thread ledgers) (2)"
 
     [_, priorities] = String.split(report, "## Heuristic top-3 priorities")
-    assert [i1, i2, i3] = Regex.run(~r/1\. (.*)\n.*\n2\. (.*)\n.*\n3\. (.*)\n/, priorities, capture: :all_but_first)
+
+    assert [i1, i2, i3] =
+             Regex.run(~r/1\. (.*)\n.*\n2\. (.*)\n.*\n3\. (.*)\n/, priorities,
+               capture: :all_but_first
+             )
+
     assert i1 =~ "Broken thing"
     assert i2 =~ "Live strand"
     assert i3 =~ "Next plan"
