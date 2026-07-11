@@ -4,6 +4,20 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Intaked six SWE candidates from the 2026-07-11 inbox digest** (operator-picked) —
+  filed into existing directories (no new dirs/types; taxonomy unchanged):
+  [Codebase-Memory](/SWE/agentic-coding/code-context/codebase-memory-mcp.md) (`sb:532b22`,
+  code-context, extends GitNexus `sb:b89ea1`);
+  [VeriCache](/SWE/llm-engineering/vericache-lossless-kv-cache.md) (`sb:1cac23`,
+  llm-engineering, extends the KV-cache history `sb:266c5e`);
+  [PARC](/SWE/agentic-coding/agentic-loop/parc-self-reflective-long-horizon-agent.md)
+  (`sb:f02167`) and
+  [agent time horizons](/SWE/agentic-coding/agentic-loop/agent-task-time-horizons.md)
+  (`sb:c29a22`) under a new *Reliability & long-horizon* section of agentic-loop;
+  [git worktrees for parallel agents](/SWE/version-control/git/git-worktrees-for-parallel-agents.md)
+  (`sb:8b9548`, git); and
+  [State of AI Coding 2026](/SWE/testing/state-of-ai-coding-2026.md) (`sb:49eae4`,
+  testing, relates to `sb:a5ea86`). All verify; registry recompiled.
 - **Resolved: skill commands stay out of the glossary** (operator-ratified) —
   settled the paused matter from the
   [glossary-backfill thread](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md).

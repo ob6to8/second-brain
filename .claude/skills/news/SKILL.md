@@ -96,13 +96,37 @@ vocabulary is fixed; propose additions to the operator rather than inventing:
   Tags are orthogonal to topic tags and describe *selection reason*, not subject.
   More (or stronger) tags on an item is itself a signal it deserves featuring.
 
+### 4.5 Write the daily read — the cross-domain synthesis
+
+Once the featured set is fixed, write **the read**: a short perspective on the day's
+selections *as a set*, framed against the brain's standing concerns. This is the most
+valuable part of the digest — it turns a pile of links into a *view of where things
+are moving relative to what the brain already tracks*. See the design record in
+[`meta/plans/news-daily-read-synthesis.md`](/meta/plans/news-daily-read-synthesis.md).
+
+- **A perspective, not a re-listing.** 1–3 tight paragraphs. Never restate the item
+  synopses — those live in the domain sections below. The read is the layer *above*
+  them: the trend, tension, or throughline.
+- **Grounded in `sb:` ids.** Name the standing concepts the day bears on
+  (`sb:07610c`, `sb:2867ac`, …) so the synthesis is anchored to the actual taxonomy,
+  not free-floating commentary. Say whether today's items **reinforce, contest, or
+  extend** those filed positions — that *is* the intake-relevant signal.
+- **Cross-domain by mandate.** Its explicit job is the connective tissue the
+  per-domain buckets can't hold (e.g. a lossless-inference item + a long-horizon-agent
+  item + a worktree item all pointing at one "agents running longer and cheaper" arc).
+  On a single-domain day it collapses to one short paragraph.
+- **Candidate-side.** Distilled, no `sb:` id, asserts nothing beyond what the day's
+  selections support — a reading of candidates, not a filed claim.
+
 ### 5. Write today's digest
 - Path: `inbox/YYYY-MM-DD.md`. If today's digest already exists, **regenerate that
   same file** (don't create a second one for the same day).
 - Frontmatter: `type: reference`, no `sb:` id, `provenance` naming the tools/date,
   `tags: [inbox, feed]`, `timestamp` today.
-- Body: an `##`-section **per KB domain touched**, mirroring the KB tree. Under
-  each, one bullet per item:
+- Body: lead with **`## The read`** (the cross-domain synthesis from §4.5), then an
+  `##`-section **per KB domain touched**, mirroring the KB tree. A domain section may
+  open with an optional one-line *domain-level* lede before its bullets; `## The read`
+  is the *cross-domain* layer above those. Under each domain, one bullet per item:
   - **`[title](url)`** on the first line;
   - the reason tag(s) as inline `` `code` `` badges, then a one-to-two-line
     synopsis of *what it is and why it matters*;

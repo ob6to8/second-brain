@@ -13,6 +13,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | id | concept | type | verified |
 |----|---------|------|----------|
 | `sb:97d2a8` | [SWE/agentic-coding/agentic-loop/agent-loop-as-a-while-loop](/SWE/agentic-coding/agentic-loop/agent-loop-as-a-while-loop.md) | reference |  |
+| `sb:c29a22` | [SWE/agentic-coding/agentic-loop/agent-task-time-horizons](/SWE/agentic-coding/agentic-loop/agent-task-time-horizons.md) | reference |  |
 | `sb:06d95d` | [SWE/agentic-coding/agentic-loop/building-effective-agents](/SWE/agentic-coding/agentic-loop/building-effective-agents.md) | reference |  |
 | `sb:3384ba` | [SWE/agentic-coding/agentic-loop/designing-agentic-loops](/SWE/agentic-coding/agentic-loop/designing-agentic-loops.md) | reference |  |
 | `sb:c0961a` | [SWE/agentic-coding/agentic-loop/effective-context-engineering-for-agents](/SWE/agentic-coding/agentic-loop/effective-context-engineering-for-agents.md) | reference |  |
@@ -21,6 +22,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:01bb9a` | [SWE/agentic-coding/agentic-loop/loop-engineering-went-mainstream](/SWE/agentic-coding/agentic-loop/loop-engineering-went-mainstream.md) | reference |  |
 | `sb:a030d9` | [SWE/agentic-coding/agentic-loop/openai-practical-guide-to-building-agents](/SWE/agentic-coding/agentic-loop/openai-practical-guide-to-building-agents.md) | reference |  |
 | `sb:b6353e` | [SWE/agentic-coding/agentic-loop/own-your-control-flow-12-factor](/SWE/agentic-coding/agentic-loop/own-your-control-flow-12-factor.md) | reference |  |
+| `sb:f02167` | [SWE/agentic-coding/agentic-loop/parc-self-reflective-long-horizon-agent](/SWE/agentic-coding/agentic-loop/parc-self-reflective-long-horizon-agent.md) | reference |  |
 | `sb:276c61` | [SWE/agentic-coding/agentic-loop/ralph-infinite-bash-loop-coding-agent](/SWE/agentic-coding/agentic-loop/ralph-infinite-bash-loop-coding-agent.md) | reference |  |
 | `sb:f63910` | [SWE/agentic-coding/agentic-loop/react-reasoning-and-acting](/SWE/agentic-coding/agentic-loop/react-reasoning-and-acting.md) | reference |  |
 | `sb:f948df` | [SWE/agentic-coding/agentic-loop/smolagents-agent-loop-as-code](/SWE/agentic-coding/agentic-loop/smolagents-agent-loop-as-code.md) | reference |  |
@@ -34,6 +36,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:3420c8` | [SWE/agentic-coding/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity](/SWE/agentic-coding/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity.md) | source |  |
 | `sb:863b32` | [SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config](/SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config.md) | source |  |
 | `sb:3f35e1` | [SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud](/SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud.md) | source |  |
+| `sb:532b22` | [SWE/agentic-coding/code-context/codebase-memory-mcp](/SWE/agentic-coding/code-context/codebase-memory-mcp.md) | reference |  |
 | `sb:b89ea1` | [SWE/agentic-coding/code-context/gitnexus](/SWE/agentic-coding/code-context/gitnexus.md) | reference |  |
 | `sb:bf8a85` | [SWE/agentic-coding/context-engineering/claude-context-editing-and-memory-tool](/SWE/agentic-coding/context-engineering/claude-context-editing-and-memory-tool.md) | reference |  |
 | `sb:77d68a` | [SWE/agentic-coding/context-engineering/context-rot-chroma-research](/SWE/agentic-coding/context-engineering/context-rot-chroma-research.md) | reference |  |
@@ -43,12 +46,15 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:eeb2bb` | [SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration](/SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
 | `sb:266c5e` | [SWE/llm-engineering/kv-cache-compression-history](/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `sb:41be22` | [SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
+| `sb:1cac23` | [SWE/llm-engineering/vericache-lossless-kv-cache](/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |
 | `sb:d58da3` | [SWE/testing/elixir-second-brain-testing-methodology](/SWE/testing/elixir-second-brain-testing-methodology.md) | methodology | false |
 | `sb:b1ba4b` | [SWE/testing/elixir-snapshot-libraries-require-a-dependency](/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md) | reference |  |
 | `sb:f6e843` | [SWE/testing/exunit-dependency-free-fixtures-and-diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md) | reference |  |
 | `sb:a5ea86` | [SWE/testing/how-to-test-features-not-code](/SWE/testing/how-to-test-features-not-code.md) | reference |  |
+| `sb:49eae4` | [SWE/testing/state-of-ai-coding-2026](/SWE/testing/state-of-ai-coding-2026.md) | reference |  |
 | `sb:73115b` | [SWE/testing/unit-vs-integration-purity-and-extent](/SWE/testing/unit-vs-integration-purity-and-extent.md) | reference |  |
 | `sb:4c9e1f` | [SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch](/SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch.md) | concept | true |
+| `sb:8b9548` | [SWE/version-control/git/git-worktrees-for-parallel-agents](/SWE/version-control/git/git-worktrees-for-parallel-agents.md) | concept | false |
 | `sb:f08c54` | [SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch](/SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch.md) | source |  |
 | `sb:a3d27b` | [SWE/version-control/git/sources/pro-git-remote-tracking-branches](/SWE/version-control/git/sources/pro-git-remote-tracking-branches.md) | source |  |
 | `sb:07610c` | [ai-industry/ai-margin-collapse-glm-5-2](/ai-industry/ai-margin-collapse-glm-5-2.md) | reference |  |

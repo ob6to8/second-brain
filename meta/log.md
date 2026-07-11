@@ -4,6 +4,15 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Added the "daily read" to `/news`** (operator-proposed, ratified same session) —
+  a first-class `## The read` cross-domain synthesis lede at the top of every digest:
+  a short, `sb:`-id-grounded perspective on the day's selections as a set, saying
+  whether they reinforce/contest/extend the brain's standing positions. Wired a new
+  §4.5 into [`.claude/skills/news/SKILL.md`](/.claude/skills/news/SKILL.md), updated the
+  §5 body template, filed the decision record
+  [`meta/plans/news-daily-read-synthesis.md`](/meta/plans/news-daily-read-synthesis.md)
+  (`status: done`), and backfilled the [2026-07-11 digest](/inbox/2026-07-11.md) as the
+  first worked instance.
 - **Captured [`2026-07-11-glossary-backfill-from-thread-docs`](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md)**
   — the session that ran `/add-to-glossary` over the eleven previously-unprocessed
   thread docs, growing the [glossary](/glossary.md) from 7 to 68 terms (46 new
