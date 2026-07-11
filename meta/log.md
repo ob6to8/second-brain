@@ -19,6 +19,71 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **`/capture` of the field-comparison / evals / CB-overlay session** → thread
+  [2026-07-10-field-comparison-evals-and-cb-overlay-execution-path](/meta/threads/2026-07-10-field-comparison-evals-and-cb-overlay-execution-path.md)
+  (render-from-context; retained operator messages and substantive responses
+  verbatim, tool noise and short pre-tool narration stripped). Six-row routing
+  ledger — four closed (the two field/failure-chain strands, eval suitability,
+  the CB stabilizer), one paused (dedup-recall-probe plan awaiting ratification),
+  one open (the two-thread execution path, to be launched from the plan's
+  addendum). All route tags are path back-links to governance docs (analyses and
+  plans — no `sb:` sinks), so no concept excerpt logs materialized. Listed in the
+  threads index. Captured as the first step of a `/create-pull-request` run.
+- **Execution-path addendum on the [epistemic overlay plan](/meta/plans/epistemic-overlay.md).**
+  Ratified the two-thread path for executing the plan: Thread A imports CB's
+  usable content as freshness-vetted `source`/`reference` captures under
+  `knowledge-management/composable-beliefs/` (tiered: guide/glossary/code
+  authoritative; cb-tut secondary; thesis quarantined; old type names treated as
+  a staleness flag during vetting, not filed), with an eight-item capture
+  manifest; Thread B sketches the architecture reading *only* the bundle, decides
+  Q1/Q4, specifies supersession-for-statements and `mix brain.graph` v1, and
+  revises the plan to `accepted` with `verified_by` edges into the Thread A
+  captures. Each thread launches by pointing the agent at the addendum.
+- **New analysis: [Would CB's four-typed DAG, as an overlay, stabilize this knowledge base against the failure chain?](/meta/analysis/cb-epistemic-overlay-as-failure-chain-stabilizer.md)**
+  Evaluates Composable Beliefs' epistemic layer as an add-on overlay against the
+  five-stage failure chain: a genuine mechanical stabilizer for stage 3 (drift →
+  bounded traversal of dependents on supersession) and stage 5 (trust → per-statement
+  epistemic state), no help for stage 2 (dedup stays the unguarded gate), portable
+  as a format but host-native in enforcement and edge-authoring. Includes a
+  source-staleness check prompted by the operator (CB's thesis doc used deprecated
+  type names): two claims corrected against the current glossary — CB *does* have
+  per-type dep rules, and *does* position itself as an "opt-in ceiling" over OKF —
+  and CB's dep-repoint primitive surfaced as the top import candidate. Appended a
+  stabilization-reframing addendum to the [epistemic overlay plan](/meta/plans/epistemic-overlay.md)
+  (motivation upgrade; Q2 answered — one `deps` edge kind, typing on nodes; Q3
+  flipped — supersession is load-bearing). Listed in the analysis index.
+- **New plan: [Dedup recall probe](/meta/plans/dedup-recall-probe.md)** (`status:
+  proposed`). Commissioned by the operator following the eval-suitability
+  analysis; executes recommendation 1 of the vector-DB recall analysis. Specifies
+  `mix brain.dedup_probe` — zero-dependency, offline, deterministic — scoring the
+  lexical search layer against an id-keyed gold set at `meta/evals/dedup-probe.md`
+  (acceptable-id sets, adjudication notes, `target`/`negative`/`quarantine` bands
+  encoding the ground-truth fuzz sources, gold pairs harvested from real operator
+  phrasing at intake, an `--expanded` mode measuring the synonym-expansion fix,
+  non-gating CI report with committed baselines). Proposes ratifying a new
+  `meta/evals/` genre. Listed in the plans index.
+- **New analysis: [Is the corpus-maintenance failure space rich content for evals?](/meta/analysis/eval-suitability-of-the-corpus-maintenance-failure-space.md)**
+  Follow-up to the field-comparison analysis: the operator asked whether the
+  500+ failure chain is rich eval content. Answer: yes — ground truth is
+  constructible (the operator owns the corpus), each chain stage maps to a
+  measurable task, and "corpus health under agent maintenance" is an unoccupied
+  benchmark niche. The session response is preserved verbatim at operator request,
+  with the "is this a duplicate" ground-truth fuzziness expanded into seven named
+  sources (spectrum, taxonomy-relativity, type-relativity, time-relativity,
+  query-relativity, judge drift, synthetic-vocabulary bias), each dictating a
+  gold-set property. Listed in the analysis index.
+- **New analysis: [How does this bundle compare to the 2026 second-brain field?](/meta/analysis/comparison-with-the-2026-second-brain-field.md)**
+  Operator asked for an evaluation of the repo against the AI-influencer-verse
+  second-brain landscape; a same-day web survey (Forte's "AI Second Brain" pivot,
+  LYT/ACE, the Obsidian + Claude Code wave, Karpathy's LLM-wiki gist and its
+  implementations, Tana/Notion/Capacities, vault-ld, TheKnowledge) found no public
+  system combining this bundle's enforcement stack. The write-up also records a new
+  observation: the five-stage failure chain (context saturation → dedup
+  fragmentation → cross-reference drift → taxonomy entropy → trust collapse) that
+  kills advisory systems past ~500 concepts, and that this bundle's exposure to it
+  runs through intake dedup recall — reinforcing the vector-DB analysis's
+  recommendation as the highest-leverage unshipped work. Listed in the analysis
+  index.
 - **Capture refresh (pre-merge)** — the session continued past its first
   `/capture` (the per-term glossary restructure and the PR-readiness check), so
   the thread doc
