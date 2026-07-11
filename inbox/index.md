@@ -12,11 +12,13 @@ the brain only when the operator says *"intake the &lt;…&gt; item"*, which run
 
 ## Latest
 
-- **[2026-07-09](/inbox/2026-07-09.md)** — 7 items across ai-industry, SWE, and
-  knowledge-management.
+- **[2026-07-11](/inbox/2026-07-11.md)** — 7 items across ai-industry (4) and SWE (3):
+  the contested AI margin-collapse thesis plus lossless-inference and long-horizon-agent
+  advances.
 
 ## Archive
 
 Digests are regenerated daily; previous days are persisted unchanged.
 
+- [2026-07-11](/inbox/2026-07-11.md)
 - [2026-07-09](/inbox/2026-07-09.md)
