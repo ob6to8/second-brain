@@ -4,6 +4,12 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Third-close refresh of [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)**
+  — appended the PR #42 exchanges verbatim (open, conflicted true merge
+  `9ad1d4e`, the operator's settings confirmation and its ledger flip), one new
+  ledger row (PR #42 lifecycle, closed), two regions tagged to the
+  merge-strategy policy back-link. Glossary pass: no new terms cleared the bar
+  (the exchanges reuse already-defined merge vocabulary) — a legitimate no-op.
 - **Squash/rebase merging disabled in the GitHub repo settings** (operator) —
   the [merge-strategy policy](/meta/policy/merge-strategy.md) is now
   structurally enforced, not just written. PR #42 had already landed as the

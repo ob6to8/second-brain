@@ -51,8 +51,11 @@ carries the pointer in its merge step and guardrails. The operator disabled squa
 settings the same day (after PR #42 landed as the first policy-compliant true
 merge), so the policy is structurally enforced. Finally, the digest gained **`meta/todos/`** as a fourth
 source (the genre had landed on `main` mid-session), ranked between
-in-progress and accepted plans. This doc was refreshed in place at the second
-`/create-pull-request` close.
+in-progress and accepted plans. That batch shipped as **PR #42** — whose merge
+hit additive conflicts with two parallel sessions (PRs #40/#41, resolved by
+keeping both sides and regenerating the registry) and then landed as the
+**first policy-compliant true merge** (`9ad1d4e`). This doc was refreshed in
+place at the second and third `/create-pull-request` closes.
 
 ## Routing
 
@@ -64,6 +67,7 @@ in-progress and accepted plans. This doc was refreshed in place at the second
 | Squash vs true-merge — no written policy existed; trade-off analysis (provenance: session trailers, SHA citations, blame vs a linear log) | closed | `unrouted` (back-linked to [merge-strategy](/meta/policy/merge-strategy.md)) | - |
 | Merge-strategy policy ratified — true merge commits only; contract recompiled; `/create-pull-request` points at it; operator disabled squash/rebase in repo settings (2026-07-11) | closed | `unrouted` (back-linked to [merge-strategy](/meta/policy/merge-strategy.md)) | - |
 | `meta/todos/` added as the digest's fourth source (genre landed mid-session) | closed | `unrouted` (back-linked to [session_init.ex](/lib/second_brain/session_init.ex)) | - |
+| PR #42 lifecycle — additive conflicts with parallel PRs #40/#41 resolved (both sides kept; registry regenerated); first policy-compliant true merge (`9ad1d4e`) | closed | `unrouted` | - |
 
 ## User
 
@@ -230,4 +234,53 @@ What changed:
 All gates pass — contract, registry, verify, route-tags, formatter (learned that lesson), 81 tests — and the hook ran end-to-end with the new section showing `Open todos (0)`, which is correct since `meta/todos/` is empty so far.
 
 The branch now carries both commits (policy ratification + this extension), pushed but not yet PR'd. Say `/create-pull-request` when you want them shipped — and it'll land with a true merge commit per the policy it contains.
+</routes>
+
+*Operator invoked `/create-pull-request` (second close; this doc refreshed in place).*
+
+## Assistant
+
+PR opened: **https://github.com/ob6to8/second-brain/pull/42**
+
+The full flow ran:
+
+1. **Capture** — the session's thread doc was refreshed **in place** (update-in-place rule, since PR #39 already shipped its first version): the post-merge exchanges appended verbatim — the squash-merge of #39, your commits-as-provenance question, the trade-off analysis, the ratification, and the todos extension — plus four new ledger rows and four tagged regions. One dangling item is now on record and will surface in future session-init digests: *disable squash/rebase in the GitHub repo settings* (still a you-step).
+2. **Glossary** — two pointer entries added, deferring to the reachability tutorial: [true merge](/glossary/true-merge.md) (`sb:a10e18`) and [squash merge](/glossary/squash-merge.md) (`sb:4a235a`), both cross-linked to the merge-strategy policy and the existing fast-forward-merge entry.
+3. **Committed, pushed, PR'd** — the branch carries three atomic commits (policy ratification `be8fbbc`, todos extension `c5078c8`, capture refresh + glossary `0a10f85`), all gates green including the formatter.
+
+**Thread doc name:** `meta/threads/2026-07-11-session-init-digest-and-priorities.md` (refreshed in place, same file as before).
+
+When you're ready to land it, say "merge" and it gets a **true merge commit** per the policy it ships — the three commits and their session trailers stay reachable in `main`'s ancestry. Want me to watch the PR for CI and review comments in the meantime?
+
+## User
+
+Merge
+
+## Assistant
+
+<routes ref="meta/policy/merge-strategy.md">
+Merged — PR #42 landed on `main` via a **true merge commit** (`9ad1d4e`), the first merge under the policy it ships. All four branch commits (policy ratification, todos extension, capture refresh + glossary, and the conflict-resolution merge) are now permanently reachable in `main`'s ancestry with their session trailers intact.
+
+One wrinkle along the way: the first merge attempt hit conflicts because two parallel sessions had landed on `main` since the branch was cut (PR #40, doctrine/glossary entries, and PR #41, the news digest + six SWE intakes). All conflicts were additive both-sides collisions in the shared logs and glossary index — I kept both sides, restored alphabetical order in the index, regenerated `meta/registry.md` (it's a compiled artifact, so regeneration *is* the resolution), re-ran the full gate suite (all green, 81 tests), and pushed the merge before re-attempting.
+
+Now live on `main`:
+- **Merge-strategy policy** in the contract — true merge commits only
+- **Session-init digest** scanning all four sources including `meta/todos/`
+- The refreshed thread doc and the merge-terminology glossary entries
+
+The one remaining dangling item — tracked in the thread ledger, so it will surface in every session-init digest until done — is yours: **disable squash and rebase merging in the repo settings** (Settings → General → Pull Requests, or `gh repo edit ob6to8/second-brain --enable-squash-merge=false --enable-rebase-merge=false` from your machine). Once that's flipped, the policy is structurally enforced rather than remembered.
+</routes>
+
+## User
+
+Disabled
+
+## Assistant
+
+<routes ref="meta/policy/merge-strategy.md">
+Recorded. The ledger row's dangling item is cleared and the narrative notes the resolution — so tomorrow's session-init digest will no longer surface it, and the merge-strategy policy is now enforced at three layers: the contract (agents), the `/create-pull-request` skill (the merge step), and the repo settings (structural — the squash button no longer exists).
+
+Nice closure of the loop, incidentally: the digest surfaced the dangling item at this session's resume, you did it, and the ledger flip retires it — exactly the open-work tracking cycle the digest was built for.
+
+The change is one small commit (`4a6e9fc`: thread ledger flip + `meta/log.md` entry) on the branch, restarted from `main` and pushed, verify and route-tags green. Say `/create-pull-request` (or just "PR and merge") whenever you want it landed — it'll go in with a true merge commit, which is now the only method the repo will accept.
 </routes>
