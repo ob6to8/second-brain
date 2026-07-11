@@ -80,6 +80,10 @@ still holds for every other flow.)
   environment has **no `gh` CLI**). Set the base to the repo's default branch unless
   the operator named another.
 - Report the PR URL.
+- **If asked to merge the PR** (now or later in the session): use a **true merge
+  commit** — `merge_method: "merge"`, never `squash` or `rebase` — per the
+  [merge-strategy policy](/meta/policy/merge-strategy.md): the commit graph is a
+  provenance layer (session trailers, SHA citations), and squashing severs it.
 - **Report the captured thread doc's assigned name.** After everything is done,
   state the `meta/threads/YYYY-MM-DD-<slug>.md` path that step 1 wrote (or note
   that capture was skipped), so the operator has the record's final name without
@@ -98,6 +102,8 @@ still holds for every other flow.)
   separate confirmation — running it *is* the operator's yes. Don't add a
   confirmation step back in.
 - **Never commit to a default branch.** Develop on the designated feature branch.
+- **Never squash- or rebase-merge.** Merges are true merge commits only — see the
+  [merge-strategy policy](/meta/policy/merge-strategy.md).
 - Never include internal identifiers, tokens, or model ids in commit messages or PR
   bodies.
 - Keep the commit atomic and the message honest — if tests fail or a step was

@@ -175,6 +175,26 @@ the session ends.
 
 _Source: [`meta/policy/persist-plans.md`](/meta/policy/persist-plans.md)_
 
+**Merge with a true merge commit; never squash or rebase.** The commit graph is
+a **provenance layer**, not an implementation detail: every commit carries the
+session trailer linking it to the agent session that produced it, durable docs
+(plans, thread docs, logs) cite commits by SHA, and `git blame` is the answer to
+"which session changed this and why". A squash-merge lands a brand-new commit
+and abandons the originals — severing commit → session traceability and turning
+cited SHAs into garbage once the branch is deleted; a rebase-merge rewrites them.
+A true merge wires the branch's real history into `main`'s ancestry, so the
+cited SHAs stay reachable forever and the branch is safe to delete (see
+[why a true merge keeps cited commits reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md)).
+
+- Agents merging a PR (UI, MCP tools, or API) must use the **merge** method —
+  never `squash` or `rebase`, even when they are enabled in repo settings.
+- Never rewrite shared history; the usual noise argument for squashing does not
+  apply here — agent commits are already atomic and deliberately messaged.
+- For a one-line-per-PR reading of `main`, use `git log --first-parent` instead
+  of flattening history at the merge boundary.
+
+_Source: [`meta/policy/merge-strategy.md`](/meta/policy/merge-strategy.md)_
+
 ---
 
 ## 4. Controlled `type` vocabulary
@@ -221,6 +241,11 @@ Seed vocabulary:
   `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
   `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
   (lives under `meta/analysis/`).
+- `todo` — a lightweight actionable task item: a single thing to be done, tracked
+  until it is finished. Carries a `status` (`open`/`done`/`cancelled`). Distinct from
+  an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
+  record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
+  complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
 
@@ -325,6 +350,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   it feeds ship in the same PR. Invoking the skill **is** the authorization to open the PR
   (no separate confirmation gate); PR-template detection and the GitHub MCP tools
   handle the rest. See `.claude/skills/create-pull-request/SKILL.md`.
+- **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
+  a subcommand argument: `/todo create <title>` files a new open todo (and maintains
+  the index + `log.md`); `/todo list` shows the todos grouped by `status`. See
+  `.claude/skills/todo/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 
