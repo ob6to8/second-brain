@@ -22,4 +22,7 @@ mouthful in its context*.
 
 ## Contents
 
-_(none yet)_
+- [two-directional materialize with unconditional orphan-block removal](/meta/elaborations/two-directional-materialize.md) —
+  unpacks the P1 work-package phrase from the code-review hardening plan:
+  making the route-tag log materializer remove generated content whose source
+  tags vanished, automatically and without a flag.

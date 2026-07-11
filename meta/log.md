@@ -4,6 +4,13 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **First elaboration filed** — `/elaborate` on the hardening plan's P1 phrase
+  → [two-directional materialize with unconditional orphan-block removal](/meta/elaborations/two-directional-materialize.md):
+  quoted target, seven terms defined (linking the existing
+  [route tag](/glossary/route-tag.md), [sink](/glossary/route-tag-sink.md),
+  and [thread doc](/glossary/thread-doc.md) glossary files rather than
+  redefining), and the plain walkthrough. `thread` back-link deliberately
+  unset — `/create-pull-request` will add it after this session is captured.
 - **Elaborations become persistent: new genre `meta/elaborations/` + new type
   `elaboration`.** Operator-ratified shape change: `/elaborate` output now
   persists as a `type: elaboration` doc under
