@@ -2,6 +2,16 @@
 
 Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
+## 2026-07-11
+
+- **Captured [`2026-07-11-glossary-backfill-from-thread-docs`](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md)**
+  — the session that ran `/add-to-glossary` over the eleven previously-unprocessed
+  thread docs, growing the [glossary](/glossary.md) from 7 to 68 terms (46 new
+  term files + 15 pointer entries) and merging it as PR #37. Route-tagged the
+  backfill region to the glossary hub (`sb:0b648f`); `mix brain.route_tags
+  --materialize` appended its excerpt block. Left one paused matter: whether bare
+  skill-command names deserve glossary pointer entries.
+
 ## 2026-07-10
 
 - **Capture refresh (pre-merge)** — the session continued past its first
