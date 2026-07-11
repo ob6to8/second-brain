@@ -4,6 +4,18 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Ratified the [merge-strategy policy](/meta/policy/merge-strategy.md)**
+  (operator-ratified) — PRs land on `main` via a **true merge commit** only;
+  squash- and rebase-merges are disallowed because the commit graph is a
+  provenance layer (session trailers, SHA citations in durable docs, blame
+  granularity). Grounded in the
+  [true-merge reachability tutorial](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md);
+  prompted by PR #39 (and earlier #37/#38) having been squash-merged on recent
+  precedent. `CLAUDE.md` recompiled (filing §, order 7);
+  [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) now
+  points at the policy in its merge guidance and guardrails. Squash/rebase
+  remain enabled in the GitHub repo settings — disabling them is an operator
+  step (Settings → General → Pull Requests).
 - **Captured [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)**
   — the session that built the session-init digest (entry below). Ledger: the
   tooling and hook strands closed (`unrouted`; path back-links), one dangling

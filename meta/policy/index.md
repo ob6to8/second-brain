@@ -24,6 +24,7 @@ that section.
 - [link-processing](/meta/policy/link-processing.md) — links enter only once processed; summarize oversized sources
 - [maintain-reserved-files](/meta/policy/maintain-reserved-files.md) — update `index.md` and `log.md` after filing
 - [persist-plans](/meta/policy/persist-plans.md) — approved plans are persisted as `type: plan` docs under `meta/plans/`, not left in chat
+- [merge-strategy](/meta/policy/merge-strategy.md) — PRs land via a true merge commit only; squash/rebase disallowed because commit history is provenance
 
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of concept types
