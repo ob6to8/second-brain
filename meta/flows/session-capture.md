@@ -42,7 +42,7 @@ Three things are missing, and this flow supplies each:
 3. an **audit trail** from each region of the session to the durable page it feeds.
 
 The transferable idea behind it is filed as a concept:
-[routing non-linear work sessions](/SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions.md)
+[routing non-linear work sessions](/knowledge/SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions.md)
 (`sb:d479e3`). This page is the *implementation* of that idea in this bundle.
 
 ---

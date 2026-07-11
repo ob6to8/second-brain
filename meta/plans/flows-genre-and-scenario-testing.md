@@ -224,16 +224,16 @@ architecture against Elixir best practices and the repo's `deps: []` constraint.
     output normalized. ExUnit's built-in `assert a == b` already gives a readable
     character-level diff (since 1.6) — no helper dep needed, but diff one file at a
     time. Evidence:
-    [ExUnit ships dependency-free fixtures and diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
+    [ExUnit ships dependency-free fixtures and diffs](/knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
     (`sb:f6e843`).
   - **`steps.md` stays human documentation, not machine-parsed** — avoiding the
     bespoke DSL. (Reflected in §4: the step list is a table in the flow doc.)
 
 **Outside references (intook, with the full citations).** The two design changes
 above trace to these captures — the *drop-the-snapshot-library* decision to
-[Elixir snapshot/approval-testing libraries require a dependency](/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md)
+[Elixir snapshot/approval-testing libraries require a dependency](/knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md)
 (`sb:b1ba4b`), and the *built-ins-are-enough* basis to
-[ExUnit ships dependency-free fixtures and diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
+[ExUnit ships dependency-free fixtures and diffs](/knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
 (`sb:f6e843`); each capture holds the underlying hexdocs / issue-tracker / repo
 URLs under its `# Citations`. Repo evidence (in-tree, not intook): `mix.exs`
 (`deps: []`), `route_tags_test.exs`, `site_test.exs`.

@@ -4,7 +4,7 @@ okf_version: "0.1"
 
 # Second Brain
 
-An [Open Knowledge Format](/knowledge-management/open-knowledge-format.md)
+An [Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)
 (OKF v0.1) bundle. This file is the bundle-root index — the entry point for
 progressive disclosure. Agents and humans start here and navigate down.
 
@@ -21,17 +21,20 @@ Top-level domains (progressive disclosure — navigate down from here). The taxo
 emerges as knowledge is filed and evolves collaboratively; see the
 [operating contract](/CLAUDE.md).
 
-- [SWE](/SWE/index.md) — software engineering knowledge
-- [ai-industry](/ai-industry/index.md) — market, economic, and competitive analysis of the AI industry
-- [knowledge-management](/knowledge-management/index.md) — knowledge representation, PKM, and knowledge formats (incl. OKF, the format this brain uses)
-
-Cross-domain:
-
-- [glossary](/glossary/index.md) — running glossary of technical terms used
-  across the brain: one concept file per term, individually linkable, with
-  citations back to the threads, papers, and posts each was seen in; accreted by
-  [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md)
-  (hub: [glossary.md](/glossary.md))
+- [knowledge](/knowledge/index.md) — domain knowledge: the taxonomy of what the
+  brain knows
+  - [SWE](/knowledge/SWE/index.md) — software engineering knowledge
+  - [ai-industry](/knowledge/ai-industry/index.md) — market, economic, and competitive analysis of the AI industry
+  - [knowledge-management](/knowledge/knowledge-management/index.md) — knowledge representation, PKM, and knowledge formats (incl. OKF, the format this brain uses)
+- [beliefs](/beliefs/index.md) — the brain's own working vocabulary and
+  observations
+  - [glossary](/beliefs/glossary/index.md) — running glossary of technical terms used
+    across the brain: one concept file per term, individually linkable, with
+    citations back to the threads, papers, and posts each was seen in; accreted by
+    [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md)
+    (hub: [glossary.md](/beliefs/glossary.md))
+  - [Future beliefs](/beliefs/future-beliefs.md) — scratch list of observations
+    about the brain worth formalizing later
 
 ### Meta / governance
 

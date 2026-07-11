@@ -4,6 +4,19 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Root reorganization: new `knowledge/` and `beliefs/` top-levels**
+  (operator-ratified) — the domain taxonomy now lives under
+  [`knowledge/`](/knowledge/index.md) (absorbing `SWE/`, `ai-industry/`, and
+  `knowledge-management/`), and the brain's own working vocabulary under
+  [`beliefs/`](/beliefs/index.md) (absorbing the [glossary](/beliefs/glossary/index.md)
+  with its [hub](/beliefs/glossary.md), plus `meta/future-beliefs.md` →
+  [Future beliefs](/beliefs/future-beliefs.md), which entered the bundle and was
+  minted `sb:1b3c79`). All `sb:` ids are unchanged — identity survives the
+  refactor. Bundle-absolute links in live documents were repointed; frozen
+  thread docs under `meta/threads/` keep their historical paths, as do dated
+  `log.md` entries. Root `index.md` restructured; registry and contract
+  regenerated.
+
 - **Resolved: skill commands stay out of the glossary** (operator-ratified) —
   settled the paused matter from the
   [glossary-backfill thread](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md).

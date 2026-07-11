@@ -1,13 +1,13 @@
 ---
 name: add-to-glossary
-description: Scan a persisted thread (meta/threads/), a paper, a post, or a filed concept; extract the technical terms and concepts it actually uses; and merge distilled definitions into the glossary — one concept file per term under /glossary/. Use when the operator says "/add-to-glossary", "add this to the glossary", "glossary this thread", "define the terms in this", or asks for glossary links.
+description: Scan a persisted thread (meta/threads/), a paper, a post, or a filed concept; extract the technical terms and concepts it actually uses; and merge distilled definitions into the glossary — one concept file per term under /beliefs/glossary/. Use when the operator says "/add-to-glossary", "add this to the glossary", "glossary this thread", "define the terms in this", or asks for glossary links.
 ---
 
 # /add-to-glossary — accrete a cross-domain glossary
 
 Extract the significant technical vocabulary from a source and merge it into the
 brain's glossary: **one concept file per term under
-[`/glossary/`](/glossary/index.md)**, with [`/glossary.md`](/glossary.md) as the
+[`/beliefs/glossary/`](/beliefs/glossary/index.md)**, with [`/beliefs/glossary.md`](/beliefs/glossary.md) as the
 hub doc describing the system. Where
 [`/summarize-technical`](../summarize-technical/SKILL.md) produces a *per-document*
 glossary that lives and dies with its breakdown, this skill maintains the
@@ -17,7 +17,7 @@ glossary that lives and dies with its breakdown, this skill maintains the
 Each term file is a bundle concept like any other — its own `sb:` id, frontmatter,
 and place in `mix brain.verify`/`registry` and the site renderer. That per-term
 granularity is the point: **every definition is individually linkable**, so a term
-can be cited anywhere as a bundle-absolute link (`[route tag](/glossary/route-tag.md)`)
+can be cited anywhere as a bundle-absolute link (`[route tag](/beliefs/glossary/route-tag.md)`)
 that lands on its definition. There is deliberately no `glossary.json`; the file
 structure below is regular enough to parse if tooling ever needs it.
 
@@ -51,7 +51,7 @@ material; this is a working glossary, not an index of every noun.
 ### 2. Dedup against what the brain already defines
 For each candidate, in order:
 
-- **Already has a file under `/glossary/`** → merge into that file (step 4).
+- **Already has a file under `/beliefs/glossary/`** → merge into that file (step 4).
   Never create a second file for the same term.
 - **Canonically defined elsewhere in the brain** — a filed `concept`, or a term of
   the operating contract itself (e.g. *route tag*, *routing ledger*, defined by
@@ -71,8 +71,8 @@ Write each definition from understanding, not by transcription:
 - If a term carries different senses in different domains, keep **one entry with
   numbered senses**, not two entries.
 
-### 4. Merge into `/glossary/`
-- **One file per term**: `/glossary/<kebab-slug>.md`, slug derived from the term
+### 4. Merge into `/beliefs/glossary/`
+- **One file per term**: `/beliefs/glossary/<kebab-slug>.md`, slug derived from the term
   (`route-tag.md`, `verified-by.md`). `type: concept`; `title` = the term
   (lowercase unless a proper noun or cased formalism); `description` = the
   definition in one sentence; `provenance` noting it's an agent-distilled
@@ -85,7 +85,7 @@ Write each definition from understanding, not by transcription:
   new source genuinely adds nuance (or a new sense); always append the citation;
   bump that file's `timestamp`. Never delete or rewrite-from-scratch a file the
   operator may have touched.
-- Keep `/glossary/index.md` current: one bulleted link + one-line description
+- Keep `/beliefs/glossary/index.md` current: one bulleted link + one-line description
   per term, **alphabetical, case-insensitive**.
 
 ### 5. Maintain and verify
@@ -105,7 +105,7 @@ definition at a glance.
 The per-term files exist so definitions can be *cited*. When the operator asks
 for glossary links (or when a response leans on a term the glossary defines),
 link the term inline by bundle-absolute path —
-`[route tag](/glossary/route-tag.md)` — so clicking it lands on the definition.
+`[route tag](/beliefs/glossary/route-tag.md)` — so clicking it lands on the definition.
 Link a term's first use in a response, not every occurrence.
 
 ## Graduation
@@ -114,7 +114,7 @@ The glossary is a staging layer, not a terminal home. When a term's file
 outgrows a glossary definition — it accumulates senses, claims, or citations
 that belong in the domain tree — **move the file into the taxonomy** where it
 belongs (its `sb:` id travels with it; identity survives moves) and leave a
-pointer stub at `/glossary/<slug>.md` linking to the new home, so glossary
+pointer stub at `/beliefs/glossary/<slug>.md` linking to the new home, so glossary
 links keep landing somewhere useful. Update both `index.md` files and the
 registry (`mix brain.registry`).
 
@@ -128,8 +128,8 @@ registry (`mix brain.registry`).
 - **Terminology, not invocables.** The glossary holds *concepts*, not command
   handles. A bare skill command (`/intake`, `/capture`, `/news`) does not get its
   own entry — its canonical link is its own `SKILL.md`, and the *concept it enacts*
-  (e.g. [session capture](/glossary/session-capture.md)) is what earns a glossary
-  file. The [skill](/glossary/skill.md) *category* has one pointer entry; the
+  (e.g. [session capture](/beliefs/glossary/session-capture.md)) is what earns a glossary
+  file. The [skill](/beliefs/glossary/skill.md) *category* has one pointer entry; the
   individual commands live in the [skills-registry policy](/meta/policy/skills-registry.md).
 - Definitions written here are agent statements; term files stay
   `verified: false` unless a claim gets grounded via the normal `verified_by`

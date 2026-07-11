@@ -126,7 +126,7 @@ So a file's membership is really **two orthogonal decisions**:
 
 `meta/` and `inbox/` sit in the same quadrant: **not a concept, but published.**
 `deprecated/` sits in another: excluded from *both* (archived and hidden). Regular
-concepts under `SWE/`, `ai-industry/`, etc. are in both. Keeping the two lists
+concepts under `knowledge/`, `beliefs/`, etc. are in both. Keeping the two lists
 separate is what lets the brain publish more than it identity-checks.
 
 ## The checklist for a new non-bundle namespace

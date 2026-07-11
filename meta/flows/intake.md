@@ -222,5 +222,5 @@ done (no near-duplicate created); and does the chosen directory actually fit the
 taxonomy (or should a new one have been proposed for ratification).
 
 **Reference instance.** The scenario fixture is the canonical green example. Any
-freshly intook reference in the tree — e.g. the two `SWE/testing/` captures filed
+freshly intook reference in the tree — e.g. the two `knowledge/SWE/testing/` captures filed
 during the flows-spec research spike — is a real worked instance of steps 5–9.

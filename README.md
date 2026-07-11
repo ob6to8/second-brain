@@ -1,7 +1,7 @@
 # second-brain
 
 A personal knowledge base stored as an
-[Open Knowledge Format](/knowledge-management/open-knowledge-format.md)
+[Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)
 (OKF v0.1) bundle — a directory of plain-markdown "concept" documents with YAML
 frontmatter, designed to be read and extended by AI agents and humans alike.
 

@@ -8,7 +8,7 @@
 # Operating Contract — Second Brain (OKF)
 
 This repository is a personal **second brain** stored as an
-[Open Knowledge Format](/knowledge-management/open-knowledge-format.md)
+[Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)
 (**OKF v0.1**) bundle. Every agent that operates here — including fresh, sandboxed
 agents spun up from the Claude Code app — MUST read and follow this contract. It is
 the backbone that keeps the brain consistent as it grows.
@@ -72,7 +72,7 @@ _Source: [`meta/policy/reserved-filenames.md`](/meta/policy/reserved-filenames.m
   names (short, established acronyms like `SWE` may stay uppercase); each directory
   holds a coherent set of related concepts.
 - **Create the natural directory path even for a single concept.** Do not flatten to
-  avoid nesting — a lone note about git belongs in `SWE/version-control/git/`, not
+  avoid nesting — a lone note about git belongs in `knowledge/SWE/version-control/git/`, not
   dumped at the root. Depth that mirrors the real structure of the knowledge is good.
 
 _Source: [`meta/policy/directory-hierarchy.md`](/meta/policy/directory-hierarchy.md)_
@@ -309,7 +309,7 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the glossary — **one concept file per term** under
-  [`/glossary/`](/glossary/index.md) (hub: [`/glossary.md`](/glossary.md)), each with
+  [`/beliefs/glossary/`](/beliefs/glossary/index.md) (hub: [`/beliefs/glossary.md`](/beliefs/glossary.md)), each with
   its own `sb:` id and *Seen in:* citations, so any response or concept can cite a
   term by link (pointer entries defer to filed concepts instead of duplicating them).
   Also invoked automatically by `/create-pull-request` on the thread doc its
@@ -386,7 +386,7 @@ Four columns:
   dispatch) are orthogonal: a strand can be routed yet still `open`, or `closed`
   and `unrouted`.
 - **Routed-to targets are `concept` docs**, linked by bundle-absolute path
-  (e.g. `[foo](/SWE/…/foo.md)`). The route-tagging cross-check reads this column
+  (e.g. `[foo](/knowledge/SWE/…/foo.md)`). The route-tagging cross-check reads this column
   to confirm every concept-routed row is covered by a tag (see the route-tagging
   policy).
 - **In-doc, maintained at capture time.** The ledger is a section of the thread

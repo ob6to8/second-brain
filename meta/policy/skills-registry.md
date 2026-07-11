@@ -25,7 +25,7 @@ timestamp: 2026-07-10
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the glossary — **one concept file per term** under
-  [`/glossary/`](/glossary/index.md) (hub: [`/glossary.md`](/glossary.md)), each with
+  [`/beliefs/glossary/`](/beliefs/glossary/index.md) (hub: [`/beliefs/glossary.md`](/beliefs/glossary.md)), each with
   its own `sb:` id and *Seen in:* citations, so any response or concept can cite a
   term by link (pointer entries defer to filed concepts instead of duplicating them).
   Also invoked automatically by `/create-pull-request` on the thread doc its

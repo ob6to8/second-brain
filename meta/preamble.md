@@ -8,7 +8,7 @@ timestamp: 2026-07-05
 # Operating Contract — Second Brain (OKF)
 
 This repository is a personal **second brain** stored as an
-[Open Knowledge Format](/knowledge-management/open-knowledge-format.md)
+[Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)
 (**OKF v0.1**) bundle. Every agent that operates here — including fresh, sandboxed
 agents spun up from the Claude Code app — MUST read and follow this contract. It is
 the backbone that keeps the brain consistent as it grows.

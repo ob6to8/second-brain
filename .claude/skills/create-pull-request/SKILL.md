@@ -36,7 +36,7 @@ still holds for every other flow.)
 - Run **[`/add-to-glossary`](../add-to-glossary/SKILL.md)** with the thread doc just
   written in step 1 as its source: extract the technical terms the session actually
   used and merge their definitions into the glossary — one concept file per term
-  under [`/glossary/`](/glossary/index.md) — per that skill's dedup/merge and
+  under [`/beliefs/glossary/`](/beliefs/glossary/index.md) — per that skill's dedup/merge and
   pointer-entry rules. The glossary updates then ship in this same PR, alongside
   the thread they came from.
 - If step 1 was skipped (nothing captured), skip this step too. If the thread

@@ -4,6 +4,12 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **`future-beliefs.md` left the governance namespace** — moved to
+  [`/beliefs/future-beliefs.md`](/beliefs/future-beliefs.md) as part of the
+  root reorganization (new `knowledge/` and `beliefs/` top-levels,
+  operator-ratified). It is now a bundle concept (`sb:1b3c79`). The
+  [directory-hierarchy policy](/meta/policy/directory-hierarchy.md) example
+  path was updated to the new tree and the contract re-rendered.
 - **Captured [`2026-07-11-glossary-backfill-from-thread-docs`](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md)**
   — the session that ran `/add-to-glossary` over the eleven previously-unprocessed
   thread docs, growing the [glossary](/glossary.md) from 7 to 68 terms (46 new
