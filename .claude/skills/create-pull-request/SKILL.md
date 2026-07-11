@@ -25,7 +25,7 @@ still holds for every other flow.)
   `meta/threads/YYYY-MM-DD-<slug>.md`, write the `## Routing` ledger, apply route
   tags over the frozen body, then `mix brain.route_tags --materialize` and
   `mix brain.route_tags` to generate/verify the fed concepts' excerpt logs. Update
-  `meta/threads/index.md` and `meta/log.md` as `/capture` requires.
+  `meta/threads/index.md` as `/capture` requires.
 - The point of ordering this first: the captured thread doc and its materialized
   logs become part of the working changes, so they ship *in this same PR* rather
   than trailing behind in a separate one.

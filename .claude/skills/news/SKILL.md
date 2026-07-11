@@ -29,7 +29,6 @@ Read the [operating contract](../../../CLAUDE.md) first. Two rules shape this sk
 ```
 inbox/
   index.md          # landing view: links to the latest digest + the archive (reserved, no frontmatter)
-  log.md            # generation history, newest first
   YYYY-MM-DD.md     # one digest per day — type: reference, no sb: id, immutable once written
 ```
 
@@ -136,8 +135,8 @@ are moving relative to what the brain already tracks*. See the design record in
 
 ### 6. Maintain the inbox reserved files
 - `inbox/index.md`: point "Latest" at today's digest (one-line summary + count),
-  and prepend today to the dated **archive** list. No frontmatter.
-- `inbox/log.md`: prepend a dated entry (item count, domains touched), newest first.
+  and prepend today to the dated **archive** list. No frontmatter. (No log —
+  the dated digests are their own history; the commit records the generation.)
 
 ### 7. Report
 - One-line summary: how many items across which domains, and the path to today's

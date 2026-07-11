@@ -53,8 +53,6 @@ if still ambiguous, ask.
 4. **Maintain reserved files.**
    - Add a bulleted link under **Open** in [`meta/todos/index.md`](/meta/todos/index.md)
      with the one-line description and `status: open`.
-   - Append a dated entry to [`meta/log.md`](/meta/log.md) under today's ISO date
-     heading (newest first).
 5. **Verify & report.** Run `mix brain.verify` (a todo carries no `sb:` id, so no
    `mix brain.id`/`registry` step). Report the path written.
 
@@ -71,9 +69,8 @@ if still ambiguous, ask.
 ## Completing / cancelling a todo
 
 When the operator marks a todo done or cancelled: set its `status` to `done` or
-`cancelled`, bump `timestamp`, move its entry to the **Done / Cancelled** section of
-the index, and append a `log.md` entry. (A dedicated subcommand can be added later if
-this becomes frequent.)
+`cancelled`, bump `timestamp`, and move its entry to the **Done / Cancelled** section
+of the index. (A dedicated subcommand can be added later if this becomes frequent.)
 
 ## Guardrails
 - A todo is a *task*, not a problem or a design — don't overload it; use `issue` or

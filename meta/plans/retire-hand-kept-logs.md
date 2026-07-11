@@ -2,8 +2,7 @@
 type: plan
 title: "Retire the hand-kept chronological logs (log.md) in favor of git history"
 description: Remove root log.md, meta/log.md, and inbox/log.md and every policy/skill mandate to maintain them — git's true-merge commit graph is the single provenance layer — while explicitly keeping the generated, CI-verified route-tagged excerpt logs.
-status: accepted
-priority: 1
+status: done
 provenance: "Claude Code session, 2026-07-11 — operator-ratified after the stale-log incident in the deprecated-triage/glossary session; this conversation is the design review"
 tags: [meta, plan, logs, provenance, dry, governance]
 timestamp: 2026-07-11
@@ -13,8 +12,9 @@ timestamp: 2026-07-11
 
 ## Status & provenance
 
-**Accepted** — operator-ratified 2026-07-11, flagged `priority: 1` for the next
-working session. The design review is the ratifying conversation itself: an
+**Done** — executed 2026-07-11, the same day it was filed (operator: "Can we
+delete the log then as well?"). Ratified and flagged `priority: 1` earlier that
+day. The design review is the ratifying conversation itself: an
 agent cited a `log.md` entry as the source for the session-init priority
 ranking and the entry was stale (it predated the todos extension), prompting
 the operator's challenge — *"the only true guarantee is one source of truth…
