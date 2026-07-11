@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **New flow doc [`render-contract`](/meta/flows/render-contract.md) + scenario
+  test** — the contract-compilation flow joins `intake` and `session-capture` in
+  the flows genre: the edit-policy → `mix brain.contract` → `--check` drift-gate
+  → one-commit touch-sequence, with the sections-are-code step (2a) called out.
+  Its spine is pinned by the new
+  [`contract_scenario_test.exs`](/test/second_brain/contract_scenario_test.exs)
+  (canonical run round-trips; source drift, artifact hand-edits, and unregistered
+  sections are caught; supersession drops a rule from the compile but not the
+  repo). Listed in the flows index; the `/render-contract` skill now points at
+  the flow doc.
 - **Filed issue [`orphaned-remote-branches-cleanup`](/meta/issues/orphaned-remote-branches-cleanup.md)**
   — the pre-policy backlog: 12 merged-but-undeleted `claude/*` branches (delete on
   sight per the new policy), 9 unmerged branches needing operator triage — notably

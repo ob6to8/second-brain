@@ -14,6 +14,10 @@ The compiler is the Elixir mix task `brain.contract` (`lib/second_brain/contract
 It groups each policy under its declared `section`, orders by `order`, and emits a
 visible trace link under each rule back to its `meta/policy/<id>.md`.
 
+The end-to-end flow — touch-sequence, actor boundaries, invariants, and the
+scenario test that pins the spine — is narrated in
+[`meta/flows/render-contract.md`](/meta/flows/render-contract.md).
+
 ## When to use
 - After adding, editing, superseding, or reordering any policy under `meta/policy/`.
 - After editing `meta/preamble.md`.

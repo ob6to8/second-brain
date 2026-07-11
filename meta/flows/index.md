@@ -35,3 +35,8 @@ that proves it. The genre itself was designed in
   taxonomy → mint id → compile registry → verify: the touch-sequence, the
   judgment/spine split, actor boundaries, the identity gate suite, and the
   scenario test that pins the spine.
+- [Render-contract — compile the operating contract from its policy sources](/meta/flows/render-contract.md) —
+  driving a rule change through edit-the-policy → `mix brain.contract` →
+  `--check` drift gate → one commit for source + artifact: the touch-sequence
+  (including the sections-are-code step), actor boundaries, and the scenario
+  test that pins the spine.
