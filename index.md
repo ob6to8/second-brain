@@ -25,6 +25,14 @@ emerges as knowledge is filed and evolves collaboratively; see the
 - [ai-industry](/ai-industry/index.md) — market, economic, and competitive analysis of the AI industry
 - [knowledge-management](/knowledge-management/index.md) — knowledge representation, PKM, and knowledge formats (incl. OKF, the format this brain uses)
 
+Cross-domain:
+
+- [glossary](/glossary/index.md) — running glossary of technical terms used
+  across the brain: one concept file per term, individually linkable, with
+  citations back to the threads, papers, and posts each was seen in; accreted by
+  [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md)
+  (hub: [glossary.md](/glossary.md))
+
 ### Meta / governance
 
 Separate from the knowledge taxonomy — the rules for *how the brain operates*.

@@ -2,6 +2,78 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-11
+
+- **Resolved: skill commands stay out of the glossary** (operator-ratified) —
+  settled the paused matter from the
+  [glossary-backfill thread](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md).
+  Bare skill-command handles (`/intake`, `/capture`, `/news`, …) do **not** get
+  glossary entries: a command's canonical link is its own `SKILL.md`, and the
+  *concept* a skill enacts (e.g. [session capture](/glossary/session-capture.md))
+  is what earns a file. Added one [skill](/glossary/skill.md) (`sb:aa0003`)
+  category pointer entry and codified the principle as a new `/add-to-glossary`
+  guardrail ("terminology, not invocables"). Glossary now 69 terms.
+
+## 2026-07-10
+
+- **Backfilled the glossary from the remaining thread docs** — ran
+  `/add-to-glossary` over the eleven previously-unprocessed threads under
+  [`/meta/threads/`](/meta/threads/index.md) (only the
+  [add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
+  had been done). Added **46 new term files** and **15 pointer entries** under
+  [`/glossary/`](/glossary/index.md), taking the glossary from 7 to 68 terms —
+  spanning scheduling/automation (Routine, cron expression,
+  fresh-session-per-fire, approval gate), the news inbox (query profile,
+  candidate feed, digest, reason tags, featuring), flows & testing (flow /
+  touch-sequence, scenario test, deterministic spine, golden test,
+  self-consistency check, ExUnit, property-based testing), the site generator
+  (static-site generator, dependency-free, markdown renderer, GitHub Pages,
+  deploy gating, HTML escaping, XSS, GFM), retrieval (recall, deduplication,
+  recall probe, recall@k, vector database, embeddings, semantic search, ANN),
+  Composable Beliefs / epistemics (typed edge, epistemic overlay, supersession,
+  proto-belief document, route-tag sink), skills (skill namespacing,
+  skill-to-skill delegation, plugin), and governance (compiled contract,
+  operating contract, provenance, verification grounding, routing ledger,
+  session capture, and pointer entries for the `issue`/`analysis`/`methodology`/`plan`/`tutorial`
+  types). Appended *Seen in:* citations to the six existing entries the threads
+  also touched, refreshed [`meta/registry.md`](/meta/registry.md), and
+  re-verified (`mix brain.verify`, `mix brain.route_tags` both green).
+- **Glossary restructured to one concept file per term** (operator-directed) —
+  the seven entries moved out of the monolithic `glossary.md` into
+  [`/glossary/`](/glossary/index.md), each its own `type: concept` file with a
+  minted `sb:` id ([concept (OKF)](/glossary/concept-okf.md) `sb:317879`,
+  [graduation](/glossary/graduation.md) `sb:0c8532`,
+  [pointer entry](/glossary/pointer-entry.md) `sb:393e3d`,
+  [route tag](/glossary/route-tag.md) `sb:e142e6`,
+  [stable id](/glossary/stable-id.md) `sb:4d71d3`,
+  [thread doc](/glossary/thread-doc.md) `sb:089fb2`,
+  [verified_by](/glossary/verified-by.md) `sb:c6e78a`), so every definition is
+  individually linkable from responses and concepts.
+  [`/glossary.md`](/glossary.md) (`sb:0b648f`) stays as the hub doc and keeps
+  its route-tagged excerpt log; graduation now means *moving* a term file into
+  the domain taxonomy (id travels) leaving a pointer stub. Updated the
+  `/add-to-glossary` skill (per-term merge rules, a "citing terms in responses"
+  section), the `/create-pull-request` step-2 wording, the skills-registry
+  policy (re-rendered `CLAUDE.md`), the root `index.md`, and
+  `meta/registry.md`.
+- **First `/add-to-glossary` run** — over the thread
+  [2026-07-10-add-to-glossary-skill-and-pr-wiring](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md),
+  as step 2 of a `/create-pull-request` invocation (the new wiring's first live
+  exercise). Seeded the [glossary](/glossary.md) (`sb:0b648f`) with its first
+  seven entries: two definitions for terms the session coined (*graduation*,
+  *pointer entry*, deferring to the skill doc) and five pointer entries for
+  contract machinery the thread used (*concept (OKF)*, *route tag*,
+  *stable id*, *thread doc*, *verified_by* — each a one-line gloss plus a link
+  to its defining policy).
+- **Seeded the bundle-root [glossary](/glossary.md)** — a single cross-domain
+  running glossary (`type: concept`), accreted by the new
+  [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md) skill: one
+  alphabetical entry per technical term, each citing the threads/papers/posts it
+  was seen in; pointer entries defer to filed concepts instead of duplicating
+  them. Listed it under a "Cross-domain" heading in the root `index.md`, minted
+  its id, and regenerated `meta/registry.md`. No entries yet. See
+  [meta/log.md](/meta/log.md) for the skill entry.
+
 ## 2026-07-09
 
 - **Route-tagged excerpt logs materialized** into the two `SWE/testing` references
