@@ -16,6 +16,13 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   first policy-compliant true merge (`9ad1d4e`). Cleared the corresponding
   dangling item in the
   [session-init thread ledger](/meta/threads/2026-07-11-session-init-digest-and-priorities.md).
+- **Captured [`2026-07-11-deprecated-directory-triage-and-machinery-deletion`](/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md)**
+  — the session that migrated the first legacy source out of `deprecated/`
+  (`sb:41a1e3`) and deleted the old assertion-graph machinery, keeping the
+  content pending triage. Route-tagged the intake region to `sb:41a1e3`
+  (excerpt log materialized) and the triage/deletion regions to
+  `deprecated/README.md` as path back-links. One open matter in the ledger:
+  the remaining migration (13 sources, 9 assertions, URL backlog, old plans).
 - **Refreshed [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md) in place**
   (second `/create-pull-request` close; update-in-place per the capture skill) —
   appended the post-PR-#39 exchanges verbatim: the squash-merge, the

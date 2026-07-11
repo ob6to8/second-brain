@@ -4,6 +4,41 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Glossaried the
+  [deprecated-triage thread](/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md)**
+  (`/add-to-glossary` via `/create-pull-request`) — four new terms:
+  [agent memory](/glossary/agent-memory.md) (`sb:37a83f`),
+  [assertion graph](/glossary/assertion-graph.md) (`sb:ac22a3`),
+  [BM25](/glossary/bm25.md) (`sb:068a32`), and
+  [hybrid search](/glossary/hybrid-search.md) (`sb:3983f2`). Glossary at
+  85 terms after merging with the day's parallel sessions.
+
+- **Route-tagged excerpt log added to
+  [ai-agent-memory-management-markdown-files](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md)**
+  (`sb:41a1e3`) — materialized from the captured
+  [deprecated-triage thread](/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md)'s
+  intake region via `mix brain.route_tags --materialize`.
+
+- **Deleted the legacy machinery from `deprecated/`** (operator-directed) —
+  removed the old assertion-graph system's code and generated artifacts:
+  `scripts/`, `schema/`, `templates/`, `publish/`, `.claude/` skills,
+  `index.json`, and its `CLAUDE.md`/`README.md` (all recoverable from git
+  history). Kept the *content* pending migration: `sources/` (13 captures),
+  `assertions/` (9 claims), `intake/` (raw URL backlog), and `plans/`
+  (historical decision records), with a new `deprecated/README.md` tracking
+  migration state. Also removed the already-migrated
+  `sources/ai-agent-memory-markdown-files.md`.
+
+- **Migrated the first legacy capture out of `deprecated/`** — intake of
+  `deprecated/sources/ai-agent-memory-markdown-files.md` into
+  [AI agent memory management — when markdown files are all you need](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md)
+  (`sb:41a1e3`, `reference`). Re-fetched the dev.to article to enrich the
+  legacy summary (author, Manus three-file pattern, OpenClaw 70:30 hybrid
+  search weighting), filed under
+  [context-engineering](/SWE/agentic-coding/context-engineering/index.md).
+  13 legacy sources and 9 assertions remain in `deprecated/` pending
+  triage/migration before the directory can be deleted.
+
 - **Glossary: merge terminology** — scanned the refreshed
   [session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)
   per `/create-pull-request`'s glossary step. Added two pointer entries deferring
