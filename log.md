@@ -4,6 +4,14 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Glossary: merge terminology** — scanned the refreshed
+  [session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)
+  per `/create-pull-request`'s glossary step. Added two pointer entries deferring
+  to the [reachability tutorial](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md):
+  [true merge](/glossary/true-merge.md) (`sb:a10e18`) and
+  [squash merge](/glossary/squash-merge.md) (`sb:4a235a`), both cross-linked to
+  the [merge-strategy policy](/meta/policy/merge-strategy.md) and the existing
+  [fast-forward merge](/glossary/fast-forward-merge.md) entry.
 - **Glossaried the [news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md)**
   (via `/add-to-glossary`, run by `/create-pull-request`) — added 5 new definitions
   ([Model Context Protocol](/glossary/model-context-protocol.md) `sb:c66f10`,

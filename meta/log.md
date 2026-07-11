@@ -4,6 +4,36 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Refreshed [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md) in place**
+  (second `/create-pull-request` close; update-in-place per the capture skill) —
+  appended the post-PR-#39 exchanges verbatim: the squash-merge, the
+  commits-as-provenance question (no written policy found), the
+  squash-vs-true-merge trade-off analysis, the merge-strategy ratification, and
+  the `meta/todos/` digest extension. Four ledger rows added — one dangling:
+  operator to disable squash/rebase in the GitHub repo settings. Four new
+  regions tagged (path back-links to the policy, tutorial, skill, contract, and
+  tooling; no concept sinks). Threads index entry extended. Glossary pass added
+  [true merge](/glossary/true-merge.md) and [squash merge](/glossary/squash-merge.md)
+  as pointer entries to the
+  [reachability tutorial](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md).
+- **Session-init digest now scans `meta/todos/`** — `SecondBrain.SessionInit`
+  gained open todos (`status: open`) as a fourth source, sectioned between open
+  issues and active plans and ranked between in-progress and accepted plans in
+  the heuristic top-3 (an explicitly recorded task outranks work awaiting a
+  decision). The [glossary definition](/glossary/session-init-digest.md) was
+  reconciled to the four-source list. Tests extended.
+- **Ratified the [merge-strategy policy](/meta/policy/merge-strategy.md)**
+  (operator-ratified) — PRs land on `main` via a **true merge commit** only;
+  squash- and rebase-merges are disallowed because the commit graph is a
+  provenance layer (session trailers, SHA citations in durable docs, blame
+  granularity). Grounded in the
+  [true-merge reachability tutorial](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md);
+  prompted by PR #39 (and earlier #37/#38) having been squash-merged on recent
+  precedent. `CLAUDE.md` recompiled (filing §, order 7);
+  [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) now
+  points at the policy in its merge guidance and guardrails. Squash/rebase
+  remain enabled in the GitHub repo settings — disabling them is an operator
+  step (Settings → General → Pull Requests).
 - **Captured [`2026-07-11-news-digest-intake-and-daily-read`](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md)**
   — the session that generated the 2026-07-11 inbox digest (two passes), intaked the
   six SWE candidates, and shipped the daily-read synthesis. Route-tagged the intake

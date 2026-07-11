@@ -4,9 +4,10 @@ defmodule SecondBrain.SessionInit do
   rendered as markdown for injection into a fresh session's context (the
   SessionStart hook runs `mix brain.session_init` and echoes the output).
 
-  Three sources, all already maintained by existing policy:
+  Four sources, all already maintained by existing policy:
 
     * **Open issues** — `meta/issues/*.md` with `status: open`.
+    * **Open todos** — `meta/todos/*.md` with `status: open`.
     * **Active plans** — `meta/plans/*.md` with `status` in
       `proposed` / `accepted` / `in-progress`.
     * **Dangling strands** — routing-ledger rows in `meta/threads/*.md` whose
@@ -14,8 +15,9 @@ defmodule SecondBrain.SessionInit do
       (a `closed` row can still leave deferred work dangling).
 
   The digest ends with a heuristic top-3 priority ranking (issues, then
-  in-flight plans, then open strands, then paused strands and leftover
-  dangling questions, then proposed plans; newer first within a class) and an
+  in-flight plans, then open todos, then accepted plans, then open strands,
+  then paused strands and leftover dangling questions, then proposed plans;
+  newer first within a class) and an
   agent note asking the session agent to open the thread with its own
   appraisal, using the heuristic as a starting point — the script ranks, the
   agent judges.
@@ -33,30 +35,33 @@ defmodule SecondBrain.SessionInit do
   @weights %{
     issue: 0,
     plan_in_progress: 1,
-    plan_accepted: 2,
-    strand_open: 3,
-    strand_paused: 4,
-    strand_dangling: 5,
-    plan_proposed: 6
+    todo: 2,
+    plan_accepted: 3,
+    strand_open: 4,
+    strand_paused: 5,
+    strand_dangling: 6,
+    plan_proposed: 7
   }
 
   @doc "Render the full session-init digest for the bundle rooted at `root`."
   @spec report(String.t()) :: String.t()
   def report(root \\ File.cwd!()) do
     issues = open_issues(root)
+    todos = open_todos(root)
     plans = active_plans(root)
     strands = dangling_strands(root)
 
     """
     # Session init — open work digest
 
-    Compiled by `mix brain.session_init` from `meta/issues/`, `meta/plans/`, and
-    the routing ledgers under `meta/threads/`.
+    Compiled by `mix brain.session_init` from `meta/issues/`, `meta/todos/`,
+    `meta/plans/`, and the routing ledgers under `meta/threads/`.
 
     #{section("Open issues", Enum.map(issues, &issue_line/1))}
+    #{section("Open todos", Enum.map(todos, &issue_line/1))}
     #{section("Active plans", Enum.map(plans, &plan_line/1))}
-    #{section("Dangling strands (todos from thread ledgers)", Enum.map(strands, &strand_line/1))}
-    #{priorities_section(issues, plans, strands)}
+    #{section("Dangling strands (from thread ledgers)", Enum.map(strands, &strand_line/1))}
+    #{priorities_section(issues, todos, plans, strands)}
     > **Agent note:** open this session by stating your top-3 priority appraisal
     > for the operator — start from the heuristic ranking above, adjust it with
     > judgment, and say why. Then address the operator's request.
@@ -69,6 +74,16 @@ defmodule SecondBrain.SessionInit do
   def open_issues(root) do
     root
     |> docs_in("meta/issues")
+    |> Enum.filter(&(status(&1) == "open"))
+    |> sort_newest_first()
+  end
+
+  # --- open todos -----------------------------------------------------------
+
+  @doc "Open todos under meta/todos, newest first."
+  def open_todos(root) do
+    root
+    |> docs_in("meta/todos")
     |> Enum.filter(&(status(&1) == "open"))
     |> sort_newest_first()
   end
@@ -214,12 +229,12 @@ defmodule SecondBrain.SessionInit do
 
   # --- heuristic priorities -------------------------------------------------
 
-  defp priorities_section(issues, plans, strands) do
+  defp priorities_section(issues, todos, plans, strands) do
     # Each source list is already newest-first; Enum.sort_by/2 is stable, so
     # sorting on weight alone keeps that recency order within a class. A strand
     # whose ledger routed to an already-picked doc is the same matter — skip it.
     picks =
-      candidates(issues, plans, strands)
+      candidates(issues, todos, plans, strands)
       |> Enum.sort_by(&@weights[&1.class])
       |> Enum.reduce([], fn c, acc ->
         if Enum.any?(acc, &(&1.path && String.contains?(c.routed_to || "", &1.path))),
@@ -242,11 +257,21 @@ defmodule SecondBrain.SessionInit do
     end
   end
 
-  defp candidates(issues, plans, strands) do
+  defp candidates(issues, todos, plans, strands) do
     issue_cands =
       Enum.map(issues, fn d ->
         %{
           class: :issue,
+          path: d.rel_path,
+          routed_to: nil,
+          label: "**#{d.title}** (`/#{d.rel_path}`)"
+        }
+      end)
+
+    todo_cands =
+      Enum.map(todos, fn d ->
+        %{
+          class: :todo,
           path: d.rel_path,
           routed_to: nil,
           label: "**#{d.title}** (`/#{d.rel_path}`)"
@@ -287,10 +312,11 @@ defmodule SecondBrain.SessionInit do
         }
       end)
 
-    issue_cands ++ plan_cands ++ strand_cands
+    issue_cands ++ todo_cands ++ plan_cands ++ strand_cands
   end
 
   defp why(:issue), do: "open operational issue — tracked problems outrank new work"
+  defp why(:todo), do: "open todo — an explicitly recorded task awaiting completion"
   defp why(:plan_in_progress), do: "plan already in progress — finish what is started"
   defp why(:plan_accepted), do: "accepted plan awaiting execution"
   defp why(:strand_open), do: "open thread strand — live work left unrouted or unresolved"

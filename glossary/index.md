@@ -69,19 +69,21 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [self-consistency check](/glossary/self-consistency-check.md) — a check that re-derives a value from its own source; catches drift but is blind to shared-logic errors
 - [semantic search](/glossary/semantic-search.md) — meaning-based retrieval via embedding similarity, bridging synonym/jargon gaps lexical search misses
 - [session capture](/glossary/session-capture.md) — rendering a session into a verbatim thread doc, dropping only tool calls, reasoning, short pre-tool narration
-- [session-init digest](/glossary/session-init-digest.md) — a machine-compiled summary of open work (issues, plans, dangling strands) injected into a fresh session's context, ending in a heuristic priority ranking the agent refines
+- [session-init digest](/glossary/session-init-digest.md) — a machine-compiled summary of open work (issues, todos, plans, dangling strands) injected into a fresh session's context, ending in a heuristic priority ranking the agent refines
 - [SessionStart hook](/glossary/sessionstart-hook.md) — a hook that runs at session start to provision or validate the environment (e.g. warm the Elixir toolchain) and brief the agent via its stdout
 - [sink (route-tag sink)](/glossary/route-tag-sink.md) — the doc a route tag feeds; an `sb:` id sink accretes a log, a path back-link does not
 - [skill](/glossary/skill.md) — a named, invocable `SKILL.md` capability; the glossary holds the concepts a skill enacts, not its bare `/command` handle
 - [skill namespacing](/glossary/skill-namespacing.md) — prefixing skill names to resolve as a set; in Claude Code only plugin skills are auto-namespaced
 - [skill-to-skill delegation](/glossary/skill-to-skill-delegation.md) — one skill invoking another as a sub-step (e.g. `/create-pull-request` runs `/capture`), composing behavior
 - [speculative decoding](/glossary/speculative-decoding.md) — draft cheap tokens, verify in parallel against the full model, accept the correct prefix; identical output, higher throughput
+- [squash merge](/glossary/squash-merge.md) — flattening a branch into one new commit on the target; linear history at the cost of per-commit provenance (disallowed here)
 - [stable id (`sb:` id)](/glossary/stable-id.md) — the opaque, immutable `sb:` + 6-hex identifier every bundle concept carries
 - [static-site generator](/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
 - [supersession](/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
 - [thread doc](/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
 - [tree is the taxonomy](/glossary/tree-is-the-taxonomy.md) — the directory tree, surfaced via `index.md` files (progressive disclosure), *is* the canonical taxonomy
 - [Tree-sitter](/glossary/tree-sitter.md) — incremental multi-language parser producing concrete syntax trees; the parsing layer under code knowledge graphs
+- [true merge](/glossary/true-merge.md) — a two-parent merge commit wiring the branch's real history into the target's ancestry; keeps cited SHAs reachable (mandated here)
 - [tutorial (type)](/glossary/tutorial-type.md) — controlled type: a long-form read-start-to-finish explainer (the why/how), under `meta/tutorials/`
 - [typed edge](/glossary/typed-edge.md) — an id-based relationship in frontmatter that tooling traverses (e.g. `verified_by`); prose links stay untyped
 - [vector database](/glossary/vector-database.md) — a store indexing items as embedding vectors, answering nearest-neighbor queries for semantic retrieval

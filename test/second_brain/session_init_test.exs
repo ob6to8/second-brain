@@ -25,13 +25,28 @@ defmodule SecondBrain.SessionInitTest do
     write_doc(dir, rel_path, [type: "reference", title: "thread"], body)
   end
 
-  test "collects open issues, active plans, and pending strands", %{tmp_dir: dir} do
+  test "collects open issues, todos, active plans, and pending strands", %{tmp_dir: dir} do
     write_doc(dir, "meta/issues/broken.md",
       type: "issue",
       title: "Broken thing",
       description: "It broke.",
       status: "open",
       timestamp: "2026-07-09"
+    )
+
+    write_doc(dir, "meta/todos/do-thing.md",
+      type: "todo",
+      title: "Do the thing",
+      description: "Thing is done.",
+      status: "open",
+      timestamp: "2026-07-09"
+    )
+
+    write_doc(dir, "meta/todos/done-thing.md",
+      type: "todo",
+      title: "Old thing",
+      status: "done",
+      timestamp: "2026-07-08"
     )
 
     write_doc(dir, "meta/issues/fixed.md",
@@ -63,16 +78,24 @@ defmodule SecondBrain.SessionInitTest do
     ])
 
     assert [%{title: "Broken thing"}] = SessionInit.open_issues(dir)
+    assert [%{title: "Do the thing"}] = SessionInit.open_todos(dir)
     assert [%{title: "Next plan", status: "proposed"}] = SessionInit.active_plans(dir)
 
     strands = SessionInit.dangling_strands(dir)
     assert Enum.map(strands, & &1.topic) == ["Live strand", "Deferred strand"]
   end
 
-  test "report ranks issues above strands above proposed plans", %{tmp_dir: dir} do
+  test "report ranks issues above todos above strands", %{tmp_dir: dir} do
     write_doc(dir, "meta/issues/broken.md",
       type: "issue",
       title: "Broken thing",
+      status: "open",
+      timestamp: "2026-07-09"
+    )
+
+    write_doc(dir, "meta/todos/do-thing.md",
+      type: "todo",
+      title: "Do the thing",
       status: "open",
       timestamp: "2026-07-09"
     )
@@ -92,8 +115,9 @@ defmodule SecondBrain.SessionInitTest do
     report = SessionInit.report(dir)
 
     assert report =~ "## Open issues (1)"
+    assert report =~ "## Open todos (1)"
     assert report =~ "## Active plans (1)"
-    assert report =~ "## Dangling strands (todos from thread ledgers) (2)"
+    assert report =~ "## Dangling strands (from thread ledgers) (2)"
 
     [_, priorities] = String.split(report, "## Heuristic top-3 priorities")
 
@@ -103,8 +127,8 @@ defmodule SecondBrain.SessionInitTest do
              )
 
     assert i1 =~ "Broken thing"
-    assert i2 =~ "Live strand"
-    assert i3 =~ "Next plan"
+    assert i2 =~ "Do the thing"
+    assert i3 =~ "Live strand"
     assert report =~ "**Agent note:**"
   end
 
