@@ -29,7 +29,7 @@ confirmation.
 
 ## The terms
 
-- **materialize** — to compute derived content and write it to disk as
+- **[materialize](/glossary/materialize.md)** — to compute derived content and write it to disk as
   ordinary file content, instead of recomputing it on demand. Here it names
   `mix brain.route_tags --materialize`
   ([`SecondBrain.RouteTags.materialize/1`](/lib/second_brain/route_tags.ex)),
@@ -41,10 +41,10 @@ confirmation.
   [route-tagging policy](/meta/policy/route-tagging.md).
 - **[sink](/glossary/route-tag-sink.md)** — the concept document a route tag
   routes into, which accretes the aggregated log.
-- **excerpt log** — the `## Thread excerpts — route-tagged log` section inside
+- **[excerpt log](/glossary/excerpt-log.md)** — the `## Thread excerpts — route-tagged log` section inside
   a sink: per-thread, date-stamped blocks, each lifting the tagged regions
   whole. It is the materialized output.
-- **orphan block** — a dated block in a sink's excerpt log whose thread no
+- **[orphan block](/glossary/orphan-block.md)** — a dated block in a sink's excerpt log whose thread no
   longer tags that sink (the tag was removed or re-pointed, or the thread
   deleted): generated content whose source has vanished. The `log fidelity`
   check fails on it.

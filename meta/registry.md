@@ -71,6 +71,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:d4fc9d` | [glossary/digest](/glossary/digest.md) | concept | false |
 | `sb:da21de` | [glossary/embeddings](/glossary/embeddings.md) | concept | false |
 | `sb:f727fe` | [glossary/epistemic-overlay](/glossary/epistemic-overlay.md) | concept | false |
+| `sb:3101ef` | [glossary/excerpt-log](/glossary/excerpt-log.md) | concept | false |
 | `sb:9e1592` | [glossary/exunit](/glossary/exunit.md) | concept | false |
 | `sb:e7689f` | [glossary/fast-forward-merge](/glossary/fast-forward-merge.md) | concept | false |
 | `sb:f382b0` | [glossary/featuring](/glossary/featuring.md) | concept | false |
@@ -84,10 +85,12 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:5b2e0f` | [glossary/inbox-namespace](/glossary/inbox-namespace.md) | concept | false |
 | `sb:e9a82b` | [glossary/issue-type](/glossary/issue-type.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |
+| `sb:15fe73` | [glossary/materialize](/glossary/materialize.md) | concept | false |
 | `sb:5fdc55` | [glossary/methodology-type](/glossary/methodology-type.md) | concept | false |
 | `sb:102785` | [glossary/mix-task](/glossary/mix-task.md) | concept | false |
 | `sb:54995c` | [glossary/non-bundle-namespace](/glossary/non-bundle-namespace.md) | concept | false |
 | `sb:1349cb` | [glossary/operating-contract](/glossary/operating-contract.md) | concept | false |
+| `sb:3ee2d2` | [glossary/orphan-block](/glossary/orphan-block.md) | concept | false |
 | `sb:7adc45` | [glossary/parse-the-log](/glossary/parse-the-log.md) | concept | false |
 | `sb:bf0524` | [glossary/plan-type](/glossary/plan-type.md) | concept | false |
 | `sb:78580d` | [glossary/plugin](/glossary/plugin.md) | concept | false |

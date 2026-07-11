@@ -2,6 +2,19 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-11
+
+- **Glossary: 68 → 71** — ran `/add-to-glossary` over the first elaboration doc
+  ([two-directional materialize](/meta/elaborations/two-directional-materialize.md)).
+  Three new terms: [materialize](/glossary/materialize.md) (`sb:15fe73`),
+  [excerpt log (route-tagged log)](/glossary/excerpt-log.md) (`sb:3101ef` —
+  definition + pointer to the defining
+  [route-tagging policy](/meta/policy/route-tagging.md)), and
+  [orphan block](/glossary/orphan-block.md) (`sb:3ee2d2`). The elaboration's
+  inline definitions now link these canonical homes. The phrase's other terms
+  (route tag, sink, thread doc) were already filed and stayed linked; ids
+  minted and the registry recompiled.
+
 ## 2026-07-10
 
 - **Backfilled the glossary from the remaining thread docs** — ran

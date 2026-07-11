@@ -25,6 +25,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [digest](/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
 - [embeddings](/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [epistemic overlay](/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
+- [excerpt log (route-tagged log)](/glossary/excerpt-log.md) — the generated per-thread excerpt section a route-tag sink carries, re-derivable from the tags, never hand-edited
 - [ExUnit](/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
 - [fast-forward merge](/glossary/fast-forward-merge.md) — a merge that advances the branch pointer with no merge commit; leaves a zero-diff branch
 - [featuring](/glossary/featuring.md) — how `/news` decides what makes the cut: relevance → novelty → a reason tag → source quality, capped
@@ -38,10 +39,12 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [inbox namespace](/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/news` candidate digests (no ids, never verified)
 - [issue (type)](/glossary/issue-type.md) — controlled type: a tracked operational problem with a status (open/resolved/wontfix), under `meta/issues/`
 - [markdown renderer](/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `SecondBrain.Markdown`)
+- [materialize](/glossary/materialize.md) — write derived content to disk as real file content instead of recomputing on demand; pairs with a freshness check
 - [methodology (type)](/glossary/methodology-type.md) — controlled type: a repeatable prescriptive how-to/playbook for a recurring task
 - [mix task](/glossary/mix-task.md) — a named `mix` command defined under `Mix.Tasks` (e.g. `mix brain.verify`)
 - [non-bundle namespace](/glossary/non-bundle-namespace.md) — a top-level dir excluded from the registry — no `sb:` ids, skipped by verify (e.g. `meta/`, `inbox/`)
 - [operating contract](/glossary/operating-contract.md) — the root `CLAUDE.md` auto-loaded each session; a compiled artifact, never hand-edited
+- [orphan block](/glossary/orphan-block.md) — generated output whose source vanished; here, an excerpt-log block whose thread no longer tags the sink
 - [parse-the-log](/glossary/parse-the-log.md) — capturing a session by parsing the host log file (exact delivered text) vs. reconstructing from context
 - [plan (type)](/glossary/plan-type.md) — controlled type: a one-off design/decision record for an intended change, with a status
 - [plugin](/glossary/plugin.md) — a distributable bundle of Claude Code skills; its skills get an automatic `plugin-name:` namespace
