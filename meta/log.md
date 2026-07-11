@@ -4,6 +4,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **New policy [`git-branch-deletion`](/meta/policy/git-branch-deletion.md)** —
+  first policy in the new `git-workflow` contract section (and the first to use a
+  domain filename prefix, `git-`): PR head branches are deleted on merge; the
+  default branch and any branch with unmerged commits are never deleted without
+  operator approval. Added the section to the contract compiler
+  (`lib/second_brain/contract.ex`), recorded the filename-prefix namespacing
+  guideline in the [policy index](/meta/policy/index.md) intro, and regenerated
+  `CLAUDE.md`.
 - **Captured [`2026-07-11-glossary-backfill-from-thread-docs`](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md)**
   — the session that ran `/add-to-glossary` over the eleven previously-unprocessed
   thread docs, growing the [glossary](/glossary.md) from 7 to 68 terms (46 new
