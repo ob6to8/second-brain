@@ -4,6 +4,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Captured [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)**
+  — the session that built the session-init digest (entry below). Ledger: the
+  tooling and hook strands closed (`unrouted`; path back-links), one dangling
+  note kept — soften the open-every-session agent note if the appraisal proves
+  noisy. Route tags are path back-links only (no concept sinks), so no excerpt
+  logs materialized. Glossaried the thread per `/create-pull-request`: new
+  [session-init digest](/glossary/session-init-digest.md) term; citation and
+  context-injection nuance added to [SessionStart hook](/glossary/sessionstart-hook.md).
 - **Added the session-init digest** — new tooling (`SecondBrain.SessionInit`,
   `mix brain.session_init`) that scans open issues (`meta/issues/`), active
   plans (`meta/plans/`), and dangling routing-ledger strands (`meta/threads/`)
