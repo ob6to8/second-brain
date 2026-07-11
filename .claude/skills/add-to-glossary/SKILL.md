@@ -98,9 +98,8 @@ Write each definition from understanding, not by transcription:
 ### 5. Maintain and verify
 - Mint ids for the new term files and refresh the registry:
   `mix brain.id && mix brain.registry`.
-- Append a dated entry to the root `log.md` (which source was scanned, which
-  terms were added/updated).
-- Run `mix brain.verify`.
+- Run `mix brain.verify`. (No log entry — the commit message records which
+  source was scanned and which terms were added/updated.)
 
 ### 6. Report
 List the terms added, the terms merged into existing entries, and the pointer

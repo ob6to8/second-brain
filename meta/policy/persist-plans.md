@@ -32,5 +32,4 @@ the session ends.
   · `done` · `superseded`). Done and superseded plans are kept, not deleted — the
   decision history is the point.
 - **Reserved files.** After adding or updating a plan, update
-  [`meta/plans/index.md`](/meta/plans/index.md) and append a dated entry to the
-  nearest `log.md`, same as any filed document.
+  [`meta/plans/index.md`](/meta/plans/index.md), same as any filed document.

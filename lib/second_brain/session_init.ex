@@ -22,6 +22,12 @@ defmodule SecondBrain.SessionInit do
   appraisal, using the heuristic as a starting point — the script ranks, the
   agent judges.
 
+  An issue/todo/plan may carry an explicit `priority: <integer>` frontmatter
+  key (1 = most urgent). Flagged items rank above every heuristic class,
+  ordered among themselves by the integer — the operator's escape hatch when
+  the class weights get it wrong. Strands come from ledger rows, which have
+  no frontmatter, so they cannot be flagged.
+
   Tolerant consumer per OKF conformance: unparseable files and malformed
   ledger rows are skipped, never fatal.
   """
@@ -185,6 +191,7 @@ defmodule SecondBrain.SessionInit do
               title: fm["title"] || Path.basename(path, ".md"),
               description: fm["description"],
               status: fm["status"],
+              priority: to_priority(fm["priority"]),
               timestamp: to_string(fm["timestamp"] || ""),
               body: body
             }
@@ -200,6 +207,17 @@ defmodule SecondBrain.SessionInit do
   defp parse(error), do: error
 
   defp status(doc), do: doc.status && String.downcase(to_string(doc.status))
+
+  defp to_priority(p) when is_integer(p), do: p
+
+  defp to_priority(p) when is_binary(p) do
+    case Integer.parse(String.trim(p)) do
+      {n, ""} -> n
+      _ -> nil
+    end
+  end
+
+  defp to_priority(_), do: nil
 
   defp sort_newest_first(docs),
     do: Enum.sort_by(docs, &{&1.timestamp, &1.rel_path}, :desc)
@@ -235,7 +253,7 @@ defmodule SecondBrain.SessionInit do
     # whose ledger routed to an already-picked doc is the same matter — skip it.
     picks =
       candidates(issues, todos, plans, strands)
-      |> Enum.sort_by(&@weights[&1.class])
+      |> Enum.sort_by(&sort_key/1)
       |> Enum.reduce([], fn c, acc ->
         if Enum.any?(acc, &(&1.path && String.contains?(c.routed_to || "", &1.path))),
           do: acc,
@@ -251,11 +269,16 @@ defmodule SecondBrain.SessionInit do
         lines =
           picks
           |> Enum.with_index(1)
-          |> Enum.map(fn {c, i} -> "#{i}. #{c.label}\n   — #{why(c.class)}" end)
+          |> Enum.map(fn {c, i} -> "#{i}. #{c.label}\n   — #{why(c)}" end)
 
         "## Heuristic top-3 priorities\n\n#{Enum.join(lines, "\n")}\n"
     end
   end
+
+  # Operator-flagged items (integer `priority:` frontmatter) outrank every
+  # heuristic class, ordered among themselves by the integer.
+  defp sort_key(%{priority: p}) when is_integer(p), do: {0, p}
+  defp sort_key(c), do: {1, @weights[c.class]}
 
   defp candidates(issues, todos, plans, strands) do
     issue_cands =
@@ -263,6 +286,7 @@ defmodule SecondBrain.SessionInit do
         %{
           class: :issue,
           path: d.rel_path,
+          priority: d.priority,
           routed_to: nil,
           label: "**#{d.title}** (`/#{d.rel_path}`)"
         }
@@ -273,6 +297,7 @@ defmodule SecondBrain.SessionInit do
         %{
           class: :todo,
           path: d.rel_path,
+          priority: d.priority,
           routed_to: nil,
           label: "**#{d.title}** (`/#{d.rel_path}`)"
         }
@@ -290,6 +315,7 @@ defmodule SecondBrain.SessionInit do
         %{
           class: class,
           path: d.rel_path,
+          priority: d.priority,
           routed_to: nil,
           label: "**#{d.title}** (`/#{d.rel_path}`)"
         }
@@ -307,6 +333,7 @@ defmodule SecondBrain.SessionInit do
         %{
           class: class,
           path: nil,
+          priority: nil,
           routed_to: row.routed_to,
           label: "#{truncate(row.topic)} (`/#{row.thread}`)"
         }
@@ -314,6 +341,11 @@ defmodule SecondBrain.SessionInit do
 
     issue_cands ++ todo_cands ++ plan_cands ++ strand_cands
   end
+
+  defp why(%{priority: p}) when is_integer(p),
+    do: "operator-flagged `priority: #{p}` — pinned above the heuristic classes"
+
+  defp why(%{class: class}), do: why(class)
 
   defp why(:issue), do: "open operational issue — tracked problems outrank new work"
   defp why(:todo), do: "open todo — an explicitly recorded task awaiting completion"

@@ -81,6 +81,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:d18504` | [glossary/deterministic-spine](/glossary/deterministic-spine.md) | concept | false |
 | `sb:d4fc9d` | [glossary/digest](/glossary/digest.md) | concept | false |
 | `sb:6a9e78` | [glossary/doctrine](/glossary/doctrine.md) | concept | false |
+| `sb:9074c1` | [glossary/dry](/glossary/dry.md) | concept | false |
 | `sb:da21de` | [glossary/embeddings](/glossary/embeddings.md) | concept | false |
 | `sb:f727fe` | [glossary/epistemic-overlay](/glossary/epistemic-overlay.md) | concept | false |
 | `sb:9e1592` | [glossary/exunit](/glossary/exunit.md) | concept | false |
@@ -129,6 +130,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:243d56` | [glossary/session-capture](/glossary/session-capture.md) | concept | false |
 | `sb:6f2442` | [glossary/session-init-digest](/glossary/session-init-digest.md) | concept | false |
 | `sb:71f38a` | [glossary/sessionstart-hook](/glossary/sessionstart-hook.md) | concept | false |
+| `sb:8ea139` | [glossary/single-source-of-truth](/glossary/single-source-of-truth.md) | concept | false |
 | `sb:aa0003` | [glossary/skill](/glossary/skill.md) | concept | false |
 | `sb:3be9b0` | [glossary/skill-namespacing](/glossary/skill-namespacing.md) | concept | false |
 | `sb:7c0b1d` | [glossary/skill-to-skill-delegation](/glossary/skill-to-skill-delegation.md) | concept | false |
@@ -136,6 +138,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:4a235a` | [glossary/squash-merge](/glossary/squash-merge.md) | concept | false |
 | `sb:4d71d3` | [glossary/stable-id](/glossary/stable-id.md) | concept | false |
 | `sb:efad31` | [glossary/static-site-generator](/glossary/static-site-generator.md) | concept | false |
+| `sb:bb2968` | [glossary/strand](/glossary/strand.md) | concept | false |
 | `sb:ea95e4` | [glossary/supersession](/glossary/supersession.md) | concept | false |
 | `sb:089fb2` | [glossary/thread-doc](/glossary/thread-doc.md) | concept | false |
 | `sb:8798e8` | [glossary/tree-is-the-taxonomy](/glossary/tree-is-the-taxonomy.md) | concept | false |

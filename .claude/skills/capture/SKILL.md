@@ -131,12 +131,11 @@ after any tag edit so the log stays re-derivable.
 ## After writing
 
 1. Update `meta/threads/index.md`: link + one-line description.
-2. Append a dated entry to `meta/log.md` (and to the nearest `log.md` of any
-   concept whose excerpt log changed).
-3. Run the gates before committing: `./.githooks/pre-commit` (or at minimum
+2. Run the gates before committing: `./.githooks/pre-commit` (or at minimum
    `mix brain.contract --check && mix brain.registry --check && mix brain.verify
    && mix brain.route_tags && mix test`).
-4. Commit (and push / open a PR only if the operator asked).
+3. Commit (and push / open a PR only if the operator asked); the commit message
+   is the change record — no log entries.
 
 ## Rules
 

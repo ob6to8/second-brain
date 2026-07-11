@@ -6,11 +6,11 @@ description: The per-thread dispatch table (topic | state | routed-to | dangling
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, routing, capture]
-timestamp: 2026-07-10
+timestamp: 2026-07-11
 ---
 
 # routing ledger
 
-A per-thread dispatch table (Topic | State | Routed-to | Dangling) that answers what you would need to know to reply to a thread without re-reading it — holding pointers and states only, never synthesized content. Canonically defined by the [routing-ledger policy](/meta/policy/routing-ledger.md).
+A per-thread dispatch table (Topic | State | Routed-to | Dangling), often shortened to just "the ledger", that answers what you would need to know to reply to a thread without re-reading it — holding pointers and states only, never synthesized content. Each row tracks one [strand](/glossary/strand.md) of the session's work. Canonically defined by the [routing-ledger policy](/meta/policy/routing-ledger.md).
 
 *Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md)
