@@ -4,6 +4,22 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Preamble: the contract binds agents, not the operator** — one sentence added
+  to [`meta/preamble.md`](/meta/preamble.md) stating the bound party explicitly
+  (chosen over renaming to "Agent-contract"); `CLAUDE.md` recompiled.
+- **Filed analysis [`contracts-and-rendered-aggregations`](/meta/analysis/contracts-and-rendered-aggregations.md)**
+  — distilled the operator dialogue on whether "contract" is a necessary
+  abstraction: inventories the five rendered aggregations (contract, registry,
+  excerpt logs, site, session-init digest), finds the contract a deliberate
+  singleton distinguished by authority, frames "contract" as role vs.
+  `CLAUDE.md` as harness mounting point, declines the "Agent-contract"
+  qualifier, and places skills in the pattern as sources rather than targets.
+- **Filed plan [`compile-skills-registry-from-skill-frontmatter`](/meta/plans/compile-skills-registry-from-skill-frontmatter.md)**
+  (**operator-designated top priority**, `status: proposed`) — invert the
+  skills-registry drift: scan `.claude/skills/*/SKILL.md` frontmatter and render
+  contract §7 from it, retiring the hand-kept duplicate list; four open
+  questions (surviving prose, wrapper vs. native section, ordering, scope) await
+  ratification.
 - **Branch cleanup ratified; deletion blocked agent-side; first todo filed** —
   the operator ratified deleting the 15 merged branches and keeping the 6
   unmerged. All 15 re-verified as merged, but `git push --delete` returns HTTP
