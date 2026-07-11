@@ -19,6 +19,24 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **`/capture` of the merge-tutorial session** → thread
+  [2026-07-10-merge-commit-reachability-tutorial](/meta/threads/2026-07-10-merge-commit-reachability-tutorial.md)
+  (render-from-context; single-exchange session — the operator's quote-seeded
+  request and the closing reply retained verbatim, pre-tool narration/tool noise
+  stripped). Three-row routing ledger, all closed — the tutorial strand
+  path-routed to the new tutorial (governance namespace, no `sb:` sinks, so no
+  excerpt logs materialized); quote provenance and the PR motion `unrouted`.
+  Listed in the threads index. Captured as step 1 of a `/create-pull-request`
+  run so the thread doc ships in the same PR.
+- **New tutorial: [Why a true merge (not a squash) keeps cited commits
+  reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md).**
+  Written from a session quote about deliberately true-merging a port branch
+  because `PLAN.md` cites its commits (`0fdee9e..e6ae1f9`) by SHA. Unpacks git
+  reachability (branch deletion removes a ref, never commits), contrasts what
+  true merge / squash / rebase each do to a branch's original SHAs, and lands
+  the rule: SHA citations in durable docs make history load-bearing, so
+  true-merge (or tag the tip) before deleting the branch. Listed in the
+  tutorials index.
 - **`/capture` of the field-comparison / evals / CB-overlay session** → thread
   [2026-07-10-field-comparison-evals-and-cb-overlay-execution-path](/meta/threads/2026-07-10-field-comparison-evals-and-cb-overlay-execution-path.md)
   (render-from-context; retained operator messages and substantive responses
