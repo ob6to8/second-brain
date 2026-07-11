@@ -57,6 +57,7 @@ that proves it. The genre itself was designed in
   scenario).
 - [Create pull request — capture, glossary, commit, push, open](/meta/flows/create-pull-request.md) —
   the composition flow that ships a session: run capture in full, glossary its
-  thread doc, then commit/push/open the PR — invocation is the authorization;
-  ordering (capture before commit) keeps the record in the same PR as the
-  change.
+  thread doc, back-link this session's `meta/elaborations/` docs to the
+  captured thread (`thread:` frontmatter), then commit/push/open the PR —
+  invocation is the authorization; ordering (capture before commit) keeps the
+  record in the same PR as the change.

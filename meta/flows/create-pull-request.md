@@ -12,10 +12,13 @@ The connective doc for how a session's work leaves the working tree and
 becomes a reviewable PR. This flow is a **composition**: it runs the
 [session-capture flow](/meta/flows/session-capture.md) to completion, then the
 [add-to-glossary flow](/meta/flows/add-to-glossary.md) over the thread doc
-capture just wrote, and only then touches git. The point of the ordering is
-that the session record, its materialized excerpt logs, and its terminology
-all become part of the same working changes — one PR carries the change *and*
-its provenance.
+capture just wrote, then back-links this session's
+[elaboration docs](/meta/elaborations/index.md) to that thread (their `thread`
+frontmatter field — settable only once the thread is persisted), and only then
+touches git. The point of the ordering is that the session record, its
+materialized excerpt logs, its terminology, and the elaboration trace all
+become part of the same working changes — one PR carries the change *and* its
+provenance.
 
 > **The three artifacts (and the sources of truth — point, don't restate):**
 > - **Rules** → [session-capture](/meta/policy/session-capture.md) and
@@ -55,11 +58,16 @@ operator already said "open a PR" is friction without safety.
       (no-op if no terms clear the bar)
           │
           ▼
-   3. survey: git status/diff — everything above is now part of the change
-   4. commit (atomic; explicit paths; honest message)
-   5. push -u origin <feature-branch>    (retry w/ backoff on network only)
-   6. open the PR (template-aware; GitHub MCP tools — no gh CLI here)
-   7. offer to watch CI/reviews          (subscribe only if asked)
+   3. back-link ELABORATIONS             → thread: field on each
+      (this session's docs only;            meta/elaborations/ doc the
+       skip if capture was skipped)          session created or updated
+          │
+          ▼
+   4. survey: git status/diff — everything above is now part of the change
+   5. commit (atomic; explicit paths; honest message)
+   6. push -u origin <feature-branch>    (retry w/ backoff on network only)
+   7. open the PR (template-aware; GitHub MCP tools — no gh CLI here)
+   8. offer to watch CI/reviews          (subscribe only if asked)
 ```
 
 ---
@@ -71,19 +79,24 @@ operator already said "open a PR" is friction without safety.
 | 1 | operator | Invoke `/create-pull-request` — this *is* the PR authorization; there is no later confirmation | — | — |
 | 2 | agent+tool | Run [`/capture`](/meta/flows/session-capture.md) to completion (thread doc, ledger, route tags, `mix brain.route_tags --materialize` + check) | `meta/threads/…`, fed sinks, `meta/threads/index.md`, `meta/log.md` | that flow's scenario + gates |
 | 3 | agent+tool | Run [`/add-to-glossary`](/meta/flows/add-to-glossary.md) on the thread doc from step 2 | `glossary/*`, `meta/registry.md`, `log.md` | that flow's spine |
-| 4 | agent | Survey (`git status`/`diff`); confirm on the designated feature branch, never a default branch | — | editorial |
-| 5 | agent | Commit — atomic, explicit paths, message matching the history's style | git objects | editorial |
-| 6 | agent | `git push -u origin <branch>`; retry only network failures (2s/4s/8s/16s) | remote branch | CI on the branch |
-| 7 | agent | Open the PR via the GitHub MCP tools, mirroring a PR template if one exists; report the URL | GitHub PR | editorial |
-| 8 | agent | Offer PR watching (`subscribe_pr_activity`) — don't subscribe unasked | — | — |
+| 4 | agent | Set `thread:` (bundle-absolute path of the step-2 thread doc) in each `meta/elaborations/` doc this session created or updated — the final metadata motion on an elaboration; never retro-link older docs | `meta/elaborations/*.md` | editorial |
+| 5 | agent | Survey (`git status`/`diff`); confirm on the designated feature branch, never a default branch | — | editorial |
+| 6 | agent | Commit — atomic, explicit paths, message matching the history's style | git objects | editorial |
+| 7 | agent | `git push -u origin <branch>`; retry only network failures (2s/4s/8s/16s) | remote branch | CI on the branch |
+| 8 | agent | Open the PR via the GitHub MCP tools, mirroring a PR template if one exists; report the URL | GitHub PR | editorial |
+| 9 | agent | Offer PR watching (`subscribe_pr_activity`) — don't subscribe unasked | — | — |
 
 ---
 
 ## 4. Invariants
 
-- **Capture and glossary run before the commit** — the session record ships
-  *in* the PR, never behind it. Skipping capture (nothing substantive) also
-  skips glossary; neither is padded to show activity.
+- **Capture, glossary, and elaboration back-links run before the commit** —
+  the session record and its traces ship *in* the PR, never behind it.
+  Skipping capture (nothing substantive) also skips glossary and back-linking;
+  none is padded to show activity.
+- **`thread` is set here and only here** — `/elaborate` never sets it (the
+  target doesn't exist until capture runs), and older elaborations already
+  carrying a `thread` are never retro-pointed at a new session.
 - **The invocation is the authorization** — this is the one sanctioned path
   that opens a PR without a further ask; every other flow keeps the
   default-off rule.

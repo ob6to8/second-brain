@@ -1,6 +1,6 @@
 ---
 name: elaborate
-description: Expand a technical phrase, sentence, or short description — define the terms it uses and give a less technical overview of the concepts and actions it describes. Use when the operator says "/elaborate", "elaborate on that", "what does that mean", "unpack that", or "explain that in plain terms" about a phrase or passage (from the conversation, a doc, a commit message, or pasted text). For a whole paper/article/spec use /summarize-technical; to persist definitions into the glossary use /add-to-glossary.
+description: Expand a technical phrase, sentence, or short description — define the terms it uses and give a less technical overview of the concepts and actions it describes — and persist the expansion as a type elaboration doc under meta/elaborations/. Use when the operator says "/elaborate", "elaborate on that", "what does that mean", "unpack that", or "explain that in plain terms" about a phrase or passage (from the conversation, a doc, a commit message, or pasted text). For a whole paper/article/spec use /summarize-technical; to persist standalone term definitions into the glossary use /add-to-glossary.
 ---
 
 # /elaborate — unpack a technical phrase in plain terms
@@ -8,12 +8,14 @@ description: Expand a technical phrase, sentence, or short description — defin
 Take a compact piece of technical language — a phrase, a sentence, a short
 passage — and expand it so a reader outside the subfield understands both the
 **vocabulary** (what each term means) and the **substance** (what is actually
-being described or done). This is the conversational, phrase-scale sibling of
+being described or done). This is the phrase-scale sibling of
 [`/summarize-technical`](../summarize-technical/SKILL.md): that skill breaks
 down a whole document; this one unpacks a mouthful.
 
-The output is **chat output** — `/elaborate` files nothing and writes nothing
-into the bundle. It is the explain-it-now skill, not a capture skill.
+The expansion is delivered in chat **and persisted** as a `type: elaboration`
+doc under [`meta/elaborations/`](/meta/elaborations/index.md) (governance
+namespace — no `sb:` id), so the unpacking survives the session and can be
+linked like any other doc.
 
 ## Input
 
@@ -51,12 +53,11 @@ methods/metrics/formalisms, and load-bearing concepts; skip plain English used
 plainly. In order of appearance in the phrase.
 
 **Check the brain first.** If a term already has a glossary file, link it
-inline — `[route tag](/glossary/route-tag.md)` — and keep the in-chat
-definition consistent with (or briefer than) the filed one; if it is
-canonically defined by a filed concept or the operating contract, link that
-instead. Define from understanding, never contradicting what the brain has
-already filed — if the filed definition looks wrong, say so rather than
-silently diverging.
+inline — `[route tag](/glossary/route-tag.md)` — and keep the definition here
+consistent with (or briefer than) the filed one; if it is canonically defined
+by a filed concept or the operating contract, link that instead. Define from
+understanding, never contradicting what the brain has already filed — if the
+filed definition looks wrong, say so rather than silently diverging.
 
 ### 3. What's actually happening
 A less technical walkthrough of the **concepts and actions** the phrase
@@ -65,6 +66,34 @@ descriptive phrase this is the mechanism behind the words; for an
 action-describing one (a commit message, a pipeline step, a procedure) walk
 the steps in sequence. Concrete analogies are welcome when they genuinely map;
 label any simplification that loses precision ("roughly", "in effect").
+
+## Where it writes
+
+```
+meta/elaborations/
+  index.md           # genre description + contents list
+  <kebab-slug>.md    # one doc per elaborated phrase — type: elaboration, no sb: id
+```
+
+Each doc carries, in order: frontmatter; a `> quote` of the exact target
+phrase with a one-line note of where it came from; then the three parts above
+as `##` sections. Frontmatter:
+
+- `type: elaboration`
+- `title` — the phrase (or a tidy short form of it)
+- `description` — one sentence: what the phrase is about
+- `provenance` — where the phrase came from (conversation date, doc path,
+  commit, URL) and that the expansion is agent-authored
+- `tags` — include `elaboration`; add topical tags
+- `timestamp` — today
+- `thread` — **do not set it here.** Added later by
+  [`/create-pull-request`](../create-pull-request/SKILL.md), which back-links
+  the persisted thread doc once `/capture` has written it. Preserve the field
+  if it already exists (an update to a previously-linked elaboration).
+
+Filename: kebab-case slug of the title (topical, no date prefix). **Update in
+place:** if the same phrase (or a trivial variant) already has an elaboration
+doc, merge into it and bump `timestamp` rather than creating a near-duplicate.
 
 ## Procedure
 
@@ -76,12 +105,16 @@ label any simplification that loses precision ("roughly", "in effect").
 2. **List the terms** worth defining before writing anything, and grep
    `/glossary/` (and the registry/concept tree) for each — existing
    definitions get linked, not re-invented.
-3. **Write parts 1–3 in order.** Part 1 stays jargon-free; part 3 may use a
-   term once part 2 has defined it.
-4. **Offer persistence, don't perform it.** If the elaboration produced
-   definitions the brain lacks and they seem durably useful, mention that
-   `/add-to-glossary` can file them — but only the operator's say-so triggers
-   that skill. `/elaborate` itself never touches the tree.
+3. **Write parts 1–3 in order** and deliver them in chat. Part 1 stays
+   jargon-free; part 3 may use a term once part 2 has defined it.
+4. **Persist the doc** under `meta/elaborations/<slug>.md` (or merge into the
+   existing doc for that phrase), then maintain the reserved files: add/update
+   the entry in `meta/elaborations/index.md` (one bulleted link + one-line
+   description) and append a dated entry to `meta/log.md`.
+5. **Offer glossary persistence, don't perform it.** If part 2 produced
+   definitions the glossary lacks and they seem durably useful, mention that
+   `/add-to-glossary` can file them per-term — but only the operator's say-so
+   triggers that skill.
 
 ## Guardrails
 
@@ -92,9 +125,16 @@ label any simplification that loses precision ("roughly", "in effect").
   plain summaries rot (same rule as `/summarize-technical`).
 - **Link, don't duplicate** — a term the brain already defines is cited by
   bundle-absolute link; the citing-terms convention (link first use, not every
-  occurrence) applies.
-- **Nothing is filed** — no concept files, no glossary edits, no log entries.
-  Persisting any of the output is a separate, operator-invoked `/intake` or
-  `/add-to-glossary`.
+  occurrence) applies. The elaboration doc is not a second glossary: its term
+  definitions serve *this phrase*; the source-independent home for a term is
+  `/glossary/`.
+- **Governance namespace, not bundle** — elaboration docs carry no `sb:` id
+  and never a `verified` field; they are agent-authored expansions, like
+  tutorials.
+- **One phrase, one doc** — dedup before writing; merge instead of creating
+  near-duplicates.
+- **Never set `thread` yourself** — the back-link points at a *persisted*
+  thread, which doesn't exist until `/capture` runs; `/create-pull-request`
+  owns that step.
 - Match depth to the input: don't inflate a two-term phrase into an essay, and
   don't compress a dense paragraph into a gloss that skips half its terms.

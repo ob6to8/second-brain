@@ -4,6 +4,20 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Elaborations become persistent: new genre `meta/elaborations/` + new type
+  `elaboration`.** Operator-ratified shape change: `/elaborate` output now
+  persists as a `type: elaboration` doc under
+  [`meta/elaborations/`](/meta/elaborations/index.md) (governance namespace,
+  no `sb:` id; one doc per phrase, update-in-place). The type joined the
+  [controlled vocabulary](/meta/policy/controlled-type-vocabulary.md), and
+  [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md)
+  gained a step (new step 3, after glossary): set `thread:` in each
+  elaboration doc this session created or updated, back-linking the persisted
+  thread its `/capture` step just wrote — the final metadata motion on an
+  elaboration, deliberately owned by the PR flow because the target thread
+  doesn't exist until capture runs. Skills-registry updated for both skills,
+  the [create-pull-request flow doc](/meta/flows/create-pull-request.md) and
+  flows/meta indexes updated, `CLAUDE.md` re-rendered.
 - **New skill `/elaborate`.** Unpacks a technical **phrase or short passage**
   (from the conversation, a doc, a commit message, or pasted text): quotes the
   target, then three parts — a jargon-free restatement, definitions of the
