@@ -13,6 +13,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | id | concept | type | verified |
 |----|---------|------|----------|
 | `sb:97d2a8` | [SWE/agentic-coding/agentic-loop/agent-loop-as-a-while-loop](/SWE/agentic-coding/agentic-loop/agent-loop-as-a-while-loop.md) | reference |  |
+| `sb:c29a22` | [SWE/agentic-coding/agentic-loop/agent-task-time-horizons](/SWE/agentic-coding/agentic-loop/agent-task-time-horizons.md) | reference |  |
 | `sb:06d95d` | [SWE/agentic-coding/agentic-loop/building-effective-agents](/SWE/agentic-coding/agentic-loop/building-effective-agents.md) | reference |  |
 | `sb:3384ba` | [SWE/agentic-coding/agentic-loop/designing-agentic-loops](/SWE/agentic-coding/agentic-loop/designing-agentic-loops.md) | reference |  |
 | `sb:c0961a` | [SWE/agentic-coding/agentic-loop/effective-context-engineering-for-agents](/SWE/agentic-coding/agentic-loop/effective-context-engineering-for-agents.md) | reference |  |
@@ -21,6 +22,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:01bb9a` | [SWE/agentic-coding/agentic-loop/loop-engineering-went-mainstream](/SWE/agentic-coding/agentic-loop/loop-engineering-went-mainstream.md) | reference |  |
 | `sb:a030d9` | [SWE/agentic-coding/agentic-loop/openai-practical-guide-to-building-agents](/SWE/agentic-coding/agentic-loop/openai-practical-guide-to-building-agents.md) | reference |  |
 | `sb:b6353e` | [SWE/agentic-coding/agentic-loop/own-your-control-flow-12-factor](/SWE/agentic-coding/agentic-loop/own-your-control-flow-12-factor.md) | reference |  |
+| `sb:f02167` | [SWE/agentic-coding/agentic-loop/parc-self-reflective-long-horizon-agent](/SWE/agentic-coding/agentic-loop/parc-self-reflective-long-horizon-agent.md) | reference |  |
 | `sb:276c61` | [SWE/agentic-coding/agentic-loop/ralph-infinite-bash-loop-coding-agent](/SWE/agentic-coding/agentic-loop/ralph-infinite-bash-loop-coding-agent.md) | reference |  |
 | `sb:f63910` | [SWE/agentic-coding/agentic-loop/react-reasoning-and-acting](/SWE/agentic-coding/agentic-loop/react-reasoning-and-acting.md) | reference |  |
 | `sb:f948df` | [SWE/agentic-coding/agentic-loop/smolagents-agent-loop-as-code](/SWE/agentic-coding/agentic-loop/smolagents-agent-loop-as-code.md) | reference |  |
@@ -34,7 +36,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:3420c8` | [SWE/agentic-coding/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity](/SWE/agentic-coding/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity.md) | source |  |
 | `sb:863b32` | [SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config](/SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config.md) | source |  |
 | `sb:3f35e1` | [SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud](/SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud.md) | source |  |
+| `sb:532b22` | [SWE/agentic-coding/code-context/codebase-memory-mcp](/SWE/agentic-coding/code-context/codebase-memory-mcp.md) | reference |  |
 | `sb:b89ea1` | [SWE/agentic-coding/code-context/gitnexus](/SWE/agentic-coding/code-context/gitnexus.md) | reference |  |
+| `sb:41a1e3` | [SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md) | reference |  |
 | `sb:bf8a85` | [SWE/agentic-coding/context-engineering/claude-context-editing-and-memory-tool](/SWE/agentic-coding/context-engineering/claude-context-editing-and-memory-tool.md) | reference |  |
 | `sb:77d68a` | [SWE/agentic-coding/context-engineering/context-rot-chroma-research](/SWE/agentic-coding/context-engineering/context-rot-chroma-research.md) | reference |  |
 | `sb:784985` | [SWE/agentic-coding/context-engineering/conversation-tree-architecture](/SWE/agentic-coding/context-engineering/conversation-tree-architecture.md) | reference |  |
@@ -43,20 +47,27 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:eeb2bb` | [SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration](/SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
 | `sb:266c5e` | [SWE/llm-engineering/kv-cache-compression-history](/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `sb:41be22` | [SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
+| `sb:1cac23` | [SWE/llm-engineering/vericache-lossless-kv-cache](/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |
 | `sb:d58da3` | [SWE/testing/elixir-second-brain-testing-methodology](/SWE/testing/elixir-second-brain-testing-methodology.md) | methodology | false |
 | `sb:b1ba4b` | [SWE/testing/elixir-snapshot-libraries-require-a-dependency](/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md) | reference |  |
 | `sb:f6e843` | [SWE/testing/exunit-dependency-free-fixtures-and-diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md) | reference |  |
 | `sb:a5ea86` | [SWE/testing/how-to-test-features-not-code](/SWE/testing/how-to-test-features-not-code.md) | reference |  |
+| `sb:49eae4` | [SWE/testing/state-of-ai-coding-2026](/SWE/testing/state-of-ai-coding-2026.md) | reference |  |
 | `sb:73115b` | [SWE/testing/unit-vs-integration-purity-and-extent](/SWE/testing/unit-vs-integration-purity-and-extent.md) | reference |  |
 | `sb:4c9e1f` | [SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch](/SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch.md) | concept | true |
+| `sb:8b9548` | [SWE/version-control/git/git-worktrees-for-parallel-agents](/SWE/version-control/git/git-worktrees-for-parallel-agents.md) | concept | false |
 | `sb:f08c54` | [SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch](/SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch.md) | source |  |
 | `sb:a3d27b` | [SWE/version-control/git/sources/pro-git-remote-tracking-branches](/SWE/version-control/git/sources/pro-git-remote-tracking-branches.md) | source |  |
 | `sb:07610c` | [ai-industry/ai-margin-collapse-glm-5-2](/ai-industry/ai-margin-collapse-glm-5-2.md) | reference |  |
 | `sb:2867ac` | [ai-industry/ai-roi-runway-outside-tech-sector](/ai-industry/ai-roi-runway-outside-tech-sector.md) | reference |  |
 | `sb:0b648f` | [glossary](/glossary.md) | concept | false |
+| `sb:37a83f` | [glossary/agent-memory](/glossary/agent-memory.md) | concept | false |
+| `sb:2523b4` | [glossary/agent-time-horizon](/glossary/agent-time-horizon.md) | concept | false |
 | `sb:73e13b` | [glossary/analysis-type](/glossary/analysis-type.md) | concept | false |
 | `sb:98ec38` | [glossary/approval-gate](/glossary/approval-gate.md) | concept | false |
 | `sb:e2377d` | [glossary/approximate-nearest-neighbor](/glossary/approximate-nearest-neighbor.md) | concept | false |
+| `sb:ac22a3` | [glossary/assertion-graph](/glossary/assertion-graph.md) | concept | false |
+| `sb:068a32` | [glossary/bm25](/glossary/bm25.md) | concept | false |
 | `sb:ee8dfd` | [glossary/candidate-feed](/glossary/candidate-feed.md) | concept | false |
 | `sb:21854a` | [glossary/ci-smoke-check](/glossary/ci-smoke-check.md) | concept | false |
 | `sb:23f009` | [glossary/compiled-contract](/glossary/compiled-contract.md) | concept | false |
@@ -69,6 +80,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:048bca` | [glossary/deploy-gating](/glossary/deploy-gating.md) | concept | false |
 | `sb:d18504` | [glossary/deterministic-spine](/glossary/deterministic-spine.md) | concept | false |
 | `sb:d4fc9d` | [glossary/digest](/glossary/digest.md) | concept | false |
+| `sb:6a9e78` | [glossary/doctrine](/glossary/doctrine.md) | concept | false |
 | `sb:da21de` | [glossary/embeddings](/glossary/embeddings.md) | concept | false |
 | `sb:f727fe` | [glossary/epistemic-overlay](/glossary/epistemic-overlay.md) | concept | false |
 | `sb:9e1592` | [glossary/exunit](/glossary/exunit.md) | concept | false |
@@ -76,22 +88,28 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:f382b0` | [glossary/featuring](/glossary/featuring.md) | concept | false |
 | `sb:950a55` | [glossary/flow-touch-sequence](/glossary/flow-touch-sequence.md) | concept | false |
 | `sb:e56fb4` | [glossary/fresh-session-per-fire](/glossary/fresh-session-per-fire.md) | concept | false |
+| `sb:184bae` | [glossary/git-worktree](/glossary/git-worktree.md) | concept | false |
 | `sb:680062` | [glossary/github-flavored-markdown](/glossary/github-flavored-markdown.md) | concept | false |
 | `sb:7c640a` | [glossary/github-pages](/glossary/github-pages.md) | concept | false |
 | `sb:61877f` | [glossary/golden-test](/glossary/golden-test.md) | concept | false |
 | `sb:0c8532` | [glossary/graduation](/glossary/graduation.md) | concept | false |
 | `sb:8fda94` | [glossary/html-escaping](/glossary/html-escaping.md) | concept | false |
+| `sb:3983f2` | [glossary/hybrid-search](/glossary/hybrid-search.md) | concept | false |
 | `sb:5b2e0f` | [glossary/inbox-namespace](/glossary/inbox-namespace.md) | concept | false |
 | `sb:e9a82b` | [glossary/issue-type](/glossary/issue-type.md) | concept | false |
+| `sb:7498cf` | [glossary/knowledge-graph](/glossary/knowledge-graph.md) | concept | false |
+| `sb:8415bd` | [glossary/kv-cache](/glossary/kv-cache.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |
 | `sb:5fdc55` | [glossary/methodology-type](/glossary/methodology-type.md) | concept | false |
 | `sb:102785` | [glossary/mix-task](/glossary/mix-task.md) | concept | false |
+| `sb:c66f10` | [glossary/model-context-protocol](/glossary/model-context-protocol.md) | concept | false |
 | `sb:54995c` | [glossary/non-bundle-namespace](/glossary/non-bundle-namespace.md) | concept | false |
 | `sb:1349cb` | [glossary/operating-contract](/glossary/operating-contract.md) | concept | false |
 | `sb:7adc45` | [glossary/parse-the-log](/glossary/parse-the-log.md) | concept | false |
 | `sb:bf0524` | [glossary/plan-type](/glossary/plan-type.md) | concept | false |
 | `sb:78580d` | [glossary/plugin](/glossary/plugin.md) | concept | false |
 | `sb:393e3d` | [glossary/pointer-entry](/glossary/pointer-entry.md) | concept | false |
+| `sb:fa15e7` | [glossary/policy-type](/glossary/policy-type.md) | concept | false |
 | `sb:4849ca` | [glossary/property-based-testing](/glossary/property-based-testing.md) | concept | false |
 | `sb:573229` | [glossary/proto-belief-document](/glossary/proto-belief-document.md) | concept | false |
 | `sb:ea7acc` | [glossary/provenance](/glossary/provenance.md) | concept | false |
@@ -109,15 +127,20 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:4e01f8` | [glossary/self-consistency-check](/glossary/self-consistency-check.md) | concept | false |
 | `sb:98acc0` | [glossary/semantic-search](/glossary/semantic-search.md) | concept | false |
 | `sb:243d56` | [glossary/session-capture](/glossary/session-capture.md) | concept | false |
+| `sb:6f2442` | [glossary/session-init-digest](/glossary/session-init-digest.md) | concept | false |
 | `sb:71f38a` | [glossary/sessionstart-hook](/glossary/sessionstart-hook.md) | concept | false |
 | `sb:aa0003` | [glossary/skill](/glossary/skill.md) | concept | false |
 | `sb:3be9b0` | [glossary/skill-namespacing](/glossary/skill-namespacing.md) | concept | false |
 | `sb:7c0b1d` | [glossary/skill-to-skill-delegation](/glossary/skill-to-skill-delegation.md) | concept | false |
+| `sb:38d006` | [glossary/speculative-decoding](/glossary/speculative-decoding.md) | concept | false |
+| `sb:4a235a` | [glossary/squash-merge](/glossary/squash-merge.md) | concept | false |
 | `sb:4d71d3` | [glossary/stable-id](/glossary/stable-id.md) | concept | false |
 | `sb:efad31` | [glossary/static-site-generator](/glossary/static-site-generator.md) | concept | false |
 | `sb:ea95e4` | [glossary/supersession](/glossary/supersession.md) | concept | false |
 | `sb:089fb2` | [glossary/thread-doc](/glossary/thread-doc.md) | concept | false |
 | `sb:8798e8` | [glossary/tree-is-the-taxonomy](/glossary/tree-is-the-taxonomy.md) | concept | false |
+| `sb:1efc5e` | [glossary/tree-sitter](/glossary/tree-sitter.md) | concept | false |
+| `sb:a10e18` | [glossary/true-merge](/glossary/true-merge.md) | concept | false |
 | `sb:60d394` | [glossary/tutorial-type](/glossary/tutorial-type.md) | concept | false |
 | `sb:927eb2` | [glossary/typed-edge](/glossary/typed-edge.md) | concept | false |
 | `sb:36436d` | [glossary/vector-database](/glossary/vector-database.md) | concept | false |
