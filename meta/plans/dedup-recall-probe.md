@@ -2,17 +2,37 @@
 type: plan
 title: "Dedup recall probe: a gold set of natural-phrasing queries and a mix task that measures intake dedup recall"
 description: Build mix brain.dedup_probe — a zero-dependency, offline, deterministic eval that scores the bundle's lexical search layer against an id-keyed gold set of natural-phrasing dedup queries — as the quantified trigger for tier-2 embedding dedup and the substrate for all later corpus-maintenance evals.
-status: proposed
+status: in-progress
 provenance: "Claude Code session (Claude Fable), 2026-07-10 — commissioned by the operator following the eval-suitability analysis; executes recommendation 1 of the vector-DB recall analysis"
 tags: [meta, plan, evals, dedup, recall, probe, intake, tooling]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # Dedup recall probe: gold set + `mix brain.dedup_probe`
 
 ## Status & provenance
 
-**Proposed** — commissioned by the operator on 2026-07-10, immediately after the
+**In-progress** (2026-07-12). The **instrument is built** — build-order steps 1–4
+and the first baseline (step 6) are done:
+
+- `meta/evals/` genre + [`meta/evals/dedup-probe.md`](/meta/evals/dedup-probe.md) —
+  the gold set, seeded from the vector-DB analysis's 14 probes, re-keyed to `sb:`
+  ids, with `target`/`negative`/`quarantine` bands and synonym-expansion variants.
+- [`SecondBrain.DedupProbe`](/lib/second_brain/dedup_probe.ex) +
+  [`mix brain.dedup_probe`](/lib/mix/tasks/brain.dedup_probe.ex) — parser, lexical
+  backend, scorer, plain + `--expanded` modes, baseline delta; pinned by
+  [`test/second_brain/dedup_probe_test.exs`](/test/second_brain/dedup_probe_test.exs).
+- First `## Baseline` recorded from a live run: **plain 3/10, expanded 10/10** — the
+  offline measurement of the recall the tier-1 synonym-expansion change should
+  recover. Non-gating CI report step added.
+
+**Remaining** (deferred, awaiting the operator's answers to the open questions
+below): build-order step 5 — the tier-1 `/intake` synonym-expansion dedup change
+and the gold-harvest step, with their [intake flow-doc](/meta/flows/intake.md)
+mirror. Q2 (gold-harvest opt-in vs opt-out) branches that implementation, and Q3
+(baseline cadence) sets its upkeep rhythm, so step 5 waits on ratification.
+
+Originally commissioned by the operator on 2026-07-10, immediately after the
 [eval-suitability analysis](/meta/analysis/eval-suitability-of-the-corpus-maintenance-failure-space.md)
 identified this as the smallest eval guarding the known unguarded gate. It executes
 recommendation 1 of the
