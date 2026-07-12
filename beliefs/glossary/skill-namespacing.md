@@ -11,6 +11,6 @@ timestamp: 2026-07-12
 
 # skill namespacing
 
-A namespaced set also autocompletes together. Claude Code writes the auto-namespaced plugin form as `plugin:skill`; a project skill's bare name is its directory name.
+A namespaced set also autocompletes together. The auto-namespaced form is written `plugin:skill`; a project skill's bare name is its directory name.
 
 *Seen in:* [2026-07-10 create-PR skill thread](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)

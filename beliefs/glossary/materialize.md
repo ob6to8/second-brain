@@ -11,12 +11,7 @@ timestamp: 2026-07-12
 
 # materialize
 
-To compute derived content and write it to disk as ordinary file content,
-instead of recomputing it on demand. Materialized output is readable and
-diffable without running the tool, but it can go stale the moment its source
-changes — which is why it pairs with a freshness check that re-derives and
-compares (the generated-not-hand-kept discipline). In this bundle the term
-names `mix brain.route_tags --materialize`
+Inspectability here means readable and diffable without running the tool; the paired freshness check re-derives and compares (the generated-not-hand-kept discipline). In this bundle the term names `mix brain.route_tags --materialize`
 ([`SecondBrain.RouteTags.materialize/1`](/lib/second_brain/route_tags.ex)),
 a **two-directional projection** of the current
 [route tags](/beliefs/glossary/route-tag.md): it writes each fed

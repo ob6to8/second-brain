@@ -11,7 +11,7 @@ timestamp: 2026-07-12
 
 # lexical search
 
-Search that matches on the literal surface form of text — tokens or substrings, case-folded at most — rather than on meaning. It is fast, deterministic, and dependency-free (a `grep`-class match, or a ranked variant like [BM25](/beliefs/glossary/bm25.md)), which is why it is the default backend for intake [deduplication](/beliefs/glossary/deduplication.md) here. Its blind spot is vocabulary mismatch: it cannot bridge synonym/jargon gaps the way [semantic search](/beliefs/glossary/semantic-search.md) or [hybrid search](/beliefs/glossary/hybrid-search.md) can — the gap that [synonym expansion](/beliefs/glossary/synonym-expansion.md) papers over without embeddings.
+A `grep`-class match (case-folded at most), or a ranked variant like [BM25](/beliefs/glossary/bm25.md); its determinism and zero dependencies are why it is the default backend for intake [deduplication](/beliefs/glossary/deduplication.md) here. The synonym/jargon blindness is what [semantic search](/beliefs/glossary/semantic-search.md) or [hybrid search](/beliefs/glossary/hybrid-search.md) can bridge — and what [synonym expansion](/beliefs/glossary/synonym-expansion.md) papers over without embeddings.
 
 *Seen in:* [2026-07-12 dedup recall probe thread](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md)
 

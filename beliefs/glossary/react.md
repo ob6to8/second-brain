@@ -11,8 +11,6 @@ timestamp: 2026-07-12
 
 # ReAct
 
-The name splices **rea**soning + **act**ing. Widely reused as the default strategy in agent frameworks (including [Jido](/beliefs/glossary/jido.md)'s `jido_ai`).
-
-Canonically defined in [ReAct — reasoning + acting as the thought-action-observation loop (Yao et al.)](/knowledge/SWE/agentic-coding/agentic-loop/react-reasoning-and-acting.md).
+The name splices **rea**soning + **act**ing. Widely reused as the default strategy in agent frameworks (including [Jido](/beliefs/glossary/jido.md)'s `jido_ai`); the canonical treatment is [the filed Yao et al. reference](/knowledge/SWE/agentic-coding/agentic-loop/react-reasoning-and-acting.md).
 
 *Seen in:* [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md)
