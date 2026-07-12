@@ -15,6 +15,8 @@ the backbone that keeps the brain consistent as it grows.
 
 The operator is the human. The agent files and organizes;
 the operator ratifies changes to the *shape* of the brain.
+The contract binds agents, not the operator: its rules are obligations on agent
+behavior, which the operator authors and ratifies but is never subject to.
 
 > **This file is a generated artifact.** It is compiled from
 > [`meta/preamble.md`](/meta/preamble.md) and the `type: policy` documents under
@@ -479,3 +481,24 @@ matter is unresolved and freezes acceptance when the matter resolves — per
 matter, not on archival.
 
 _Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_
+
+---
+
+## 9. Git workflow
+
+- **Session branches are ephemeral; the default branch is durable.** Work enters
+  the repo on a short-lived head branch (e.g. `claude/<slug>`) and lands in the
+  default branch via a pull request. The branch is scaffolding, not history — the
+  merge is the record.
+- **Delete the head branch when its PR merges.** A merged branch is fully contained
+  in the default branch's history, so deleting it loses nothing (its commits stay
+  reachable through the merge, and GitHub can restore the branch). Deletion is part
+  of the merge motion: prefer the repository's **"Automatically delete head
+  branches"** setting; failing that, delete the branch manually right after
+  merging. A merged branch discovered lingering later is deleted on sight.
+- **Never delete without the operator:** the default branch (never), and any branch
+  carrying **unmerged** commits — including branches whose PR was closed without
+  merging. Those hold work with no other home; propose deletion and wait for the
+  operator to ratify, as with any destructive change.
+
+_Source: [`meta/policy/git-branch-deletion.md`](/meta/policy/git-branch-deletion.md)_

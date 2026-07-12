@@ -1,0 +1,194 @@
+---
+type: note
+title: Render-contract — compile the operating contract from its policy sources
+description: The end-to-end flow for changing a rule of the brain — edit the policy source, recompile CLAUDE.md, and let the drift gate hold source and artifact together — the file-by-file touch-sequence of a /render-contract run, actor boundaries, the gate suite, and the scenario test that pins the spine.
+tags: [meta, governance, policy, contract, compiled-artifact, flow, workflow]
+timestamp: 2026-07-11
+---
+
+# Render-contract — compile the operating contract from its policy sources
+
+The connective doc for how the brain's *rules* change: `CLAUDE.md` — the
+operating contract every agent reads on session start — is a
+[compiled contract](/glossary/compiled-contract.md), regenerated from small,
+individually-versioned policy documents rather than edited in place. This doc
+narrates the whole flow end to end and points at the three artifacts that make
+it work. It does **not** restate the rules or the procedure; those have homes.
+
+> **The three artifacts (and the sources of truth — point, don't restate):**
+> - **Rules** → the policies themselves under [`meta/policy/`](/meta/policy/index.md)
+>   (each a `type: policy` doc declaring its `section` and `order`); what counts
+>   as a ratifiable change is in
+>   [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md).
+> - **Procedure** → the [`/render-contract` skill](/.claude/skills/render-contract/SKILL.md).
+> - **Mechanism + proof** → [`SecondBrain.Contract`](/lib/second_brain/contract.ex)
+>   / [`SecondBrain.Policy`](/lib/second_brain/policy.ex) and the
+>   `mix brain.contract` task, unit-tested by
+>   [`test/second_brain/contract_test.exs`](/test/second_brain/contract_test.exs)
+>   and pinned by the scenario
+>   [`test/second_brain/contract_scenario_test.exs`](/test/second_brain/contract_scenario_test.exs).
+
+---
+
+## 1. The problem
+
+The contract must be one coherent document an agent reads top to bottom, yet its
+rules must stay editable as small, separately-reviewable files with their own
+history. Hand-maintaining both copies guarantees drift — a rule edited in one
+place and not the other, silently forking the truth. The fix is the
+generated-artifact discipline: the policies are the only source, the contract is
+build output, and a byte-diff gate makes drift a CI failure instead of a
+discovery.
+
+---
+
+## 2. The pipeline
+
+```
+   meta/preamble.md            meta/policy/*.md
+   (fixed framing)             (type: policy; declares section + order;
+        │                       status: superseded → excluded)
+        └──────────┬───────────────────┘
+                   ▼
+        mix brain.contract        (SecondBrain.Contract / SecondBrain.Policy)
+        validate sections against the ordered @sections list (in code)
+        group by section · sort by order · trace-link every rule to its source
+                   ▼
+              /CLAUDE.md          (committed artifact — never hand-edited)
+                   │
+        mix brain.contract --check     re-render + byte-diff
+                   ▼
+        CI + pre-commit fail on any drift (hand edit or forgotten recompile)
+```
+
+The **deterministic spine** is nearly the whole flow — compile, check, gate.
+The editorial half is small: the rule's prose, its `section`/`order` placement,
+and the governance call on whether the change needs operator ratification.
+
+---
+
+## 3. The touch-sequence (a canonical run)
+
+Every file a single `/render-contract` run touches, in order. **Checked by** is
+`scenario` (covered by the CI scenario over the deterministic spine), `tool` (a
+`mix` gate), or `editorial` (a judgment with no mechanical oracle).
+
+| # | Actor | Action | Files touched | Checked by |
+|---|-------|--------|---------------|------------|
+| 1 | operator | Ratify the rule change when it changes the brain's *shape* — a new kind of rule, a new `type`, a new top-level dir (contract §2, §4); plain edits to existing rules need no gate | — | editorial |
+| 2 | agent | Edit or add the policy source: `type: policy` frontmatter with `title`, `section`, integer `order` (supersede by setting `status: superseded`, never by deleting) | `meta/policy/<id>.md` | tool (the compile validates the fields) |
+| 2a | agent | Only if the rule opens a **new contract section**: add `{key, heading}` to `@sections` in the compiler, at the position it should render | `lib/second_brain/contract.ex` | scenario |
+| 3 | tool | `mix brain.contract` — recompile the artifact | `CLAUDE.md` | **scenario** |
+| 4 | tool | `mix brain.contract --check` + `mix test` — the round-trip and the compiler tests | — | **scenario** + tool |
+| 5 | agent | Maintain reserved files: the [policy index](/meta/policy/index.md) entry (hand-kept logs are retired — git history is the provenance layer) | `meta/policy/index.md` | editorial |
+| 6 | agent | Commit the source change **and** the regenerated `CLAUDE.md` together, in one commit | — | tool (CI `--check` fails a split commit) |
+
+---
+
+## 4. The moving parts
+
+Condensed; the mechanics live in the compiler and the glossary entry.
+
+- **Each policy declares its own placement.** `section` names one of the compiler's
+  registered sections; `order` sorts within it; the doc's filename (minus `.md`)
+  becomes the trace link under the rendered rule. A policy naming an unregistered
+  section fails the compile outright.
+- **Sections are code, not frontmatter.** The ordered section list is `@sections`
+  in [`contract.ex`](/lib/second_brain/contract.ex) — adding a section (as
+  `git-workflow` was, 2026-07-11) is a compiler change shipped alongside the first
+  policy that uses it.
+- **Supersession, not deletion.** A retired rule gets `status: superseded` and
+  drops out of the next compile, but the doc stays filed — the decision history is
+  the point, same as plans.
+- **Drift is structural, not procedural.** `--check` re-renders and byte-diffs in
+  CI and the pre-commit hook, so a hand edit *or* a forgotten recompile fails the
+  gate. The same discipline governs [`meta/registry.md`](/meta/registry.md) and
+  the route-tag excerpt logs.
+
+---
+
+## 5. Actor boundaries — who does what
+
+The flow is **agent-executed**. The operator's part: **ratify shape-changing
+rules, review the diff.**
+
+| Actor | Does |
+|-------|------|
+| **Operator** | ratifies new kinds of rules / new types / new top-level dirs; reviews the rendered `CLAUDE.md` diff in the PR |
+| **Agent** | edits the policy source; extends `@sections` when a new section is opened; recompiles; runs the gates; maintains the policy index and log; commits source + artifact together |
+
+---
+
+## 6. The data model
+
+Policies are **governance docs, not bundle concepts**: they live under
+`meta/policy/`, carry no `sb:` id, and sit outside the identity registry. The
+compiler loads each into a `SecondBrain.Policy` struct (`id` = filename slug,
+`title`, `section`, `order`, `body`, `status`), rejects non-`policy` types and
+missing fields, excludes `superseded`, and sorts by `{section, order, id}`. The
+output artifact `CLAUDE.md` is likewise not a concept — it has no frontmatter at
+all, only the generated-file banner.
+
+---
+
+## 7. The tooling: `brain.contract`
+
+```
+mix brain.contract           # recompile CLAUDE.md from meta/preamble.md + meta/policy/*.md
+mix brain.contract --check   # re-render and byte-diff; fails CI/pre-commit on drift
+```
+
+One task, two modes. There is no partial or incremental render — every compile
+is a full re-render, which is what makes the byte-diff a complete oracle.
+
+---
+
+## 8. Invariants
+
+- **`CLAUDE.md` is never hand-edited** — every byte is derivable from the
+  sources; the banner says so and the gate enforces it.
+- **One rule, one home** — each rendered rule traces to exactly one
+  `meta/policy/<id>.md` via its *Source:* link.
+- **Sections are code** — a policy cannot invent a section; the ordered list
+  lives in the compiler and changes ship with it.
+- **Superseded rules stay filed** — they leave the contract, not the repo.
+- **Source and artifact ship together** — one commit; CI's `--check` catches a
+  split.
+
+---
+
+## 9. Verify — the scenario, the gates, and the editorial spot-checks
+
+**The scenario test pins the spine.**
+[`test/second_brain/contract_scenario_test.exs`](/test/second_brain/contract_scenario_test.exs)
+drives a canonical run over an in-code fixture (a preamble plus rules in two
+sections, one of them the last-rendered `git-workflow`): compile → `check/1`
+round-trips, with the render byte-checked for the banner, the numbered section
+headings, and a rule body with its trace link. Three red guardrails encode the
+flow's handoffs: a **source edit without a recompile** reports `{:stale, _}`
+(the forgotten-recompile handoff); a **hand edit to the artifact** likewise
+fails the gate; a policy naming an **unregistered section** raises at compile
+(sections are code). A fourth case pins supersession: flipping a policy to
+`status: superseded` drops it from the next compile while the doc stays filed.
+[`contract_test.exs`](/test/second_brain/contract_test.exs) unit-tests the same
+compiler (grouping, ordering, field validation); the scenario frames it as the
+flow.
+
+**The gate suite** (or just `./.githooks/pre-commit`, which mirrors CI):
+
+```
+mix format --check-formatted
+mix compile --warnings-as-errors
+mix brain.contract --check      # must pass — the artifact matches its sources
+mix brain.verify
+mix brain.route_tags
+mix test                        # includes the contract scenario
+```
+
+**The editorial spot-checks the machine can't judge**: is the rule in the right
+`section` at a sensible `order`; does the prose say what the operator actually
+ratified; and were the policy index and log updated in the same motion.
+
+**Reference instance.** The 2026-07-11 `git-branch-deletion` change is a
+canonical worked run that exercises every step including 2a: new policy source →
+new `git-workflow` entry in `@sections` → recompile → index/log → one commit.

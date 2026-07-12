@@ -51,8 +51,10 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [methodology (type)](/glossary/methodology-type.md) — controlled type: a repeatable prescriptive how-to/playbook for a recurring task
 - [mix task](/glossary/mix-task.md) — a named `mix` command defined under `Mix.Tasks` (e.g. `mix brain.verify`)
 - [Model Context Protocol (MCP)](/glossary/model-context-protocol.md) — open client/server protocol exposing tools/resources/context to LLM agents over a uniform interface
+- [mounting point (harness)](/glossary/mounting-point.md) — the file path a third-party harness dictates for content (`CLAUDE.md`, `SKILL.md`); distinct from the brain-defined role that fills it
 - [non-bundle namespace](/glossary/non-bundle-namespace.md) — a top-level dir excluded from the registry — no `sb:` ids, skipped by verify (e.g. `meta/`, `inbox/`)
-- [operating contract](/glossary/operating-contract.md) — the root `CLAUDE.md` auto-loaded each session; a compiled artifact, never hand-edited
+- [operating contract](/glossary/operating-contract.md) — the root `CLAUDE.md` auto-loaded each session; a compiled artifact, never hand-edited; binds agents, not the operator
+- [orphaned branch](/glossary/orphaned-branch.md) — a lingering remote session branch: merged-but-undeleted (delete on sight) or unmerged (operator-ratified deletion only)
 - [parse-the-log](/glossary/parse-the-log.md) — capturing a session by parsing the host log file (exact delivered text) vs. reconstructing from context
 - [plan (type)](/glossary/plan-type.md) — controlled type: a one-off design/decision record for an intended change, with a status
 - [plugin](/glossary/plugin.md) — a distributable bundle of Claude Code skills; its skills get an automatic `plugin-name:` namespace
@@ -66,6 +68,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [recall](/glossary/recall.md) — the fraction of relevant items a search surfaces; low recall means existing material is missed
 - [recall probe](/glossary/recall-probe.md) — a repeatable eval firing known queries at known targets to measure (and watch) search recall
 - [recall@k](/glossary/recall-at-k.md) — a metric: is the correct target within the top *k* results? reported across a query set
+- [rendered aggregation](/glossary/rendered-aggregation.md) — a derived doc compiled from scattered canonical sources with a drift gate; sources are edited, the view only re-rendered
 - [research spike](/glossary/research-spike.md) — a time-boxed investigation answering a design/feasibility question, yielding a verdict not code
 - [route tag](/glossary/route-tag.md) — inline `<routes ref="…">` region marking which concept(s) a paragraph of a frozen thread feeds
 - [Routine](/glossary/routine.md) — a saved scheduled trigger that fires a preset prompt into an agent session on a cron schedule
@@ -88,6 +91,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [strand](/glossary/strand.md) — one topic's line of work through a session; the routing ledger tracks one row per strand, state orthogonal to routing
 - [supersession](/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
 - [thread doc](/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
+- [todo (type)](/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`
 - [tree is the taxonomy](/glossary/tree-is-the-taxonomy.md) — the directory tree, surfaced via `index.md` files (progressive disclosure), *is* the canonical taxonomy
 - [Tree-sitter](/glossary/tree-sitter.md) — incremental multi-language parser producing concrete syntax trees; the parsing layer under code knowledge graphs
 - [true merge](/glossary/true-merge.md) — a two-parent merge commit wiring the branch's real history into the target's ancestry; keeps cited SHAs reachable (mandated here)

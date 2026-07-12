@@ -7,6 +7,11 @@ Governance rules as first-class OKF documents (`type: policy`). These are the
 Each policy declares the contract `section` it renders into and its `order` within
 that section.
 
+This directory stays flat, so filenames carry the grouping: when several policies
+govern one domain, they share a kebab-case filename prefix (e.g. `git-`) so the
+domain reads as a group in listings. Single-policy domains adopt the prefix from
+the start if siblings are plausible.
+
 ## composition
 - [concept-anatomy](/meta/policy/concept-anatomy.md) — the repo root is the bundle; a concept is frontmatter + body; ID is path minus `.md`
 - [frontmatter-schema](/meta/policy/frontmatter-schema.md) — the controlled frontmatter fields and their requirement levels
@@ -43,3 +48,6 @@ that section.
 - [session-capture](/meta/policy/session-capture.md) — `/capture` renders a session into a distilled thread doc, on demand
 - [routing-ledger](/meta/policy/routing-ledger.md) — the per-thread `## Routing` dispatch table (pointers and states only)
 - [route-tagging](/meta/policy/route-tagging.md) — `<routes ref="sb:…">` tags materialize a re-derivable excerpt log into each concept
+
+## git-workflow
+- [git-branch-deletion](/meta/policy/git-branch-deletion.md) — head branches are deleted on PR merge; the default branch and unmerged branches need operator approval

@@ -104,8 +104,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:5fdc55` | [glossary/methodology-type](/glossary/methodology-type.md) | concept | false |
 | `sb:102785` | [glossary/mix-task](/glossary/mix-task.md) | concept | false |
 | `sb:c66f10` | [glossary/model-context-protocol](/glossary/model-context-protocol.md) | concept | false |
+| `sb:334e60` | [glossary/mounting-point](/glossary/mounting-point.md) | concept | false |
 | `sb:54995c` | [glossary/non-bundle-namespace](/glossary/non-bundle-namespace.md) | concept | false |
 | `sb:1349cb` | [glossary/operating-contract](/glossary/operating-contract.md) | concept | false |
+| `sb:a9113e` | [glossary/orphaned-branch](/glossary/orphaned-branch.md) | concept | false |
 | `sb:7adc45` | [glossary/parse-the-log](/glossary/parse-the-log.md) | concept | false |
 | `sb:bf0524` | [glossary/plan-type](/glossary/plan-type.md) | concept | false |
 | `sb:78580d` | [glossary/plugin](/glossary/plugin.md) | concept | false |
@@ -119,6 +121,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:5e7da1` | [glossary/recall](/glossary/recall.md) | concept | false |
 | `sb:0b95ed` | [glossary/recall-at-k](/glossary/recall-at-k.md) | concept | false |
 | `sb:c86162` | [glossary/recall-probe](/glossary/recall-probe.md) | concept | false |
+| `sb:1dbcc9` | [glossary/rendered-aggregation](/glossary/rendered-aggregation.md) | concept | false |
 | `sb:4c3f16` | [glossary/research-spike](/glossary/research-spike.md) | concept | false |
 | `sb:e142e6` | [glossary/route-tag](/glossary/route-tag.md) | concept | false |
 | `sb:0a43ba` | [glossary/route-tag-sink](/glossary/route-tag-sink.md) | concept | false |
@@ -141,6 +144,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:bb2968` | [glossary/strand](/glossary/strand.md) | concept | false |
 | `sb:ea95e4` | [glossary/supersession](/glossary/supersession.md) | concept | false |
 | `sb:089fb2` | [glossary/thread-doc](/glossary/thread-doc.md) | concept | false |
+| `sb:d7e3c5` | [glossary/todo-type](/glossary/todo-type.md) | concept | false |
 | `sb:8798e8` | [glossary/tree-is-the-taxonomy](/glossary/tree-is-the-taxonomy.md) | concept | false |
 | `sb:1efc5e` | [glossary/tree-sitter](/glossary/tree-sitter.md) | concept | false |
 | `sb:a10e18` | [glossary/true-merge](/glossary/true-merge.md) | concept | false |
