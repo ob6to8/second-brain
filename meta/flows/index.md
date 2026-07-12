@@ -35,11 +35,11 @@ that proves it. The genre itself was designed in
   taxonomy → mint id → compile registry → verify: the touch-sequence, the
   judgment/spine split, actor boundaries, the identity gate suite, and the
   scenario test that pins the spine.
-- [Contract render — compile CLAUDE.md from the policies](/meta/flows/contract-render.md) —
-  changing a rule of the brain: edit a `type: policy` source, recompile via
-  `mix brain.contract`, and let the `--check` gates (CI, pages, pre-commit)
-  hold the compiled contract structurally current. Fully deterministic; the
-  judgment lives upstream in ratification.
+- [Render-contract — compile the operating contract from its policy sources](/meta/flows/render-contract.md) —
+  driving a rule change through edit-the-policy → `mix brain.contract` →
+  `--check` drift gate → one commit for source + artifact: the touch-sequence
+  (including the sections-are-code step), actor boundaries, and the scenario
+  test that pins the spine.
 - [Site build & Pages deploy](/meta/flows/site-build-and-deploy.md) — from a
   push on `main` to the live GitHub Pages site: the four integrity gates, then
   `mix brain.site` renders every page (metadata panels, evidence edges +

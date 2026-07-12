@@ -26,7 +26,8 @@ defmodule SecondBrain.Contract do
     {"verification", "Identity & verification"},
     {"conformance", "Conformance (keep the bundle valid)"},
     {"skills", "Skills"},
-    {"session-workflow", "Session capture, routing & route tags"}
+    {"session-workflow", "Session capture, routing & route tags"},
+    {"git-workflow", "Git workflow"}
   ]
 
   @banner """

@@ -11,7 +11,7 @@ outcome.
 
 ## Open
 
-_(none yet)_
+- [Triage the six kept unmerged claude/* branches](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md) — each kept branch ends up merged, superseded-and-deleted, or explicitly retired — none left in limbo. `status: open`.
 
 ## Done / Cancelled
 

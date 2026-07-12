@@ -248,8 +248,10 @@ The review walked every multi-step action of the brain; the five that lacked a
 flow doc now have one, each following the genre's three-artifact model and
 honest about where its deterministic spine ends:
 
-- [contract-render](/meta/flows/contract-render.md) — fully deterministic;
-  judgment lives upstream in ratification.
+- [render-contract](/meta/flows/render-contract.md) — fully deterministic;
+  judgment lives upstream in ratification. *(This branch's `contract-render.md`
+  was unified into main's independently-written `render-contract.md` — same
+  flow, one doc — when the two merged; main's carries the scenario test.)*
 - [site-build-and-deploy](/meta/flows/site-build-and-deploy.md) — fully
   unattended; the deploy gate makes "live site" ≡ "verified bundle".
 - [news-inbox](/meta/flows/news-inbox.md) — almost all judgment; the

@@ -6,11 +6,43 @@ description: A configuration or policy file treated as build output — regenera
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, governance, tooling]
-timestamp: 2026-07-10
+timestamp: 2026-07-11
 ---
 
 # compiled contract
 
-A configuration or policy file treated as build output rather than hand-edited source: a compiler task regenerates it from canonical source documents (each contributing a traceable section), so there is one source of truth and the artifact cannot silently drift. Editing the artifact by hand is prohibited — you edit the sources and recompile. In this brain, `CLAUDE.md` is compiled from `meta/policy/*.md` via `mix brain.contract`.
+A configuration or policy file treated as build output rather than hand-edited source: a compiler task regenerates it from canonical source documents (each contributing a traceable section), so there is one source of truth and the artifact cannot silently drift. Editing the artifact by hand is prohibited — you edit the sources and recompile. In this brain, `CLAUDE.md` is compiled from `meta/preamble.md` + `meta/policy/*.md` via `mix brain.contract`.
 
-*Seen in:* [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 remove-email thread](/meta/threads/2026-07-09-remove-operator-email-from-contract.md)
+Mechanically: each `type: policy` source declares the contract `section` it renders into and its `order` within it; the compiler (`lib/second_brain/contract.ex`) groups and orders the policies under a fixed, ordered section list, and emits a *Source:* trace link under every rendered rule back to its `meta/policy/<id>.md`. Drift is caught structurally, not procedurally: `mix brain.contract --check` re-renders and diffs against the on-disk artifact in CI, so a hand edit or a forgotten recompile fails the gate. One consequence: adding a new contract *section* (as opposed to a new rule in an existing one) is a compiler change — the section list is code, not frontmatter. The same pattern governs [`meta/registry.md`](/meta/registry.md) (`mix brain.registry`) and the route-tagged excerpt logs (`mix brain.route_tags --materialize`).
+
+*Seen in:* [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 remove-email thread](/meta/threads/2026-07-09-remove-operator-email-from-contract.md), [2026-07-11 branch-deletion/contract thread](/meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:23f009">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-11-branch-deletion-policy-and-contract-as-abstraction (2026-07-11)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:23f009`]**  (co-feeds: `lib/second_brain/contract.ex`)
+
+**2. What a "compiled contract" is here.** `CLAUDE.md` — the file every agent reads on session start — is not authored; it's *build output*. The sources are `meta/preamble.md` (fixed framing) plus the twenty-one `type: policy` documents under `meta/policy/`, each declaring in frontmatter which contract `section` it renders into and its `order` within that section. The compiler, `mix brain.contract` (`lib/second_brain/contract.ex`), groups the policies under a fixed ordered section list, renders each rule with a *Source:* trace link back to its policy file, and writes `CLAUDE.md`. The payoff is that drift is caught **structurally rather than procedurally**: `mix brain.contract --check` re-renders and byte-diffs against the on-disk file in CI, so a hand edit or a forgotten recompile fails the gate instead of silently forking the truth — the rules stay editable as small, individually-versioned documents while agents consume one coherent artifact. One subtlety we hit yesterday: the *section list itself is code* (`@sections` in `contract.ex`), so a new section — like `git-workflow` — is a compiler change, not just a new policy file. The same generated-artifact pattern governs `meta/registry.md` and the route-tagged excerpt logs. The glossary already had a `compiled contract` entry (`sb:23f009`) from the backfill, so per update-in-place I extended it with these mechanics rather than creating anything new.
+
+---
+
+**[`sb:23f009`]**
+
+But — and this is the layered part we've been circling all session — `CLAUDE.md` is the *compiled* contract. The sentence I paraphrased isn't authored there; it lives in a source document, `meta/policy/controlled-type-vocabulary.md` (the `todo` entry, added when PR #33 merged), and `mix brain.contract` renders it into §4 with a trace link back to that file. So "where is the contract defined" has a two-level answer: authored in the twenty-two policy docs under `meta/policy/` plus `meta/preamble.md`, and materialized as `CLAUDE.md`.
+
+Is it an official type? The contract **as an artifact has no type at all** — deliberately. `CLAUDE.md` carries no frontmatter, just the generated-file banner; it isn't a bundle concept, has no `sb:` id, and sits outside the identity registry (the render-contract flow doc's §6 covers this). What *is* an official type is its source material: `policy` is in the controlled vocabulary — "a governance rule for how the brain operates; the source from which `CLAUDE.md` is compiled." So "contract" is a **role, not a type**: it names the singular compiled artifact that the `type: policy` documents collectively produce. The glossary has both halves filed — [compiled contract](/glossary/compiled-contract.md) (`sb:23f009`) for the pattern, and a [policy (type)](/glossary/policy-type.md) entry from another session's work — and the distinction genre-wise is the same one we used for issue vs. todo: policies are the rules, the contract is their rendered aggregation.
+
+---
+
+**[`sb:23f009`]**  (co-feeds: `meta/analysis/contracts-and-rendered-aggregations.md`)
+
+**Rendered aggregations generally: there are several.** The generated-not-hand-kept pattern is all over the tooling: `meta/registry.md` (compiled id→path view, `mix brain.registry`), the `## Thread excerpts — route-tagged log` sections inside concepts (derived from route tags, `mix brain.route_tags --materialize`), the GitHub Pages site (`mix brain.site` renders the whole bundle), and the session-init digest that opened this very session (`mix brain.session_init`, rendered fresh each time rather than committed). Each aggregates scattered sources into one derived view with a drift check. So "compiled artifact" is a genuinely load-bearing abstraction with five-ish instances.
+
+**Contracts specifically: there is one, and I can't honestly imagine a second.** What makes `CLAUDE.md` a *contract* rather than merely another compiled artifact is its authority — it's the only generated file that *binds agent behavior*. The registry indexes, the site presents, the digest orients; only the contract commands. And the design gives no reason to expect another: one brain, one set of operating rules.
+
+So you're partly right — but I'd defend the word on one ground you might find persuasive: **"contract" names the role; `CLAUDE.md` names the mounting point.** The filename isn't ours — it's Claude Code's harness convention for where agents look for instructions. If the harness changed (say, tooling standardizes on `AGENTS.md`), or a second surface needed the rules injected somewhere else, the contract — the compiled aggregation of `meta/policy/` — would be unchanged; only the output path in `contract.ex` moves. Saying "the contract" keeps the brain's concept decoupled from a third party's filename, and the tooling already commits to that vocabulary (`SecondBrain.Contract`, `mix brain.contract`, the `policy` type's own definition). Where I'd concede the point: if we ever caught ourselves designing *for* multiple contracts — abstracting the compiler over hypothetical second instances — that would be speculative generality, and the singleton should stay concrete. We haven't; the abstraction is currently one word and one module name, which is about the right price for harness independence.

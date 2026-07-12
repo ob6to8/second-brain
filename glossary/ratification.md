@@ -20,4 +20,4 @@ on anything that changes the shape itself; a plan moves `proposed` →
 [taxonomy-evolution protocol](/meta/policy/taxonomy-evolution-protocol.md)
 (and, for plan scopes, the [persist-plans policy](/meta/policy/persist-plans.md)).
 
-*Seen in:* [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md), [contract-render flow](/meta/flows/contract-render.md)
+*Seen in:* [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md), [render-contract flow](/meta/flows/render-contract.md)
