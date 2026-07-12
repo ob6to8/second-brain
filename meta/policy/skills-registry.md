@@ -6,7 +6,7 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-11
+timestamp: 2026-07-12
 ---
 - **`/intake`** — process pasted content into one or more filed concepts. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -57,5 +57,17 @@ timestamp: 2026-07-11
   a subcommand argument: `/todo create <title>` files a new open todo (and maintains
   the index); `/todo list` shows the todos grouped by `status`. See
   `.claude/skills/todo/SKILL.md`.
+- **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
+  `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
+  strands) and closes with a heuristic top-3 the agent refines with judgment — the
+  on-demand successor to the old SessionStart digest (no longer auto-injected at
+  session start). Read-only. See `.claude/skills/priorities/SKILL.md`.
+- **`/issue`** — list `type: issue` tracked problems under `meta/issues/`, grouped by
+  `status` (default `open`). The issues-only slice of `/priorities`; read-only
+  (filing an issue stays inline per the contract). See `.claude/skills/issue/SKILL.md`.
+- **`/plan`** — list `type: plan` design/decision records under `meta/plans/`, grouped
+  by `status` (default `active` = proposed/accepted/in-progress). The plans-only slice
+  of `/priorities`; read-only (persisting a plan stays inline per the persist-plans
+  policy). See `.claude/skills/plan/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.

@@ -1,8 +1,10 @@
 defmodule SecondBrain.SessionInit do
   @moduledoc """
   The session-init digest: a point-in-time scan of the brain's open work,
-  rendered as markdown for injection into a fresh session's context (the
-  SessionStart hook runs `mix brain.session_init` and echoes the output).
+  rendered as markdown for the operator's priority appraisal. Produced on
+  demand by the `/priorities` skill, which runs `mix brain.session_init` and
+  relays the output (it is no longer auto-injected at session start — the
+  SessionStart hook now only provisions the toolchain).
 
   Four sources, all already maintained by existing policy:
 
@@ -24,9 +26,8 @@ defmodule SecondBrain.SessionInit do
   in-flight plans, then open todos, then accepted plans, then open strands,
   then paused strands and leftover dangling questions, then proposed plans;
   newer first within a class) and an
-  agent note asking the session agent to open the thread with its own
-  appraisal, using the heuristic as a starting point — the script ranks, the
-  agent judges.
+  agent note asking the agent to state its own top-3 appraisal, using the
+  heuristic as a starting point — the script ranks, the agent judges.
 
   An issue/todo/plan may carry an explicit `priority: <integer>` frontmatter
   key (1 = most urgent). Flagged items rank above every heuristic class,
@@ -74,9 +75,9 @@ defmodule SecondBrain.SessionInit do
     #{section("Active plans", Enum.map(plans, &plan_line/1))}
     #{section("Dangling strands (from thread ledgers)", Enum.map(strands, &strand_line/1))}
     #{freshness_section(root)}#{priorities_section(issues, todos, plans, strands)}
-    > **Agent note:** open this session by stating your top-3 priority appraisal
-    > for the operator — start from the heuristic ranking above, adjust it with
-    > judgment, and say why. Then address the operator's request.
+    > **Agent note:** state your top-3 priority appraisal for the operator —
+    > start from the heuristic ranking above, adjust it with judgment, and say
+    > why.
     """
   end
 
