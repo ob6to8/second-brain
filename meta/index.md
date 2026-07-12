@@ -11,6 +11,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 - [plans](/meta/plans/index.md) — design/decision records for proposed changes to the brain or its tooling (`type: plan`, each with a `status`)
 - [policy](/meta/policy/index.md) — the `type: policy` rules that compile into `/CLAUDE.md`
 - [preamble.md](/meta/preamble.md) — fixed framing text prepended to the compiled contract
+- [future-beliefs.md](/meta/future-beliefs.md) — a running scratch list of small, true observations about the tooling/governance worth formalizing later
 - [registry.md](/meta/registry.md) — **generated** stable-id → concept view (`mix brain.registry`)
 - [threads](/meta/threads/index.md) — archived operator–agent conversations (exchanges only)
 - [todos](/meta/todos/index.md) — lightweight actionable task items (`type: todo`, each with a `status`)
@@ -30,6 +31,9 @@ taxonomy. This is where the rules that compile into the operating contract live.
     threads and the excerpt logs they materialize into concepts (re-derives each
     log from the current tags and fails on divergence); `--materialize` writes the
     log sections from the tags.
+  - `mix brain.session_init` — compile the session-start digest: open issues and
+    todos, active plans, dangling ledger strands, and a heuristic top-3 priority
+    ranking.
   - `mix brain.site [--out DIR]` — render the bundle into a static, navigable site
     (deployed to GitHub Pages); see the [tutorials](/meta/tutorials/index.md).
 - `.github/workflows/ci.yml` — CI enforcement on every push/PR: compile, format check,

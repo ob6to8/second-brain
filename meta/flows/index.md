@@ -17,7 +17,7 @@ folding both in.
 
 Distinct from the other meta genres: `policy` is the standing rules (compiled
 into `/CLAUDE.md`); `tutorials` is the *why* behind a piece of tooling, read
-start to finish; `specs` is the plan for a change not yet fully built; `threads`
+start to finish; `plans` is the design/decision record for a change not yet fully built; `threads`
 is verbatim session archives. A flow doc is none of these — it narrates how a
 *whole action* runs end to end, naming the files and pointing at the scenario
 that proves it. The genre itself was designed in

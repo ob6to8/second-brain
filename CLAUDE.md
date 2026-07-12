@@ -133,7 +133,7 @@ _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
   time-ordered entries (journal/log-style notes); topical concepts stay purely
   topical.
 - **Cross-link** related concepts with markdown links. Prefer bundle-absolute paths
-  (begin with `/`, e.g. `[OKF](/references/open-knowledge-format.md)`). Links are
+  (begin with `/`, e.g. `[OKF](/knowledge-management/open-knowledge-format.md)`). Links are
   untyped edges; the prose carries the meaning. Broken links are tolerated but avoid
   creating them.
 
