@@ -40,3 +40,8 @@ that proves it. The genre itself was designed in
   `--check` drift gate → one commit for source + artifact: the touch-sequence
   (including the sections-are-code step), actor boundaries, and the scenario
   test that pins the spine.
+- [Dedup recall probe — measuring and maintaining intake dedup recall](/meta/flows/dedup-recall-probe.md) —
+  the dedup-recall eval loop: how `mix brain.dedup_probe` scores intake dedup
+  against an id-keyed gold set, how the gold set and baseline grow automatically
+  at intake, and — foregrounded — **how the operator audits, explores, and
+  re-evaluates** a system that otherwise runs silently in the background.

@@ -12,7 +12,9 @@ timestamp: 2026-07-12
 This is the versioned gold set behind
 [`mix brain.dedup_probe`](/lib/mix/tasks/brain.dedup_probe.ex) — the offline,
 deterministic recall eval built by the
-[dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md). It measures the one
+[dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md). For the whole loop end
+to end — and, in particular, **how to audit and re-evaluate it** — see the
+[dedup recall probe flow doc](/meta/flows/dedup-recall-probe.md). It measures the one
 intake gate CI can't otherwise cover: **can the mechanical search layer find the
 concept a new item should merge into**, when the query is phrased the way a human —
 or a future intake agent no longer holding the whole tree in context — would phrase
