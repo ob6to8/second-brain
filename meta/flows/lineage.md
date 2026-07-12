@@ -44,16 +44,16 @@ flowchart LR
   f3p --> f3t
   f3t --> f3r
   f3r --> f3f
-  f4p["plan: research-daily-read-synthesis"]
-  f4t["thread: 2026-07-09-home-page-research-filter-inbox, 2026-07-11-research-digest-intake-and-daily-read"]
-  f4r["PR #19, #41"]
-  f4f["flow: research-inbox"]
-  f4p --> f4t
+  f4t["thread: 2026-07-11-branch-deletion-policy-and-contract-as-abstraction"]
+  f4r["PR #46"]
+  f4f["flow: render-contract"]
   f4t --> f4r
   f4r --> f4f
-  f5t["thread: 2026-07-11-branch-deletion-policy-and-contract-as-abstraction"]
-  f5r["PR #46"]
-  f5f["flow: render-contract"]
+  f5p["plan: research-daily-read-synthesis"]
+  f5t["thread: 2026-07-09-home-page-news-filter-inbox, 2026-07-11-news-digest-intake-and-daily-read"]
+  f5r["PR #19, #41"]
+  f5f["flow: research-inbox"]
+  f5p --> f5t
   f5t --> f5r
   f5r --> f5f
   f6p["plan: flows-genre-and-scenario-testing"]
@@ -78,8 +78,8 @@ flowchart LR
 | [Create pull request — capture, glossary, commit, push, open](/meta/flows/create-pull-request.md) | — | — | [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md) | PR #32 |
 | [Dedup recall probe — measuring and maintaining intake dedup recall](/meta/flows/dedup-recall-probe.md) | [Would a vector DB improve recall as this bundle scales? A dedup-recall probe says fix intake first](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md) | [Dedup recall probe: a gold set of natural-phrasing queries and a mix task that measures intake dedup recall](/meta/plans/dedup-recall-probe.md) | [2026-07-12-dedup-recall-probe-and-synonym-intake](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md) | PR #50 |
 | [Intake — capture pasted material into a filed concept](/meta/flows/intake.md) | — | [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md) | [2026-07-09-flows-genre-and-scenario-testing](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md) | PR #27 |
-| [Research — generate the daily inbox of candidates](/meta/flows/research-inbox.md) | — | [The daily read: a cross-domain synthesis lede for /research digests](/meta/plans/research-daily-read-synthesis.md) | [Thread — home-page research-filter inbox (/research + inbox/ namespace)](/meta/threads/2026-07-09-home-page-news-filter-inbox.md)<br>[2026-07-11-research-digest-intake-and-daily-read](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md) | PR #19<br>PR #41 |
 | [Render-contract — compile the operating contract from its policy sources](/meta/flows/render-contract.md) | — | — | [2026-07-11-branch-deletion-policy-and-contract-as-abstraction](/meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md) | PR #46 |
+| [Research — generate the daily inbox of candidates](/meta/flows/research-inbox.md) | — | [The daily read: a cross-domain synthesis lede for /research digests](/meta/plans/research-daily-read-synthesis.md) | [Thread — home-page news-filter inbox (/news + inbox/ namespace)](/meta/threads/2026-07-09-home-page-news-filter-inbox.md)<br>[2026-07-11-news-digest-intake-and-daily-read](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md) | PR #19<br>PR #41 |
 | [Session capture, routing & route tags — flow](/meta/flows/session-capture.md) | — | [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md) | [Thread — adopt session capture, routing ledger, and route tags](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md) | PR #13 |
 | [Site build & Pages deploy — render the bundle to the live site](/meta/flows/site-build-and-deploy.md) | — | — | [Thread — GitHub Pages knowledge-base site, offline-toolchain tutorial, and the OKF node](/meta/threads/2026-07-09-github-pages-knowledge-base-site.md)<br>[2026-07-09-live-render-appraisal-and-pages-hardening](/meta/threads/2026-07-09-live-render-appraisal-and-pages-hardening.md) | PR #26<br>PR #28 |
 

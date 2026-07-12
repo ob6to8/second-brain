@@ -6,6 +6,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 ## Contents
 
 - [analysis](/meta/analysis/index.md) — point-in-time evaluations and decision-support write-ups on questions about the brain (`type: analysis`)
+- [doctrine](/meta/doctrine/index.md) — standing intention statements: guiding principles and directions the brain's design serves, which policies implement (`type: doctrine`)
 - [elaborations](/meta/elaborations/index.md) — persisted expansions of technical phrases (`type: elaboration`, written by `/elaborate`; each back-links its originating thread via a `thread` field set by `/create-pull-request`)
 - [evals](/meta/evals/index.md) — repeatable eval gold sets and their baselines: the fixtures a `mix brain.*` task re-scores on every run (distinct from a point-in-time `analysis`)
 - [flows](/meta/flows/index.md) — per-flow connective docs: the file-by-file touch-sequence of a canonical run, tying together the skill, the CI-checked scenario, and the why (supersedes the old `session-workflow.md` guide + `verification-flows/`)

@@ -265,6 +265,15 @@ Seed vocabulary:
   *term*, source-independent) and a `tutorial` (long-form, standalone subject) — an
   elaboration unpacks *one specific mouthful in context* (lives under
   `meta/elaborations/`).
+- `doctrine` — a persisted **intention statement**: a guiding principle or direction
+  that shapes how the brain and its agents are designed and prioritized — the "why"
+  that informs judgment without prescribing a specific enforceable action. Doctrine
+  sits *above* policy: a `policy` implements doctrine as a concrete, machine- or
+  operator-enforceable rule, and plans, analyses, and priority rankings may cite a
+  doctrine as the direction they serve. Distinct from a `policy` (an enforceable
+  *rule*), an `analysis` (a *reasoned judgment on a question*), and a `note` (a
+  distilled *idea*) — a doctrine is a *standing direction* (lives under
+  `meta/doctrine/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
 

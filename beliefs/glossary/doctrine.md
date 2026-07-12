@@ -6,14 +6,14 @@ description: The governance layer of guiding principles and accepted tenets — 
 provenance: "Agent-distilled glossary definition; term introduced by operator question (doctrine vs. policy), 2026-07-11 session"
 verified: false
 tags: [glossary, governance, terminology]
-timestamp: 2026-07-11
+timestamp: 2026-07-12
 ---
 
 # doctrine
 
-The layer of guiding principles and accepted tenets in a governance system — the "why" that shapes judgment without prescribing specific action. Doctrine informs policy; a [policy](/beliefs/glossary/policy-type.md) implements doctrine as a concrete, enforceable rule. This brain's controlled vocabulary has no `doctrine` type: the closest analogue is the preamble and compiled [operating contract](/beliefs/glossary/operating-contract.md) read as a whole (its worldview — "the tree is the taxonomy", "distill, don't dump"), while each `type: policy` file is a single standing rule.
+The layer of guiding principles and accepted tenets in a governance system — the "why" that shapes judgment without prescribing specific action. Doctrine informs policy; a [policy](/beliefs/glossary/policy-type.md) implements doctrine as a concrete, enforceable rule. As of 2026-07-12 this brain has a `doctrine` type and a [`meta/doctrine/`](/meta/doctrine/index.md) genre for standing intention statements (first document: [the engineer as orchestrator](/meta/doctrine/engineer-as-orchestrator.md)); the *worldview* doctrine — "the tree is the taxonomy", "distill, don't dump" — still lives distributed across the preamble and compiled [operating contract](/beliefs/glossary/operating-contract.md) read as a whole, while each `type: policy` file is a single standing rule.
 
-*Seen in:* [2026-07-11 doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md)
+*Seen in:* [2026-07-11 doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md), [engineer-as-orchestrator doctrine](/meta/doctrine/engineer-as-orchestrator.md), [2026-07-12 doctrine-genre-and-orchestrator-alignment thread](/meta/threads/2026-07-12-doctrine-genre-and-orchestrator-alignment.md)
 
 ## Thread excerpts — route-tagged log
 
@@ -41,3 +41,11 @@ In ordinary governance usage, **doctrine** is the layer of *beliefs and principl
 **[`sb:6a9e78`]**
 
 Done — [`doctrine`](glossary/doctrine.md) is committed and pushed (`5a57194`, `sb:6a9e78`, all verifiers and 78 tests green). It defines doctrine as the principles layer ("the why") versus policy's enforceable rules, cross-links to `policy-type` and `operating-contract`, and notes that this brain has no `doctrine` type — the closest analogue being the preamble plus compiled contract read as a whole. The glossary is now 71 terms.
+
+### 2026-07-12-doctrine-genre-and-orchestrator-alignment (2026-07-12)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:6a9e78`]**  (co-feeds: `meta/doctrine/engineer-as-orchestrator.md`)
+
+You're right that this is neither analysis nor concept — it's an *intention statement*: a direction that shapes judgment without prescribing action. The brain already named exactly this layer and noted the vocabulary was missing it. From [`/beliefs/glossary/doctrine.md`](/beliefs/glossary/doctrine.md):

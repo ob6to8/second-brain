@@ -94,6 +94,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:334e60` | [beliefs/glossary/mounting-point](/beliefs/glossary/mounting-point.md) | concept | false |
 | `sb:54995c` | [beliefs/glossary/non-bundle-namespace](/beliefs/glossary/non-bundle-namespace.md) | concept | false |
 | `sb:1349cb` | [beliefs/glossary/operating-contract](/beliefs/glossary/operating-contract.md) | concept | false |
+| `sb:83ea50` | [beliefs/glossary/orchestration](/beliefs/glossary/orchestration.md) | concept | false |
 | `sb:3ee2d2` | [beliefs/glossary/orphan-block](/beliefs/glossary/orphan-block.md) | concept | false |
 | `sb:a9113e` | [beliefs/glossary/orphaned-branch](/beliefs/glossary/orphaned-branch.md) | concept | false |
 | `sb:5d40bf` | [beliefs/glossary/otp](/beliefs/glossary/otp.md) | concept | false |
