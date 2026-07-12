@@ -204,7 +204,7 @@ never contest the same work.
 **Applied to this bundle.**
 
 - The scheduled-automation need — today the
-  [daily /news Routine that never lands](/meta/issues/daily-news-routine-runs-not-landing.md) —
+  [daily /research Routine that never lands](/meta/issues/daily-news-routine-runs-not-landing.md) —
   has a managed structural fix requiring no owned runtime: a CMA scheduled
   deployment (cron → fresh session → repository mounted with a PAT through the
   git proxy → commit and push), with per-firing audit records in place of

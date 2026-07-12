@@ -90,7 +90,7 @@ listing pages. All three stay inside the single-store model.
 - **`README.md` is the worst offender.** It still lists ``log.md` —
   chronological change history`` in the layout, retired in commit `62d9327`
   (2026-07-11). It also predates most of the system: no mention of the `meta/`
-  governance namespace, the glossary, the gate suite, the daily `/news` inbox,
+  governance namespace, the glossary, the gate suite, the daily `/research` inbox,
   or the session-init digest. As the GitHub landing page it is the first thing
   a human reads, and it describes the repo of ~ five days ago.
 - **`meta/index.md` omissions.** The tooling list omits
@@ -119,9 +119,9 @@ quotes (reproduced verbatim into materialized excerpt logs — the
   newest subsystem (open-work digest + heuristic priorities at session start)
   and the only `mix brain.*` task without tutorial or flow coverage.
 - **Flow-doc coverage is 2 of 8 skills.** `capture` and `intake` have flow
-  docs; `news`, `add-to-glossary`, `create-pull-request`, and `todo` do not.
+  docs; `research`, `add-to-glossary`, `create-pull-request`, and `todo` do not.
   The flows plan scoped the initial two deliberately, so this is a *decision to
-  revisit*, not drift — the next candidates are `news` (it has a live
+  revisit*, not drift — the next candidates are `research` (it has a live
   operational issue) and `create-pull-request` (it composes three other
   skills).
 - **A link-freshness check is worth considering.** The scan that found the
@@ -145,10 +145,10 @@ and the warn-only docs-freshness pass (`SecondBrain.Links`, printed by
 `mix brain.verify`, also surfaced in the session-init digest) — which caught
 its first real case (a quoted broken path in this very analysis) during its
 own build-out, resolved by teaching it that code spans are literal text. The
-third Tier-2 item — flow docs for `/news` and `/create-pull-request` — was
+third Tier-2 item — flow docs for `/research` and `/create-pull-request` — was
 overtaken by a concurrent session that landed a broader
 [flows 2→7 set](/meta/flows/index.md) (including
-[news-inbox](/meta/flows/news-inbox.md) and
+[research-inbox](/meta/flows/research-inbox.md) and
 [create-pull-request](/meta/flows/create-pull-request.md)); this branch's
 duplicate drafts were dropped at merge in favor of that set, itself an
 instance of the very same-matter dedup the audit argues for.

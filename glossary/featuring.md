@@ -5,7 +5,7 @@ title: featuring
 description: The gated criteria by which `/research` decides which candidates make the cut: relevance → novelty → a reason tag fires → source quality, under a quality-over-volume cap.
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
-tags: [glossary, news, inbox]
+tags: [glossary, research, inbox]
 timestamp: 2026-07-11
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: research
-description: Generate today's inbox — a daily candidate feed of news, articles, papers, and resources matched against the brain's taxonomy, grouped by category and tagged by why each was chosen — then auto-intake the featured items into the bundle. Use when the operator says "/research", "run the feed", "what's new", or on the daily schedule.
+description: Generate today's inbox — a daily candidate feed of research, articles, papers, and resources matched against the brain's taxonomy, grouped by category and tagged by why each was chosen — then auto-intake the featured items into the bundle. Use when the operator says "/research", "run the feed", "what's new", or on the daily schedule.
 ---
 
 # /research — the daily candidate feed (home-page inbox)
@@ -11,7 +11,7 @@ candidate links, each with a one-line synopsis and a reason tag — then **auto-
 the featured items into the bundle**. The digest is the daily *record* in the
 non-bundle `inbox/` namespace (no `sb:` ids); its featured items graduate into filed
 concepts in the same run (§6). This is the standing decision from the
-[auto-intake plan](/meta/plans/auto-intake-featured-news.md): the featuring gates
+[auto-intake plan](/meta/plans/auto-intake-featured-research.md): the featuring gates
 (§4) are already the quality filter, so a featured item needs no second human gate —
 the operator's contribution moves from a pre-intake gate to **post-intake editorial**
 (prune, relabel, merge). The digest file itself never acquires an `sb:` id; the
@@ -106,7 +106,7 @@ Once the featured set is fixed, write **the read**: a short perspective on the d
 selections *as a set*, framed against the brain's standing concerns. This is the most
 valuable part of the digest — it turns a pile of links into a *view of where things
 are moving relative to what the brain already tracks*. See the design record in
-[`meta/plans/news-daily-read-synthesis.md`](/meta/plans/news-daily-read-synthesis.md).
+[`meta/plans/research-daily-read-synthesis.md`](/meta/plans/research-daily-read-synthesis.md).
 
 - **A perspective, not a re-listing.** 1–3 tight paragraphs. Never restate the item
   synopses — those live in the domain sections below. The read is the layer *above*

@@ -5,7 +5,7 @@ title: reason tags
 description: The governed vocabulary (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) marking why each inbox candidate was surfaced.
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
-tags: [glossary, news, inbox]
+tags: [glossary, research, inbox]
 timestamp: 2026-07-11
 ---
 

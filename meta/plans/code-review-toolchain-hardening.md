@@ -254,7 +254,7 @@ honest about where its deterministic spine ends:
   flow, one doc — when the two merged; main's carries the scenario test.)*
 - [site-build-and-deploy](/meta/flows/site-build-and-deploy.md) — fully
   unattended; the deploy gate makes "live site" ≡ "verified bundle".
-- [news-inbox](/meta/flows/news-inbox.md) — almost all judgment; the
+- [research-inbox](/meta/flows/research-inbox.md) — almost all judgment; the
   structural guarantee is the registry's namespace exclusion.
 - [add-to-glossary](/meta/flows/add-to-glossary.md) — intake's spine, shared
   pin; the judgment layer is extract/dedup/define.

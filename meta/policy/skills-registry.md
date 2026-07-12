@@ -39,7 +39,7 @@ timestamp: 2026-07-11
   term by link (pointer entries defer to filed concepts instead of duplicating them).
   Also invoked automatically by `/create-pull-request` on the thread doc its
   `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
-- **`/research`** — generate today's **inbox**: a daily candidate feed of news, articles,
+- **`/research`** — generate today's **inbox**: a daily candidate feed of research, articles,
   papers, and resources matched against the brain's taxonomy, grouped by category and
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) — then
   **auto-intake the featured items** into the bundle via `/intake`. The digest is the

@@ -50,7 +50,7 @@ Revisiting the three blockers under the inversion:
 1. **"It duplicates the incumbent agent runtime" — dissolves.** The incumbent
    harness is operator-centric and session-shaped: skills fire when a human
    invokes them; Routines depend on an external approval stream (the
-   [still-open /news issue](/meta/issues/daily-news-routine-runs-not-landing.md)
+   [still-open /research issue](/meta/issues/daily-news-routine-runs-not-landing.md)
    is the existence proof of what delegated scheduling costs). A lights-out
    company cannot rent its nervous system; supervision, lifecycle, scheduling,
    and inter-agent routing must be owned. That is exactly the layer OTP/Jido

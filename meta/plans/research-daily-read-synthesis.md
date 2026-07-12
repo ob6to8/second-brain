@@ -1,26 +1,26 @@
 ---
 type: plan
-title: "The daily read: a cross-domain synthesis lede for /news digests"
-description: Promote the ad-hoc per-domain framing paragraph in /news digests to a first-class '## The read' section at the top of each digest — a short, sb:-id-grounded perspective that reads the day's selections as a set against the brain's standing concerns, connecting threads across domains.
+title: "The daily read: a cross-domain synthesis lede for /research digests"
+description: Promote the ad-hoc per-domain framing paragraph in /research digests to a first-class '## The read' section at the top of each digest — a short, sb:-id-grounded perspective that reads the day's selections as a set against the brain's standing concerns, connecting threads across domains.
 status: done
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-11 — operator proposed the feature after the 2026-07-11 digest; ratified and implemented same session"
-tags: [meta, plan, news, inbox, synthesis, skills]
+tags: [meta, plan, research, inbox, synthesis, skills]
 timestamp: 2026-07-11
 ---
 
-# The daily read: a cross-domain synthesis lede for /news digests
+# The daily read: a cross-domain synthesis lede for /research digests
 
 ## Status & provenance
 
 **Done** — proposed by the operator on 2026-07-11 ("what if we introduce a daily
-summary, which presents a perspective on the day's news selections in the context of
+summary, which presents a perspective on the day's research selections in the context of
 the existing repo's concerns and focuses?"), ratified in the same session, and
-implemented immediately: the `/news` skill and the 2026-07-11 digest were updated as
+implemented immediately: the `/research` skill and the 2026-07-11 digest were updated as
 part of this plan. Filed as the durable decision record per the persist-plans policy.
 
 ## Problem
 
-The `/news` digest is a good *list* but a weak *read*. Its body is per-domain
+The `/research` digest is a good *list* but a weak *read*. Its body is per-domain
 buckets of item synopses; the only synthesis is whatever framing paragraph the agent
 happens to write inline (e.g. the 2026-07-11 ai-industry lede: "the throughline is
 that the brain's margin-collapse thesis `sb:07610c` is now actively contested").
@@ -51,7 +51,7 @@ before the per-domain lists.
   on ids, not phrases.
 - **Cross-domain by mandate.** Its explicit job is the connective tissue the buckets
   can't hold: the trend, tension, or throughline that runs across domains.
-- **Candidate-side, like everything in `/news`.** No `sb:` id, `inbox/` namespace,
+- **Candidate-side, like everything in `/research`.** No `sb:` id, `inbox/` namespace,
   distilled, and asserts nothing beyond what the day's selections support. It is a
   reading of candidates, not a filed claim.
 
@@ -79,7 +79,7 @@ Digest body order becomes:
 
 ## Build order
 
-1. **`/news` SKILL.md** — insert a new step **§4.5 "Write the daily read"** between
+1. **`/research` SKILL.md** — insert a new step **§4.5 "Write the daily read"** between
    selection (§4) and digest-write (§5), and update the §5 body template to lead with
    `## The read`. (done)
 2. **Backfill 2026-07-11** as the first worked instance — lift the ai-industry

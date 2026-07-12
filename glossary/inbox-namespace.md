@@ -5,7 +5,7 @@ title: inbox namespace
 description: The non-bundle `inbox/` waiting room holding `/research` candidate digests — no `sb:` ids, never verified — outside the knowledge bundle.
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
-tags: [glossary, news, inbox, namespaces]
+tags: [glossary, research, inbox, namespaces]
 timestamp: 2026-07-10
 ---
 

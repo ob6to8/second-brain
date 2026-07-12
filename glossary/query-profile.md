@@ -5,7 +5,7 @@ title: query profile
 description: The set of per-category interest signals derived by walking a knowledge base's taxonomy — its index tree plus concept titles and tags — used as the retrieval filter for finding candidate items.
 provenance: "Agent-distilled glossary definition"
 verified: false
-tags: [glossary, news, search, taxonomy]
+tags: [glossary, research, search, taxonomy]
 timestamp: 2026-07-11
 ---
 

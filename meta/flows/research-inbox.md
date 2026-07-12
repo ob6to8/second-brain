@@ -1,12 +1,12 @@
 ---
 type: note
-title: News — generate the daily inbox of candidates
+title: Research — generate the daily inbox of candidates
 description: The end-to-end flow for the daily candidate feed — derive a query profile from the taxonomy, search, dedup twice, reason-tag, write a dated digest into the non-bundle inbox/ namespace, then auto-intake the featured items into the bundle via /intake — the touch-sequence, actor boundaries, and how the feed's own judgment layer now chains into the intake flow's deterministic spine.
-tags: [meta, governance, news, inbox, feed, flow, workflow, auto-intake]
+tags: [meta, governance, research, inbox, feed, flow, workflow, auto-intake]
 timestamp: 2026-07-12
 ---
 
-# News — generate the daily inbox of candidates
+# Research — generate the daily inbox of candidates
 
 The connective doc for how the *outside world* reaches the brain: `/research`
 scans for material matching what the brain already tracks, writes a dated
@@ -22,7 +22,7 @@ as candidates, awaiting the operator's ratification.
 >   holds synopses and only deferred items remain candidates) ·
 >   [tree-is-the-taxonomy](/meta/policy/tree-is-the-taxonomy.md) (the taxonomy
 >   *is* the query profile) ·
->   [auto-intake-featured-news](/meta/plans/auto-intake-featured-news.md) (the
+>   [auto-intake-featured-research](/meta/plans/auto-intake-featured-research.md) (the
 >   decision to file featured items automatically, Fork A).
 > - **Procedure** → the [`/research` skill](/.claude/skills/research/SKILL.md) —
 >   including the selection contract (four gates + reason-tag vocabulary) and the
@@ -131,4 +131,4 @@ hand-intaked one. What stays structural for the feed itself: the namespace bound
 (the digest cannot acquire an id — `inbox` is in the registry's excluded dirs), and
 the site build (CI renders `inbox/` pages like any other, so a malformed digest that
 crashes the renderer fails CI). Known operational risk is tracked as an issue:
-[daily news Routine runs not landing](/meta/issues/daily-news-routine-runs-not-landing.md).
+[daily research Routine runs not landing](/meta/issues/daily-news-routine-runs-not-landing.md).

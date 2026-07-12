@@ -22,7 +22,7 @@ strands, leftover dangling questions, proposed plans — newer first within a
 class; canonically the `@weights` map in `lib/second_brain/session_init.ex`.
 An explicit integer `priority:` frontmatter key on an issue/todo/plan pins it
 above every heuristic class (1 = most urgent), the operator's manual override. Distinct from the
-[digest](/glossary/digest.md) sense used by the news inbox (a day's candidate
+[digest](/glossary/digest.md) sense used by the research inbox (a day's candidate
 items); this one summarizes internal state, not external material.
 
 *Seen in:* [2026-07-11 session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)

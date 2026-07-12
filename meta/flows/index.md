@@ -45,7 +45,7 @@ that proves it. The genre itself was designed in
   `mix brain.site` renders every page (metadata panels, evidence edges +
   backlinks, search index) and the workflow deploys it. Fully unattended; no
   skill involved.
-- [News — generate the daily inbox of candidates](/meta/flows/news-inbox.md) —
+- [Research — generate the daily inbox of candidates](/meta/flows/research-inbox.md) —
   `/research` derives a query profile from the taxonomy, searches, dedups twice,
   reason-tags, and writes a dated digest into the non-bundle `inbox/`
   namespace; hand-off to `/intake` crosses a candidate into the brain. Almost
