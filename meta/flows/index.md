@@ -15,6 +15,19 @@ One flow doc per flow. This genre **supersedes** the old
 `meta/session-workflow.md` guide and the `meta/verification-flows/` checklist,
 folding both in.
 
+**Lineage header.** A flow doc opens with a one-line `> **Lineage —**` blockquote
+tracing the arc that produced the flow: the originating `analysis` (a problem or
+idea identified against evidence), the `plan` that designed the change, and the PR
+that implemented it — so the whole path *problem-identified → designed → built →
+running system* reads at a glance, and the upstream analysis/plan gain the forward
+pointer they otherwise lack (the citations run backward only). Each hop is a link to
+the record that carries its reasoning. The chain is **heterogeneous**: omit hops a
+flow doesn't have (some flows emerged directly as a plan, with no upstream analysis;
+the genre itself came from the [flows-genre plan](/meta/plans/flows-genre-and-scenario-testing.md)
+with none) and name the gap rather than forcing a link. The reference instance is
+the [dedup recall probe flow](/meta/flows/dedup-recall-probe.md), whose full
+`analysis → plan → PR → flow` chain is intact.
+
 Distinct from the other meta genres: `policy` is the standing rules (compiled
 into `/CLAUDE.md`); `tutorials` is the *why* behind a piece of tooling, read
 start to finish; `plans` is the design/decision record for a change not yet

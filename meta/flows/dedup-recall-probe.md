@@ -17,6 +17,14 @@ run silently unless something regresses**, it deliberately foregrounds *how you
 audit, explore, and re-evaluate it by hand* (§4). It does not restate the rules or
 the procedure; those have homes.
 
+> **Lineage — how this flow came to be.** A problem identified in the
+> [vector-DB recall analysis](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md)
+> (PR #25) — grep already misses existing concepts *semantically*, not typographically,
+> at 39 concepts → designed in the
+> [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md) (`status: done`) →
+> implemented in PR #50 → runs as the loop this doc narrates below. Read it top to
+> bottom; each hop links the record that carries its reasoning.
+
 > **The artifacts (sources of truth — point, don't restate):**
 > - **Design + decisions** → the [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md)
 >   (`status: done`; motivation, the banded gold-set design, the resolved open questions).

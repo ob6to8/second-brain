@@ -262,3 +262,23 @@ URLs under its `# Citations`. Repo evidence (in-tree, not intook): `mix.exs`
    with a `describe` per flow. Lean: per-flow file.
 
 Neither changes the artifact shape.
+
+---
+
+## 11. Later refinement — the lineage header (2026-07-12)
+
+The three-artifact model (§3) captured a flow's *present* shape but not its
+*origin*: the citations ran backward only (flow → plan → analysis), so a flow's
+upstream docs never pointed forward to what they became, and the full arc
+*problem-identified → designed → built → running system* was legible only by
+walking three hops in reverse. The genre gained a **lineage header** to close
+this: each flow doc opens with a one-line `> **Lineage —**` blockquote chaining
+its originating `analysis`, its `plan`, and the PR that implemented it, each hop a
+link. Prose, not frontmatter — it keeps the "point, don't restate" discipline and
+adds no schema; the chain is heterogeneous (omit and name absent hops). Codified in
+[`meta/flows/index.md`](/meta/flows/index.md); reference instance is the
+[dedup recall probe flow](/meta/flows/dedup-recall-probe.md) (analysis PR #25 →
+plan → implementation PR #50 → flow). This is the lightweight, prose ancestor of
+the typed lineage edges the [epistemic-overlay plan](/meta/plans/epistemic-overlay.md)
+would later make first-class; the remaining flow docs get the header backfilled
+opportunistically as each is next touched.
