@@ -37,7 +37,14 @@ description: <one sentence: what the session covered and where it landed>
 provenance: "Claude Code session (<model name(s)>), <date>; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, <topic tags>]
 timestamp: <ISO 8601 date>
+# pr: <N>  ← added later by /create-pull-request once the PR is opened; not set here
 ```
+
+`/capture` does not set `pr:` — the PR number doesn't exist yet.
+[`/create-pull-request`](../create-pull-request/SKILL.md) stamps it after
+opening the PR (the PR is the thread's durable anchor; the ephemeral branch is
+not recorded — see the
+[session-capture policy](/meta/policy/session-capture.md)).
 
 ## Build the doc, in this order
 
@@ -131,12 +138,11 @@ after any tag edit so the log stays re-derivable.
 ## After writing
 
 1. Update `meta/threads/index.md`: link + one-line description.
-2. Append a dated entry to `meta/log.md` (and to the nearest `log.md` of any
-   concept whose excerpt log changed).
-3. Run the gates before committing: `./.githooks/pre-commit` (or at minimum
+2. Run the gates before committing: `./.githooks/pre-commit` (or at minimum
    `mix brain.contract --check && mix brain.registry --check && mix brain.verify
    && mix brain.route_tags && mix test`).
-4. Commit (and push / open a PR only if the operator asked).
+3. Commit (and push / open a PR only if the operator asked); the commit message
+   is the change record — no log entries.
 
 ## Rules
 

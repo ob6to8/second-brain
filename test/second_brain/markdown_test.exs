@@ -45,6 +45,12 @@ defmodule SecondBrain.MarkdownTest do
       refute html =~ "<em>b</em>"
     end
 
+    test "link syntax inside a code span is left literal" do
+      html = Markdown.to_html("Cite it as `[route tag](/glossary/route-tag.md)` inline.")
+      assert html =~ "<code>[route tag](/glossary/route-tag.md)</code>"
+      refute html =~ "<a href"
+    end
+
     test "escapes HTML special characters" do
       html = Markdown.to_html("1 < 2 & 3 > 0")
       assert html =~ "1 &lt; 2 &amp; 3 &gt; 0"

@@ -17,5 +17,5 @@ The taxonomy-evolution protocol (important):
   a change to the *shape* of the brain → the agent **proposes it and waits for the
   operator to ratify** before creating it. Explain the proposed name, where it
   sits, and why the existing tree doesn't fit.
-- On creation, add each new directory's `index.md`, record it in the nearest
-  `log.md`, and list new top-level dirs in the root `index.md`.
+- On creation, add each new directory's `index.md` and list new top-level dirs
+  in the root `index.md`.

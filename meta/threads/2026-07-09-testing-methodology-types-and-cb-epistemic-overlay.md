@@ -5,6 +5,7 @@ description: A session that filed an agent-facing Elixir testing methodology, ra
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, testing, types, epistemics, composable-beliefs, edges, plan]
 timestamp: 2026-07-09
+pr: 29
 ---
 
 # Thread — testing methodology, methodology/plan types, and the Composable Beliefs epistemic-overlay plan

@@ -46,4 +46,6 @@ Separate from the knowledge taxonomy — the rules for *how the brain operates*.
 
 - `index.md` — directory listing for progressive disclosure (this file, plus one
   per directory as the tree grows)
-- `log.md` — chronological history of changes, newest first
+
+There are no `log.md` files: git's commit history is the change record (see the
+operating contract's reserved-filenames section).

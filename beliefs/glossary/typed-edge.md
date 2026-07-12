@@ -6,11 +6,11 @@ description: A machine-traversable, id-based relationship declared in a document
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, identity, edges]
-timestamp: 2026-07-10
+timestamp: 2026-07-11
 ---
 
 # typed edge
 
 A machine-traversable, id-based relationship declared in a document's structured metadata (like `verified_by`), as opposed to an untyped prose link. The governing principle: type an edge only when a machine must traverse it; otherwise prose carries the semantics.
 
-*Seen in:* [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md)
+*Seen in:* [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md), [2026-07-11 doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md)

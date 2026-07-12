@@ -15,6 +15,8 @@ the backbone that keeps the brain consistent as it grows.
 
 The operator is the human. The agent files and organizes;
 the operator ratifies changes to the *shape* of the brain.
+The contract binds agents, not the operator: its rules are obligations on agent
+behavior, which the operator authors and ratifies but is never subject to.
 
 > **This file is a generated artifact.** It is compiled from
 > [`meta/preamble.md`](/meta/preamble.md) and the `type: policy` documents under
@@ -60,7 +62,15 @@ Reserved filenames (any directory level):
 - **`index.md`** — directory listing for progressive disclosure. Markdown sections
   with bulleted links + one-line descriptions. **No frontmatter** — except the
   bundle-root `index.md`, which carries only `okf_version: "0.1"`.
-- **`log.md`** — chronological change history, ISO 8601 date headings, newest first.
+- **`log.md`** — reserved by OKF (chronological change history; tolerate one when
+  consuming a foreign bundle), but **this bundle does not keep hand-written logs**:
+  the true-merge commit graph is the single provenance layer (see the
+  merge-strategy policy and the
+  [retire-hand-kept-logs plan](/meta/plans/retire-hand-kept-logs.md)). Do not
+  create `log.md` files or append log entries; the change narrative belongs in
+  commit messages. (The generated `## Thread excerpts — route-tagged log`
+  sections inside concepts are unrelated — they are compiled, CI-verified
+  artifacts and stay.)
 
 _Source: [`meta/policy/reserved-filenames.md`](/meta/policy/reserved-filenames.md)_
 
@@ -98,8 +108,8 @@ The taxonomy-evolution protocol (important):
   a change to the *shape* of the brain → the agent **proposes it and waits for the
   operator to ratify** before creating it. Explain the proposed name, where it
   sits, and why the existing tree doesn't fit.
-- On creation, add each new directory's `index.md`, record it in the nearest
-  `log.md`, and list new top-level dirs in the root `index.md`.
+- On creation, add each new directory's `index.md` and list new top-level dirs
+  in the root `index.md`.
 
 _Source: [`meta/policy/taxonomy-evolution-protocol.md`](/meta/policy/taxonomy-evolution-protocol.md)_
 
@@ -116,7 +126,7 @@ _Source: [`meta/policy/distill-dont-dump.md`](/meta/policy/distill-dont-dump.md)
 
 **Update in place; don't fragment.** Before creating a file, **search the bundle**
 for an existing concept on the same subject. If one exists, update it (merge new
-info, bump `timestamp`, add a `log.md` entry) instead of creating a near-duplicate.
+info, bump `timestamp`) instead of creating a near-duplicate.
 
 _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
 
@@ -125,7 +135,7 @@ _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
   time-ordered entries (journal/log-style notes); topical concepts stay purely
   topical.
 - **Cross-link** related concepts with markdown links. Prefer bundle-absolute paths
-  (begin with `/`, e.g. `[OKF](/references/open-knowledge-format.md)`). Links are
+  (begin with `/`, e.g. `[OKF](/knowledge/knowledge-management/open-knowledge-format.md)`). Links are
   untyped edges; the prose carries the meaning. Broken links are tolerated but avoid
   creating them.
 
@@ -142,7 +152,9 @@ _Source: [`meta/policy/filenames-and-cross-linking.md`](/meta/policy/filenames-a
 _Source: [`meta/policy/link-processing.md`](/meta/policy/link-processing.md)_
 
 **Maintain the reserved files**: after filing, update the directory's `index.md`
-(create it if missing) and append a dated entry to `log.md`.
+(create it if missing). The change itself is recorded by the commit — write the
+commit message at the semantic level ("intake X", "ratify Y"); there is no
+`log.md` to append to (see the reserved-filenames policy).
 
 _Source: [`meta/policy/maintain-reserved-files.md`](/meta/policy/maintain-reserved-files.md)_
 
@@ -170,10 +182,29 @@ the session ends.
   · `done` · `superseded`). Done and superseded plans are kept, not deleted — the
   decision history is the point.
 - **Reserved files.** After adding or updating a plan, update
-  [`meta/plans/index.md`](/meta/plans/index.md) and append a dated entry to the
-  nearest `log.md`, same as any filed document.
+  [`meta/plans/index.md`](/meta/plans/index.md), same as any filed document.
 
 _Source: [`meta/policy/persist-plans.md`](/meta/policy/persist-plans.md)_
+
+**Merge with a true merge commit; never squash or rebase.** The commit graph is
+a **provenance layer**, not an implementation detail: every commit carries the
+session trailer linking it to the agent session that produced it, durable docs
+(plans, thread docs, logs) cite commits by SHA, and `git blame` is the answer to
+"which session changed this and why". A squash-merge lands a brand-new commit
+and abandons the originals — severing commit → session traceability and turning
+cited SHAs into garbage once the branch is deleted; a rebase-merge rewrites them.
+A true merge wires the branch's real history into `main`'s ancestry, so the
+cited SHAs stay reachable forever and the branch is safe to delete (see
+[why a true merge keeps cited commits reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md)).
+
+- Agents merging a PR (UI, MCP tools, or API) must use the **merge** method —
+  never `squash` or `rebase`, even when they are enabled in repo settings.
+- Never rewrite shared history; the usual noise argument for squashing does not
+  apply here — agent commits are already atomic and deliberately messaged.
+- For a one-line-per-PR reading of `main`, use `git log --first-parent` instead
+  of flattening history at the merge boundary.
+
+_Source: [`meta/policy/merge-strategy.md`](/meta/policy/merge-strategy.md)_
 
 ---
 
@@ -221,6 +252,19 @@ Seed vocabulary:
   `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
   `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
   (lives under `meta/analysis/`).
+- `todo` — a lightweight actionable task item: a single thing to be done, tracked
+  until it is finished. Carries a `status` (`open`/`done`/`cancelled`). Distinct from
+  an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
+  record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
+  complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
+- `elaboration` — a persisted expansion of a technical **phrase or short passage**:
+  the quoted target, definitions of the terms it uses, and a less technical overview
+  of the concepts and actions it describes — produced by `/elaborate` and back-linked
+  to its originating session via a `thread` frontmatter field once that session is
+  captured (`/create-pull-request` sets it). Distinct from a glossary `concept` (one
+  *term*, source-independent) and a `tutorial` (long-form, standalone subject) — an
+  elaboration unpacks *one specific mouthful in context* (lives under
+  `meta/elaborations/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
 
@@ -253,7 +297,9 @@ _Source: [`meta/policy/stable-identity.md`](/meta/policy/stable-identity.md)_
   link — anything carrying a `resource` — is a **capture**, not a statement:
   verification is **not possible** for it, so a capture never carries `verified`
   (omit the field). `mix brain.verify` rejects `verified: true` on any concept that
-  has a `resource`.
+  has a `resource`, and rejects a `verified` field (either value) on any type
+  outside `claim`/`note`/`concept` — the statement-type restriction is
+  machine-enforced, not editorial.
 - **`verified: true` requires evidence, never its own link.** A verified statement
   must carry a non-empty `verified_by` pointing at the captures (and/or other
   statements) that support it. Storing a `resource` on the statement itself proves
@@ -306,6 +352,15 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   paper/article/spec: a plain-language summary, a glossary of its key technical terms,
   then an integrated technical summary reusing those terms. See
   `.claude/skills/summarize-technical/SKILL.md`.
+- **`/elaborate`** — unpack a technical **phrase or short passage** (from the
+  conversation, a doc, a commit message, or pasted text): define the terms it uses and
+  give a less technical overview of the concepts and actions it describes, delivered
+  in chat **and persisted** as a `type: elaboration` doc under
+  [`meta/elaborations/`](/meta/elaborations/index.md) (governance namespace, no `sb:`
+  id; link glossary terms that already exist; hand off to `/add-to-glossary` to
+  persist new ones per-term). The doc's `thread` back-link to its originating session
+  is set later by `/create-pull-request`, never by this skill. The phrase-scale
+  sibling of `/summarize-technical`. See `.claude/skills/elaborate/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the glossary — **one concept file per term** under
@@ -316,15 +371,25 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
 - **`/news`** — generate today's **inbox**: a daily candidate feed of news, articles,
   papers, and resources matched against the brain's taxonomy, grouped by category and
-  reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). Writes to
-  the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
-  file one into the brain. See `.claude/skills/news/SKILL.md`.
+  reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) — then
+  **auto-intake the featured items** into the bundle via `/intake`. The digest is the
+  dated record in the non-bundle `inbox/` namespace (no `sb:` ids); its featured items
+  graduate into filed concepts in the same run, bounded to the known tree (items needing
+  a new top-level domain are deferred for operator ratification) and tagged `auto-intake`
+  for the operator's post-intake editorial pass. See `.claude/skills/news/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
-  over the captured thread doc, then commit the current working changes, push the
-  branch, and open a pull request — so the frozen thread doc and the glossary updates
-  it feeds ship in the same PR. Invoking the skill **is** the authorization to open the PR
-  (no separate confirmation gate); PR-template detection and the GitHub MCP tools
-  handle the rest. See `.claude/skills/create-pull-request/SKILL.md`.
+  over the captured thread doc, **back-link this session's elaboration docs** (set
+  `thread:` in each `meta/elaborations/` doc the session created or updated, pointing
+  at the just-captured thread), then commit the current working changes, push the
+  branch, and open a pull request — so the frozen thread doc, the glossary updates it
+  feeds, and the elaboration trace all ship in the same PR. Invoking the skill **is**
+  the authorization to open the PR (no separate confirmation gate); PR-template
+  detection and the GitHub MCP tools handle the rest. See
+  `.claude/skills/create-pull-request/SKILL.md`.
+- **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
+  a subcommand argument: `/todo create <title>` files a new open todo (and maintains
+  the index); `/todo list` shows the todos grouped by `status`. See
+  `.claude/skills/todo/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 
@@ -355,11 +420,28 @@ record so it can be resumed from the record instead of from memory.
   `len < 300 and followed_by_tool`. "Distilled" here means the *noise* is dropped,
   not that the kept text is condensed; `/capture` strips noise, not substance, and
   is the sole session-persistence skill.
+- **Ask the operator in the chat, not the dialog box.** Pose every question to
+  the operator as ordinary `## Assistant` chat text — never through the
+  dialog-box question UI (`AskUserQuestion`). `/capture` renders only the
+  delivered message stream, so a question raised in the dialog box, and the
+  answer the operator selects in it, never enter that stream: both are lost from
+  the thread doc and every downstream artifact routed from it. Keeping the
+  exchange inline is what lets capture retain the question and its answer
+  verbatim. (The dialog UI has also proven flaky in these sessions — a second
+  reason to keep questions in the chat.)
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `sb:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
   landed), the **routing ledger** (`## Routing`), then the `## User`/`##
   Assistant` render body. Route tags are applied last, over the now-frozen body.
+- **The thread records its PR (`pr:`), not its branch.** Once the session's PR
+  is opened, its number is stamped into the thread's frontmatter as `pr: <N>`
+  (set by `/create-pull-request`, not `/capture` — the number doesn't exist
+  until the PR is opened). The **PR is the durable anchor**: session branches
+  are ephemeral and deleted after merge (per the git-branch-deletion policy),
+  and the pre-policy squash era left the original branch commits unreachable
+  entirely — so the PR number is the only stable link from a thread back to how
+  it landed. The branch name is deliberately **not** recorded.
 - **Freeze then tag.** Because capture runs once at close, the body is frozen
   when written; tagging and ledger upkeep are one finalization motion over that
   frozen body, not a per-turn rewrite.
@@ -441,3 +523,24 @@ matter is unresolved and freezes acceptance when the matter resolves — per
 matter, not on archival.
 
 _Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_
+
+---
+
+## 9. Git workflow
+
+- **Session branches are ephemeral; the default branch is durable.** Work enters
+  the repo on a short-lived head branch (e.g. `claude/<slug>`) and lands in the
+  default branch via a pull request. The branch is scaffolding, not history — the
+  merge is the record.
+- **Delete the head branch when its PR merges.** A merged branch is fully contained
+  in the default branch's history, so deleting it loses nothing (its commits stay
+  reachable through the merge, and GitHub can restore the branch). Deletion is part
+  of the merge motion: prefer the repository's **"Automatically delete head
+  branches"** setting; failing that, delete the branch manually right after
+  merging. A merged branch discovered lingering later is deleted on sight.
+- **Never delete without the operator:** the default branch (never), and any branch
+  carrying **unmerged** commits — including branches whose PR was closed without
+  merging. Those hold work with no other home; propose deletion and wait for the
+  operator to ratify, as with any destructive change.
+
+_Source: [`meta/policy/git-branch-deletion.md`](/meta/policy/git-branch-deletion.md)_

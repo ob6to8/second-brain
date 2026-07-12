@@ -67,6 +67,51 @@ How the pieces landed:
 
 One governance note: `glossary/` is a new top-level directory, which the taxonomy protocol normally has me propose rather than create — your message was the proposal and direction here, and the whole shape ships in PR #35 for you to ratify or push back on in review. From here on, just ask for "glossary links" in any answer and I'll cite terms inline; anything I define along the way can be `/add-to-glossary`'d into its own linkable file.
 
+### 2026-07-11-doctrine-vs-policy-and-glossary-cross-linking (2026-07-11)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
+
+**Cross-linking similarity between glossary terms**
+
+**Yes — two mechanisms exist today, and I used both in the new entry:**
+
+1. **Inline markdown links between term files.** Since every term is its own concept file, any entry can link related terms by bundle-absolute path — the new `policy (type)` entry links to `plan-type`, `issue-type`, `methodology-type`, and `operating-contract` right in its "distinct from…" sentence. These are untyped edges where the prose carries the meaning (per the cross-linking policy), and they render as clickable links on GitHub and the Pages site. Several entries already do this organically (e.g. `skill.md` → `session-capture.md`).
+2. **Shared frontmatter tags.** Entries carry tags like `[glossary, types, governance]`, so related clusters are already greppable/queryable (`policy-type`, `plan-type`, `issue-type` all share `types, governance`).
+
+**What doesn't exist yet:** a *structured* similarity edge — e.g. a `related:` frontmatter field holding `sb:` ids, analogous to `verified_by`, that tooling could traverse to render a "See also" block per entry. That would be a new typed edge, which under the stable-identity policy is a change to the brain's shape — so I'm proposing it rather than building it. If you like it, the design would be: `related: [sb:bf0524, sb:e9a82b]` on each term file, symmetric-checked by `mix brain.verify`, rendered as a *See also:* line. A lighter alternative is a plain *See also:* prose line convention added to the `/add-to-glossary` skill — no tooling change at all. Say the word on either and I'll build it.
+
+---
+
+**[`sb:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
+
+**My recommendation: *See also* — not `related:`, not neither**
+
+**A prose *See also:* line, added as a convention in the `/add-to-glossary` skill, used sparingly.** Reasoning:
+
+**Against `related:` (the typed edge):** the brain's own identity policy reserves typed frontmatter edges for relations tooling actually traverses with semantics — `verified_by` earns that because verification is machine-checked and evidential. Term similarity is editorial and fuzzy: there's no oracle for whether `embeddings` is "related enough" to `recall@k`, so a verifier could only check that ids resolve and edges are symmetric — enforcement overhead without enforcing the thing that matters. It would also be the first typed edge added for human navigation rather than machine meaning, which dilutes the distinction the contract draws between typed edges (ids, tooling) and prose links (untyped, meaning in the prose).
+
+**Against neither:** inline links inside definitions are the *best* form of cross-linking — "distinct from a [plan](/glossary/plan-type.md)…" tells you *why* they're related — but they only work when the relationship fits a natural sentence. Genuinely adjacent clusters (`recall` / `recall probe` / `recall@k`, or `doctrine` / `policy` / `operating contract`) sometimes have members with no prose-worthy sentence connecting them, and those associations currently just get dropped.
+
+**So: *See also*, with a preference order.** The convention I'd codify in the skill: weave a link into the definition prose when you can state the relationship (first choice); fall back to a `*See also:*` line after the *Seen in:* line only for real adjacency that prose can't carry; never list more than 3–4 terms. Zero tooling change, follows the existing cross-linking policy (untyped markdown links, broken links tolerated), renders fine on GitHub and the Pages site, and it can always be upgraded to a `related:` typed edge later if tooling ever wants to traverse it — the reverse migration is much more annoying.
+
+Adding that convention is a one-paragraph edit to the `/add-to-glossary` skill (a shape change, so this reply is the proposal). Say the word and I'll codify it and push to the same branch.
+
+---
+
+**[`sb:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
+
+Done — the convention is codified and pushed (`1f13ffc`, all verifiers and 78 tests green).
+
+What landed:
+
+- **The `/add-to-glossary` skill** now carries the cross-linking rule in its merge step: link related terms **in the definition prose** whenever the relationship can be stated ("distinct from a [plan](…)…"); fall back to a `*See also:*` line — placed after *Seen in:*, capped at 3–4 term links — only for genuine adjacency that no sentence connects. These stay ordinary untyped prose links per the cross-linking policy; deliberately not a `related:` frontmatter field, which stays reserved for machine-traversed edges like `verified_by`.
+- **First application, on the recall cluster:** `recall probe` and `recall@k` already named each other in prose, so those mentions became inline links; `recall` got the glossary's first *See also:* line (recall probe, recall@k, semantic search) plus an inline link to `deduplication`, which its prose already referenced.
+- The root `log.md` records the ratified convention, and the touched entries' timestamps are bumped.
+
+The branch now holds three commits: the `policy (type)` entry, the `doctrine` entry, and this convention. Say the word if you want a PR opened (`/create-pull-request` will also capture this session and glossary it in the same PR).
+
 ### 2026-07-11-glossary-backfill-from-thread-docs (2026-07-11)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
@@ -79,3 +124,25 @@ One governance note: `glossary/` is a new top-level directory, which the taxonom
 - **46 new term files** across scheduling/automation (Routine, cron expression, fresh-session-per-fire, approval gate), the news inbox (query profile, candidate feed, digest), flows & testing (flow/touch-sequence, scenario test, deterministic spine, golden test, ExUnit, property-based testing), the site generator (static-site generator, dependency-free, markdown renderer, GitHub Pages, deploy gating, HTML escaping, XSS, GFM), retrieval (recall, dedup, recall probe, recall@k, vector database, embeddings, semantic search, ANN), Composable Beliefs/epistemics (typed edge, epistemic overlay, supersession, proto-belief document, route-tag sink), and skills (namespacing, delegation, plugin).
 - **15 pointer entries** that defer to the canonical policy/skill docs (routing ledger, session capture, provenance, verification grounding, reason tags, featuring, the `issue`/`analysis`/`methodology`/`plan`/`tutorial` types, etc.) instead of duplicating definitions.
 - **6 existing entries** got *Seen in:* citations appended for the threads that also used them.
+
+### 2026-07-12-code-review-flows-hardening-and-elaborations (2026-07-12)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:0b648f`]**
+
+Done — three terms filed, all gates green, pushed as `9178648`. The glossary went 68 → 71: **materialize** (`sb:15fe73`) — defined source-independently (write derived content to disk vs. recompute on demand, paired with a freshness check), noting `CLAUDE.md` and the registry as materializations in the same sense; **excerpt log (route-tagged log)** (`sb:3101ef`) — definition plus a pointer to the route-tagging policy that canonically defines it, per the pointer-entry rule; and **orphan block** (`sb:3ee2d2`) — the general idea (generated output whose source vanished) grounded in this bundle's specific case, citing the issue and the hardening plan. Each carries its minted `sb:` id, *Seen in:* citations, and cross-links to the already-filed `route tag` / `sink` terms. The index stayed alphabetical, the registry was recompiled, and — per link-don't-duplicate — the elaboration doc's three inline definitions now link their new canonical homes rather than standing alone.
+
+---
+
+**[`sb:0b648f`]**
+
+**Glossary report** (93 → 101 terms): *Added (7):* **feeding pairs** — the (thread, sink) pairs the current tags induce; the domain of materialization in both directions; **stale block** — a block diverged from its re-derivation (source *changed*), defined against **orphan block** (source *vanished*); **red test** — proves the detector fires, not just that good input passes; **pipe table** — GFM's `|` table syntax, with the scoping lesson attached; **spurious (warning)** — the false positive that teaches readers to ignore the channel; **section terminator** — where a parsed section ends; reader and rewriter must agree; **CRLF** — normalize on read or honor the file's ending on write. *Pointer (1):* **ratification** — one-line gloss deferring to the taxonomy-evolution protocol and persist-plans policies that canonically define it. *Merged (2):* **sink** and **materialize** already existed — each gained the two-directional-projection nuance from this session (an unfed sink loses its section) plus a citation, rather than a duplicate file.
+
+### 2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings (2026-07-12)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:0b648f`]**  (co-feeds: `meta/tutorials/the-session-init-digest.md lib/second_brain/session_init.ex`)
+
+Glossary done — 7 terms added, `deduplication` extended. Now the answer to your visibility question implies a concrete gap worth closing before the PR: the warnings currently live in terminal output you never see. The fix is to surface them in the session-init digest, which *is* injected into every session you open. Implementing that now.

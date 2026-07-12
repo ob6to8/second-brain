@@ -81,6 +81,13 @@ Write each definition from understanding, not by transcription:
   of citations — bundle-absolute links for threads and filed concepts, plain
   URLs for external papers/posts (a citation is not a parked bookmark; the
   link-processing policy governs filing URLs as *concepts*, not citing them).
+- **Cross-link related terms, prose first.** When the relationship between two
+  terms can be *stated*, weave the link into the definition prose itself
+  ("distinct from a [plan](/beliefs/glossary/plan-type.md)…") — the prose carries the
+  meaning. Only when terms are genuinely adjacent but no defining sentence
+  connects them, add a `*See also:*` line after *Seen in:* with at most 3–4
+  bundle-absolute term links. These are ordinary untyped prose links per the
+  cross-linking policy — never a frontmatter field.
 - **Existing file, new source** → reconcile: extend the definition only if the
   new source genuinely adds nuance (or a new sense); always append the citation;
   bump that file's `timestamp`. Never delete or rewrite-from-scratch a file the
@@ -91,9 +98,8 @@ Write each definition from understanding, not by transcription:
 ### 5. Maintain and verify
 - Mint ids for the new term files and refresh the registry:
   `mix brain.id && mix brain.registry`.
-- Append a dated entry to the root `log.md` (which source was scanned, which
-  terms were added/updated).
-- Run `mix brain.verify`.
+- Run `mix brain.verify`. (No log entry — the commit message records which
+  source was scanned and which terms were added/updated.)
 
 ### 6. Report
 List the terms added, the terms merged into existing entries, and the pointer

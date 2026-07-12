@@ -5,6 +5,7 @@ description: Answered whether repo-specific skills are namespaced (no — bare, 
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-10; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, skills, intake, pull-request, capture, namespacing]
 timestamp: 2026-07-10
+pr: 32
 ---
 
 # 2026-07-10-create-pull-request-skill-and-intake-delegation

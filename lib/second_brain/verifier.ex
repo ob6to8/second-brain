@@ -16,9 +16,14 @@ defmodule SecondBrain.Verifier do
     5. `verified: true` requires evidence: a non-empty `verified_by`. A statement
        is never "grounded" by a `resource` of its own — storing a link proves
        nothing.
+    6. The `verified` field (either value) may only appear on statement types
+       (`claim`/`note`/`concept`) — captures, sources, and every other type
+       omit it entirely.
   """
 
   alias SecondBrain.Registry
+
+  @statement_types ~w(claim note concept)
 
   @spec run(String.t()) :: :ok | {:error, [String.t()]}
   def run(root \\ File.cwd!()) do
@@ -67,6 +72,16 @@ defmodule SecondBrain.Verifier do
   # A verified statement must be backed by evidence, never by its own link.
   defp grounding_errors(%{verified: true, verified_by: [], path: path}) do
     ["#{path}: verified: true but no evidence (needs a non-empty `verified_by`)"]
+  end
+
+  # Verification is only for agent-authored statements: any `verified` value on
+  # a non-statement type is an error (the field is omitted, not set to false).
+  defp grounding_errors(%{verified: v, type: type, path: path})
+       when is_boolean(v) and type not in @statement_types do
+    [
+      "#{path}: `verified` on type #{inspect(type)} — verification is only for " <>
+        "agent statements (claim/note/concept); omit the field"
+    ]
   end
 
   defp grounding_errors(_), do: []

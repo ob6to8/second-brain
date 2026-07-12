@@ -5,6 +5,7 @@ description: Built a parallel mix brain.render site generator, then — on findi
 provenance: "Claude Code session (Claude Fable 5, then Claude Opus 4.8 after a mid-session model switch), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, github-pages, ci, site-generator, markdown, tooling]
 timestamp: 2026-07-09
+pr: 28
 ---
 
 # 2026-07-09-live-render-appraisal-and-pages-hardening

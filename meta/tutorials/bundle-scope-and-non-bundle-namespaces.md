@@ -70,7 +70,7 @@ is governed by that single `@excluded_dirs` list.
 
 `inbox/` digests are, by design, **candidates, not concepts**: dated feed pages
 with `type: reference` and *no* `sb:` id (see the [`/news`](/.claude/skills/news/SKILL.md)
-skill and the [route/inbox log](/inbox/log.md)). But `inbox` is a *new top-level
+skill). But `inbox` is a *new top-level
 directory*, and until it is named in `@excluded_dirs` the glob happily picks up
 `inbox/2026-07-09.md` as a bundle concept. The verifier then fires **rule 2** on
 it:

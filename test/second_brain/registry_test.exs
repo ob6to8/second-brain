@@ -105,5 +105,17 @@ defmodule SecondBrain.RegistryTest do
       assert joined =~ "verified-capture.md: verified: true but stores a link"
       assert joined =~ "ungrounded.md: verified: true but no evidence"
     end
+
+    test "flags `verified` (either value) on a non-statement type", %{tmp_dir: dir} do
+      write_concept(dir, "how-to.md", type: "methodology", id: "sb:abc123", verified: false)
+      write_concept(dir, "captured.md", type: "reference", id: "sb:def456", verified: false)
+
+      assert {:error, errors} = Verifier.run(dir)
+      joined = Enum.join(errors, "\n")
+
+      assert joined =~ "how-to.md: `verified` on type \"methodology\""
+      assert joined =~ "captured.md: `verified` on type \"reference\""
+      assert joined =~ "only for agent statements"
+    end
   end
 end

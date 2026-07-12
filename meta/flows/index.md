@@ -15,10 +15,29 @@ One flow doc per flow. This genre **supersedes** the old
 `meta/session-workflow.md` guide and the `meta/verification-flows/` checklist,
 folding both in.
 
+**Lineage.** A flow doc records the arc that produced it — the originating
+`analysis` (a problem or idea identified against evidence), the `plan` that designed
+the change, the **thread** (the captured session that did the work), and the PR that
+merged it — so the whole path *problem-identified → designed → built → running
+system* is legible, and the upstream docs gain the forward pointer they otherwise
+lack (the citations run backward only). The **canonical source is a `lineage:`
+frontmatter block**; a one-line prose blockquote at the top of the doc renders it for
+a reader, and a cross-flow **flowchart index** — [flow lineage](/meta/flows/lineage.md) — is
+*derived* from every flow's block by `mix brain.lineage` (generated artifact,
+`--check`-gated in CI like `/CLAUDE.md` and [`meta/registry.md`](/meta/registry.md)). The chain is **heterogeneous**: omit hops a
+flow doesn't have (some flows emerged directly as a plan, with no upstream analysis;
+the genre itself came from the [flows-genre plan](/meta/plans/flows-genre-and-scenario-testing.md)
+with none). Governance docs carry no `sb:` id, so lineage fields reference them by
+path; `pr` is a number. The reference instance is the
+[dedup recall probe flow](/meta/flows/dedup-recall-probe.md) (full `analysis → plan →
+thread → PR → flow` chain); the encoding, the derived flowchart, and the retrofit of
+the remaining flow docs are specified in the
+[flow-lineage plan](/meta/plans/flow-lineage-index.md).
+
 Distinct from the other meta genres: `policy` is the standing rules (compiled
 into `/CLAUDE.md`); `tutorials` is the *why* behind a piece of tooling, read
-start to finish; `specs` is the plan for a change not yet fully built; `threads`
-is verbatim session archives. A flow doc is none of these — it narrates how a
+start to finish; `plans` is the design/decision record for a change not yet
+fully built; `threads` is verbatim session archives. A flow doc is none of these — it narrates how a
 *whole action* runs end to end, naming the files and pointing at the scenario
 that proves it. The genre itself was designed in
 [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md).
@@ -35,3 +54,34 @@ that proves it. The genre itself was designed in
   taxonomy → mint id → compile registry → verify: the touch-sequence, the
   judgment/spine split, actor boundaries, the identity gate suite, and the
   scenario test that pins the spine.
+- [Render-contract — compile the operating contract from its policy sources](/meta/flows/render-contract.md) —
+  driving a rule change through edit-the-policy → `mix brain.contract` →
+  `--check` drift gate → one commit for source + artifact: the touch-sequence
+  (including the sections-are-code step), actor boundaries, and the scenario
+  test that pins the spine.
+- [Site build & Pages deploy](/meta/flows/site-build-and-deploy.md) — from a
+  push on `main` to the live GitHub Pages site: the four integrity gates, then
+  `mix brain.site` renders every page (metadata panels, evidence edges +
+  backlinks, search index) and the workflow deploys it. Fully unattended; no
+  skill involved.
+- [News — generate the daily inbox of candidates](/meta/flows/news-inbox.md) —
+  `/news` derives a query profile from the taxonomy, searches, dedups twice,
+  reason-tags, and writes a dated digest into the non-bundle `inbox/`
+  namespace; hand-off to `/intake` crosses a candidate into the brain. Almost
+  all judgment layer — the structural guarantee is the namespace boundary.
+- [Add to glossary — accrete per-term definition concepts](/meta/flows/add-to-glossary.md) —
+  `/add-to-glossary` extracts a source's technical terms, dedups
+  (merge/pointer/new), and files one concept per term under `/beliefs/glossary/`,
+  riding the same id → registry → verify spine as intake (one pin, shared
+  scenario).
+- [Create pull request — capture, glossary, commit, push, open](/meta/flows/create-pull-request.md) —
+  the composition flow that ships a session: run capture in full, glossary its
+  thread doc, back-link this session's `meta/elaborations/` docs to the
+  captured thread (`thread:` frontmatter), then commit/push/open the PR —
+  invocation is the authorization; ordering (capture before commit) keeps the
+  record in the same PR as the change.
+- [Dedup recall probe — measuring and maintaining intake dedup recall](/meta/flows/dedup-recall-probe.md) —
+  the dedup-recall eval loop: how `mix brain.dedup_probe` scores intake dedup
+  against an id-keyed gold set, how the gold set and baseline grow automatically
+  at intake, and — foregrounded — **how the operator audits, explores, and
+  re-evaluates** a system that otherwise runs silently in the background.

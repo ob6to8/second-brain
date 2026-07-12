@@ -6,11 +6,11 @@ description: The gated criteria by which `/news` decides which candidates make t
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, news, inbox]
-timestamp: 2026-07-10
+timestamp: 2026-07-11
 ---
 
 # featuring
 
 The gated decision by which `/news` decides which candidates make the cut — relevance, then novelty, then a [reason tag](/beliefs/glossary/reason-tags.md) firing, then source quality, under a quality-over-volume cap. Documented in the [`/news` skill](/.claude/skills/news/SKILL.md).
 
-*Seen in:* [2026-07-09 news-issue thread](/meta/threads/2026-07-09-news-routine-issue-and-featuring.md)
+*Seen in:* [2026-07-09 news-issue thread](/meta/threads/2026-07-09-news-routine-issue-and-featuring.md), [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md)

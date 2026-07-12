@@ -31,12 +31,26 @@ they want to capture.
 
 For **each** concept:
 
-### 3. Dedup — search before writing
-- Search the bundle (Grep/Glob over `*.md`, excluding `deprecated/`) for an existing
-  concept on the same subject (match on title, slug, `resource` URL, key terms).
+### 3. Dedup — synonym-expanded search before writing
+Vocabulary mismatch, not typos, is what makes dedup miss: a note titled "poisoning"
+is invisible to a search for "pollution" (measured — run `mix brain.dedup_probe`).
+So don't search only the obvious title words.
+- **Generate 3–5 alternate phrasings** of the concept first: title terms **plus**
+  synonyms, jargon/plain-language variants, acronyms and their expansions, and the
+  words someone who *didn't* write the note would use (e.g. "context pollution" ↔
+  "context poisoning"; "stale branch" ↔ "branch doesn't auto-advance on fetch";
+  "codebase graph" ↔ "code knowledge graph").
+- Search the bundle (Grep/Glob over `*.md`, excluding `deprecated/`) for **each**
+  phrasing — title, slug, `resource` URL, and every alternate term — not just one query.
 - **If found → update in place**: merge the new information, refresh/extend the body,
-  bump `timestamp`, and note the update in `log.md`. Do **not** create a near-duplicate.
+  bump `timestamp`. Do **not** create a near-duplicate.
 - **If not found → create new** (continue below).
+
+> This is the tier-1 recall fix from the
+> [vector-DB recall analysis](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md):
+> the model in the loop *is* the semantic-search layer, so expanding the query by hand
+> recovers most misses with no new dependency. The gain is quantified offline by the
+> `--expanded` mode of the [dedup probe](/meta/evals/dedup-probe.md).
 
 ### 4. Distill
 - Write a clean concept, not a raw dump:
@@ -84,16 +98,34 @@ For **each** concept:
 ### 7. Maintain reserved files
 - Update the directory's `index.md` (create it if missing): add a bulleted link to
   the new/updated concept with its one-line description.
-- Append a dated entry to `log.md` (nearest one; create/append the root `log.md` if
-  no closer one exists), newest-first under an ISO 8601 date heading.
 - If a new top-level directory was created, add it to the bundle-root `index.md`.
+- No log entries — the commit message records what was filed and why.
 
-### 8. Report
+### 8. Grow the dedup recall gold set (automatic — no operator action)
+This runs on **every** intake; the operator does nothing. See the gold doc's
+[Upkeep section](/meta/evals/dedup-probe.md) for the rationale.
+- **Harvest a gold row** — if this intake carried a **natural phrasing** for the
+  material (the operator's own words: their request text, a subject line, how they
+  described it), append one row to the `## Gold set` table in
+  [`/meta/evals/dedup-probe.md`](/meta/evals/dedup-probe.md):
+  `| <that phrasing> | <filed/merged concept's sb: id> | target | <2–3 synonym variants> | harvested at intake YYYY-MM-DD |`.
+  Use the operator's **actual** phrasing as the query — never a synthetic paraphrase.
+  If the intake was a bare URL/paste with **no natural phrasing to harvest**, skip
+  this silently; don't invent a query.
+- **Refresh the baseline** — run `mix brain.dedup_probe --update-baseline` (regenerates
+  the committed `## Baseline`; the trend lives in git history).
+- **Escalate only on regression** — if that run's **plain** recall dropped below the
+  previous baseline, flag it in your report (step 9). A sustained drop is the trigger
+  to adopt tier-2 embedding dedup — the one call that's the operator's. Otherwise say
+  nothing about it. Commit the gold-row + baseline change together with the concept.
+
+### 9. Report
 Summarize concisely:
 - Each concept written or updated, with its path and `type`.
 - Any links fetched (and which were summarized vs. captured in full).
 - **Anything awaiting operator ratification** (a proposed new directory or type) —
   surface this clearly and don't create it until approved.
+- **A dedup-recall regression**, if step 8 flagged one (else omit).
 
 ## Guardrails
 - Distill, don't dump. Update in place, don't fragment.

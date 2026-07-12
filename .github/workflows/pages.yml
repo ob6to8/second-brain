@@ -29,10 +29,11 @@ jobs:
           otp-version: "25"
           elixir-version: "1.14"
 
-      # Gate the deploy on the same integrity checks CI runs, so the live site
-      # is only ever a render of a valid, verified bundle. pages.yml is a
-      # separate workflow from ci.yml and cannot depend on its jobs, so the
-      # checks are repeated here rather than referenced.
+      # Gate the deploy on the same bundle-integrity checks CI runs (tests and
+      # the format check stay CI-only), so the live site is only ever a render
+      # of a valid, verified bundle. pages.yml is a separate workflow from
+      # ci.yml and cannot depend on its jobs, so the checks are repeated here
+      # rather than referenced.
       - name: CLAUDE.md is compiled and current
         run: mix brain.contract --check
 

@@ -36,3 +36,8 @@ sources from the 2022–2026 lexicon, filed as `reference` captures.
 - [Own your control flow — Factor 8 of 12-Factor Agents (HumanLayer)](/knowledge/SWE/agentic-coding/agentic-loop/own-your-control-flow-12-factor.md) — own the loop so you can pause, resume, and vet. `sb:b6353e`
 - [Ralph — a coding agent in an infinite bash loop (Geoffrey Huntley)](/knowledge/SWE/agentic-coding/agentic-loop/ralph-infinite-bash-loop-coding-agent.md) — `while :; do cat PROMPT.md | claude-code ; done`. `sb:276c61`
 - [Effective context engineering for AI agents (Anthropic)](/knowledge/SWE/agentic-coding/agentic-loop/effective-context-engineering-for-agents.md) — curating the context a loop accumulates. `sb:c0961a`
+
+## Reliability & long-horizon
+
+- [Agent task time horizons — METR's "Moore's Law for AI agents"](/knowledge/SWE/agentic-coding/agentic-loop/agent-task-time-horizons.md) — the 50% time horizon (task length an agent completes half the time) doubles ~every 7 months, ~14h by early 2026; the 50%/80% gap is reliability decay. `sb:c29a22` _(reference)_
+- [PARC — a self-reflective agent for long-horizon autonomous execution](/knowledge/SWE/agentic-coding/agentic-loop/parc-self-reflective-long-horizon-agent.md) — a hierarchical agent with an independent self-assessment layer that catches strategic errors, sustaining multi-day autonomous work. `sb:f02167` _(reference)_
