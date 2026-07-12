@@ -39,7 +39,7 @@ the brain's operating loop *already practices* the role (agents file/organize/
 verify/build under a compiled, CI-checked contract; the operator ratifies shape,
 authors binding policies, evaluates gated output, triages plans/issues/strands),
 its distinctive contribution is externalized judgment-context across delegated
-concurrent matters, and the gaps rank as broken unattended delegation (the /news
+concurrent matters, and the gaps rank as broken unattended delegation (the /research
 Routine), unmeasured semantic quality (dedup recall), serial-only session
 coordination (index/registry collisions), no standing work-in-flight view, and
 the missing intention anchor now closed by the doctrine artifact. Two commits on
@@ -95,7 +95,7 @@ The clarifying-question tool failed to reach you, so I'll lay out the recommenda
 
 - **The brain already *practices* the role.** Its operating loop *is* the quote's job description, run on itself: you ratify shape (architecture design), author the policies that bind agents (agent coordination), review PRs against CI gates (quality evaluation), and triage plans/issues/strands (strategic decomposition). Agents file and organize; you direct.
 - **Its distinctive contribution is the orchestrator's binding constraint** — judgment-context across many delegated, concurrent matters: frozen threads, routing ledgers, stable ids, the session-init digest.
-- **Ranked gaps:** (1) the one unattended delegation loop is broken (the /news Routine lands nothing); (2) semantic quality is unmeasured (dedup recall); (3) coordination is serial — parallel session branches collide on indexes; (4) no standing between-sessions work-in-flight view; (5) no persisted intention layer to evaluate "the right problems" against — the gap the first artifact closes.
+- **Ranked gaps:** (1) the one unattended delegation loop is broken (the /research Routine lands nothing); (2) semantic quality is unmeasured (dedup recall); (3) coordination is serial — parallel session branches collide on indexes; (4) no standing between-sessions work-in-flight view; (5) no persisted intention layer to evaluate "the right problems" against — the gap the first artifact closes.
 
 ## The naming question — my recommendation: **`doctrine`**
 
@@ -157,7 +157,7 @@ Filed as [`meta/analysis/alignment-with-the-orchestrator-role.md`](/meta/analysi
 **Its distinctive contribution is the orchestrator's binding constraint** — judgment-context across many delegated, concurrent matters, externalized in frozen threads, routing ledgers, stable ids, and the session-init digest. That's the "broad scope" the quote says orchestration unlocks, made durable instead of held in one head.
 
 **Gaps, ranked by leverage:**
-1. **Unattended delegation is broken** — the /news Routine lands nothing; coordination is interactive-only until a scheduled agent completes a run.
+1. **Unattended delegation is broken** — the /research Routine lands nothing; coordination is interactive-only until a scheduled agent completes a run.
 2. **Semantic quality is unmeasured** — CI checks form, not duplicates/contradictions; the dedup recall probe is the specified instrument.
 3. **Coordination is serial** — parallel session branches collide on index/registry files; no write governance for simultaneous writers.
 4. **No standing work-in-flight view** — the digest is session-start and agent-facing; the site could compile a between-sessions dashboard.
