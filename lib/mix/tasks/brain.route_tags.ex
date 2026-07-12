@@ -40,7 +40,14 @@ defmodule Mix.Tasks.Brain.RouteTags do
       Mix.shell().error("\nRoute-tag verification FAILED.")
       exit({:shutdown, 1})
     else
-      Mix.shell().info("\nRoute tags verify: tags, refs, sink logs, and fidelity all check out.")
+      warns = Enum.count(results, fn {_, status, _} -> status == :warn end)
+
+      suffix =
+        if warns == 0, do: "", else: " (#{warns} warning(s) above — editorial, never failing)"
+
+      Mix.shell().info(
+        "\nRoute tags verify: tags, refs, sink logs, and fidelity all check out." <> suffix
+      )
     end
   end
 

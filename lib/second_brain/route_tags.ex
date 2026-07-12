@@ -262,8 +262,10 @@ defmodule SecondBrain.RouteTags do
         nil
 
       {_, [_header | rest]} ->
+        # Stop at the next h1 or h2 — the same terminator replace_section/2
+        # uses, so parsing and rewriting agree on where the section ends.
         rest
-        |> Enum.take_while(&(!String.starts_with?(&1, "## ")))
+        |> Enum.take_while(&(!Regex.match?(~r/^#{"#"}{1,2} /, &1)))
         |> split_blocks()
     end
   end
@@ -482,9 +484,11 @@ defmodule SecondBrain.RouteTags do
   @doc """
   Concept sinks a thread's routing ledger routes to, as `sb:` ids: markdown
   links in the `Routed to` column that resolve to a bundle concept (via its
-  stable id). Bundle-absolute links (`/SWE/…`) and thread-relative links both
-  resolve; links to non-concepts (`unrouted`, `index.md`, tooling) drop out
-  because they carry no id.
+  stable id). Only the `## Routing` section's table rows count — a thread body
+  may quote other pipe tables, and those are not the ledger. Bundle-absolute
+  links (`/SWE/…`) and thread-relative links both resolve; links to
+  non-concepts (`unrouted`, `index.md`, tooling) drop out because they carry
+  no id.
   """
   def ledger_doc_sinks(thread, root, id_index) do
     path_index = Map.new(id_index, fn {id, path} -> {path, id} end)
@@ -492,6 +496,7 @@ defmodule SecondBrain.RouteTags do
     thread.path
     |> File.read!()
     |> String.split("\n")
+    |> routing_section()
     |> Enum.filter(&String.starts_with?(&1, "|"))
     |> Enum.flat_map(fn row ->
       case String.split(row, "|") do
@@ -506,6 +511,19 @@ defmodule SecondBrain.RouteTags do
     |> Enum.map(&path_index[&1])
     |> Enum.reject(&is_nil/1)
     |> Enum.uniq()
+  end
+
+  # The lines of the `## Routing` section: from its heading to the next `##`.
+  defp routing_section(lines) do
+    case Enum.find_index(lines, &Regex.match?(~r/^## Routing\b/, &1)) do
+      nil ->
+        []
+
+      i ->
+        lines
+        |> Enum.drop(i + 1)
+        |> Enum.take_while(&(!String.starts_with?(&1, "## ")))
+    end
   end
 
   # Resolve a ledger link target to a bundle-relative path. Bundle-absolute
