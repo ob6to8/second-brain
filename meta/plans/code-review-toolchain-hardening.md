@@ -2,17 +2,21 @@
 type: plan
 title: Code review toolchain hardening
 description: The 2026-07-11 top-down code review + docs staleness audit, retyped as a plan now that its residue is action — the review's findings and verdict as background, then the scoped hardening work it recommends (materialize orphan removal, a verifier type-gate on `verified`, a small hygiene batch) with explicit out-of-scope decisions and a build order.
-status: proposed
+status: done
 provenance: "Claude Code session, 2026-07-11 — operator-requested top-down review; staleness sweep partly delegated to a parallel read-only subagent, every reported finding independently re-verified. Retyped from `type: analysis` at operator direction: the write-up boils down to action."
 tags: [meta, plan, code-review, staleness, tooling, route-tagging, verifier, flows]
-timestamp: 2026-07-11
+timestamp: 2026-07-12
 ---
 
 # Plan — code review toolchain hardening
 
-**Status:** `proposed` — the review itself is done and its inline fixes are
-landed; what awaits ratification is the remaining hardening scope (§3) and its
-build order (§4).
+**Status:** `done` — executed 2026-07-12 per §4 after operator ratification.
+P1 landed as the two-directional `materialize` (orphan removal unconditional;
+the issue is `resolved`, pinned by two scenario tests). P2 landed as verifier
+rule 6 (`verified` only on `claim`/`note`/`concept`; the one live violation —
+`verified: false` on the testing methodology — was cleaned in the same
+commit). P3 landed as the five hygiene items, with a regression test for the
+ledger scoping. The out-of-scope list (§3) stands as decided.
 
 **Question the review answered.** Is the toolchain correct, and does the
 documentation still describe the system that actually exists? (Byproduct
