@@ -72,6 +72,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [mounting point (harness)](/glossary/mounting-point.md) — the file path a third-party harness dictates for content (`CLAUDE.md`, `SKILL.md`); distinct from the brain-defined role that fills it
 - [non-bundle namespace](/glossary/non-bundle-namespace.md) — a top-level dir excluded from the registry — no `sb:` ids, skipped by verify (e.g. `meta/`, `inbox/`)
 - [operating contract](/glossary/operating-contract.md) — the root `CLAUDE.md` auto-loaded each session; a compiled artifact, never hand-edited; binds agents, not the operator
+- [orchestration](/glossary/orchestration.md) — directing AI agents that implement (decompose, coordinate, evaluate, steer) rather than hand-writing the code; the direction named by the engineer-as-orchestrator doctrine
 - [orphan block](/glossary/orphan-block.md) — generated output whose source vanished; here, an excerpt-log block whose thread no longer tags the sink
 - [orphaned branch](/glossary/orphaned-branch.md) — a lingering remote session branch: merged-but-undeleted (delete on sight) or unmerged (operator-ratified deletion only)
 - [OTP](/glossary/otp.md) — Erlang/Elixir's fault-tolerance framework: supervision trees, GenServers, applications; the line between scripting and a resident system

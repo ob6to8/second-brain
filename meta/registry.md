@@ -125,6 +125,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:334e60` | [glossary/mounting-point](/glossary/mounting-point.md) | concept | false |
 | `sb:54995c` | [glossary/non-bundle-namespace](/glossary/non-bundle-namespace.md) | concept | false |
 | `sb:1349cb` | [glossary/operating-contract](/glossary/operating-contract.md) | concept | false |
+| `sb:83ea50` | [glossary/orchestration](/glossary/orchestration.md) | concept | false |
 | `sb:3ee2d2` | [glossary/orphan-block](/glossary/orphan-block.md) | concept | false |
 | `sb:a9113e` | [glossary/orphaned-branch](/glossary/orphaned-branch.md) | concept | false |
 | `sb:5d40bf` | [glossary/otp](/glossary/otp.md) | concept | false |
