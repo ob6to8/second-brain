@@ -66,6 +66,9 @@ Write each definition from understanding, not by transcription:
 - **One to three sentences**, plain but precise — the register of
   `/summarize-technical`'s key-terms section: bridge from what a generalist
   already knows to the exact term.
+- **The `description` is the canonical overview.** It is rendered as the entry
+  page's lede paragraph *and* shown verbatim as the term's gloss in the index
+  `## Terms` section — one overview, three surfaces. Write it to stand alone.
 - Definitions are **source-independent**: define what the term means, not what
   the source said about it. The source goes in the citation line.
 - If a term carries different senses in different domains, keep **one entry with
@@ -77,10 +80,18 @@ Write each definition from understanding, not by transcription:
   (lowercase unless a proper noun or cased formalism); `description` = the
   definition in one sentence; `provenance` noting it's an agent-distilled
   glossary definition; `verified: false`; `timestamp`.
-- Body: an `# <term>` heading, the definition paragraph, then a *Seen in:* line
+- Body: an `# <term>` heading, **expansion-only prose**, then a *Seen in:* line
   of citations — bundle-absolute links for threads and filed concepts, plain
   URLs for external papers/posts (a citation is not a parked bookmark; the
   link-processing policy governs filing URLs as *concepts*, not citing them).
+- **The body never restates the description.** The site renders the
+  description as the lede directly above the body, so body prose that
+  re-defines the term stacks two definitions on one page. Body paragraphs add
+  only what the description doesn't carry: mechanism, consequences, examples,
+  senses, distinctions, cross-links. A body with nothing non-redundant to add
+  is left empty (heading, then *Seen in:*). `mix brain.glossary` enforces this
+  mechanically: a body sentence whose content-word vocabulary is largely
+  contained in the description **fails**; moderate overlap warns.
 - **Cross-link related terms, prose first.** When the relationship between two
   terms can be *stated*, weave the link into the definition prose itself
   ("distinct from a [plan](/beliefs/glossary/plan-type.md)…") — the prose carries the
@@ -92,12 +103,18 @@ Write each definition from understanding, not by transcription:
   new source genuinely adds nuance (or a new sense); always append the citation;
   bump that file's `timestamp`. Never delete or rewrite-from-scratch a file the
   operator may have touched.
-- Keep `/beliefs/glossary/index.md` current: one bulleted link + one-line description
-  per term, **alphabetical, case-insensitive**.
+- The index `## Terms` section is a **generated artifact**: one bulleted link
+  per term, title-sorted case-insensitively, gloss = the term's `description`
+  verbatim. Never hand-edit it — run `mix brain.glossary --materialize` after
+  adding or changing entries.
 
 ### 5. Maintain and verify
 - Mint ids for the new term files and refresh the registry:
   `mix brain.id && mix brain.registry`.
+- Regenerate the index and check the glossary layer:
+  `mix brain.glossary --materialize` (index `## Terms` sync, descriptions,
+  body-dedup — see the
+  [glossary plan](/meta/plans/glossary-single-overview-and-dedup-check.md)).
 - Run `mix brain.verify`. (No log entry — the commit message records which
   source was scanned and which terms were added/updated.)
 

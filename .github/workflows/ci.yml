@@ -37,6 +37,9 @@ jobs:
       - name: Route tags verify (tags, refs, sink logs, log fidelity)
         run: mix brain.route_tags
 
+      - name: Glossary verifies (descriptions, index sync, body dedup)
+        run: mix brain.glossary
+
       - name: Flow lineage views are derived and current
         run: mix brain.lineage --check
 

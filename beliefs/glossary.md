@@ -6,7 +6,7 @@ description: Hub for the cross-domain glossary — one concept file per term und
 provenance: "Agent-distilled definitions; each term's file cites the sources it was seen in"
 verified: false
 tags: [glossary, terminology, cross-domain]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # Glossary
@@ -21,7 +21,13 @@ lands on the definition.
 Entries are accreted by
 [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md) from persisted
 threads, papers, posts, and filed concepts — one file per term, listed
-alphabetically in [`/beliefs/glossary/index.md`](/beliefs/glossary/index.md). A term whose
+alphabetically in [`/beliefs/glossary/index.md`](/beliefs/glossary/index.md). Each term
+carries **one canonical overview**: its `description` frontmatter, rendered as
+the entry page's lede and shown verbatim as the index gloss; the body below is
+expansion-only, never a restatement. Both halves are machine-checked by
+`mix brain.glossary`, whose `--materialize` mode regenerates the index
+`## Terms` section (see the
+[glossary plan](/meta/plans/glossary-single-overview-and-dedup-check.md)). A term whose
 canonical definition lives in a filed concept (or in the operating contract)
 gets a [pointer entry](/beliefs/glossary/pointer-entry.md), not a duplicate
 definition; a term that outgrows the glossary

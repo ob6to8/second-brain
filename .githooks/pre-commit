@@ -23,6 +23,9 @@ mix brain.verify
 echo "pre-commit: mix brain.route_tags"
 mix brain.route_tags
 
+echo "pre-commit: mix brain.glossary"
+mix brain.glossary
+
 echo "pre-commit: mix brain.lineage --check"
 mix brain.lineage --check
 
