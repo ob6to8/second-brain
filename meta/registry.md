@@ -73,6 +73,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:23f009` | [glossary/compiled-contract](/glossary/compiled-contract.md) | concept | false |
 | `sb:04f8dd` | [glossary/composable-beliefs](/glossary/composable-beliefs.md) | concept | false |
 | `sb:317879` | [glossary/concept-okf](/glossary/concept-okf.md) | concept | false |
+| `sb:a48aeb` | [glossary/crlf](/glossary/crlf.md) | concept | false |
 | `sb:04c057` | [glossary/cron-expression](/glossary/cron-expression.md) | concept | false |
 | `sb:c2a18e` | [glossary/cross-site-scripting](/glossary/cross-site-scripting.md) | concept | false |
 | `sb:f17e05` | [glossary/deduplication](/glossary/deduplication.md) | concept | false |
@@ -88,6 +89,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:9e1592` | [glossary/exunit](/glossary/exunit.md) | concept | false |
 | `sb:e7689f` | [glossary/fast-forward-merge](/glossary/fast-forward-merge.md) | concept | false |
 | `sb:f382b0` | [glossary/featuring](/glossary/featuring.md) | concept | false |
+| `sb:c0ed08` | [glossary/feeding-pairs](/glossary/feeding-pairs.md) | concept | false |
 | `sb:950a55` | [glossary/flow-touch-sequence](/glossary/flow-touch-sequence.md) | concept | false |
 | `sb:e56fb4` | [glossary/fresh-session-per-fire](/glossary/fresh-session-per-fire.md) | concept | false |
 | `sb:184bae` | [glossary/git-worktree](/glossary/git-worktree.md) | concept | false |
@@ -110,6 +112,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:1349cb` | [glossary/operating-contract](/glossary/operating-contract.md) | concept | false |
 | `sb:3ee2d2` | [glossary/orphan-block](/glossary/orphan-block.md) | concept | false |
 | `sb:7adc45` | [glossary/parse-the-log](/glossary/parse-the-log.md) | concept | false |
+| `sb:8048c6` | [glossary/pipe-table](/glossary/pipe-table.md) | concept | false |
 | `sb:bf0524` | [glossary/plan-type](/glossary/plan-type.md) | concept | false |
 | `sb:78580d` | [glossary/plugin](/glossary/plugin.md) | concept | false |
 | `sb:393e3d` | [glossary/pointer-entry](/glossary/pointer-entry.md) | concept | false |
@@ -118,16 +121,19 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:573229` | [glossary/proto-belief-document](/glossary/proto-belief-document.md) | concept | false |
 | `sb:ea7acc` | [glossary/provenance](/glossary/provenance.md) | concept | false |
 | `sb:fb0bfb` | [glossary/query-profile](/glossary/query-profile.md) | concept | false |
+| `sb:a95adb` | [glossary/ratification](/glossary/ratification.md) | concept | false |
 | `sb:99ec79` | [glossary/reason-tags](/glossary/reason-tags.md) | concept | false |
 | `sb:5e7da1` | [glossary/recall](/glossary/recall.md) | concept | false |
 | `sb:0b95ed` | [glossary/recall-at-k](/glossary/recall-at-k.md) | concept | false |
 | `sb:c86162` | [glossary/recall-probe](/glossary/recall-probe.md) | concept | false |
+| `sb:ae9b26` | [glossary/red-test](/glossary/red-test.md) | concept | false |
 | `sb:4c3f16` | [glossary/research-spike](/glossary/research-spike.md) | concept | false |
 | `sb:e142e6` | [glossary/route-tag](/glossary/route-tag.md) | concept | false |
 | `sb:0a43ba` | [glossary/route-tag-sink](/glossary/route-tag-sink.md) | concept | false |
 | `sb:ba6759` | [glossary/routine](/glossary/routine.md) | concept | false |
 | `sb:570e22` | [glossary/routing-ledger](/glossary/routing-ledger.md) | concept | false |
 | `sb:4f4f5c` | [glossary/scenario-test](/glossary/scenario-test.md) | concept | false |
+| `sb:23844f` | [glossary/section-terminator](/glossary/section-terminator.md) | concept | false |
 | `sb:4e01f8` | [glossary/self-consistency-check](/glossary/self-consistency-check.md) | concept | false |
 | `sb:98acc0` | [glossary/semantic-search](/glossary/semantic-search.md) | concept | false |
 | `sb:243d56` | [glossary/session-capture](/glossary/session-capture.md) | concept | false |
@@ -138,8 +144,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:3be9b0` | [glossary/skill-namespacing](/glossary/skill-namespacing.md) | concept | false |
 | `sb:7c0b1d` | [glossary/skill-to-skill-delegation](/glossary/skill-to-skill-delegation.md) | concept | false |
 | `sb:38d006` | [glossary/speculative-decoding](/glossary/speculative-decoding.md) | concept | false |
+| `sb:c67f48` | [glossary/spurious-warning](/glossary/spurious-warning.md) | concept | false |
 | `sb:4a235a` | [glossary/squash-merge](/glossary/squash-merge.md) | concept | false |
 | `sb:4d71d3` | [glossary/stable-id](/glossary/stable-id.md) | concept | false |
+| `sb:e203a2` | [glossary/stale-block](/glossary/stale-block.md) | concept | false |
 | `sb:efad31` | [glossary/static-site-generator](/glossary/static-site-generator.md) | concept | false |
 | `sb:bb2968` | [glossary/strand](/glossary/strand.md) | concept | false |
 | `sb:ea95e4` | [glossary/supersession](/glossary/supersession.md) | concept | false |

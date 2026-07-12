@@ -20,6 +20,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [compiled contract](/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
 - [Composable Beliefs (cb)](/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
 - [concept (OKF)](/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
+- [CRLF](/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
 - [cron expression](/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
 - [cross-site scripting (XSS)](/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
 - [deduplication](/glossary/deduplication.md) — checking for an existing equivalent before filing, to avoid fragmenting the brain (intake-time)
@@ -35,6 +36,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [ExUnit](/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
 - [fast-forward merge](/glossary/fast-forward-merge.md) — a merge that advances the branch pointer with no merge commit; leaves a zero-diff branch
 - [featuring](/glossary/featuring.md) — how `/news` decides what makes the cut: relevance → novelty → a reason tag → source quality, capped
+- [feeding pairs](/glossary/feeding-pairs.md) — the (thread, sink) pairs the current route tags induce; the domain of materialization in both directions
 - [flow (touch-sequence)](/glossary/flow-touch-sequence.md) — a per-workflow touch-sequence doc tracing one canonical run, each step actor-tagged (`meta/flows/`)
 - [fresh-session-per-fire](/glossary/fresh-session-per-fire.md) — a scheduling mode where every trigger firing spawns a clean session, inheriting no prior state
 - [git worktree](/glossary/git-worktree.md) — a linked working dir with its own HEAD/index/tree over a shared `.git` store; isolates parallel branches/agents
@@ -57,6 +59,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [operating contract](/glossary/operating-contract.md) — the root `CLAUDE.md` auto-loaded each session; a compiled artifact, never hand-edited
 - [orphan block](/glossary/orphan-block.md) — generated output whose source vanished; here, an excerpt-log block whose thread no longer tags the sink
 - [parse-the-log](/glossary/parse-the-log.md) — capturing a session by parsing the host log file (exact delivered text) vs. reconstructing from context
+- [pipe table](/glossary/pipe-table.md) — markdown's `|`-delimited table syntax (GFM); parsers of one specific table must scope to its section
 - [plan (type)](/glossary/plan-type.md) — controlled type: a one-off design/decision record for an intended change, with a status
 - [plugin](/glossary/plugin.md) — a distributable bundle of Claude Code skills; its skills get an automatic `plugin-name:` namespace
 - [policy (type)](/glossary/policy-type.md) — controlled type: a standing governance rule for how the brain operates, under `meta/policy/`; the source `CLAUDE.md` is compiled from
@@ -65,15 +68,18 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [proto-belief document](/glossary/proto-belief-document.md) — cb's per-matter accreting page; maps onto this brain's per-topic `concept` sink
 - [provenance](/glossary/provenance.md) — the frontmatter field for a statement's immutable origin; orthogonal to verification
 - [query profile](/glossary/query-profile.md) — per-category interest signals derived from the taxonomy tree, used as the `/news` retrieval filter
+- [ratification](/glossary/ratification.md) — the operator's explicit approval turning a proposed shape change (directory, type, plan scope) into an adopted one
 - [reason tags](/glossary/reason-tags.md) — the `recent`/`impactful`/`influential`/`groundbreaking`/`buzz` vocabulary marking why a `/news` item surfaced
 - [recall](/glossary/recall.md) — the fraction of relevant items a search surfaces; low recall means existing material is missed
 - [recall probe](/glossary/recall-probe.md) — a repeatable eval firing known queries at known targets to measure (and watch) search recall
 - [recall@k](/glossary/recall-at-k.md) — a metric: is the correct target within the top *k* results? reported across a query set
+- [red test](/glossary/red-test.md) — a test feeding a known-bad input and asserting the check flags it; proves the detector fires, not just that good input passes
 - [research spike](/glossary/research-spike.md) — a time-boxed investigation answering a design/feasibility question, yielding a verdict not code
 - [route tag](/glossary/route-tag.md) — inline `<routes ref="…">` region marking which concept(s) a paragraph of a frozen thread feeds
 - [Routine](/glossary/routine.md) — a saved scheduled trigger that fires a preset prompt into an agent session on a cron schedule
 - [routing ledger](/glossary/routing-ledger.md) — the per-thread dispatch table (topic/state/routed-to/dangling); pointers and states only, no content
 - [scenario test](/glossary/scenario-test.md) — an end-to-end test driving a whole workflow against a realistic fixture and asserting on final state
+- [section terminator](/glossary/section-terminator.md) — the pattern deciding where a parsed section ends; reader and rewriter of one section must agree on it
 - [self-consistency check](/glossary/self-consistency-check.md) — a check that re-derives a value from its own source; catches drift but is blind to shared-logic errors
 - [semantic search](/glossary/semantic-search.md) — meaning-based retrieval via embedding similarity, bridging synonym/jargon gaps lexical search misses
 - [session capture](/glossary/session-capture.md) — rendering a session into a verbatim thread doc, dropping only tool calls, reasoning, short pre-tool narration
@@ -85,8 +91,10 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [skill namespacing](/glossary/skill-namespacing.md) — prefixing skill names to resolve as a set; in Claude Code only plugin skills are auto-namespaced
 - [skill-to-skill delegation](/glossary/skill-to-skill-delegation.md) — one skill invoking another as a sub-step (e.g. `/create-pull-request` runs `/capture`), composing behavior
 - [speculative decoding](/glossary/speculative-decoding.md) — draft cheap tokens, verify in parallel against the full model, accept the correct prefix; identical output, higher throughput
+- [spurious (warning)](/glossary/spurious-warning.md) — a false-positive warning/match; never fails a build but teaches the reader to ignore the channel
 - [squash merge](/glossary/squash-merge.md) — flattening a branch into one new commit on the target; linear history at the cost of per-commit provenance (disallowed here)
 - [stable id (`sb:` id)](/glossary/stable-id.md) — the opaque, immutable `sb:` + 6-hex identifier every bundle concept carries
+- [stale block](/glossary/stale-block.md) — a materialized excerpt-log block diverged from its re-derivation (source changed, not re-materialized); distinct from an orphan block
 - [static-site generator](/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
 - [strand](/glossary/strand.md) — one topic's line of work through a session; the routing ledger tracks one row per strand, state orthogonal to routing
 - [supersession](/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
