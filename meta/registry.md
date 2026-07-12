@@ -194,3 +194,4 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:de14e6` | [glossary/warn-pass](/glossary/warn-pass.md) | concept | false |
 | `sb:adf537` | [glossary/webhook](/glossary/webhook.md) | concept | false |
 | `sb:24bd1e` | [knowledge-management/open-knowledge-format](/knowledge-management/open-knowledge-format.md) | reference |  |
+| `sb:1370e8` | [machine-learning/deep-learning/deep-belief-networks](/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
