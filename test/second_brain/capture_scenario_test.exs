@@ -127,6 +127,44 @@ defmodule SecondBrain.CaptureScenarioTest do
     assert File.read!(Path.join(root, @agg_rel)) == once
   end
 
+  # The two-directional projection: a sink whose last feeding thread stops
+  # tagging it loses its whole log section on the next materialize — no flag,
+  # no hand-edit (see meta/plans/code-review-toolchain-hardening.md P1).
+  test "materialize removes the section of a sink no longer fed", %{root: root} do
+    assert RouteTags.materialize(root) == [@agg_rel]
+    assert File.read!(Path.join(root, @agg_rel)) =~ "## Thread excerpts"
+
+    # Both threads drop their tags (and routing rows) — the sink is now unfed.
+    write_thread(root, "2026-07-08-alpha", "## Assistant\n\nNo tags anymore.\n")
+    write_thread(root, "2026-07-09-beta", "## Assistant\n\nNone here either.\n")
+
+    # The removal is reported like any other materialized change.
+    assert RouteTags.materialize(root) == [@agg_rel]
+
+    content = File.read!(Path.join(root, @agg_rel))
+    refute content =~ "## Thread excerpts"
+    assert content =~ "Body prose."
+
+    statuses = Map.new(RouteTags.run_checks(root), fn {name, status, _} -> {name, status} end)
+    assert Enum.all?(Map.values(statuses), &(&1 == :ok))
+  end
+
+  test "a still-fed sink drops the block of a thread that stopped tagging it", %{root: root} do
+    assert RouteTags.materialize(root) == [@agg_rel]
+
+    # Alpha stops tagging; beta still feeds the sink.
+    write_thread(root, "2026-07-08-alpha", "## Assistant\n\nNo tags anymore.\n")
+
+    assert RouteTags.materialize(root) == [@agg_rel]
+    content = File.read!(Path.join(root, @agg_rel))
+
+    assert content =~ "### 2026-07-09-beta"
+    refute content =~ "### 2026-07-08-alpha"
+
+    statuses = Map.new(RouteTags.run_checks(root), fn {name, status, _} -> {name, status} end)
+    assert Enum.all?(Map.values(statuses), &(&1 == :ok))
+  end
+
   defp write_thread(root, slug, body) do
     File.write!(Path.join(root, "meta/threads/#{slug}.md"), body)
   end

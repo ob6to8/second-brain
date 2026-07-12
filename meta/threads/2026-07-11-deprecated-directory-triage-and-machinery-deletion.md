@@ -5,6 +5,7 @@ description: Assessed whether deprecated/ can be deleted (not yet), migrated the
 provenance: "Claude Code session, 2026-07-11; verbatim retained messages parsed from the host session log — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, deprecated, migration, intake]
 timestamp: 2026-07-11
+pr: 43
 ---
 
 # 2026-07-11-deprecated-directory-triage-and-machinery-deletion

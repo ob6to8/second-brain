@@ -124,3 +124,25 @@ The branch now holds three commits: the `policy (type)` entry, the `doctrine` en
 - **46 new term files** across scheduling/automation (Routine, cron expression, fresh-session-per-fire, approval gate), the news inbox (query profile, candidate feed, digest), flows & testing (flow/touch-sequence, scenario test, deterministic spine, golden test, ExUnit, property-based testing), the site generator (static-site generator, dependency-free, markdown renderer, GitHub Pages, deploy gating, HTML escaping, XSS, GFM), retrieval (recall, dedup, recall probe, recall@k, vector database, embeddings, semantic search, ANN), Composable Beliefs/epistemics (typed edge, epistemic overlay, supersession, proto-belief document, route-tag sink), and skills (namespacing, delegation, plugin).
 - **15 pointer entries** that defer to the canonical policy/skill docs (routing ledger, session capture, provenance, verification grounding, reason tags, featuring, the `issue`/`analysis`/`methodology`/`plan`/`tutorial` types, etc.) instead of duplicating definitions.
 - **6 existing entries** got *Seen in:* citations appended for the threads that also used them.
+
+### 2026-07-12-code-review-flows-hardening-and-elaborations (2026-07-12)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:0b648f`]**
+
+Done — three terms filed, all gates green, pushed as `9178648`. The glossary went 68 → 71: **materialize** (`sb:15fe73`) — defined source-independently (write derived content to disk vs. recompute on demand, paired with a freshness check), noting `CLAUDE.md` and the registry as materializations in the same sense; **excerpt log (route-tagged log)** (`sb:3101ef`) — definition plus a pointer to the route-tagging policy that canonically defines it, per the pointer-entry rule; and **orphan block** (`sb:3ee2d2`) — the general idea (generated output whose source vanished) grounded in this bundle's specific case, citing the issue and the hardening plan. Each carries its minted `sb:` id, *Seen in:* citations, and cross-links to the already-filed `route tag` / `sink` terms. The index stayed alphabetical, the registry was recompiled, and — per link-don't-duplicate — the elaboration doc's three inline definitions now link their new canonical homes rather than standing alone.
+
+---
+
+**[`sb:0b648f`]**
+
+**Glossary report** (93 → 101 terms): *Added (7):* **feeding pairs** — the (thread, sink) pairs the current tags induce; the domain of materialization in both directions; **stale block** — a block diverged from its re-derivation (source *changed*), defined against **orphan block** (source *vanished*); **red test** — proves the detector fires, not just that good input passes; **pipe table** — GFM's `|` table syntax, with the scoping lesson attached; **spurious (warning)** — the false positive that teaches readers to ignore the channel; **section terminator** — where a parsed section ends; reader and rewriter must agree; **CRLF** — normalize on read or honor the file's ending on write. *Pointer (1):* **ratification** — one-line gloss deferring to the taxonomy-evolution protocol and persist-plans policies that canonically define it. *Merged (2):* **sink** and **materialize** already existed — each gained the two-directional-projection nuance from this session (an unfed sink loses its section) plus a citation, rather than a duplicate file.
+
+### 2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings (2026-07-12)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:0b648f`]**  (co-feeds: `meta/tutorials/the-session-init-digest.md lib/second_brain/session_init.ex`)
+
+Glossary done — 7 terms added, `deduplication` extended. Now the answer to your visibility question implies a concrete gap worth closing before the PR: the warnings currently live in terminal output you never see. The fix is to surface them in the session-init digest, which *is* injected into every session you open. Implementing that now.

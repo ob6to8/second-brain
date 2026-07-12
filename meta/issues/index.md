@@ -16,4 +16,4 @@ fixed.
 
 ## Resolved
 
-_(none yet)_
+- [route_tags: materialize cannot remove orphaned excerpt blocks](/meta/issues/route-tags-materialize-leaves-orphan-blocks.md) — `materialize/1` now projects the tags in both directions, removing an unfed sink's log section unconditionally (hardening plan P1); pinned by two scenario tests. `status: resolved`.

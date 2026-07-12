@@ -37,7 +37,14 @@ description: <one sentence: what the session covered and where it landed>
 provenance: "Claude Code session (<model name(s)>), <date>; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, <topic tags>]
 timestamp: <ISO 8601 date>
+# pr: <N>  ← added later by /create-pull-request once the PR is opened; not set here
 ```
+
+`/capture` does not set `pr:` — the PR number doesn't exist yet.
+[`/create-pull-request`](../create-pull-request/SKILL.md) stamps it after
+opening the PR (the PR is the thread's durable anchor; the ephemeral branch is
+not recorded — see the
+[session-capture policy](/meta/policy/session-capture.md)).
 
 ## Build the doc, in this order
 

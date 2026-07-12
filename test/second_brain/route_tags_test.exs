@@ -362,6 +362,31 @@ defmodule SecondBrain.RouteTagsTest do
     end
 
     @tag :tmp_dir
+    test "a pipe table outside the ## Routing section is not read as the ledger", %{root: root} do
+      green_fixture(root)
+      write_concept(root, "quoted-doc", "sb:eee555", "# Quoted\n")
+
+      # A quoted comparison table whose 4th column links a concept — it is not
+      # the ledger and must not produce a ledger-coverage warning.
+      write_thread(root, "2026-07-09-quoting-thread", """
+      ## Routing
+
+      | Topic | State | Routed to | Dangling |
+      |---|---|---|---|
+      | The only strand | closed | unrouted | - |
+
+      ## Assistant
+
+      | Tool | Kind | Docs | Notes |
+      |---|---|---|---|
+      | brain.verify | gate | [quoted-doc](/kb/quoted-doc.md) | quoted table |
+      """)
+
+      results = RouteTags.run_checks(root)
+      assert statuses(results)["ledger cross-check"] == :ok
+    end
+
+    @tag :tmp_dir
     test "materialize/1 writes a log section that then verifies", %{root: root} do
       # Thread + sink with the tag but NO log section yet.
       write_thread(root, "2026-07-08-example-thread", """

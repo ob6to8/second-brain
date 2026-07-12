@@ -1,0 +1,117 @@
+---
+type: note
+title: Create pull request — capture, glossary, commit, push, open
+description: The end-to-end flow for shipping a session — run the capture flow to completion, glossary its thread doc, then commit, push, and open the PR with no separate confirmation gate — a composition of two other flows plus the git/GitHub tail, and why its ordering (capture before commit) is the load-bearing decision.
+tags: [meta, governance, pull-request, capture, glossary, git, flow, workflow]
+timestamp: 2026-07-11
+---
+
+# Create pull request — capture, glossary, commit, push, open
+
+The connective doc for how a session's work leaves the working tree and
+becomes a reviewable PR. This flow is a **composition**: it runs the
+[session-capture flow](/meta/flows/session-capture.md) to completion, then the
+[add-to-glossary flow](/meta/flows/add-to-glossary.md) over the thread doc
+capture just wrote, then back-links this session's
+[elaboration docs](/meta/elaborations/index.md) to that thread (their `thread`
+frontmatter field — settable only once the thread is persisted), and only then
+touches git. The point of the ordering is that the session record, its
+materialized excerpt logs, its terminology, and the elaboration trace all
+become part of the same working changes — one PR carries the change *and* its
+provenance.
+
+> **The three artifacts (and the sources of truth — point, don't restate):**
+> - **Rules** → [session-capture](/meta/policy/session-capture.md) and
+>   [persist-plans](/meta/policy/persist-plans.md) (what must survive the
+>   session); the sub-flows' own policies govern their steps.
+> - **Procedure** → the [`/create-pull-request` skill](/.claude/skills/create-pull-request/SKILL.md).
+> - **Mechanism + proof** → composed: the sub-flows' spines (route-tag
+>   materialization + checks; id → registry → verify) are pinned by their own
+>   scenarios; the git/GitHub tail (commit, push, PR) is external state with
+>   no in-repo oracle — CI on the pushed branch is its check.
+
+---
+
+## 1. The problem
+
+A session that ends with only a diff loses everything else it produced: the
+exchanges that explain *why* the diff looks the way it does, the routing of
+each strand, and the vocabulary it coined. Committing first and capturing
+"later" reliably means never — the thread doc trails in a separate PR or is
+lost with the sandbox. And a PR gate that asks "are you sure?" after the
+operator already said "open a PR" is friction without safety.
+
+---
+
+## 2. The pipeline
+
+```
+   operator: /create-pull-request        (the invocation IS the authorization)
+          │
+          ▼
+   1. the CAPTURE flow, in full          → meta/threads/YYYY-MM-DD-<slug>.md,
+      (skip only if nothing substantive)    ledger, tags, materialized logs
+          │
+          ▼
+   2. the ADD-TO-GLOSSARY flow           → glossary/<slug>.md files, index,
+      over that thread doc                  registry recompile
+      (no-op if no terms clear the bar)
+          │
+          ▼
+   3. back-link ELABORATIONS             → thread: field on each
+      (this session's docs only;            meta/elaborations/ doc the
+       skip if capture was skipped)          session created or updated
+          │
+          ▼
+   4. survey: git status/diff — everything above is now part of the change
+   5. commit (atomic; explicit paths; honest message)
+   6. push -u origin <feature-branch>    (retry w/ backoff on network only)
+   7. open the PR (template-aware; GitHub MCP tools — no gh CLI here)
+   8. offer to watch CI/reviews          (subscribe only if asked)
+```
+
+---
+
+## 3. The touch-sequence (a canonical run)
+
+| # | Actor | Action | Files touched | Checked by |
+|---|-------|--------|---------------|------------|
+| 1 | operator | Invoke `/create-pull-request` — this *is* the PR authorization; there is no later confirmation | — | — |
+| 2 | agent+tool | Run [`/capture`](/meta/flows/session-capture.md) to completion (thread doc, ledger, route tags, `mix brain.route_tags --materialize` + check) | `meta/threads/…`, fed sinks, `meta/threads/index.md` | that flow's scenario + gates |
+| 3 | agent+tool | Run [`/add-to-glossary`](/meta/flows/add-to-glossary.md) on the thread doc from step 2 | `glossary/*`, `meta/registry.md` | that flow's spine |
+| 4 | agent | Set `thread:` (bundle-absolute path of the step-2 thread doc) in each `meta/elaborations/` doc this session created or updated — the final metadata motion on an elaboration; never retro-link older docs | `meta/elaborations/*.md` | editorial |
+| 5 | agent | Survey (`git status`/`diff`); confirm on the designated feature branch, never a default branch | — | editorial |
+| 6 | agent | Commit — atomic, explicit paths, message matching the history's style | git objects | editorial |
+| 7 | agent | `git push -u origin <branch>`; retry only network failures (2s/4s/8s/16s) | remote branch | CI on the branch |
+| 8 | agent | Open the PR via the GitHub MCP tools, mirroring a PR template if one exists; report the URL | GitHub PR | editorial |
+| 9 | agent | Offer PR watching (`subscribe_pr_activity`) — don't subscribe unasked | — | — |
+
+---
+
+## 4. Invariants
+
+- **Capture, glossary, and elaboration back-links run before the commit** —
+  the session record and its traces ship *in* the PR, never behind it.
+  Skipping capture (nothing substantive) also skips glossary and back-linking;
+  none is padded to show activity.
+- **`thread` is set here and only here** — `/elaborate` never sets it (the
+  target doesn't exist until capture runs), and older elaborations already
+  carrying a `thread` are never retro-pointed at a new session.
+- **The invocation is the authorization** — this is the one sanctioned path
+  that opens a PR without a further ask; every other flow keeps the
+  default-off rule.
+- **Never commit to a default branch** — if the tree is on `main`/`master`,
+  stop and ask.
+- **Honest tail** — if a gate failed or a step was skipped, the commit message
+  and PR body say so; a red result is reported, not smoothed over.
+
+---
+
+## 5. Verify
+
+Everything mechanical is inherited: the sub-flows' gate suites run inside
+steps 2–3, and CI re-runs the full suite (compile, format, tests, contract +
+registry checks, verify, route tags, site build) on the pushed branch — the PR
+is green only if the shipped tree passes the same checks locally claimed. The
+editorial residue is the git hygiene itself: atomicity of the commit, honesty
+of the message, and whether the PR body reflects the actual diff.

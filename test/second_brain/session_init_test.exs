@@ -178,4 +178,18 @@ defmodule SecondBrain.SessionInitTest do
     assert report =~ "## Open issues (0)"
     assert report =~ "No open work found"
   end
+
+  test "docs-freshness warnings surface in the digest; a clean tree omits the section", %{
+    tmp_dir: dir
+  } do
+    File.write!(Path.join(dir, "index.md"), "- [a](/a.md)")
+    File.write!(Path.join(dir, "a.md"), "see [ghost](/missing.md)")
+
+    report = SessionInit.report(dir)
+    assert report =~ "## Docs-freshness warnings (1)"
+    assert report =~ "a.md: link `/missing.md` does not resolve"
+
+    File.write!(Path.join(dir, "a.md"), "see [index](/index.md)")
+    refute SessionInit.report(dir) =~ "Docs-freshness"
+  end
 end

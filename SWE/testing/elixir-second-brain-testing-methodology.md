@@ -4,7 +4,6 @@ type: methodology
 title: "Testing methodology for the Second Brain Elixir tooling"
 description: An agent-facing synthesis of matklad's two testing essays (features-not-code; purity and extent), applied to building the test suite for this bundle's dependency-free Elixir tooling.
 provenance: "Claude Opus 4.8 — synthesized from the two matklad references filed in this directory, applied to this repo's lib/ and test/"
-verified: false
 tags: [testing, software-engineering, test-design, elixir, exunit]
 timestamp: 2026-07-08
 ---

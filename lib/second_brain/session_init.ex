@@ -14,6 +14,12 @@ defmodule SecondBrain.SessionInit do
       state is `open`/`paused`, or whose Dangling column carries a question
       (a `closed` row can still leave deferred work dangling).
 
+  Plus, when any exist, the **docs-freshness warnings** from
+  `SecondBrain.Links` (unresolved internal links, index-coverage gaps) — the
+  digest is the surface an app-based operator actually sees, so advisory
+  warnings that would otherwise live only in gate output and CI logs are
+  repeated here. The section is omitted entirely when the tree is clean.
+
   The digest ends with a heuristic top-3 priority ranking (issues, then
   in-flight plans, then open todos, then accepted plans, then open strands,
   then paused strands and leftover dangling questions, then proposed plans;
@@ -67,7 +73,7 @@ defmodule SecondBrain.SessionInit do
     #{section("Open todos", Enum.map(todos, &issue_line/1))}
     #{section("Active plans", Enum.map(plans, &plan_line/1))}
     #{section("Dangling strands (from thread ledgers)", Enum.map(strands, &strand_line/1))}
-    #{priorities_section(issues, todos, plans, strands)}
+    #{freshness_section(root)}#{priorities_section(issues, todos, plans, strands)}
     > **Agent note:** open this session by stating your top-3 priority appraisal
     > for the operator — start from the heuristic ranking above, adjust it with
     > judgment, and say why. Then address the operator's request.
@@ -243,6 +249,25 @@ defmodule SecondBrain.SessionInit do
     if String.length(text) > @topic_max_chars,
       do: String.slice(text, 0, @topic_max_chars) <> "…",
       else: text
+  end
+
+  # --- docs-freshness warnings ----------------------------------------------
+
+  # Advisory only, and omitted entirely when clean — the digest must not carry
+  # a permanently empty section. Repeated here because gate output and CI logs
+  # never reach an operator working purely in the app.
+  defp freshness_section(root) do
+    case SecondBrain.Links.check(root) do
+      [] ->
+        ""
+
+      warnings ->
+        lines = Enum.map_join(warnings, "\n", &("- " <> &1))
+
+        "## Docs-freshness warnings (#{length(warnings)})\n\n" <>
+          "Advisory (never fail a gate) — fix in the next change that touches these files.\n\n" <>
+          lines <> "\n\n"
+    end
   end
 
   # --- heuristic priorities -------------------------------------------------

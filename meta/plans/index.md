@@ -22,6 +22,7 @@ _(none yet)_
 
 ## Done / Superseded
 
+- [Code review toolchain hardening](/meta/plans/code-review-toolchain-hardening.md) — the 2026-07-11 top-down review + staleness audit (findings kept as background) and its executed hardening: two-directional `materialize` (orphan removal; issue resolved), verifier rule 6 gating `verified` to statement types, and the five-item hygiene batch — with an explicit out-of-scope list. `status: done`.
 - [Retire the hand-kept chronological logs (log.md) in favor of git history](/meta/plans/retire-hand-kept-logs.md) — removed root `log.md`, `meta/log.md`, and `inbox/log.md` and every policy/skill mandate to maintain them; git's true-merge commit graph is the single provenance layer. The generated route-tagged excerpt logs stay. Filed, ratified, and executed same day. `status: done`.
 - [The daily read: a cross-domain synthesis lede for /news digests](/meta/plans/news-daily-read-synthesis.md) — add a `## The read` section at the top of each digest: a short, `sb:`-id-grounded perspective reading the day's selections as a set against the brain's standing concerns, connecting threads across domains. Proposed, ratified, and implemented same session. `status: done`.
 - [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md) — establish a `meta/flows/` genre (per-flow touch-sequence docs) backed by ExUnit scenario tests over each flow's deterministic spine; collapse the capture docs and build the `session-capture` + `intake` flows. `status: done`.

@@ -200,10 +200,13 @@ first four **fail**. Tag *coverage* — did you tag every paragraph that feeds a
 matter — has no mechanical oracle and stays editorial, so the cross-check only
 **warns**.
 
-**`--materialize`** makes the log *generated, not hand-kept*: it writes each fed
-concept's log from the current tags (canonical `derive_block/3` format), and the
-verifier is the structural backstop — edit a tagged paragraph without
-re-materializing and **log fidelity goes red**.
+**`--materialize`** makes the log *generated, not hand-kept*, projecting the
+tags in **both directions**: it writes each fed concept's log from the current
+tags (canonical `derive_block/3` format) and **removes** the log section of a
+sink no longer fed by any thread — a vanished tag takes its materialized output
+with it, unconditionally (the PR diff is the review point). The verifier is the
+structural backstop — edit a tagged paragraph without re-materializing and
+**log fidelity goes red**.
 
 ---
 

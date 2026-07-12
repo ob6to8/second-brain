@@ -167,10 +167,12 @@ mix brain.verify     # conformance, id uniqueness/format, verified_by edges, gro
 - **`mix brain.registry`** renders the id→path view; **`--check`** fails CI if the
   on-disk view is stale — the same generated-not-hand-kept discipline as the
   contract and the route-tag logs.
-- **`mix brain.verify`** enforces the five identity/grounding rules (see
+- **`mix brain.verify`** enforces the six identity/grounding rules (see
   [`verifier.ex`](/lib/second_brain/verifier.ex)): non-empty `type`; present,
   well-formed id; every `verified_by` resolves; a capture (`resource`) is never
-  `verified: true`; and `verified: true` requires a non-empty `verified_by`.
+  `verified: true`; `verified: true` requires a non-empty `verified_by`; and
+  `verified` (either value) appears only on statement types
+  (`claim`/`note`/`concept`).
 
 ---
 

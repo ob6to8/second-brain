@@ -1,0 +1,112 @@
+---
+type: note
+title: Add to glossary — accrete per-term definition concepts
+description: The end-to-end flow for turning a source's technical vocabulary into per-term concept files under /glossary/ — extract, dedup against the brain, define, merge, then ride the same id → registry → verify spine as intake — the touch-sequence, actor boundaries, and where the intake scenario already pins the shared spine.
+tags: [meta, governance, glossary, terminology, filing, flow, workflow]
+timestamp: 2026-07-11
+---
+
+# Add to glossary — accrete per-term definition concepts
+
+The connective doc for the brain's terminology layer: `/add-to-glossary` scans
+a source (a persisted thread, a paper or post, a filed concept), extracts the
+technical terms it actually uses, and merges distilled definitions into
+**one concept file per term** under [`/glossary/`](/glossary/index.md), each
+individually linkable by bundle-absolute path. Structurally this is a
+specialized intake: the judgment layer differs (extract/define/merge instead
+of segment/distill/file-by-taxonomy), but the deterministic spine is the same
+`id → registry → verify` handoff.
+
+> **The three artifacts (and the sources of truth — point, don't restate):**
+> - **Rules** → [update-in-place](/meta/policy/update-in-place.md) (one term,
+>   one file; pointer entries instead of duplicate definitions) ·
+>   [distill-dont-dump](/meta/policy/distill-dont-dump.md) ·
+>   [stable-identity](/meta/policy/stable-identity.md). The system itself is
+>   described in the [glossary hub](/glossary.md).
+> - **Procedure** → the [`/add-to-glossary` skill](/.claude/skills/add-to-glossary/SKILL.md).
+> - **Mechanism + proof** → the same identity spine as the
+>   [intake flow](/meta/flows/intake.md) — `mix brain.id` / `mix brain.registry` /
+>   `mix brain.verify` — already pinned by
+>   [`test/second_brain/intake_scenario_test.exs`](/test/second_brain/intake_scenario_test.exs);
+>   this flow deliberately has no scenario of its own (same spine, one pin).
+
+---
+
+## 1. The problem
+
+The same term of art surfaces in thread after thread, paper after paper. A
+per-document glossary (what `/summarize-technical` produces) dies with its
+breakdown; prose definitions scattered across concepts fragment. The brain
+needs one **persistent, cross-source** definition per term — linkable from any
+response or concept, citing every place the term was seen — without duplicating
+definitions the bundle already holds canonically.
+
+---
+
+## 2. The pipeline
+
+```
+   a source (thread doc · paper/post · filed concept)
+          │
+          ▼
+   ┌──────────────┐   /add-to-glossary (on demand; auto-invoked by
+   │ EXTRACT       │   /create-pull-request on the freshly captured thread)
+   │ DEDUP         │   existing term file? → merge · canonical elsewhere? →
+   │ DEFINE        │   pointer entry · new? → fresh entry (1–3 sentences,
+   └──────┬───────┘   source-independent, Seen-in citations)
+          │  writes / updates
+          ▼
+   glossary/<kebab-slug>.md    (type: concept · own sb: id · verified: false)
+   glossary/index.md           (alphabetical, case-insensitive)
+          │  mix brain.id  →  mix brain.registry  →  mix brain.verify
+          ▼
+   terms now citable as [term](/glossary/<slug>.md)
+```
+
+---
+
+## 3. The touch-sequence (a canonical run)
+
+| # | Actor | Action | Files touched | Checked by |
+|---|-------|--------|---------------|------------|
+| 1 | operator | Name a source (`/add-to-glossary <thread/paper/concept>`) — or `/create-pull-request` invokes it on the thread `/capture` just wrote | — | — |
+| 2 | agent | Read the source in full; list candidate terms (terms of art, named methods, coined vocabulary — not incidental nouns) | — (reads) | editorial |
+| 3 | agent | Dedup each candidate: existing `/glossary/` file → merge; canonically defined elsewhere → pointer entry; new → fresh entry | — (reads bundle) | editorial |
+| 4 | agent | Write/merge the term files (definition, frontmatter, *Seen in:* citations; bump `timestamp` on merges) | `glossary/<slug>.md` | scenario (conformance, via the shared spine) |
+| 5 | agent | Keep `glossary/index.md` alphabetical and current | `glossary/index.md` | editorial |
+| 6 | tool | `mix brain.id` — mint ids for new term files | `glossary/<slug>.md` (id line) | scenario |
+| 7 | tool | `mix brain.registry` — recompile the id→path view | `meta/registry.md` | **scenario** |
+| 8 | tool | `mix brain.verify` — conformance, ids, edges, grounding | — (reads all) | **scenario** + tool |
+| 9 | agent | Commit with the run narrative in the message (source scanned; terms added/merged/pointed) — no hand-kept log | git objects | editorial |
+
+Steps 6–8 are intake's spine verbatim — see
+[intake §7](/meta/flows/intake.md) for what each task does and enforces.
+
+---
+
+## 4. Invariants
+
+- **One term, one file** — the same term seen in three threads and a paper has
+  one file with four citations, never near-duplicates.
+- **Pointer entries defer, never duplicate** — a term canonically defined by a
+  filed concept or the operating contract gets a one-line gloss plus a link.
+- **Definitions are agent statements** — `verified: false` until a claim is
+  grounded through the normal `verified_by` machinery; sources go in the
+  citation line, not the definition.
+- **Graduation preserves identity** — a term that outgrows the glossary
+  *moves* into the domain taxonomy (its `sb:` id travels; identity survives
+  moves) and leaves a pointer stub so existing links keep landing.
+- **The glossary is bundle, not governance** — unlike `meta/`, every term file
+  is registry-visible, verifier-checked, and site-rendered like any concept.
+
+---
+
+## 5. Verify — the shared spine and the editorial residue
+
+The gate suite is the same as intake's (pre-commit mirrors CI); the registry
+`--check` catches a forgotten recompile after minting, and the verifier
+catches a malformed or duplicate id. The editorial spot-checks the machine
+can't judge: did the extraction clear the selection bar (terms of art, not
+plain English used plainly); did dedup route to merge/pointer where it should
+have; are definitions source-independent and 1–3 sentences; is the index
+still alphabetical and complete.

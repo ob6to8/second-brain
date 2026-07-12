@@ -3,7 +3,7 @@ type: tutorial
 title: The gate suite — what the checks prove and where they run
 description: The repository's integrity gates — compile, format, tests, the two generated-artifact freshness checks (contract/registry --check), the two bundle validators (verify, route_tags), and the site build — what each one proves, and the three surfaces they run on (an agent's manual pass, the pre-commit hook, and the authoritative CI job).
 tags: [meta, tooling, elixir, ci, gates, verification, pre-commit, workflow]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # The gate suite — what the checks prove and where they run
@@ -64,7 +64,13 @@ is enough to know what turns them red:
 - `mix brain.verify` fails on a malformed or duplicate `sb:` id, a `verified_by`
   edge pointing at an id that doesn't exist, a capture (a concept with a
   `resource`) marked `verified: true`, or a `verified: true` statement with no
-  `verified_by`.
+  `verified_by`. On a green bundle it additionally prints **advisory
+  docs-freshness warnings** (`SecondBrain.Links`): internal links that don't
+  resolve and index-coverage gaps. These never turn the gate red — broken links
+  are tolerated per OKF conformance and index coverage is ultimately
+  editorial — but a warning in the output is a prompt to fix the drift in the
+  same change. Frozen thread bodies, materialized excerpt logs, code spans, and
+  `…` placeholders are exempt.
 - `mix brain.route_tags` fails on a malformed `<routes ref="…">` tag, a ref that
   resolves to no concept, or a materialized excerpt log that has drifted from what
   the current tags say it should be. It re-derives each sink's log and fails on

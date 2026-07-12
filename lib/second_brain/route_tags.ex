@@ -36,9 +36,10 @@ defmodule SecondBrain.RouteTags do
     that route to a concept sink are covered by at least one tag; threads with
     routing rows but no tags at all are reported once.
 
-  `materialize/1` writes each sink's log section from the current tags, so the
-  log is generated, not hand-kept; `run_checks/1` is then the structural
-  backstop that fails if the two ever diverge.
+  `materialize/1` projects the current tags into the sinks in both directions
+  — writing each fed sink's log section and removing the section from any sink
+  no longer fed — so the log is generated, not hand-kept; `run_checks/1` is
+  then the structural backstop that fails if the two ever diverge.
   """
 
   alias SecondBrain.Registry
@@ -261,8 +262,10 @@ defmodule SecondBrain.RouteTags do
         nil
 
       {_, [_header | rest]} ->
+        # Stop at the next h1 or h2 — the same terminator replace_section/2
+        # uses, so parsing and rewriting agree on where the section ends.
         rest
-        |> Enum.take_while(&(!String.starts_with?(&1, "## ")))
+        |> Enum.take_while(&(!Regex.match?(~r/^#{"#"}{1,2} /, &1)))
         |> split_blocks()
     end
   end
@@ -481,9 +484,11 @@ defmodule SecondBrain.RouteTags do
   @doc """
   Concept sinks a thread's routing ledger routes to, as `sb:` ids: markdown
   links in the `Routed to` column that resolve to a bundle concept (via its
-  stable id). Bundle-absolute links (`/SWE/…`) and thread-relative links both
-  resolve; links to non-concepts (`unrouted`, `index.md`, tooling) drop out
-  because they carry no id.
+  stable id). Only the `## Routing` section's table rows count — a thread body
+  may quote other pipe tables, and those are not the ledger. Bundle-absolute
+  links (`/SWE/…`) and thread-relative links both resolve; links to
+  non-concepts (`unrouted`, `index.md`, tooling) drop out because they carry
+  no id.
   """
   def ledger_doc_sinks(thread, root, id_index) do
     path_index = Map.new(id_index, fn {id, path} -> {path, id} end)
@@ -491,6 +496,7 @@ defmodule SecondBrain.RouteTags do
     thread.path
     |> File.read!()
     |> String.split("\n")
+    |> routing_section()
     |> Enum.filter(&String.starts_with?(&1, "|"))
     |> Enum.flat_map(fn row ->
       case String.split(row, "|") do
@@ -505,6 +511,19 @@ defmodule SecondBrain.RouteTags do
     |> Enum.map(&path_index[&1])
     |> Enum.reject(&is_nil/1)
     |> Enum.uniq()
+  end
+
+  # The lines of the `## Routing` section: from its heading to the next `##`.
+  defp routing_section(lines) do
+    case Enum.find_index(lines, &Regex.match?(~r/^## Routing\b/, &1)) do
+      nil ->
+        []
+
+      i ->
+        lines
+        |> Enum.drop(i + 1)
+        |> Enum.take_while(&(!String.starts_with?(&1, "## ")))
+    end
   end
 
   # Resolve a ledger link target to a bundle-relative path. Bundle-absolute
@@ -526,10 +545,13 @@ defmodule SecondBrain.RouteTags do
   # ---------------------------------------------------------------------
 
   @doc """
-  Regenerate every fed sink's route-tagged log section from the current tags,
-  writing the files in place. Returns the list of concept paths (relative to
-  `root`) that were rewritten. Run this after (re)placing tags so the log is
-  generated rather than hand-kept; `run_checks/1` then guards it structurally.
+  Project the current tags into the sinks, in both directions: regenerate every
+  fed sink's route-tagged log section, and **remove** the section from any sink
+  that carries one but is no longer fed by any thread (its tags vanished — the
+  orphaned section goes with them, unconditionally; the PR diff is the review
+  point). Returns the sorted list of concept paths (relative to `root`) that
+  were rewritten. Run this after (re)placing tags so the log is generated
+  rather than hand-kept; `run_checks/1` then guards it structurally.
   """
   @spec materialize(String.t()) :: [String.t()]
   def materialize(root \\ File.cwd!()) do
@@ -537,20 +559,31 @@ defmodule SecondBrain.RouteTags do
     concepts = bundle_concepts(root)
     id_index = Map.new(concepts, &{&1.id, &1.path})
 
-    threads
-    |> feeding_pairs()
-    |> Enum.group_by(fn {_t, sink} -> sink end, fn {t, _sink} -> t end)
-    |> Enum.flat_map(fn {sink, ts} ->
-      case id_index[sink] do
-        nil ->
-          []
+    fed =
+      threads
+      |> feeding_pairs()
+      |> Enum.group_by(fn {_t, sink} -> sink end, fn {t, _sink} -> t end)
 
-        rel ->
-          write_log_section(root, rel, sink, Enum.sort_by(ts, & &1.slug))
-          [rel]
+    written =
+      Enum.flat_map(fed, fn {sink, ts} ->
+        case id_index[sink] do
+          nil ->
+            []
+
+          rel ->
+            write_log_section(root, rel, sink, Enum.sort_by(ts, & &1.slug))
+            [rel]
+        end
+      end)
+
+    removed =
+      for {sink, %{path: rel}} <- scan_sinks(root, concepts),
+          not Map.has_key?(fed, sink) do
+        remove_log_section(root, rel)
+        rel
       end
-    end)
-    |> Enum.sort()
+
+    Enum.sort(written ++ removed)
   end
 
   defp write_log_section(root, rel, sink, threads) do
@@ -572,6 +605,35 @@ defmodule SecondBrain.RouteTags do
         Enum.join(blocks, "\n\n")
 
     File.write!(path, replace_section(content, section))
+  end
+
+  # Drop an unfed sink's log section (heading through the next h1/h2 or EOF)
+  # entirely, leaving the rest of the document untouched.
+  defp remove_log_section(root, rel) do
+    path = Path.join(root, rel)
+    lines = path |> File.read!() |> String.split("\n")
+
+    case Enum.find_index(lines, &Regex.match?(@log_section_re, &1)) do
+      nil ->
+        :ok
+
+      start ->
+        {before, from} = Enum.split(lines, start)
+        rest = tl(from)
+
+        tail =
+          case Enum.find_index(rest, &Regex.match?(~r/^#{"#"}{1,2} /, &1)) do
+            nil -> []
+            i -> Enum.drop(rest, i)
+          end
+
+        head = before |> Enum.join("\n") |> String.trim_trailing()
+
+        File.write!(
+          path,
+          head <> if(tail == [], do: "\n", else: "\n\n" <> Enum.join(tail, "\n"))
+        )
+    end
   end
 
   # Replace an existing log section (heading through the next h1/h2 or EOF) with

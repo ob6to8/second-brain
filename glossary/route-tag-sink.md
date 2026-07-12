@@ -6,11 +6,11 @@ description: The document a route tag routes into and that accretes the aggregat
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, routing, route-tagging]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # sink (route-tag sink)
 
-The document that a [route tag](/glossary/route-tag.md) routes into and that accretes the aggregated excerpt log. An aggregating reference is a concept's stable `sb:` id (it accretes a log block); a code or file path is a non-aggregating back-link that carries no log. The sink freezes acceptance of new excerpt blocks when its matter resolves.
+The document that a [route tag](/glossary/route-tag.md) routes into and that accretes the aggregated excerpt log. An aggregating reference is a concept's stable `sb:` id (it accretes a log block); a code or file path is a non-aggregating back-link that carries no log. The sink freezes acceptance of new excerpt blocks when its matter resolves. A sink left **unfed** — no thread's tags reference it anymore — loses its [excerpt log](/glossary/excerpt-log.md) section on the next [materialize](/glossary/materialize.md), since the section only ever mirrors the tags that exist.
 
-*Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md)
+*Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md), [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md)
