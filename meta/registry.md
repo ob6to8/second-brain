@@ -48,7 +48,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:266c5e` | [SWE/llm-engineering/kv-cache-compression-history](/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `sb:41be22` | [SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
 | `sb:1cac23` | [SWE/llm-engineering/vericache-lossless-kv-cache](/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |
-| `sb:d58da3` | [SWE/testing/elixir-second-brain-testing-methodology](/SWE/testing/elixir-second-brain-testing-methodology.md) | methodology | false |
+| `sb:d58da3` | [SWE/testing/elixir-second-brain-testing-methodology](/SWE/testing/elixir-second-brain-testing-methodology.md) | methodology |  |
 | `sb:b1ba4b` | [SWE/testing/elixir-snapshot-libraries-require-a-dependency](/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md) | reference |  |
 | `sb:f6e843` | [SWE/testing/exunit-dependency-free-fixtures-and-diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md) | reference |  |
 | `sb:a5ea86` | [SWE/testing/how-to-test-features-not-code](/SWE/testing/how-to-test-features-not-code.md) | reference |  |
@@ -77,6 +77,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:23f009` | [glossary/compiled-contract](/glossary/compiled-contract.md) | concept | false |
 | `sb:04f8dd` | [glossary/composable-beliefs](/glossary/composable-beliefs.md) | concept | false |
 | `sb:317879` | [glossary/concept-okf](/glossary/concept-okf.md) | concept | false |
+| `sb:a48aeb` | [glossary/crlf](/glossary/crlf.md) | concept | false |
 | `sb:04c057` | [glossary/cron-expression](/glossary/cron-expression.md) | concept | false |
 | `sb:c2a18e` | [glossary/cross-site-scripting](/glossary/cross-site-scripting.md) | concept | false |
 | `sb:197b02` | [glossary/dark-factory](/glossary/dark-factory.md) | concept | false |
@@ -87,12 +88,15 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:d4fc9d` | [glossary/digest](/glossary/digest.md) | concept | false |
 | `sb:6a9e78` | [glossary/doctrine](/glossary/doctrine.md) | concept | false |
 | `sb:9074c1` | [glossary/dry](/glossary/dry.md) | concept | false |
+| `sb:16e171` | [glossary/elaboration-type](/glossary/elaboration-type.md) | concept | false |
 | `sb:da21de` | [glossary/embeddings](/glossary/embeddings.md) | concept | false |
 | `sb:f727fe` | [glossary/epistemic-overlay](/glossary/epistemic-overlay.md) | concept | false |
 | `sb:e1c3b6` | [glossary/epistemic-poisoning](/glossary/epistemic-poisoning.md) | concept | false |
+| `sb:3101ef` | [glossary/excerpt-log](/glossary/excerpt-log.md) | concept | false |
 | `sb:9e1592` | [glossary/exunit](/glossary/exunit.md) | concept | false |
 | `sb:e7689f` | [glossary/fast-forward-merge](/glossary/fast-forward-merge.md) | concept | false |
 | `sb:f382b0` | [glossary/featuring](/glossary/featuring.md) | concept | false |
+| `sb:c0ed08` | [glossary/feeding-pairs](/glossary/feeding-pairs.md) | concept | false |
 | `sb:950a55` | [glossary/flow-touch-sequence](/glossary/flow-touch-sequence.md) | concept | false |
 | `sb:e56fb4` | [glossary/fresh-session-per-fire](/glossary/fresh-session-per-fire.md) | concept | false |
 | `sb:184bae` | [glossary/git-worktree](/glossary/git-worktree.md) | concept | false |
@@ -110,15 +114,18 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:862042` | [glossary/let-it-crash](/glossary/let-it-crash.md) | concept | false |
 | `sb:01be3a` | [glossary/librarian-write-broker](/glossary/librarian-write-broker.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |
+| `sb:15fe73` | [glossary/materialize](/glossary/materialize.md) | concept | false |
 | `sb:5fdc55` | [glossary/methodology-type](/glossary/methodology-type.md) | concept | false |
 | `sb:102785` | [glossary/mix-task](/glossary/mix-task.md) | concept | false |
 | `sb:c66f10` | [glossary/model-context-protocol](/glossary/model-context-protocol.md) | concept | false |
 | `sb:334e60` | [glossary/mounting-point](/glossary/mounting-point.md) | concept | false |
 | `sb:54995c` | [glossary/non-bundle-namespace](/glossary/non-bundle-namespace.md) | concept | false |
 | `sb:1349cb` | [glossary/operating-contract](/glossary/operating-contract.md) | concept | false |
+| `sb:3ee2d2` | [glossary/orphan-block](/glossary/orphan-block.md) | concept | false |
 | `sb:a9113e` | [glossary/orphaned-branch](/glossary/orphaned-branch.md) | concept | false |
 | `sb:5d40bf` | [glossary/otp](/glossary/otp.md) | concept | false |
 | `sb:7adc45` | [glossary/parse-the-log](/glossary/parse-the-log.md) | concept | false |
+| `sb:8048c6` | [glossary/pipe-table](/glossary/pipe-table.md) | concept | false |
 | `sb:bf0524` | [glossary/plan-type](/glossary/plan-type.md) | concept | false |
 | `sb:78580d` | [glossary/plugin](/glossary/plugin.md) | concept | false |
 | `sb:393e3d` | [glossary/pointer-entry](/glossary/pointer-entry.md) | concept | false |
@@ -128,11 +135,13 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:573229` | [glossary/proto-belief-document](/glossary/proto-belief-document.md) | concept | false |
 | `sb:ea7acc` | [glossary/provenance](/glossary/provenance.md) | concept | false |
 | `sb:fb0bfb` | [glossary/query-profile](/glossary/query-profile.md) | concept | false |
+| `sb:a95adb` | [glossary/ratification](/glossary/ratification.md) | concept | false |
 | `sb:f5c2bd` | [glossary/react](/glossary/react.md) | concept | false |
 | `sb:99ec79` | [glossary/reason-tags](/glossary/reason-tags.md) | concept | false |
 | `sb:5e7da1` | [glossary/recall](/glossary/recall.md) | concept | false |
 | `sb:0b95ed` | [glossary/recall-at-k](/glossary/recall-at-k.md) | concept | false |
 | `sb:c86162` | [glossary/recall-probe](/glossary/recall-probe.md) | concept | false |
+| `sb:ae9b26` | [glossary/red-test](/glossary/red-test.md) | concept | false |
 | `sb:1dbcc9` | [glossary/rendered-aggregation](/glossary/rendered-aggregation.md) | concept | false |
 | `sb:4c3f16` | [glossary/research-spike](/glossary/research-spike.md) | concept | false |
 | `sb:e142e6` | [glossary/route-tag](/glossary/route-tag.md) | concept | false |
@@ -140,6 +149,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:ba6759` | [glossary/routine](/glossary/routine.md) | concept | false |
 | `sb:570e22` | [glossary/routing-ledger](/glossary/routing-ledger.md) | concept | false |
 | `sb:4f4f5c` | [glossary/scenario-test](/glossary/scenario-test.md) | concept | false |
+| `sb:23844f` | [glossary/section-terminator](/glossary/section-terminator.md) | concept | false |
 | `sb:4e01f8` | [glossary/self-consistency-check](/glossary/self-consistency-check.md) | concept | false |
 | `sb:98acc0` | [glossary/semantic-search](/glossary/semantic-search.md) | concept | false |
 | `sb:243d56` | [glossary/session-capture](/glossary/session-capture.md) | concept | false |
@@ -150,8 +160,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:3be9b0` | [glossary/skill-namespacing](/glossary/skill-namespacing.md) | concept | false |
 | `sb:7c0b1d` | [glossary/skill-to-skill-delegation](/glossary/skill-to-skill-delegation.md) | concept | false |
 | `sb:38d006` | [glossary/speculative-decoding](/glossary/speculative-decoding.md) | concept | false |
+| `sb:c67f48` | [glossary/spurious-warning](/glossary/spurious-warning.md) | concept | false |
 | `sb:4a235a` | [glossary/squash-merge](/glossary/squash-merge.md) | concept | false |
 | `sb:4d71d3` | [glossary/stable-id](/glossary/stable-id.md) | concept | false |
+| `sb:e203a2` | [glossary/stale-block](/glossary/stale-block.md) | concept | false |
 | `sb:1e9cde` | [glossary/staleness-propagation](/glossary/staleness-propagation.md) | concept | false |
 | `sb:efad31` | [glossary/static-site-generator](/glossary/static-site-generator.md) | concept | false |
 | `sb:bb2968` | [glossary/strand](/glossary/strand.md) | concept | false |

@@ -17,8 +17,8 @@ folding both in.
 
 Distinct from the other meta genres: `policy` is the standing rules (compiled
 into `/CLAUDE.md`); `tutorials` is the *why* behind a piece of tooling, read
-start to finish; `specs` is the plan for a change not yet fully built; `threads`
-is verbatim session archives. A flow doc is none of these — it narrates how a
+start to finish; `plans` is the design/decision record for a change not yet
+fully built; `threads` is verbatim session archives. A flow doc is none of these — it narrates how a
 *whole action* runs end to end, naming the files and pointing at the scenario
 that proves it. The genre itself was designed in
 [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md).
@@ -40,3 +40,24 @@ that proves it. The genre itself was designed in
   `--check` drift gate → one commit for source + artifact: the touch-sequence
   (including the sections-are-code step), actor boundaries, and the scenario
   test that pins the spine.
+- [Site build & Pages deploy](/meta/flows/site-build-and-deploy.md) — from a
+  push on `main` to the live GitHub Pages site: the four integrity gates, then
+  `mix brain.site` renders every page (metadata panels, evidence edges +
+  backlinks, search index) and the workflow deploys it. Fully unattended; no
+  skill involved.
+- [News — generate the daily inbox of candidates](/meta/flows/news-inbox.md) —
+  `/news` derives a query profile from the taxonomy, searches, dedups twice,
+  reason-tags, and writes a dated digest into the non-bundle `inbox/`
+  namespace; hand-off to `/intake` crosses a candidate into the brain. Almost
+  all judgment layer — the structural guarantee is the namespace boundary.
+- [Add to glossary — accrete per-term definition concepts](/meta/flows/add-to-glossary.md) —
+  `/add-to-glossary` extracts a source's technical terms, dedups
+  (merge/pointer/new), and files one concept per term under `/glossary/`,
+  riding the same id → registry → verify spine as intake (one pin, shared
+  scenario).
+- [Create pull request — capture, glossary, commit, push, open](/meta/flows/create-pull-request.md) —
+  the composition flow that ships a session: run capture in full, glossary its
+  thread doc, back-link this session's `meta/elaborations/` docs to the
+  captured thread (`thread:` frontmatter), then commit/push/open the PR —
+  invocation is the authorization; ordering (capture before commit) keeps the
+  record in the same PR as the change.

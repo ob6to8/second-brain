@@ -6,7 +6,7 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-10
+timestamp: 2026-07-11
 ---
 - **`/intake`** — process pasted content into one or more filed concepts. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -22,6 +22,15 @@ timestamp: 2026-07-10
   paper/article/spec: a plain-language summary, a glossary of its key technical terms,
   then an integrated technical summary reusing those terms. See
   `.claude/skills/summarize-technical/SKILL.md`.
+- **`/elaborate`** — unpack a technical **phrase or short passage** (from the
+  conversation, a doc, a commit message, or pasted text): define the terms it uses and
+  give a less technical overview of the concepts and actions it describes, delivered
+  in chat **and persisted** as a `type: elaboration` doc under
+  [`meta/elaborations/`](/meta/elaborations/index.md) (governance namespace, no `sb:`
+  id; link glossary terms that already exist; hand off to `/add-to-glossary` to
+  persist new ones per-term). The doc's `thread` back-link to its originating session
+  is set later by `/create-pull-request`, never by this skill. The phrase-scale
+  sibling of `/summarize-technical`. See `.claude/skills/elaborate/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the glossary — **one concept file per term** under
@@ -36,11 +45,14 @@ timestamp: 2026-07-10
   the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
   file one into the brain. See `.claude/skills/news/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
-  over the captured thread doc, then commit the current working changes, push the
-  branch, and open a pull request — so the frozen thread doc and the glossary updates
-  it feeds ship in the same PR. Invoking the skill **is** the authorization to open the PR
-  (no separate confirmation gate); PR-template detection and the GitHub MCP tools
-  handle the rest. See `.claude/skills/create-pull-request/SKILL.md`.
+  over the captured thread doc, **back-link this session's elaboration docs** (set
+  `thread:` in each `meta/elaborations/` doc the session created or updated, pointing
+  at the just-captured thread), then commit the current working changes, push the
+  branch, and open a pull request — so the frozen thread doc, the glossary updates it
+  feeds, and the elaboration trace all ship in the same PR. Invoking the skill **is**
+  the authorization to open the PR (no separate confirmation gate); PR-template
+  detection and the GitHub MCP tools handle the rest. See
+  `.claude/skills/create-pull-request/SKILL.md`.
 - **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
   a subcommand argument: `/todo create <title>` files a new open todo (and maintains
   the index); `/todo list` shows the todos grouped by `status`. See

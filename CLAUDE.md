@@ -257,6 +257,14 @@ Seed vocabulary:
   an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
   record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
   complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
+- `elaboration` — a persisted expansion of a technical **phrase or short passage**:
+  the quoted target, definitions of the terms it uses, and a less technical overview
+  of the concepts and actions it describes — produced by `/elaborate` and back-linked
+  to its originating session via a `thread` frontmatter field once that session is
+  captured (`/create-pull-request` sets it). Distinct from a glossary `concept` (one
+  *term*, source-independent) and a `tutorial` (long-form, standalone subject) — an
+  elaboration unpacks *one specific mouthful in context* (lives under
+  `meta/elaborations/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
 
@@ -289,7 +297,9 @@ _Source: [`meta/policy/stable-identity.md`](/meta/policy/stable-identity.md)_
   link — anything carrying a `resource` — is a **capture**, not a statement:
   verification is **not possible** for it, so a capture never carries `verified`
   (omit the field). `mix brain.verify` rejects `verified: true` on any concept that
-  has a `resource`.
+  has a `resource`, and rejects a `verified` field (either value) on any type
+  outside `claim`/`note`/`concept` — the statement-type restriction is
+  machine-enforced, not editorial.
 - **`verified: true` requires evidence, never its own link.** A verified statement
   must carry a non-empty `verified_by` pointing at the captures (and/or other
   statements) that support it. Storing a `resource` on the statement itself proves
@@ -342,6 +352,15 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   paper/article/spec: a plain-language summary, a glossary of its key technical terms,
   then an integrated technical summary reusing those terms. See
   `.claude/skills/summarize-technical/SKILL.md`.
+- **`/elaborate`** — unpack a technical **phrase or short passage** (from the
+  conversation, a doc, a commit message, or pasted text): define the terms it uses and
+  give a less technical overview of the concepts and actions it describes, delivered
+  in chat **and persisted** as a `type: elaboration` doc under
+  [`meta/elaborations/`](/meta/elaborations/index.md) (governance namespace, no `sb:`
+  id; link glossary terms that already exist; hand off to `/add-to-glossary` to
+  persist new ones per-term). The doc's `thread` back-link to its originating session
+  is set later by `/create-pull-request`, never by this skill. The phrase-scale
+  sibling of `/summarize-technical`. See `.claude/skills/elaborate/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the glossary — **one concept file per term** under
@@ -356,11 +375,14 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
   file one into the brain. See `.claude/skills/news/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
-  over the captured thread doc, then commit the current working changes, push the
-  branch, and open a pull request — so the frozen thread doc and the glossary updates
-  it feeds ship in the same PR. Invoking the skill **is** the authorization to open the PR
-  (no separate confirmation gate); PR-template detection and the GitHub MCP tools
-  handle the rest. See `.claude/skills/create-pull-request/SKILL.md`.
+  over the captured thread doc, **back-link this session's elaboration docs** (set
+  `thread:` in each `meta/elaborations/` doc the session created or updated, pointing
+  at the just-captured thread), then commit the current working changes, push the
+  branch, and open a pull request — so the frozen thread doc, the glossary updates it
+  feeds, and the elaboration trace all ship in the same PR. Invoking the skill **is**
+  the authorization to open the PR (no separate confirmation gate); PR-template
+  detection and the GitHub MCP tools handle the rest. See
+  `.claude/skills/create-pull-request/SKILL.md`.
 - **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
   a subcommand argument: `/todo create <title>` files a new open todo (and maintains
   the index); `/todo list` shows the todos grouped by `status`. See

@@ -90,7 +90,9 @@ Chain those facts and the requirement follows:
    even validate the bundle — dead on arrival in the very environment the repo is
    designed to be operated from.
 2. **The `SessionStart` hook depends on this.** `.claude/hooks/session-start.sh`
-   runs `mix brain.contract` *before the operator types anything*; it must succeed
+   warms the build cache with `mix compile` *before the operator types anything*,
+   so `mix brain.contract` and the test suite are ready the moment the session
+   opens; that compile (and every `mix brain.*` task after it) must succeed
    without a network round-trip, from a cold snapshot, every time.
 3. **Snapshots freeze state at bake time.** Because the container boots from a
    snapshot rather than a live install, anything not baked in isn't guaranteed to

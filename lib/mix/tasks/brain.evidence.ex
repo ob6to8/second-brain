@@ -49,6 +49,11 @@ defmodule Mix.Tasks.Brain.Evidence do
     end
   end
 
+  # A concept that stores a link is a capture — trusted evidence, never itself a
+  # verifiable statement (see meta/policy/verification-grounding.md). A resource
+  # grounds nothing; only `verified_by` edges do.
   defp grounding_note(%{resource: nil}), do: "Not grounded."
-  defp grounding_note(%{resource: res}), do: "Grounded directly by resource: #{res}"
+
+  defp grounding_note(%{resource: res}),
+    do: "Capture — stores resource: #{res} (trusted evidence, not a verifiable statement)."
 end

@@ -1,0 +1,141 @@
+---
+type: note
+title: Site build & Pages deploy — render the bundle to the live site
+description: The end-to-end flow from a push on main to the live GitHub Pages site — mix brain.site renders every page from the bundle, the deploy is gated on the same integrity checks CI runs, and the whole render is dependency-free — the touch-sequence, actor boundaries, and the tests that pin the renderer.
+tags: [meta, governance, site, pages, deploy, rendering, flow, workflow]
+timestamp: 2026-07-11
+---
+
+# Site build & Pages deploy — render the bundle to the live site
+
+The connective doc for the brain's *read* surface: turning the OKF bundle into
+the self-contained static site on GitHub Pages. Unlike the other flows this one
+is **fully unattended** — no skill invokes it and no agent judges anything; it
+runs on every push to `main`. This doc narrates what happens, in what order,
+to which files.
+
+> **The three artifacts (and the sources of truth — point, don't restate):**
+> - **Why the deploy is gated / why it's dependency-free** → the tutorials
+>   [gating the Pages deploy on a verified bundle](/meta/tutorials/gating-the-pages-deploy-on-a-verified-bundle.md)
+>   and [why the toolchain runs offline](/meta/tutorials/why-the-toolchain-runs-offline.md).
+> - **Procedure** → none (no skill): the trigger is `git push` to `main`;
+>   [`.github/workflows/pages.yml`](/.github/workflows/pages.yml) is the runbook.
+> - **Mechanism + proof** → [`SecondBrain.Site`](/lib/second_brain/site.ex) /
+>   [`SecondBrain.Markdown`](/lib/second_brain/markdown.ex) and the
+>   `mix brain.site [--out DIR]` task, pinned by
+>   [`test/second_brain/site_test.exs`](/test/second_brain/site_test.exs) and
+>   [`markdown_test.exs`](/test/second_brain/markdown_test.exs) (this flow
+>   predates the `*_scenario_test.exs` naming; these tests are its scenario).
+
+---
+
+## 1. The problem
+
+A bundle of markdown files is navigable in an editor but not *readable* as a
+knowledge base: no search, no taxonomy sidebar, no view of a concept's
+verification state or evidence edges. And a naive "publish whatever is on
+`main`" deploy would happily serve a render of an invalid bundle — dangling
+ids, stale registry, diverged excerpt logs. The site build turns the bundle
+into a browsable artifact; the deploy gate makes "the live site" and "a
+verified bundle" the same thing.
+
+---
+
+## 2. The pipeline
+
+```
+   git push → main
+          │  .github/workflows/pages.yml  (build job)
+          ▼
+   the gate — the bundle must verify before it renders:
+     mix brain.contract --check · mix brain.registry --check
+     mix brain.verify           · mix brain.route_tags
+          │  mix brain.site
+          ▼
+   _site/                       (removed and rebuilt from scratch)
+   ┌──────────────────────────────────────────────────┐
+   │ one .html per .md          (page kinds: root ·    │
+   │   index · log · concept · doc)                    │
+   │ sidebar = the directory taxonomy (tree, <details>)│
+   │ per-concept metadata panel (type badge, verified, │
+   │   resource, provenance, id, tags, evidence edges  │
+   │   + reverse "cited by" backlinks)                 │
+   │ assets/style.css · assets/app.js · .nojekyll      │
+   │ search-index.json          (client-side search)   │
+   └──────┬───────────────────────────────────────────┘
+          │  upload-pages-artifact → deploy-pages  (deploy job)
+          ▼
+   the live GitHub Pages site
+```
+
+Everything below the gate is a pure function of the working tree — the same
+dependency-free property as every other `mix brain.*` task.
+
+---
+
+## 3. The touch-sequence (a canonical run)
+
+| # | Actor | Action | Files touched | Checked by |
+|---|-------|--------|---------------|------------|
+| 1 | operator/agent | Merge or push to `main` (the only trigger besides a manual `workflow_dispatch`) | — | — |
+| 2 | tool | The four integrity gates, same order as CI: contract check, registry check, verify, route tags | — (reads) | **tool** — any failure stops the deploy |
+| 3 | tool | `mix brain.site` — scan every non-excluded `.md` (unlike the registry, `meta/` and `inbox/` **are** rendered; `deprecated/`, `lib/`, `test/`, dotdirs are not), parse frontmatter tolerantly, build the id index / reverse-`verified_by` backlinks / nav tree | `_site/**` (fresh) | test |
+| 4 | tool | Write assets, `search-index.json`, `.nojekyll` | `_site/assets/*`, `_site/search-index.json`, `_site/.nojekyll` | test |
+| 5 | tool | Upload the artifact; the `deploy` job publishes it (`enablement: true` self-enables Pages on first run) | — | tool (workflow) |
+
+There is no step 6: nothing in the repo records a deploy. The site is
+disposable output; the bundle is the record.
+
+---
+
+## 4. The moving parts
+
+- **Two scanners, two scopes.** The site's exclusion list is *narrower* than
+  the registry's: governance (`meta/`) and the inbox are site-visible but
+  registry/verifier-invisible. See
+  [the three bundle scanners](/meta/tutorials/the-three-bundle-scanners.md).
+- **A tolerant consumer.** A file with unparseable frontmatter still renders
+  (frontmatter treated as body); missing titles fall back to the first `#` h1,
+  then a humanized filename — per
+  [OKF conformance](/meta/policy/okf-conformance.md).
+- **Relative everything.** Each page carries a `root_prefix` computed from its
+  depth, and every internal `.md` link is rewritten to the `.html` page, so the
+  site works at a domain root or under `/second-brain/` unchanged.
+- **The renderer is scoped, not general.** `SecondBrain.Markdown` implements
+  exactly the constructs the bundle uses (ATX headings with GitHub-style slug
+  anchors, nested lists, fenced code, tables, blockquotes, emphasis, links,
+  autolinks) — dependency-free, like everything else.
+
+---
+
+## 5. Invariants
+
+- **The live site is only ever a render of a bundle that passed the gates** —
+  the same four checks as CI, re-run inside `pages.yml` because a separate
+  workflow can't depend on CI's jobs. (`mix test` and the format check run in
+  CI only; the gate repeats just the *bundle-integrity* checks.)
+- **The build is destructive and reproducible** — `_site/` is removed and
+  rebuilt every run; nothing in it is hand-maintained, and it is gitignored.
+- **User content is escaped** — titles, descriptions, hrefs, tags, and code
+  all pass through the HTML escaper; a `"` in an href cannot break out of its
+  attribute (pinned by `markdown_test.exs`).
+- **One deploy in flight** — the `pages` concurrency group serializes deploys
+  without cancelling a newer push's run.
+
+---
+
+## 6. Verify — the gates and what pins the renderer
+
+CI (`ci.yml`) runs `mix brain.site` on every push/PR as a smoke check, so a
+render crash is caught before it ever reaches the deploy workflow.
+[`site_test.exs`](/test/second_brain/site_test.exs) pins the generator over a
+tmp-dir bundle: page-per-concept with exclusions honoured, assets +
+search index + `.nojekyll` written, the metadata panel (badge, tags,
+verification), evidence edges *and* reverse backlinks resolving to page
+titles, body links rewritten relative, and the sidebar marking the current
+page. [`markdown_test.exs`](/test/second_brain/markdown_test.exs) pins the
+renderer construct by construct, including the escaping properties.
+
+The editorial residue: whether the *rendered* pages read well (layout, search
+relevance, nav ergonomics) — appraised by browsing the live site, as in the
+[2026-07-09 live-render appraisal](/meta/threads/2026-07-09-live-render-appraisal-and-pages-hardening.md).

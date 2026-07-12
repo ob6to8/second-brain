@@ -39,7 +39,10 @@ defmodule Mix.Tasks.Brain.Id do
   end
 
   defp add_id!(path, id) do
+    # Tolerate CRLF the same way the frontmatter parser does — insert the id
+    # with the file's own line ending so nothing else changes.
     case File.read!(path) do
+      "---\r\n" <> rest -> File.write!(path, "---\r\nid: #{id}\r\n" <> rest)
       "---\n" <> rest -> File.write!(path, "---\nid: #{id}\n" <> rest)
       _ -> Mix.raise("#{path}: cannot mint id — file has no frontmatter block")
     end

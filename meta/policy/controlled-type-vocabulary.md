@@ -6,7 +6,7 @@ section: type-vocabulary
 order: 1
 status: active
 tags: [meta, governance, types, vocabulary]
-timestamp: 2026-07-05
+timestamp: 2026-07-11
 ---
 OKF requires a `type` but registers no vocabulary. This bundle uses a **controlled
 list** so the brain stays queryable. It **grows deliberately** — an agent may
@@ -55,5 +55,13 @@ Seed vocabulary:
   an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
   record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
   complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
+- `elaboration` — a persisted expansion of a technical **phrase or short passage**:
+  the quoted target, definitions of the terms it uses, and a less technical overview
+  of the concepts and actions it describes — produced by `/elaborate` and back-linked
+  to its originating session via a `thread` frontmatter field once that session is
+  captured (`/create-pull-request` sets it). Distinct from a glossary `concept` (one
+  *term*, source-independent) and a `tutorial` (long-form, standalone subject) — an
+  elaboration unpacks *one specific mouthful in context* (lives under
+  `meta/elaborations/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.

@@ -348,20 +348,22 @@ defmodule SecondBrain.Markdown do
 
   @doc false
   def inline(text, ctx) do
-    # Both links and code spans are lifted out to opaque placeholders before any
+    # Both code spans and links are lifted out to opaque placeholders before any
     # escaping/emphasis runs, then restored last. This lets emphasis span across
     # a code span (e.g. **`git fetch`**) while the code span's own contents are
-    # never treated as markdown. Links come first: a link label may itself
-    # contain a code span (e.g. [`sources/`](/path)).
-    {text, links} = extract_links(text, ctx)
+    # never treated as markdown. Code spans come first, so link syntax written
+    # inside inline code (e.g. `[x](/path.md)`) stays literal; a link label may
+    # still contain a code span (e.g. [`sources/`](/path)) because the label's
+    # code placeholder survives link extraction and is restored last.
     {text, codes} = extract_code(text)
+    {text, links} = extract_links(text, ctx)
 
     text
     |> escape()
     |> autolinks()
     |> emphasis()
-    |> restore(codes)
     |> restore(links)
+    |> restore(codes)
   end
 
   # Replace every [label](href) with a placeholder, remembering the rendered
