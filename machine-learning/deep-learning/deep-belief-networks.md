@@ -86,3 +86,21 @@ and conceptual importance.
   <https://www.cs.toronto.edu/~hinton/absps/fastnc.pdf>
 - Hinton, G. E. *Deep belief networks.* Scholarpedia.
   <http://www.scholarpedia.org/article/Deep_belief_networks>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:1370e8">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-12-deep-belief-networks-research-spike-and-refile (2026-07-12)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:1370e8`]**
+
+Done. Here's the spike.
+
+**What Hinton's deep belief networks are**
+
+A **deep belief network (DBN)** — from Hinton, Osindero & Teh's 2006 *A Fast Learning Algorithm for Deep Belief Nets* — is a generative machine-learning model built as a **stack of Restricted Boltzmann Machines**. After training, the top two layers form an undirected associative memory (an RBM) and every layer below is directed with top-down generative connections. It's *learned, not authored*: a greedy **layer-wise** algorithm trains one RBM at a time via contrastive divergence, using each layer's inferred latent values as the next layer's data, then optionally fine-tunes the whole stack. Its purpose is learning **hierarchical, distributed latent feature representations** of data without labels. Historically it ignited the 2006 deep-learning revival; it's since been largely superseded and is now mostly of historical interest.
+
+Note the term: "belief net" is **Pearl's** — a directed acyclic graph of *stochastic* variables where edges are conditional-probability dependencies.
