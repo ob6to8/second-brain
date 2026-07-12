@@ -70,6 +70,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [let-it-crash](/glossary/let-it-crash.md) — Erlang's fault-tolerance philosophy: don't handle every error in place; let the process crash and a supervisor restart it known-good
 - [lexical search](/glossary/lexical-search.md) — search matching the literal surface form of text (tokens/substrings), not meaning; fast and dependency-free but blind to synonym/jargon gaps
 - [librarian write-broker](/glossary/librarian-write-broker.md) — a supervised process solely owning mutation of a knowledge namespace: agents submit proposals, it runs the gauntlet and serializes commits
+- [lineage](/glossary/lineage.md) — the provenance chain that produced an artifact (for a flow doc: analysis → plan → thread → PR), recorded as a canonical frontmatter block from which views are derived
 - [margin collapse](/glossary/margin-collapse.md) — the AI-industry thesis that frontier labs' high inference margins erode under cheaper open-weight parity with frictionless switching (pointer to `sb:07610c`)
 - [markdown renderer](/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `SecondBrain.Markdown`)
 - [materialize](/glossary/materialize.md) — write derived content to disk as real file content instead of recomputing on demand; pairs with a freshness check

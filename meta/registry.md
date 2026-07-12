@@ -123,6 +123,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:862042` | [glossary/let-it-crash](/glossary/let-it-crash.md) | concept | false |
 | `sb:792b23` | [glossary/lexical-search](/glossary/lexical-search.md) | concept | false |
 | `sb:01be3a` | [glossary/librarian-write-broker](/glossary/librarian-write-broker.md) | concept | false |
+| `sb:f97e44` | [glossary/lineage](/glossary/lineage.md) | concept | false |
 | `sb:541206` | [glossary/margin-collapse](/glossary/margin-collapse.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |
 | `sb:15fe73` | [glossary/materialize](/glossary/materialize.md) | concept | false |
