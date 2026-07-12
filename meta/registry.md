@@ -73,10 +73,12 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:068a32` | [glossary/bm25](/glossary/bm25.md) | concept | false |
 | `sb:ee8dfd` | [glossary/candidate-feed](/glossary/candidate-feed.md) | concept | false |
 | `sb:21854a` | [glossary/ci-smoke-check](/glossary/ci-smoke-check.md) | concept | false |
+| `sb:04b9a8` | [glossary/claude-managed-agents](/glossary/claude-managed-agents.md) | concept | false |
 | `sb:8cfcb8` | [glossary/cloudevents](/glossary/cloudevents.md) | concept | false |
 | `sb:23f009` | [glossary/compiled-contract](/glossary/compiled-contract.md) | concept | false |
 | `sb:04f8dd` | [glossary/composable-beliefs](/glossary/composable-beliefs.md) | concept | false |
 | `sb:317879` | [glossary/concept-okf](/glossary/concept-okf.md) | concept | false |
+| `sb:aea1cb` | [glossary/credential-vault](/glossary/credential-vault.md) | concept | false |
 | `sb:04c057` | [glossary/cron-expression](/glossary/cron-expression.md) | concept | false |
 | `sb:c2a18e` | [glossary/cross-site-scripting](/glossary/cross-site-scripting.md) | concept | false |
 | `sb:197b02` | [glossary/dark-factory](/glossary/dark-factory.md) | concept | false |
@@ -133,6 +135,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:5e7da1` | [glossary/recall](/glossary/recall.md) | concept | false |
 | `sb:0b95ed` | [glossary/recall-at-k](/glossary/recall-at-k.md) | concept | false |
 | `sb:c86162` | [glossary/recall-probe](/glossary/recall-probe.md) | concept | false |
+| `sb:eb67ce` | [glossary/reducer](/glossary/reducer.md) | concept | false |
 | `sb:1dbcc9` | [glossary/rendered-aggregation](/glossary/rendered-aggregation.md) | concept | false |
 | `sb:4c3f16` | [glossary/research-spike](/glossary/research-spike.md) | concept | false |
 | `sb:e142e6` | [glossary/route-tag](/glossary/route-tag.md) | concept | false |
@@ -167,4 +170,5 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:36436d` | [glossary/vector-database](/glossary/vector-database.md) | concept | false |
 | `sb:4f4baf` | [glossary/verification-grounding](/glossary/verification-grounding.md) | concept | false |
 | `sb:c6e78a` | [glossary/verified-by](/glossary/verified-by.md) | concept | false |
+| `sb:adf537` | [glossary/webhook](/glossary/webhook.md) | concept | false |
 | `sb:24bd1e` | [knowledge-management/open-knowledge-format](/knowledge-management/open-knowledge-format.md) | reference |  |

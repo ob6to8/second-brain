@@ -20,11 +20,13 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [BM25](/glossary/bm25.md) — lexical full-text ranking by term frequency and rarity; the keyword-search tier between grep and semantic search
 - [candidate feed](/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one
 - [CI smoke check](/glossary/ci-smoke-check.md) — a cheap CI check that fails the build on a basic broken invariant — a tripwire, not a full test
+- [Claude Managed Agents (CMA)](/glossary/claude-managed-agents.md) — Anthropic's hosted agent service: the loop runs on Anthropic's infra, each session gets a sandboxed container; versioned agents, scheduled deployments, outcomes, vaults
 - [CloudEvents](/glossary/cloudevents.md) — CNCF spec standardizing the event envelope (id/source/type/time/data) so events route across systems regardless of transport
 - [compiled contract](/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
 - [Composable Beliefs (cb)](/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
 - [concept (OKF)](/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
 - [cron expression](/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
+- [credential vault](/glossary/credential-vault.md) — holds a secret outside the process that uses it and substitutes it at egress, so untrusted code sees only a placeholder; contains injection/compromise blast radius
 - [cross-site scripting (XSS)](/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
 - [dark factory](/glossary/dark-factory.md) — from lights-out manufacturing: an operation run end-to-end by autonomous agents, humans reduced to governance rather than presence
 - [deduplication](/glossary/deduplication.md) — checking for an existing equivalent before filing, to avoid fragmenting the brain (intake-time)
@@ -78,6 +80,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [ReAct](/glossary/react.md) — the foundational LLM agent loop: alternate reasoning traces with tool actions whose observations feed back in (pointer to the filed Yao et al. reference)
 - [reason tags](/glossary/reason-tags.md) — the `recent`/`impactful`/`influential`/`groundbreaking`/`buzz` vocabulary marking why a `/news` item surfaced
 - [recall](/glossary/recall.md) — the fraction of relevant items a search surfaces; low recall means existing material is missed
+- [reducer](/glossary/reducer.md) — a pure `(state, action) → new_state` fold (Redux/Elm); total, unit-testable without its environment, replayable from an action log; effectful variants declare side effects as data
 - [recall probe](/glossary/recall-probe.md) — a repeatable eval firing known queries at known targets to measure (and watch) search recall
 - [recall@k](/glossary/recall-at-k.md) — a metric: is the correct target within the top *k* results? reported across a query set
 - [rendered aggregation](/glossary/rendered-aggregation.md) — a derived doc compiled from scattered canonical sources with a drift gate; sources are edited, the view only re-rendered
@@ -112,5 +115,6 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [two-plane rule](/glossary/two-plane-rule.md) — keep the fast operational plane (ephemeral state, in databases) out of the slow epistemic plane (durable verified beliefs, in the bundle)
 - [typed edge](/glossary/typed-edge.md) — an id-based relationship in frontmatter that tooling traverses (e.g. `verified_by`); prose links stay untyped
 - [vector database](/glossary/vector-database.md) — a store indexing items as embedding vectors, answering nearest-neighbor queries for semantic retrieval
+- [webhook](/glossary/webhook.md) — an HTTP callback that inverts polling: the service POSTs to an endpoint you operate when an event occurs; needs an always-on receiver that authenticates and reacts
 - [verification grounding](/glossary/verification-grounding.md) — the rule that `verified: true` needs evidence (`verified_by`), not its own link, and only on statements
 - [verified_by](/glossary/verified-by.md) — the frontmatter field holding a statement's evidence edges (inline list of stable ids)
