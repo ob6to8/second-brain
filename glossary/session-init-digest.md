@@ -28,4 +28,18 @@ above every heuristic class (1 = most urgent), the operator's manual override. D
 [digest](/glossary/digest.md) sense used by the news inbox (a day's candidate
 items); this one summarizes internal state, not external material.
 
-*Seen in:* [2026-07-11 session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)
+*Seen in:* [2026-07-11 session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md), [2026-07-12 priorities-skill thread](/meta/threads/2026-07-12-priorities-skill-and-persistence-listers.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:6f2442">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-12-priorities-skill-and-persistence-listers (2026-07-12)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:6f2442`]**  (co-feeds: `lib/second_brain/session_init.ex`)
+
+Done. Pushed to `claude/priorities-skill-persistence-vmp9tn`.
+
+**`/priorities` skill** — the on-demand successor to the session-start digest. It runs the existing `mix brain.session_init` (open issues, todos, active plans, dangling ledger strands + heuristic top-3) and has the agent relay it with its own judged appraisal. The ranking engine, class weights, and `priority:` escape hatch are unchanged — only *how it reaches a session* moved.
