@@ -30,7 +30,7 @@ decomposition). Its strongest and most distinctive contribution to the role is
 solving the orchestrator's binding constraint — **state and judgment-context across
 many delegated, concurrent matters** — via frozen threads, routing ledgers, stable
 ids, and the session-init digest. The gaps are equally identifiable: the one
-unattended delegation loop is broken (the /news Routine), the semantic half of
+unattended delegation loop is broken (the /research Routine), the semantic half of
 quality evaluation is unmeasured (dedup recall), coordination is serial
 (one-session-at-a-time; concurrent branches collide on indexes), and until this
 session there was **no persisted intention statement** against which "the right
@@ -67,7 +67,7 @@ the quote's "providing strategic direction" implemented as governance-as-code �
 field survey found no public equivalent for the ratification loop or the compiled
 constitution
 ([field comparison](/meta/analysis/comparison-with-the-2026-second-brain-field.md)).
-Skills are the delegation vocabulary: `/intake`, `/capture`, `/news` are
+Skills are the delegation vocabulary: `/intake`, `/capture`, `/research` are
 parameterized work orders an orchestrator issues rather than performs.
 
 **Broad-scope judgment across time — the distinctive contribution.** An
@@ -107,7 +107,7 @@ scrolling away in chat.
 
 ## 3. Where it falls short, ranked by leverage
 
-1. **The one unattended delegation loop is broken.** The daily /news Routine
+1. **The one unattended delegation loop is broken.** The daily /research Routine
    [produces no landed work](/meta/issues/daily-news-routine-runs-not-landing.md).
    Orchestration that requires the operator to hand-fire every run is supervision,
    not delegation; until a scheduled agent can complete a run end-to-end, the
@@ -151,7 +151,7 @@ description. **As tool:** its durable contribution is the substrate the role is
 otherwise missing — externalized judgment context, provenance-carrying delegation
 records, and a compiled, machine-checked coordination contract. The improvement
 path does not require new direction, only finishing named work in priority order:
-repair unattended delegation (/news Routine), instrument semantic quality (dedup
+repair unattended delegation (/research Routine), instrument semantic quality (dedup
 probe), make parallel sessions collision-free, surface a standing work-in-flight
 view — and anchor it all to a ratified doctrine layer so "the right problems" is
 a reference, not a vibe.
@@ -165,5 +165,5 @@ a reference, not a vibe.
   [contracts and rendered aggregations](/meta/analysis/contracts-and-rendered-aggregations.md) ·
   [dark-factory scenario](/meta/analysis/dark-factory-epistemic-base-beam-jido.md) ·
   [dedup recall probe plan](/meta/plans/dedup-recall-probe.md) ·
-  [/news Routine issue](/meta/issues/daily-news-routine-runs-not-landing.md) ·
+  [/research Routine issue](/meta/issues/daily-news-routine-runs-not-landing.md) ·
   session-init digest of 2026-07-12 (strand/plan/issue counts).

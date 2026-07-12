@@ -30,7 +30,7 @@ the same session as a first-class `## The read` cross-domain synthesis section â
 |---|---|---|---|
 | 2026-07-11 inbox digest (two-pass generation) | closed | [inbox/2026-07-11.md](/inbox/2026-07-11.md) | - |
 | Intake: 6 SWE candidates into the bundle | closed | [codebase-memory-mcp](/SWE/agentic-coding/code-context/codebase-memory-mcp.md) (+5 concepts, see table) | - |
-| "Daily read" cross-domain synthesis for /news | closed | [meta/plans/news-daily-read-synthesis.md](/meta/plans/news-daily-read-synthesis.md) | - |
+| "Daily read" cross-domain synthesis for /news | closed | [meta/plans/research-daily-read-synthesis.md](/meta/plans/research-daily-read-synthesis.md) | - |
 | Codebase-Memory: one concept vs. paper+repo split | paused | [codebase-memory-mcp](/SWE/agentic-coding/code-context/codebase-memory-mcp.md) | Operator may still want it split into a `source` paper + `reference` tool |
 
 ## User
@@ -92,7 +92,7 @@ What if we introduce a daily summary, which presents a perspective on the days n
 
 ## Assistant
 
-<routes ref="meta/plans/news-daily-read-synthesis.md">
+<routes ref="meta/plans/research-daily-read-synthesis.md">
 Two things here â€” an intake batch and a genuinely good design idea. Let me handle the design idea first since it shapes what I build, then confirm the intake scope.
 
 ## On the "daily read" idea

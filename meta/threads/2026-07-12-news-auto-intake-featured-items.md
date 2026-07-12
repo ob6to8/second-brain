@@ -39,7 +39,7 @@ and the still-broken daily Routine means it only fires on manual `/news` runs fo
 | Topic | State | Routed to | Dangling |
 |---|---|---|---|
 | 2026-07-12 inbox digest (open-weight surge vs. agent-reliability floor) | closed | [inbox/2026-07-12.md](/inbox/2026-07-12.md) | - |
-| Auto-intake featured /news items — design → ship (Fork A) | closed | [meta/plans/auto-intake-featured-news.md](/meta/plans/auto-intake-featured-news.md) | - |
+| Auto-intake featured /news items — design → ship (Fork A) | closed | [meta/plans/auto-intake-featured-research.md](/meta/plans/auto-intake-featured-research.md) | - |
 | What dedup is; lexical search & the recall-failure → silent-fragmentation chain | closed | [recall](/glossary/recall.md) | - |
 | "Cognitive debt" (operator-coined) + the editorial-locus reframe | closed | [cognitive debt](/glossary/cognitive-debt.md) | - |
 | Merge main (PR #50 dedup fix) into the branch; add/add id collisions | closed | unrouted | - |

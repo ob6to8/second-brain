@@ -11,9 +11,9 @@ timestamp: 2026-07-12
 
 # residual fragmentation
 
-The duplicated or split-apart concepts that survive automated intake [deduplication](/beliefs/glossary/deduplication.md) — the leftover after the machine has done the cheap merges it can (e.g. updating in place on a known `relates to sb:` hint). It names a division of labor in the [auto-intake model](/meta/plans/auto-intake-featured-news.md): automation handles the *bulk* of don't-fragment via update-in-place, and the operator's editorial pass reconciles the *residual* that lexical [recall](/beliefs/glossary/recall.md) missed. The cost asymmetry matters — reconciling a fragmentation already committed to history (reassigning ids, redirecting [`verified_by`](/beliefs/glossary/verified-by.md) edges) is dearer than avoiding it at write time, which is why the residual is kept small rather than left to grow.
+The duplicated or split-apart concepts that survive automated intake [deduplication](/beliefs/glossary/deduplication.md) — the leftover after the machine has done the cheap merges it can (e.g. updating in place on a known `relates to sb:` hint). It names a division of labor in the [auto-intake model](/meta/plans/auto-intake-featured-research.md): automation handles the *bulk* of don't-fragment via update-in-place, and the operator's editorial pass reconciles the *residual* that lexical [recall](/beliefs/glossary/recall.md) missed. The cost asymmetry matters — reconciling a fragmentation already committed to history (reassigning ids, redirecting [`verified_by`](/beliefs/glossary/verified-by.md) edges) is dearer than avoiding it at write time, which is why the residual is kept small rather than left to grow.
 
-*Seen in:* [auto-intake-featured-news plan](/meta/plans/auto-intake-featured-news.md)
+*Seen in:* [auto-intake-featured-research plan](/meta/plans/auto-intake-featured-research.md)
 
 *See also:* [deduplication](/beliefs/glossary/deduplication.md), [recall](/beliefs/glossary/recall.md), [cognitive debt](/beliefs/glossary/cognitive-debt.md)
 

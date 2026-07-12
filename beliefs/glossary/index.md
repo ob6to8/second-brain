@@ -15,7 +15,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [approval gate](/beliefs/glossary/approval-gate.md) — a control blocking a tool/MCP action until approval resolves; environment-wide if it blocks every session
 - [approximate nearest neighbor (ANN)](/beliefs/glossary/approximate-nearest-neighbor.md) — index class trading exactness for speed on nearest-vector queries; worth it only at large corpus size
 - [assertion graph](/beliefs/glossary/assertion-graph.md) — the pre-OKF design: atomic claims (primitives + compounds with explicit deps) forming a DAG; remnants under `deprecated/`
-- [auto-intake](/beliefs/glossary/auto-intake.md) — the `/news` step that files its featured items into the bundle via `/intake` in the same run, moving the operator from a pre-intake gate to post-intake editorial work
+- [auto-intake](/beliefs/glossary/auto-intake.md) — the `/research` step that files its featured items into the bundle via `/intake` in the same run, moving the operator from a pre-intake gate to post-intake editorial work
 - [backpressure](/beliefs/glossary/backpressure.md) — flow control where a slower downstream stage pushes back on producers (bounded queues, pool limits) so overload degrades gracefully
 - [BEAM](/beliefs/glossary/beam.md) — the Erlang/Elixir VM: lightweight heap-isolated processes, message passing, supervision — built for long-running concurrent services
 - [belief network](/beliefs/glossary/belief-network.md) — a probabilistic graphical model (a.k.a. Bayesian network): a DAG of stochastic variables, each conditioned on its parents; the "belief" in *deep belief network*
@@ -54,7 +54,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [excerpt log (route-tagged log)](/beliefs/glossary/excerpt-log.md) — the generated per-thread excerpt section a route-tag sink carries, re-derivable from the tags, never hand-edited
 - [ExUnit](/beliefs/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
 - [fast-forward merge](/beliefs/glossary/fast-forward-merge.md) — a merge that advances the branch pointer with no merge commit; leaves a zero-diff branch
-- [featuring](/beliefs/glossary/featuring.md) — how `/news` decides what makes the cut: relevance → novelty → a reason tag → source quality, capped
+- [featuring](/beliefs/glossary/featuring.md) — how `/research` decides what makes the cut: relevance → novelty → a reason tag → source quality, capped
 - [feeding pairs](/beliefs/glossary/feeding-pairs.md) — the (thread, sink) pairs the current route tags induce; the domain of materialization in both directions
 - [flow (touch-sequence)](/beliefs/glossary/flow-touch-sequence.md) — a per-workflow touch-sequence doc tracing one canonical run, each step actor-tagged (`meta/flows/`)
 - [fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) — a scheduling mode where every trigger firing spawns a clean session, inheriting no prior state
@@ -69,7 +69,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [greedy layer-wise pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) — building a deep network one layer at a time, each trained (unsupervised) on the layer below's output, before any end-to-end fine-tuning
 - [HTML escaping](/beliefs/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
 - [hybrid search](/beliefs/glossary/hybrid-search.md) — retrieval blending BM25 and vector-similarity scores so keyword precision and semantic matching cover each other's misses
-- [inbox namespace](/beliefs/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/news` candidate digests (no ids, never verified)
+- [inbox namespace](/beliefs/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/research` candidate digests (no ids, never verified)
 - [invisible degradation](/beliefs/glossary/invisible-degradation.md) — corpus rot that emits no signal while it happens; nothing announces it until retrieval visibly fails
 - [issue (type)](/beliefs/glossary/issue-type.md) — controlled type: a tracked operational problem with a status (open/resolved/wontfix), under `meta/issues/`
 - [Jido](/beliefs/glossary/jido.md) — Elixir agent framework: agents as immutable data through a `cmd/2` reducer, Actions doubling as LLM tools, CloudEvents signals, supervised runtime
@@ -103,10 +103,10 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [property-based testing](/beliefs/glossary/property-based-testing.md) — testing that asserts invariants over many generated inputs, not hand-picked examples
 - [proto-belief document](/beliefs/glossary/proto-belief-document.md) — cb's per-matter accreting page; maps onto this brain's per-topic `concept` sink
 - [provenance](/beliefs/glossary/provenance.md) — the frontmatter field for a statement's immutable origin; orthogonal to verification
-- [query profile](/beliefs/glossary/query-profile.md) — per-category interest signals derived from the taxonomy tree, used as the `/news` retrieval filter
+- [query profile](/beliefs/glossary/query-profile.md) — per-category interest signals derived from the taxonomy tree, used as the `/research` retrieval filter
 - [ratification](/beliefs/glossary/ratification.md) — the operator's explicit approval turning a proposed shape change (directory, type, plan scope) into an adopted one
 - [ReAct](/beliefs/glossary/react.md) — the foundational LLM agent loop: alternate reasoning traces with tool actions whose observations feed back in (pointer to the filed Yao et al. reference)
-- [reason tags](/beliefs/glossary/reason-tags.md) — the `recent`/`impactful`/`influential`/`groundbreaking`/`buzz` vocabulary marking why a `/news` item surfaced
+- [reason tags](/beliefs/glossary/reason-tags.md) — the `recent`/`impactful`/`influential`/`groundbreaking`/`buzz` vocabulary marking why a `/research` item surfaced
 - [recall](/beliefs/glossary/recall.md) — the fraction of relevant items a search surfaces; low recall means existing material is missed
 - [reducer](/beliefs/glossary/reducer.md) — a pure `(state, action) → new_state` fold (Redux/Elm); total, unit-testable without its environment, replayable from an action log; effectful variants declare side effects as data
 - [recall probe](/beliefs/glossary/recall-probe.md) — a repeatable eval firing known queries at known targets to measure (and watch) search recall
