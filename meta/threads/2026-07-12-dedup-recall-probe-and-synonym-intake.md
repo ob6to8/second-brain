@@ -1,7 +1,7 @@
 ---
 type: reference
 title: 2026-07-12-dedup-recall-probe-and-synonym-intake
-description: Built mix brain.dedup_probe (the offline dedup-recall eval, gold set, first baseline plain 3/10 vs expanded 10/10), then shipped the tier-1 synonym-expanded /intake dedup change and an automated gold-harvest step, resolving the plan's three open questions toward zero operator upkeep; plan marked done.
+description: Built mix brain.dedup_probe (the offline dedup-recall eval, gold set, first baseline plain 3/10 vs expanded 10/10), then shipped the tier-1 synonym-expanded /intake dedup change and an automated gold-harvest step, resolving the plan's three open questions toward zero operator upkeep; then — on the operator's worry that a silent automated system recedes from awareness — added a meta/flows/ reference foregrounding how to audit it. Plan marked done, shipped as PR #50.
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, evals, dedup, recall, probe, intake, tooling]
 timestamp: 2026-07-12
@@ -42,6 +42,14 @@ only on a recall regression. Both changes were mirrored in the
 [vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md).
 Shipped on branch `claude/dedup-recall-probe-qyvt7w`; all gates green (93 tests).
 
+The operator then raised a design worry: a silent automated system recedes from
+awareness and becomes something they never audit. That earned a dedicated
+[dedup recall probe flow doc](/meta/flows/dedup-recall-probe.md) — a `meta/flows/`
+reference built to answer exactly that, foregrounding a "how to audit this yourself"
+section and an honest "how it could recede — and what holds it back" (including the
+residual slow-decline risk the "dropped since last time" check can't catch, whose
+backstop is the deferred hard CI floor). It all shipped as **PR #50**.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -50,6 +58,7 @@ Shipped on branch `claude/dedup-recall-probe-qyvt7w`; all gates green (93 tests)
 | Tier-1 synonym-expanded `/intake` dedup + automated gold-harvest + `--update-baseline` | closed | [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md) | - |
 | Plan's three open questions (evals genre, gold-harvest default, baseline cadence) | closed | [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md) | - |
 | Plain-language explanation of the probe and the decisions needed | closed | `unrouted` | - |
+| Keeping the automated eval loop auditable (worry: it recedes from awareness) | closed | [dedup recall probe flow doc](/meta/flows/dedup-recall-probe.md) | - |
 | Open a PR when the work is done | closed | `unrouted` | - |
 
 ## User
@@ -145,4 +154,36 @@ Understood. Let me lock in the decisions the way you asked — **you do nothing 
 - **Q3 (baseline):** the score becomes a *generated* number refreshed by a command (`--update-baseline`) the agent runs during intake, so it's never hand-edited; the trend lives in git history; and the agent pings you *only* when recall drops (that's the one moment a decision is actually yours). No schedule, no manual edit.
 
 Let me look at the intake skill I'll be editing, then build.
+</routes>
+
+## User
+
+What about making a flow document as a reference as well? I'm worried about this automated system, which I don't even fully understand, receding into the background of my awareness and becoming something that I am unlikely to ever audit or explore or evaluate.
+
+## Assistant
+
+That's a legitimate worry, and it's exactly what the `meta/flows/` genre exists to prevent — a durable, auditable reference so an automated subsystem stays legible instead of vanishing into the background. Filing into `meta/flows/` is autonomous (established genre, no shape change), so I'll build it. Let me match the house style of an existing flow doc first.
+
+## Assistant
+
+<routes ref="/meta/flows/dedup-recall-probe.md">
+Done — pushed to the same PR (#50). New file: `meta/flows/dedup-recall-probe.md`.
+
+**Why this is the right fix for your worry**
+
+You named the exact failure mode — *silence reads as absence* — and it's real. So the flow doc isn't just documentation; it's built as the **antidote to receding**, with two sections aimed straight at it:
+
+- **§4 "How to audit this yourself"** — the handles, so looking in costs nothing:
+  - `mix brain.dedup_probe` — the current state on demand.
+  - Open `meta/evals/dedup-probe.md` — the gold set reads as prose; every row says *why* in plain English. If a row looks wrong to you, it is — your judgment overrides.
+  - `git log -p -- meta/evals/dedup-probe.md` — the score's history **is** the trend.
+- **§8 "How it could recede — and what holds it back"** — each risk named with its defense, and critically, the **residual risk I did *not* fully solve**: a slow decline that never trips the "dropped since last time" check because each intake re-baselines. The honest backstop is the deferred hard CI floor — say the word and I'll add it.
+
+The through-line I put in §7: **the agent guarantees the measurement runs; only you can judge whether it means what it claims** — and that judgment happens whenever you open §4's handles, not on a schedule.
+
+**The genre point**
+
+This is also just what `meta/flows/` is *for* — it sits alongside the intake, capture, and render-contract flow docs, so "how does this subsystem actually work and how do I check on it" always has a durable home instead of living in a chat that scrolls away. That's the structural version of your worry solved: the brain now treats "keep the automated machinery legible" as a filing obligation, not a hope.
+
+All gates green (93 tests, 268 pages). PR #50 now carries the probe, the tier-1 intake fix, the glossary terms, the thread, and this flow doc.
 </routes>
