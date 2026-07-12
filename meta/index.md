@@ -7,6 +7,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 
 - [analysis](/meta/analysis/index.md) — point-in-time evaluations and decision-support write-ups on questions about the brain (`type: analysis`)
 - [elaborations](/meta/elaborations/index.md) — persisted expansions of technical phrases (`type: elaboration`, written by `/elaborate`; each back-links its originating thread via a `thread` field set by `/create-pull-request`)
+- [evals](/meta/evals/index.md) — repeatable eval gold sets and their baselines: the fixtures a `mix brain.*` task re-scores on every run (distinct from a point-in-time `analysis`)
 - [flows](/meta/flows/index.md) — per-flow connective docs: the file-by-file touch-sequence of a canonical run, tying together the skill, the CI-checked scenario, and the why (supersedes the old `session-workflow.md` guide + `verification-flows/`)
 - [issues](/meta/issues/index.md) — tracked operational problems and open concerns about the brain's tooling/automation (`type: issue`, each with a `status`)
 - [plans](/meta/plans/index.md) — design/decision records for proposed changes to the brain or its tooling (`type: plan`, each with a `status`)
@@ -34,6 +35,10 @@ taxonomy. This is where the rules that compile into the operating contract live.
     threads and the excerpt logs they materialize into concepts (re-derives each
     log from the current tags and fails on divergence); `--materialize` writes the
     log sections from the tags.
+  - `mix brain.dedup_probe [--expanded]` — score intake dedup recall: the lexical
+    search backend vs the natural-phrasing gold set in `/meta/evals/dedup-probe.md`
+    (`--expanded` scores synonym-expanded recall). Offline, deterministic, and
+    non-gating (a report step in CI) — recall is an editorial trend metric.
   - `mix brain.session_init` — compile the session-start digest: open issues and
     todos, active plans, dangling ledger strands, and a heuristic top-3 priority
     ranking.
@@ -41,8 +46,8 @@ taxonomy. This is where the rules that compile into the operating contract live.
     (deployed to GitHub Pages); see the [tutorials](/meta/tutorials/index.md).
 - `.github/workflows/ci.yml` — CI enforcement on every push/PR: compile, format check,
   tests, `mix brain.contract --check`, `mix brain.registry --check`, `mix brain.verify`,
-  `mix brain.route_tags`, and a `mix brain.site` build (blocks a stale contract/registry
-  or a broken build).
+  `mix brain.route_tags`, a non-gating `mix brain.dedup_probe` report, and a
+  `mix brain.site` build (blocks a stale contract/registry or a broken build).
 - `.github/workflows/pages.yml` — builds `mix brain.site` and deploys to GitHub Pages
   on every push to `main`.
 - `.githooks/pre-commit` — optional fast local mirror of CI. Enable once with

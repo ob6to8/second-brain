@@ -61,3 +61,8 @@ that proves it. The genre itself was designed in
   captured thread (`thread:` frontmatter), then commit/push/open the PR —
   invocation is the authorization; ordering (capture before commit) keeps the
   record in the same PR as the change.
+- [Dedup recall probe — measuring and maintaining intake dedup recall](/meta/flows/dedup-recall-probe.md) —
+  the dedup-recall eval loop: how `mix brain.dedup_probe` scores intake dedup
+  against an id-keyed gold set, how the gold set and baseline grow automatically
+  at intake, and — foregrounded — **how the operator audits, explores, and
+  re-evaluates** a system that otherwise runs silently in the background.

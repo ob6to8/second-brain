@@ -20,6 +20,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [BM25](/glossary/bm25.md) — lexical full-text ranking by term frequency and rarity; the keyword-search tier between grep and semantic search
 - [candidate feed](/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one
 - [CI smoke check](/glossary/ci-smoke-check.md) — a cheap CI check that fails the build on a basic broken invariant — a tripwire, not a full test
+- [Claude Managed Agents (CMA)](/glossary/claude-managed-agents.md) — Anthropic's hosted agent service: the loop runs on Anthropic's infra, each session gets a sandboxed container; versioned agents, scheduled deployments, outcomes, vaults
 - [CloudEvents](/glossary/cloudevents.md) — CNCF spec standardizing the event envelope (id/source/type/time/data) so events route across systems regardless of transport
 - [cognitive debt](/glossary/cognitive-debt.md) — (operator-coined) a human's compounding comprehension gap toward a system when automation changes it faster than they internalize it; user-defined, paid down by editorial engagement
 - [compiled contract](/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
@@ -27,6 +28,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [concept (OKF)](/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
 - [CRLF](/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
 - [cron expression](/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
+- [credential vault](/glossary/credential-vault.md) — holds a secret outside the process that uses it and substitutes it at egress, so untrusted code sees only a placeholder; contains injection/compromise blast radius
 - [cross-reference drift](/glossary/cross-reference-drift.md) — a change that should update many interlinked docs only updates some; the rest rot silently (the LLM-wiki killer)
 - [cross-site scripting (XSS)](/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
 - [dark factory](/glossary/dark-factory.md) — from lights-out manufacturing: an operation run end-to-end by autonomous agents, humans reduced to governance rather than presence
@@ -53,7 +55,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [git worktree](/glossary/git-worktree.md) — a linked working dir with its own HEAD/index/tree over a shared `.git` store; isolates parallel branches/agents
 - [GitHub Flavored Markdown (GFM)](/glossary/github-flavored-markdown.md) — GitHub's CommonMark superset (tables, task lists, strikethrough, autolinks)
 - [GitHub Pages](/glossary/github-pages.md) — GitHub's static-site hosting, publishing a repo or build artifact to a public URL via Actions
-- [gold set](/glossary/gold-set.md) — a curated set of evaluation inputs each labeled with its known-correct answer(s), used as ground truth to score a system (the dedup probe's query→id table)
+- [gold set](/glossary/gold-set.md) — a curated set of queries each paired with the item(s) that should be returned — the ground truth an eval scores retrieval against
 - [golden test (snapshot test)](/glossary/golden-test.md) — a test comparing current output to a checked-in "golden" reference artifact, flagging any drift
 - [graduation](/glossary/graduation.md) — a term outgrowing the glossary relocates into the domain taxonomy, id travelling with it, a pointer stub left behind
 - [HTML escaping](/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
@@ -65,7 +67,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [knowledge graph](/glossary/knowledge-graph.md) — entities as nodes + typed edges, queried by traversal; a code KG maps files/symbols/calls for agents
 - [KV cache](/glossary/kv-cache.md) — cached key/value tensors for processed tokens in transformer inference; trades context-growing memory for speed
 - [let-it-crash](/glossary/let-it-crash.md) — Erlang's fault-tolerance philosophy: don't handle every error in place; let the process crash and a supervisor restart it known-good
-- [lexical search](/glossary/lexical-search.md) — retrieval matching on surface tokens rather than meaning (keyword/full-text/grep); fast and exact but blind to synonym gaps; the layer intake dedup runs on
+- [lexical search](/glossary/lexical-search.md) — search matching the literal surface form of text (tokens/substrings), not meaning; fast and dependency-free but blind to synonym/jargon gaps
 - [librarian write-broker](/glossary/librarian-write-broker.md) — a supervised process solely owning mutation of a knowledge namespace: agents submit proposals, it runs the gauntlet and serializes commits
 - [margin collapse](/glossary/margin-collapse.md) — the AI-industry thesis that frontier labs' high inference margins erode under cheaper open-weight parity with frictionless switching (pointer to `sb:07610c`)
 - [markdown renderer](/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `SecondBrain.Markdown`)
@@ -95,6 +97,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [ReAct](/glossary/react.md) — the foundational LLM agent loop: alternate reasoning traces with tool actions whose observations feed back in (pointer to the filed Yao et al. reference)
 - [reason tags](/glossary/reason-tags.md) — the `recent`/`impactful`/`influential`/`groundbreaking`/`buzz` vocabulary marking why a `/news` item surfaced
 - [recall](/glossary/recall.md) — the fraction of relevant items a search surfaces; low recall means existing material is missed
+- [reducer](/glossary/reducer.md) — a pure `(state, action) → new_state` fold (Redux/Elm); total, unit-testable without its environment, replayable from an action log; effectful variants declare side effects as data
 - [recall probe](/glossary/recall-probe.md) — a repeatable eval firing known queries at known targets to measure (and watch) search recall
 - [recall@k](/glossary/recall-at-k.md) — a metric: is the correct target within the top *k* results? reported across a query set
 - [red test](/glossary/red-test.md) — a test feeding a known-bad input and asserting the check flags it; proves the detector fires, not just that good input passes
@@ -126,6 +129,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [static-site generator](/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
 - [strand](/glossary/strand.md) — one topic's line of work through a session; the routing ledger tracks one row per strand, state orthogonal to routing
 - [supersession](/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
+- [synonym expansion](/glossary/synonym-expansion.md) — broadening a query with synonyms, jargon variants, and acronym expansions to bridge vocabulary mismatch without embeddings
 - [thread doc](/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
 - [todo (type)](/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`
 - [tree is the taxonomy](/glossary/tree-is-the-taxonomy.md) — the directory tree, surfaced via `index.md` files (progressive disclosure), *is* the canonical taxonomy
@@ -136,5 +140,6 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [typed edge](/glossary/typed-edge.md) — an id-based relationship in frontmatter that tooling traverses (e.g. `verified_by`); prose links stay untyped
 - [vector database](/glossary/vector-database.md) — a store indexing items as embedding vectors, answering nearest-neighbor queries for semantic retrieval
 - [warn pass](/glossary/warn-pass.md) — an advisory check that reports findings without failing; chosen where detection is mechanical but enforcement would overreach
+- [webhook](/glossary/webhook.md) — an HTTP callback that inverts polling: the service POSTs to an endpoint you operate when an event occurs; needs an always-on receiver that authenticates and reacts
 - [verification grounding](/glossary/verification-grounding.md) — the rule that `verified: true` needs evidence (`verified_by`), not its own link, and only on statements
 - [verified_by](/glossary/verified-by.md) — the frontmatter field holding a statement's evidence edges (inline list of stable ids)

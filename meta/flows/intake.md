@@ -84,16 +84,19 @@ gate), or `editorial` (a judgment with no mechanical oracle).
 | 1 | operator | Paste material after `/intake` (or the agent asks what to capture) | — | — |
 | 2 | agent | Gather: resolve any links (fetch + summarize; persist oversized sources as `resource`/`# Citations`) | — (reads external) | editorial |
 | 3 | agent | Segment into one or several concepts | — | editorial |
-| 4 | agent | **Dedup** — search the bundle for an existing concept on the subject | — (reads bundle) | editorial |
+| 4 | agent | **Dedup** — generate 3–5 alternate phrasings (synonyms/jargon/acronyms) and search the bundle for each; find any existing concept on the subject before writing | — (reads bundle) | editorial |
 | 5 | agent | Distill and write the concept (frontmatter + clean body, cross-links) — or update an existing one in place. For a **technical paper/article/spec**, the distill action delegates to [`/summarize-technical`](/.claude/skills/summarize-technical/SKILL.md), whose three-part breakdown *is* the body | `<concept>.md` (new/updated) | scenario (conformance) |
 | 5a | operator | Ratify a **shape change** — a new top-level directory or a new `type` | — | editorial |
 | 6 | tool | `mix brain.id` — mint a stable `sb:` id if the concept lacks one | `<concept>.md` (id line) | scenario |
 | 7 | tool | `mix brain.registry` — compile the id→path view | `meta/registry.md` | **scenario** |
 | 8 | tool | `mix brain.verify` — conformance, id format, edge resolution, grounding | — (reads all) | **scenario** + tool |
 | 9 | agent | Maintain reserved files: the dir's `index.md` (and root `index.md` for a new top-level dir); the commit message carries the change narrative | `index.md` | editorial |
+| 10 | agent + tool | Grow the dedup recall gold set: harvest a `target` row from the operator's own phrasing (skip if none), `mix brain.dedup_probe --update-baseline`, and flag any **plain**-recall regression | `meta/evals/dedup-probe.md` | editorial + tool |
 
-Steps 6→8 are the spine the scenario drives; steps 2–5 and 9 carry the judgment
-that only the skill and editorial review can hold (§5, §9).
+Steps 6→8 are the spine the scenario drives; steps 2–5, 9, and 10 carry the judgment
+that only the skill and editorial review can hold (§5, §9). Step 4's synonym-expanded
+search and step 10's gold-harvest are the tier-1 recall fix and its measuring
+instrument (the [dedup probe](/meta/evals/dedup-probe.md)).
 
 ---
 
@@ -155,9 +158,10 @@ targets — `/intake` files knowledge, not governance.
 ## 7. The tooling: `brain.id` · `brain.registry` · `brain.verify`
 
 ```
-mix brain.id         # insert a minted `id: sb:xxxxxx` into every concept lacking one
-mix brain.registry   # compile meta/registry.md (id→path); --check guards it in CI
-mix brain.verify     # conformance, id uniqueness/format, verified_by edges, grounding
+mix brain.id                            # insert a minted `id: sb:xxxxxx` into every concept lacking one
+mix brain.registry                      # compile meta/registry.md (id→path); --check guards it in CI
+mix brain.verify                        # conformance, id uniqueness/format, verified_by edges, grounding
+mix brain.dedup_probe --update-baseline # (step 10) refresh the recall baseline after harvesting a gold row
 ```
 
 - **`mix brain.id`** scans the bundle, and for each concept with no id inserts a
@@ -215,6 +219,7 @@ mix compile --warnings-as-errors
 mix brain.registry --check      # must pass — a new id was minted
 mix brain.verify                # conformance, ids, edges, grounding
 mix brain.route_tags            # unaffected unless a thread tags the new concept
+mix brain.dedup_probe           # non-gating recall report (baseline refreshed in step 10)
 mix test                        # includes the intake scenario
 ```
 
