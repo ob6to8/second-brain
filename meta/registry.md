@@ -83,6 +83,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:d4fc9d` | [glossary/digest](/glossary/digest.md) | concept | false |
 | `sb:6a9e78` | [glossary/doctrine](/glossary/doctrine.md) | concept | false |
 | `sb:9074c1` | [glossary/dry](/glossary/dry.md) | concept | false |
+| `sb:16e171` | [glossary/elaboration-type](/glossary/elaboration-type.md) | concept | false |
 | `sb:da21de` | [glossary/embeddings](/glossary/embeddings.md) | concept | false |
 | `sb:f727fe` | [glossary/epistemic-overlay](/glossary/epistemic-overlay.md) | concept | false |
 | `sb:3101ef` | [glossary/excerpt-log](/glossary/excerpt-log.md) | concept | false |

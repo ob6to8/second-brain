@@ -3,6 +3,7 @@ type: elaboration
 title: two-directional materialize with unconditional orphan-block removal
 description: Unpacks the P1 work-package phrase from the code-review hardening plan — the route-tag log materializer removing generated content whose source tags vanished, automatically and without a flag; proposed 2026-07-11, built 2026-07-12.
 provenance: "Phrase coined in the 2026-07-11 code-review session (P1 of /meta/plans/code-review-toolchain-hardening.md); expansion agent-authored via /elaborate, 2026-07-11; refreshed 2026-07-12 after P1 landed"
+thread: /meta/threads/2026-07-12-code-review-flows-hardening-and-elaborations.md
 tags: [elaboration, route-tagging, materialize, tooling]
 timestamp: 2026-07-12
 ---

@@ -30,6 +30,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [digest](/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
 - [doctrine](/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
 - [DRY (don't repeat yourself)](/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
+- [elaboration (type)](/glossary/elaboration-type.md) — controlled type: a persisted expansion of a technical phrase (quoted target, term definitions, plain walkthrough), under `meta/elaborations/`
 - [embeddings](/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [epistemic overlay](/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
 - [excerpt log (route-tagged log)](/glossary/excerpt-log.md) — the generated per-thread excerpt section a route-tag sink carries, re-derivable from the tags, never hand-edited
