@@ -15,6 +15,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [approval gate](/glossary/approval-gate.md) — a control blocking a tool/MCP action until approval resolves; environment-wide if it blocks every session
 - [approximate nearest neighbor (ANN)](/glossary/approximate-nearest-neighbor.md) — index class trading exactness for speed on nearest-vector queries; worth it only at large corpus size
 - [assertion graph](/glossary/assertion-graph.md) — the pre-OKF design: atomic claims (primitives + compounds with explicit deps) forming a DAG; remnants under `deprecated/`
+- [auto-intake](/glossary/auto-intake.md) — the `/news` step that files its featured items into the bundle via `/intake` in the same run, moving the operator from a pre-intake gate to post-intake editorial work
 - [backpressure](/glossary/backpressure.md) — flow control where a slower downstream stage pushes back on producers (bounded queues, pool limits) so overload degrades gracefully
 - [BEAM](/glossary/beam.md) — the Erlang/Elixir VM: lightweight heap-isolated processes, message passing, supervision — built for long-running concurrent services
 - [BM25](/glossary/bm25.md) — lexical full-text ranking by term frequency and rarity; the keyword-search tier between grep and semantic search
@@ -22,6 +23,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [CI smoke check](/glossary/ci-smoke-check.md) — a cheap CI check that fails the build on a basic broken invariant — a tripwire, not a full test
 - [Claude Managed Agents (CMA)](/glossary/claude-managed-agents.md) — Anthropic's hosted agent service: the loop runs on Anthropic's infra, each session gets a sandboxed container; versioned agents, scheduled deployments, outcomes, vaults
 - [CloudEvents](/glossary/cloudevents.md) — CNCF spec standardizing the event envelope (id/source/type/time/data) so events route across systems regardless of transport
+- [cognitive debt](/glossary/cognitive-debt.md) — (operator-coined) a human's compounding comprehension gap toward a system when automation changes it faster than they internalize it; user-defined, paid down by editorial engagement
 - [compiled contract](/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
 - [Composable Beliefs (cb)](/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
 - [concept (OKF)](/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
@@ -69,6 +71,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [lexical search](/glossary/lexical-search.md) — search matching the literal surface form of text (tokens/substrings), not meaning; fast and dependency-free but blind to synonym/jargon gaps
 - [librarian write-broker](/glossary/librarian-write-broker.md) — a supervised process solely owning mutation of a knowledge namespace: agents submit proposals, it runs the gauntlet and serializes commits
 - [lineage](/glossary/lineage.md) — the provenance chain that produced an artifact (for a flow doc: analysis → plan → thread → PR), recorded as a canonical frontmatter block from which views are derived
+- [margin collapse](/glossary/margin-collapse.md) — the AI-industry thesis that frontier labs' high inference margins erode under cheaper open-weight parity with frictionless switching (pointer to `sb:07610c`)
 - [markdown renderer](/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `SecondBrain.Markdown`)
 - [materialize](/glossary/materialize.md) — write derived content to disk as real file content instead of recomputing on demand; pairs with a freshness check
 - [methodology (type)](/glossary/methodology-type.md) — controlled type: a repeatable prescriptive how-to/playbook for a recurring task
@@ -102,6 +105,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [red test](/glossary/red-test.md) — a test feeding a known-bad input and asserting the check flags it; proves the detector fires, not just that good input passes
 - [rendered aggregation](/glossary/rendered-aggregation.md) — a derived doc compiled from scattered canonical sources with a drift gate; sources are edited, the view only re-rendered
 - [research spike](/glossary/research-spike.md) — a time-boxed investigation answering a design/feasibility question, yielding a verdict not code
+- [residual fragmentation](/glossary/residual-fragmentation.md) — the near-duplicate concepts left after automated dedup's cheap best, handed to a human editorial pass to merge
 - [route tag](/glossary/route-tag.md) — inline `<routes ref="…">` region marking which concept(s) a paragraph of a frozen thread feeds
 - [Routine](/glossary/routine.md) — a saved scheduled trigger that fires a preset prompt into an agent session on a cron schedule
 - [routing ledger](/glossary/routing-ledger.md) — the per-thread dispatch table (topic/state/routed-to/dangling); pointers and states only, no content

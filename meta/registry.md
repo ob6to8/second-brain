@@ -68,6 +68,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:98ec38` | [glossary/approval-gate](/glossary/approval-gate.md) | concept | false |
 | `sb:e2377d` | [glossary/approximate-nearest-neighbor](/glossary/approximate-nearest-neighbor.md) | concept | false |
 | `sb:ac22a3` | [glossary/assertion-graph](/glossary/assertion-graph.md) | concept | false |
+| `sb:f8ae3a` | [glossary/auto-intake](/glossary/auto-intake.md) | concept | false |
 | `sb:6c7e32` | [glossary/backpressure](/glossary/backpressure.md) | concept | false |
 | `sb:b2dc54` | [glossary/beam](/glossary/beam.md) | concept | false |
 | `sb:068a32` | [glossary/bm25](/glossary/bm25.md) | concept | false |
@@ -75,6 +76,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:21854a` | [glossary/ci-smoke-check](/glossary/ci-smoke-check.md) | concept | false |
 | `sb:04b9a8` | [glossary/claude-managed-agents](/glossary/claude-managed-agents.md) | concept | false |
 | `sb:8cfcb8` | [glossary/cloudevents](/glossary/cloudevents.md) | concept | false |
+| `sb:d676f0` | [glossary/cognitive-debt](/glossary/cognitive-debt.md) | concept | false |
 | `sb:23f009` | [glossary/compiled-contract](/glossary/compiled-contract.md) | concept | false |
 | `sb:04f8dd` | [glossary/composable-beliefs](/glossary/composable-beliefs.md) | concept | false |
 | `sb:317879` | [glossary/concept-okf](/glossary/concept-okf.md) | concept | false |
@@ -122,6 +124,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:792b23` | [glossary/lexical-search](/glossary/lexical-search.md) | concept | false |
 | `sb:01be3a` | [glossary/librarian-write-broker](/glossary/librarian-write-broker.md) | concept | false |
 | `sb:f97e44` | [glossary/lineage](/glossary/lineage.md) | concept | false |
+| `sb:541206` | [glossary/margin-collapse](/glossary/margin-collapse.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |
 | `sb:15fe73` | [glossary/materialize](/glossary/materialize.md) | concept | false |
 | `sb:5fdc55` | [glossary/methodology-type](/glossary/methodology-type.md) | concept | false |
@@ -155,6 +158,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:eb67ce` | [glossary/reducer](/glossary/reducer.md) | concept | false |
 | `sb:1dbcc9` | [glossary/rendered-aggregation](/glossary/rendered-aggregation.md) | concept | false |
 | `sb:4c3f16` | [glossary/research-spike](/glossary/research-spike.md) | concept | false |
+| `sb:96a610` | [glossary/residual-fragmentation](/glossary/residual-fragmentation.md) | concept | false |
 | `sb:e142e6` | [glossary/route-tag](/glossary/route-tag.md) | concept | false |
 | `sb:0a43ba` | [glossary/route-tag-sink](/glossary/route-tag-sink.md) | concept | false |
 | `sb:ba6759` | [glossary/routine](/glossary/routine.md) | concept | false |

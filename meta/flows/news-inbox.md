@@ -1,9 +1,9 @@
 ---
 type: note
 title: News — generate the daily inbox of candidates
-description: The end-to-end flow for the daily candidate feed — derive a query profile from the taxonomy, search, dedup twice, reason-tag, and write a dated digest into the non-bundle inbox/ namespace, handing off to /intake when the operator picks an item — the touch-sequence, actor boundaries, and why this flow has (almost) no deterministic spine.
-tags: [meta, governance, news, inbox, feed, flow, workflow]
-timestamp: 2026-07-11
+description: The end-to-end flow for the daily candidate feed — derive a query profile from the taxonomy, search, dedup twice, reason-tag, write a dated digest into the non-bundle inbox/ namespace, then auto-intake the featured items into the bundle via /intake — the touch-sequence, actor boundaries, and how the feed's own judgment layer now chains into the intake flow's deterministic spine.
+tags: [meta, governance, news, inbox, feed, flow, workflow, auto-intake]
+timestamp: 2026-07-12
 lineage:
   plan: /meta/plans/news-daily-read-synthesis.md
   thread:
@@ -19,25 +19,32 @@ lineage:
 <!-- lineage:end -->
 
 The connective doc for how the *outside world* reaches the brain: `/news`
-scans for material matching what the brain already tracks and writes a dated
-**digest of candidates** into `inbox/` — the waiting room. Nothing here enters
-the bundle; a candidate crosses over only when the operator picks it and the
-[intake flow](/meta/flows/intake.md) runs.
+scans for material matching what the brain already tracks, writes a dated
+**digest** into `inbox/`, and then **auto-intakes the featured items** into the
+bundle through the [intake flow](/meta/flows/intake.md). The digest itself stays
+outside the bundle (no `sb:` id); its featured items graduate into filed concepts
+in the same run. Only items **deferred** for needing a new top-level domain linger
+as candidates, awaiting the operator's ratification.
 
 > **The three artifacts (and the sources of truth — point, don't restate):**
-> - **Rules** → [link-processing](/meta/policy/link-processing.md) (the inbox
->   deliberately does *not* violate "no parked URLs": items are candidates
->   with synopses, outside the bundle) ·
+> - **Rules** → [link-processing](/meta/policy/link-processing.md) (no parked
+>   URLs: featured items are *processed* through intake, not parked; the digest
+>   holds synopses and only deferred items remain candidates) ·
 >   [tree-is-the-taxonomy](/meta/policy/tree-is-the-taxonomy.md) (the taxonomy
->   *is* the query profile).
+>   *is* the query profile) ·
+>   [auto-intake-featured-news](/meta/plans/auto-intake-featured-news.md) (the
+>   decision to file featured items automatically, Fork A).
 > - **Procedure** → the [`/news` skill](/.claude/skills/news/SKILL.md) —
->   including the selection contract (four gates + reason-tag vocabulary).
-> - **Mechanism** → none to speak of, and that is the honest headline: this
->   flow is almost **all judgment layer**. Its only structural guarantee is
->   the namespace boundary — `inbox` sits in `Registry`'s `@excluded_dirs`
->   ([registry.ex](/lib/second_brain/registry.ex)), so nothing written here
->   can acquire an id, enter the registry, or be verified. There is no
->   scenario test because there is no deterministic spine to pin.
+>   including the selection contract (four gates + reason-tag vocabulary) and the
+>   §6 auto-intake step.
+> - **Mechanism** → **borrowed.** The feed's own selection is all judgment
+>   layer, but §6 chains into the [intake flow](/meta/flows/intake.md), whose
+>   deterministic spine (synonym-expanded dedup → id mint → registry → verify) and
+>   scenario test now backstop every auto-filed concept. The namespace boundary
+>   still holds for the digest itself — `inbox` sits in `Registry`'s
+>   `@excluded_dirs` ([registry.ex](/lib/second_brain/registry.ex)), so the digest
+>   can never acquire an id — but the featured items deliberately cross that
+>   boundary via intake.
 
 ---
 
@@ -63,15 +70,18 @@ a human decides an item is worth intake.
    │ DEDUP ×2      │   vs the bundle · vs recent digests
    │ SELECT + TAG  │   four gates; reason tags ARE the featuring criteria
    └──────┬───────┘
-          │  writes (never into the bundle)
+          │  writes the digest (never acquires an id)
           ▼
-   inbox/YYYY-MM-DD.md      (type: reference · NO sb: id · immutable once written)
+   inbox/YYYY-MM-DD.md      (type: reference · NO sb: id)
    inbox/index.md           (Latest + archive)
-          │  operator: "intake the <…> item"
+          │  §6 auto-intake: each FEATURED item → /intake
           ▼
-   the /intake flow — fetch → distill → file → mint id → registry → verify
-   (optionally mark the digest line "✓ intaken → /path" — the one allowed
-    edit to a past digest)
+   the /intake flow — fetch → distill → synonym-expanded dedup → file → mint id
+   → registry → verify   (update-in-place on a `relates to sb:` hint;
+    new-top-level-domain items are deferred, not filed)
+          │  annotate the digest line in place (same run)
+          ▼
+   ✓ auto-intaken → /path  ·  ✓ merged → /path  ·  ⏸ deferred → …
 ```
 
 ---
@@ -86,22 +96,30 @@ a human decides an item is worth intake.
 | 4 | agent | Dedup twice: against the bundle, then against recent digests | — (reads) | editorial |
 | 5 | agent | Select through the four gates (relevance · novelty · a reason tag fires · source quality), cap for quality over volume | — | editorial |
 | 6 | agent | Write today's digest: `##` per KB domain, one bullet per item with reason-tag badges, synopsis, `→ would file under` hint, `relates to sb:…` | `inbox/YYYY-MM-DD.md` | editorial |
-| 7 | agent | Maintain the index: Latest + archive in `inbox/index.md` (the run narrative lives in the commit message; no hand-kept log) | `inbox/index.md` | editorial |
-| 8 | operator | (later) Pick an item → hand off to [`/intake`](/meta/flows/intake.md) | — | (that flow's spine) |
+| 7 | agent | **Auto-intake each featured item** via [`/intake`](/meta/flows/intake.md) (inherits its synonym-expanded dedup + gold-harvest); update-in-place on a `relates to sb:` hint; **defer** new-top-level-domain items; tag filed concepts `auto-intake` | bundle concept files, their `index.md`s, `meta/registry.md`, `meta/evals/dedup-probe.md` | the [intake flow](/meta/flows/intake.md)'s spine |
+| 8 | agent | Annotate each featured digest line in place: `✓ auto-intaken` / `✓ merged` / `⏸ deferred` | `inbox/YYYY-MM-DD.md` | editorial |
+| 9 | agent | Maintain the index: Latest + archive in `inbox/index.md` (the run narrative lives in the commit message; no hand-kept log) | `inbox/index.md` | editorial |
+| 10 | operator | (later) Editorial pass over the `auto-intake`-tagged concepts (prune, relabel, merge residual dups); ratify any deferred item | — | operator |
 
-Every "checked by" is editorial — the structural checks live at the boundary:
-the registry/verifier cannot *see* `inbox/`, and the site renders it read-only.
+Selection stays **editorial** — no oracle pins it. The auto-intake rows (7–8)
+borrow the [intake flow](/meta/flows/intake.md)'s **deterministic spine** and its
+scenario test: every auto-filed concept clears the same dedup/id/registry/verify
+gates as a hand-intaked one. The registry/verifier still cannot *see* the digest
+itself; the featured items cross into the bundle deliberately, through intake's gates.
 
 ---
 
 ## 4. Invariants
 
-- **Candidates, not concepts.** No `sb:` ids, no `verified`, never filed as
-  concepts; `/news` writes only under `inbox/`. Enforced structurally by the
-  registry exclusion, editorially by the skill's guardrails.
-- **Digests are immutable.** Previous days persist unchanged as the archive —
-  except the one sanctioned edit: back-linking an item that graduated
-  (`✓ intaken → …`).
+- **The digest is a record, not the bundle.** The digest file carries no `sb:` id
+  and is never itself filed as a concept — enforced structurally by the registry
+  exclusion. Its **featured items**, though, are auto-intaken into the bundle (§6):
+  they acquire ids through `/intake` like any concept. Only **deferred** items (new
+  top-level domain) stay candidates.
+- **Past digests are immutable.** Previous days persist unchanged as the archive.
+  Today's digest is annotated *in the same run* with each featured item's outcome
+  (`✓ auto-intaken` / `✓ merged` / `⏸ deferred`); a back-link added to a *past*
+  digest after the fact is the one sanctioned edit.
 - **The taxonomy is the filter.** An item with no mapping to a tracked domain
   is not featured, however interesting; the feed's aim drifts *with* the tree,
   not independently of it.
@@ -115,10 +133,12 @@ the registry/verifier cannot *see* `inbox/`, and the site renders it read-only.
 
 ## 5. Verify — what can and cannot be checked
 
-Nothing mechanical pins selection quality; the oracle is the operator's glance
-at the digest. What *is* held structurally: the namespace boundary (a digest
-that somehow acquired an id would surface in `mix brain.verify`'s scan the
-moment it moved into the bundle), and the site build (CI renders `inbox/`
-pages like any other, so a malformed digest that crashes the renderer fails
-CI). Known operational risk is tracked as an issue:
+Nothing mechanical pins *selection* quality; that oracle is the operator's glance
+at the digest. But the **auto-intake step (§6) is backed by the intake flow's
+deterministic spine and its scenario test** — every auto-filed concept clears the
+same synonym-expanded dedup, id mint, registry, and `mix brain.verify` gates as a
+hand-intaked one. What stays structural for the feed itself: the namespace boundary
+(the digest cannot acquire an id — `inbox` is in the registry's excluded dirs), and
+the site build (CI renders `inbox/` pages like any other, so a malformed digest that
+crashes the renderer fails CI). Known operational risk is tracked as an issue:
 [daily news Routine runs not landing](/meta/issues/daily-news-routine-runs-not-landing.md).

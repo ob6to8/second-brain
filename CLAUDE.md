@@ -371,9 +371,12 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
 - **`/news`** — generate today's **inbox**: a daily candidate feed of news, articles,
   papers, and resources matched against the brain's taxonomy, grouped by category and
-  reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). Writes to
-  the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
-  file one into the brain. See `.claude/skills/news/SKILL.md`.
+  reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) — then
+  **auto-intake the featured items** into the bundle via `/intake`. The digest is the
+  dated record in the non-bundle `inbox/` namespace (no `sb:` ids); its featured items
+  graduate into filed concepts in the same run, bounded to the known tree (items needing
+  a new top-level domain are deferred for operator ratification) and tagged `auto-intake`
+  for the operator's post-intake editorial pass. See `.claude/skills/news/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
   over the captured thread doc, **back-link this session's elaboration docs** (set
   `thread:` in each `meta/elaborations/` doc the session created or updated, pointing
@@ -417,6 +420,15 @@ record so it can be resumed from the record instead of from memory.
   `len < 300 and followed_by_tool`. "Distilled" here means the *noise* is dropped,
   not that the kept text is condensed; `/capture` strips noise, not substance, and
   is the sole session-persistence skill.
+- **Ask the operator in the chat, not the dialog box.** Pose every question to
+  the operator as ordinary `## Assistant` chat text — never through the
+  dialog-box question UI (`AskUserQuestion`). `/capture` renders only the
+  delivered message stream, so a question raised in the dialog box, and the
+  answer the operator selects in it, never enter that stream: both are lost from
+  the thread doc and every downstream artifact routed from it. Keeping the
+  exchange inline is what lets capture retain the question and its answer
+  verbatim. (The dialog UI has also proven flaky in these sessions — a second
+  reason to keep questions in the chat.)
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `sb:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
