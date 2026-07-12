@@ -5,6 +5,7 @@ description: A reporting lapse (the create-pull-request wrap-up omitted the thre
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped. Continuation of the docs-audit session captured in the 2026-07-12-docs-audit thread (PR #49); only this follow-up arc is rendered here."
 tags: [meta, thread, provenance, threads, capture, pull-request, git]
 timestamp: 2026-07-12
+pr: 51
 ---
 
 # 2026-07-12-stamp-threads-with-pr-not-branch
