@@ -15,6 +15,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [approval gate](/glossary/approval-gate.md) — a control blocking a tool/MCP action until approval resolves; environment-wide if it blocks every session
 - [approximate nearest neighbor (ANN)](/glossary/approximate-nearest-neighbor.md) — index class trading exactness for speed on nearest-vector queries; worth it only at large corpus size
 - [assertion graph](/glossary/assertion-graph.md) — the pre-OKF design: atomic claims (primitives + compounds with explicit deps) forming a DAG; remnants under `deprecated/`
+- [auto-intake](/glossary/auto-intake.md) — the `/news` step that files its featured items into the bundle via `/intake` in the same run, moving the operator from a pre-intake gate to post-intake editorial work
 - [backpressure](/glossary/backpressure.md) — flow control where a slower downstream stage pushes back on producers (bounded queues, pool limits) so overload degrades gracefully
 - [BEAM](/glossary/beam.md) — the Erlang/Elixir VM: lightweight heap-isolated processes, message passing, supervision — built for long-running concurrent services
 - [BM25](/glossary/bm25.md) — lexical full-text ranking by term frequency and rarity; the keyword-search tier between grep and semantic search

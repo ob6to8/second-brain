@@ -16,3 +16,15 @@ timestamp: 2026-07-12
 *Seen in:* [auto-intake-featured-news plan](/meta/plans/auto-intake-featured-news.md)
 
 *See also:* [residual fragmentation](/glossary/residual-fragmentation.md), [deduplication](/glossary/deduplication.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:d676f0">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-12-news-auto-intake-featured-items (2026-07-12)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:d676f0`]**
+
+also: Add a term that I am coining - cognitive debt: when a human operator accrues an understanding gap related to a system and its content akin to technical debt through automation escaping their comprehension (note that its user defined)

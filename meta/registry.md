@@ -68,6 +68,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:98ec38` | [glossary/approval-gate](/glossary/approval-gate.md) | concept | false |
 | `sb:e2377d` | [glossary/approximate-nearest-neighbor](/glossary/approximate-nearest-neighbor.md) | concept | false |
 | `sb:ac22a3` | [glossary/assertion-graph](/glossary/assertion-graph.md) | concept | false |
+| `sb:f8ae3a` | [glossary/auto-intake](/glossary/auto-intake.md) | concept | false |
 | `sb:6c7e32` | [glossary/backpressure](/glossary/backpressure.md) | concept | false |
 | `sb:b2dc54` | [glossary/beam](/glossary/beam.md) | concept | false |
 | `sb:068a32` | [glossary/bm25](/glossary/bm25.md) | concept | false |
