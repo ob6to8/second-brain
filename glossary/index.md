@@ -18,6 +18,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [auto-intake](/glossary/auto-intake.md) — the `/news` step that files its featured items into the bundle via `/intake` in the same run, moving the operator from a pre-intake gate to post-intake editorial work
 - [backpressure](/glossary/backpressure.md) — flow control where a slower downstream stage pushes back on producers (bounded queues, pool limits) so overload degrades gracefully
 - [BEAM](/glossary/beam.md) — the Erlang/Elixir VM: lightweight heap-isolated processes, message passing, supervision — built for long-running concurrent services
+- [belief network](/glossary/belief-network.md) — a probabilistic graphical model (a.k.a. Bayesian network): a DAG of stochastic variables, each conditioned on its parents; the "belief" in *deep belief network*
 - [BM25](/glossary/bm25.md) — lexical full-text ranking by term frequency and rarity; the keyword-search tier between grep and semantic search
 - [candidate feed](/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one
 - [CI smoke check](/glossary/ci-smoke-check.md) — a cheap CI check that fails the build on a basic broken invariant — a tripwire, not a full test
@@ -25,8 +26,10 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [CloudEvents](/glossary/cloudevents.md) — CNCF spec standardizing the event envelope (id/source/type/time/data) so events route across systems regardless of transport
 - [cognitive debt](/glossary/cognitive-debt.md) — (operator-coined) a human's compounding comprehension gap toward a system when automation changes it faster than they internalize it; user-defined, paid down by editorial engagement
 - [compiled contract](/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
+- [complementary priors](/glossary/complementary-priors.md) — Hinton/Osindero/Teh's device for cancelling explaining-away correlations in a directed belief net, making a deep model tractable to learn layer by layer
 - [Composable Beliefs (cb)](/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
 - [concept (OKF)](/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
+- [contrastive divergence](/glossary/contrastive-divergence.md) — a fast approximate training algorithm for restricted Boltzmann machines, using a short Gibbs-sampling run in place of the intractable exact gradient
 - [CRLF](/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
 - [cron expression](/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
 - [credential vault](/glossary/credential-vault.md) — holds a secret outside the process that uses it and substitutes it at egress, so untrusted code sees only a placeholder; contains injection/compromise blast radius
@@ -34,6 +37,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [cross-site scripting (XSS)](/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
 - [dark factory](/glossary/dark-factory.md) — from lights-out manufacturing: an operation run end-to-end by autonomous agents, humans reduced to governance rather than presence
 - [deduplication](/glossary/deduplication.md) — checking for an existing equivalent before filing, to avoid fragmenting the brain (intake-time)
+- [deep belief network](/glossary/deep-belief-network.md) — a generative stack of restricted Boltzmann machines, trained greedily layer by layer; Hinton/Osindero/Teh (2006); pointer to the filed concept
 - [dependency-free](/glossary/dependency-free.md) — relying only on the standard library — no external packages, so it runs offline in restricted sandboxes
 - [deploy gating](/glossary/deploy-gating.md) — gating a deploy on verification passing, so a failed check skips publish and the last good deploy stays live
 - [detector](/glossary/detector.md) — a mechanical check converting a violation or drift from silent state into announced signal; gates fail, warn passes report
@@ -53,12 +57,14 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [feeding pairs](/glossary/feeding-pairs.md) — the (thread, sink) pairs the current route tags induce; the domain of materialization in both directions
 - [flow (touch-sequence)](/glossary/flow-touch-sequence.md) — a per-workflow touch-sequence doc tracing one canonical run, each step actor-tagged (`meta/flows/`)
 - [fresh-session-per-fire](/glossary/fresh-session-per-fire.md) — a scheduling mode where every trigger firing spawns a clean session, inheriting no prior state
+- [generative model](/glossary/generative-model.md) — a model that learns the joint distribution of its data so it can synthesize new samples, as opposed to a discriminative input→label mapping
 - [git worktree](/glossary/git-worktree.md) — a linked working dir with its own HEAD/index/tree over a shared `.git` store; isolates parallel branches/agents
 - [GitHub Flavored Markdown (GFM)](/glossary/github-flavored-markdown.md) — GitHub's CommonMark superset (tables, task lists, strikethrough, autolinks)
 - [GitHub Pages](/glossary/github-pages.md) — GitHub's static-site hosting, publishing a repo or build artifact to a public URL via Actions
 - [gold set](/glossary/gold-set.md) — a curated set of queries each paired with the item(s) that should be returned — the ground truth an eval scores retrieval against
 - [golden test (snapshot test)](/glossary/golden-test.md) — a test comparing current output to a checked-in "golden" reference artifact, flagging any drift
 - [graduation](/glossary/graduation.md) — a term outgrowing the glossary relocates into the domain taxonomy, id travelling with it, a pointer stub left behind
+- [greedy layer-wise pretraining](/glossary/greedy-layer-wise-pretraining.md) — building a deep network one layer at a time, each trained (unsupervised) on the layer below's output, before any end-to-end fine-tuning
 - [HTML escaping](/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
 - [hybrid search](/glossary/hybrid-search.md) — retrieval blending BM25 and vector-similarity scores so keyword precision and semantic matching cover each other's misses
 - [inbox namespace](/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/news` candidate digests (no ids, never verified)
@@ -106,6 +112,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [rendered aggregation](/glossary/rendered-aggregation.md) — a derived doc compiled from scattered canonical sources with a drift gate; sources are edited, the view only re-rendered
 - [research spike](/glossary/research-spike.md) — a time-boxed investigation answering a design/feasibility question, yielding a verdict not code
 - [residual fragmentation](/glossary/residual-fragmentation.md) — the near-duplicate concepts left after automated dedup's cheap best, handed to a human editorial pass to merge
+- [restricted Boltzmann machine (RBM)](/glossary/restricted-boltzmann-machine.md) — a two-layer undirected generative net with bipartite (no within-layer) connectivity, so each layer is conditionally independent given the other; the building block of a deep belief network
 - [route tag](/glossary/route-tag.md) — inline `<routes ref="…">` region marking which concept(s) a paragraph of a frozen thread feeds
 - [Routine](/glossary/routine.md) — a saved scheduled trigger that fires a preset prompt into an agent session on a cron schedule
 - [routing ledger](/glossary/routing-ledger.md) — the per-thread dispatch table (topic/state/routed-to/dangling); pointers and states only, no content
@@ -141,6 +148,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [two-plane rule](/glossary/two-plane-rule.md) — keep the fast operational plane (ephemeral state, in databases) out of the slow epistemic plane (durable verified beliefs, in the bundle)
 - [typed edge](/glossary/typed-edge.md) — an id-based relationship in frontmatter that tooling traverses (e.g. `verified_by`); prose links stay untyped
 - [vector database](/glossary/vector-database.md) — a store indexing items as embedding vectors, answering nearest-neighbor queries for semantic retrieval
+- [wake-sleep algorithm](/glossary/wake-sleep-algorithm.md) — an unsupervised training procedure for layered generative nets alternating a data-driven "wake" phase with a model-dreamed "sleep" phase to tune generative and recognition weights
 - [warn pass](/glossary/warn-pass.md) — an advisory check that reports findings without failing; chosen where detection is mechanical but enforcement would overreach
 - [webhook](/glossary/webhook.md) — an HTTP callback that inverts polling: the service POSTs to an endpoint you operate when an event occurs; needs an always-on receiver that authenticates and reacts
 - [verification grounding](/glossary/verification-grounding.md) — the rule that `verified: true` needs evidence (`verified_by`), not its own link, and only on statements

@@ -23,6 +23,7 @@ emerges as knowledge is filed and evolves collaboratively; see the
 
 - [SWE](/SWE/index.md) — software engineering knowledge
 - [ai-industry](/ai-industry/index.md) — market, economic, and competitive analysis of the AI industry
+- [machine-learning](/machine-learning/index.md) — technical ML knowledge: models, architectures, and training methods
 - [knowledge-management](/knowledge-management/index.md) — knowledge representation, PKM, and knowledge formats (incl. OKF, the format this brain uses)
 
 Cross-domain:
