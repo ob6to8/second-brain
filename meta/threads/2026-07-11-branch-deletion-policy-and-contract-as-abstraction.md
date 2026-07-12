@@ -28,8 +28,8 @@ produced a preamble sentence (the contract binds agents, not the operator),
 the [contracts-and-rendered-aggregations analysis](/meta/analysis/contracts-and-rendered-aggregations.md),
 and the operator-designated top-priority plan to
 [compile contract §7 from SKILL.md frontmatter](/meta/plans/compile-skills-registry-from-skill-frontmatter.md)
-(build-order step 1, ratified: teach the session-init digest to respect
-`priority: top`).
+(build-order step 1, ratified: a session-init priority override — satisfied
+the same day by `main`'s integer `priority:` key from PR #45).
 
 ## Routing
 
@@ -42,7 +42,7 @@ and the operator-designated top-priority plan to
 | Compiled contract — what it is, where defined, persistence | closed | [compiled contract](/glossary/compiled-contract.md) | - |
 | render-contract flow doc + contract scenario test | closed | `unrouted` (flow doc + test; path back-links) | - |
 | Contract as abstraction: role vs mounting point; "Agent-contract" declined; rendered-aggregation family | closed | `unrouted` (analysis doc; path back-links) | - |
-| Skills-compile plan (§7 from SKILL.md frontmatter) + session-init `priority: top` | open | `unrouted` (plan doc) | Q1–Q4 await operator ratification; build steps 1–5 unbuilt |
+| Skills-compile plan (§7 from SKILL.md frontmatter) + session-init priority override | open | `unrouted` (plan doc) | Q1–Q4 await operator ratification; steps 2–5 unbuilt (step 1 satisfied by `main`'s integer `priority:` from PR #45; plan now carries `priority: 1`) |
 | Issue↔todo cross-deferral convention | closed | `unrouted` | Left uncodified until it recurs (operator agreed) |
 
 ## User

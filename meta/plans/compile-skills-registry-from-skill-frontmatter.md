@@ -3,7 +3,7 @@ type: plan
 title: "Compile the contract's Skills section from SKILL.md frontmatter"
 description: Invert the skills-registry drift by making each .claude/skills/*/SKILL.md's own frontmatter the source of truth for the contract's Skills section — the compiler scans the skills and renders §7 with the usual --check drift gate, retiring the hand-maintained duplicate list in the skills-registry policy.
 status: proposed
-priority: top
+priority: 1
 provenance: "Claude Code session (2026-07-11) — commissioned by the operator following the contracts-and-rendered-aggregations analysis; marked top priority at commissioning"
 tags: [meta, plan, contract, skills, compiler, drift, tooling]
 timestamp: 2026-07-11
@@ -14,10 +14,11 @@ timestamp: 2026-07-11
 ## Status & provenance
 
 **Proposed — operator-designated top priority** at commissioning (2026-07-11).
-The session-init heuristic ranks `proposed` plans low and does not yet read a
-priority key; the operator ratified fixing that as **build-order step 1**, so
-the `priority: top` frontmatter carries the override until the digest learns to
-enforce it. Executes the skills-direction recommendation of
+The operator ratified a session-init priority override as **build-order step
+1**; a parallel session built the same mechanism the same day (`62d9327`, PR
+#45) as an **integer** `priority:` frontmatter key that outranks the status
+heuristic — so this plan carries `priority: 1` and step 1 is already
+satisfied. Executes the skills-direction recommendation of
 [the contracts-and-rendered-aggregations analysis](/meta/analysis/contracts-and-rendered-aggregations.md).
 
 ## 1. The problem
@@ -76,13 +77,12 @@ view**, same as `meta/registry.md` is derived from per-file ids.
 
 ## 4. Build order
 
-1. **Teach the session-init digest to respect `priority: top`** (ratified
-   2026-07-11, independent of the scanner work — built first so this plan's
-   own designation becomes effective immediately): `SecondBrain.SessionInit`
-   reads a `priority: top` frontmatter key on plans and lifts those items to
-   the head of the heuristic top-3, ahead of the status-based ranking (an
-   explicit operator override outranks any heuristic). Extend
-   `test/second_brain/session_init_test.exs`.
+1. ~~Teach the session-init digest to respect a priority override~~ —
+   **already built** (ratified here 2026-07-11; independently implemented the
+   same day on `main` by PR #45, `62d9327`): `SecondBrain.SessionInit` reads
+   an integer `priority:` frontmatter key on issues/todos/plans and ranks
+   flagged items ahead of the status heuristic (lower = higher). This plan
+   carries `priority: 1` accordingly. Nothing left to build.
 2. Scanner module + unit tests (missing frontmatter is a compile error).
 3. Wire into `Contract.render/1` per the Q1/Q2 decisions; regenerate.
 4. Extend

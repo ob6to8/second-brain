@@ -35,7 +35,7 @@ For **each** concept:
 - Search the bundle (Grep/Glob over `*.md`, excluding `deprecated/`) for an existing
   concept on the same subject (match on title, slug, `resource` URL, key terms).
 - **If found → update in place**: merge the new information, refresh/extend the body,
-  bump `timestamp`, and note the update in `log.md`. Do **not** create a near-duplicate.
+  bump `timestamp`. Do **not** create a near-duplicate.
 - **If not found → create new** (continue below).
 
 ### 4. Distill
@@ -84,9 +84,8 @@ For **each** concept:
 ### 7. Maintain reserved files
 - Update the directory's `index.md` (create it if missing): add a bulleted link to
   the new/updated concept with its one-line description.
-- Append a dated entry to `log.md` (nearest one; create/append the root `log.md` if
-  no closer one exists), newest-first under an ISO 8601 date heading.
 - If a new top-level directory was created, add it to the bundle-root `index.md`.
+- No log entries — the commit message records what was filed and why.
 
 ### 8. Report
 Summarize concisely:

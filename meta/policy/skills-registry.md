@@ -43,7 +43,7 @@ timestamp: 2026-07-10
   handle the rest. See `.claude/skills/create-pull-request/SKILL.md`.
 - **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
   a subcommand argument: `/todo create <title>` files a new open todo (and maintains
-  the index + `log.md`); `/todo list` shows the todos grouped by `status`. See
+  the index); `/todo list` shows the todos grouped by `status`. See
   `.claude/skills/todo/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.

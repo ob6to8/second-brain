@@ -132,6 +132,45 @@ defmodule SecondBrain.SessionInitTest do
     assert report =~ "**Agent note:**"
   end
 
+  test "operator-flagged priority pins an item above every heuristic class", %{tmp_dir: dir} do
+    write_doc(dir, "meta/issues/broken.md",
+      type: "issue",
+      title: "Broken thing",
+      status: "open",
+      timestamp: "2026-07-09"
+    )
+
+    write_doc(dir, "meta/plans/urgent.md",
+      type: "plan",
+      title: "Urgent plan",
+      status: "accepted",
+      priority: 1,
+      timestamp: "2026-07-09"
+    )
+
+    write_doc(dir, "meta/plans/soon.md",
+      type: "plan",
+      title: "Soon plan",
+      status: "proposed",
+      priority: "2",
+      timestamp: "2026-07-10"
+    )
+
+    report = SessionInit.report(dir)
+
+    [_, priorities] = String.split(report, "## Heuristic top-3 priorities")
+
+    assert [i1, i2, i3] =
+             Regex.run(~r/1\. (.*)\n.*\n2\. (.*)\n.*\n3\. (.*)\n/, priorities,
+               capture: :all_but_first
+             )
+
+    assert i1 =~ "Urgent plan"
+    assert i2 =~ "Soon plan"
+    assert i3 =~ "Broken thing"
+    assert priorities =~ "operator-flagged `priority: 1`"
+  end
+
   test "empty bundle reports clear state", %{tmp_dir: dir} do
     File.mkdir_p!(Path.join(dir, "meta"))
     report = SessionInit.report(dir)

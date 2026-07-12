@@ -64,7 +64,7 @@ toolchain (registry, verifier, site) will accept.
    meta/registry.md   (the generated identity view)
           │  mix brain.verify      (conformance · id format · edges · grounding)
           ▼
-   reserved files updated: the dir's index.md + the nearest log.md
+   reserved files updated: the dir's index.md
 ```
 
 The **deterministic spine** is the bottom half — id → registry → verify. The top
@@ -90,7 +90,7 @@ gate), or `editorial` (a judgment with no mechanical oracle).
 | 6 | tool | `mix brain.id` — mint a stable `sb:` id if the concept lacks one | `<concept>.md` (id line) | scenario |
 | 7 | tool | `mix brain.registry` — compile the id→path view | `meta/registry.md` | **scenario** |
 | 8 | tool | `mix brain.verify` — conformance, id format, edge resolution, grounding | — (reads all) | **scenario** + tool |
-| 9 | agent | Maintain reserved files: the dir's `index.md`, the nearest `log.md` (and root `index.md` for a new top-level dir) | `index.md`, `log.md` | editorial |
+| 9 | agent | Maintain reserved files: the dir's `index.md` (and root `index.md` for a new top-level dir); the commit message carries the change narrative | `index.md` | editorial |
 
 Steps 6→8 are the spine the scenario drives; steps 2–5 and 9 carry the judgment
 that only the skill and editorial review can hold (§5, §9).
@@ -135,7 +135,7 @@ shape change, review.**
 | Actor | Does |
 |-------|------|
 | **Operator** | pastes the material; ratifies a **new top-level directory** or a **new `type`** (contract §2, §4); reviews the result |
-| **Agent** | resolves links; segments; dedups; distills and writes/updates the concept; mints the id and compiles the registry; runs the verifier; maintains `index.md` and `log.md` |
+| **Agent** | resolves links; segments; dedups; distills and writes/updates the concept; mints the id and compiles the registry; runs the verifier; maintains `index.md` |
 
 ---
 
@@ -185,8 +185,8 @@ mix brain.verify     # conformance, id uniqueness/format, verified_by edges, gro
 - **Captures aren't statements** — anything storing a `resource` is trusted
   evidence, never `verified`; verification is only for agent-authored statements,
   and only via `verified_by`.
-- **Reserved files stay current** — the dir's `index.md` and the nearest `log.md`
-  are updated in the same motion as the filing.
+- **Reserved files stay current** — the dir's `index.md` is updated in the same
+  motion as the filing.
 
 ---
 

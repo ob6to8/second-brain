@@ -69,7 +69,7 @@ exist to close.
      rule. Keep the frontmatter (`id`, `type`, `resource`, etc.) unchanged except
      bumping `timestamp`; keep any existing `# Citations` section at the end, and
      preserve cross-links to other concepts if they're still relevant to the new
-     prose. Update the nearest `log.md` with what changed and why.
+     prose. The commit message records what changed and why.
    - If the source is **not yet in the bundle**, this skill's output is fine as
      plain chat output — nothing requires filing it. If the operator wants it
      captured afterward, that's a separate `/intake` invocation (the three-part

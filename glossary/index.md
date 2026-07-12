@@ -28,6 +28,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [deterministic spine](/glossary/deterministic-spine.md) — the input-determined, mechanical part of a workflow that a conventional test can pin
 - [digest](/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
 - [doctrine](/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
+- [DRY (don't repeat yourself)](/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
 - [embeddings](/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [epistemic overlay](/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
 - [ExUnit](/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
@@ -79,6 +80,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [session-init digest](/glossary/session-init-digest.md) — a machine-compiled summary of open work (issues, todos, plans, dangling strands) injected into a fresh session's context, ending in a heuristic priority ranking the agent refines
 - [SessionStart hook](/glossary/sessionstart-hook.md) — a hook that runs at session start to provision or validate the environment (e.g. warm the Elixir toolchain) and brief the agent via its stdout
 - [sink (route-tag sink)](/glossary/route-tag-sink.md) — the doc a route tag feeds; an `sb:` id sink accretes a log, a path back-link does not
+- [single source of truth](/glossary/single-source-of-truth.md) — a fact lives in one authoritative place; everything else is generated from it or points at it
 - [skill](/glossary/skill.md) — a named, invocable `SKILL.md` capability; the glossary holds the concepts a skill enacts, not its bare `/command` handle
 - [skill namespacing](/glossary/skill-namespacing.md) — prefixing skill names to resolve as a set; in Claude Code only plugin skills are auto-namespaced
 - [skill-to-skill delegation](/glossary/skill-to-skill-delegation.md) — one skill invoking another as a sub-step (e.g. `/create-pull-request` runs `/capture`), composing behavior
@@ -86,6 +88,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [squash merge](/glossary/squash-merge.md) — flattening a branch into one new commit on the target; linear history at the cost of per-commit provenance (disallowed here)
 - [stable id (`sb:` id)](/glossary/stable-id.md) — the opaque, immutable `sb:` + 6-hex identifier every bundle concept carries
 - [static-site generator](/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
+- [strand](/glossary/strand.md) — one topic's line of work through a session; the routing ledger tracks one row per strand, state orthogonal to routing
 - [supersession](/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
 - [thread doc](/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
 - [todo (type)](/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`

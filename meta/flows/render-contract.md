@@ -80,7 +80,7 @@ Every file a single `/render-contract` run touches, in order. **Checked by** is
 | 2a | agent | Only if the rule opens a **new contract section**: add `{key, heading}` to `@sections` in the compiler, at the position it should render | `lib/second_brain/contract.ex` | scenario |
 | 3 | tool | `mix brain.contract` — recompile the artifact | `CLAUDE.md` | **scenario** |
 | 4 | tool | `mix brain.contract --check` + `mix test` — the round-trip and the compiler tests | — | **scenario** + tool |
-| 5 | agent | Maintain reserved files: the [policy index](/meta/policy/index.md) entry, the nearest `log.md` | `meta/policy/index.md`, `meta/log.md` | editorial |
+| 5 | agent | Maintain reserved files: the [policy index](/meta/policy/index.md) entry (hand-kept logs are retired — git history is the provenance layer) | `meta/policy/index.md` | editorial |
 | 6 | agent | Commit the source change **and** the regenerated `CLAUDE.md` together, in one commit | — | tool (CI `--check` fails a split commit) |
 
 ---
