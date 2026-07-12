@@ -1,24 +1,29 @@
 ---
 name: news
-description: Generate today's inbox — a daily candidate feed of news, articles, papers, and resources matched against the brain's taxonomy, grouped by category and tagged by why each was chosen. Use when the operator says "/news", "run the feed", "what's new", or on the daily schedule. Hand off to /intake when the operator wants a candidate filed into the brain.
+description: Generate today's inbox — a daily candidate feed of news, articles, papers, and resources matched against the brain's taxonomy, grouped by category and tagged by why each was chosen — then auto-intake the featured items into the bundle. Use when the operator says "/news", "run the feed", "what's new", or on the daily schedule.
 ---
 
 # /news — the daily candidate feed (home-page inbox)
 
 Scan the outside world for material that matches what this brain already cares
 about, and write it into today's **inbox digest** — a dated, categorized list of
-candidate links, each with a one-line synopsis and a reason tag. The inbox is the
-brain's **waiting room**: candidates live here until the operator decides to
-`/intake` one into the bundle. Nothing written by `/news` enters the OKF bundle
-or carries an `sb:` id.
+candidate links, each with a one-line synopsis and a reason tag — then **auto-intake
+the featured items into the bundle**. The digest is the daily *record* in the
+non-bundle `inbox/` namespace (no `sb:` ids); its featured items graduate into filed
+concepts in the same run (§6). This is the standing decision from the
+[auto-intake plan](/meta/plans/auto-intake-featured-news.md): the featuring gates
+(§4) are already the quality filter, so a featured item needs no second human gate —
+the operator's contribution moves from a pre-intake gate to **post-intake editorial**
+(prune, relabel, merge). The digest file itself never acquires an `sb:` id; the
+concepts its featured items become do.
 
 Read the [operating contract](../../../CLAUDE.md) first. Two rules shape this skill:
 
 - **Links must be processed, not parked** — a bare URL never becomes a bundle
-  concept. The inbox does not violate this: its items are *candidates with
-  synopses*, held **outside** the bundle in the `inbox/` namespace (like `meta/`).
-  The full fetch-and-distill step is `/intake`, run only when the operator picks
-  an item.
+  concept. `/news` honors this by *processing* every featured item: each is fetched
+  and distilled through `/intake` (§6), not parked as a bare link. The only items that
+  linger as candidates are those **deferred** for needing a new top-level domain
+  (§6) — held in the digest until the operator ratifies the shape.
 - **The tree is the taxonomy** — the KB's `index.md` hierarchy *is* the query
   profile. The feed's categories mirror the KB's top-level domains, and what the
   feed looks for is derived from what's already filed. As the brain grows, the
@@ -133,30 +138,77 @@ are moving relative to what the brain already tracks*. See the design record in
     when it extends/challenges an existing concept.
 - Keep synopses distilled — enough to decide intake-or-skip at a glance.
 
-### 6. Maintain the inbox reserved files
+### 6. Auto-intake the featured items
+Once today's digest is written, **file each featured item into the bundle** by
+running [`/intake`](../intake/SKILL.md) on it. Auto-intake runs on **featured items
+only** — never the ones the quality-over-volume cap dropped, so the cap (§4) is also
+the volume knob on how many concepts a run files.
+
+For each featured item, in digest order:
+
+- **Hand `/intake` the item's URL plus the digest's two hints** — the
+  `→ would file under /<path>/` filing hint and any `· relates to sb:xxxxxx`. Intake
+  does the rest: fetch → distill → its own **synonym-expanded dedup** (its §3) →
+  file → mint id → registry → verify. You inherit that dedup and its automatic
+  gold-harvest for free — do not re-implement either here.
+- **Prefer update-in-place on a `relates to sb:` hint.** When an item carries one,
+  that related concept is intake's dedup target: **update it in place** rather than
+  filing a sibling — *unless* the item is a genuinely distinct matter (a contrasting
+  datapoint, not a continuation), which earns its own concept. This keeps
+  [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) small.
+- **Stay inside the known tree — defer, don't propose.** A featured item files
+  autonomously into an existing domain (new *subdirectories* under an established
+  top-level domain are fine). But an item that would require a **new top-level
+  directory** is *not* filed: leave it in the digest, marked
+  `⏸ deferred → needs new top-level domain, awaiting ratification`, and surface it in
+  the report. Auto-intake never creates top-level shape — that stays the operator's
+  to ratify (taxonomy-evolution protocol).
+- **Tag what you file `auto-intake`.** Add `auto-intake` to the filed concept's
+  `tags` and record its origin in `provenance` (e.g. "auto-intaken from /news inbox
+  YYYY-MM-DD"), so the whole auto-filed set — the operator's editorial queue — is a
+  single `tags: auto-intake` query.
+- **Gold-harvest no-ops here.** Intake's gold-harvest wants the *operator's* natural
+  phrasing; auto-intake has none (the query is a synopsis), so intake skips it
+  silently — correct; don't force a synthetic row.
+
+Then **mark each featured digest line** with its outcome, in place: `✓ auto-intaken
+→ /path/to/concept.md` (new file), `✓ merged → /path` (updated in place), or
+`⏸ deferred → …`. This is today's digest, written this same run — not a past one —
+so annotating it is not the immutability exception.
+
+### 7. Maintain the inbox reserved files
 - `inbox/index.md`: point "Latest" at today's digest (one-line summary + count),
   and prepend today to the dated **archive** list. No frontmatter. (No log —
   the dated digests are their own history; the commit records the generation.)
 
-### 7. Report
+### 8. Report
 - One-line summary: how many items across which domains, and the path to today's
-  digest. Remind the operator they can say **"intake the <…> item"** to file any
-  candidate into the brain.
+  digest.
+- **The auto-intake outcome**: how many concepts were newly filed vs. merged in
+  place vs. deferred, with the deferred items called out (they await your
+  ratification of a new top-level domain). Note any **dedup-recall regression**
+  bubbled up from an intake run.
 
 ## The intake handoff
 
-The inbox only *proposes*. When the operator points at an item ("intake the
-TurboQuant one"), run **`/intake`** on that item's URL: fetch → distill → file
-under the suggested path → mint an `sb:` id → update indexes/log. Optionally mark
-the digest line `✓ intaken → /path/to/concept.md` so the archive records what
-graduated into the brain. (Editing a past digest **only** to add an intake
-backlink is the one allowed exception to digest immutability.)
+Featured items are filed automatically (§6); the operator's role is the
+**editorial pass afterward** — review the `auto-intake`-tagged concepts, merge any
+residual duplicates, relabel, or reject. Two manual paths remain: **ratify a
+deferred item** (approve the new top-level domain, then it files), and **`/intake` a
+non-featured link** the operator wants filed by hand. When marking a *past* digest's
+line with an intake backlink after the fact, that edit is the one allowed exception
+to digest immutability.
 
 ## Guardrails
-- The inbox is **not** the bundle: no `sb:` ids, no `verified` field, never filed
-  as concepts. `/news` writes only under `inbox/`.
+- The **digest** is not the bundle: it stays under `inbox/` with no `sb:` id and no
+  `verified` field. Auto-intake (§6) is the only thing that writes into the bundle,
+  and it does so through `/intake` (which mints ids and runs the gates) — never by
+  `/news` filing a concept directly.
 - Distill synopses; never dump full articles into the digest — that's what
-  `/intake` is for.
+  `/intake` is for (and §6 hands it the URL, not the synopsis).
+- **Auto-intake is bounded to featured items and the known tree.** Never file a
+  dropped item; never create a new top-level directory or a new `type` autonomously —
+  defer to the operator (§6).
 - Don't repeat prior days. Dedup against both the bundle and recent digests.
 - Reason tags come from the fixed vocabulary above; propose additions, don't
   invent them silently.

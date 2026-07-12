@@ -5,6 +5,7 @@ description: The operator–agent conversation that bootstrapped this second bra
 provenance: "Claude Code session (Claude Opus 4.8, later Claude Fable 5), 2026-07-05; operator messages and agent responses verbatim; tool calls, tool outputs, and brief in-progress status notes omitted"
 tags: [meta, thread, okf, governance, bootstrap]
 timestamp: 2026-07-05
+pr: 1
 ---
 
 # Thread — greenfield OKF bootstrap and verification layer

@@ -36,7 +36,7 @@ still holds for every other flow.)
 - Run **[`/add-to-glossary`](../add-to-glossary/SKILL.md)** with the thread doc just
   written in step 1 as its source: extract the technical terms the session actually
   used and merge their definitions into the glossary — one concept file per term
-  under [`/glossary/`](/glossary/index.md) — per that skill's dedup/merge and
+  under [`/beliefs/glossary/`](/beliefs/glossary/index.md) — per that skill's dedup/merge and
   pointer-entry rules. The glossary updates then ship in this same PR, alongside
   the thread they came from.
 - If step 1 was skipped (nothing captured), skip this step too. If the thread
@@ -92,6 +92,13 @@ still holds for every other flow.)
   environment has **no `gh` CLI**). Set the base to the repo's default branch unless
   the operator named another.
 - Report the PR URL.
+- **Stamp the PR number into the thread doc.** With the PR number now known, set
+  `pr: <N>` in the frontmatter of the thread doc step 1 wrote, then commit and
+  push that one-line change to the same branch so it ships inside this PR (per
+  the [session-capture policy](/meta/policy/session-capture.md) — the PR is the
+  thread's durable anchor; the ephemeral branch is deliberately not recorded).
+  This is the *last* metadata motion, done after the PR exists because the
+  number can't be known before. Skip if capture was skipped.
 - **If asked to merge the PR** (now or later in the session): use a **true merge
   commit** — `merge_method: "merge"`, never `squash` or `rebase` — per the
   [merge-strategy policy](/meta/policy/merge-strategy.md): the commit graph is a

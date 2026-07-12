@@ -5,6 +5,7 @@ description: Built a dependency-free static-site generator that publishes the OK
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-08 to 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, github-pages, site-generator, okf, knowledge-management, tutorial, ci, deployment]
 timestamp: 2026-07-09
+pr: 26
 ---
 
 # Thread — GitHub Pages knowledge-base site, offline-toolchain tutorial, and the OKF node

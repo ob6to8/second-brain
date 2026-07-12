@@ -37,5 +37,12 @@ jobs:
       - name: Route tags verify (tags, refs, sink logs, log fidelity)
         run: mix brain.route_tags
 
+      - name: Flow lineage views are derived and current
+        run: mix brain.lineage --check
+
+      - name: Dedup recall probe (report only — recall is a trend metric, non-gating)
+        continue-on-error: true
+        run: mix brain.dedup_probe
+
       - name: Static site builds
         run: mix brain.site

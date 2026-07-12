@@ -5,6 +5,7 @@ description: Removing the operator's email from the contract, then discovering t
 provenance: "Claude Code session (claude-opus-4-8), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, privacy, git-ops, operating-contract]
 timestamp: 2026-07-09
+pr: 30
 ---
 
 # Thread — remove operator email from operating contract

@@ -53,7 +53,7 @@ methods/metrics/formalisms, and load-bearing concepts; skip plain English used
 plainly. In order of appearance in the phrase.
 
 **Check the brain first.** If a term already has a glossary file, link it
-inline — `[route tag](/glossary/route-tag.md)` — and keep the definition here
+inline — `[route tag](/beliefs/glossary/route-tag.md)` — and keep the definition here
 consistent with (or briefer than) the filed one; if it is canonically defined
 by a filed concept or the operating contract, link that instead. Define from
 understanding, never contradicting what the brain has already filed — if the
@@ -103,7 +103,7 @@ doc, merge into it and bump `timestamp` rather than creating a near-duplicate.
    terms are overloaded, and the elaboration must match this usage, not the
    most common one.
 2. **List the terms** worth defining before writing anything, and grep
-   `/glossary/` (and the registry/concept tree) for each — existing
+   `/beliefs/glossary/` (and the registry/concept tree) for each — existing
    definitions get linked, not re-invented.
 3. **Write parts 1–3 in order** and deliver them in chat. Part 1 stays
    jargon-free; part 3 may use a term once part 2 has defined it.
@@ -128,7 +128,7 @@ doc, merge into it and bump `timestamp` rather than creating a near-duplicate.
   bundle-absolute link; the citing-terms convention (link first use, not every
   occurrence) applies. The elaboration doc is not a second glossary: its term
   definitions serve *this phrase*; the source-independent home for a term is
-  `/glossary/`.
+  `/beliefs/glossary/`.
 - **Governance namespace, not bundle** — elaboration docs carry no `sb:` id
   and never a `verified` field; they are agent-authored expansions, like
   tutorials.

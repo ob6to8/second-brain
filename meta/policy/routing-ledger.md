@@ -28,7 +28,7 @@ Four columns:
   dispatch) are orthogonal: a strand can be routed yet still `open`, or `closed`
   and `unrouted`.
 - **Routed-to targets are `concept` docs**, linked by bundle-absolute path
-  (e.g. `[foo](/SWE/…/foo.md)`). The route-tagging cross-check reads this column
+  (e.g. `[foo](/knowledge/SWE/…/foo.md)`). The route-tagging cross-check reads this column
   to confirm every concept-routed row is covered by a tag (see the route-tagging
   policy).
 - **In-doc, maintained at capture time.** The ledger is a section of the thread

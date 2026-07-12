@@ -23,7 +23,7 @@ and settle what genre it belongs to; (2) evaluate how the brain is, and could be
 aligned with the orchestration domains the quote describes.
 
 Both landed. The naming question resolved to **`doctrine`**: the brain had
-already named exactly this layer in [`/glossary/doctrine.md`](/glossary/doctrine.md)
+already named exactly this layer in [`/beliefs/glossary/doctrine.md`](/beliefs/glossary/doctrine.md)
 (guiding principles that shape judgment, vs. policy's enforceable rules) and
 explicitly noted the vocabulary lacked the type. This session minted the
 `type: doctrine` vocabulary entry, created the `meta/doctrine/` genre, and filed
@@ -53,7 +53,7 @@ doctrine); all gates green throughout. The session closed with
 |---|---|---|---|
 | Naming/filing the role excerpt as an intention artifact | closed | [engineer-as-orchestrator](/meta/doctrine/engineer-as-orchestrator.md) | - |
 | Minting the `doctrine` type + genre (shape change) | closed | [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) | - |
-| `doctrine` term now realized as a type/genre | closed | [glossary doctrine](/glossary/doctrine.md) | - |
+| `doctrine` term now realized as a type/genre | closed | [glossary doctrine](/beliefs/glossary/doctrine.md) | - |
 | Evaluating the brain's alignment with the orchestrator role | closed | [alignment-with-the-orchestrator-role](/meta/analysis/alignment-with-the-orchestrator-role.md) | - |
 | Session-open top-3 priority appraisal | closed | unrouted | - |
 
@@ -100,7 +100,7 @@ The clarifying-question tool failed to reach you, so I'll lay out the recommenda
 ## The naming question — my recommendation: **`doctrine`**
 
 <routes ref="sb:6a9e78 meta/doctrine/engineer-as-orchestrator.md">
-You're right that this is neither analysis nor concept — it's an *intention statement*: a direction that shapes judgment without prescribing action. The brain already named exactly this layer and noted the vocabulary was missing it. From [`/glossary/doctrine.md`](/glossary/doctrine.md):
+You're right that this is neither analysis nor concept — it's an *intention statement*: a direction that shapes judgment without prescribing action. The brain already named exactly this layer and noted the vocabulary was missing it. From [`/beliefs/glossary/doctrine.md`](/beliefs/glossary/doctrine.md):
 </routes>
 
 > *doctrine* — the layer of guiding principles and accepted tenets... the "why" that shapes judgment... **This brain's controlled vocabulary has no `doctrine` type.**
@@ -141,7 +141,7 @@ What landed (`3d357fc`):
 - **New `type: doctrine`** in the controlled vocabulary — a *standing intention statement* that sits **above** policy: the "why" that policies implement, and that plans/analyses/priorities may cite as the direction they serve. Distinguished from `policy` (enforceable rule), `analysis` (judgment on a question), and `note` (an idea).
 - **New genre `meta/doctrine/`** with its `index.md`, listed in `meta/index.md`.
 - **First document:** [`meta/doctrine/engineer-as-orchestrator.md`](/meta/doctrine/engineer-as-orchestrator.md) — the excerpt quoted verbatim, with the source in `resource`, plus a short "what it commits the brain to" framing so it reads as *direction*, not description.
-- **Glossary wired up:** [`/glossary/doctrine.md`](/glossary/doctrine.md) now points at the realized type/genre instead of noting its absence. Contract re-rendered.
+- **Glossary wired up:** [`/beliefs/glossary/doctrine.md`](/beliefs/glossary/doctrine.md) now points at the realized type/genre instead of noting its absence. Contract re-rendered.
 </routes>
 
 Why `doctrine` won: the brain had *already named this exact layer* in the glossary (principles that shape judgment vs. policy's enforceable rules) and explicitly noted the vocabulary lacked the type. Minting it fills a hole the brain had already articulated — the least arbitrary choice, and it generalizes to future direction statements.

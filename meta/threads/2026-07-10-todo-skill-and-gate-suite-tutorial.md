@@ -5,6 +5,7 @@ description: Added a lightweight `todo` type with a `meta/todos/` genre and a su
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-10; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, todo, skills, types, tutorial, gates, ci]
 timestamp: 2026-07-10
+pr: 33
 ---
 
 # 2026-07-10-todo-skill-and-gate-suite-tutorial

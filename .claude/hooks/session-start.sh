@@ -1,14 +1,15 @@
 #!/bin/bash
 set -euo pipefail
 
-# 1. Ensure the Elixir/OTP toolchain is present so the contract compiler
-#    (`mix brain.contract`) and the test suite (`mix test`) work in the session.
-#    The install is only needed in Claude Code on the web (remote) sessions;
-#    local machines are expected to already have Elixir installed.
-# 2. Emit the session-init digest (`mix brain.session_init`) — open issues,
-#    active plans, dangling ledger strands, and a heuristic top-3 priority
-#    ranking — so it lands in the fresh session's context and the agent can
-#    open the thread with a priority appraisal.
+# Provision the session's toolchain — nothing more. This hook used to also emit
+# the session-init digest (open work + a heuristic top-3) into every session's
+# context; that appraisal now lives behind the on-demand `/priorities` skill
+# (see .claude/skills/priorities/SKILL.md), so the hook's sole job is to ensure
+# the Elixir/OTP toolchain is present and warm so `mix brain.*` — including the
+# priorities skill, the contract compiler, and the test suite — works.
+#
+# The install is only needed in Claude Code on the web (remote) sessions;
+# local machines are expected to already have Elixir installed.
 
 log=/tmp/second-brain-session-start.log
 
@@ -23,10 +24,7 @@ if command -v mix >/dev/null 2>&1; then
   cd "${CLAUDE_PROJECT_DIR:-$PWD}"
   # Warm the build cache (this project has no external deps to fetch).
   mix compile >>"$log" 2>&1 || true
-  echo "second-brain: $(elixir --version 2>/dev/null | tail -1) ready — mix brain.contract available."
-  echo
-  mix brain.session_init 2>>"$log" \
-    || echo "second-brain: WARNING — session-init digest failed; see $log." >&2
+  echo "second-brain: $(elixir --version 2>/dev/null | tail -1) ready — run /priorities to review open work."
 else
   echo "second-brain: WARNING — failed to install Elixir; see $log." >&2
 fi

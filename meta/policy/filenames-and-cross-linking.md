@@ -13,6 +13,6 @@ timestamp: 2026-07-12
   time-ordered entries (journal/log-style notes); topical concepts stay purely
   topical.
 - **Cross-link** related concepts with markdown links. Prefer bundle-absolute paths
-  (begin with `/`, e.g. `[OKF](/knowledge-management/open-knowledge-format.md)`). Links are
+  (begin with `/`, e.g. `[OKF](/knowledge/knowledge-management/open-knowledge-format.md)`). Links are
   untyped edges; the prose carries the meaning. Broken links are tolerated but avoid
   creating them.

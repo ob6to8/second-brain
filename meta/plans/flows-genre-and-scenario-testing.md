@@ -224,16 +224,16 @@ architecture against Elixir best practices and the repo's `deps: []` constraint.
     output normalized. ExUnit's built-in `assert a == b` already gives a readable
     character-level diff (since 1.6) — no helper dep needed, but diff one file at a
     time. Evidence:
-    [ExUnit ships dependency-free fixtures and diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
+    [ExUnit ships dependency-free fixtures and diffs](/knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
     (`sb:f6e843`).
   - **`steps.md` stays human documentation, not machine-parsed** — avoiding the
     bespoke DSL. (Reflected in §4: the step list is a table in the flow doc.)
 
 **Outside references (intook, with the full citations).** The two design changes
 above trace to these captures — the *drop-the-snapshot-library* decision to
-[Elixir snapshot/approval-testing libraries require a dependency](/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md)
+[Elixir snapshot/approval-testing libraries require a dependency](/knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md)
 (`sb:b1ba4b`), and the *built-ins-are-enough* basis to
-[ExUnit ships dependency-free fixtures and diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
+[ExUnit ships dependency-free fixtures and diffs](/knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
 (`sb:f6e843`); each capture holds the underlying hexdocs / issue-tracker / repo
 URLs under its `# Citations`. Repo evidence (in-tree, not intook): `mix.exs`
 (`deps: []`), `route_tags_test.exs`, `site_test.exs`.
@@ -262,3 +262,24 @@ URLs under its `# Citations`. Repo evidence (in-tree, not intook): `mix.exs`
    with a `describe` per flow. Lean: per-flow file.
 
 Neither changes the artifact shape.
+
+---
+
+## 11. Later refinement — flow lineage (2026-07-12)
+
+The three-artifact model (§3) captured a flow's *present* shape but not its
+*origin*: the citations ran backward only (flow → plan → analysis), so a flow's
+upstream docs never pointed forward to what they became, and the full arc
+*problem-identified → designed → built → running system* was legible only by
+walking hops in reverse. The genre gained a **lineage** record to close this: each
+flow doc carries a canonical `lineage:` **frontmatter** block chaining its
+originating `analysis`, `plan`, **thread** (the captured session that did the work),
+and the merging `pr`; a prose blockquote renders it in-doc, and a cross-flow
+**flowchart index** is derived from every flow's block. The encoding, the derived
+index tool, and the retrofit of all flow docs are spun out into a dedicated plan —
+[flow-lineage: frontmatter provenance + a derived flowchart](/meta/plans/flow-lineage-index.md)
+— rather than expanded here, since this plan is `done`. Reference instance is the
+[dedup recall probe flow](/meta/flows/dedup-recall-probe.md) (analysis PR #25 → plan
+→ thread → implementation PR #50 → flow). This is the flow-scoped precursor of the
+typed lineage edges the [epistemic-overlay plan](/meta/plans/epistemic-overlay.md)
+would make first-class across all concepts.

@@ -30,28 +30,28 @@ confirmation.
 
 ## The terms
 
-- **[materialize](/glossary/materialize.md)** — to compute derived content and write it to disk as
+- **[materialize](/beliefs/glossary/materialize.md)** — to compute derived content and write it to disk as
   ordinary file content, instead of recomputing it on demand. Here it names
   `mix brain.route_tags --materialize`
   ([`SecondBrain.RouteTags.materialize/1`](/lib/second_brain/route_tags.ex)),
   which maintains each concept's excerpt log from the current tags; the log is
   "generated, never hand-kept."
-- **[route tag](/glossary/route-tag.md)** — an inline `<routes ref="…">`
+- **[route tag](/beliefs/glossary/route-tag.md)** — an inline `<routes ref="…">`
   region marking which concept(s) a paragraph of a frozen thread feeds;
   canonically defined by the
   [route-tagging policy](/meta/policy/route-tagging.md).
-- **[sink](/glossary/route-tag-sink.md)** — the concept document a route tag
+- **[sink](/beliefs/glossary/route-tag-sink.md)** — the concept document a route tag
   routes into, which accretes the aggregated log.
-- **[excerpt log](/glossary/excerpt-log.md)** — the `## Thread excerpts — route-tagged log` section inside
+- **[excerpt log](/beliefs/glossary/excerpt-log.md)** — the `## Thread excerpts — route-tagged log` section inside
   a sink: per-thread, date-stamped blocks, each lifting the tagged regions
   whole. It is the materialized output.
-- **[feeding pairs](/glossary/feeding-pairs.md)** — the (thread, sink) pairs
+- **[feeding pairs](/beliefs/glossary/feeding-pairs.md)** — the (thread, sink) pairs
   the current tags induce: derived fresh on every run, never stored, and the
   domain the materialization projects — in both directions.
-- **[orphan block](/glossary/orphan-block.md)** — a dated block in a sink's excerpt log whose thread no
+- **[orphan block](/beliefs/glossary/orphan-block.md)** — a dated block in a sink's excerpt log whose thread no
   longer tags that sink (the tag was removed or re-pointed, or the thread
   deleted): generated content whose source has vanished. Distinct from a
-  [stale block](/glossary/stale-block.md), whose source merely *changed*
+  [stale block](/beliefs/glossary/stale-block.md), whose source merely *changed*
   without re-materializing.
 - **two-directional** — the materialization is a true *projection* of the
   tags: additions in the source appear in the output **and** removals in the
@@ -62,7 +62,7 @@ confirmation.
 
 ## What's actually happening
 
-When a session is captured, its [thread doc](/glossary/thread-doc.md) carries
+When a session is captured, its [thread doc](/beliefs/glossary/thread-doc.md) carries
 route tags saying "this paragraph feeds concept X." The materializer collects
 the feeding pairs and rewrites each fed concept's excerpt-log section from
 scratch. The gap it used to have: a concept that *had been* fed but whose

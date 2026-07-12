@@ -1,0 +1,158 @@
+# Glossary
+
+One concept file per technical term, alphabetical, maintained by
+[`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md). Each definition
+is individually linkable — cite a term in any response as a bundle-absolute
+link (e.g. `[route tag](/beliefs/glossary/route-tag.md)`) and the link lands on its
+definition. See the [glossary hub](/beliefs/glossary.md) for how the system works.
+
+## Terms
+
+- [actor model](/beliefs/glossary/actor-model.md) — share-nothing processes owning private state, interacting only by async messages; contention becomes a mailbox, not a lock
+- [agent memory](/beliefs/glossary/agent-memory.md) — how an agent persists knowledge beyond its context window (short-term/long-term/procedural/working); files to vector DBs
+- [agent time horizon](/beliefs/glossary/agent-time-horizon.md) — the human-time task length an agent completes at a fixed success rate (e.g. 50% horizon); doubles every few months
+- [analysis (type)](/beliefs/glossary/analysis-type.md) — controlled type: a reasoned point-in-time judgment on a question, with findings + recommendation
+- [approval gate](/beliefs/glossary/approval-gate.md) — a control blocking a tool/MCP action until approval resolves; environment-wide if it blocks every session
+- [approximate nearest neighbor (ANN)](/beliefs/glossary/approximate-nearest-neighbor.md) — index class trading exactness for speed on nearest-vector queries; worth it only at large corpus size
+- [assertion graph](/beliefs/glossary/assertion-graph.md) — the pre-OKF design: atomic claims (primitives + compounds with explicit deps) forming a DAG; remnants under `deprecated/`
+- [auto-intake](/beliefs/glossary/auto-intake.md) — the `/news` step that files its featured items into the bundle via `/intake` in the same run, moving the operator from a pre-intake gate to post-intake editorial work
+- [backpressure](/beliefs/glossary/backpressure.md) — flow control where a slower downstream stage pushes back on producers (bounded queues, pool limits) so overload degrades gracefully
+- [BEAM](/beliefs/glossary/beam.md) — the Erlang/Elixir VM: lightweight heap-isolated processes, message passing, supervision — built for long-running concurrent services
+- [belief network](/beliefs/glossary/belief-network.md) — a probabilistic graphical model (a.k.a. Bayesian network): a DAG of stochastic variables, each conditioned on its parents; the "belief" in *deep belief network*
+- [BM25](/beliefs/glossary/bm25.md) — lexical full-text ranking by term frequency and rarity; the keyword-search tier between grep and semantic search
+- [bundle-absolute link](/beliefs/glossary/bundle-absolute-link.md) — a markdown link whose target begins at the bundle root with a leading slash, resolving identically from any document; breaks when the target moves, since it encodes the path, not the id
+- [candidate feed](/beliefs/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one
+- [CI smoke check](/beliefs/glossary/ci-smoke-check.md) — a cheap CI check that fails the build on a basic broken invariant — a tripwire, not a full test
+- [Claude Managed Agents (CMA)](/beliefs/glossary/claude-managed-agents.md) — Anthropic's hosted agent service: the loop runs on Anthropic's infra, each session gets a sandboxed container; versioned agents, scheduled deployments, outcomes, vaults
+- [CloudEvents](/beliefs/glossary/cloudevents.md) — CNCF spec standardizing the event envelope (id/source/type/time/data) so events route across systems regardless of transport
+- [cognitive debt](/beliefs/glossary/cognitive-debt.md) — (operator-coined) a human's compounding comprehension gap toward a system when automation changes it faster than they internalize it; user-defined, paid down by editorial engagement
+- [compiled contract](/beliefs/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
+- [complementary priors](/beliefs/glossary/complementary-priors.md) — Hinton/Osindero/Teh's device for cancelling explaining-away correlations in a directed belief net, making a deep model tractable to learn layer by layer
+- [Composable Beliefs (cb)](/beliefs/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
+- [concept (OKF)](/beliefs/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
+- [contrastive divergence](/beliefs/glossary/contrastive-divergence.md) — a fast approximate training algorithm for restricted Boltzmann machines, using a short Gibbs-sampling run in place of the intractable exact gradient
+- [CRLF](/beliefs/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
+- [cron expression](/beliefs/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
+- [credential vault](/beliefs/glossary/credential-vault.md) — holds a secret outside the process that uses it and substitutes it at egress, so untrusted code sees only a placeholder; contains injection/compromise blast radius
+- [cross-reference drift](/beliefs/glossary/cross-reference-drift.md) — a change that should update many interlinked docs only updates some; the rest rot silently (the LLM-wiki killer)
+- [cross-site scripting (XSS)](/beliefs/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
+- [dark factory](/beliefs/glossary/dark-factory.md) — from lights-out manufacturing: an operation run end-to-end by autonomous agents, humans reduced to governance rather than presence
+- [deduplication](/beliefs/glossary/deduplication.md) — checking for an existing equivalent before filing, to avoid fragmenting the brain (intake-time)
+- [deep belief network](/beliefs/glossary/deep-belief-network.md) — a generative stack of restricted Boltzmann machines, trained greedily layer by layer; Hinton/Osindero/Teh (2006); pointer to the filed concept
+- [dependency-free](/beliefs/glossary/dependency-free.md) — relying only on the standard library — no external packages, so it runs offline in restricted sandboxes
+- [deploy gating](/beliefs/glossary/deploy-gating.md) — gating a deploy on verification passing, so a failed check skips publish and the last good deploy stays live
+- [detector](/beliefs/glossary/detector.md) — a mechanical check converting a violation or drift from silent state into announced signal; gates fail, warn passes report
+- [deterministic spine](/beliefs/glossary/deterministic-spine.md) — the input-determined, mechanical part of a workflow that a conventional test can pin
+- [digest](/beliefs/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
+- [doctrine](/beliefs/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
+- [drift class](/beliefs/glossary/drift-class.md) — a category of staleness whose instances share one detection mechanism, so a single detector covers the class
+- [DRY (don't repeat yourself)](/beliefs/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
+- [elaboration (type)](/beliefs/glossary/elaboration-type.md) — controlled type: a persisted expansion of a technical phrase (quoted target, term definitions, plain walkthrough), under `meta/elaborations/`
+- [embeddings](/beliefs/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
+- [epistemic overlay](/beliefs/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
+- [epistemic poisoning](/beliefs/glossary/epistemic-poisoning.md) — contaminating a shared knowledge base with false beliefs via untrusted intake; prompt injection escalated to every future reader
+- [excerpt log (route-tagged log)](/beliefs/glossary/excerpt-log.md) — the generated per-thread excerpt section a route-tag sink carries, re-derivable from the tags, never hand-edited
+- [ExUnit](/beliefs/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
+- [fast-forward merge](/beliefs/glossary/fast-forward-merge.md) — a merge that advances the branch pointer with no merge commit; leaves a zero-diff branch
+- [featuring](/beliefs/glossary/featuring.md) — how `/news` decides what makes the cut: relevance → novelty → a reason tag → source quality, capped
+- [feeding pairs](/beliefs/glossary/feeding-pairs.md) — the (thread, sink) pairs the current route tags induce; the domain of materialization in both directions
+- [flow (touch-sequence)](/beliefs/glossary/flow-touch-sequence.md) — a per-workflow touch-sequence doc tracing one canonical run, each step actor-tagged (`meta/flows/`)
+- [fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) — a scheduling mode where every trigger firing spawns a clean session, inheriting no prior state
+- [gate suite](/beliefs/glossary/gate-suite.md) — the full set of blocking verification checks a change must pass before landing, run manually, by the pre-commit hook, and in CI; pointer to the gate-suite tutorial
+- [generative model](/beliefs/glossary/generative-model.md) — a model that learns the joint distribution of its data so it can synthesize new samples, as opposed to a discriminative input→label mapping
+- [git worktree](/beliefs/glossary/git-worktree.md) — a linked working dir with its own HEAD/index/tree over a shared `.git` store; isolates parallel branches/agents
+- [GitHub Flavored Markdown (GFM)](/beliefs/glossary/github-flavored-markdown.md) — GitHub's CommonMark superset (tables, task lists, strikethrough, autolinks)
+- [GitHub Pages](/beliefs/glossary/github-pages.md) — GitHub's static-site hosting, publishing a repo or build artifact to a public URL via Actions
+- [gold set](/beliefs/glossary/gold-set.md) — a curated set of queries each paired with the item(s) that should be returned — the ground truth an eval scores retrieval against
+- [golden test (snapshot test)](/beliefs/glossary/golden-test.md) — a test comparing current output to a checked-in "golden" reference artifact, flagging any drift
+- [graduation](/beliefs/glossary/graduation.md) — a term outgrowing the glossary relocates into the domain taxonomy, id travelling with it, a pointer stub left behind
+- [greedy layer-wise pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) — building a deep network one layer at a time, each trained (unsupervised) on the layer below's output, before any end-to-end fine-tuning
+- [HTML escaping](/beliefs/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
+- [hybrid search](/beliefs/glossary/hybrid-search.md) — retrieval blending BM25 and vector-similarity scores so keyword precision and semantic matching cover each other's misses
+- [inbox namespace](/beliefs/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/news` candidate digests (no ids, never verified)
+- [invisible degradation](/beliefs/glossary/invisible-degradation.md) — corpus rot that emits no signal while it happens; nothing announces it until retrieval visibly fails
+- [issue (type)](/beliefs/glossary/issue-type.md) — controlled type: a tracked operational problem with a status (open/resolved/wontfix), under `meta/issues/`
+- [Jido](/beliefs/glossary/jido.md) — Elixir agent framework: agents as immutable data through a `cmd/2` reducer, Actions doubling as LLM tools, CloudEvents signals, supervised runtime
+- [knowledge graph](/beliefs/glossary/knowledge-graph.md) — entities as nodes + typed edges, queried by traversal; a code KG maps files/symbols/calls for agents
+- [KV cache](/beliefs/glossary/kv-cache.md) — cached key/value tensors for processed tokens in transformer inference; trades context-growing memory for speed
+- [let-it-crash](/beliefs/glossary/let-it-crash.md) — Erlang's fault-tolerance philosophy: don't handle every error in place; let the process crash and a supervisor restart it known-good
+- [lexical search](/beliefs/glossary/lexical-search.md) — search matching the literal surface form of text (tokens/substrings), not meaning; fast and dependency-free but blind to synonym/jargon gaps
+- [librarian write-broker](/beliefs/glossary/librarian-write-broker.md) — a supervised process solely owning mutation of a knowledge namespace: agents submit proposals, it runs the gauntlet and serializes commits
+- [lineage](/beliefs/glossary/lineage.md) — the provenance chain that produced an artifact (for a flow doc: analysis → plan → thread → PR), recorded as a canonical frontmatter block from which views are derived
+- [margin collapse](/beliefs/glossary/margin-collapse.md) — the AI-industry thesis that frontier labs' high inference margins erode under cheaper open-weight parity with frictionless switching (pointer to `sb:07610c`)
+- [markdown renderer](/beliefs/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `SecondBrain.Markdown`)
+- [materialize](/beliefs/glossary/materialize.md) — write derived content to disk as real file content instead of recomputing on demand; pairs with a freshness check
+- [methodology (type)](/beliefs/glossary/methodology-type.md) — controlled type: a repeatable prescriptive how-to/playbook for a recurring task
+- [mix task](/beliefs/glossary/mix-task.md) — a named `mix` command defined under `Mix.Tasks` (e.g. `mix brain.verify`)
+- [Model Context Protocol (MCP)](/beliefs/glossary/model-context-protocol.md) — open client/server protocol exposing tools/resources/context to LLM agents over a uniform interface
+- [mounting point (harness)](/beliefs/glossary/mounting-point.md) — the file path a third-party harness dictates for content (`CLAUDE.md`, `SKILL.md`); distinct from the brain-defined role that fills it
+- [non-bundle namespace](/beliefs/glossary/non-bundle-namespace.md) — a top-level dir excluded from the registry — no `sb:` ids, skipped by verify (e.g. `meta/`, `inbox/`)
+- [operating contract](/beliefs/glossary/operating-contract.md) — the root `CLAUDE.md` auto-loaded each session; a compiled artifact, never hand-edited; binds agents, not the operator
+- [orchestration](/beliefs/glossary/orchestration.md) — directing AI agents that implement (decompose, coordinate, evaluate, steer) rather than hand-writing the code; the direction named by the engineer-as-orchestrator doctrine
+- [orphan block](/beliefs/glossary/orphan-block.md) — generated output whose source vanished; here, an excerpt-log block whose thread no longer tags the sink
+- [orphaned branch](/beliefs/glossary/orphaned-branch.md) — a lingering remote session branch: merged-but-undeleted (delete on sight) or unmerged (operator-ratified deletion only)
+- [OTP](/beliefs/glossary/otp.md) — Erlang/Elixir's fault-tolerance framework: supervision trees, GenServers, applications; the line between scripting and a resident system
+- [parse-the-log](/beliefs/glossary/parse-the-log.md) — capturing a session by parsing the host log file (exact delivered text) vs. reconstructing from context
+- [pipe table](/beliefs/glossary/pipe-table.md) — markdown's `|`-delimited table syntax (GFM); parsers of one specific table must scope to its section
+- [plan (type)](/beliefs/glossary/plan-type.md) — controlled type: a one-off design/decision record for an intended change, with a status
+- [plugin](/beliefs/glossary/plugin.md) — a distributable bundle of Claude Code skills; its skills get an automatic `plugin-name:` namespace
+- [pointer entry](/beliefs/glossary/pointer-entry.md) — an entry for a term canonically defined elsewhere: one-line gloss + link, never a duplicate definition
+- [policy (type)](/beliefs/glossary/policy-type.md) — controlled type: a standing governance rule for how the brain operates, under `meta/policy/`; the source `CLAUDE.md` is compiled from
+- [probabilistic enforcement](/beliefs/glossary/probabilistic-enforcement.md) — rules as prose an agent promises to follow; violations scale with operation count and compound without a detector
+- [prompt injection](/beliefs/glossary/prompt-injection.md) — instructions embedded in untrusted content an LLM processes hijack it into serving the attacker's intent instead of the user's task
+- [property-based testing](/beliefs/glossary/property-based-testing.md) — testing that asserts invariants over many generated inputs, not hand-picked examples
+- [proto-belief document](/beliefs/glossary/proto-belief-document.md) — cb's per-matter accreting page; maps onto this brain's per-topic `concept` sink
+- [provenance](/beliefs/glossary/provenance.md) — the frontmatter field for a statement's immutable origin; orthogonal to verification
+- [query profile](/beliefs/glossary/query-profile.md) — per-category interest signals derived from the taxonomy tree, used as the `/news` retrieval filter
+- [ratification](/beliefs/glossary/ratification.md) — the operator's explicit approval turning a proposed shape change (directory, type, plan scope) into an adopted one
+- [ReAct](/beliefs/glossary/react.md) — the foundational LLM agent loop: alternate reasoning traces with tool actions whose observations feed back in (pointer to the filed Yao et al. reference)
+- [reason tags](/beliefs/glossary/reason-tags.md) — the `recent`/`impactful`/`influential`/`groundbreaking`/`buzz` vocabulary marking why a `/news` item surfaced
+- [recall](/beliefs/glossary/recall.md) — the fraction of relevant items a search surfaces; low recall means existing material is missed
+- [reducer](/beliefs/glossary/reducer.md) — a pure `(state, action) → new_state` fold (Redux/Elm); total, unit-testable without its environment, replayable from an action log; effectful variants declare side effects as data
+- [recall probe](/beliefs/glossary/recall-probe.md) — a repeatable eval firing known queries at known targets to measure (and watch) search recall
+- [recall@k](/beliefs/glossary/recall-at-k.md) — a metric: is the correct target within the top *k* results? reported across a query set
+- [red test](/beliefs/glossary/red-test.md) — a test feeding a known-bad input and asserting the check flags it; proves the detector fires, not just that good input passes
+- [rendered aggregation](/beliefs/glossary/rendered-aggregation.md) — a derived doc compiled from scattered canonical sources with a drift gate; sources are edited, the view only re-rendered
+- [research spike](/beliefs/glossary/research-spike.md) — a time-boxed investigation answering a design/feasibility question, yielding a verdict not code
+- [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) — the near-duplicate concepts left after automated dedup's cheap best, handed to a human editorial pass to merge
+- [restricted Boltzmann machine (RBM)](/beliefs/glossary/restricted-boltzmann-machine.md) — a two-layer undirected generative net with bipartite (no within-layer) connectivity, so each layer is conditionally independent given the other; the building block of a deep belief network
+- [route tag](/beliefs/glossary/route-tag.md) — inline `<routes ref="…">` region marking which concept(s) a paragraph of a frozen thread feeds
+- [Routine](/beliefs/glossary/routine.md) — a saved scheduled trigger that fires a preset prompt into an agent session on a cron schedule
+- [routing ledger](/beliefs/glossary/routing-ledger.md) — the per-thread dispatch table (topic/state/routed-to/dangling); pointers and states only, no content
+- [run (canonical run)](/beliefs/glossary/run.md) — a single end-to-end execution of a flow or scheduled job; the unit a flow doc's touch-sequence narrates
+- [scenario test](/beliefs/glossary/scenario-test.md) — an end-to-end test driving a whole workflow against a realistic fixture and asserting on final state
+- [section terminator](/beliefs/glossary/section-terminator.md) — the pattern deciding where a parsed section ends; reader and rewriter of one section must agree on it
+- [self-consistency check](/beliefs/glossary/self-consistency-check.md) — a check that re-derives a value from its own source; catches drift but is blind to shared-logic errors
+- [semantic search](/beliefs/glossary/semantic-search.md) — meaning-based retrieval via embedding similarity, bridging synonym/jargon gaps lexical search misses
+- [session capture](/beliefs/glossary/session-capture.md) — rendering a session into a verbatim thread doc, dropping only tool calls, reasoning, short pre-tool narration
+- [session-init digest](/beliefs/glossary/session-init-digest.md) — a machine-compiled summary of open work (issues, todos, plans, dangling strands) injected into a fresh session's context, ending in a heuristic priority ranking the agent refines
+- [SessionStart hook](/beliefs/glossary/sessionstart-hook.md) — a hook that runs at session start to provision or validate the environment (e.g. warm the Elixir toolchain) and brief the agent via its stdout
+- [single source of truth](/beliefs/glossary/single-source-of-truth.md) — a fact lives in one authoritative place; everything else is generated from it or points at it
+- [sink (route-tag sink)](/beliefs/glossary/route-tag-sink.md) — the doc a route tag feeds; an `sb:` id sink accretes a log, a path back-link does not
+- [skill](/beliefs/glossary/skill.md) — a named, invocable `SKILL.md` capability; the glossary holds the concepts a skill enacts, not its bare `/command` handle
+- [skill namespacing](/beliefs/glossary/skill-namespacing.md) — prefixing skill names to resolve as a set; in Claude Code only plugin skills are auto-namespaced
+- [skill-to-skill delegation](/beliefs/glossary/skill-to-skill-delegation.md) — one skill invoking another as a sub-step (e.g. `/create-pull-request` runs `/capture`), composing behavior
+- [speculative decoding](/beliefs/glossary/speculative-decoding.md) — draft cheap tokens, verify in parallel against the full model, accept the correct prefix; identical output, higher throughput
+- [spurious (warning)](/beliefs/glossary/spurious-warning.md) — a false-positive warning/match; never fails a build but teaches the reader to ignore the channel
+- [squash merge](/beliefs/glossary/squash-merge.md) — flattening a branch into one new commit on the target; linear history at the cost of per-commit provenance (disallowed here)
+- [stable id (`sb:` id)](/beliefs/glossary/stable-id.md) — the opaque, immutable `sb:` + 6-hex identifier every bundle concept carries
+- [stale block](/beliefs/glossary/stale-block.md) — a materialized excerpt-log block diverged from its re-derivation (source changed, not re-materialized); distinct from an orphan block
+- [staleness propagation](/beliefs/glossary/staleness-propagation.md) — when a premise changes, follow dependency edges outward and flag every statement resting on it for re-verification
+- [static-site generator](/beliefs/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
+- [strand](/beliefs/glossary/strand.md) — one topic's line of work through a session; the routing ledger tracks one row per strand, state orthogonal to routing
+- [supersession](/beliefs/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
+- [synonym expansion](/beliefs/glossary/synonym-expansion.md) — broadening a query with synonyms, jargon variants, and acronym expansions to bridge vocabulary mismatch without embeddings
+- [thread doc](/beliefs/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
+- [todo (type)](/beliefs/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`
+- [tree is the taxonomy](/beliefs/glossary/tree-is-the-taxonomy.md) — the directory tree, surfaced via `index.md` files (progressive disclosure), *is* the canonical taxonomy
+- [Tree-sitter](/beliefs/glossary/tree-sitter.md) — incremental multi-language parser producing concrete syntax trees; the parsing layer under code knowledge graphs
+- [true merge](/beliefs/glossary/true-merge.md) — a two-parent merge commit wiring the branch's real history into the target's ancestry; keeps cited SHAs reachable (mandated here)
+- [tutorial (type)](/beliefs/glossary/tutorial-type.md) — controlled type: a long-form read-start-to-finish explainer (the why/how), under `meta/tutorials/`
+- [two-plane rule](/beliefs/glossary/two-plane-rule.md) — keep the fast operational plane (ephemeral state, in databases) out of the slow epistemic plane (durable verified beliefs, in the bundle)
+- [typed edge](/beliefs/glossary/typed-edge.md) — an id-based relationship in frontmatter that tooling traverses (e.g. `verified_by`); prose links stay untyped
+- [vector database](/beliefs/glossary/vector-database.md) — a store indexing items as embedding vectors, answering nearest-neighbor queries for semantic retrieval
+- [wake-sleep algorithm](/beliefs/glossary/wake-sleep-algorithm.md) — an unsupervised training procedure for layered generative nets alternating a data-driven "wake" phase with a model-dreamed "sleep" phase to tune generative and recognition weights
+- [warn pass](/beliefs/glossary/warn-pass.md) — an advisory check that reports findings without failing; chosen where detection is mechanical but enforcement would overreach
+- [webhook](/beliefs/glossary/webhook.md) — an HTTP callback that inverts polling: the service POSTs to an endpoint you operate when an event occurs; needs an always-on receiver that authenticates and reacts
+- [verification grounding](/beliefs/glossary/verification-grounding.md) — the rule that `verified: true` needs evidence (`verified_by`), not its own link, and only on statements
+- [verified_by](/beliefs/glossary/verified-by.md) — the frontmatter field holding a statement's evidence edges (inline list of stable ids)

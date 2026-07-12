@@ -8,7 +8,7 @@
 # Operating Contract — Second Brain (OKF)
 
 This repository is a personal **second brain** stored as an
-[Open Knowledge Format](/knowledge-management/open-knowledge-format.md)
+[Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)
 (**OKF v0.1**) bundle. Every agent that operates here — including fresh, sandboxed
 agents spun up from the Claude Code app — MUST read and follow this contract. It is
 the backbone that keeps the brain consistent as it grows.
@@ -82,7 +82,7 @@ _Source: [`meta/policy/reserved-filenames.md`](/meta/policy/reserved-filenames.m
   names (short, established acronyms like `SWE` may stay uppercase); each directory
   holds a coherent set of related concepts.
 - **Create the natural directory path even for a single concept.** Do not flatten to
-  avoid nesting — a lone note about git belongs in `SWE/version-control/git/`, not
+  avoid nesting — a lone note about git belongs in `knowledge/SWE/version-control/git/`, not
   dumped at the root. Depth that mirrors the real structure of the knowledge is good.
 
 _Source: [`meta/policy/directory-hierarchy.md`](/meta/policy/directory-hierarchy.md)_
@@ -135,7 +135,7 @@ _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
   time-ordered entries (journal/log-style notes); topical concepts stay purely
   topical.
 - **Cross-link** related concepts with markdown links. Prefer bundle-absolute paths
-  (begin with `/`, e.g. `[OKF](/knowledge-management/open-knowledge-format.md)`). Links are
+  (begin with `/`, e.g. `[OKF](/knowledge/knowledge-management/open-knowledge-format.md)`). Links are
   untyped edges; the prose carries the meaning. Broken links are tolerated but avoid
   creating them.
 
@@ -373,16 +373,19 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the glossary — **one concept file per term** under
-  [`/glossary/`](/glossary/index.md) (hub: [`/glossary.md`](/glossary.md)), each with
+  [`/beliefs/glossary/`](/beliefs/glossary/index.md) (hub: [`/beliefs/glossary.md`](/beliefs/glossary.md)), each with
   its own `sb:` id and *Seen in:* citations, so any response or concept can cite a
   term by link (pointer entries defer to filed concepts instead of duplicating them).
   Also invoked automatically by `/create-pull-request` on the thread doc its
   `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
 - **`/news`** — generate today's **inbox**: a daily candidate feed of news, articles,
   papers, and resources matched against the brain's taxonomy, grouped by category and
-  reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). Writes to
-  the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
-  file one into the brain. See `.claude/skills/news/SKILL.md`.
+  reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) — then
+  **auto-intake the featured items** into the bundle via `/intake`. The digest is the
+  dated record in the non-bundle `inbox/` namespace (no `sb:` ids); its featured items
+  graduate into filed concepts in the same run, bounded to the known tree (items needing
+  a new top-level domain are deferred for operator ratification) and tagged `auto-intake`
+  for the operator's post-intake editorial pass. See `.claude/skills/news/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
   over the captured thread doc, **back-link this session's elaboration docs** (set
   `thread:` in each `meta/elaborations/` doc the session created or updated, pointing
@@ -396,6 +399,18 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   a subcommand argument: `/todo create <title>` files a new open todo (and maintains
   the index); `/todo list` shows the todos grouped by `status`. See
   `.claude/skills/todo/SKILL.md`.
+- **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
+  `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
+  strands) and closes with a heuristic top-3 the agent refines with judgment — the
+  on-demand successor to the old SessionStart digest (no longer auto-injected at
+  session start). Read-only. See `.claude/skills/priorities/SKILL.md`.
+- **`/issue`** — list `type: issue` tracked problems under `meta/issues/`, grouped by
+  `status` (default `open`). The issues-only slice of `/priorities`; read-only
+  (filing an issue stays inline per the contract). See `.claude/skills/issue/SKILL.md`.
+- **`/plan`** — list `type: plan` design/decision records under `meta/plans/`, grouped
+  by `status` (default `active` = proposed/accepted/in-progress). The plans-only slice
+  of `/priorities`; read-only (persisting a plan stays inline per the persist-plans
+  policy). See `.claude/skills/plan/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 
@@ -426,11 +441,28 @@ record so it can be resumed from the record instead of from memory.
   `len < 300 and followed_by_tool`. "Distilled" here means the *noise* is dropped,
   not that the kept text is condensed; `/capture` strips noise, not substance, and
   is the sole session-persistence skill.
+- **Ask the operator in the chat, not the dialog box.** Pose every question to
+  the operator as ordinary `## Assistant` chat text — never through the
+  dialog-box question UI (`AskUserQuestion`). `/capture` renders only the
+  delivered message stream, so a question raised in the dialog box, and the
+  answer the operator selects in it, never enter that stream: both are lost from
+  the thread doc and every downstream artifact routed from it. Keeping the
+  exchange inline is what lets capture retain the question and its answer
+  verbatim. (The dialog UI has also proven flaky in these sessions — a second
+  reason to keep questions in the chat.)
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `sb:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
   landed), the **routing ledger** (`## Routing`), then the `## User`/`##
   Assistant` render body. Route tags are applied last, over the now-frozen body.
+- **The thread records its PR (`pr:`), not its branch.** Once the session's PR
+  is opened, its number is stamped into the thread's frontmatter as `pr: <N>`
+  (set by `/create-pull-request`, not `/capture` — the number doesn't exist
+  until the PR is opened). The **PR is the durable anchor**: session branches
+  are ephemeral and deleted after merge (per the git-branch-deletion policy),
+  and the pre-policy squash era left the original branch commits unreachable
+  entirely — so the PR number is the only stable link from a thread back to how
+  it landed. The branch name is deliberately **not** recorded.
 - **Freeze then tag.** Because capture runs once at close, the body is frozen
   when written; tagging and ledger upkeep are one finalization motion over that
   frozen body, not a per-turn rewrite.
@@ -457,7 +489,7 @@ Four columns:
   dispatch) are orthogonal: a strand can be routed yet still `open`, or `closed`
   and `unrouted`.
 - **Routed-to targets are `concept` docs**, linked by bundle-absolute path
-  (e.g. `[foo](/SWE/…/foo.md)`). The route-tagging cross-check reads this column
+  (e.g. `[foo](/knowledge/SWE/…/foo.md)`). The route-tagging cross-check reads this column
   to confirm every concept-routed row is covered by a tag (see the route-tagging
   policy).
 - **In-doc, maintained at capture time.** The ledger is a section of the thread

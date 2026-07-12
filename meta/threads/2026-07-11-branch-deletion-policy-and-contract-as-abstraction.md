@@ -5,6 +5,7 @@ description: Created the git-branch-deletion policy and git-workflow contract se
 provenance: "Claude Code session (claude-fable-5), 2026-07-11; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, git, branches, policy, contract, compiled-artifact, flows, plans, todos]
 timestamp: 2026-07-11
+pr: 46
 ---
 
 # 2026-07-11-branch-deletion-policy-and-contract-as-abstraction

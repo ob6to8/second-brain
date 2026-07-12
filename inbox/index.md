@@ -12,13 +12,15 @@ the brain only when the operator says *"intake the &lt;…&gt; item"*, which run
 
 ## Latest
 
-- **[2026-07-11](/inbox/2026-07-11.md)** — 10 items across ai-industry (4) and SWE (6):
-  the contested AI margin-collapse thesis, lossless-inference and long-horizon-agent
-  advances, plus agent-era code-context, git-worktree, and testing patterns.
+- **[2026-07-12](/inbox/2026-07-12.md)** — 4 items across ai-industry (2) and SWE (2):
+  the week's open-weight surge with a sovereignty twist (LongCat-2.0 trained without
+  Western hardware, Mistral's EU-sovereign open-weight family) against fresh empirical
+  evidence that agentic coding still needs a human correcting 9 of 10 misalignments.
 
 ## Archive
 
 Digests are regenerated daily; previous days are persisted unchanged.
 
+- [2026-07-12](/inbox/2026-07-12.md)
 - [2026-07-11](/inbox/2026-07-11.md)
 - [2026-07-09](/inbox/2026-07-09.md)

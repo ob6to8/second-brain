@@ -5,6 +5,7 @@ description: A full docs-surface audit filed as an analysis (verdict — no wiki
 provenance: "Claude Code session (Claude Fable), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, documentation, wiki, drift, enforcement, warn-pass, glossary, session-init]
 timestamp: 2026-07-12
+pr: 49
 ---
 
 # 2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings

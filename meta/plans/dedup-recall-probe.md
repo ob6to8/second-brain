@@ -2,17 +2,53 @@
 type: plan
 title: "Dedup recall probe: a gold set of natural-phrasing queries and a mix task that measures intake dedup recall"
 description: Build mix brain.dedup_probe — a zero-dependency, offline, deterministic eval that scores the bundle's lexical search layer against an id-keyed gold set of natural-phrasing dedup queries — as the quantified trigger for tier-2 embedding dedup and the substrate for all later corpus-maintenance evals.
-status: proposed
+status: done
 provenance: "Claude Code session (Claude Fable), 2026-07-10 — commissioned by the operator following the eval-suitability analysis; executes recommendation 1 of the vector-DB recall analysis"
 tags: [meta, plan, evals, dedup, recall, probe, intake, tooling]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # Dedup recall probe: gold set + `mix brain.dedup_probe`
 
 ## Status & provenance
 
-**Proposed** — commissioned by the operator on 2026-07-10, immediately after the
+**Done** (2026-07-12). All build-order steps 1–6 shipped on branch
+`claude/dedup-recall-probe-qyvt7w`.
+
+**The instrument (steps 1–4, 6):**
+
+- `meta/evals/` genre + [`meta/evals/dedup-probe.md`](/meta/evals/dedup-probe.md) —
+  the gold set, seeded from the vector-DB analysis's 14 probes, re-keyed to `sb:`
+  ids, with `target`/`negative`/`quarantine` bands and synonym-expansion variants.
+- [`SecondBrain.DedupProbe`](/lib/second_brain/dedup_probe.ex) +
+  [`mix brain.dedup_probe`](/lib/mix/tasks/brain.dedup_probe.ex) — parser, lexical
+  backend, scorer, plain + `--expanded` modes, baseline delta, and
+  `--update-baseline` (the baseline is generated, not hand-kept); pinned by
+  [`test/second_brain/dedup_probe_test.exs`](/test/second_brain/dedup_probe_test.exs).
+- First `## Baseline`: **plain 3/10, expanded 10/10** — the offline measurement of
+  the recall the tier-1 synonym-expansion change recovers. Non-gating CI report step.
+
+**The tier-1 fix + harvest (step 5):**
+
+- [`/intake`](/.claude/skills/intake/SKILL.md) step 3 now requires **synonym-expanded
+  dedup search** (3–5 alternate phrasings), and a new step 8 **automatically harvests
+  a gold row** from the operator's own phrasing and refreshes the baseline via
+  `--update-baseline`, escalating only on a plain-recall regression. Mirrored in the
+  [intake flow doc](/meta/flows/intake.md) per the no-drift rule.
+
+**Open questions — resolved by the operator (2026-07-12):**
+
+- **Q1 (ratify `meta/evals/`):** yes — the genre stands.
+- **Q2 (gold-harvest default):** **automatic on every intake**, agent-run, using the
+  operator's *actual* phrasing (skip silently when there's none). The operator does
+  nothing; "opt-out" is moot because there is no operator step to opt out of.
+- **Q3 (baseline cadence):** the baseline is a **generated** figure refreshed by
+  `mix brain.dedup_probe --update-baseline` during intake; the trend lives in the gold
+  doc's **git history** (consistent with the no-hand-kept-logs rule). The operator
+  never edits it or runs anything on a schedule; the agent surfaces recall **only when
+  it regresses** — the sole operator decision (whether to fire tier-2 embedding dedup).
+
+Originally commissioned by the operator on 2026-07-10, immediately after the
 [eval-suitability analysis](/meta/analysis/eval-suitability-of-the-corpus-maintenance-failure-space.md)
 identified this as the smallest eval guarding the known unguarded gate. It executes
 recommendation 1 of the
@@ -141,13 +177,13 @@ instrument.
   scope; this probe's gold-set format and task skeleton are deliberately the
   substrate they will reuse.
 
-## Open questions (for the operator)
+## Open questions — resolved
 
-1. **Ratify `meta/evals/` as a genre** (index description above) — or should gold
-   sets live under an existing genre?
-2. **Gold-harvest default:** should the `/intake` step append a row on every
-   intake (opt-out) or only when the operator asks (opt-in)? Every-intake grows the
-   set fastest but adds a row of upkeep to each filing.
-3. **Baseline cadence:** update the committed baseline on every probe run that
-   changes it, or only deliberately (e.g. after intake batches)? Deliberate keeps
-   the trend readable; automatic keeps it honest.
+All three were answered by the operator on 2026-07-12 (see the Status section for the
+decisions and their rationale); kept here for the record.
+
+1. **Ratify `meta/evals/` as a genre** → **yes.**
+2. **Gold-harvest default** → **automatic on every intake**, agent-run, on the
+   operator's actual phrasing (skip when there's none). No operator step.
+3. **Baseline cadence** → **generated** via `--update-baseline` at intake; trend in
+   git history; the agent escalates only on regression. No manual upkeep.

@@ -1,7 +1,7 @@
 # second-brain
 
 A personal knowledge base stored as an
-[Open Knowledge Format](/knowledge-management/open-knowledge-format.md)
+[Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)
 (OKF v0.1) bundle — a directory of plain-markdown "concept" documents with YAML
 frontmatter, designed to be read and extended by AI agents and humans alike.
 
@@ -17,7 +17,7 @@ frontmatter, designed to be read and extended by AI agents and humans alike.
   analyses, tutorials, flow docs, archived session threads, and the generated
   stable-id registry. See [`meta/index.md`](/meta/index.md).
 - **`glossary/`** — one concept file per technical term used across the brain,
-  with citations; accreted by `/add-to-glossary` (hub: [`glossary.md`](/glossary.md)).
+  with citations; accreted by `/add-to-glossary` (hub: [`glossary.md`](/beliefs/glossary.md)).
 - **`inbox/`** — the daily candidate feed written by `/news` (a non-bundle
   namespace: candidates awaiting `/intake`, not concepts).
 - **`.claude/skills/`** — skills. Start with **`/intake`** for capturing content.
@@ -34,8 +34,10 @@ to ratify before creating it.
 ## Usage
 
 From the Claude Code app, paste material after `/intake` to capture it into the brain.
-At session start, `mix brain.session_init` compiles a digest of open issues, todos,
-active plans, and dangling thread strands.
+Run `/priorities` for an open-work appraisal — `mix brain.session_init` compiles a
+digest of open issues, todos, active plans, and dangling thread strands, ending in a
+heuristic top-3 the agent refines. The `/issue`, `/plan`, and `/todo` skills list the
+open artifacts of each type.
 
 ## Integrity gates
 

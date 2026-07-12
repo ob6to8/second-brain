@@ -95,13 +95,14 @@ listing pages. All three stay inside the single-store model.
   a human reads, and it describes the repo of ~ five days ago.
 - **`meta/index.md` omissions.** The tooling list omits
   `mix brain.session_init` (the newest task, shipped 2026-07-11), and
-  [`future-beliefs.md`](/meta/future-beliefs.md) is filed in `meta/` but absent
+  [`future-beliefs.md`](/beliefs/future-beliefs.md) (since moved to `beliefs/`)
+  was filed in `meta/` but absent
   from the index — the only index-drift hits in the whole bundle.
 - **One genuinely broken policy link.**
   [`filenames-and-cross-linking.md`](/meta/policy/filenames-and-cross-linking.md)
   uses `[OKF](/references/open-knowledge-format.md)` as its example — a path
   that has never existed in this bundle (the concept lives at
-  `/knowledge-management/open-knowledge-format.md`). Because policies compile
+  `/knowledge/knowledge-management/open-knowledge-format.md`). Because policies compile
   into the contract, the broken example is reproduced in `CLAUDE.md`.
 - **`meta/flows/index.md` names a retired genre.** Its genre-contrast paragraph
   says "`specs` is the plan for a change not yet fully built" — the genre is

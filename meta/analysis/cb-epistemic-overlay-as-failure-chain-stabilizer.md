@@ -35,7 +35,7 @@ which uses the type names *primitive / compound / inference / directive*. The
 operator flagged these as deprecated (current: **attestation / aggregation /
 inference / prescription**) and asked the right follow-up: if the terminology was
 stale, was anything else sourced from that doc stale too? Re-verification against
-the current glossary (`docs/glossary.md`) found:
+the current glossary (`docs/beliefs/glossary.md`) found:
 
 | Claim from the thesis read | Status after re-check |
 |---|---|
@@ -172,7 +172,7 @@ This analysis feeds three concrete updates into
 # Citations
 
 - Current CB sources (fetched 2026-07-10): repository README;
-  `docs/glossary.md` (four type definitions, deps as sole edge kind, per-type dep
+  `docs/beliefs/glossary.md` (four type definitions, deps as sole edge kind, per-type dep
   rules, supersession, staleness-by-audit, dep-repoint, OKF-floor/CB-ceiling);
   `docs/belief-graph.md` ("query it rather than restating it").
 - Stale source identified and set aside: `docs/composable-beliefs-thesis.md`

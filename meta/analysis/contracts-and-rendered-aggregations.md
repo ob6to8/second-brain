@@ -18,7 +18,7 @@ potential compilation target of the same kind?
 ## Evidence: the rendered-aggregation family
 
 The generated-not-hand-kept pattern (see
-[compiled contract](/glossary/compiled-contract.md), `sb:23f009`) has several
+[compiled contract](/beliefs/glossary/compiled-contract.md), `sb:23f009`) has several
 live instances in this bundle, each aggregating scattered sources into one
 derived view with a drift check:
 

@@ -5,6 +5,7 @@ description: Assessed whether deprecated/ can be deleted (not yet), migrated the
 provenance: "Claude Code session, 2026-07-11; verbatim retained messages parsed from the host session log — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, deprecated, migration, intake]
 timestamp: 2026-07-11
+pr: 43
 ---
 
 # 2026-07-11-deprecated-directory-triage-and-machinery-deletion
@@ -208,7 +209,7 @@ Done — committed and pushed (`ccaf6a0`; the branch was restarted from the late
 - All gates green; registry refreshed; root `log.md` updated. Glossary at 86 terms.
 </routes>
 
-<routes ref="lib/second_brain/session_init.ex glossary/session-init-digest.md">
+<routes ref="lib/second_brain/session_init.ex beliefs/glossary/session-init-digest.md">
 **Is the log the best place to find that hierarchy? No** — and your question caught a real weakness. The log entry I quoted was just a change record, and it was already stale: it described the ranking *before* todos were added as a source. The canonical definition is the `@weights` map in `lib/second_brain/session_init.ex:35` (with the moduledoc stating it in prose at line 17): **issues → in-progress plans → todos → accepted plans → open strands → paused strands → leftover dangling questions → proposed plans**, newer first within a class. Since code isn't where you'd naturally look it up, I also stated the full order in the [session-init digest](/glossary/session-init-digest.md) glossary definition with a pointer to the module — so the glossary is now the best *prose* place to find it, and it cites where the truth lives.
 </routes>
 

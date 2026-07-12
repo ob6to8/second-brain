@@ -136,7 +136,7 @@ scrolling away in chat.
 5. **"The right problems" had no anchor.** Evaluation and prioritization
    presuppose a direction to evaluate against; the brain has had policies (the
    *how*) but no persisted mission layer (the *toward-what*). The glossary
-   [already names the missing layer](/glossary/doctrine.md): doctrine — principles
+   [already names the missing layer](/beliefs/glossary/doctrine.md): doctrine — principles
    that shape judgment, which policies implement. Filing the role-transformation
    excerpt as the first doctrine artifact closes this gap and gives ratification
    decisions, priority rankings, and future analyses a citable direction.

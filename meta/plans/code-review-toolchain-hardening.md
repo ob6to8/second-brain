@@ -41,7 +41,7 @@ registry header — checks out against the code as of `d830fd9`.
 ### F1 — Markdown renderer: link syntax inside a code span rendered live (fixed)
 
 `SecondBrain.Markdown.inline/2` extracted **links before code spans**, so
-inline code that *displays* link syntax — `` `[route tag](/glossary/route-tag.md)` ``
+inline code that *displays* link syntax — `` `[route tag](/beliefs/glossary/route-tag.md)` ``
 — rendered as a live `<a>` inside `<code>` instead of staying literal.
 Reproduced against the live renderer; affected real pages (the glossary hub,
 `glossary/index.md`, the compiled contract, `filenames-and-cross-linking` and

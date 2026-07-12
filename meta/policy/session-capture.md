@@ -6,7 +6,7 @@ section: session-workflow
 order: 1
 status: active
 tags: [meta, governance, threads, capture, workflow]
-timestamp: 2026-07-08
+timestamp: 2026-07-12
 ---
 A working session (a **thread**) is non-linear: it touches many matters, pauses
 some on open questions, and routes each matter's synthesized content into a
@@ -29,11 +29,28 @@ record so it can be resumed from the record instead of from memory.
   `len < 300 and followed_by_tool`. "Distilled" here means the *noise* is dropped,
   not that the kept text is condensed; `/capture` strips noise, not substance, and
   is the sole session-persistence skill.
+- **Ask the operator in the chat, not the dialog box.** Pose every question to
+  the operator as ordinary `## Assistant` chat text — never through the
+  dialog-box question UI (`AskUserQuestion`). `/capture` renders only the
+  delivered message stream, so a question raised in the dialog box, and the
+  answer the operator selects in it, never enter that stream: both are lost from
+  the thread doc and every downstream artifact routed from it. Keeping the
+  exchange inline is what lets capture retain the question and its answer
+  verbatim. (The dialog UI has also proven flaky in these sessions — a second
+  reason to keep questions in the chat.)
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `sb:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
   landed), the **routing ledger** (`## Routing`), then the `## User`/`##
   Assistant` render body. Route tags are applied last, over the now-frozen body.
+- **The thread records its PR (`pr:`), not its branch.** Once the session's PR
+  is opened, its number is stamped into the thread's frontmatter as `pr: <N>`
+  (set by `/create-pull-request`, not `/capture` — the number doesn't exist
+  until the PR is opened). The **PR is the durable anchor**: session branches
+  are ephemeral and deleted after merge (per the git-branch-deletion policy),
+  and the pre-policy squash era left the original branch commits unreachable
+  entirely — so the PR number is the only stable link from a thread back to how
+  it landed. The branch name is deliberately **not** recorded.
 - **Freeze then tag.** Because capture runs once at close, the body is frozen
   when written; tagging and ledger upkeep are one finalization motion over that
   frozen body, not a per-turn rewrite.
