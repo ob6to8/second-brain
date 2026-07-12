@@ -1,21 +1,29 @@
 ---
 type: tutorial
 title: The session-init digest — how open work finds a fresh session
-description: How mix brain.session_init compiles the brain's open work (issues, todos, active plans, dangling ledger strands) into a digest injected at session start via the SessionStart hook, how the heuristic top-3 ranking and its class weights work, the operator's priority escape hatch, and why the script ranks but the agent judges.
+description: How mix brain.session_init compiles the brain's open work (issues, todos, active plans, dangling ledger strands) into a digest surfaced on demand by the /priorities skill, how the heuristic top-3 ranking and its class weights work, the operator's priority escape hatch, and why the script ranks but the agent judges.
 tags: [meta, tooling, elixir, session-init, digest, priorities, hooks, workflow]
 timestamp: 2026-07-12
 ---
 
-# The session-init digest — how open work finds a fresh session
+# The session-init digest — how open work finds a session
 
-Every fresh agent session starts blind: it has the contract and whatever the
+A fresh agent session starts blind: it has the contract and whatever the
 operator types, but no memory of the issue left open on Tuesday or the plan
 ratified but never started. The brain's answer is **`mix brain.session_init`**
 ([`SecondBrain.SessionInit`](/lib/second_brain/session_init.ex)) — a
-point-in-time scan of open work, rendered as markdown and injected into the
-session's opening context by the SessionStart hook. Nothing about it is stored;
-it is recomputed from the live tree on every session start, so it can never go
-stale the way a hand-kept "current status" page would.
+point-in-time scan of open work, rendered as markdown. It is produced **on
+demand** by the [`/priorities`](/.claude/skills/priorities/SKILL.md) skill,
+which runs the task and relays its output with the agent's own appraisal.
+Nothing about the digest is stored; it is recomputed from the live tree every
+time it runs, so it can never go stale the way a hand-kept "current status" page
+would.
+
+> **History.** This digest was originally auto-injected into *every* session's
+> opening context by the SessionStart hook. That coupling was removed in favor
+> of the on-demand `/priorities` skill (the hook now only provisions the
+> toolchain); the scan, weights, and escape hatch below are unchanged — only
+> *when* the digest reaches a session changed.
 
 ## The four sources — all already maintained by policy
 
@@ -89,12 +97,15 @@ with no frontmatter of their own; flag the doc the strand routes to instead.
 
 ## Where it runs
 
-The SessionStart hook runs `mix brain.session_init` and echoes its output into
-the fresh session's context — the same hook that installs Elixir in
-Claude-on-web sandboxes (see
-[why the toolchain runs offline](/meta/tutorials/why-the-toolchain-runs-offline.md);
-the digest, like every `mix brain.*` task, needs no network). It can also be
-run by hand mid-session for a fresh look at the open-work state.
+The [`/priorities`](/.claude/skills/priorities/SKILL.md) skill runs
+`mix brain.session_init` and relays its output — the operator invokes it when
+they want the open-work picture, rather than having it pushed into every session
+start. The task, like every `mix brain.*`, needs no network (see
+[why the toolchain runs offline](/meta/tutorials/why-the-toolchain-runs-offline.md)),
+so it runs entirely against the local tree; the SessionStart hook's only
+remaining job is to install Elixir in Claude-on-web sandboxes so `mix` — and
+therefore the skill — is available. It can equally be run by hand
+(`mix brain.session_init`) for a raw look at the open-work state.
 
 ## Why this exists — the anti-drift angle
 
@@ -102,8 +113,8 @@ The [field-comparison analysis](/meta/analysis/comparison-with-the-2026-second-b
 names *invisible degradation* as a root cause of second-brain death: nothing
 announces that work fell through a crack until retrieval visibly fails. Open
 issues, accepted-but-unstarted plans, and dangling ledger questions are exactly
-the items that die of silence between sessions. The digest converts "remember
-to check what's open" from a discipline into a structural property of session
-start — the same procedural→structural move the gate suite makes for bundle
-validity. It is a *reader*, not a gate: it enforces nothing, changes no files,
-and costs one scan per session.
+the items that die of silence between sessions. The digest makes "what's open"
+a single command away — one `/priorities` invocation recomputes the whole
+picture from the live tree, so checking is cheap enough to be routine instead of
+a discipline nobody keeps. It is a *reader*, not a gate: it enforces nothing,
+changes no files, and costs one scan when asked.

@@ -6,7 +6,7 @@ description: A named, invocable capability packaged as a SKILL.md under .claude/
 provenance: "Agent-distilled glossary definition, pointer to the defining policy"
 verified: false
 tags: [glossary, claude-code, skills]
-timestamp: 2026-07-11
+timestamp: 2026-07-12
 ---
 
 # skill
@@ -19,4 +19,4 @@ brain the roster is enumerated by the [skills-registry policy](/meta/policy/skil
 own `SKILL.md`, and the *concept* a skill enacts (e.g. [session capture](/beliefs/glossary/session-capture.md))
 is what earns a glossary entry — not its bare `/command` handle.
 
-*Seen in:* [2026-07-11 glossary-backfill thread](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md)
+*Seen in:* [2026-07-11 glossary-backfill thread](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md), [2026-07-12 priorities-skill thread](/meta/threads/2026-07-12-priorities-skill-and-persistence-listers.md)

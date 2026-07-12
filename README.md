@@ -34,8 +34,10 @@ to ratify before creating it.
 ## Usage
 
 From the Claude Code app, paste material after `/intake` to capture it into the brain.
-At session start, `mix brain.session_init` compiles a digest of open issues, todos,
-active plans, and dangling thread strands.
+Run `/priorities` for an open-work appraisal — `mix brain.session_init` compiles a
+digest of open issues, todos, active plans, and dangling thread strands, ending in a
+heuristic top-3 the agent refines. The `/issue`, `/plan`, and `/todo` skills list the
+open artifacts of each type.
 
 ## Integrity gates
 
