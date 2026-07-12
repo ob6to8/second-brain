@@ -74,7 +74,7 @@ a live argument for the plain-markdown portability bet this bundle makes.
 | Session capture | Extracted summaries/lessons (memory-compiler, gbrain overnight consolidation) | Verbatim frozen threads + routing ledger + route tags with CI-verified materialized sink logs — verbatim-with-routing has no public analog |
 | Flow testing | claude-obsidian tests its plugin code | ExUnit scenario tests pinning the deterministic spine of `/intake` and `/capture` |
 | Semantic retrieval | eugeniughelbur retrieval evals + local embeddings; gbrain hybrid search at 146k pages | **Behind the field**: grep + LLM-in-context only; see [the vector-DB recall analysis](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md) |
-| Passive/scheduled automation | Hook auto-capture; nightly consolidation agents | Behind: `/capture` is manual by policy; the `/news` routine has a [tracked open issue](/meta/issues/daily-news-routine-runs-not-landing.md) |
+| Passive/scheduled automation | Hook auto-capture; nightly consolidation agents | Behind: `/capture` is manual by policy; the `/research` routine has a [tracked open issue](/meta/issues/daily-news-routine-runs-not-landing.md) |
 | Scale | gbrain 146k pages; mid-tier vaults in the thousands | 42 concepts, clustered in SWE/agentic-coding; `meta/` outweighs the bundle |
 
 ## The 500+ concept failure chain (new observation)

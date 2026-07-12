@@ -369,14 +369,14 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   term by link (pointer entries defer to filed concepts instead of duplicating them).
   Also invoked automatically by `/create-pull-request` on the thread doc its
   `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
-- **`/news`** — generate today's **inbox**: a daily candidate feed of news, articles,
+- **`/research`** — generate today's **inbox**: a daily candidate feed of research, articles,
   papers, and resources matched against the brain's taxonomy, grouped by category and
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) — then
   **auto-intake the featured items** into the bundle via `/intake`. The digest is the
   dated record in the non-bundle `inbox/` namespace (no `sb:` ids); its featured items
   graduate into filed concepts in the same run, bounded to the known tree (items needing
   a new top-level domain are deferred for operator ratification) and tagged `auto-intake`
-  for the operator's post-intake editorial pass. See `.claude/skills/news/SKILL.md`.
+  for the operator's post-intake editorial pass. See `.claude/skills/research/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
   over the captured thread doc, **back-link this session's elaboration docs** (set
   `thread:` in each `meta/elaborations/` doc the session created or updated, pointing

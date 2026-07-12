@@ -132,7 +132,7 @@ registry (`mix brain.registry`).
   near-duplicates.
 - Don't glossary the incidental: plain English used plainly is not a term of art.
 - **Terminology, not invocables.** The glossary holds *concepts*, not command
-  handles. A bare skill command (`/intake`, `/capture`, `/news`) does not get its
+  handles. A bare skill command (`/intake`, `/capture`, `/research`) does not get its
   own entry — its canonical link is its own `SKILL.md`, and the *concept it enacts*
   (e.g. [session capture](/beliefs/glossary/session-capture.md)) is what earns a glossary
   file. The [skill](/beliefs/glossary/skill.md) *category* has one pointer entry; the

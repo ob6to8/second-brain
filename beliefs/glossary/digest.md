@@ -5,7 +5,7 @@ title: digest
 description: A single dated document that collects a day's candidate items — each with a one-line synopsis and metadata, grouped by category — rather than one file per item, so it reads as processed rather than a dump of links.
 provenance: "Agent-distilled glossary definition"
 verified: false
-tags: [glossary, news, inbox]
+tags: [glossary, research, inbox]
 timestamp: 2026-07-11
 ---
 

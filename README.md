@@ -18,7 +18,7 @@ frontmatter, designed to be read and extended by AI agents and humans alike.
   stable-id registry. See [`meta/index.md`](/meta/index.md).
 - **`glossary/`** — one concept file per technical term used across the brain,
   with citations; accreted by `/add-to-glossary` (hub: [`glossary.md`](/beliefs/glossary.md)).
-- **`inbox/`** — the daily candidate feed written by `/news` (a non-bundle
+- **`inbox/`** — the daily candidate feed written by `/research` (a non-bundle
   namespace: candidates awaiting `/intake`, not concepts).
 - **`.claude/skills/`** — skills. Start with **`/intake`** for capturing content.
 - **`deprecated/`** — archived legacy content and tooling (read-only; not part of

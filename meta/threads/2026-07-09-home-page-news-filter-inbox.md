@@ -33,10 +33,10 @@ still the operator's call.
 
 | Topic | State | Routed to | Dangling |
 |---|---|---|---|
-| Design + build of the home-page news-filter inbox (taxonomy-as-query, reason tags, daily regen, intake handoff) | closed | [/.claude/skills/news/SKILL.md](/.claude/skills/news/SKILL.md) | - |
+| Design + build of the home-page news-filter inbox (taxonomy-as-query, reason tags, daily regen, intake handoff) | closed | [/.claude/skills/research/SKILL.md](/.claude/skills/research/SKILL.md) | - |
 | `inbox/` as a non-bundle namespace + first daily digest | closed | [/inbox/index.md](/inbox/index.md) | - |
 | Registry-exclusion finding → which scanner sees what, and CI safety | closed | [/meta/tutorials/bundle-scope-and-non-bundle-namespaces.md](/meta/tutorials/bundle-scope-and-non-bundle-namespaces.md) | - |
-| Is the `/news` purpose self-contained in the skill? (operator question) | closed | [/.claude/skills/news/SKILL.md](/.claude/skills/news/SKILL.md) | - |
+| Is the `/news` purpose self-contained in the skill? (operator question) | closed | [/.claude/skills/research/SKILL.md](/.claude/skills/research/SKILL.md) | - |
 | Daily cron Routine for `/news` | paused | `unrouted` | Trigger tool is permission-gated (approval stream failing) and depends on the branch merging to `main` |
 | Open a PR for the branch | open | `unrouted` | Operator hasn't decided; offered at the end of two turns |
 
@@ -240,7 +240,7 @@ Is the purpose of the news skill as you've described it Persisted within the new
 
 ## Assistant
 
-<routes ref=".claude/skills/news/SKILL.md">
+<routes ref=".claude/skills/research/SKILL.md">
 **On your skill question — yes, the purpose is fully self-contained in the skill.** `/news`'s reason for existing lives in two places inside `.claude/skills/news/SKILL.md`:
 
 - The frontmatter `description:` — this is exactly what a fresh agent sees when skills are listed (you can see it echoed in the system reminder that announced the skill: *"Generate today's inbox — a daily candidate feed…"*). It travels with the skill; nothing external is needed.

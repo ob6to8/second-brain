@@ -92,7 +92,7 @@ touch-set as of filing:
    [okf-conformance](/meta/policy/okf-conformance.md) (verify wording; the
    tolerant-consumer clause can stay).
 2. **Skills**: `/intake` (step 7), `/capture` (After-writing step 2),
-   `/add-to-glossary` (step 5), `/todo`, `/news`, `/summarize-technical`,
+   `/add-to-glossary` (step 5), `/todo`, `/research`, `/summarize-technical`,
    `/create-pull-request` — drop the log-entry instructions.
 3. **Flows + tests**: `meta/flows/intake.md` (and session-capture flow);
    update any scenario test asserting log upkeep; `docs_in/2` in

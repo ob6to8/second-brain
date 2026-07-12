@@ -1,7 +1,7 @@
 ---
 type: analysis
 title: "Would deploying to the BEAM — or integrating Jido 2 — benefit this brain?"
-description: An architecture evaluation finding that the brain's Elixir layer is a deliberately zero-dependency batch toolchain whose real runtime is Claude Code sessions plus CI, so a resident BEAM deployment buys nothing today and Jido 2 is triply blocked (toolchain floor, zero-dep constraint, duplicate agent runtime) — but mapping a tiered future path (resident daemon → MCP tool server → Jido agents) with concrete adoption triggers, the nearest being the broken /news Routine and tier-2 embedding dedup.
+description: An architecture evaluation finding that the brain's Elixir layer is a deliberately zero-dependency batch toolchain whose real runtime is Claude Code sessions plus CI, so a resident BEAM deployment buys nothing today and Jido 2 is triply blocked (toolchain floor, zero-dep constraint, duplicate agent runtime) — but mapping a tiered future path (resident daemon → MCP tool server → Jido agents) with concrete adoption triggers, the nearest being the broken /research Routine and tier-2 embedding dedup.
 provenance: "Claude Code session (Claude Fable), 2026-07-12 — operator asked whether deploying to the BEAM or integrating the Jido 2 library could benefit this repo, and what direction could leverage BEAM/Elixir/Jido capabilities; Jido facts verified against hex.pm/hexdocs/GitHub by a research subagent the same day"
 tags: [meta, analysis, architecture, beam, otp, elixir, jido, agents, automation, tooling, mcp]
 timestamp: 2026-07-12
@@ -26,7 +26,7 @@ runtime parallel to the one this brain already has (Claude Code + skills). **But
 there is a real future in which a small resident BEAM process becomes the right
 move — this analysis maps that path as three tiers with explicit adoption
 triggers, the nearest of which is already an open issue
-([the /news Routine that never lands](/meta/issues/daily-news-routine-runs-not-landing.md)).
+([the /research Routine that never lands](/meta/issues/daily-news-routine-runs-not-landing.md)).
 
 ## 1. What the Elixir layer actually is today
 
@@ -70,7 +70,7 @@ plausible workloads:
 | Lightweight process concurrency | Marginal today — `brain.site`/`brain.verify` could parallelize per-file scans with `Task.async_stream`, a one-line change needing no deployment. Corpus is ~40 concepts; wall-clock is trivial. |
 | Supervision / fault tolerance | Nothing to supervise — no long-lived state. Becomes relevant only with a resident daemon (tier 1 below). |
 | Hot code upgrades, distribution | No fit foreseeable; even Jido has no live-migration story (agents recover from persisted state, per its author). |
-| Scheduled, durable jobs (cron on the BEAM) | **Real fit.** The one live operational failure — the daily `/news` Routine producing no commits — is precisely a "no resident runtime we control" problem. A supervised BEAM process owning the schedule would remove the approval-gate failure mode entirely. |
+| Scheduled, durable jobs (cron on the BEAM) | **Real fit.** The one live operational failure — the daily `/research` Routine producing no commits — is precisely a "no resident runtime we control" problem. A supervised BEAM process owning the schedule would remove the approval-gate failure mode entirely. |
 | Long-lived in-memory state (ETS) | **Future fit.** Tier-2 embedding dedup (the quantified trigger in the [vector-DB analysis](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md)) wants a persistent index rather than re-embedding the corpus per intake. |
 | Ports/NIFs to serve tools over a protocol | **Future fit.** The `brain.*` verbs are already a clean tool surface; a thin MCP server would let *any* agent session call them without shelling out. |
 
@@ -126,12 +126,12 @@ onto it strikingly well — worth recording precisely because the fit is good:
   which this brain's governance actually *wants*: taxonomy changes require
   ratification.)
 - **The Routine problem, solved structurally.** Jido's durable cron + a
-  fresh-context `jido_ai` agent could own the daily `/news` run end-to-end —
+  fresh-context `jido_ai` agent could own the daily `/research` run end-to-end —
   fetch, match against the taxonomy, write `inbox/`, commit, push — with no
   dependence on the Claude Code Routine approval stream. This is the single
   strongest concrete use case, because it fixes the one open operational issue.
 - **Sensors feeding the inbox.** RSS/arXiv/HN sensors emitting CloudEvents
-  signals routed to a triage agent is a natural upgrade of `/news` from
+  signals routed to a triage agent is a natural upgrade of `/research` from
   pull-on-schedule to push-on-event.
 - **Signals as the file-change bus.** A file-watcher sensor triggering
   incremental `brain.verify`/`brain.route_tags`/`brain.site` on save would give
@@ -168,22 +168,22 @@ And the three blockers that make "not now" the verdict despite the fit:
   BEAM-native win available anytime: `Task.async_stream` over per-file scans if
   the corpus ever makes `brain.verify`/`brain.site` slow. No deployment.
 - **Tier 1: a small resident daemon (no Jido).** A plain supervised OTP app —
-  separate mix project, depending on the core — owning (a) the scheduled `/news`
+  separate mix project, depending on the core — owning (a) the scheduled `/research`
   feed and (b) later, the embedding index for tier-2 dedup, possibly exposing the
   `brain.*` verbs over MCP so any agent session can call them as tools.
-  **Trigger:** the [/news Routine issue](/meta/issues/daily-news-routine-runs-not-landing.md)
+  **Trigger:** the [/research Routine issue](/meta/issues/daily-news-routine-runs-not-landing.md)
   proves unfixable inside Claude Code's Routine machinery, **or** the
   [dedup probe](/meta/plans/dedup-recall-probe.md) fires its tier-2 threshold
   (an index wants a home).
 - **Tier 2: Jido agents on that daemon.** When the daemon hosts more than one
-  autonomous loop (news triage + intake dedup + verification sweeps) and they
+  autonomous loop (research triage + intake dedup + verification sweeps) and they
   need supervision, scheduling, and signal routing between them, adopt Jido
   rather than reinventing it — the abstraction fit in §4 is why. **Triggers:**
   tier 1 exists and is accreting hand-rolled GenServer/cron/pubsub code; the
   toolchain has migrated to Elixir 1.17+/OTP 26+; Jido 2.x has another
   6–12 months of API stability behind it.
 
-**Recommendation.** Adopt nothing now. File this map, fix the `/news` Routine the
+**Recommendation.** Adopt nothing now. File this map, fix the `/research` Routine the
 cheap way first (clear the approval gate), and let the two named triggers — a
 structurally unfixable Routine, or the dedup probe demanding a persistent index —
 decide if and when tier 1 begins. Re-evaluate Jido at that point against this
