@@ -5,6 +5,7 @@ description: Evaluated whether deploying to the BEAM or integrating Jido 2 would
 provenance: "Claude Code session (Claude Fable 5), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, beam, otp, jido, agents, dark-factory, architecture, glossary]
 timestamp: 2026-07-12
+pr: 47
 ---
 
 # 2026-07-12-beam-jido-evaluation-and-dark-factory-scenario

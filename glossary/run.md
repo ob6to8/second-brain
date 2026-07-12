@@ -13,4 +13,4 @@ timestamp: 2026-07-12
 
 A single end-to-end execution of a flow, task, or scheduled job, from invocation to its last file touched. Two senses in this brain: **(1)** the unit a flow doc narrates — its "touch-sequence of a canonical run" lists every file one representative execution touches, in order, which is also the unit a [scenario test](/glossary/scenario-test.md) pins the deterministic spine of; **(2)** the unit a scheduled [Routine](/glossary/routine.md) produces on each firing (as in the open issue about daily `/news` runs not landing). In both senses a run is an *instance*, distinct from the flow (the repeatable shape) and the skill (the procedure).
 
-*Seen in:* [the intake flow](/meta/flows/intake.md), [the news-inbox flow](/meta/flows/news-inbox.md), [daily /news Routine runs not landing](/meta/issues/daily-news-routine-runs-not-landing.md)
+*Seen in:* [the intake flow](/meta/flows/intake.md), [the news-inbox flow](/meta/flows/news-inbox.md), [daily /news Routine runs not landing](/meta/issues/daily-news-routine-runs-not-landing.md), [2026-07-12 docs-audit thread](/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md)

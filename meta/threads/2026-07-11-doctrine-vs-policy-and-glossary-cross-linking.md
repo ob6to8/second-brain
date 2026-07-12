@@ -5,6 +5,7 @@ description: Answered the doctrine-vs-policy question by filling the glossary's 
 provenance: "Claude Code session, 2026-07-11; verbatim retained messages parsed from the host session log — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, glossary, governance, terminology, cross-linking]
 timestamp: 2026-07-11
+pr: 40
 ---
 
 # 2026-07-11-doctrine-vs-policy-and-glossary-cross-linking

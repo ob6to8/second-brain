@@ -5,6 +5,7 @@ description: Built the /add-to-glossary skill and the glossary it maintains (mar
 provenance: "Claude Code session (Claude Fable 5), 2026-07-10; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, skills, glossary, capture, pull-request]
 timestamp: 2026-07-10
+pr: 35
 ---
 
 # 2026-07-10-add-to-glossary-skill-and-pr-wiring
