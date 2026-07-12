@@ -24,7 +24,9 @@ taxonomy. This is where the rules that compile into the operating contract live.
   - `mix brain.id` — mint stable ids for bundle concepts that lack one.
   - `mix brain.registry [--check]` — compile `/meta/registry.md` (id → concept).
   - `mix brain.verify` — enforce conformance, id uniqueness/format, `verified_by`
-    edge resolution, and grounding of every `verified: true`.
+    edge resolution, and grounding of every `verified: true`; on a green bundle,
+    also print advisory docs-freshness warnings (unresolved internal links,
+    index-coverage gaps) that never fail the gate.
   - `mix brain.evidence <sb:id|path>` — derive a concept's verification narrative
     (the prose is never committed; only the edges are).
   - `mix brain.route_tags [--materialize]` — verify `<routes ref="sb:…">` tags on

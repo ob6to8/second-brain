@@ -137,6 +137,17 @@ quotes (reproduced verbatim into materialized excerpt logs — the
   would be a second map that drifts. The README should stay a thin, current
   pointer into the enforced surfaces, not become that overview.
 
+## Outcome (2026-07-12 addendum)
+
+The operator ratified the full Tier-2 list the same day. Shipped in this
+branch: the [session-init digest tutorial](/meta/tutorials/the-session-init-digest.md),
+flow docs for [news](/meta/flows/news.md) and
+[create-pull-request](/meta/flows/create-pull-request.md), and the warn-only
+docs-freshness pass (`SecondBrain.Links`, printed by `mix brain.verify`) —
+which caught its first real case (a quoted broken path in this very analysis)
+during its own build-out, resolved by teaching it that code spans are literal
+text.
+
 ## Verdict
 
 The documentation is in unusually good structural health — every enforced
