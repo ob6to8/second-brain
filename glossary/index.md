@@ -8,20 +8,25 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 
 ## Terms
 
+- [actor model](/glossary/actor-model.md) — share-nothing processes owning private state, interacting only by async messages; contention becomes a mailbox, not a lock
 - [agent memory](/glossary/agent-memory.md) — how an agent persists knowledge beyond its context window (short-term/long-term/procedural/working); files to vector DBs
 - [agent time horizon](/glossary/agent-time-horizon.md) — the human-time task length an agent completes at a fixed success rate (e.g. 50% horizon); doubles every few months
 - [analysis (type)](/glossary/analysis-type.md) — controlled type: a reasoned point-in-time judgment on a question, with findings + recommendation
 - [approval gate](/glossary/approval-gate.md) — a control blocking a tool/MCP action until approval resolves; environment-wide if it blocks every session
 - [approximate nearest neighbor (ANN)](/glossary/approximate-nearest-neighbor.md) — index class trading exactness for speed on nearest-vector queries; worth it only at large corpus size
 - [assertion graph](/glossary/assertion-graph.md) — the pre-OKF design: atomic claims (primitives + compounds with explicit deps) forming a DAG; remnants under `deprecated/`
+- [backpressure](/glossary/backpressure.md) — flow control where a slower downstream stage pushes back on producers (bounded queues, pool limits) so overload degrades gracefully
+- [BEAM](/glossary/beam.md) — the Erlang/Elixir VM: lightweight heap-isolated processes, message passing, supervision — built for long-running concurrent services
 - [BM25](/glossary/bm25.md) — lexical full-text ranking by term frequency and rarity; the keyword-search tier between grep and semantic search
 - [candidate feed](/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one
 - [CI smoke check](/glossary/ci-smoke-check.md) — a cheap CI check that fails the build on a basic broken invariant — a tripwire, not a full test
+- [CloudEvents](/glossary/cloudevents.md) — CNCF spec standardizing the event envelope (id/source/type/time/data) so events route across systems regardless of transport
 - [compiled contract](/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
 - [Composable Beliefs (cb)](/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
 - [concept (OKF)](/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
 - [cron expression](/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
 - [cross-site scripting (XSS)](/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
+- [dark factory](/glossary/dark-factory.md) — from lights-out manufacturing: an operation run end-to-end by autonomous agents, humans reduced to governance rather than presence
 - [deduplication](/glossary/deduplication.md) — checking for an existing equivalent before filing, to avoid fragmenting the brain (intake-time)
 - [dependency-free](/glossary/dependency-free.md) — relying only on the standard library — no external packages, so it runs offline in restricted sandboxes
 - [deploy gating](/glossary/deploy-gating.md) — gating a deploy on verification passing, so a failed check skips publish and the last good deploy stays live
@@ -31,6 +36,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [DRY (don't repeat yourself)](/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
 - [embeddings](/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [epistemic overlay](/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
+- [epistemic poisoning](/glossary/epistemic-poisoning.md) — contaminating a shared knowledge base with false beliefs via untrusted intake; prompt injection escalated to every future reader
 - [ExUnit](/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
 - [fast-forward merge](/glossary/fast-forward-merge.md) — a merge that advances the branch pointer with no merge commit; leaves a zero-diff branch
 - [featuring](/glossary/featuring.md) — how `/news` decides what makes the cut: relevance → novelty → a reason tag → source quality, capped
@@ -45,8 +51,11 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [hybrid search](/glossary/hybrid-search.md) — retrieval blending BM25 and vector-similarity scores so keyword precision and semantic matching cover each other's misses
 - [inbox namespace](/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/news` candidate digests (no ids, never verified)
 - [issue (type)](/glossary/issue-type.md) — controlled type: a tracked operational problem with a status (open/resolved/wontfix), under `meta/issues/`
+- [Jido](/glossary/jido.md) — Elixir agent framework: agents as immutable data through a `cmd/2` reducer, Actions doubling as LLM tools, CloudEvents signals, supervised runtime
 - [knowledge graph](/glossary/knowledge-graph.md) — entities as nodes + typed edges, queried by traversal; a code KG maps files/symbols/calls for agents
 - [KV cache](/glossary/kv-cache.md) — cached key/value tensors for processed tokens in transformer inference; trades context-growing memory for speed
+- [let-it-crash](/glossary/let-it-crash.md) — Erlang's fault-tolerance philosophy: don't handle every error in place; let the process crash and a supervisor restart it known-good
+- [librarian write-broker](/glossary/librarian-write-broker.md) — a supervised process solely owning mutation of a knowledge namespace: agents submit proposals, it runs the gauntlet and serializes commits
 - [markdown renderer](/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `SecondBrain.Markdown`)
 - [methodology (type)](/glossary/methodology-type.md) — controlled type: a repeatable prescriptive how-to/playbook for a recurring task
 - [mix task](/glossary/mix-task.md) — a named `mix` command defined under `Mix.Tasks` (e.g. `mix brain.verify`)
@@ -55,15 +64,18 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [non-bundle namespace](/glossary/non-bundle-namespace.md) — a top-level dir excluded from the registry — no `sb:` ids, skipped by verify (e.g. `meta/`, `inbox/`)
 - [operating contract](/glossary/operating-contract.md) — the root `CLAUDE.md` auto-loaded each session; a compiled artifact, never hand-edited; binds agents, not the operator
 - [orphaned branch](/glossary/orphaned-branch.md) — a lingering remote session branch: merged-but-undeleted (delete on sight) or unmerged (operator-ratified deletion only)
+- [OTP](/glossary/otp.md) — Erlang/Elixir's fault-tolerance framework: supervision trees, GenServers, applications; the line between scripting and a resident system
 - [parse-the-log](/glossary/parse-the-log.md) — capturing a session by parsing the host log file (exact delivered text) vs. reconstructing from context
 - [plan (type)](/glossary/plan-type.md) — controlled type: a one-off design/decision record for an intended change, with a status
 - [plugin](/glossary/plugin.md) — a distributable bundle of Claude Code skills; its skills get an automatic `plugin-name:` namespace
 - [policy (type)](/glossary/policy-type.md) — controlled type: a standing governance rule for how the brain operates, under `meta/policy/`; the source `CLAUDE.md` is compiled from
 - [pointer entry](/glossary/pointer-entry.md) — an entry for a term canonically defined elsewhere: one-line gloss + link, never a duplicate definition
+- [prompt injection](/glossary/prompt-injection.md) — instructions embedded in untrusted content an LLM processes hijack it into serving the attacker's intent instead of the user's task
 - [property-based testing](/glossary/property-based-testing.md) — testing that asserts invariants over many generated inputs, not hand-picked examples
 - [proto-belief document](/glossary/proto-belief-document.md) — cb's per-matter accreting page; maps onto this brain's per-topic `concept` sink
 - [provenance](/glossary/provenance.md) — the frontmatter field for a statement's immutable origin; orthogonal to verification
 - [query profile](/glossary/query-profile.md) — per-category interest signals derived from the taxonomy tree, used as the `/news` retrieval filter
+- [ReAct](/glossary/react.md) — the foundational LLM agent loop: alternate reasoning traces with tool actions whose observations feed back in (pointer to the filed Yao et al. reference)
 - [reason tags](/glossary/reason-tags.md) — the `recent`/`impactful`/`influential`/`groundbreaking`/`buzz` vocabulary marking why a `/news` item surfaced
 - [recall](/glossary/recall.md) — the fraction of relevant items a search surfaces; low recall means existing material is missed
 - [recall probe](/glossary/recall-probe.md) — a repeatable eval firing known queries at known targets to measure (and watch) search recall
@@ -87,6 +99,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [speculative decoding](/glossary/speculative-decoding.md) — draft cheap tokens, verify in parallel against the full model, accept the correct prefix; identical output, higher throughput
 - [squash merge](/glossary/squash-merge.md) — flattening a branch into one new commit on the target; linear history at the cost of per-commit provenance (disallowed here)
 - [stable id (`sb:` id)](/glossary/stable-id.md) — the opaque, immutable `sb:` + 6-hex identifier every bundle concept carries
+- [staleness propagation](/glossary/staleness-propagation.md) — when a premise changes, follow dependency edges outward and flag every statement resting on it for re-verification
 - [static-site generator](/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
 - [strand](/glossary/strand.md) — one topic's line of work through a session; the routing ledger tracks one row per strand, state orthogonal to routing
 - [supersession](/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
@@ -96,6 +109,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [Tree-sitter](/glossary/tree-sitter.md) — incremental multi-language parser producing concrete syntax trees; the parsing layer under code knowledge graphs
 - [true merge](/glossary/true-merge.md) — a two-parent merge commit wiring the branch's real history into the target's ancestry; keeps cited SHAs reachable (mandated here)
 - [tutorial (type)](/glossary/tutorial-type.md) — controlled type: a long-form read-start-to-finish explainer (the why/how), under `meta/tutorials/`
+- [two-plane rule](/glossary/two-plane-rule.md) — keep the fast operational plane (ephemeral state, in databases) out of the slow epistemic plane (durable verified beliefs, in the bundle)
 - [typed edge](/glossary/typed-edge.md) — an id-based relationship in frontmatter that tooling traverses (e.g. `verified_by`); prose links stay untyped
 - [vector database](/glossary/vector-database.md) — a store indexing items as embedding vectors, answering nearest-neighbor queries for semantic retrieval
 - [verification grounding](/glossary/verification-grounding.md) — the rule that `verified: true` needs evidence (`verified_by`), not its own link, and only on statements
