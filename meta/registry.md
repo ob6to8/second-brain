@@ -75,6 +75,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:21854a` | [glossary/ci-smoke-check](/glossary/ci-smoke-check.md) | concept | false |
 | `sb:04b9a8` | [glossary/claude-managed-agents](/glossary/claude-managed-agents.md) | concept | false |
 | `sb:8cfcb8` | [glossary/cloudevents](/glossary/cloudevents.md) | concept | false |
+| `sb:d676f0` | [glossary/cognitive-debt](/glossary/cognitive-debt.md) | concept | false |
 | `sb:23f009` | [glossary/compiled-contract](/glossary/compiled-contract.md) | concept | false |
 | `sb:04f8dd` | [glossary/composable-beliefs](/glossary/composable-beliefs.md) | concept | false |
 | `sb:317879` | [glossary/concept-okf](/glossary/concept-okf.md) | concept | false |
@@ -121,6 +122,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:862042` | [glossary/let-it-crash](/glossary/let-it-crash.md) | concept | false |
 | `sb:792b23` | [glossary/lexical-search](/glossary/lexical-search.md) | concept | false |
 | `sb:01be3a` | [glossary/librarian-write-broker](/glossary/librarian-write-broker.md) | concept | false |
+| `sb:541206` | [glossary/margin-collapse](/glossary/margin-collapse.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |
 | `sb:15fe73` | [glossary/materialize](/glossary/materialize.md) | concept | false |
 | `sb:5fdc55` | [glossary/methodology-type](/glossary/methodology-type.md) | concept | false |
@@ -154,6 +156,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:eb67ce` | [glossary/reducer](/glossary/reducer.md) | concept | false |
 | `sb:1dbcc9` | [glossary/rendered-aggregation](/glossary/rendered-aggregation.md) | concept | false |
 | `sb:4c3f16` | [glossary/research-spike](/glossary/research-spike.md) | concept | false |
+| `sb:96a610` | [glossary/residual-fragmentation](/glossary/residual-fragmentation.md) | concept | false |
 | `sb:e142e6` | [glossary/route-tag](/glossary/route-tag.md) | concept | false |
 | `sb:0a43ba` | [glossary/route-tag-sink](/glossary/route-tag-sink.md) | concept | false |
 | `sb:ba6759` | [glossary/routine](/glossary/routine.md) | concept | false |
