@@ -43,8 +43,9 @@ here* — cheaply, in-band, without re-deriving it from history each time.
 
 ## Design
 
-One new frontmatter key on bundle concepts, `attribution`, a small structured map
-with four fixed sub-keys mirroring the question it answers:
+One new frontmatter key, `attribution`, on bundle concepts *and* governance
+docs — a small structured map whose fixed sub-keys mirror the question it
+answers (four everywhere, plus `from` in the governance namespace; see Scope):
 
 ```yaml
 attribution:
@@ -104,18 +105,46 @@ the `type` vocabulary):
 
 ### Scope
 
-All **bundle concepts** — everything that carries an `sb:` id — going forward
-from ratification. The governance namespace (`meta/`, `inbox/`) is excluded, as
-with ids: plans, threads, digests, and elaborations are already self-describing
-about their own origin (frontmatter `provenance`, the thread `pr:` anchor, dated
-digest filenames).
+**Bundle concepts** — everything that carries an `sb:` id — going forward from
+ratification. The operator's ask named "resources absorbed into the knowledge
+collection", and captures (`reference`/`source`) are indeed where attribution
+earns the most — but a uniform all-bundle-concepts rule is simpler to state,
+enforce, and query than a per-type carve-out, and *why was this filed* is just
+as valuable on an agent-authored `claim` as on a capture. Scoping down to
+capture types only is kept as an open question.
 
-The operator's ask named "resources absorbed into the knowledge collection", and
-captures (`reference`/`source`) are indeed where attribution earns the most —
-but a uniform all-bundle-concepts rule is simpler to state, enforce, and query
-than a per-type carve-out, and *why was this filed* is just as valuable on an
-agent-authored `claim` as on a capture. Scoping down to capture types only is
-kept as an open question.
+**Governance namespace — explicitly attributed, not exempt.** The first draft
+excluded `meta/` as "already self-describing"; operator review overturned that:
+implied attribution — origin recoverable only from free-text `provenance`, a
+dated filename, or git — is exactly the ambiguity this plan exists to remove,
+and the bundle has already invented explicit governance attribution twice,
+piecemeal: the elaboration docs' `thread:` back-link (stamped by
+`/create-pull-request`) and the flow docs' CI-checked `lineage:` block. This
+plan generalizes that motion instead of leaving it genre-local. Governance docs
+(`plan`, `analysis`, `issue`, `todo`, `tutorial`, `doctrine`, `policy`,
+`elaboration`) carry `attribution` with one additional sub-key:
+
+| Sub-key | Holds | Form |
+|---------|-------|------|
+| `from` | The doc(s) this entry was extracted from — the thread it came out of, and/or the concept doc that resulted from that thread | YAML list of refs, route-tag style: an `sb:` id (concept) or a bundle-absolute path (thread or governance doc, which carry no ids) |
+
+- **Timing.** A governance doc authored mid-session can't name its thread — the
+  thread doc doesn't exist until `/capture` runs at session close. So
+  `/create-pull-request` stamps `attribution.from` with the just-captured
+  thread path across every governance doc the session created, exactly as it
+  already does for the elaboration `thread:` field. That field is then folded
+  into `attribution.from` as a special case rather than kept as a parallel
+  mechanism.
+- **`from` is required-or-stamped, not optional decoration:** required on
+  ratification-flow docs (`plan`, `analysis`, `elaboration`, `issue` — things
+  that are always extracted from *somewhere*); permitted to be absent only
+  where there is genuinely no source doc (e.g. doctrine the operator dictates
+  directly — `agent`/`why` still record that).
+- **Exempt:** thread docs themselves (they *are* the session record; `pr:` is
+  their anchor — self-attribution is circular), `inbox/` digests (generated,
+  dated, self-describing by construction), and generated artifacts
+  (`CLAUDE.md`, `meta/registry.md`, materialized excerpt logs — outputs, not
+  docs).
 
 ## Enforcement — `mix brain.verify`
 
@@ -126,8 +155,15 @@ New rules, in the verifier's existing named-error style:
   are non-empty strings — except `why`, which is optional when
   `channel: backfill` (the reason is often unrecoverable from history; invent
   nothing).
-- **Placement:** `attribution` on a governance-namespace doc is an error (same
-  boundary as `sb:` ids).
+- **`from` resolution:** every `from` ref resolves — an `sb:` id to an existing
+  concept, a path to an existing file — reusing the route-tag ref-resolution
+  machinery (`SecondBrain.RouteTags` already validates exactly this ref shape).
+  Broken `from` refs are errors, like broken `verified_by` edges.
+- **Governance presence:** ratification-flow docs (`plan`, `analysis`,
+  `elaboration`, `issue`) missing `attribution.from` are flagged — as a
+  *warning* until `/create-pull-request` stamping has been live for a while,
+  then an error. Exempt files (threads, digests, generated artifacts) carrying
+  `attribution` is an error.
 - **Presence (after backfill completes):** every bundle concept carries
   `attribution` — flipped on as a rule only once the backfill lands, so the rule
   is never aspirational. Until then presence is skill-enforced at filing time,
@@ -153,6 +189,14 @@ with git review as the safety net.
   the term.
 - **Inline agent filing** (a concept distilled mid-session outside any skill):
   `channel: agent-authored`, `why` = what in the session prompted filing it.
+- **Inline governance filing** (a plan, analysis, issue, or todo persisted
+  mid-session): full `attribution` at write time with `from` left for stamping
+  (or set immediately when the source is an already-existing doc, e.g. an
+  analysis extracted from a filed thread).
+- **`/create-pull-request`:** after `/capture`, stamp `attribution.from` with
+  the just-captured thread path in every governance doc the session created or
+  substantively updated — the generalization of its existing elaboration
+  back-link step, which it replaces.
 
 ## Backfill
 
@@ -163,6 +207,10 @@ existing corpus:
 - `channel`/`agent` heuristically from `tags` (`auto-intake` → `auto-intake`) and
   `provenance` text where unambiguous; otherwise `channel: backfill` with the
   derivable facts and no invented `why`.
+- **Governance docs:** `from` from the existing explicit sources where present —
+  elaboration `thread:` fields (migrated, then retired), flow `lineage:` blocks,
+  and `provenance` text that names a thread or PR; otherwise omitted rather than
+  guessed.
 - Output is an ordinary diff for operator review, not a silent rewrite.
 
 After the backfill merges, the verifier's presence rule flips on.
@@ -187,6 +235,16 @@ still costs nothing and stays grep-able.
   event), and the chain lives in the overlay's edges, not here.
 - **Frontmatter-schema policy:** gains one row (`attribution` | When applicable →
   Mandatory after backfill | sub-key table or a pointer to the new policy).
+- **Flow lineage** ([flow-lineage plan](/meta/plans/flow-lineage-index.md),
+  `done`): the flow docs' `lineage:` block records *feature* lineage
+  (analysis → plan → thread → PR) with its own materializer and `--check` gate.
+  Attribution `from` records *doc* origin — adjacent but not identical. Both
+  stay for now; whether `lineage:` should eventually be derived from the
+  attribution chain (walking `from` across the docs it names) is an open
+  question, not a blocker.
+- **Elaboration `thread:` field:** subsumed by `attribution.from`. Migration is
+  part of the governance backfill; the elaboration policy text and
+  `/create-pull-request` skill update in the same change.
 - **Verification grounding:** untouched — attribution says how a concept
   *arrived*, never anything about whether it is *true*. `verified`/`verified_by`
   semantics are unaffected.
@@ -207,8 +265,10 @@ still costs nothing and stays grep-able.
 
 ## Open questions (for the operator)
 
-1. **Scope:** all bundle concepts (proposed), or only resource-capture types
-   (`reference`/`source`)?
+1. **Scope within the bundle:** all bundle concepts (proposed), or only
+   resource-capture types (`reference`/`source`)? *(Governance scope is settled:
+   explicit attribution with `from`, per the 2026-07-13 operator review — see
+   the revision note below.)*
 2. **Presence:** flip to verifier-mandatory after backfill (proposed), or leave
    permanently recommended-but-optional?
 3. **`agent` granularity:** name the model (as `provenance` sometimes does), the
@@ -217,3 +277,17 @@ still costs nothing and stays grep-able.
    what trust calibration actually reads.
 4. **Retire the `auto-intake` tag** after the transition window, or keep it
    indefinitely as a redundant convenience?
+5. **Should flow `lineage:` eventually derive from `attribution.from`**, or
+   remain an independent, feature-scoped mechanism?
+
+## Revision note — governance attribution made explicit (2026-07-13)
+
+The first draft exempted the governance namespace as "already self-describing".
+Operator review rejected the exemption: governance entries should be explicitly
+attributed to the thread they were extracted from, or to the concept doc that
+resulted from that thread — implied attribution is the same free-text ambiguity
+this plan removes elsewhere. The Scope, Enforcement, Writers, Backfill, and
+Interactions sections were revised accordingly: governance docs carry
+`attribution` with a `from` sub-key (route-tag-style refs), stamped by
+`/create-pull-request` for mid-session docs, subsuming the elaboration
+`thread:` back-link.
