@@ -36,6 +36,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
 | `sb:04f8dd` | [beliefs/glossary/composable-beliefs](/beliefs/glossary/composable-beliefs.md) | concept | false |
 | `sb:317879` | [beliefs/glossary/concept-okf](/beliefs/glossary/concept-okf.md) | concept | false |
+| `sb:2df1e2` | [beliefs/glossary/content-word-containment](/beliefs/glossary/content-word-containment.md) | concept | false |
 | `sb:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
 | `sb:aea1cb` | [beliefs/glossary/credential-vault](/beliefs/glossary/credential-vault.md) | concept | false |
 | `sb:a48aeb` | [beliefs/glossary/crlf](/beliefs/glossary/crlf.md) | concept | false |
@@ -81,6 +82,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:44f899` | [beliefs/glossary/jido](/beliefs/glossary/jido.md) | concept | false |
 | `sb:7498cf` | [beliefs/glossary/knowledge-graph](/beliefs/glossary/knowledge-graph.md) | concept | false |
 | `sb:8415bd` | [beliefs/glossary/kv-cache](/beliefs/glossary/kv-cache.md) | concept | false |
+| `sb:79ac2f` | [beliefs/glossary/lede](/beliefs/glossary/lede.md) | concept | false |
 | `sb:862042` | [beliefs/glossary/let-it-crash](/beliefs/glossary/let-it-crash.md) | concept | false |
 | `sb:792b23` | [beliefs/glossary/lexical-search](/beliefs/glossary/lexical-search.md) | concept | false |
 | `sb:01be3a` | [beliefs/glossary/librarian-write-broker](/beliefs/glossary/librarian-write-broker.md) | concept | false |
@@ -134,6 +136,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:243d56` | [beliefs/glossary/session-capture](/beliefs/glossary/session-capture.md) | concept | false |
 | `sb:6f2442` | [beliefs/glossary/session-init-digest](/beliefs/glossary/session-init-digest.md) | concept | false |
 | `sb:71f38a` | [beliefs/glossary/sessionstart-hook](/beliefs/glossary/sessionstart-hook.md) | concept | false |
+| `sb:149d84` | [beliefs/glossary/single-overview-convention](/beliefs/glossary/single-overview-convention.md) | concept | false |
 | `sb:8ea139` | [beliefs/glossary/single-source-of-truth](/beliefs/glossary/single-source-of-truth.md) | concept | false |
 | `sb:aa0003` | [beliefs/glossary/skill](/beliefs/glossary/skill.md) | concept | false |
 | `sb:3be9b0` | [beliefs/glossary/skill-namespacing](/beliefs/glossary/skill-namespacing.md) | concept | false |
@@ -145,6 +148,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:e203a2` | [beliefs/glossary/stale-block](/beliefs/glossary/stale-block.md) | concept | false |
 | `sb:1e9cde` | [beliefs/glossary/staleness-propagation](/beliefs/glossary/staleness-propagation.md) | concept | false |
 | `sb:efad31` | [beliefs/glossary/static-site-generator](/beliefs/glossary/static-site-generator.md) | concept | false |
+| `sb:862098` | [beliefs/glossary/stemming](/beliefs/glossary/stemming.md) | concept | false |
+| `sb:906e06` | [beliefs/glossary/stopword](/beliefs/glossary/stopword.md) | concept | false |
 | `sb:bb2968` | [beliefs/glossary/strand](/beliefs/glossary/strand.md) | concept | false |
 | `sb:ea95e4` | [beliefs/glossary/supersession](/beliefs/glossary/supersession.md) | concept | false |
 | `sb:40133e` | [beliefs/glossary/synonym-expansion](/beliefs/glossary/synonym-expansion.md) | concept | false |

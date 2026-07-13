@@ -152,3 +152,44 @@ Done — three terms filed, all gates green, pushed as `9178648`. The glossary w
 **[`sb:0b648f`]**  (co-feeds: `meta/tutorials/the-session-init-digest.md lib/second_brain/session_init.ex`)
 
 Glossary done — 7 terms added, `deduplication` extended. Now the answer to your visibility question implies a concrete gap worth closing before the PR: the warnings currently live in terminal output you never see. The fix is to surface them in the session-init digest, which *is* injected into every session you open. Implementing that now.
+
+### 2026-07-13-glossary-single-overview-dedup-and-check (2026-07-13)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:0b648f`]**  (co-feeds: `lib/second_brain/glossary.ex`)
+
+Done — all pushed to `claude/glossary-dedup-check-kuvgpg` (three commits, no PR opened since you didn't ask for one).
+
+**Yes, the request made sense**, with one clarification of how your site actually renders: the entry page's first paragraph *is* the `description` frontmatter (the site renders it as a lede), while the Terms list came from a third, hand-written paraphrase in `beliefs/glossary/index.md`. So "first paragraph verbatim in the Terms list" means: the `description` is now the single canonical overview, and the index gloss is derived from it rather than written by hand.
+
+**What changed:**
+- **All 148 entry bodies rewritten to expansion-only.** Anything the description already said was cut (your actor-model screenshot's stacked second definition is gone — its body is now just the write-governance idiom and the BEAM note); links that lived in removed sentences were rewoven, and a body with nothing genuinely new to add is now empty rather than padded. Descriptions, *Seen in:*/*See also:* lines, and the generated route-tag excerpt logs were left untouched.
+- **The index Terms section is now a generated artifact**: one bullet per term, title-sorted, gloss = description verbatim (this also fixed pre-existing ordering drift like `webhook` sorting before `verification grounding`).
+
+**The automated check** — your instinct about enforceability was right, and the trick is splitting it by what has a mechanical oracle, the same pattern as `mix brain.route_tags`:
+
+1. **The verbatim half is fully deterministic.** `mix brain.glossary --materialize` regenerates the Terms section from the term files; the plain check fails if the committed index diverges from that re-derivation (or if any entry lacks a description). Sync stops being discipline and becomes structure.
+2. **The no-repetition half gets a calibrated heuristic with a fail/warn split.** For each body sentence (citations and generated sections excluded): lowercase, strip punctuation and link URLs, drop stopwords, naive plural stemming, then measure what fraction of the sentence's content words appear in the description. ≥72% containment **fails** — that's a near-restatement; 55–72% **warns** without failing, leaving genuine judgment editorial. Calibration bears it out: the pre-rewrite corpus trips 88 failing sentences across ~80 files, and the rewritten corpus passes with zero failures *and* zero warnings, so there's real separation between restatement and legitimate expansion prose.
+3. **Honest limit:** a restatement that shares meaning but little vocabulary will slip past — semantic equivalence has no offline oracle here. What the check makes impossible is the failure mode you actually had: re-defining the term in nearby words. That's documented in the plan doc (`meta/plans/glossary-single-overview-and-dedup-check.md`).
+
+The check is wired into CI, the Pages deploy gate, and the pre-commit hook; the authoring convention is codified in the `/add-to-glossary` skill (which now runs `--materialize` as part of its verify step). 12 new tests cover it; the full gate suite is green (128 tests, verify, route_tags, contract/registry/lineage checks, site build).
+
+One judgment call to flag for your review: several entries (`embeddings`, `cron-expression`, `digest`, `deploy-gating`, a few others) now have very thin or empty bodies because their description genuinely said everything — I chose honest emptiness over filler, per the convention.
+
+---
+
+**[`sb:0b648f`]**  (co-feeds: `meta/flows/glossary-single-overview-check.md`)
+
+The flow doc is written, wired in, and pushed (`b5334bd`): [`meta/flows/glossary-single-overview-check.md`](/meta/flows/glossary-single-overview-check.md), registered in the flows index with the lineage views rematerialized, full gate suite green (128 tests, all verifiers, site builds).
+
+How it covers each of your asks:
+
+- **Thread link, retroactively applied** — the doc's `lineage:` frontmatter carries the plan hop now, and a visible **"Pending back-fill"** note right under the generated lineage blockquote states that `lineage.thread` (and `lineage.pr`) must be set after `/create-pull-request` runs `/capture` — the thread doc's name doesn't exist until then — followed by a `mix brain.lineage` re-run and removal of the note. So the instruction to back-fill travels with the doc itself, not just this conversation.
+- **Plan link** — the lineage blockquote and the "artifacts" table both point at `meta/plans/glossary-single-overview-and-dedup-check.md`.
+- **Both halves outlined** — §3 gives the **verbatim half** (index `## Terms` as a materialized artifact, checked by re-derive-and-compare, same discipline as `CLAUDE.md`/the registry) and the **no-repetition half** as a numbered 4-step heuristic: extract definition prose (excerpt logs and citation lines exempt) → sentence split with an 8-content-word floor → normalize (lowercase, punctuation, stopwords, plural stemming) → containment scored against the description, ≥72% fails, 55–72% warns.
+- **Progressive engagement** — §2 is an ASCII pipeline walking authoring time → the three checks in order → the three enforcement surfaces (pre-commit blocks the commit, CI fails the PR, the Pages gate keeps a drifted glossary from ever rendering live).
+- **The improvement stats** — §6 records the worked calibration: 88 failing sentences across ~80 of 148 files before the rewrite; all 148 bodies rewritten and the index's hand-kept ordering drift fixed; 0 failures *and* 0 warnings after (with a note on why a clean warn channel matters); 12 new scenario tests taking the suite 116 → 128.
+- **Semantic limitations** — §7 names four honestly: paraphrase evades vocabulary containment; vocabulary-dense legitimate expansion can false-positive into the warn band (which is why it warns, not fails); "repeated aspects" is broader than the per-sentence unit the check measures; and sub-8-content-word sentences go unmeasured by design.
+
+One heads-up for when you run `/create-pull-request`: the back-fill is a two-line frontmatter edit in this flow doc plus `mix brain.lineage` — if the skill run doesn't do it automatically (it currently only back-links elaboration docs), the pending note in the doc will keep it from being forgotten.

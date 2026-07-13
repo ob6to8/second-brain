@@ -38,8 +38,10 @@ flowchart LR
   f2t --> f2r
   f2r --> f2f
   f3p["plan: glossary-single-overview-and-dedup-check"]
+  f3t["thread: 2026-07-13-glossary-single-overview-dedup-and-check"]
   f3f["flow: glossary-single-overview-check"]
-  f3p --> f3f
+  f3p --> f3t
+  f3t --> f3f
   f4p["plan: flows-genre-and-scenario-testing"]
   f4t["thread: 2026-07-09-flows-genre-and-scenario-testing"]
   f4r["PR #27"]
@@ -80,7 +82,7 @@ flowchart LR
 | [Add to glossary — accrete per-term definition concepts](/meta/flows/add-to-glossary.md) | — | — | [2026-07-10-add-to-glossary-skill-and-pr-wiring](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md) | PR #35 |
 | [Create pull request — capture, glossary, commit, push, open](/meta/flows/create-pull-request.md) | — | — | [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md) | PR #32 |
 | [Dedup recall probe — measuring and maintaining intake dedup recall](/meta/flows/dedup-recall-probe.md) | [Would a vector DB improve recall as this bundle scales? A dedup-recall probe says fix intake first](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md) | [Dedup recall probe: a gold set of natural-phrasing queries and a mix task that measures intake dedup recall](/meta/plans/dedup-recall-probe.md) | [2026-07-12-dedup-recall-probe-and-synonym-intake](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md) | PR #50 |
-| [Glossary single-overview check — body dedup and the materialized index](/meta/flows/glossary-single-overview-check.md) | — | [Glossary: single canonical overview per term, dedup'd bodies, and a mechanical check](/meta/plans/glossary-single-overview-and-dedup-check.md) | — | — |
+| [Glossary single-overview check — body dedup and the materialized index](/meta/flows/glossary-single-overview-check.md) | — | [Glossary: single canonical overview per term, dedup'd bodies, and a mechanical check](/meta/plans/glossary-single-overview-and-dedup-check.md) | [2026-07-13-glossary-single-overview-dedup-and-check](/meta/threads/2026-07-13-glossary-single-overview-dedup-and-check.md) | — |
 | [Intake — capture pasted material into a filed concept](/meta/flows/intake.md) | — | [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md) | [2026-07-09-flows-genre-and-scenario-testing](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md) | PR #27 |
 | [Render-contract — compile the operating contract from its policy sources](/meta/flows/render-contract.md) | — | — | [2026-07-11-branch-deletion-policy-and-contract-as-abstraction](/meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md) | PR #46 |
 | [Research — generate the daily inbox of candidates](/meta/flows/research-inbox.md) | — | [The daily read: a cross-domain synthesis lede for /research digests](/meta/plans/research-daily-read-synthesis.md) | [Thread — home-page news-filter inbox (/news + inbox/ namespace)](/meta/threads/2026-07-09-home-page-news-filter-inbox.md)<br>[2026-07-11-news-digest-intake-and-daily-read](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md) | PR #19<br>PR #41 |

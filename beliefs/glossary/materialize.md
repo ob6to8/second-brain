@@ -6,7 +6,7 @@ description: To compute derived content and write it to disk as ordinary file co
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, tooling, generated-artifacts]
-timestamp: 2026-07-12
+timestamp: 2026-07-13
 ---
 
 # materialize
@@ -18,7 +18,8 @@ a **two-directional projection** of the current
 [sink](/beliefs/glossary/route-tag-sink.md)'s
 [excerpt log](/beliefs/glossary/excerpt-log.md) from its
 [feeding pairs](/beliefs/glossary/feeding-pairs.md) and removes the section of any
-sink no longer fed; `CLAUDE.md` and `meta/registry.md` are materializations
+sink no longer fed; `CLAUDE.md`, `meta/registry.md`, and the glossary index's
+`## Terms` section (`mix brain.glossary --materialize`) are materializations
 in the same sense.
 
-*Seen in:* [two-directional materialize elaboration](/meta/elaborations/two-directional-materialize.md), [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md), [route-tagging policy](/meta/policy/route-tagging.md), [2026-07-12 root-reorganization thread](/meta/threads/2026-07-12-root-reorganization-knowledge-and-beliefs.md)
+*Seen in:* [two-directional materialize elaboration](/meta/elaborations/two-directional-materialize.md), [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md), [route-tagging policy](/meta/policy/route-tagging.md), [2026-07-12 root-reorganization thread](/meta/threads/2026-07-12-root-reorganization-knowledge-and-beliefs.md), [2026-07-13 glossary single-overview thread](/meta/threads/2026-07-13-glossary-single-overview-dedup-and-check.md)
