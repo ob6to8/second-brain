@@ -7,7 +7,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, /create-pull-request session"
   why: "captures the harness branch-lifecycle model an operator asked about — same-name restart across merged PRs and how auto-delete interacts with it"
-  from: [/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md]
+  from: [/meta/threads/2026-07-13-branch-lifecycle-tutorial-and-main-catchup.md]
 tags: [meta, git, workflow, branches, pull-requests, agent, harness]
 timestamp: 2026-07-10
 ---
@@ -77,6 +77,16 @@ stale merged tip) and costs nothing. Critically, the agent never gets "stuck" fr
 the branch being missing: it recreates the branch *by name* on the next write, so
 a deleted remote branch is a non-event.
 
+That a merged branch is *safe* to delete at all is a separate fact this note takes
+as given: its commits stay reachable through the merge commit, so deleting the
+branch drops only a pointer, never history. The
+[git-branch-deletion policy](/meta/policy/git-branch-deletion.md) states the rule
+(delete merged head branches; never the default branch or unmerged work without the
+operator), and
+[why a true merge keeps cited commits reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md)
+unpacks the reachability mechanics that make it true. This note picks up where
+those leave off — not *whether* to delete, but what the session's branch does next.
+
 ## The model to hold
 
 Across a session that ships several PRs, the branch lifecycle is a loop:
@@ -104,5 +114,13 @@ agent's git flow.
 
 ## See also
 
+The three git-workflow docs form one set — the rule, the reachability *why*, and
+this lifecycle *how*:
+
+- [Git branch deletion](/meta/policy/git-branch-deletion.md) — the governing rule:
+  merged head branches are deleted on merge; the default branch and unmerged work
+  are never deleted without the operator.
+- [Why a true merge (not a squash) keeps cited commits reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md)
+  — the reachability mechanics that make deleting a merged branch lossless.
 - [What makes a commit show as "Verified" on GitHub](/meta/tutorials/what-makes-a-commit-verified-on-github.md)
-  — the companion git-mechanics tutorial, including the only-rewrite-unpushed-commits rule.
+  — a further git-mechanics companion, including the only-rewrite-unpushed-commits rule.

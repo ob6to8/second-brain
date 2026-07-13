@@ -92,6 +92,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:d818b8` | [beliefs/glossary/first-order-logic](/beliefs/glossary/first-order-logic.md) | concept | false |
 | `sb:894631` | [beliefs/glossary/first-parent-history](/beliefs/glossary/first-parent-history.md) | concept | false |
 | `sb:950a55` | [beliefs/glossary/flow-touch-sequence](/beliefs/glossary/flow-touch-sequence.md) | concept | false |
+| `sb:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
 | `sb:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
 | `sb:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
 | `sb:10e9cb` | [beliefs/glossary/generative-model](/beliefs/glossary/generative-model.md) | concept | false |
@@ -155,6 +156,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:ea7acc` | [beliefs/glossary/provenance](/beliefs/glossary/provenance.md) | concept | false |
 | `sb:fb0bfb` | [beliefs/glossary/query-profile](/beliefs/glossary/query-profile.md) | concept | false |
 | `sb:a95adb` | [beliefs/glossary/ratification](/beliefs/glossary/ratification.md) | concept | false |
+| `sb:6e9584` | [beliefs/glossary/reachability](/beliefs/glossary/reachability.md) | concept | false |
 | `sb:f5c2bd` | [beliefs/glossary/react](/beliefs/glossary/react.md) | concept | false |
 | `sb:99ec79` | [beliefs/glossary/reason-tags](/beliefs/glossary/reason-tags.md) | concept | false |
 | `sb:5e7da1` | [beliefs/glossary/recall](/beliefs/glossary/recall.md) | concept | false |

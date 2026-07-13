@@ -8,7 +8,7 @@ attribution:
   when: 2026-07-10T23:11:22+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-10-merge-commit-reachability-tutorial.md]
+  from: [/meta/threads/2026-07-10-merge-commit-reachability-tutorial.md, /meta/threads/2026-07-13-branch-lifecycle-tutorial-and-main-catchup.md]
 ---
 
 # Why a true merge (not a squash) keeps cited commits reachable
@@ -118,3 +118,11 @@ second parent wires the branch's real history into `main`'s ancestry, is what
 lets you cite commits by SHA in a durable document *and* delete the branch,
 while a squash makes those same SHAs garbage the moment the branch ref goes
 away.
+
+## See also
+
+- [Git branch deletion](/meta/policy/git-branch-deletion.md) — the rule this
+  reachability argument justifies: delete merged head branches, keep unmerged work.
+- [The agent's branch lifecycle across merged PRs](/meta/tutorials/branch-lifecycle-across-merged-prs.md)
+  — what a *session's* branch does after its PR merges and the branch is deleted:
+  restart under the same name from the default branch, open a new PR.
