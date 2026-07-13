@@ -1,19 +1,19 @@
 ---
 type: analysis
-title: "Do the second-brain → elixir-mind taxonomies point anywhere this bundle should head?"
-description: Evaluates an external ChatGPT dialogue's layered taxonomies (facts/analysis/belief/doctrine/policy/plan; second brain vs. elixir mind) against the live bundle — finds the bundle already implements most of the stack with stronger enforcement, rejects confidence-scored beliefs and a values type, and isolates one real gap; the /beliefs/ namespace holds no beliefs and the type vocabulary has no home for operator-held, value-laden decision priors.
+title: "Do the second-brain → second-mind taxonomies point anywhere this bundle should head?"
+description: Evaluates an external ChatGPT dialogue's layered taxonomies (facts/analysis/belief/doctrine/policy/plan; second brain vs. second mind) against the live bundle — finds the bundle already implements most of the stack with stronger enforcement, rejects confidence-scored beliefs and a values type, and isolates one real gap; the /beliefs/ namespace holds no beliefs and the type vocabulary has no home for operator-held, value-laden decision priors.
 provenance: "Claude Code session (2026-07-13) — distilled from an operator dialogue evaluating a shared ChatGPT conversation ('Second brain distinctions') against the bundle's type vocabulary and namespaces"
-tags: [meta, analysis, taxonomy, beliefs, doctrine, elixir-mind, type-vocabulary]
+tags: [meta, analysis, taxonomy, beliefs, doctrine, second-mind, type-vocabulary]
 timestamp: 2026-07-13
 ---
 
-# Do the second-brain → elixir-mind taxonomies point anywhere this bundle should head?
+# Do the second-brain → second-mind taxonomies point anywhere this bundle should head?
 
 **Question.** An external ChatGPT dialogue ("Second brain distinctions") laid out
 several taxonomies for knowledge systems: a first-mind / second-brain /
-elixir-mind ladder, a six-layer document stack (facts → analysis → belief →
+second-mind ladder, a six-layer document stack (facts → analysis → belief →
 doctrine → policy → plan), an epistemic/teleological split between belief and
-doctrine, and the claim that an elixir mind must externalize its epistemology,
+doctrine, and the claim that a second mind must externalize its epistemology,
 ethics, ontology, and teleology. The operator asked whether any of these point in
 a direction this repo should head. The dialogue is notable as evidence because
 its third turn was seeded with this bundle's own `doctrine` definition — so its
@@ -29,7 +29,7 @@ bottom-up is the one an outside model reinvents from first principles when hande
 only the doctrine definition. That is validating rather than directive: the shape
 is sound, not idiosyncratic.
 
-The dialogue's closing formulation — elixir minds push toward "**personal
+The dialogue's closing formulation — second minds push toward "**personal
 philosophy made executable**" — describes this bundle rather than prescribing for
 it. Its four externalization requirements are already met for the brain's *own
 operation*, and largely machine-enforced:
@@ -82,7 +82,7 @@ according to what?" moments, and its options are hidden assumptions, asking
 every time, or **consulting stored doctrine and values**. The bundle can answer
 "what should the *brain* optimize for" but has nowhere to look up "what does the
 *operator* hold true-enough-to-act-on." Closing that gap is this bundle's
-concrete second-brain → elixir-mind step.
+concrete second-brain → second-mind step.
 
 ## Recommendation
 

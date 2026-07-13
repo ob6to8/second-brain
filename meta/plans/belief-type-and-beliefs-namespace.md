@@ -3,8 +3,8 @@ type: plan
 title: "The belief layer: a `belief` type and a real /beliefs/ namespace"
 description: Introduce a belief type for operator-held, value-laden decision priors — epistemic-teleological statements outside the verification ladder, citable by plans and analyses the way doctrine is — and make /beliefs/ its actual home; keep doctrine governance-scoped, extend the verifier to exclude belief from verified, and add the epistemic/teleological filing test to the vocabulary.
 status: proposed
-provenance: "Claude Code session (2026-07-13) — actionable residue of the elixir-mind taxonomy analysis, from an operator dialogue over a shared ChatGPT conversation seeded with this bundle's doctrine definition"
-tags: [meta, plan, beliefs, doctrine, type-vocabulary, taxonomy, elixir-mind]
+provenance: "Claude Code session (2026-07-13) — actionable residue of the second-mind taxonomy analysis, from an operator dialogue over a shared ChatGPT conversation seeded with this bundle's doctrine definition"
+tags: [meta, plan, beliefs, doctrine, type-vocabulary, taxonomy, second-mind]
 timestamp: 2026-07-13
 ---
 
@@ -16,7 +16,7 @@ timestamp: 2026-07-13
 changing what a namespace means are both shape changes the operator ratifies
 (taxonomy-evolution protocol); this plan records the design so that decision is
 made against something concrete. It is the actionable residue of
-[Do the second-brain → elixir-mind taxonomies point anywhere this bundle should head?](/meta/analysis/elixir-mind-taxonomy-and-the-belief-gap.md),
+[Do the second-brain → second-mind taxonomies point anywhere this bundle should head?](/meta/analysis/second-mind-taxonomy-and-the-belief-gap.md),
 which holds the full evidence and the rejected alternatives — read it first.
 
 ## Problem
