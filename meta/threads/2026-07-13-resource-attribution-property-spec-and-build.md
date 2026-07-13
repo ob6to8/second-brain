@@ -5,6 +5,7 @@ description: Spec'd, ratified, and fully built the attribution frontmatter prope
 provenance: "Claude Code session (Claude Fable 5, then Claude Opus 4.8), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, attribution, provenance, frontmatter, intake, lineage, backfill, verifier]
 timestamp: 2026-07-13
+pr: 66
 ---
 
 # 2026-07-13-resource-attribution-property-spec-and-build
