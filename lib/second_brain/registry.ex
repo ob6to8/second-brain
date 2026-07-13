@@ -33,6 +33,7 @@ defmodule SecondBrain.Registry do
       :verified,
       :resource,
       :sense,
+      :attribution,
       verified_by: []
     ]
   end
@@ -101,6 +102,7 @@ defmodule SecondBrain.Registry do
           verified: fm["verified"],
           resource: fm["resource"],
           sense: fm["sense"],
+          attribution: fm["attribution"],
           verified_by: List.wrap(fm["verified_by"])
         }
 
