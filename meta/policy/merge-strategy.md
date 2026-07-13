@@ -3,7 +3,7 @@ type: policy
 title: Merge strategy — history is provenance
 description: Pull requests land on main via a true merge commit only; squash and rebase merges are disallowed because the commit graph is a provenance layer — commits carry session trailers and are cited by SHA in durable docs.
 section: filing
-order: 7
+order: 8
 status: active
 tags: [meta, governance, git, merge, provenance, history]
 timestamp: 2026-07-11
