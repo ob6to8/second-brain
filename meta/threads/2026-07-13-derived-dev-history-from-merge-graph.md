@@ -5,6 +5,7 @@ description: The operator asked for a per-PR overview of development progress wi
 provenance: "Claude Code session, 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, dev-history, generated-artifact, merge-graph, tooling]
 timestamp: 2026-07-13
+pr: 69
 ---
 
 # 2026-07-13-derived-dev-history-from-merge-graph
