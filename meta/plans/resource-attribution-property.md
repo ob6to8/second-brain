@@ -4,6 +4,11 @@ title: "Attribution: a frontmatter record of the ingestion event"
 description: Add a structured `attribution` frontmatter property to bundle concepts recording when the concept was ingested, through which channel and by whom, and why it was deemed worth filing — an immutable event record, distinct from provenance (content origin) and timestamp (last change).
 status: accepted
 provenance: "Claude Code session, 2026-07-13 — commissioned by the operator: 'create an attribution property for resources absorbed into the knowledge collection — including when it was ingested, how/who, and why'"
+attribution:
+  when: 2026-07-13T09:29:41Z
+  channel: agent-authored
+  agent: "Claude Code agent, operator-commissioned spec session"
+  why: "operator commissioned a spec for an attribution property recording each doc's ingestion event"
 tags: [meta, plan, frontmatter, attribution, provenance, intake, auto-intake, schema]
 timestamp: 2026-07-13
 ---

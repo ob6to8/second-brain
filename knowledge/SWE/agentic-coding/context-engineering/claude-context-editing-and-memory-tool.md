@@ -7,6 +7,10 @@ resource: https://claude.com/blog/context-management
 provenance: "Distilled from Anthropic/Claude, 'Managing context on the Claude Developer Platform', 2025-09-29"
 tags: [claude-code, context-engineering, memory, api-features, agentic-loop]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-08T08:56:46+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Context editing and the memory tool — productizing compaction and note-taking (Anthropic)

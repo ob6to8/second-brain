@@ -5,6 +5,11 @@ description: An evidence-backed evaluation, run against the live 39-concept corp
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09 — operator asked to stress-test a prior 'not yet' recommendation on adding a vector DB"
 tags: [meta, analysis, recall, dedup, vector-database, embeddings, search, intake, tooling]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T23:15:17+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md]
 ---
 
 # Would a vector DB improve recall as this bundle scales?

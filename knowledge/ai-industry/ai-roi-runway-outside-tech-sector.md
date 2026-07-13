@@ -7,6 +7,10 @@ resource: https://www.apollo.com/wealth/insights-news/insights/daily-spark/ai-th
 provenance: "Distilled from Torsten Slok's Apollo Academy 'Daily Spark' post, fetched 2026-07-06; discussion context from Hacker News (https://news.ycombinator.com/item?id=48810533)"
 tags: [ai-industry, ai-economics, roi, valuation, productivity, market-analysis]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-07T13:32:19+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # The AI ROI runway could be long outside the tech sector (Torsten Slok / Apollo)

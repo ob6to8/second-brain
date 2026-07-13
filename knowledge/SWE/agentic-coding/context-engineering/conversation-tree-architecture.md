@@ -7,6 +7,10 @@ resource: https://arxiv.org/html/2603.21278v1
 provenance: "Distilled from Pranav Hemanth & Sampriti Saha, arXiv:2603.21278v1 [cs.CL], fetched 2026-07-06"
 tags: [llm-agents, context-engineering, conversation-design, agentic-coding, arxiv]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-07T15:38:30+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Conversation Tree Architecture — branching context to avoid logical context poisoning

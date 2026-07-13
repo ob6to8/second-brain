@@ -5,6 +5,12 @@ description: Every bundle concept and governance doc carries a structured `attri
 section: composition
 order: 3
 status: active
+attribution:
+  when: 2026-07-13T11:06:06Z
+  channel: agent-authored
+  agent: "Claude Code agent, attribution-plan execution (build step 1)"
+  why: "compiles the ratified attribution plan into an enforceable contract rule"
+  from: [/meta/plans/resource-attribution-property.md]
 tags: [meta, governance, attribution, frontmatter, provenance, intake, ingestion]
 timestamp: 2026-07-13
 ---

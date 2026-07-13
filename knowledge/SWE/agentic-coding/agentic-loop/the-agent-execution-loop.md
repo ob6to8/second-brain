@@ -7,6 +7,10 @@ resource: https://newsletter.victordibia.com/p/the-agent-execution-loop-how-to-b
 provenance: "Distilled from Victor Dibia, Designing with Machines newsletter, 2025-12-11"
 tags: [agentic-loop, ai-agents, tool-calling, context-engineering, multi-step-reasoning]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # The agent execution loop — multi-step reasoning in a single run (Victor Dibia)

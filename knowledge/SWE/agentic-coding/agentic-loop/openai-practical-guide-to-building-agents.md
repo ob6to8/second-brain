@@ -7,6 +7,10 @@ resource: https://openai.com/business/guides-and-resources/a-practical-guide-to-
 provenance: "Distilled from OpenAI, 'A Practical Guide to Building Agents', 2025"
 tags: [agentic-loop, ai-agents, openai, orchestration, run-loop, exit-conditions]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # A practical guide to building agents — the 'run' loop (OpenAI)

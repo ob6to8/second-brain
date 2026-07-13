@@ -4,6 +4,11 @@ title: Why a true merge (not a squash) keeps cited commits reachable
 description: Deleting a branch deletes a ref, not commits — commits live or die by reachability. A squash-merge lands a brand-new commit and abandons the originals, so any document that cites them by SHA ends up pointing at garbage; a true merge wires the branch's history into main's ancestry, making the cited SHAs permanent and the branch safe to delete.
 tags: [meta, git, merge, squash, reachability, history, provenance, workflow]
 timestamp: 2026-07-10
+attribution:
+  when: 2026-07-10T23:11:22+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-merge-commit-reachability-tutorial.md]
 ---
 
 # Why a true merge (not a squash) keeps cited commits reachable

@@ -87,12 +87,14 @@ defmodule SecondBrain.AttributionTest do
       assert Enum.join(errors, "\n") =~ "`from` on a bundle concept"
     end
 
-    test "presence is enforced only under presence: true", %{tmp_dir: dir} do
+    test "presence is enforced by default (post-backfill), relaxable via presence: false", %{
+      tmp_dir: dir
+    } do
       write_doc(dir, "bare.md", "type: note\nid: sb:aaaaaa")
 
-      assert Verifier.run(dir) == :ok
-      assert {:error, errors} = Verifier.run(dir, presence: true)
+      assert {:error, errors} = Verifier.run(dir)
       assert Enum.join(errors, "\n") =~ "bare.md: missing `attribution`"
+      assert Verifier.run(dir, presence: false) == :ok
     end
   end
 
@@ -139,12 +141,14 @@ defmodule SecondBrain.AttributionTest do
       assert Enum.join(errors, "\n") =~ "exempt file carries `attribution`"
     end
 
-    test "governance presence is enforced only under presence: true", %{tmp_dir: dir} do
+    test "governance presence is enforced by default, relaxable via presence: false", %{
+      tmp_dir: dir
+    } do
       write_doc(dir, "meta/plans/bare-plan.md", "type: plan")
 
-      assert Verifier.run(dir) == :ok
-      assert {:error, errors} = Verifier.run(dir, presence: true)
+      assert {:error, errors} = Verifier.run(dir)
       assert Enum.join(errors, "\n") =~ "bare-plan.md: missing `attribution`"
+      assert Verifier.run(dir, presence: false) == :ok
     end
 
     test "a ratification-flow doc without `from` warns (advisory)", %{tmp_dir: dir} do

@@ -7,6 +7,10 @@ resource: https://www.trychroma.com/research/context-rot
 provenance: "Distilled from Kelly Hong, Anton Troynikov, Jeff Huber, Chroma Research, 2025-07-14"
 tags: [llm-inference, context-engineering, context-rot, long-context, evaluation-methodology, agentic-loop]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-08T08:56:46+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Context rot — LLM performance degrades non-uniformly as input length grows (Chroma)

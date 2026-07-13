@@ -7,6 +7,10 @@ resource: https://www.kapa.ai/blog/how-we-prune-rag-context
 provenance: "Distilled from the Kapa.ai engineering blog, fetched 2026-07-06"
 tags: [rag, retrieval, llm-inference, context-pruning, cost-optimization, reranking]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-07T03:41:02+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Pruning RAG context with a small LLM before generation (Kapa.ai)

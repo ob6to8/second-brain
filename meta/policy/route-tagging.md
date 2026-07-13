@@ -7,6 +7,11 @@ order: 3
 status: active
 tags: [meta, governance, threads, provenance, linkage, workflow]
 timestamp: 2026-07-08
+attribution:
+  when: 2026-07-08T11:54:45+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md]
 ---
 Mark each region of a finalized thread body with the concept(s) its content
 feeds, so a matter's cross-thread discussion aggregates into one place. The tag

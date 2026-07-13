@@ -7,6 +7,10 @@ resource: https://ampcode.com/how-to-build-an-agent
 provenance: "Distilled from Thorsten Ball, Amp (Sourcegraph), 2025-04-15"
 tags: [agentic-loop, ai-agents, thorsten-ball, amp, tool-use, code-agent]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # How to build an agent — an LLM, a loop, and enough tokens (Thorsten Ball)

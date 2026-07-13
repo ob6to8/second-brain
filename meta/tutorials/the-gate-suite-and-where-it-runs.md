@@ -4,6 +4,11 @@ title: The gate suite — what the checks prove and where they run
 description: The repository's integrity gates — compile, format, tests, the two generated-artifact freshness checks (contract/registry --check), the two bundle validators (verify, route_tags), and the site build — what each one proves, and the three surfaces they run on (an agent's manual pass, the pre-commit hook, and the authoritative CI job).
 tags: [meta, tooling, elixir, ci, gates, verification, pre-commit, workflow]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-10T10:41:12+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-todo-skill-and-gate-suite-tutorial.md]
 ---
 
 # The gate suite — what the checks prove and where they run

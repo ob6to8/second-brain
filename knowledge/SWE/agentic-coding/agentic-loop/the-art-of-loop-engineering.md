@@ -7,6 +7,10 @@ resource: https://www.langchain.com/blog/the-art-of-loop-engineering
 provenance: "Distilled from Sydney Runkle, LangChain Blog, 2026-06-16"
 tags: [agentic-loop, ai-agents, loop-engineering, loopcraft, verification, evaluation]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # The art of loop engineering / loopcraft (LangChain)

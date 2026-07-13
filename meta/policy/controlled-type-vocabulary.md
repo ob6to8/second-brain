@@ -7,6 +7,11 @@ order: 1
 status: active
 tags: [meta, governance, types, vocabulary]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-05T12:30:48+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
 ---
 OKF requires a `type` but registers no vocabulary. This bundle uses a **controlled
 list** so the brain stays queryable. It **grows deliberately** — an agent may

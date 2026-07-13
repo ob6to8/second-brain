@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, routing, capture, session-init]
 sense: repo
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T18:52:27+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # strand

@@ -6,6 +6,11 @@ status: done
 provenance: "Claude Code session (Claude Fable), 2026-07-10 — commissioned by the operator following the eval-suitability analysis; executes recommendation 1 of the vector-DB recall analysis"
 tags: [meta, plan, evals, dedup, recall, probe, intake, tooling]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-10T19:11:24+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-field-comparison-evals-and-cb-overlay-execution-path.md]
 ---
 
 # Dedup recall probe: gold set + `mix brain.dedup_probe`

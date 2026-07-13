@@ -7,6 +7,10 @@ resource: https://git-scm.com/docs/gitglossary
 provenance: "Verbatim excerpts extracted from the resource URL (gitglossary man page)"
 tags: [git, branches, refs, remote-tracking, glossary]
 timestamp: 2026-07-05
+attribution:
+  when: 2026-07-05T19:41:08+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # gitglossary — branch head and remote-tracking branch

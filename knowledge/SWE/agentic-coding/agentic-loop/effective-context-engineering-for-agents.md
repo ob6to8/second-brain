@@ -7,6 +7,10 @@ resource: https://www.anthropic.com/engineering/effective-context-engineering-fo
 provenance: "Distilled from Anthropic Applied AI (Rajasekaran, Dixon, Ryan, Hadfield), 2025-09-29"
 tags: [agentic-loop, ai-agents, context-engineering, tool-use, attention-budget, memory]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Effective context engineering for AI agents (Anthropic)

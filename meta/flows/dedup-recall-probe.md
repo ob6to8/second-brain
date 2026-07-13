@@ -9,6 +9,11 @@ lineage:
   plan: /meta/plans/dedup-recall-probe.md
   thread: /meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md
   pr: 50
+attribution:
+  when: 2026-07-12T14:23:12+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/analysis/vector-db-recall-for-the-scaling-bundle.md, /meta/plans/dedup-recall-probe.md, /meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md]
 ---
 
 # Dedup recall probe — measuring and maintaining intake dedup recall

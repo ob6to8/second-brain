@@ -7,6 +7,10 @@ resource: https://code.claude.com/docs/en/claude-code-on-the-web#security-and-is
 provenance: "Verbatim excerpts extracted from the resource URL (Anthropic, 'Use Claude Code on the web')"
 tags: [claude-code, cloud, credentials, signing, security, proxy, isolation]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T00:37:33+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Claude Code on the web docs — credentials and signing keys never inside the sandbox

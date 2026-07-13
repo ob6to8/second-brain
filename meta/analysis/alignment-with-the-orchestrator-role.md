@@ -5,6 +5,11 @@ description: Evaluates the bundle against the four orchestration domains in Anth
 provenance: "Claude Code session (Claude Fable), 2026-07-12 — operator pasted the role-transformation excerpt from Anthropic's 2026 coding trends report and asked how the brain is aligned, and could be better aligned, with operating in and aiding the domains it describes"
 tags: [meta, analysis, orchestration, agents, role-transformation, alignment, mission, governance]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T15:10:32+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-doctrine-genre-and-orchestrator-alignment.md]
 ---
 
 # Is this brain an operational substrate for the engineer-as-orchestrator role?

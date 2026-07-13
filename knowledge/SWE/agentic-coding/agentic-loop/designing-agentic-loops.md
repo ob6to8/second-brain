@@ -7,6 +7,10 @@ resource: https://simonwillison.net/2025/Sep/30/designing-agentic-loops/
 provenance: "Distilled from Simon Willison, Simon Willison's Weblog, 2025-09-30"
 tags: [agentic-loop, ai-agents, loop-engineering, coding-agents, tool-use, sandboxing]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Designing agentic loops (Simon Willison)

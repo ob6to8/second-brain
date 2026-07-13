@@ -4,6 +4,11 @@ title: Bundle scope and non-bundle namespaces — which scanner sees what, and w
 description: The brain runs several independent scanners (identity/verify, route-tags, the contract compiler, the site generator), and each defines its own scope rather than sharing one list. This note explains why a new top-level namespace like inbox/ would break CI unless it is added to the registry's exclusion list, how the verifier and route-tags checker inherit that scope for free, and why the site generator deliberately renders namespaces the registry ignores.
 tags: [meta, tooling, okf, registry, verification, namespaces, ci, site]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T12:08:06+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-home-page-news-filter-inbox.md]
 ---
 
 # Bundle scope and non-bundle namespaces

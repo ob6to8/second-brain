@@ -7,6 +7,11 @@ timestamp: 2026-07-11
 lineage:
   thread: /meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md
   pr: 46
+attribution:
+  when: 2026-07-11T19:04:28+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md]
 ---
 
 # Render-contract — compile the operating contract from its policy sources

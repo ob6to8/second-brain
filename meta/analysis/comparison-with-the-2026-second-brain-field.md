@@ -5,6 +5,11 @@ description: A survey of the current second-brain landscape (Obsidian/PARA syste
 provenance: "Claude Code session (Claude Fable), 2026-07-10 — operator asked to evaluate the repo against the AI-influencer-verse second-brain landscape; web survey run the same day by a background research agent, primary sources fetched directly"
 tags: [meta, analysis, second-brain, landscape, pkm, obsidian, claude-code, enforcement, scale, failure-modes]
 timestamp: 2026-07-10
+attribution:
+  when: 2026-07-10T15:51:43+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-field-comparison-evals-and-cb-overlay-execution-path.md]
 ---
 
 # How does this bundle compare to the 2026 second-brain field?

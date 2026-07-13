@@ -5,6 +5,11 @@ description: A full-surface audit of the repo's documentation (contract, README,
 provenance: "Claude Code session (Claude Fable), 2026-07-12 — operator asked to evaluate the repo and all of its docs, consider creating a wiki, and levy an analysis before beginning work"
 tags: [meta, analysis, documentation, wiki, github-pages, static-site, indexes, readme, tutorials, coverage]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T00:13:57+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md]
 ---
 
 # Should the brain add a wiki, and where do its docs fall short?

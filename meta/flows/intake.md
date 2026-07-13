@@ -8,6 +8,11 @@ lineage:
   plan: /meta/plans/flows-genre-and-scenario-testing.md
   thread: /meta/threads/2026-07-09-flows-genre-and-scenario-testing.md
   pr: 27
+attribution:
+  when: 2026-07-09T22:37:14+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/plans/flows-genre-and-scenario-testing.md, /meta/threads/2026-07-09-flows-genre-and-scenario-testing.md]
 ---
 
 # Intake — capture pasted material into a filed concept

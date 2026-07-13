@@ -7,6 +7,10 @@ resource: https://github.com/humanlayer/12-factor-agents/blob/main/content/facto
 provenance: "Distilled from HumanLayer (Dexter Horthy et al.), 12-Factor Agents project"
 tags: [agentic-loop, ai-agents, control-flow, human-in-the-loop, interrupt-resume, tool-use]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Own your control flow — Factor 8 of 12-Factor Agents (HumanLayer)

@@ -7,6 +7,10 @@ resource: https://lucumr.pocoo.org/2026/6/23/the-coming-loop/
 provenance: "Distilled from Armin Ronacher, Armin Ronacher's Thoughts and Writings, 2026-06-23"
 tags: [agentic-loop, ai-agents, loop-engineering, harness, code-quality, developer-workflow]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # The coming loop — nested agent and harness loops (Armin Ronacher)

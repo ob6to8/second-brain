@@ -5,6 +5,11 @@ description: An examination of the operating contract against the bundle's other
 provenance: "Claude Code session (2026-07-11) — distilled from an operator dialogue on the branch-deletion-policy branch questioning whether 'contract' obscures that only CLAUDE.md exists"
 tags: [meta, analysis, contract, compiled-artifact, abstraction, skills, naming]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T20:01:40+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md]
 ---
 
 # Is "contract" a necessary abstraction, and what family does it belong to?

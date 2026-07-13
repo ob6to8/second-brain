@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, governance, terminology]
 sense: dual
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-11T19:58:08+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # doctrine

@@ -7,6 +7,10 @@ resource: https://blogs.oracle.com/developers/the-agent-loop-decoded-three-level
 provenance: "Distilled from Richmond Alake, Oracle Developers blog, 2026-06-11"
 tags: [agentic-loop, ai-agents, memory, context-engineering, long-horizon-tasks, agent-architecture]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # The agent loop decoded — three levels of sophistication (Oracle)

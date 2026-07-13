@@ -7,6 +7,10 @@ resource: https://github.com/DeusData/codebase-memory-mcp
 provenance: "Distilled from the Codebase-Memory paper (arXiv:2603.27277, Vogel et al.) and its GitHub repo, fetched 2026-07-11"
 tags: [code-intelligence, knowledge-graph, agentic-coding, mcp, tree-sitter, code-context, retrieval]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T17:29:20+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Codebase-Memory — tree-sitter code knowledge graph served over MCP

@@ -4,6 +4,11 @@ title: The session-init digest — how open work finds a fresh session
 description: How mix brain.session_init compiles the brain's open work (issues, todos, active plans, dangling ledger strands) into a digest surfaced on demand by the /priorities skill, how the heuristic top-3 ranking and its class weights work, the operator's priority escape hatch, and why the script ranks but the agent judges.
 tags: [meta, tooling, elixir, session-init, digest, priorities, hooks, workflow]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T09:17:10+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md]
 ---
 
 # The session-init digest — how open work finds a session

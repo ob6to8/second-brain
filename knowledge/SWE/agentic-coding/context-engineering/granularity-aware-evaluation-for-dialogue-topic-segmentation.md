@@ -7,6 +7,10 @@ resource: https://arxiv.org/pdf/2512.17083
 provenance: "Distilled from Michael Coen, arXiv:2512.17083v3 [cs.CL], preprint (under review), fetched 2026-07-06"
 tags: [dialogue-systems, topic-segmentation, evaluation-methodology, context-engineering, conversational-memory, arxiv]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-07T21:40:04+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # When F1 fails: granularity-aware evaluation for dialogue topic segmentation (Michael Coen)

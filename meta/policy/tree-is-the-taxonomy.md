@@ -7,6 +7,11 @@ order: 2
 status: active
 tags: [meta, governance, taxonomy, progressive-disclosure]
 timestamp: 2026-07-05
+attribution:
+  when: 2026-07-05T12:30:48+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
 ---
 - **The tree *is* the taxonomy.** The directory hierarchy — surfaced through `index.md`
   files at every level (progressive disclosure, rooted at `/index.md`) — is the

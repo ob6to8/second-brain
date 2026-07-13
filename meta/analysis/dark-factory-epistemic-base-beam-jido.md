@@ -5,6 +5,11 @@ description: A scenario extension of the BEAM/Jido evaluation finding that a lig
 provenance: "Claude Code session (Claude Fable), 2026-07-12 — operator follow-up to the BEAM/Jido evaluation, same session: does the case expand if the knowledge system becomes the epistemic base for a network of agents employed as a dark-factory company?"
 tags: [meta, analysis, architecture, beam, otp, jido, agents, multi-agent, dark-factory, autonomy, epistemics, governance]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T00:26:00+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md]
 ---
 
 # If this brain became the epistemic base for a dark-factory agent network, does the BEAM/Jido case expand?

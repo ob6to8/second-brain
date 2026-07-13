@@ -7,6 +7,10 @@ resource: https://stevekinney.com/writing/agent-loops
 provenance: "Distilled from Steve Kinney, stevekinney.com, 2026-03-19"
 tags: [agentic-loop, ai-agents, tool-calling, reliability, context-management, production]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # The agent loop is a while-loop; reliability is the real work (Steve Kinney)

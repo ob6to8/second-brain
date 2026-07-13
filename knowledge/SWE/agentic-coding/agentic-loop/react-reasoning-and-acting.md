@@ -7,6 +7,10 @@ resource: https://arxiv.org/abs/2210.03629
 provenance: "Distilled from Yao, Zhao, Yu, Du, Shafran, Narasimhan, Cao; arXiv:2210.03629, 2022-10-06 (ICLR 2023)"
 tags: [agentic-loop, ai-agents, react, reasoning, tool-use, foundational-paper]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # ReAct — reasoning + acting as the thought-action-observation loop (Yao et al.)

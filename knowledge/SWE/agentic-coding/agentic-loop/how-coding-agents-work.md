@@ -7,6 +7,10 @@ resource: https://simonwillison.net/guides/agentic-engineering-patterns/how-codi
 provenance: "Distilled from Simon Willison, Simon Willison's Weblog, 2026-03-16"
 tags: [agentic-loop, ai-agents, coding-agents, tool-use, system-prompt, llm-harness]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # How coding agents work (Simon Willison)

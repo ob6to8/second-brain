@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, principles, provenance, compiled-artifacts]
 sense: common
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-11T19:52:12+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # single source of truth

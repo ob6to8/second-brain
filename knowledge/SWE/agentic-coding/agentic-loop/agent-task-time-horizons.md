@@ -7,6 +7,10 @@ resource: https://theaidigest.org/time-horizons
 provenance: "Distilled from AI Digest's time-horizons tracker summarizing METR's measurements, fetched 2026-07-11"
 tags: [agentic-loop, evaluation, long-horizon, reliability, benchmarks, metr]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T17:29:20+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Agent task time horizons — METR's "Moore's Law for AI agents"

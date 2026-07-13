@@ -5,6 +5,10 @@ title: Future beliefs
 description: A running scratch list of facts and observations about the brain's tooling and governance worth formalizing later (into a tutorial, policy, or concept).
 tags: [meta, governance, scratch]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T12:18:50+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Future beliefs

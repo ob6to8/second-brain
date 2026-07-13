@@ -7,6 +7,10 @@ tags: [claude-code, cloud, containers, orchestration, dev-environments, agentic-
 provenance: "In-container forensics by Claude Code agents (composablebeliefs/composable-beliefs sessions, 2026-07-05), while diagnosing a local main ref 161 commits stale in a day-old session; distilled notes pasted by the operator, then grounded against the official docs"
 verified: false
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-05T23:43:52+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Claude Code cloud (CCR) — environment and orchestration architecture

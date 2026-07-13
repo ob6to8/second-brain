@@ -7,6 +7,10 @@ resource: https://arxiv.org/abs/2512.03549
 provenance: "Distilled from the PARC paper (arXiv:2512.03549, Orimo et al.), fetched 2026-07-11"
 tags: [agentic-loop, long-horizon, self-reflection, multi-agent, autonomy, reliability]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T17:29:20+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # PARC — a self-reflective agent for long-horizon autonomous execution

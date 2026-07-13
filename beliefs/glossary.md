@@ -7,6 +7,10 @@ provenance: "Agent-distilled definitions; each term's file cites the sources it 
 verified: false
 tags: [glossary, terminology, cross-domain]
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-10T22:24:41+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Glossary

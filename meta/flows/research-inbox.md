@@ -2,7 +2,7 @@
 type: note
 title: Research — generate the daily inbox of candidates
 description: The end-to-end flow for the daily candidate feed — derive a query profile from the taxonomy, search, dedup twice, reason-tag, write a dated digest into the non-bundle inbox/ namespace, then auto-intake the featured items into the bundle via /intake — the touch-sequence, actor boundaries, and how the feed's own judgment layer now chains into the intake flow's deterministic spine.
-tags: [meta, governance, research, inbox, feed, flow, workflow, auto-intake]
+tags: [meta, governance, research, inbox, feed, flow, workflow]
 timestamp: 2026-07-12
 lineage:
   plan: /meta/plans/research-daily-read-synthesis.md
@@ -10,6 +10,11 @@ lineage:
     - /meta/threads/2026-07-09-home-page-news-filter-inbox.md
     - /meta/threads/2026-07-11-news-digest-intake-and-daily-read.md
   pr: [19, 41]
+attribution:
+  when: 2026-07-11T07:13:22+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/plans/research-daily-read-synthesis.md, /meta/threads/2026-07-09-home-page-news-filter-inbox.md, /meta/threads/2026-07-11-news-digest-intake-and-daily-read.md]
 ---
 
 # Research — generate the daily inbox of candidates

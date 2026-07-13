@@ -6,6 +6,11 @@ status: done
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12 — operator asked whether the analysis → plan → PR → flow arc should be made explicit in flow docs; chose frontmatter + a derived flowchart index + include the thread, and to begin with the dedup reference instance then plan the full retrofit"
 tags: [meta, plan, flows, lineage, provenance, tooling, governance]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T16:53:27+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-fuzzy-search-spike-and-flow-lineage.md]
 ---
 
 # Flow lineage: frontmatter provenance + a derived flowchart

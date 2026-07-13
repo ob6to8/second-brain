@@ -33,6 +33,11 @@ defmodule SecondBrain.IntakeScenarioTest do
     title: A primary source
     resource: https://example.com/paper
     provenance: "Extracted from https://example.com/paper"
+    attribution:
+      when: 2026-07-13T10:00:00Z
+      channel: intake
+      agent: "operator via /intake"
+      why: "operator pasted the paper"
     ---
 
     > A verbatim supporting passage.
@@ -46,6 +51,11 @@ defmodule SecondBrain.IntakeScenarioTest do
     description: One sentence.
     verified: true
     verified_by: [sb:bbb222]
+    attribution:
+      when: 2026-07-13T10:00:00Z
+      channel: intake
+      agent: "operator via /intake"
+      why: "operator pasted the paper"
     ---
 
     A distilled statement, grounded by [the source](/sources/paper.md).

@@ -7,6 +7,11 @@ order: 1
 status: active
 tags: [meta, governance, skills]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-05T12:30:48+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
 ---
 - **`/intake`** — process pasted content into one or more filed concepts. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the

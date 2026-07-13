@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, managed-agents, anthropic, agents, hosted, beam]
 sense: common
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T15:12:24+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # Claude Managed Agents (CMA)

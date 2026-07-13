@@ -7,6 +7,11 @@ timestamp: 2026-07-11
 lineage:
   thread: /meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md
   pr: 32
+attribution:
+  when: 2026-07-11T07:13:22+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md]
 ---
 
 # Create pull request — capture, glossary, commit, push, open

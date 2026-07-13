@@ -7,6 +7,10 @@ resource: https://dev.to/imaginex/ai-agent-memory-management-when-markdown-files
 provenance: "Migrated from the legacy assertion-graph bundle (deprecated/sources/ai-agent-memory-markdown-files.md, captured 2026-03-03); re-fetched and re-distilled from the dev.to article 2026-07-11"
 tags: [agent-memory, context-engineering, markdown, file-based-persistence, agentic-coding]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T17:05:21+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # AI agent memory management — when markdown files are all you need (dev.to)

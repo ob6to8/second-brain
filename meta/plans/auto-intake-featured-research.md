@@ -6,6 +6,11 @@ status: done
 provenance: "Claude Code session (claude-opus-4-8), 2026-07-12 — operator proposal + design discussion in this session; authorized to persist and execute"
 tags: [meta, plan, research, intake, automation, dedup, corpus]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T10:25:03+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-news-auto-intake-featured-items.md]
 ---
 
 # Auto-intake featured /research items

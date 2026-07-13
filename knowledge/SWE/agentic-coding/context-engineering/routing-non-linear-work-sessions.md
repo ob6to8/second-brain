@@ -6,6 +6,10 @@ description: A technique for managing a single working session that touches many
 tags: [context-engineering, knowledge-management, threads, workflow]
 verified: false
 timestamp: 2026-07-08
+attribution:
+  when: 2026-07-08T11:54:45+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Routing non-linear work sessions — per-topic pages plus a dispatch ledger

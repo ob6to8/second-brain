@@ -7,6 +7,10 @@ resource: https://newrelic.com/blog/ai/state-of-ai-coding-2026
 provenance: "Distilled from New Relic's State of AI Coding 2026 (Jim Young; research by Hanover Research), fetched 2026-07-11"
 tags: [testing, ai-generated-code, verification, agentic-coding, survey, reliability]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T17:29:20+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # State of AI Coding 2026 (New Relic) — the trust-vs-reliability gap

@@ -7,6 +7,10 @@ resource: https://www.dsebastien.net/loop-engineering-went-mainstream/
 provenance: "Distilled from Sébastien Dubois, dsebastien.net, 2026-07-04"
 tags: [agentic-loop, ai-agents, loop-engineering, harness-design, autonomous-agents, validation]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T15:34:55+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Loop engineering went mainstream (Sébastien Dubois)

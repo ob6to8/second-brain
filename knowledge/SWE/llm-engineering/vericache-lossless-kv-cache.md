@@ -7,6 +7,10 @@ resource: https://arxiv.org/abs/2605.17613
 provenance: "Distilled from the VeriCache paper (arXiv:2605.17613, Yao, Shen, Du et al.), fetched 2026-07-11"
 tags: [kv-cache, llm-inference, compression, speculative-decoding, serving, lossless]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T17:29:20+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # VeriCache — turning lossy KV-cache compression into lossless inference

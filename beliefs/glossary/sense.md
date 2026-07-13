@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, terminology, frontmatter]
 sense: repo
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-13T10:49:49+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # sense (glossary sense)

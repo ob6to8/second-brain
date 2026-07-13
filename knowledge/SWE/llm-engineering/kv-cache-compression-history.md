@@ -7,6 +7,10 @@ resource: https://martinalderson.com/posts/a-brief-history-of-kv-cache-compressi
 provenance: "Distilled from Martin Alderson's blog, fetched 2026-07-06"
 tags: [llm-inference, kv-cache, attention, transformers, model-architecture, quantization]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-07T03:41:02+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # A brief history of KV cache compression (Martin Alderson)

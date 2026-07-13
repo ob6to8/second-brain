@@ -8,6 +8,11 @@ lineage:
   plan: /meta/plans/flows-genre-and-scenario-testing.md
   thread: /meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md
   pr: 13
+attribution:
+  when: 2026-07-09T19:01:26+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/plans/flows-genre-and-scenario-testing.md, /meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md]
 ---
 
 # Session capture, routing & route tags — flow

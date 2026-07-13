@@ -40,9 +40,10 @@ defmodule SecondBrain.Attribution do
   # that are always extracted from *somewhere*.
   @from_expected_types ~w(plan analysis elaboration issue)
 
-  # Flipped to true when the corpus backfill lands (build step 4 of the
-  # attribution plan); until then presence is skill-enforced at filing time.
-  @presence_enforced false
+  # Flipped on when the corpus backfill landed (build step 4 of the
+  # attribution plan): every bundle concept and governance doc must carry
+  # the field.
+  @presence_enforced true
 
   def channels, do: @channels
   def presence_enforced?, do: @presence_enforced

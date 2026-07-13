@@ -7,6 +7,10 @@ resource: https://hex.pm/packages/sagents
 provenance: "Distilled from the Hex.pm package page (author brainlid), fetched 2026-07-06"
 tags: [agentic-coding, elixir, langchain, agent-framework, orchestration]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-07T03:41:02+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # sagents — agent orchestration framework for Elixir (built on LangChain)

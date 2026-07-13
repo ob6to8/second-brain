@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, provenance, flows, tooling]
 sense: dual
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-12T17:33:07+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # lineage

@@ -7,6 +7,10 @@ resource: https://github.com/abhigyanpatwari/GitNexus
 provenance: "Distilled from the GitNexus GitHub repository README (Abhigyan Patwari), fetched 2026-07-06"
 tags: [code-intelligence, knowledge-graph, agentic-coding, mcp, tree-sitter, code-analysis, ai-agents]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T16:07:40+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # GitNexus — client-side code knowledge graph for agent context

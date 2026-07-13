@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, mcp, agentic-coding, tools, protocol]
 sense: common
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-11T18:01:58+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # Model Context Protocol (MCP)
