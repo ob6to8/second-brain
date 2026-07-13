@@ -26,6 +26,7 @@ the start if siblings are plausible.
 - [distill-dont-dump](/meta/policy/distill-dont-dump.md) — capture the knowledge, not the raw noise
 - [update-in-place](/meta/policy/update-in-place.md) — search first; update rather than fragment
 - [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — kebab-case slugs; bundle-absolute links
+- [response-resource-links](/meta/policy/response-resource-links.md) — in delivered responses, cite resources by their deployed Pages URL, not repo paths
 - [link-processing](/meta/policy/link-processing.md) — links enter only once processed; summarize oversized sources
 - [maintain-reserved-files](/meta/policy/maintain-reserved-files.md) — update `index.md` after filing; the commit carries the change narrative
 - [persist-plans](/meta/policy/persist-plans.md) — approved plans are persisted as `type: plan` docs under `meta/plans/`, not left in chat
