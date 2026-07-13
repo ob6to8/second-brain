@@ -85,3 +85,10 @@ that proves it. The genre itself was designed in
   against an id-keyed gold set, how the gold set and baseline grow automatically
   at intake, and — foregrounded — **how the operator audits, explores, and
   re-evaluates** a system that otherwise runs silently in the background.
+- [Glossary single-overview check — body dedup and the materialized index](/meta/flows/glossary-single-overview-check.md) —
+  the one-canonical-overview convention and its enforcement: each term's
+  `description` is the entry lede *and* the index gloss verbatim (the index
+  `## Terms` section is materialized by `mix brain.glossary`), bodies are
+  expansion-only (a calibrated content-word containment heuristic fails
+  near-restatements, warns on heavy overlap), gating pre-commit, CI, and the
+  Pages deploy — with the calibration stats and the semantic limits named.
