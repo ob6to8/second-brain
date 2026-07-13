@@ -12,6 +12,7 @@ system works.
 ## Terms
 
 - [actor model](/beliefs/glossary/actor-model.md) — share-nothing processes owning private state, interacting only by async messages; contention becomes a mailbox, not a lock
+- [advisor pattern](/beliefs/glossary/advisor-pattern.md) — a cheap executor model does the bulk of generation and consults a higher-intelligence advisor model where planning matters; Anthropic's native advisor tool runs the advisor sub-inference server-side in one request
 - [agent memory](/beliefs/glossary/agent-memory.md) — how an agent persists knowledge beyond its context window (short-term/long-term/procedural/working); files to vector DBs
 - [agent time horizon](/beliefs/glossary/agent-time-horizon.md) — the human-time task length an agent completes at a fixed success rate (e.g. 50% horizon); doubles every few months
 - [analysis (type)](/beliefs/glossary/analysis-type.md) — controlled type: a reasoned point-in-time judgment on a question, with findings + recommendation
@@ -39,6 +40,7 @@ system works.
 - [candidate feed](/beliefs/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one
 - [capability-matched model selection](/beliefs/glossary/capability-matched-model-selection.md) — doctrine: match model tier to the epistemic weight of the motion — strongest where output becomes canonical or a judgment is rendered; cheaper tiers for derivational, oracle-checked work
 - [CI smoke check](/beliefs/glossary/ci-smoke-check.md) — a cheap CI check that fails the build on a basic broken invariant — a tripwire, not a full test
+- [Claude Agent SDK](/beliefs/glossary/claude-agent-sdk.md) — Anthropic's Python/TypeScript library exposing the same agent engine as Claude Code, embeddable in your own process; the middle of the Claude Code / Agent SDK / Managed Agents split by who owns the loop
 - [Claude Managed Agents (CMA)](/beliefs/glossary/claude-managed-agents.md) — Anthropic's hosted agent service: the loop runs on Anthropic's infra, each session gets a sandboxed container; versioned agents, scheduled deployments, outcomes, vaults
 - [CloudEvents](/beliefs/glossary/cloudevents.md) — CNCF spec standardizing the event envelope (id/source/type/time/data) so events route across systems regardless of transport
 - [cognitive debt](/beliefs/glossary/cognitive-debt.md) — (operator-coined) a human's compounding comprehension gap toward a system when automation changes it faster than they internalize it; user-defined, paid down by editorial engagement
@@ -112,6 +114,7 @@ system works.
 - [greedy layer-wise pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) — building a deep network one layer at a time, each trained (unsupervised) on the layer below's output, before any end-to-end fine-tuning
 - [grounded extension](/beliefs/glossary/grounded-extension.md) — a Dung framework's unique minimal (most skeptical) self-defending argument set; the formal model of a consensus core
 - [grounding tier](/beliefs/glossary/grounding-tier.md) — the third documentation tier: one abstraction level below the source doc, anchored by a planned `implemented_by` edge (code for a policy, policies for a doctrine)
+- [harness (agent harness)](/beliefs/glossary/harness.md) — the scaffolding wrapping a model into an agent: the turn-by-turn control loop, its tools, and context/memory management; decouples the "brain" (reasoning loop) from the "hands" (sandboxes, tools)
 - [HTML escaping](/beliefs/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
 - [hot module reload (HMR)](/beliefs/glossary/hot-module-reload.md) — a dev-server technique swapping changed modules into a running app in place, updating the live view on each edit without a full reload; the local echo of an artifact's iteration loop
 - [hybrid search](/beliefs/glossary/hybrid-search.md) — retrieval blending BM25 and vector-similarity scores so keyword precision and semantic matching cover each other's misses
@@ -136,6 +139,8 @@ system works.
 - [methodology (type)](/beliefs/glossary/methodology-type.md) — controlled type: a repeatable prescriptive how-to/playbook for a recurring task
 - [minimal inconsistent subset](/beliefs/glossary/minimal-inconsistent-subset.md) — a jointly contradictory belief set whose every proper subset is consistent; the smallest witness localizing a conflict
 - [mix task](/beliefs/glossary/mix-task.md) — a named `mix` command defined under `Mix.Tasks` (e.g. `mix brain.verify`)
+- [mixture-of-experts (MoE)](/beliefs/glossary/mixture-of-experts.md) — a model architecture that sparsely routes each input to a few specialized expert sub-networks inside one forward pass; a model-internal property, invisible at the API — not application-level orchestration
+- [model cascade](/beliefs/glossary/model-cascade.md) — route each request to the cheapest capable model and escalate to a costlier one only on failure/low confidence; FrugalGPT-style average-cost savings across a request mix
 - [Model Context Protocol (MCP)](/beliefs/glossary/model-context-protocol.md) — open client/server protocol exposing tools/resources/context to LLM agents over a uniform interface
 - [mounting point (harness)](/beliefs/glossary/mounting-point.md) — the file path a third-party harness dictates for content (`CLAUDE.md`, `SKILL.md`); distinct from the brain-defined role that fills it
 - [nogood](/beliefs/glossary/nogood.md) — an assumption set discovered jointly contradictory, recorded so no context is ever built on it again
@@ -144,6 +149,7 @@ system works.
 - [ontology (knowledge representation)](/beliefs/glossary/ontology.md) — a machine-readable domain vocabulary (classes, properties, individuals, axioms) with formally defined meaning
 - [operating contract](/beliefs/glossary/operating-contract.md) — the root `CLAUDE.md` auto-loaded each session; a compiled artifact, never hand-edited; binds agents, not the operator
 - [orchestration](/beliefs/glossary/orchestration.md) — directing AI agents that implement (decompose, coordinate, evaluate, steer) rather than hand-writing the code; the direction named by the engineer-as-orchestrator doctrine
+- [orchestrator pattern](/beliefs/glossary/orchestrator-pattern.md) — "plan big, execute small": a strong orchestrator model decomposes a task and dispatches subtasks to parallel cheaper workers; the heavier sibling of the advisor pattern
 - [orphan block](/beliefs/glossary/orphan-block.md) — generated output whose source vanished; here, an excerpt-log block whose thread no longer tags the sink
 - [orphaned branch](/beliefs/glossary/orphaned-branch.md) — a lingering remote session branch: merged-but-undeleted (delete on sight) or unmerged (operator-ratified deletion only)
 - [OTP](/beliefs/glossary/otp.md) — Erlang/Elixir's fault-tolerance framework: supervision trees, GenServers, applications; the line between scripting and a resident system

@@ -15,6 +15,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:1b3c79` | [beliefs/future-beliefs](/beliefs/future-beliefs.md) | note |  |
 | `sb:0b648f` | [beliefs/glossary](/beliefs/glossary.md) | concept | false |
 | `sb:8f37a6` | [beliefs/glossary/actor-model](/beliefs/glossary/actor-model.md) | concept | false |
+| `sb:bb0ef0` | [beliefs/glossary/advisor-pattern](/beliefs/glossary/advisor-pattern.md) | concept | false |
 | `sb:37a83f` | [beliefs/glossary/agent-memory](/beliefs/glossary/agent-memory.md) | concept | false |
 | `sb:2523b4` | [beliefs/glossary/agent-time-horizon](/beliefs/glossary/agent-time-horizon.md) | concept | false |
 | `sb:73e13b` | [beliefs/glossary/analysis-type](/beliefs/glossary/analysis-type.md) | concept | false |
@@ -42,6 +43,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:ee8dfd` | [beliefs/glossary/candidate-feed](/beliefs/glossary/candidate-feed.md) | concept | false |
 | `sb:50efa2` | [beliefs/glossary/capability-matched-model-selection](/beliefs/glossary/capability-matched-model-selection.md) | concept | false |
 | `sb:21854a` | [beliefs/glossary/ci-smoke-check](/beliefs/glossary/ci-smoke-check.md) | concept | false |
+| `sb:bee09c` | [beliefs/glossary/claude-agent-sdk](/beliefs/glossary/claude-agent-sdk.md) | concept | false |
 | `sb:04b9a8` | [beliefs/glossary/claude-managed-agents](/beliefs/glossary/claude-managed-agents.md) | concept | false |
 | `sb:8cfcb8` | [beliefs/glossary/cloudevents](/beliefs/glossary/cloudevents.md) | concept | false |
 | `sb:d676f0` | [beliefs/glossary/cognitive-debt](/beliefs/glossary/cognitive-debt.md) | concept | false |
@@ -115,6 +117,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:fbab7f` | [beliefs/glossary/greedy-layer-wise-pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) | concept | false |
 | `sb:fe0ebd` | [beliefs/glossary/grounded-extension](/beliefs/glossary/grounded-extension.md) | concept | false |
 | `sb:8c4c5c` | [beliefs/glossary/grounding-tier](/beliefs/glossary/grounding-tier.md) | concept | false |
+| `sb:ac0e23` | [beliefs/glossary/harness](/beliefs/glossary/harness.md) | concept | false |
 | `sb:00e798` | [beliefs/glossary/hot-module-reload](/beliefs/glossary/hot-module-reload.md) | concept | false |
 | `sb:8fda94` | [beliefs/glossary/html-escaping](/beliefs/glossary/html-escaping.md) | concept | false |
 | `sb:3983f2` | [beliefs/glossary/hybrid-search](/beliefs/glossary/hybrid-search.md) | concept | false |
@@ -139,6 +142,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:5fdc55` | [beliefs/glossary/methodology-type](/beliefs/glossary/methodology-type.md) | concept | false |
 | `sb:577155` | [beliefs/glossary/minimal-inconsistent-subset](/beliefs/glossary/minimal-inconsistent-subset.md) | concept | false |
 | `sb:102785` | [beliefs/glossary/mix-task](/beliefs/glossary/mix-task.md) | concept | false |
+| `sb:ad7525` | [beliefs/glossary/mixture-of-experts](/beliefs/glossary/mixture-of-experts.md) | concept | false |
+| `sb:acf52e` | [beliefs/glossary/model-cascade](/beliefs/glossary/model-cascade.md) | concept | false |
 | `sb:c66f10` | [beliefs/glossary/model-context-protocol](/beliefs/glossary/model-context-protocol.md) | concept | false |
 | `sb:334e60` | [beliefs/glossary/mounting-point](/beliefs/glossary/mounting-point.md) | concept | false |
 | `sb:a5b3bd` | [beliefs/glossary/nogood](/beliefs/glossary/nogood.md) | concept | false |
@@ -147,6 +152,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:da67e8` | [beliefs/glossary/ontology](/beliefs/glossary/ontology.md) | concept | false |
 | `sb:1349cb` | [beliefs/glossary/operating-contract](/beliefs/glossary/operating-contract.md) | concept | false |
 | `sb:83ea50` | [beliefs/glossary/orchestration](/beliefs/glossary/orchestration.md) | concept | false |
+| `sb:121072` | [beliefs/glossary/orchestrator-pattern](/beliefs/glossary/orchestrator-pattern.md) | concept | false |
 | `sb:3ee2d2` | [beliefs/glossary/orphan-block](/beliefs/glossary/orphan-block.md) | concept | false |
 | `sb:a9113e` | [beliefs/glossary/orphaned-branch](/beliefs/glossary/orphaned-branch.md) | concept | false |
 | `sb:5d40bf` | [beliefs/glossary/otp](/beliefs/glossary/otp.md) | concept | false |
