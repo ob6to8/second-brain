@@ -1,6 +1,6 @@
 ---
 name: create-pull-request
-description: Run /capture to completion, glossary the captured thread via /add-to-glossary, back-link this session's elaboration docs to the thread, then commit the current working changes, push the branch, and open a pull request. Use when the operator says "/create-pull-request", "commit and PR this", or "open a PR". Invoking this skill IS the authorization to open the PR — no separate confirmation is needed.
+description: Run /capture to completion, glossary the captured thread via /add-to-glossary, stamp the thread into the attribution.from of every governance doc this session created or revised, then commit the current working changes, push the branch, and open a pull request. Use when the operator says "/create-pull-request", "commit and PR this", or "open a PR". Invoking this skill IS the authorization to open the PR — no separate confirmation is needed.
 ---
 
 # /create-pull-request — capture, glossary, commit, push, open a PR
@@ -43,16 +43,22 @@ still holds for every other flow.)
   yields no terms that clear the selection bar, that's a legitimate no-op — don't
   pad the glossary to show activity.
 
-### 3. Back-link elaborations to the captured thread
-- Any [`/elaborate`](../elaborate/SKILL.md) doc this session **created or
-  updated** (look at the working changes under `meta/elaborations/`) gets a
-  frontmatter back-link to the thread doc step 1 just wrote: set
-  `thread: /meta/threads/YYYY-MM-DD-<slug>.md` (bundle-absolute path). This is
-  the *final* metadata motion on an elaboration — the field can only be set
-  once the thread is persisted, which is why `/elaborate` itself never sets it.
-- Don't touch elaboration docs from *earlier* sessions that already carry a
-  `thread` field, and don't retro-link pre-existing docs this session merely
-  read. If step 1 was skipped (nothing captured), skip this step too.
+### 3. Stamp `attribution.from` on this session's governance docs
+- Every **governance doc this session created or substantively revised** (look
+  at the working changes under `meta/` — plans, analyses, issues, todos,
+  tutorials, doctrine, policies, elaborations, flow docs) gets the thread doc
+  step 1 just wrote appended to its `attribution.from` list
+  (`/meta/threads/YYYY-MM-DD-<slug>.md`, bundle-absolute path). On a doc the
+  session *created*, also write the full attribution block (`when`/`channel`/
+  `agent`/`why`) if the inline filing missed it; on a doc it *revised*, append
+  to `from` only — the event sub-keys are immutable (resource-attribution
+  policy: `from` is append-only, everything else write-once).
+- This is the *final* metadata motion on those docs — the thread path can only
+  be known once the thread is persisted, which is why the filing skills never
+  set it. (This step subsumes the old elaboration-only `thread:` back-link.)
+- Don't stamp docs from *earlier* sessions that this session merely read, and
+  never remove or rewrite existing `from` entries. If step 1 was skipped
+  (nothing captured), skip this step too.
 
 ### 4. Survey the change
 - `git status` and `git diff` (plus `git diff --staged`) to see exactly what would
@@ -113,12 +119,12 @@ still holds for every other flow.)
   `subscribe_pr_activity` — don't subscribe unless the operator asks.
 
 ## Guardrails
-- **Capture, glossary, and elaboration back-links before committing.** Steps 1–3
-  run the full `/capture` skill, then `/add-to-glossary` over its thread doc, then
-  set `thread:` on this session's `meta/elaborations/` docs — so the session
-  record, the terms it introduced, *and* the trace from each elaboration back to
-  its session all ship in the same PR; don't commit the change and leave any of
-  them for later.
+- **Capture, glossary, and `from` stamping before committing.** Steps 1–3 run
+  the full `/capture` skill, then `/add-to-glossary` over its thread doc, then
+  append the thread to `attribution.from` on this session's governance docs —
+  so the session record, the terms it introduced, *and* the trace from each
+  governance doc back to its session all ship in the same PR; don't commit the
+  change and leave any of them for later.
 - **The invocation is the authorization.** This skill opens the PR without a
   separate confirmation — running it *is* the operator's yes. Don't add a
   confirmation step back in.

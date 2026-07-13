@@ -5,6 +5,11 @@ description: An evaluation of Composable Beliefs' epistemic layer (attestation/a
 provenance: "Claude Code session (Claude Fable), 2026-07-10 — operator asked whether enlisting CB's four-typed DAG as an overlay above the second brain could stabilize it against the failure modes, and whether it could be language-agnostic; initial read used CB's stale thesis doc, corrected against the current glossary after the operator flagged deprecated terminology"
 tags: [meta, analysis, composable-beliefs, epistemics, overlay, dag, supersession, staleness, failure-modes, drift, portability]
 timestamp: 2026-07-10
+attribution:
+  when: 2026-07-10T21:29:04+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-field-comparison-evals-and-cb-overlay-execution-path.md]
 ---
 
 # Would CB's four-typed DAG, as an overlay, stabilize this knowledge base against the failure chain?

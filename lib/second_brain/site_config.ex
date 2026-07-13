@@ -45,6 +45,19 @@ defmodule SecondBrain.SiteConfig do
   def excluded_dirs, do: @excluded_dirs
 
   @doc """
+  The repository's home on GitHub (no trailing slash), for PR/commit links in
+  generated views. Reads `:second_brain, :repo_url`; `nil` when unconfigured
+  (consumers then render plain `PR #N` text instead of links).
+  """
+  @spec repo_url() :: String.t() | nil
+  def repo_url do
+    case Application.get_env(:second_brain, :repo_url) do
+      nil -> nil
+      url -> url |> to_string() |> String.trim_trailing("/")
+    end
+  end
+
+  @doc """
   Map a bundle path to its page on the deployed site.
 
   Accepts a bundle-absolute (`/knowledge/x.md`) or plain (`meta/policy/y.md`) path;

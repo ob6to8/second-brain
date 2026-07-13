@@ -6,6 +6,11 @@ status: done
 provenance: "Claude Code session, 2026-07-13 — operator proposed disambiguating glossary usages between common and repo-specific; ratified and implemented same session"
 tags: [meta, plan, glossary, terminology, verification]
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-13T09:22:33+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-13-glossary-sense-disambiguation.md]
 ---
 
 # Glossary sense disambiguation: common vs. repo-specific usage

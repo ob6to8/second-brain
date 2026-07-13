@@ -5,6 +5,11 @@ description: Each of the six unmerged branches kept on 2026-07-11 ends up merged
 status: open
 tags: [meta, todo, git, branches]
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-11T19:38:44+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md]
 ---
 
 # Triage the six kept unmerged claude/* branches
@@ -22,46 +27,41 @@ content is transplanted (copy the docs onto a fresh branch under the new
 layout, re-mint nothing — ids travel), then the source branch's deletion is
 ratified.
 
-- **`claude/code-review-docs-audit-j9ckd6`** — ✅ **resolved**: merged via its
-  own PR and deleted in the operator's 2026-07-13 cleanup.
-- **`claude/epistemic-artifact-beliefs-eirk0n`** — **keep; highest value.**
-  57 files / ~2,240 lines genuinely absent from `main`: primary-source captures
-  (Doyle 1979, de Kleer 1986, GSN Standard v1), layered breakdowns of five
-  prior-art references, a belief-decomposition analysis + plan, and ~29
-  glossary terms. Directly feeds the active
-  [epistemic-overlay plan](/meta/plans/epistemic-overlay.md). Needs a dedicated
-  transplant session (reorg paths + the glossary has since been deduped).
-- **`claude/git-fetch-merge-skill-ke7adg`** — **port (small).** A
-  `/sync-branch-with-main` skill absent from `main` — exactly the merge-main
-  motion sessions now do by hand. Port the skill + skills-registry entry,
-  recompile the contract.
-- **`claude/repo-skills-namespacing-htu3lc`** — **port (small).** A ~100-line
-  tutorial, "the agent's branch lifecycle across merged PRs" (same designated
-  name, fresh base, new PR each cycle; why auto-delete makes restarts clean) —
-  absent from `main`, complements the true-merge tutorial and the
-  branch-deletion policy.
-- **`claude/ccr-architecture-notes-csbiuv`** — **port (small).** A 60-line
-  Chroma vector-database intake; `main` has no Chroma concept (only passing
-  mentions). Port to `knowledge/SWE/llm-engineering/`.
-- **`claude/glossary-thread-docs-zwfk6i`** — ❌ **false orphan, confirmed;
-  ratify deletion.** Its thread doc differs from `main`'s copy by one line;
-  everything else (skill edits, glossary files, indexes) was long superseded
-  by PR #37 and later glossary work. Nothing to salvage.
+**Second update, 2026-07-13 (later):** by the time the transplant work was
+planned, parallel sessions had already merged and deleted most of the set. The
+per-branch execution now lives in the
+[transplant plan](/meta/plans/transplant-surviving-unmerged-branches.md); this
+todo just records the final disposition:
 
-Two stray unmerged branches discovered in the same audit, outside the original
-six:
+- **`claude/code-review-docs-audit-j9ckd6`** — ✅ merged via its own PR, deleted.
+- **`claude/epistemic-artifact-beliefs-eirk0n`** — ✅ merged to `main` by a
+  parallel session (the Doyle/de Kleer/GSN captures, belief-decomposition
+  analysis + plan, and glossary terms are all present under `knowledge/` and
+  `meta/`), deleted. *This was the highest-value keep; it landed independently.*
+- **`claude/repo-skills-namespacing-htu3lc`** — ✅ merged via PR #77
+  (branch-lifecycle tutorial), deleted.
+- **`claude/council-review-secondbrain-oq5e8o`** — ✅ merged via PR #76
+  ([council-round-suitability analysis](/meta/analysis/council-round-suitability.md)),
+  deleted.
+- **`claude/git-fetch-merge-skill-ke7adg`** — ⏳ **still to port**: the
+  `/sync-branch-with-main` skill, genuinely absent from `main`.
+- **`claude/ccr-architecture-notes-csbiuv`** — ⏳ **still to port**: the Chroma
+  **product** intake (`sb:ea15aa`), distinct from `main`'s Chroma context-rot
+  *research* concept.
+- **`claude/glossary-thread-docs-zwfk6i`** — ❌ false orphan; ratify deletion.
+- **`claude/glossary-doctrine-policy-lkabog`** — ❌ false orphan (content landed
+  via PR #40); ratify deletion.
 
-- **`claude/glossary-doctrine-policy-lkabog`** — ❌ **false orphan; ratify
-  deletion.** Its doctrine/policy-type entries, cross-linking convention, and
-  thread doc all landed on `main` via PR #40 (pre-policy squash), which is why
-  ancestry says "unmerged" while the content is present.
-- **`claude/council-review-secondbrain-oq5e8o`** — **port (small).** A
-  254-line analysis, "council-round protocol suitability" (verdict:
-  integrate as a `/council` skill after four ratified bindings) — a decision
-  record absent from `main`; belongs in `meta/analysis/`.
+**Done means:** every branch above is merged, deleted, or explicitly kept with a
+reason. Remaining: execute the two ports (per the
+[transplant plan](/meta/plans/transplant-surviving-unmerged-branches.md)) and
+operator-ratify deleting the two false orphans.
 
-**Done means:** every branch above is merged, deleted (operator-ratified, per
-the [git-branch-deletion policy](/meta/policy/git-branch-deletion.md)), or
-explicitly kept with a reason recorded here. Remaining actions: one transplant
-session for the four ports + the epistemic batch; operator ratifies deleting
-the two false orphans (and each source branch once its content lands).
+---
+
+*Original 2026-07-13 audit (superseded by the update above; kept for the record).*
+The audit that produced these verdicts found `main` had been **reorganized**
+(`SWE/` → `knowledge/SWE/`, `glossary/` → `beliefs/glossary/`, hand-kept logs
+retired), so branches must be **transplanted** (docs copied onto a fresh branch
+under the new layout, ids preserved), never plainly merged — a straight merge
+would resurrect dead paths and `log.md` files.

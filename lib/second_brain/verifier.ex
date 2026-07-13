@@ -24,16 +24,21 @@ defmodule SecondBrain.Verifier do
        `common` (portable — the wider world uses it this way), `repo` (this
        brain's own vocabulary), or `dual` (both senses, defined common-first).
        The field is not policed outside the glossary.
+    8. `attribution` (see `SecondBrain.Attribution`) is well-formed wherever
+       it appears — valid `when`/`channel`, non-empty `agent`, `why` per the
+       backfill rule — `from` appears on governance docs only and every ref
+       resolves, exempt files carry no attribution, and (once the backfill
+       lands) every bundle concept and governance doc carries the field.
   """
 
-  alias SecondBrain.Registry
+  alias SecondBrain.{Attribution, Registry}
 
   @statement_types ~w(claim note concept)
   @glossary_dir "beliefs/glossary/"
   @senses ~w(common repo dual)
 
-  @spec run(String.t()) :: :ok | {:error, [String.t()]}
-  def run(root \\ File.cwd!()) do
+  @spec run(String.t(), keyword) :: :ok | {:error, [String.t()]}
+  def run(root \\ File.cwd!(), opts \\ []) do
     {entries, scan_errors} = Registry.scan(root)
     by_id = entries |> Enum.reject(&is_nil(&1.id)) |> Map.new(&{&1.id, &1})
 
@@ -41,8 +46,12 @@ defmodule SecondBrain.Verifier do
       scan_errors ++
         Enum.flat_map(entries, fn e ->
           type_errors(e) ++
-            id_errors(e) ++ edge_errors(e, by_id) ++ grounding_errors(e) ++ sense_errors(e)
-        end)
+            id_errors(e) ++
+            edge_errors(e, by_id) ++
+            grounding_errors(e) ++
+            sense_errors(e) ++ Attribution.bundle_errors(e, by_id, root, opts)
+        end) ++
+        Attribution.governance_errors(root, by_id, opts)
 
     if errors == [], do: :ok, else: {:error, errors}
   end

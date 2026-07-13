@@ -7,6 +7,10 @@ resource: https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches
 provenance: "Verbatim excerpts extracted from the resource URL (Pro Git, 2nd ed., §3.5)"
 tags: [git, fetch, remote-tracking, branches]
 timestamp: 2026-07-05
+attribution:
+  when: 2026-07-05T19:41:08+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Pro Git — remote-tracking branches and fetch

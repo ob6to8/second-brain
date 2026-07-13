@@ -5,11 +5,18 @@ defmodule SecondBrain.RegistryTest do
 
   @moduletag :tmp_dir
 
+  # Every fixture carries a valid attribution block — presence is
+  # verifier-enforced (rule 8), and these tests exercise the *other* rules.
   defp write_concept(dir, rel_path, fields, body \\ "Body.") do
     path = Path.join(dir, rel_path)
     File.mkdir_p!(Path.dirname(path))
     fm = Enum.map_join(fields, "\n", fn {k, v} -> "#{k}: #{v}" end)
-    File.write!(path, "---\n#{fm}\n---\n#{body}\n")
+
+    attribution =
+      "attribution:\n  when: 2026-07-13T10:00:00Z\n  channel: intake\n" <>
+        "  agent: \"operator via /intake\"\n  why: \"test fixture\""
+
+    File.write!(path, "---\n#{fm}\n#{attribution}\n---\n#{body}\n")
   end
 
   test "scan finds bundle concepts, skips reserved files and excluded dirs", %{tmp_dir: dir} do

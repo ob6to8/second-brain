@@ -92,7 +92,17 @@ Write each definition from understanding, not by transcription:
   (lowercase unless a proper noun or cased formalism); `description` = the
   definition in one sentence; `provenance` noting it's an agent-distilled
   glossary definition; `verified: false`; **`sense`** (`common`/`repo`/`dual` —
-  required; `mix brain.verify` gates on it); `timestamp`.
+  required; `mix brain.verify` gates on it); `timestamp`; **`attribution`** on
+  new term files (the ingestion event — written once, never rewritten by later
+  merges):
+
+  ```yaml
+  attribution:
+    when: <now, ISO 8601>
+    channel: glossary
+    agent: "Claude Code agent, /add-to-glossary"
+    why: "term surfaced by <the thread/doc/paper scanned>"
+  ```
 - Body: an `# <term>` heading, the definition paragraph, then a *Seen in:* line
   of citations — bundle-absolute links for threads and filed concepts, plain
   URLs for external papers/posts (a citation is not a parked bookmark; the

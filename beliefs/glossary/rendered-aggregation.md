@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, governance, tooling, compiled-artifact]
 sense: repo
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T20:15:23+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # rendered aggregation

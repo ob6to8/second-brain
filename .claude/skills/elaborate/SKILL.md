@@ -86,10 +86,14 @@ as `##` sections. Frontmatter:
   commit, URL) and that the expansion is agent-authored
 - `tags` — include `elaboration`; add topical tags
 - `timestamp` — today
-- `thread` — **do not set it here.** Added later by
-  [`/create-pull-request`](../create-pull-request/SKILL.md), which back-links
-  the persisted thread doc once `/capture` has written it. Preserve the field
-  if it already exists (an update to a previously-linked elaboration).
+- `attribution` — the ingestion event (resource-attribution policy):
+  `when` = now, `channel: agent-authored`, `agent` = "Claude Code agent,
+  /elaborate", `why` = what prompted the elaboration. **Do not set `from`
+  here** — the back-link points at a *persisted* thread, which doesn't exist
+  until `/capture` runs; [`/create-pull-request`](../create-pull-request/SKILL.md)
+  appends it once the thread doc is written. On an update to an existing
+  elaboration, never touch the existing attribution except that stamping step's
+  `from` append.
 
 Filename: kebab-case slug of the title (topical, no date prefix). **Update in
 place:** if the same phrase (or a trivial variant) already has an elaboration
@@ -134,8 +138,8 @@ doc, merge into it and bump `timestamp` rather than creating a near-duplicate.
   tutorials.
 - **One phrase, one doc** — dedup before writing; merge instead of creating
   near-duplicates.
-- **Never set `thread` yourself** — the back-link points at a *persisted*
-  thread, which doesn't exist until `/capture` runs; `/create-pull-request`
-  owns that step.
+- **Never set `attribution.from` yourself** — the back-link points at a
+  *persisted* thread, which doesn't exist until `/capture` runs;
+  `/create-pull-request` owns that step.
 - Match depth to the input: don't inflate a two-term phrase into an essay, and
   don't compress a dense paragraph into a gloss that skips half its terms.

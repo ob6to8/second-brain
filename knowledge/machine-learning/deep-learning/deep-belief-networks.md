@@ -6,6 +6,10 @@ description: A generative neural network built as a stack of restricted Boltzman
 resource: "https://www.cs.toronto.edu/~hinton/absps/fastnc.pdf"
 tags: [machine-learning, deep-learning, neural-networks, generative-models, graphical-models, restricted-boltzmann-machine, unsupervised-learning, hinton]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T16:27:15+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Deep belief network

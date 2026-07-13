@@ -7,6 +7,10 @@ provenance: "Agent-distilled definitions; each term's file cites the sources it 
 verified: false
 tags: [glossary, terminology, cross-domain]
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-10T22:24:41+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Glossary
@@ -79,6 +83,30 @@ How the pieces landed:
 - **The `/add-to-glossary` skill** was updated to the per-term model (kebab-slug files, per-file merge rules, index upkeep) and gained a "Citing terms in responses" section: link a term's first use in a response, not every occurrence. The skills-registry policy, `CLAUDE.md`, `/create-pull-request`'s step 2, the root `index.md`, and the registry are all in sync, and every gate passes (verify, route tags, contract/registry checks, 78 tests).
 
 One governance note: `glossary/` is a new top-level directory, which the taxonomy protocol normally has me propose rather than create — your message was the proposal and direction here, and the whole shape ships in PR #35 for you to ratify or push back on in review. From here on, just ask for "glossary links" in any answer and I'll cite terms inline; anything I define along the way can be `/add-to-glossary`'d into its own linkable file.
+
+### 2026-07-11-belief-decomposition-analysis-and-epistemic-prior-art (2026-07-11)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`sb:0b648f`]**
+
+Done — both pieces committed and pushed (`9665b73`, all verifiers green). The glossary run over the eight epistemic docs added **29 term files**, taking the glossary from 78 to 107 terms.
+
+**New full entries (20):**
+
+- *TMS cluster:* non-monotonic reasoning, dependency-directed backtracking, well-founded support, environment (ATMS), label (ATMS), nogood, paraconsistency
+- *Multi-sense entries:* **justification** and **assumption** — each with numbered TMS / GSN / Toulmin senses, since the same word means structurally different things across the three literatures (the collision the source captures surfaced)
+- *Argumentation:* warrant, defeasibility
+- *Logic:* entailment (logical consequence), semidecidability, soundness and completeness, description logic, ontology (knowledge representation)
+- *Evals:* atomic fact, decontextualization, LLM-as-judge, F1@K
+
+**Pointer entries (9)** — terms canonically defined in the filed references, per the pointer rule: truth maintenance system, Toulmin model, assurance case, Goal Structuring Notation, first-order logic, OWL, FActScore, SAFE, decompose-then-verify. Each gives a one-paragraph gloss and defers to its reference.
+
+**No merges needed** into pre-existing entries — the five terms from earlier today (bipartite graph, ungrounded inference, etc.) already carried the right citations, and nothing in the new docs added a genuinely new sense to older entries.
+
+The **`/summarize-technical` amendment** is also in: key-terms sections now link term names to existing glossary entries while keeping their source-local definitions — codifying exactly the split we agreed on (glossary = cross-domain canonical; key terms = how *this* source uses the word). The new entries' cross-links (e.g. warrant → justification, nogood → minimal inconsistent subset, SAFE → decontextualization → atomic fact) mean the epistemics vocabulary now forms a small connected subgraph of its own, which is fitting.
+
+One scan-worthy spot for you: the multi-sense **justification** and **assumption** entries are where I exercised the most editorial judgment — worth a glance to confirm the sense boundaries read right to you.
 
 ### 2026-07-11-doctrine-vs-policy-and-glossary-cross-linking (2026-07-11)
 

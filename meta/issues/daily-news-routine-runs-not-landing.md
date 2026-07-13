@@ -7,6 +7,11 @@ resource: "trigger:trig_01PAiKWrWgVs4djSkhELoLYw"
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09 — setup/verification of the /news Routine"
 tags: [meta, issue, inbox, research, automation, scheduling, approval-gate]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T17:10:59+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-news-routine-issue-and-featuring.md]
 ---
 
 # Daily /research Routine: automated runs not landing on `main`

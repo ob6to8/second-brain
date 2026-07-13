@@ -64,6 +64,19 @@ So don't search only the obvious title words.
   - `resource`: the source URI, when there is one.
   - `provenance`: where the content came from (e.g. "Claude Opus 4.8, chat thread"),
     when it isn't the operator's own words.
+  - `attribution`: the **ingestion event** (see the resource-attribution policy) —
+    written once at filing, never rewritten by later merges (merges bump
+    `timestamp` only):
+
+    ```yaml
+    attribution:
+      when: <now, ISO 8601>
+      channel: intake            # operator-initiated /intake (auto-intake sets its own)
+      agent: "operator via /intake, Claude Code session"
+      why: "<the operator's ask, one sentence — the same phrasing step 8 harvests>"
+    ```
+
+    No `from` here — that sub-key belongs to governance docs only.
   - `verified`: `false` for anything not independently fact-checked (default for
     AI-generated statements); `true` once confirmed.
   - Body: distilled prose. Use conventional headings where helpful

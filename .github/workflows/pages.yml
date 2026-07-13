@@ -23,6 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history: the dev-history page is re-derived from the merge graph
+          # at deploy time, so the live site includes the merge that triggered it.
+          fetch-depth: 0
 
       - uses: erlef/setup-beam@v1
         with:
@@ -45,6 +49,12 @@ jobs:
 
       - name: Route tags verify (tags, refs, sink logs, log fidelity)
         run: mix brain.route_tags
+
+      # Re-derive the dev-history view before rendering, so the deployed page is
+      # fully current — including the merge that triggered this deploy (the
+      # checked-in copy necessarily lags by one PR).
+      - name: Derive the dev history from the merge graph
+        run: mix brain.dev_history
 
       - name: Build the static site
         run: mix brain.site

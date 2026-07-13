@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, governance, terminology]
 sense: dual
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-11T19:58:08+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # doctrine
@@ -16,7 +21,7 @@ The layer of guiding principles and accepted tenets in a governance system — t
 
 **In this brain:** a controlled `type` and a [`meta/doctrine/`](/meta/doctrine/index.md) genre (since 2026-07-12) for standing intention statements (first document: [the engineer as orchestrator](/meta/doctrine/engineer-as-orchestrator.md)); the *worldview* doctrine — "the tree is the taxonomy", "distill, don't dump" — still lives distributed across the preamble and compiled [operating contract](/beliefs/glossary/operating-contract.md) read as a whole, while each `type: policy` file is a single standing rule.
 
-*Seen in:* [2026-07-11 doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md), [engineer-as-orchestrator doctrine](/meta/doctrine/engineer-as-orchestrator.md), [2026-07-12 doctrine-genre-and-orchestrator-alignment thread](/meta/threads/2026-07-12-doctrine-genre-and-orchestrator-alignment.md)
+*Seen in:* [2026-07-11 doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md), [engineer-as-orchestrator doctrine](/meta/doctrine/engineer-as-orchestrator.md), [2026-07-12 doctrine-genre-and-orchestrator-alignment thread](/meta/threads/2026-07-12-doctrine-genre-and-orchestrator-alignment.md), [2026-07-13 three-level-documentation thread](/meta/threads/2026-07-13-three-level-documentation-plan-and-model-doctrine.md) (doctrine as the home for runtime guidance a verifier cannot gate)
 
 ## Thread excerpts — route-tagged log
 

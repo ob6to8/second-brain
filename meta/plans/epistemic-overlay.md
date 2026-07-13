@@ -6,6 +6,11 @@ status: proposed
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09 — derived from a comparison of this bundle against the Composable Beliefs repo"
 tags: [meta, plan, epistemics, graph, knowledge-representation, composable-beliefs, edges]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T18:59:03+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md]
 ---
 
 # Epistemic overlay: the four operations as a frontmatter-native graph over concepts

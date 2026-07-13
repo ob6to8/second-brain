@@ -7,6 +7,11 @@ order: 1
 status: active
 tags: [meta, governance, skills]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-05T12:30:48+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md]
 ---
 - **`/intake`** — process pasted content into one or more filed concepts. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -28,9 +33,10 @@ timestamp: 2026-07-12
   in chat **and persisted** as a `type: elaboration` doc under
   [`meta/elaborations/`](/meta/elaborations/index.md) (governance namespace, no `sb:`
   id; link glossary terms that already exist; hand off to `/add-to-glossary` to
-  persist new ones per-term). The doc's `thread` back-link to its originating session
-  is set later by `/create-pull-request`, never by this skill. The phrase-scale
-  sibling of `/summarize-technical`. See `.claude/skills/elaborate/SKILL.md`.
+  persist new ones per-term). The doc's `attribution.from` back-link to its
+  originating session is set later by `/create-pull-request`, never by this skill.
+  The phrase-scale sibling of `/summarize-technical`. See
+  `.claude/skills/elaborate/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the glossary — **one concept file per term** under
@@ -45,17 +51,19 @@ timestamp: 2026-07-12
   **auto-intake the featured items** into the bundle via `/intake`. The digest is the
   dated record in the non-bundle `inbox/` namespace (no `sb:` ids); its featured items
   graduate into filed concepts in the same run, bounded to the known tree (items needing
-  a new top-level domain are deferred for operator ratification) and tagged `auto-intake`
-  for the operator's post-intake editorial pass. See `.claude/skills/research/SKILL.md`.
+  a new top-level domain are deferred for operator ratification) and attributed
+  `channel: auto-intake` for the operator's post-intake editorial pass. See
+  `.claude/skills/research/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
-  over the captured thread doc, **back-link this session's elaboration docs** (set
-  `thread:` in each `meta/elaborations/` doc the session created or updated, pointing
-  at the just-captured thread), then commit the current working changes, push the
+  over the captured thread doc, **stamp the thread into `attribution.from`** (append
+  the just-captured thread's path to the `from` list of every governance doc the
+  session created or substantively revised — the append-only carve-out of the
+  resource-attribution policy), then commit the current working changes, push the
   branch, and open a pull request — so the frozen thread doc, the glossary updates it
-  feeds, and the elaboration trace all ship in the same PR. Invoking the skill **is**
-  the authorization to open the PR (no separate confirmation gate); PR-template
-  detection and the GitHub MCP tools handle the rest. See
-  `.claude/skills/create-pull-request/SKILL.md`.
+  feeds, and each governance doc's trace back to its session all ship in the same
+  PR. Invoking the skill **is** the authorization to open the PR (no separate
+  confirmation gate); PR-template detection and the GitHub MCP tools handle the
+  rest. See `.claude/skills/create-pull-request/SKILL.md`.
 - **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
   a subcommand argument: `/todo create <title>` files a new open todo (and maintains
   the index); `/todo list` shows the todos grouped by `status`. See

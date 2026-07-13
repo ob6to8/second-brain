@@ -7,6 +7,11 @@ order: 1
 status: active
 tags: [meta, governance, taxonomy, structure]
 timestamp: 2026-07-05
+attribution:
+  when: 2026-07-05T12:30:48+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
 ---
 - Organize concepts into a **unix-like hierarchy**: lowercase, kebab-case directory
   names (short, established acronyms like `SWE` may stay uppercase); each directory

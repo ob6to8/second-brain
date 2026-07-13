@@ -4,11 +4,11 @@ title: Dedup recall probe — measuring and maintaining intake dedup recall
 description: The end-to-end flow of the dedup-recall eval loop — how intake dedup recall is measured (mix brain.dedup_probe over an id-keyed gold set), how the gold set and baseline are grown automatically at intake, and — the point of this doc — exactly how the operator audits, explores, and re-evaluates a system that otherwise runs silently in the background.
 tags: [meta, governance, evals, dedup, recall, intake, flow, workflow, auditability]
 timestamp: 2026-07-12
-lineage:
-  analysis: /meta/analysis/vector-db-recall-for-the-scaling-bundle.md
-  plan: /meta/plans/dedup-recall-probe.md
-  thread: /meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md
-  pr: 50
+attribution:
+  when: 2026-07-12T14:23:12+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/analysis/vector-db-recall-for-the-scaling-bundle.md, /meta/plans/dedup-recall-probe.md, /meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md]
 ---
 
 # Dedup recall probe — measuring and maintaining intake dedup recall

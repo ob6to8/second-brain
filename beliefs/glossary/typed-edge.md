@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, identity, edges]
 sense: dual
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-11T08:41:24+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # typed edge
@@ -16,4 +21,4 @@ In graph modeling, an edge that carries a label naming the kind of relationship 
 
 **In this brain:** a machine-traversable, id-based relationship declared in a document's structured metadata (like `verified_by`), as opposed to an untyped prose link. The governing principle: type an edge only when a machine must traverse it; otherwise prose carries the semantics.
 
-*Seen in:* [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md), [2026-07-11 doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md)
+*Seen in:* [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md), [2026-07-11 doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md), [2026-07-13 resource-attribution property thread](/meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md)

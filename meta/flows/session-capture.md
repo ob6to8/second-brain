@@ -4,10 +4,11 @@ title: Session capture, routing & route tags — flow
 description: The end-to-end flow for turning a non-linear working session into a distilled thread doc, a routing ledger, and route tags that materialize a re-derivable excerpt log into each concept — the pipeline, data model, the file-by-file touch-sequence, actor boundaries, the gate suite, and the scenario test that pins the deterministic spine.
 tags: [meta, governance, threads, capture, routing, route-tagging, flow, workflow]
 timestamp: 2026-07-09
-lineage:
-  plan: /meta/plans/flows-genre-and-scenario-testing.md
-  thread: /meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md
-  pr: 13
+attribution:
+  when: 2026-07-09T19:01:26+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/plans/flows-genre-and-scenario-testing.md, /meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md]
 ---
 
 # Session capture, routing & route tags — flow
@@ -50,7 +51,7 @@ Three things are missing, and this flow supplies each:
 3. an **audit trail** from each region of the session to the durable page it feeds.
 
 The transferable idea behind it is filed as a concept:
-[routing non-linear work sessions](/knowledge/SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions.md)
+[routing non-linear work sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md)
 (`sb:d479e3`). This page is the *implementation* of that idea in this bundle.
 
 ---

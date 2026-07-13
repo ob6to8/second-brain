@@ -10,6 +10,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history: mix brain.dev_history derives the per-PR view from the
+          # first-parent merge graph (its --check skips itself on shallow clones).
+          fetch-depth: 0
 
       - uses: erlef/setup-beam@v1
         with:
@@ -39,6 +43,9 @@ jobs:
 
       - name: Flow lineage views are derived and current
         run: mix brain.lineage --check
+
+      - name: Dev history is consistent with the merge graph (lag-tolerant)
+        run: mix brain.dev_history --check
 
       - name: Dedup recall probe (report only — recall is a trend metric, non-gating)
         continue-on-error: true

@@ -2,7 +2,9 @@ defmodule SecondBrain.Frontmatter do
   @moduledoc """
   Parser for the small YAML-frontmatter subset used by OKF concept documents in
   this bundle. Deliberately dependency-free: it handles scalars (string, integer,
-  boolean), quoted strings, and inline `[a, b, c]` lists — which is everything the
+  boolean), quoted strings, inline `[a, b, c]` lists, and **one level of nested
+  block maps** (a `key:` with no value whose children are indented `k: v` pairs —
+  the shape of `attribution:` and `lineage:` blocks) — which is everything the
   bundle's frontmatter uses. It is a tolerant *consumer* per OKF §5: unknown keys
   are preserved as strings.
 
@@ -56,23 +58,49 @@ defmodule SecondBrain.Frontmatter do
   # --- yaml subset ---------------------------------------------------------
 
   defp parse_yaml(yaml) do
-    yaml
-    |> String.split("\n")
-    |> Enum.reduce(%{}, fn line, acc ->
-      trimmed = String.trim(line)
+    {acc, _open} =
+      yaml
+      |> String.split("\n")
+      |> Enum.reduce({%{}, nil}, fn line, {acc, open} ->
+        trimmed = String.trim(line)
 
-      cond do
-        trimmed == "" -> acc
-        String.starts_with?(trimmed, "#") -> acc
-        true -> put_pair(acc, trimmed)
-      end
-    end)
+        cond do
+          trimmed == "" -> {acc, open}
+          String.starts_with?(trimmed, "#") -> {acc, open}
+          indent_of(line) > 0 and open != nil -> {put_nested(acc, open, trimmed), open}
+          true -> put_pair(acc, trimmed)
+        end
+      end)
+
+    acc
   end
 
+  defp indent_of(line), do: String.length(line) - String.length(String.trim_leading(line))
+
+  # A top-level `key:` with no value opens a (potential) nested block map; it
+  # parses as `""` unless indented children follow, preserving the flat
+  # behavior for genuinely empty values.
   defp put_pair(acc, line) do
     case String.split(line, ":", parts: 2) do
-      [key, raw] -> Map.put(acc, String.trim(key), coerce(String.trim(raw)))
-      [_key] -> acc
+      [key, ""] -> {Map.put(acc, String.trim(key), ""), String.trim(key)}
+      [key, raw] -> {Map.put(acc, String.trim(key), coerce(String.trim(raw))), nil}
+      [_key] -> {acc, nil}
+    end
+  end
+
+  defp put_nested(acc, open, trimmed) do
+    case String.split(trimmed, ":", parts: 2) do
+      [key, raw] ->
+        nested =
+          case acc[open] do
+            %{} = map -> map
+            _ -> %{}
+          end
+
+        Map.put(acc, open, Map.put(nested, String.trim(key), coerce(String.trim(raw))))
+
+      [_no_pair] ->
+        acc
     end
   end
 

@@ -8,6 +8,11 @@ verified: false
 tags: [glossary, tree-sitter, parsing, code-intelligence, ast]
 sense: common
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T18:01:58+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # Tree-sitter
@@ -20,4 +25,4 @@ and imports — the raw structure that gets assembled into a
 [code knowledge graph](/beliefs/glossary/knowledge-graph.md). Both GitNexus and Codebase-Memory
 build on it (66 languages in the latter).
 
-*Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [Codebase-Memory](/knowledge/SWE/agentic-coding/code-context/codebase-memory-mcp.md), [GitNexus](/knowledge/SWE/agentic-coding/code-context/gitnexus.md)
+*Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [Codebase-Memory](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md), [GitNexus](/knowledge/SWE/agentic/code-context/gitnexus.md)
