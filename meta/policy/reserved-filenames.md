@@ -3,7 +3,7 @@ type: policy
 title: Reserved filenames
 description: index.md is reserved at any directory level and follows a fixed structure; log.md stays reserved for OKF tolerance but this bundle does not keep logs — git history is the change record.
 section: composition
-order: 3
+order: 4
 status: active
 tags: [meta, governance, okf, index, log]
 timestamp: 2026-07-11

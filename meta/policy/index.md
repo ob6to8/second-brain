@@ -15,6 +15,7 @@ the start if siblings are plausible.
 ## composition
 - [concept-anatomy](/meta/policy/concept-anatomy.md) — the repo root is the bundle; a concept is frontmatter + body; ID is path minus `.md`
 - [frontmatter-schema](/meta/policy/frontmatter-schema.md) — the controlled frontmatter fields and their requirement levels
+- [resource-attribution](/meta/policy/resource-attribution.md) — the `attribution` map: the ingestion event (when/channel/agent/why, plus governance `from`) recorded on every doc
 - [reserved-filenames](/meta/policy/reserved-filenames.md) — `index.md` structure; `log.md` reserved by OKF but not kept in this bundle
 
 ## directory-structure
