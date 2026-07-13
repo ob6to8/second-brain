@@ -35,7 +35,6 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:23f009` | [beliefs/glossary/compiled-contract](/beliefs/glossary/compiled-contract.md) | concept | false |
 | `sb:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
 | `sb:04f8dd` | [beliefs/glossary/composable-beliefs](/beliefs/glossary/composable-beliefs.md) | concept | false |
-| `sb:317879` | [beliefs/glossary/concept-okf](/beliefs/glossary/concept-okf.md) | concept | false |
 | `sb:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
 | `sb:aea1cb` | [beliefs/glossary/credential-vault](/beliefs/glossary/credential-vault.md) | concept | false |
 | `sb:a48aeb` | [beliefs/glossary/crlf](/beliefs/glossary/crlf.md) | concept | false |
@@ -51,6 +50,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:d18504` | [beliefs/glossary/deterministic-spine](/beliefs/glossary/deterministic-spine.md) | concept | false |
 | `sb:d4fc9d` | [beliefs/glossary/digest](/beliefs/glossary/digest.md) | concept | false |
 | `sb:6a9e78` | [beliefs/glossary/doctrine](/beliefs/glossary/doctrine.md) | concept | false |
+| `sb:317879` | [beliefs/glossary/document-okf](/beliefs/glossary/document-okf.md) | concept | false |
 | `sb:683301` | [beliefs/glossary/drift-class](/beliefs/glossary/drift-class.md) | concept | false |
 | `sb:9074c1` | [beliefs/glossary/dry](/beliefs/glossary/dry.md) | concept | false |
 | `sb:16e171` | [beliefs/glossary/elaboration-type](/beliefs/glossary/elaboration-type.md) | concept | false |

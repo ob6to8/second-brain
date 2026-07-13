@@ -6,17 +6,17 @@ section: verification
 order: 2
 status: active
 tags: [meta, governance, verification, provenance, evidence]
-timestamp: 2026-07-12
+timestamp: 2026-07-13
 ---
 - **Provenance and verification are orthogonal.** `provenance` records where a
   statement came from and is **immutable history** — verifying a statement never
   rewrites its provenance.
 - **Verification is only for agent-authored statements.** `verified: true` applies
   to a statement the agent distilled from a thread (a `claim`, `note`, or `concept`)
-  and asserts it has been **checked against evidence**. A concept that stores a
+  and asserts it has been **checked against evidence**. A document that stores a
   link — anything carrying a `resource` — is a **capture**, not a statement:
   verification is **not possible** for it, so a capture never carries `verified`
-  (omit the field). `mix brain.verify` rejects `verified: true` on any concept that
+  (omit the field). `mix brain.verify` rejects `verified: true` on any document that
   has a `resource`, and rejects a `verified` field (either value) on any type
   outside `claim`/`note`/`concept` — the statement-type restriction is
   machine-enforced, not editorial.

@@ -6,9 +6,9 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-12
+timestamp: 2026-07-13
 ---
-- **`/intake`** — process pasted content into one or more filed concepts. See
+- **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
   brain.
 - **`/render-contract`** — recompile `CLAUDE.md` from `meta/policy/*.md` after editing
@@ -32,11 +32,11 @@ timestamp: 2026-07-12
   is set later by `/create-pull-request`, never by this skill. The phrase-scale
   sibling of `/summarize-technical`. See `.claude/skills/elaborate/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
-  or a filed concept; extract the technical terms it actually uses; and merge distilled
-  definitions into the glossary — **one concept file per term** under
+  or a filed document; extract the technical terms it actually uses; and merge distilled
+  definitions into the glossary — **one `concept` document per term** under
   [`/beliefs/glossary/`](/beliefs/glossary/index.md) (hub: [`/beliefs/glossary.md`](/beliefs/glossary.md)), each with
-  its own `sb:` id and *Seen in:* citations, so any response or concept can cite a
-  term by link (pointer entries defer to filed concepts instead of duplicating them).
+  its own `sb:` id and *Seen in:* citations, so any response or document can cite a
+  term by link (pointer entries defer to filed documents instead of duplicating them).
   Also invoked automatically by `/create-pull-request` on the thread doc its
   `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
 - **`/research`** — generate today's **inbox**: a daily candidate feed of research, articles,
@@ -44,7 +44,7 @@ timestamp: 2026-07-12
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) — then
   **auto-intake the featured items** into the bundle via `/intake`. The digest is the
   dated record in the non-bundle `inbox/` namespace (no `sb:` ids); its featured items
-  graduate into filed concepts in the same run, bounded to the known tree (items needing
+  graduate into filed documents in the same run, bounded to the known tree (items needing
   a new top-level domain are deferred for operator ratification) and tagged `auto-intake`
   for the operator's post-intake editorial pass. See `.claude/skills/research/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`

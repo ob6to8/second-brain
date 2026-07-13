@@ -29,7 +29,6 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [compiled contract](/beliefs/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
 - [complementary priors](/beliefs/glossary/complementary-priors.md) — Hinton/Osindero/Teh's device for cancelling explaining-away correlations in a directed belief net, making a deep model tractable to learn layer by layer
 - [Composable Beliefs (cb)](/beliefs/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
-- [concept (OKF)](/beliefs/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
 - [contrastive divergence](/beliefs/glossary/contrastive-divergence.md) — a fast approximate training algorithm for restricted Boltzmann machines, using a short Gibbs-sampling run in place of the intractable exact gradient
 - [CRLF](/beliefs/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
 - [cron expression](/beliefs/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
@@ -45,6 +44,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [deterministic spine](/beliefs/glossary/deterministic-spine.md) — the input-determined, mechanical part of a workflow that a conventional test can pin
 - [digest](/beliefs/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
 - [doctrine](/beliefs/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
+- [document (OKF)](/beliefs/glossary/document-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`; OKF's own term is "concept document", with bare `concept` reserved here for the type
 - [drift class](/beliefs/glossary/drift-class.md) — a category of staleness whose instances share one detection mechanism, so a single detector covers the class
 - [DRY (don't repeat yourself)](/beliefs/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
 - [elaboration (type)](/beliefs/glossary/elaboration-type.md) — controlled type: a persisted expansion of a technical phrase (quoted target, term definitions, plain walkthrough), under `meta/elaborations/`

@@ -27,28 +27,34 @@ behavior, which the operator authors and ratifies but is never subject to.
 
 ## 1. What the brain is made of
 
-- **The repo root is the OKF bundle.** Concepts live at the root and in
+- **The repo root is the OKF bundle.** Documents live at the root and in
   subdirectories. `.claude/` (skills), `meta/` (governance), the Elixir tooling
   (`mix.exs`, `lib/`, `test/`), and `deprecated/` (archived legacy content,
   read-only) sit alongside but are **not** part of the knowledge bundle.
-- **A concept** is a single UTF-8 markdown file with two parts:
+- **A document** is a single UTF-8 markdown file with two parts:
   1. **YAML frontmatter** (required), delimited by `---`.
   2. **Markdown body** (distilled prose; no required sections).
-- **Concept ID** = file path minus `.md` (e.g. `areas/health.md` → `areas/health`).
+- **Document ID** = file path minus `.md` (e.g. `areas/health.md` → `areas/health`).
+- **Terminology: "document", not "concept".** The OKF spec calls this unit a
+  *concept document*, but the anatomy above is purely structural — nothing in it
+  guarantees concept-like content. This bundle therefore says **document** for
+  the unit and reserves **`concept`** for the controlled `type` of that name (a
+  definition or mental model). When reading the OKF spec, its "concept" is this
+  bundle's "document".
 
-_Source: [`meta/policy/concept-anatomy.md`](/meta/policy/concept-anatomy.md)_
+_Source: [`meta/policy/document-anatomy.md`](/meta/policy/document-anatomy.md)_
 
 Frontmatter fields:
 
 | Field | Requirement | Notes |
 |-------|-------------|-------|
-| `id` | **Mandatory** (bundle concepts) | Stable opaque identifier, `sb:` + 6 hex chars. Immutable once minted (`mix brain.id`); see the identity-and-verification section. |
+| `id` | **Mandatory** (bundle documents) | Stable opaque identifier, `sb:` + 6 hex chars. Immutable once minted (`mix brain.id`); see the identity-and-verification section. |
 | `type` | **Mandatory** | From the controlled vocabulary (see the type-vocabulary section). Non-empty. |
 | `title` | Strongly recommended | Human-readable display name. |
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
 | `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
-| `verified` | Only on agent statements | Boolean, and **only for agent-authored statements** (`claim`/`note`/`concept`). `false` = asserted but not checked; `true` = checked and backed by a non-empty `verified_by`. **Omit** on captures — a concept that stores a link (`resource`) is not verifiable. Default `false` for AI-generated statements. |
+| `verified` | Only on agent statements | Boolean, and **only for agent-authored statements** (`claim`/`note`/`concept`). `false` = asserted but not checked; `true` = checked and backed by a non-empty `verified_by`. **Omit** on captures — a document that stores a link (`resource`) is not verifiable. Default `false` for AI-generated statements. |
 | `verified_by` | When verified via evidence | Inline YAML list of stable ids (typically `source` captures) that jointly support this statement; targets must **exist** (they need not themselves be `verified`). The only committed representation of evidence edges. |
 | `tags` | Recommended | YAML list of categorization strings. |
 | `timestamp` | Recommended | ISO 8601 datetime of last meaningful change. |
@@ -69,7 +75,7 @@ Reserved filenames (any directory level):
   [retire-hand-kept-logs plan](/meta/plans/retire-hand-kept-logs.md)). Do not
   create `log.md` files or append log entries; the change narrative belongs in
   commit messages. (The generated `## Thread excerpts — route-tagged log`
-  sections inside concepts are unrelated — they are compiled, CI-verified
+  sections inside documents are unrelated — they are compiled, CI-verified
   artifacts and stay.)
 
 _Source: [`meta/policy/reserved-filenames.md`](/meta/policy/reserved-filenames.md)_
@@ -78,10 +84,10 @@ _Source: [`meta/policy/reserved-filenames.md`](/meta/policy/reserved-filenames.m
 
 ## 2. Directory structure — unix-like, domain-agnostic, evolving
 
-- Organize concepts into a **unix-like hierarchy**: lowercase, kebab-case directory
+- Organize documents into a **unix-like hierarchy**: lowercase, kebab-case directory
   names (short, established acronyms like `SWE` may stay uppercase); each directory
-  holds a coherent set of related concepts.
-- **Create the natural directory path even for a single concept.** Do not flatten to
+  holds a coherent set of related documents.
+- **Create the natural directory path even for a single document.** Do not flatten to
   avoid nesting — a lone note about git belongs in `knowledge/SWE/version-control/git/`, not
   dumped at the root. Depth that mirrors the real structure of the knowledge is good.
 
@@ -101,7 +107,7 @@ _Source: [`meta/policy/tree-is-the-taxonomy.md`](/meta/policy/tree-is-the-taxono
 
 The taxonomy-evolution protocol (important):
 
-- Filing a concept into an **existing** directory, or creating **subdirectories
+- Filing a document into an **existing** directory, or creating **subdirectories
   under an already-established top-level domain**, → the agent does this
   **autonomously** (create the path and each new directory's `index.md`).
 - Creating a **new top-level directory** (or renaming/moving/merging directories) is
@@ -117,7 +123,7 @@ _Source: [`meta/policy/taxonomy-evolution-protocol.md`](/meta/policy/taxonomy-ev
 
 ## 3. Filing conventions
 
-**Distill, don't dump.** Capture the *knowledge*, not the raw noise. A concept has
+**Distill, don't dump.** Capture the *knowledge*, not the raw noise. A document has
 a clear title, a one-sentence `description`, and a clean body. Keep the original
 material as a `resource` URI and/or under a `# Citations` section — not as the
 whole document.
@@ -125,16 +131,16 @@ whole document.
 _Source: [`meta/policy/distill-dont-dump.md`](/meta/policy/distill-dont-dump.md)_
 
 **Update in place; don't fragment.** Before creating a file, **search the bundle**
-for an existing concept on the same subject. If one exists, update it (merge new
+for an existing document on the same subject. If one exists, update it (merge new
 info, bump `timestamp`) instead of creating a near-duplicate.
 
 _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
 
 - **Filenames**: kebab-case slug derived from the title
   (`open-knowledge-format.md`). Use a `YYYY-MM-DD-` prefix **only** for inherently
-  time-ordered entries (journal/log-style notes); topical concepts stay purely
+  time-ordered entries (journal/log-style notes); topical documents stay purely
   topical.
-- **Cross-link** related concepts with markdown links. Prefer bundle-absolute paths
+- **Cross-link** related documents with markdown links. Prefer bundle-absolute paths
   (begin with `/`, e.g. `[OKF](/knowledge/knowledge-management/open-knowledge-format.md)`). Links are
   untyped edges; the prose carries the meaning. Broken links are tolerated but avoid
   creating them.
@@ -143,10 +149,10 @@ _Source: [`meta/policy/filenames-and-cross-linking.md`](/meta/policy/filenames-a
 
 - **Links must be processed, not parked.** A web resource enters the brain only once it
   has been **processed into a `reference`** (fetched and summarized/captured). Do not
-  file bare, unprocessed URLs as their own concepts — process it now, or don't file it.
+  file bare, unprocessed URLs as their own documents — process it now, or don't file it.
   (There is deliberately no lightweight "bookmark" type.)
 - **Oversized linked resources**: if a linked source is too large to reasonably copy,
-  **write a faithful summary** as the concept body and **persist the link** in the
+  **write a faithful summary** as the document body and **persist the link** in the
   `resource` frontmatter field (and/or `# Citations`) so nothing is lost.
 
 _Source: [`meta/policy/link-processing.md`](/meta/policy/link-processing.md)_
@@ -283,7 +289,7 @@ _Source: [`meta/policy/controlled-type-vocabulary.md`](/meta/policy/controlled-t
 
 ## 5. Identity & verification
 
-- **Every bundle concept carries a stable `id`** in frontmatter: `sb:` + 6 lowercase
+- **Every bundle document carries a stable `id`** in frontmatter: `sb:` + 6 lowercase
   hex chars (e.g. `sb:4c9e1f`). Ids are **opaque and immutable** — minted once
   (`mix brain.id`), never changed, and never reused, even if the file moves, is
   renamed, or is superseded. Identity survives refactors; paths don't have to.
@@ -302,10 +308,10 @@ _Source: [`meta/policy/stable-identity.md`](/meta/policy/stable-identity.md)_
   rewrites its provenance.
 - **Verification is only for agent-authored statements.** `verified: true` applies
   to a statement the agent distilled from a thread (a `claim`, `note`, or `concept`)
-  and asserts it has been **checked against evidence**. A concept that stores a
+  and asserts it has been **checked against evidence**. A document that stores a
   link — anything carrying a `resource` — is a **capture**, not a statement:
   verification is **not possible** for it, so a capture never carries `verified`
-  (omit the field). `mix brain.verify` rejects `verified: true` on any concept that
+  (omit the field). `mix brain.verify` rejects `verified: true` on any document that
   has a `resource`, and rejects a `verified` field (either value) on any type
   outside `claim`/`note`/`concept` — the statement-type restriction is
   machine-enforced, not editorial.
@@ -347,7 +353,7 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 
 ## 7. Skills
 
-- **`/intake`** — process pasted content into one or more filed concepts. See
+- **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
   brain.
 - **`/render-contract`** — recompile `CLAUDE.md` from `meta/policy/*.md` after editing
@@ -371,11 +377,11 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   is set later by `/create-pull-request`, never by this skill. The phrase-scale
   sibling of `/summarize-technical`. See `.claude/skills/elaborate/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
-  or a filed concept; extract the technical terms it actually uses; and merge distilled
-  definitions into the glossary — **one concept file per term** under
+  or a filed document; extract the technical terms it actually uses; and merge distilled
+  definitions into the glossary — **one `concept` document per term** under
   [`/beliefs/glossary/`](/beliefs/glossary/index.md) (hub: [`/beliefs/glossary.md`](/beliefs/glossary.md)), each with
-  its own `sb:` id and *Seen in:* citations, so any response or concept can cite a
-  term by link (pointer entries defer to filed concepts instead of duplicating them).
+  its own `sb:` id and *Seen in:* citations, so any response or document can cite a
+  term by link (pointer entries defer to filed documents instead of duplicating them).
   Also invoked automatically by `/create-pull-request` on the thread doc its
   `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
 - **`/research`** — generate today's **inbox**: a daily candidate feed of research, articles,
@@ -383,7 +389,7 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) — then
   **auto-intake the featured items** into the bundle via `/intake`. The digest is the
   dated record in the non-bundle `inbox/` namespace (no `sb:` ids); its featured items
-  graduate into filed concepts in the same run, bounded to the known tree (items needing
+  graduate into filed documents in the same run, bounded to the known tree (items needing
   a new top-level domain are deferred for operator ratification) and tagged `auto-intake`
   for the operator's post-intake editorial pass. See `.claude/skills/research/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
@@ -480,18 +486,20 @@ Four columns:
 |--------|-------|
 | **Topic** | what the strand is about, one line |
 | **State** | `open` (live) · `paused` (waiting on a dangling question) · `closed` (resolved; nothing further expected) |
-| **Routed to** | a markdown link to the `concept` doc that absorbed the strand's content, or `unrouted` |
+| **Routed to** | a markdown link to the document that absorbed the strand's content, or `unrouted` |
 | **Dangling** | the open question, when `open`/`paused` (else `-`) |
 
 - **Pointers and states only — never content.** Synthesized content lands in the
-  routed-to `concept` doc; if it also lived in the ledger the ledger would become
+  routed-to document; if it also lived in the ledger the ledger would become
   a stale shadow copy of that doc. State (the strand) and routed-to (the
   dispatch) are orthogonal: a strand can be routed yet still `open`, or `closed`
   and `unrouted`.
-- **Routed-to targets are `concept` docs**, linked by bundle-absolute path
-  (e.g. `[foo](/knowledge/SWE/…/foo.md)`). The route-tagging cross-check reads this column
-  to confirm every concept-routed row is covered by a tag (see the route-tagging
-  policy).
+- **Routed-to targets are documents** — bundle or governance, of any `type` —
+  linked by bundle-absolute path (e.g. `[foo](/knowledge/SWE/…/foo.md)`). The
+  route-tagging cross-check reads this column to confirm every row routed to a
+  **bundle** document (one carrying a stable `sb:` id) is covered by a tag;
+  governance targets carry no id and drop out of that check (see the
+  route-tagging policy).
 - **In-doc, maintained at capture time.** The ledger is a section of the thread
   doc itself (not a sibling file), written and updated by `/capture` in the same
   motion that routes content — routing and ledger update are one act, not a
@@ -499,20 +507,20 @@ Four columns:
 
 _Source: [`meta/policy/routing-ledger.md`](/meta/policy/routing-ledger.md)_
 
-Mark each region of a finalized thread body with the concept(s) its content
+Mark each region of a finalized thread body with the document(s) its content
 feeds, so a matter's cross-thread discussion aggregates into one place. The tag
 is an inline `<routes ref="...">` region, applied over the **frozen** body as
 the last motion of `/capture`.
 
 ```
 <routes ref="sb:4c9e1f lib/second_brain/route_tags.ex">
-... one paragraph, feeding a concept and back-linking a code path ...
+... one paragraph, feeding a document and back-linking a code path ...
 </routes>
 ```
 
 Settled properties:
 
-- **Keyed on canonical ids, never free-text topics.** A ref is a concept's
+- **Keyed on canonical ids, never free-text topics.** A ref is a document's
   stable **`sb:` id** (the aggregating sink — it accretes the log) or a **path**
   (a non-aggregating back-link to code or a file — no log). Ids, not phrases, so
   two threads about the same matter emit the same string and the cross-thread
@@ -523,7 +531,7 @@ Settled properties:
   the auditable selection — no within-region trimming. A region must not cross a
   `## User`/`## Assistant` turn boundary.
 
-**The doc-side log.** Each referenced concept carries a
+**The doc-side log.** Each referenced document carries a
 **`## Thread excerpts — route-tagged log`** section: an append-only, per-thread,
 date-stamped block for every thread that tags it, each block lifting the tagged
 regions whole (ATX headers demoted to bold). Each block quotes a *frozen* thread,
@@ -539,7 +547,7 @@ feeding paragraph was tagged — has no mechanical oracle and stays editorial; a
 routing-ledger cross-check lifts it to row granularity and **warns** (never
 fails).
 
-**Freeze on matter-resolution.** A concept accepts new excerpt blocks while its
+**Freeze on matter-resolution.** A document accepts new excerpt blocks while its
 matter is unresolved and freezes acceptance when the matter resolves — per
 matter, not on archival.
 
