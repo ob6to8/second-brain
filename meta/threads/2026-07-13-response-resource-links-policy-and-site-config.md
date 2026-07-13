@@ -5,6 +5,7 @@ description: Added a filing policy requiring agent responses to cite brain resou
 provenance: "Claude Code session (claude-opus-4-8), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, policy, contract, links, site, config]
 timestamp: 2026-07-13
+pr: 62
 ---
 
 # 2026-07-13-response-resource-links-policy-and-site-config
