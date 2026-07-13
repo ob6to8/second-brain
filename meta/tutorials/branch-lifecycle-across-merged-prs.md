@@ -2,6 +2,12 @@
 type: tutorial
 title: The agent's branch lifecycle across merged PRs
 description: Why a Claude Code session pins one designated branch name for its whole life, how a merged PR forces that branch to restart from the default branch under the same name (a new PR each cycle, never a reopen), and why auto-deleting the merged head branch makes the restart a clean create instead of a force-push over a stale tip.
+attribution:
+  when: 2026-07-10T00:00:00Z
+  channel: agent-authored
+  agent: "Claude Code agent, /create-pull-request session"
+  why: "captures the harness branch-lifecycle model an operator asked about — same-name restart across merged PRs and how auto-delete interacts with it"
+  from: [/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md]
 tags: [meta, git, workflow, branches, pull-requests, agent, harness]
 timestamp: 2026-07-10
 ---
