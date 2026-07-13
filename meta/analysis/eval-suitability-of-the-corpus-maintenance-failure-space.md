@@ -124,7 +124,7 @@ notes on git branches — one on fetch semantics, one on rebase workflow); *subs
 (two notes that share vocabulary but answer different questions). The merge
 threshold — which bands count as "duplicate, should have merged" — is an editorial
 choice. The live bundle demonstrates this: sixteen files legitimately coexist under
-`SWE/agentic-coding/agentic-loop/` because they are distinct *captures* of distinct
+`SWE/agentic/agentic-loop/` because they are distinct *captures* of distinct
 sources on one subject, while "context rot" and "lost in the middle" are one
 phenomenon under two names and should never become two concepts. No similarity
 score locates that line; only a policy does.

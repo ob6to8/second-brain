@@ -174,39 +174,40 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:e19e32` | [beliefs/glossary/wake-sleep-algorithm](/beliefs/glossary/wake-sleep-algorithm.md) | concept | false |
 | `sb:de14e6` | [beliefs/glossary/warn-pass](/beliefs/glossary/warn-pass.md) | concept | false |
 | `sb:adf537` | [beliefs/glossary/webhook](/beliefs/glossary/webhook.md) | concept | false |
-| `sb:97d2a8` | [knowledge/SWE/agentic-coding/agentic-loop/agent-loop-as-a-while-loop](/knowledge/SWE/agentic-coding/agentic-loop/agent-loop-as-a-while-loop.md) | reference |  |
-| `sb:c29a22` | [knowledge/SWE/agentic-coding/agentic-loop/agent-task-time-horizons](/knowledge/SWE/agentic-coding/agentic-loop/agent-task-time-horizons.md) | reference |  |
-| `sb:06d95d` | [knowledge/SWE/agentic-coding/agentic-loop/building-effective-agents](/knowledge/SWE/agentic-coding/agentic-loop/building-effective-agents.md) | reference |  |
-| `sb:3384ba` | [knowledge/SWE/agentic-coding/agentic-loop/designing-agentic-loops](/knowledge/SWE/agentic-coding/agentic-loop/designing-agentic-loops.md) | reference |  |
-| `sb:c0961a` | [knowledge/SWE/agentic-coding/agentic-loop/effective-context-engineering-for-agents](/knowledge/SWE/agentic-coding/agentic-loop/effective-context-engineering-for-agents.md) | reference |  |
-| `sb:a832e0` | [knowledge/SWE/agentic-coding/agentic-loop/how-coding-agents-work](/knowledge/SWE/agentic-coding/agentic-loop/how-coding-agents-work.md) | reference |  |
-| `sb:8e885f` | [knowledge/SWE/agentic-coding/agentic-loop/how-to-build-an-agent](/knowledge/SWE/agentic-coding/agentic-loop/how-to-build-an-agent.md) | reference |  |
-| `sb:01bb9a` | [knowledge/SWE/agentic-coding/agentic-loop/loop-engineering-went-mainstream](/knowledge/SWE/agentic-coding/agentic-loop/loop-engineering-went-mainstream.md) | reference |  |
-| `sb:a030d9` | [knowledge/SWE/agentic-coding/agentic-loop/openai-practical-guide-to-building-agents](/knowledge/SWE/agentic-coding/agentic-loop/openai-practical-guide-to-building-agents.md) | reference |  |
-| `sb:b6353e` | [knowledge/SWE/agentic-coding/agentic-loop/own-your-control-flow-12-factor](/knowledge/SWE/agentic-coding/agentic-loop/own-your-control-flow-12-factor.md) | reference |  |
-| `sb:f02167` | [knowledge/SWE/agentic-coding/agentic-loop/parc-self-reflective-long-horizon-agent](/knowledge/SWE/agentic-coding/agentic-loop/parc-self-reflective-long-horizon-agent.md) | reference |  |
-| `sb:276c61` | [knowledge/SWE/agentic-coding/agentic-loop/ralph-infinite-bash-loop-coding-agent](/knowledge/SWE/agentic-coding/agentic-loop/ralph-infinite-bash-loop-coding-agent.md) | reference |  |
-| `sb:f63910` | [knowledge/SWE/agentic-coding/agentic-loop/react-reasoning-and-acting](/knowledge/SWE/agentic-coding/agentic-loop/react-reasoning-and-acting.md) | reference |  |
-| `sb:f948df` | [knowledge/SWE/agentic-coding/agentic-loop/smolagents-agent-loop-as-code](/knowledge/SWE/agentic-coding/agentic-loop/smolagents-agent-loop-as-code.md) | reference |  |
-| `sb:3fd44a` | [knowledge/SWE/agentic-coding/agentic-loop/the-agent-execution-loop](/knowledge/SWE/agentic-coding/agentic-loop/the-agent-execution-loop.md) | reference |  |
-| `sb:592342` | [knowledge/SWE/agentic-coding/agentic-loop/the-agent-loop-decoded-three-levels](/knowledge/SWE/agentic-coding/agentic-loop/the-agent-loop-decoded-three-levels.md) | reference |  |
-| `sb:1aefe2` | [knowledge/SWE/agentic-coding/agentic-loop/the-art-of-loop-engineering](/knowledge/SWE/agentic-coding/agentic-loop/the-art-of-loop-engineering.md) | reference |  |
-| `sb:d580ce` | [knowledge/SWE/agentic-coding/agentic-loop/the-coming-loop](/knowledge/SWE/agentic-coding/agentic-loop/the-coming-loop.md) | reference |  |
-| `sb:52aefa` | [knowledge/SWE/agentic-coding/claude-code/cloud-environment-architecture](/knowledge/SWE/agentic-coding/claude-code/cloud-environment-architecture.md) | note | false |
-| `sb:564b8e` | [knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-credentials-outside-sandbox](/knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-credentials-outside-sandbox.md) | source |  |
-| `sb:eb418b` | [knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-environment-caching](/knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-environment-caching.md) | source |  |
-| `sb:3420c8` | [knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity](/knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity.md) | source |  |
-| `sb:863b32` | [knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config](/knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config.md) | source |  |
-| `sb:3f35e1` | [knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud](/knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud.md) | source |  |
-| `sb:532b22` | [knowledge/SWE/agentic-coding/code-context/codebase-memory-mcp](/knowledge/SWE/agentic-coding/code-context/codebase-memory-mcp.md) | reference |  |
-| `sb:b89ea1` | [knowledge/SWE/agentic-coding/code-context/gitnexus](/knowledge/SWE/agentic-coding/code-context/gitnexus.md) | reference |  |
-| `sb:41a1e3` | [knowledge/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files](/knowledge/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md) | reference |  |
-| `sb:bf8a85` | [knowledge/SWE/agentic-coding/context-engineering/claude-context-editing-and-memory-tool](/knowledge/SWE/agentic-coding/context-engineering/claude-context-editing-and-memory-tool.md) | reference |  |
-| `sb:77d68a` | [knowledge/SWE/agentic-coding/context-engineering/context-rot-chroma-research](/knowledge/SWE/agentic-coding/context-engineering/context-rot-chroma-research.md) | reference |  |
-| `sb:784985` | [knowledge/SWE/agentic-coding/context-engineering/conversation-tree-architecture](/knowledge/SWE/agentic-coding/context-engineering/conversation-tree-architecture.md) | reference |  |
-| `sb:649457` | [knowledge/SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation](/knowledge/SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md) | reference |  |
-| `sb:d479e3` | [knowledge/SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions](/knowledge/SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
-| `sb:eeb2bb` | [knowledge/SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration](/knowledge/SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
+| `sb:97d2a8` | [knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop](/knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop.md) | reference |  |
+| `sb:c29a22` | [knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md) | reference |  |
+| `sb:06d95d` | [knowledge/SWE/agentic/agentic-loop/building-effective-agents](/knowledge/SWE/agentic/agentic-loop/building-effective-agents.md) | reference |  |
+| `sb:3384ba` | [knowledge/SWE/agentic/agentic-loop/designing-agentic-loops](/knowledge/SWE/agentic/agentic-loop/designing-agentic-loops.md) | reference |  |
+| `sb:c0961a` | [knowledge/SWE/agentic/agentic-loop/effective-context-engineering-for-agents](/knowledge/SWE/agentic/agentic-loop/effective-context-engineering-for-agents.md) | reference |  |
+| `sb:a832e0` | [knowledge/SWE/agentic/agentic-loop/how-coding-agents-work](/knowledge/SWE/agentic/agentic-loop/how-coding-agents-work.md) | reference |  |
+| `sb:8e885f` | [knowledge/SWE/agentic/agentic-loop/how-to-build-an-agent](/knowledge/SWE/agentic/agentic-loop/how-to-build-an-agent.md) | reference |  |
+| `sb:01bb9a` | [knowledge/SWE/agentic/agentic-loop/loop-engineering-went-mainstream](/knowledge/SWE/agentic/agentic-loop/loop-engineering-went-mainstream.md) | reference |  |
+| `sb:a030d9` | [knowledge/SWE/agentic/agentic-loop/openai-practical-guide-to-building-agents](/knowledge/SWE/agentic/agentic-loop/openai-practical-guide-to-building-agents.md) | reference |  |
+| `sb:b6353e` | [knowledge/SWE/agentic/agentic-loop/own-your-control-flow-12-factor](/knowledge/SWE/agentic/agentic-loop/own-your-control-flow-12-factor.md) | reference |  |
+| `sb:f02167` | [knowledge/SWE/agentic/agentic-loop/parc-self-reflective-long-horizon-agent](/knowledge/SWE/agentic/agentic-loop/parc-self-reflective-long-horizon-agent.md) | reference |  |
+| `sb:276c61` | [knowledge/SWE/agentic/agentic-loop/ralph-infinite-bash-loop-coding-agent](/knowledge/SWE/agentic/agentic-loop/ralph-infinite-bash-loop-coding-agent.md) | reference |  |
+| `sb:f63910` | [knowledge/SWE/agentic/agentic-loop/react-reasoning-and-acting](/knowledge/SWE/agentic/agentic-loop/react-reasoning-and-acting.md) | reference |  |
+| `sb:f948df` | [knowledge/SWE/agentic/agentic-loop/smolagents-agent-loop-as-code](/knowledge/SWE/agentic/agentic-loop/smolagents-agent-loop-as-code.md) | reference |  |
+| `sb:3fd44a` | [knowledge/SWE/agentic/agentic-loop/the-agent-execution-loop](/knowledge/SWE/agentic/agentic-loop/the-agent-execution-loop.md) | reference |  |
+| `sb:592342` | [knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels](/knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels.md) | reference |  |
+| `sb:1aefe2` | [knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering](/knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering.md) | reference |  |
+| `sb:d580ce` | [knowledge/SWE/agentic/agentic-loop/the-coming-loop](/knowledge/SWE/agentic/agentic-loop/the-coming-loop.md) | reference |  |
+| `sb:52aefa` | [knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture](/knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture.md) | note | false |
+| `sb:564b8e` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox.md) | source |  |
+| `sb:eb418b` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-caching](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-caching.md) | source |  |
+| `sb:3420c8` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity.md) | source |  |
+| `sb:863b32` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environments-carry-config](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environments-carry-config.md) | source |  |
+| `sb:3f35e1` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud.md) | source |  |
+| `sb:a142be` | [knowledge/SWE/agentic/anthropic/claude/artifacts](/knowledge/SWE/agentic/anthropic/claude/artifacts.md) | concept | false |
+| `sb:532b22` | [knowledge/SWE/agentic/code-context/codebase-memory-mcp](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md) | reference |  |
+| `sb:b89ea1` | [knowledge/SWE/agentic/code-context/gitnexus](/knowledge/SWE/agentic/code-context/gitnexus.md) | reference |  |
+| `sb:41a1e3` | [knowledge/SWE/agentic/context-engineering/ai-agent-memory-management-markdown-files](/knowledge/SWE/agentic/context-engineering/ai-agent-memory-management-markdown-files.md) | reference |  |
+| `sb:bf8a85` | [knowledge/SWE/agentic/context-engineering/claude-context-editing-and-memory-tool](/knowledge/SWE/agentic/context-engineering/claude-context-editing-and-memory-tool.md) | reference |  |
+| `sb:77d68a` | [knowledge/SWE/agentic/context-engineering/context-rot-chroma-research](/knowledge/SWE/agentic/context-engineering/context-rot-chroma-research.md) | reference |  |
+| `sb:784985` | [knowledge/SWE/agentic/context-engineering/conversation-tree-architecture](/knowledge/SWE/agentic/context-engineering/conversation-tree-architecture.md) | reference |  |
+| `sb:649457` | [knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation](/knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md) | reference |  |
+| `sb:d479e3` | [knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
+| `sb:eeb2bb` | [knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration](/knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
 | `sb:266c5e` | [knowledge/SWE/llm-engineering/kv-cache-compression-history](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `sb:41be22` | [knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
 | `sb:1cac23` | [knowledge/SWE/llm-engineering/vericache-lossless-kv-cache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |

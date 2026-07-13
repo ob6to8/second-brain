@@ -14,7 +14,7 @@ attribution:
 
 A design note on a property every `mix brain.*` task shares — the contract
 compiler, the registry, the verifier, and the GitHub Pages
-[site generator](/knowledge/SWE/agentic-coding/claude-code/cloud-environment-architecture.md):
+[site generator](/knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture.md):
 **the only thing a build needs from the outside world is an Elixir/OTP runtime.**
 Once `mix` exists on the machine, nothing the tooling does reaches the network.
 Cut the cable after `elixir` is installed and every task still succeeds. This note
@@ -86,7 +86,7 @@ run in a sandbox whose **network-access level is chosen when the environment is
 created** — and "no network" or a tight allowlist is a legitimate, common choice.
 Containers are ephemeral and provisioned from a **filesystem snapshot**, and
 user-level settings don't carry into the cloud (see
-[Claude Code cloud environment architecture](/knowledge/SWE/agentic-coding/claude-code/cloud-environment-architecture.md)).
+[Claude Code cloud environment architecture](/knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture.md)).
 Chain those facts and the requirement follows:
 
 1. **A fresh, sandboxed agent may have no outbound network at all.** If any

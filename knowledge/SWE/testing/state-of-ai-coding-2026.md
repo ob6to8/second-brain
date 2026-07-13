@@ -5,7 +5,7 @@ title: "State of AI Coding 2026 (New Relic) — the trust-vs-reliability gap"
 description: A survey of 200 US technology leaders finding AI now writes most weekly code and is trusted enough to ship without line-by-line review (62%), even as it drives measurable production-incident spikes — the data case for testing features/behavior over reading every line.
 resource: https://newrelic.com/blog/ai/state-of-ai-coding-2026
 provenance: "Distilled from New Relic's State of AI Coding 2026 (Jim Young; research by Hanover Research), fetched 2026-07-11"
-tags: [testing, ai-generated-code, verification, agentic-coding, survey, reliability]
+tags: [testing, ai-generated-code, verification, agentic, survey, reliability]
 timestamp: 2026-07-11
 attribution:
   when: 2026-07-11T17:29:20+00:00

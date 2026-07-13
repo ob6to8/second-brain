@@ -26,4 +26,4 @@ reading files one by one. It is the supply-side structure that tools like GitNex
 Codebase-Memory precompute (via [Tree-sitter](/beliefs/glossary/tree-sitter.md)) and serve over
 [MCP](/beliefs/glossary/model-context-protocol.md).
 
-*Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [Codebase-Memory](/knowledge/SWE/agentic-coding/code-context/codebase-memory-mcp.md), [GitNexus](/knowledge/SWE/agentic-coding/code-context/gitnexus.md)
+*Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [Codebase-Memory](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md), [GitNexus](/knowledge/SWE/agentic/code-context/gitnexus.md)

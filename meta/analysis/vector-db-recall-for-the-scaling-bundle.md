@@ -136,10 +136,10 @@ correct and untouched; only the "no signal yet" timing call was wrong.
 
 ## Relation to other concepts
 
-- [Context rot (Chroma)](/knowledge/SWE/agentic-coding/context-engineering/context-rot-chroma-research.md)
+- [Context rot (Chroma)](/knowledge/SWE/agentic/context-engineering/context-rot-chroma-research.md)
   — the concept the "lost in the middle" / "long context degradation" queries fail
   to find, and the capture that seeded this whole question.
-- [Conversation Tree Architecture](/knowledge/SWE/agentic-coding/context-engineering/conversation-tree-architecture.md)
+- [Conversation Tree Architecture](/knowledge/SWE/agentic/context-engineering/conversation-tree-architecture.md)
   — the "poisoning" vs "pollution" miss.
 - [tree-is-the-taxonomy](/meta/policy/tree-is-the-taxonomy.md) — why recall tooling
   never replaces the hand-curated tree.

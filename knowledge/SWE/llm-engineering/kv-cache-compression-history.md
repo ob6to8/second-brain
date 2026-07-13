@@ -44,8 +44,8 @@ mostly been solved with maths, not silicon."*
   replace most attention layers with a fixed-size per-layer state, enabling
   million-token context windows.
 
-See also [GitNexus](/knowledge/SWE/agentic-coding/code-context/gitnexus.md) and
-[effective context engineering for AI agents](/knowledge/SWE/agentic-coding/agentic-loop/effective-context-engineering-for-agents.md)
+See also [GitNexus](/knowledge/SWE/agentic/code-context/gitnexus.md) and
+[effective context engineering for AI agents](/knowledge/SWE/agentic/agentic-loop/effective-context-engineering-for-agents.md)
 for the agent-side consequences of what a model can hold in context.
 
 # Citations
