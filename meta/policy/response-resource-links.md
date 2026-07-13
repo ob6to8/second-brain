@@ -16,14 +16,18 @@ link to that concept's page on the **deployed Pages site**, not as a bundle-abso
 in chat; the live URL is a click away.
 
 - **The site.** The bundle is published to GitHub Pages at
-  **`https://ob6to8.github.io/second-brain/`** (`mix brain.site` → `pages.yml`, one
-  page per concept and per `index.md`).
+  **`{{site_base_url}}`** (`mix brain.site` → `pages.yml`, one page per concept and
+  per `index.md`). That base URL lives in config
+  (`config/config.exs` → `SecondBrain.SiteConfig.base_url/0`); it is the single
+  source of truth, and this contract's copy of it is compiled in from that config —
+  a deploy move (e.g. a custom domain) is one config edit, not a doc rewrite.
 - **The mapping.** Take the resource's bundle path and swap the base and extension:
-  bundle path `P.md` → `https://ob6to8.github.io/second-brain/P.html`. So
+  bundle path `P.md` → `{{site_base_url}}P.html`. So
   `/knowledge/knowledge-management/open-knowledge-format.md` is cited as
-  `https://ob6to8.github.io/second-brain/knowledge/knowledge-management/open-knowledge-format.html`,
+  `{{site_base_url}}knowledge/knowledge-management/open-knowledge-format.html`,
   and a directory's `index.md` as `…/<dir>/index.html`. This covers governance docs
-  too (`meta/…`), which are rendered as well.
+  too (`meta/…`), which are rendered as well. `mix brain.url <path>` prints the
+  mapped URL for a bundle path — the mechanical way to get it right.
 - **Not rendered → no live URL.** Resources under directories the site excludes
   (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page; cite those by repo path
   (or link the file on GitHub) rather than fabricating a Pages URL.
