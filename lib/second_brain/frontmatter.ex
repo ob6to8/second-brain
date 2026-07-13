@@ -91,10 +91,11 @@ defmodule SecondBrain.Frontmatter do
   defp put_nested(acc, open, trimmed) do
     case String.split(trimmed, ":", parts: 2) do
       [key, raw] ->
-        nested = case acc[open] do
-          %{} = map -> map
-          _ -> %{}
-        end
+        nested =
+          case acc[open] do
+            %{} = map -> map
+            _ -> %{}
+          end
 
         Map.put(acc, open, Map.put(nested, String.trim(key), coerce(String.trim(raw))))
 

@@ -9,6 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator-commissioned spec session"
   why: "operator commissioned a spec for an attribution property recording each doc's ingestion event"
+  from: [/meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md]
 tags: [meta, plan, frontmatter, attribution, provenance, intake, auto-intake, schema]
 timestamp: 2026-07-13
 ---

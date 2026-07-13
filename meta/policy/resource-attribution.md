@@ -10,7 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, attribution-plan execution (build step 1)"
   why: "compiles the ratified attribution plan into an enforceable contract rule"
-  from: [/meta/plans/resource-attribution-property.md]
+  from: [/meta/plans/resource-attribution-property.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md]
 tags: [meta, governance, attribution, frontmatter, provenance, intake, ingestion]
 timestamp: 2026-07-13
 ---

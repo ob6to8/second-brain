@@ -15,10 +15,13 @@ system works.
 - [agent memory](/beliefs/glossary/agent-memory.md) — how an agent persists knowledge beyond its context window (short-term/long-term/procedural/working); files to vector DBs
 - [agent time horizon](/beliefs/glossary/agent-time-horizon.md) — the human-time task length an agent completes at a fixed success rate (e.g. 50% horizon); doubles every few months
 - [analysis (type)](/beliefs/glossary/analysis-type.md) — controlled type: a reasoned point-in-time judgment on a question, with findings + recommendation
+- [append-only](/beliefs/glossary/append-only.md) — a structure that admits new entries but never edits or removes existing ones, so its history is immutable even as it grows; the carve-out that lets governance `attribution.from` accrete
 - [approval gate](/beliefs/glossary/approval-gate.md) — a control blocking a tool/MCP action until approval resolves; environment-wide if it blocks every session
 - [approximate nearest neighbor (ANN)](/beliefs/glossary/approximate-nearest-neighbor.md) — index class trading exactness for speed on nearest-vector queries; worth it only at large corpus size
 - [assertion graph](/beliefs/glossary/assertion-graph.md) — the pre-OKF design: atomic claims (primitives + compounds with explicit deps) forming a DAG; remnants under `deprecated/`
+- [attribution](/beliefs/glossary/attribution.md) — the frontmatter map recording a doc's ingestion event (when/channel/agent/why, plus governance `from`); immutable, orthogonal to provenance and timestamp
 - [auto-intake](/beliefs/glossary/auto-intake.md) — the `/research` step that files its featured items into the bundle via `/intake` in the same run, moving the operator from a pre-intake gate to post-intake editorial work
+- [backfill](/beliefs/glossary/backfill.md) — retroactively populating a new field for records that predate it, deriving values from history rather than guessing; how attribution reached the pre-policy corpus
 - [backpressure](/beliefs/glossary/backpressure.md) — flow control where a slower downstream stage pushes back on producers (bounded queues, pool limits) so overload degrades gracefully
 - [BEAM](/beliefs/glossary/beam.md) — the Erlang/Elixir VM: lightweight heap-isolated processes, message passing, supervision — built for long-running concurrent services
 - [belief network](/beliefs/glossary/belief-network.md) — a probabilistic graphical model (a.k.a. Bayesian network): a DAG of stochastic variables, each conditioned on its parents; the "belief" in *deep belief network*

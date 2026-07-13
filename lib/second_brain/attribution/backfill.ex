@@ -135,7 +135,8 @@ defmodule SecondBrain.Attribution.Backfill do
     |> Enum.find_value(:error, fn line ->
       with [merge_sha, subject] <- String.split(line, " ", parts: 2),
            [_, pr] <- Regex.run(~r/Merge pull request #(\d+)/, subject),
-           {_, 0} <- System.cmd("git", ["merge-base", "--is-ancestor", commit, "#{merge_sha}^2"], cd: root) do
+           {_, 0} <-
+             System.cmd("git", ["merge-base", "--is-ancestor", commit, "#{merge_sha}^2"], cd: root) do
         {:ok, String.to_integer(pr)}
       else
         _ -> nil
@@ -297,8 +298,7 @@ defmodule SecondBrain.Attribution.Backfill do
   end
 
   defp insert_attribution(content, pairs) do
-    block =
-      "attribution:\n" <> Enum.map_join(pairs, "\n", fn {k, v} -> "  #{k}: #{v}" end)
+    block = "attribution:\n" <> Enum.map_join(pairs, "\n", fn {k, v} -> "  #{k}: #{v}" end)
 
     [head, rest] = String.split(content, "\n---\n", parts: 2)
     head <> "\n" <> block <> "\n---\n" <> rest

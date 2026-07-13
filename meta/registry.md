@@ -18,10 +18,13 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:37a83f` | [beliefs/glossary/agent-memory](/beliefs/glossary/agent-memory.md) | concept | false |
 | `sb:2523b4` | [beliefs/glossary/agent-time-horizon](/beliefs/glossary/agent-time-horizon.md) | concept | false |
 | `sb:73e13b` | [beliefs/glossary/analysis-type](/beliefs/glossary/analysis-type.md) | concept | false |
+| `sb:a74152` | [beliefs/glossary/append-only](/beliefs/glossary/append-only.md) | concept | false |
 | `sb:98ec38` | [beliefs/glossary/approval-gate](/beliefs/glossary/approval-gate.md) | concept | false |
 | `sb:e2377d` | [beliefs/glossary/approximate-nearest-neighbor](/beliefs/glossary/approximate-nearest-neighbor.md) | concept | false |
 | `sb:ac22a3` | [beliefs/glossary/assertion-graph](/beliefs/glossary/assertion-graph.md) | concept | false |
+| `sb:57c7d1` | [beliefs/glossary/attribution](/beliefs/glossary/attribution.md) | concept | false |
 | `sb:f8ae3a` | [beliefs/glossary/auto-intake](/beliefs/glossary/auto-intake.md) | concept | false |
+| `sb:9fc7da` | [beliefs/glossary/backfill](/beliefs/glossary/backfill.md) | concept | false |
 | `sb:6c7e32` | [beliefs/glossary/backpressure](/beliefs/glossary/backpressure.md) | concept | false |
 | `sb:b2dc54` | [beliefs/glossary/beam](/beliefs/glossary/beam.md) | concept | false |
 | `sb:d131c1` | [beliefs/glossary/belief-network](/beliefs/glossary/belief-network.md) | concept | false |

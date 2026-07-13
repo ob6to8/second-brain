@@ -100,7 +100,9 @@ defmodule SecondBrain.Attribution do
             case fm["attribution"] do
               nil ->
                 if presence,
-                  do: ["#{path}: missing `attribution` — every governance doc records its ingestion event"],
+                  do: [
+                    "#{path}: missing `attribution` — every governance doc records its ingestion event"
+                  ],
                   else: []
 
               attribution ->
@@ -125,7 +127,9 @@ defmodule SecondBrain.Attribution do
     case entry.attribution do
       nil ->
         if presence,
-          do: ["#{entry.path}: missing `attribution` — every bundle concept records its ingestion event"],
+          do: [
+            "#{entry.path}: missing `attribution` — every bundle concept records its ingestion event"
+          ],
           else: []
 
       attribution ->
@@ -146,7 +150,9 @@ defmodule SecondBrain.Attribution do
            true <- fm["type"] in @from_expected_types,
            %{} = attribution <- fm["attribution"],
            [] <- List.wrap(attribution["from"]) do
-        ["#{path}: `attribution` lacks `from` — link the thread or doc this #{fm["type"]} was extracted from"]
+        [
+          "#{path}: `attribution` lacks `from` — link the thread or doc this #{fm["type"]} was extracted from"
+        ]
       else
         _ -> []
       end
@@ -227,7 +233,8 @@ defmodule SecondBrain.Attribution do
       from_errors(attribution["from"], path, kind, by_id, root)
   end
 
-  defp when_errors(nil, path), do: ["#{path}: attribution missing `when` (ISO 8601 ingestion instant)"]
+  defp when_errors(nil, path),
+    do: ["#{path}: attribution missing `when` (ISO 8601 ingestion instant)"]
 
   defp when_errors(value, path) do
     value = to_string(value)
@@ -252,23 +259,34 @@ defmodule SecondBrain.Attribution do
   defp agent_errors(agent, path) do
     if is_binary(agent) and String.trim(agent) != "",
       do: [],
-      else: ["#{path}: attribution missing `agent` (the acting pathway, e.g. \"operator via /intake\")"]
+      else: [
+        "#{path}: attribution missing `agent` (the acting pathway, e.g. \"operator via /intake\")"
+      ]
   end
 
   # A reconstructed event may honestly lack a why; anything else must say
   # why it was worth filing.
   defp why_errors(why, channel, path) do
     cond do
-      is_binary(why) and String.trim(why) != "" -> []
-      channel == "backfill" -> []
-      true -> ["#{path}: attribution missing `why` (one sentence; only `channel: backfill` may omit it)"]
+      is_binary(why) and String.trim(why) != "" ->
+        []
+
+      channel == "backfill" ->
+        []
+
+      true ->
+        [
+          "#{path}: attribution missing `why` (one sentence; only `channel: backfill` may omit it)"
+        ]
     end
   end
 
   defp from_errors(nil, _path, _kind, _by_id, _root), do: []
 
   defp from_errors(_from, path, :bundle, _by_id, _root) do
-    ["#{path}: attribution `from` on a bundle concept — the back-link belongs to governance docs only"]
+    [
+      "#{path}: attribution `from` on a bundle concept — the back-link belongs to governance docs only"
+    ]
   end
 
   defp from_errors(from, path, :governance, by_id, root) do
