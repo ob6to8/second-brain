@@ -50,6 +50,7 @@ system works.
 - [constant tutorial mode](/beliefs/glossary/constant-tutorial-mode.md) — the operator's reader state when learning an agent-built system by using it; the audience the plain tier backstops
 - [Content Security Policy](/beliefs/glossary/content-security-policy.md) — a browser-enforced standard restricting which resources a page may load or contact; what makes a Claude artifact a sealed client-side document
 - [contrastive divergence](/beliefs/glossary/contrastive-divergence.md) — a fast approximate training algorithm for restricted Boltzmann machines, using a short Gibbs-sampling run in place of the intractable exact gradient
+- [council round](/beliefs/glossary/council-round.md) — an adversarial, multi-agent review of drafted work run as draft-PR comments through four motions, gated on dispositions, distilled into a curated target
 - [CRLF](/beliefs/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
 - [cron expression](/beliefs/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
 - [credential vault](/beliefs/glossary/credential-vault.md) — holds a secret outside the process that uses it and substitutes it at egress, so untrusted code sees only a placeholder; contains injection/compromise blast radius
@@ -69,7 +70,11 @@ system works.
 - [deterministic spine](/beliefs/glossary/deterministic-spine.md) — the input-determined, mechanical part of a workflow that a conventional test can pin
 - [digest](/beliefs/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
 - [directed acyclic graph (DAG)](/beliefs/glossary/directed-acyclic-graph.md) — a graph of directed edges with no cycles — the shape of dependencies, pipelines, orderings, and cross-linked concept graphs; guarantees a topological order
+- [disposition](/beliefs/glossary/disposition.md) — the single verdict a review finding must receive before a round can converge: agree, refute with evidence, or defer with a destination
+- [distill, don't dump](/beliefs/glossary/distill-dont-dump.md) — the filing rule that a concept captures the knowledge, not the raw noise; originals live in `resource`/Citations
+- [distillation target](/beliefs/glossary/distillation-target.md) — the curated document (plan, ADR, issue) that receives a review round's settled outcome; never a transcript
 - [doctrine](/beliefs/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
+- [draft pull request](/beliefs/glossary/draft-pull-request.md) — a PR opened in draft state: full diff, commentable, explicitly not ready to merge; a council round's chamber
 - [drift class](/beliefs/glossary/drift-class.md) — a category of staleness whose instances share one detection mechanism, so a single detector covers the class
 - [DRY (don't repeat yourself)](/beliefs/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
 - [elaboration (type)](/beliefs/glossary/elaboration-type.md) — controlled type: a persisted expansion of a technical phrase (quoted target, term definitions, plain walkthrough), under `meta/elaborations/`

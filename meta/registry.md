@@ -53,6 +53,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:0bf58a` | [beliefs/glossary/constant-tutorial-mode](/beliefs/glossary/constant-tutorial-mode.md) | concept | false |
 | `sb:37a60d` | [beliefs/glossary/content-security-policy](/beliefs/glossary/content-security-policy.md) | concept | false |
 | `sb:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
+| `sb:b467a5` | [beliefs/glossary/council-round](/beliefs/glossary/council-round.md) | concept | false |
 | `sb:aea1cb` | [beliefs/glossary/credential-vault](/beliefs/glossary/credential-vault.md) | concept | false |
 | `sb:a48aeb` | [beliefs/glossary/crlf](/beliefs/glossary/crlf.md) | concept | false |
 | `sb:04c057` | [beliefs/glossary/cron-expression](/beliefs/glossary/cron-expression.md) | concept | false |
@@ -72,7 +73,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:d18504` | [beliefs/glossary/deterministic-spine](/beliefs/glossary/deterministic-spine.md) | concept | false |
 | `sb:d4fc9d` | [beliefs/glossary/digest](/beliefs/glossary/digest.md) | concept | false |
 | `sb:802d4e` | [beliefs/glossary/directed-acyclic-graph](/beliefs/glossary/directed-acyclic-graph.md) | concept | false |
+| `sb:537412` | [beliefs/glossary/disposition](/beliefs/glossary/disposition.md) | concept | false |
+| `sb:bec37f` | [beliefs/glossary/distill-dont-dump](/beliefs/glossary/distill-dont-dump.md) | concept | false |
+| `sb:04befc` | [beliefs/glossary/distillation-target](/beliefs/glossary/distillation-target.md) | concept | false |
 | `sb:6a9e78` | [beliefs/glossary/doctrine](/beliefs/glossary/doctrine.md) | concept | false |
+| `sb:f5523f` | [beliefs/glossary/draft-pull-request](/beliefs/glossary/draft-pull-request.md) | concept | false |
 | `sb:683301` | [beliefs/glossary/drift-class](/beliefs/glossary/drift-class.md) | concept | false |
 | `sb:9074c1` | [beliefs/glossary/dry](/beliefs/glossary/dry.md) | concept | false |
 | `sb:16e171` | [beliefs/glossary/elaboration-type](/beliefs/glossary/elaboration-type.md) | concept | false |
