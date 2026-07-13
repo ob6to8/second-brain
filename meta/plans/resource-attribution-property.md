@@ -2,7 +2,7 @@
 type: plan
 title: "Attribution: a frontmatter record of the ingestion event"
 description: Add a structured `attribution` frontmatter property to bundle concepts recording when the concept was ingested, through which channel and by whom, and why it was deemed worth filing — an immutable event record, distinct from provenance (content origin) and timestamp (last change).
-status: proposed
+status: accepted
 provenance: "Claude Code session, 2026-07-13 — commissioned by the operator: 'create an attribution property for resources absorbed into the knowledge collection — including when it was ingested, how/who, and why'"
 tags: [meta, plan, frontmatter, attribution, provenance, intake, auto-intake, schema]
 timestamp: 2026-07-13
@@ -78,11 +78,16 @@ the `type` vocabulary):
 
 ### Semantics — the three load-bearing rules
 
-1. **Attribution is an event record, and events don't change: the property is
-   immutable once written**, like `id`. Update-in-place merges never rewrite it —
-   `timestamp` carries "last meaningful change", the commit graph carries the
-   change narrative, and a later merge that absorbs a second source is
-   `provenance`/`# Citations` territory. One concept, one ingestion event.
+1. **Attribution is an event record, and events don't change: the event
+   sub-keys (`when`/`channel`/`agent`/`why`) are immutable once written**, like
+   `id`. Update-in-place merges never rewrite them — `timestamp` carries "last
+   meaningful change", the commit graph carries the change narrative, and a
+   later merge that absorbs a second source is `provenance`/`# Citations`
+   territory. One concept, one ingestion event. The single carve-out is
+   governance `from` (ratified 2026-07-13, forced by lineage derivation):
+   feature lineage accretes — every thread that substantively revises a doc is
+   part of its chain — so **`from` is append-only**: entries are added by later
+   sessions' `/create-pull-request` stamping, never removed or rewritten.
 2. **Attribution is orthogonal to provenance.** The existing fields keep their
    meanings; attribution takes over the ingestion-event duty that `provenance`
    free text has been informally absorbing:
@@ -181,10 +186,11 @@ with git review as the safety net.
   for the dedup gold set — one motion, two artifacts).
 - **`/research` auto-intake step:** `channel: auto-intake`, `why` = the featuring
   reason (category match + reason-tag), which finally lands the digest's
-  rationale *on the concept itself*. The `auto-intake` **tag** keeps being
-  written during a transition window; once the editorial pass queries
-  attribution instead (tooling below), the tag is retired from the skill and
-  policy text.
+  rationale *on the concept itself*. The `auto-intake` **tag** is retired in the
+  same change (ratified: no transition window) — the skill stops writing it, the
+  policy text drops it, and the backfill converts existing tags to
+  `channel: auto-intake`; until the query task ships, the editorial pass greps
+  `channel: auto-intake` instead of the tag.
 - **`/add-to-glossary`:** `channel: glossary`, `why` = which thread/doc surfaced
   the term.
 - **Inline agent filing** (a concept distilled mid-session outside any skill):
@@ -236,12 +242,18 @@ still costs nothing and stays grep-able.
 - **Frontmatter-schema policy:** gains one row (`attribution` | When applicable →
   Mandatory after backfill | sub-key table or a pointer to the new policy).
 - **Flow lineage** ([flow-lineage plan](/meta/plans/flow-lineage-index.md),
-  `done`): the flow docs' `lineage:` block records *feature* lineage
-  (analysis → plan → thread → PR) with its own materializer and `--check` gate.
-  Attribution `from` records *doc* origin — adjacent but not identical. Both
-  stay for now; whether `lineage:` should eventually be derived from the
-  attribution chain (walking `from` across the docs it names) is an open
-  question, not a blocker.
+  `done`): **derives from attribution** (ratified 2026-07-13). The hand-kept
+  `lineage:` block retires; `mix brain.lineage` instead computes each flow's
+  chain by walking `from` transitively from the flow doc (flow → plan →
+  analysis, collecting the threads stamped along the way) plus each thread's
+  `pr:` anchor — and keeps producing exactly what it produces today: the
+  per-doc blockquote and the cross-flow flowchart index, `--check`-gated. Same
+  outputs, one edge source instead of a parallel hand-kept block. This is what
+  forces the append-only `from` carve-out above, and it can only ship after the
+  governance backfill populates `from` across the existing chain — the backfill
+  diff doubles as the migration check that derived lineage reproduces the
+  current hand-kept blocks (any divergence is resolved by fixing `from`, not by
+  keeping two sources).
 - **Elaboration `thread:` field:** subsumed by `attribution.from`. Migration is
   part of the governance backfill; the elaboration policy text and
   `/create-pull-request` skill update in the same change.
@@ -251,34 +263,45 @@ still costs nothing and stays grep-able.
 
 ## Build order
 
-1. **Ratify** this plan; on acceptance write the policy
-   (`meta/policy/resource-attribution.md`, section: composition) and run
+1. **Policy + contract** (plan ratified 2026-07-13): write
+   `meta/policy/resource-attribution.md` (section: composition) and run
    `/render-contract`.
 2. **Verifier shape rules** + ExUnit tests (mirroring the rule-6 pattern from the
    [code-review hardening plan](/meta/plans/code-review-toolchain-hardening.md)).
-3. **Skill updates** (`/intake`, `/research`, `/add-to-glossary`) so every new
-   concept is born attributed.
-4. **Backfill task**, operator-reviewed diff, then flip the verifier presence
-   rule on.
-5. *(Optional)* `mix brain.attribution` query surface; retire the `auto-intake`
-   tag once the editorial pass uses it.
+3. **Skill updates** (`/intake`, `/research`, `/add-to-glossary`,
+   `/create-pull-request` stamping) so every new doc is born attributed; the
+   `auto-intake` tag and the elaboration `thread:` writer retire in this step.
+4. **Backfill task** (bundle + governance, including tag → channel and
+   `thread:` → `from` conversion), operator-reviewed diff, then flip the
+   verifier presence rules to mandatory.
+5. **Lineage derivation:** rewire `mix brain.lineage` to compute chains from
+   `from` + `pr:`, confirm the derived output reproduces the hand-kept blocks,
+   then delete the `lineage:` blocks. Immediately after backfill — it is the
+   first machine consumer of `from` and locks the edge in under the
+   typed-edge rule.
+6. **`mix brain.attribution` query surface** (promoted from optional: with the
+   tag retired, the editorial pass and trust queries read attribution, and the
+   lineage walker's traversal code is already in hand).
 
-## Open questions (for the operator)
+## Ratified decisions (operator, 2026-07-13)
 
-1. **Scope within the bundle:** all bundle concepts (proposed), or only
-   resource-capture types (`reference`/`source`)? *(Governance scope is settled:
-   explicit attribution with `from`, per the 2026-07-13 operator review — see
-   the revision note below.)*
-2. **Presence:** flip to verifier-mandatory after backfill (proposed), or leave
-   permanently recommended-but-optional?
-3. **`agent` granularity:** name the model (as `provenance` sometimes does), the
-   pathway ("Claude Code agent, /research Routine"), or both? Proposed: pathway
-   over model name — the model is already in the commit trailer, and pathway is
-   what trust calibration actually reads.
-4. **Retire the `auto-intake` tag** after the transition window, or keep it
-   indefinitely as a redundant convenience?
-5. **Should flow `lineage:` eventually derive from `attribution.from`**, or
-   remain an independent, feature-scoped mechanism?
+The open questions were put to the operator and all five resolved; this plan
+moved `proposed` → `accepted` on their answers.
+
+1. **Scope within the bundle: all bundle concepts**, not a capture-type
+   carve-out. *(Governance scope was settled the same day: explicit attribution
+   with `from` — see the revision note below.)*
+2. **Presence: verifier-mandatory** once the backfill lands, for both the
+   bundle-concept rule and the governance `from` rule.
+3. **`agent` names the pathway**, not the model — the model is already in the
+   commit trailer; pathway is what trust calibration reads.
+4. **The `auto-intake` tag retires immediately** — no transition window; the
+   backfill converts existing tags to `channel: auto-intake`.
+5. **Flow `lineage:` derives from `attribution.from`** — implemented as soon as
+   its dependency allows, i.e. immediately after the governance backfill (build
+   step 5). Consequences folded into the spec: the append-only `from` carve-out
+   (semantics rule 1) and `mix brain.attribution` promoted from optional to
+   build step 6.
 
 ## Revision note — governance attribution made explicit (2026-07-13)
 
