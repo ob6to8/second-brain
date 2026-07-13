@@ -5,6 +5,7 @@ description: Designed and ratified the three-level documentation plan (plain bac
 provenance: "Claude Code session, 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, documentation, levels, doctrine, models, plans]
 timestamp: 2026-07-13
+pr: 67
 ---
 
 # 2026-07-13-three-level-documentation-plan-and-model-doctrine
