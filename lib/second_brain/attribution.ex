@@ -55,7 +55,7 @@ defmodule SecondBrain.Attribution do
   `%{governance: [...], exempt: [...]}`. Governance docs live under `meta/`;
   exempt files are thread docs, `inbox/` digests, `index.md` listings, and
   generated artifacts (`meta/registry.md`, `meta/preamble.md`,
-  `meta/flows/lineage.md`).
+  `meta/flows/lineage.md`, `meta/dev-history.md`).
   """
   def governance_paths(root \\ File.cwd!()) do
     ["meta/**/*.md", "inbox/**/*.md"]
@@ -71,7 +71,7 @@ defmodule SecondBrain.Attribution do
     Path.basename(rel_path) == "index.md" or
       String.starts_with?(rel_path, "meta/threads/") or
       String.starts_with?(rel_path, "inbox/") or
-      rel_path in ~w(meta/registry.md meta/preamble.md meta/flows/lineage.md)
+      rel_path in ~w(meta/registry.md meta/preamble.md meta/flows/lineage.md meta/dev-history.md)
   end
 
   # --- errors ----------------------------------------------------------------
