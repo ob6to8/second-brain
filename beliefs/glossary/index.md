@@ -94,6 +94,7 @@ system works.
 - [first-order logic (FOL)](/beliefs/glossary/first-order-logic.md) — the standard formal language of objects, predicates, and quantifiers; sound and complete but only semidecidable
 - [first-parent history](/beliefs/glossary/first-parent-history.md) — the `git log --first-parent` traversal that follows only each merge's first parent, reading a PR-driven branch as one entry per landed PR
 - [flow (touch-sequence)](/beliefs/glossary/flow-touch-sequence.md) — a per-workflow touch-sequence doc tracing one canonical run, each step actor-tagged (`meta/flows/`)
+- [force-with-lease](/beliefs/glossary/force-with-lease.md) — a guarded git force-push that overwrites the remote branch only if its tip still matches what you last saw, refusing to clobber unseen work
 - [fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) — a scheduling mode where every trigger firing spawns a clean session, inheriting no prior state
 - [gate suite](/beliefs/glossary/gate-suite.md) — the full set of blocking verification checks a change must pass before landing, run manually, by the pre-commit hook, and in CI; pointer to the gate-suite tutorial
 - [generative model](/beliefs/glossary/generative-model.md) — a model that learns the joint distribution of its data so it can synthesize new samples, as opposed to a discriminative input→label mapping
@@ -158,6 +159,7 @@ system works.
 - [query profile](/beliefs/glossary/query-profile.md) — per-category interest signals derived from the taxonomy tree, used as the `/research` retrieval filter
 - [ratification](/beliefs/glossary/ratification.md) — the operator's explicit approval turning a proposed shape change (directory, type, plan scope) into an adopted one
 - [ReAct](/beliefs/glossary/react.md) — the foundational LLM agent loop: alternate reasoning traces with tool actions whose observations feed back in (pointer to the filed Yao et al. reference)
+- [reachability](/beliefs/glossary/reachability.md) — the git property that a commit is findable by walking parent pointers from some ref; reachable commits survive garbage collection, unreachable ones are pruned
 - [reason tags](/beliefs/glossary/reason-tags.md) — the `recent`/`impactful`/`influential`/`groundbreaking`/`buzz` vocabulary marking why a `/research` item surfaced
 - [recall](/beliefs/glossary/recall.md) — the fraction of relevant items a search surfaces; low recall means existing material is missed
 - [reducer](/beliefs/glossary/reducer.md) — a pure `(state, action) → new_state` fold (Redux/Elm); total, unit-testable without its environment, replayable from an action log; effectful variants declare side effects as data
