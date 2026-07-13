@@ -296,3 +296,9 @@ Stop hook feedback:
 ## Assistant
 
 The hook wants uncommitted work saved — that's a mechanical safety check, not a request to open a PR. I'll persist the session properly first (capture the new exchange, since a ratified plan is exactly the kind of decision this repo's policy says must survive the session), then commit and push to the branch, without opening a PR since that wasn't asked for.
+
+Committed (`2aabfee`) and pushed to `claude/council-review-secondbrain-oq5e8o` — no PR opened, since only the commit was requested.
+
+What shipped: the plan (`meta/plans/council-skill.md`, `status: accepted`, execution deferred), the analysis's "Ratified" pointer, the plans index entry, and a capture of everything since PR #72 merged — the main-reconciliation, the merge itself, and this plan-authoring turn, folded into the thread doc's routing ledger (evaluation strand now `closed`, routed to the plan) and threads index. All gates green (contract, registry, verify, route_tags, lineage, 156 tests).
+
+The branch is pushed but has no open PR — say the word (or run `/create-pull-request`) whenever you want this shipped to `main`.
