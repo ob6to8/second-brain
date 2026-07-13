@@ -5,6 +5,7 @@ description: Evaluated the agent-as-computer analogies (CPU/OS, pure function, i
 provenance: "Claude Code session (Claude Fable 5; one turn Claude Opus 4.8), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, agent-architecture, taxonomy, beliefs, doctrine, second-mind, analysis, plan]
 timestamp: 2026-07-13
+pr: 80
 ---
 
 # 2026-07-13-second-mind-taxonomy-analysis-and-belief-plan
