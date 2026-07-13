@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, collection-view-by-date session"
   why: "operator ratified persisting the date-ordered-collection design and its least-work resolution as a plan"
+  from: [/meta/threads/2026-07-13-collection-view-by-date.md]
 ---
 
 # Plan — collection views by date

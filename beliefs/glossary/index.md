@@ -150,6 +150,7 @@ system works.
 - [supersession](/beliefs/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
 - [synonym expansion](/beliefs/glossary/synonym-expansion.md) — broadening a query with synonyms, jargon variants, and acronym expansions to bridge vocabulary mismatch without embeddings
 - [thread doc](/beliefs/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
+- [timestamp](/beliefs/glossary/timestamp.md) — commonly a recorded date-time; here the frontmatter field for last *meaningful* change — the semantic modified-date beside `attribution.when` (created) and git dates (mechanical)
 - [todo (type)](/beliefs/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`
 - [tree is the taxonomy](/beliefs/glossary/tree-is-the-taxonomy.md) — the directory tree, surfaced via `index.md` files (progressive disclosure), *is* the canonical taxonomy
 - [Tree-sitter](/beliefs/glossary/tree-sitter.md) — incremental multi-language parser producing concrete syntax trees; the parsing layer under code knowledge graphs

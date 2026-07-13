@@ -21,6 +21,8 @@ attribution:
 
 It is an **event** record, so it does not change: the event sub-keys are write-once, and the governance `from` is [append-only](/beliefs/glossary/append-only.md) (feature lineage accretes as later sessions revise a doc). This is what distinguishes it from the three neighbouring fields it is deliberately orthogonal to — [`resource`](/beliefs/glossary/single-source-of-truth.md) (*what asset*), [`provenance`](/beliefs/glossary/provenance.md) (*where the content came from*, possibly predating the brain), and `timestamp` (*when it last changed*). It is not a competing change-log either: the commit graph stays the single change narrative, and attribution is the one in-band summary of the ingestion commit that renames, merges, and portable-bundle consumption otherwise make hard to recover. Enforced by `mix brain.verify` (shape, `from` resolution, exemption placement, presence) and defined by the [resource-attribution policy](/meta/policy/resource-attribution.md).
 
-*Seen in:* [2026-07-13 resource-attribution property thread](/meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md)
+Because `when` is the ingestion instant, it doubles as the brain's **created-date** signal — the counterpart of [`timestamp`](/beliefs/glossary/timestamp.md)'s semantic modified-date (it breaks same-day ties when the governance indexes order entries by recency; see the [collection-view-by-date plan](/meta/plans/collection-view-by-date.md)).
+
+*Seen in:* [2026-07-13 resource-attribution property thread](/meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md), [2026-07-13 collection-view-by-date thread](/meta/threads/2026-07-13-collection-view-by-date.md)
 
 *See also:* [provenance](/beliefs/glossary/provenance.md), [append-only](/beliefs/glossary/append-only.md), [lineage](/beliefs/glossary/lineage.md), [backfill](/beliefs/glossary/backfill.md)
