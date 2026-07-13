@@ -4,10 +4,11 @@ title: Intake — capture pasted material into a filed concept
 description: The end-to-end flow for turning pasted material (text, links, notes) into one or more distilled, filed OKF concepts — the file-by-file touch-sequence of an /intake run, the judgment/spine split, actor boundaries, the identity gate suite, and the scenario test that pins the deterministic spine.
 tags: [meta, governance, intake, filing, identity, flow, workflow]
 timestamp: 2026-07-10
-lineage:
-  plan: /meta/plans/flows-genre-and-scenario-testing.md
-  thread: /meta/threads/2026-07-09-flows-genre-and-scenario-testing.md
-  pr: 27
+attribution:
+  when: 2026-07-09T22:37:14+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/plans/flows-genre-and-scenario-testing.md, /meta/threads/2026-07-09-flows-genre-and-scenario-testing.md]
 ---
 
 # Intake — capture pasted material into a filed concept

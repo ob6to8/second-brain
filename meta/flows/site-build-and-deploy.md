@@ -4,11 +4,11 @@ title: Site build & Pages deploy — render the bundle to the live site
 description: The end-to-end flow from a push on main to the live GitHub Pages site — mix brain.site renders every page from the bundle, the deploy is gated on the same integrity checks CI runs, and the whole render is dependency-free — the touch-sequence, actor boundaries, and the tests that pin the renderer.
 tags: [meta, governance, site, pages, deploy, rendering, flow, workflow]
 timestamp: 2026-07-11
-lineage:
-  thread:
-    - /meta/threads/2026-07-09-github-pages-knowledge-base-site.md
-    - /meta/threads/2026-07-09-live-render-appraisal-and-pages-hardening.md
-  pr: [26, 28]
+attribution:
+  when: 2026-07-11T07:13:22+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-github-pages-knowledge-base-site.md, /meta/threads/2026-07-09-live-render-appraisal-and-pages-hardening.md]
 ---
 
 # Site build & Pages deploy — render the bundle to the live site

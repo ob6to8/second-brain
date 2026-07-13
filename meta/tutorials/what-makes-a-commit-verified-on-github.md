@@ -4,6 +4,10 @@ title: What makes a commit show as "Verified" on GitHub — author, committer, a
 description: A commit carries two identities (author and committer), and GitHub's "Verified" badge is fundamentally about a cryptographic signature, not an email address. This note untangles the two, explains why re-authoring an agent commit to noreply@anthropic.com is what lets this environment's signature attach, and why only unpushed commits may be rewritten.
 tags: [meta, git, github, commits, signing, verified, provenance, workflow]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T07:16:05+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # What makes a commit show as "Verified" on GitHub

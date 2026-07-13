@@ -4,9 +4,11 @@ title: Add to glossary — accrete per-term definition concepts
 description: The end-to-end flow for turning a source's technical vocabulary into per-term concept files under /beliefs/glossary/ — extract, dedup against the brain, define, merge, then ride the same id → registry → verify spine as intake — the touch-sequence, actor boundaries, and where the intake scenario already pins the shared spine.
 tags: [meta, governance, glossary, terminology, filing, flow, workflow]
 timestamp: 2026-07-11
-lineage:
-  thread: /meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md
-  pr: 35
+attribution:
+  when: 2026-07-11T07:13:22+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md]
 ---
 
 # Add to glossary — accrete per-term definition concepts

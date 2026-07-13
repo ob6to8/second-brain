@@ -6,7 +6,13 @@ description: The principle that every piece of knowledge should have a single, a
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, principles, provenance]
+sense: common
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T19:52:12+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # DRY (don't repeat yourself)

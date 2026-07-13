@@ -5,8 +5,14 @@ title: von Neumann architecture
 description: The classic stored-program computer organization — processing unit, control unit, memory, and I/O — which the four-component agent decomposition (model, loop, memory, tools) reproduces.
 provenance: "Agent-distilled glossary definition, 2026-07-13 session"
 verified: false
+sense: common
 tags: [glossary, computer-architecture, agent-architecture, terminology]
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-13T00:00:00Z
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the 2026-07-13 second-mind-taxonomy thread cited in Seen in"
 ---
 
 # von Neumann architecture

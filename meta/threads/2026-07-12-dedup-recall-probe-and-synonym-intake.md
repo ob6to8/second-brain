@@ -5,6 +5,7 @@ description: Built mix brain.dedup_probe (the offline dedup-recall eval, gold se
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, evals, dedup, recall, probe, intake, tooling]
 timestamp: 2026-07-12
+pr: 50
 ---
 
 # 2026-07-12-dedup-recall-probe-and-synonym-intake

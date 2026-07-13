@@ -3,10 +3,15 @@ type: policy
 title: Reserved filenames
 description: index.md is reserved at any directory level and follows a fixed structure; log.md stays reserved for OKF tolerance but this bundle does not keep logs — git history is the change record.
 section: composition
-order: 3
+order: 4
 status: active
 tags: [meta, governance, okf, index, log]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-05T12:30:48+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
 ---
 Reserved filenames (any directory level):
 

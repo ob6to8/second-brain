@@ -30,7 +30,7 @@ defmodule Mix.Tasks.Brain.Verify do
   end
 
   defp report_freshness_warnings do
-    case SecondBrain.Links.check() do
+    case SecondBrain.Links.check() ++ SecondBrain.Attribution.warnings() do
       [] ->
         :ok
 

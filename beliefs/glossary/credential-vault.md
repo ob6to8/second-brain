@@ -6,7 +6,13 @@ description: A store that holds a secret outside the process that uses it and su
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, security, credentials, secrets, egress, agents]
+sense: common
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T15:12:24+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # credential vault

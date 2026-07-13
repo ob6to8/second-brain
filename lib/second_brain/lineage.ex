@@ -3,20 +3,16 @@ defmodule SecondBrain.Lineage do
   Flow-doc provenance: the `analysis → plan → thread → PR → flow` chain that
   produced each `meta/flows/*.md` doc.
 
-  The **canonical source** is a `lineage:` frontmatter block on each flow doc:
+  The **canonical source** is the flow doc's `attribution.from` back-links
+  (see the resource-attribution policy) — there is no hand-kept lineage data.
+  Each ref is classified by its governance path (`/meta/analysis/` →
+  analysis, `/meta/plans/` → plan, `/meta/threads/` → thread), and the PR hop
+  is resolved through each thread doc's `pr:` anchor — the same anchors the
+  session-capture policy already maintains. A flow built across several
+  sessions simply carries several thread refs (appended by
+  `/create-pull-request`'s stamping step, `from` being append-only).
 
-      lineage:
-        analysis: /meta/analysis/<slug>.md   # optional, scalar or list
-        plan:     /meta/plans/<slug>.md       # optional, scalar or list
-        thread:   /meta/threads/<slug>.md      # scalar or list
-        pr:       50                          # scalar or list of integers
-
-  Every field is optional and takes a **scalar or a list** (a flow built across
-  several sessions carries several threads/PRs). Governance docs
-  (`analysis`/`plan`/`thread`) have no `sb:` id, so they are referenced by path;
-  `pr` is an integer.
-
-  From those blocks this module derives two never-hand-kept views, on the same
+  From those edges this module derives two never-hand-kept views, on the same
   generated-artifact discipline as `CLAUDE.md` and `meta/registry.md`:
 
     * a per-doc **blockquote** materialized between `lineage:start`/`lineage:end`
@@ -24,9 +20,11 @@ defmodule SecondBrain.Lineage do
     * a cross-flow **flowchart index** at `meta/flows/lineage.md` (Mermaid graph +
       a dependency-free table), written by `write_index/1`.
 
-  `check/1` re-derives both and reports staleness for the `--check` CI gate. The
-  bundle's own `Frontmatter` parser is flat (no nested maps), so the `lineage:`
-  block is parsed here directly from the raw frontmatter lines.
+  `check/1` re-derives both and reports staleness for the `--check` CI gate.
+
+  (`parse_lineage_block/1` remains only as the migration reader the
+  attribution backfill used to convert the retired hand-kept `lineage:`
+  blocks into `attribution.from` refs.)
   """
 
   alias SecondBrain.Frontmatter
@@ -72,11 +70,12 @@ defmodule SecondBrain.Lineage do
   defp load_flow(rel_path, root) do
     content = root |> Path.join(rel_path) |> File.read!()
     fm = content |> Frontmatter.parse!() |> Map.fetch!(:frontmatter)
-    lineage = parse_lineage_block(content)
+    from = attribution_from(fm)
 
-    analysis = Map.get(lineage, :analysis, [])
-    plan = Map.get(lineage, :plan, [])
-    thread = Map.get(lineage, :thread, [])
+    analysis = Enum.filter(from, &String.starts_with?(&1, "/meta/analysis/"))
+    plan = Enum.filter(from, &String.starts_with?(&1, "/meta/plans/"))
+    thread = Enum.filter(from, &String.starts_with?(&1, "/meta/threads/"))
+    pr = thread |> Enum.flat_map(&thread_prs(root, &1)) |> Enum.uniq()
 
     labels =
       [rel_path | analysis ++ plan ++ thread]
@@ -90,10 +89,30 @@ defmodule SecondBrain.Lineage do
       analysis: analysis,
       plan: plan,
       thread: thread,
-      pr: Map.get(lineage, :pr, []),
+      pr: pr,
       labels: labels
     }
   end
+
+  defp attribution_from(fm) do
+    case fm["attribution"] do
+      %{"from" => from} -> from |> List.wrap() |> Enum.filter(&is_binary/1)
+      _ -> []
+    end
+  end
+
+  # The PR hop: each thread doc records the PR that landed it (`pr:` — the
+  # thread's durable anchor per the session-capture policy).
+  defp thread_prs(root, "/" <> rel) do
+    with {:ok, content} <- File.read(Path.join(root, rel)),
+         {:ok, %{frontmatter: %{"pr" => pr}}} <- Frontmatter.parse(content) do
+      pr |> List.wrap() |> Enum.filter(&is_integer/1)
+    else
+      _ -> []
+    end
+  end
+
+  defp thread_prs(_root, _ref), do: []
 
   # Human label for a referenced doc: its frontmatter title, else the basename.
   defp title_of(root, path) do
@@ -300,7 +319,7 @@ defmodule SecondBrain.Lineage do
     """
     <!--
       GENERATED FILE — do not edit by hand.
-      Source of truth: the `lineage:` frontmatter of each meta/flows/*.md doc.
+      Source of truth: the `attribution.from` refs of each meta/flows/*.md doc + thread `pr:` anchors.
       Regenerate:      mix brain.lineage
       Verify (CI):     mix brain.lineage --check
     -->
@@ -310,7 +329,9 @@ defmodule SecondBrain.Lineage do
     Every flow doc records the arc that produced it — the originating `analysis`
     (a problem identified against evidence), the `plan` that designed it, the
     `thread` (the captured session that built it), and the merging PR. This page is
-    the cross-flow view, derived from every doc's `lineage:` frontmatter block. See
+    the cross-flow view, derived from every doc's `attribution.from` back-links
+    (classified by governance path) plus each thread's `pr:` anchor — see the
+    [resource-attribution policy](/meta/policy/resource-attribution.md). See
     the [flows index](/meta/flows/index.md) for the flows themselves and the
     [flow-lineage plan](/meta/plans/flow-lineage-index.md) for the design.
 

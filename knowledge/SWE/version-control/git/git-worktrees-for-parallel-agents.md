@@ -5,8 +5,12 @@ title: "Git worktrees for parallel AI agents"
 description: A git worktree is a linked working directory sharing one .git object store but with its own HEAD, index, and file tree — the primitive that lets N coding agents each edit an isolated branch, pushing conflicts to visible merge time instead of silent overwrites.
 provenance: "Distilled from practitioner guides (Augment Code, others) and git documentation, chat thread 2026-07-11"
 verified: false
-tags: [git, worktree, parallel-agents, agentic-coding, branching, isolation]
+tags: [git, worktree, parallel-agents, agentic, branching, isolation]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T17:29:20+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Git worktrees for parallel AI agents

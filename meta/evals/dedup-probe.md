@@ -5,6 +5,11 @@ description: The id-keyed gold set that mix brain.dedup_probe scores the bundle'
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12 — seeded from the 14 probes of the vector-DB recall analysis, re-adjudicated to sb: ids per the dedup-recall-probe plan"
 tags: [meta, eval, dedup, recall, probe, intake, gold-set, search]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T09:50:13+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md]
 ---
 
 # Dedup recall probe — gold set

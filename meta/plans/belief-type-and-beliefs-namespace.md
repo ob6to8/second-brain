@@ -4,6 +4,12 @@ title: "The belief layer: a `belief` type and a real /beliefs/ namespace"
 description: Introduce a belief type for operator-held, value-laden decision priors — epistemic-teleological statements outside the verification ladder, citable by plans and analyses the way doctrine is — and make /beliefs/ its actual home; keep doctrine governance-scoped, extend the verifier to exclude belief from verified, and add the epistemic/teleological filing test to the vocabulary.
 status: proposed
 provenance: "Claude Code session (2026-07-13) — actionable residue of the second-mind taxonomy analysis, from an operator dialogue over a shared ChatGPT conversation seeded with this bundle's doctrine definition"
+attribution:
+  when: 2026-07-13T00:00:00Z
+  channel: agent-authored
+  agent: "Claude Code agent, second-mind taxonomy session"
+  why: "persists the belief-type design per the persist-plans policy, so the ratification decision is made against a concrete shape"
+  from: [/meta/analysis/second-mind-taxonomy-and-the-belief-gap.md, /meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md]
 tags: [meta, plan, beliefs, doctrine, type-vocabulary, taxonomy, second-mind]
 timestamp: 2026-07-13
 ---

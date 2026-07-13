@@ -6,7 +6,13 @@ description: The stored key and value tensors for already-processed tokens in tr
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, kv-cache, llm-inference, transformers, attention]
+sense: common
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T18:01:58+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # KV cache

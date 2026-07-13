@@ -6,7 +6,13 @@ description: A category of staleness whose instances share one detection mechani
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, enforcement, corpus-health, tooling]
+sense: repo
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T09:43:37+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # drift class

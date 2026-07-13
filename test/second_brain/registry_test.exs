@@ -5,11 +5,18 @@ defmodule SecondBrain.RegistryTest do
 
   @moduletag :tmp_dir
 
+  # Every fixture carries a valid attribution block — presence is
+  # verifier-enforced (rule 8), and these tests exercise the *other* rules.
   defp write_concept(dir, rel_path, fields, body \\ "Body.") do
     path = Path.join(dir, rel_path)
     File.mkdir_p!(Path.dirname(path))
     fm = Enum.map_join(fields, "\n", fn {k, v} -> "#{k}: #{v}" end)
-    File.write!(path, "---\n#{fm}\n---\n#{body}\n")
+
+    attribution =
+      "attribution:\n  when: 2026-07-13T10:00:00Z\n  channel: intake\n" <>
+        "  agent: \"operator via /intake\"\n  why: \"test fixture\""
+
+    File.write!(path, "---\n#{fm}\n#{attribution}\n---\n#{body}\n")
   end
 
   test "scan finds bundle concepts, skips reserved files and excluded dirs", %{tmp_dir: dir} do
@@ -104,6 +111,48 @@ defmodule SecondBrain.RegistryTest do
       assert joined =~ "verified_by sb:ffffff does not resolve"
       assert joined =~ "verified-capture.md: verified: true but stores a link"
       assert joined =~ "ungrounded.md: verified: true but no evidence"
+    end
+
+    test "passes glossary terms with a valid sense; ignores `sense` elsewhere", %{tmp_dir: dir} do
+      write_concept(dir, "beliefs/glossary/bm25.md",
+        type: "concept",
+        id: "sb:aaaaaa",
+        sense: "common"
+      )
+
+      write_concept(dir, "beliefs/glossary/route-tag.md",
+        type: "concept",
+        id: "sb:bbbbbb",
+        sense: "repo"
+      )
+
+      write_concept(dir, "beliefs/glossary/materialize.md",
+        type: "concept",
+        id: "sb:cccccc",
+        sense: "dual"
+      )
+
+      # Outside the glossary the field is neither required nor policed.
+      write_concept(dir, "elsewhere.md", type: "note", id: "sb:dddddd")
+      write_concept(dir, "graduated.md", type: "concept", id: "sb:eeeeee", sense: "dual")
+
+      assert Verifier.run(dir) == :ok
+    end
+
+    test "flags a glossary term with a missing or invalid sense", %{tmp_dir: dir} do
+      write_concept(dir, "beliefs/glossary/unclassified.md", type: "concept", id: "sb:aaaaaa")
+
+      write_concept(dir, "beliefs/glossary/mislabeled.md",
+        type: "concept",
+        id: "sb:bbbbbb",
+        sense: "local"
+      )
+
+      assert {:error, errors} = Verifier.run(dir)
+      joined = Enum.join(errors, "\n")
+
+      assert joined =~ "unclassified.md: missing `sense`"
+      assert joined =~ "mislabeled.md: invalid sense \"local\""
     end
 
     test "flags `verified` (either value) on a non-statement type", %{tmp_dir: dir} do

@@ -6,6 +6,11 @@ status: done
 provenance: "Claude Code session, 2026-07-11 — operator-ratified after the stale-log incident in the deprecated-triage/glossary session; this conversation is the design review"
 tags: [meta, plan, logs, provenance, dry, governance]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T19:25:37+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md]
 ---
 
 # Retire the hand-kept chronological logs

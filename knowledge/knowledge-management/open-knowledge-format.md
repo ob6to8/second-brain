@@ -7,6 +7,10 @@ resource: https://github.com/GoogleCloudPlatform/knowledge-catalog
 provenance: "Distilled from the OKF specification (GoogleCloudPlatform/knowledge-catalog) and this bundle's own usage of it"
 tags: [knowledge-management, okf, knowledge-format, markdown, yaml, frontmatter, second-brain]
 timestamp: 2026-07-08
+attribution:
+  when: 2026-07-08T21:17:04+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Open Knowledge Format (OKF)

@@ -6,7 +6,13 @@ description: A retrieval metric measuring whether the correct target appears wit
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, evaluation]
+sense: common
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T08:41:24+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # recall@k

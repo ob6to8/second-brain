@@ -1,6 +1,6 @@
 <!--
   GENERATED FILE — do not edit by hand.
-  Source of truth: the `lineage:` frontmatter of each meta/flows/*.md doc.
+  Source of truth: the `attribution.from` refs of each meta/flows/*.md doc + thread `pr:` anchors.
   Regenerate:      mix brain.lineage
   Verify (CI):     mix brain.lineage --check
 -->
@@ -10,7 +10,9 @@
 Every flow doc records the arc that produced it — the originating `analysis`
 (a problem identified against evidence), the `plan` that designed it, the
 `thread` (the captured session that built it), and the merging PR. This page is
-the cross-flow view, derived from every doc's `lineage:` frontmatter block. See
+the cross-flow view, derived from every doc's `attribution.from` back-links
+(classified by governance path) plus each thread's `pr:` anchor — see the
+[resource-attribution policy](/meta/policy/resource-attribution.md). See
 the [flows index](/meta/flows/index.md) for the flows themselves and the
 [flow-lineage plan](/meta/plans/flow-lineage-index.md) for the design.
 

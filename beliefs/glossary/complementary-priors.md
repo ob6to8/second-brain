@@ -6,7 +6,13 @@ description: A construction, introduced by Hinton, Osindero & Teh, that cancels 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, deep-learning, machine-learning, graphical-models]
+sense: common
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T16:43:47+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # complementary priors

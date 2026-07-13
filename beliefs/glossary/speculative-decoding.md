@@ -6,7 +6,13 @@ description: An LLM inference technique that proposes tokens with a cheap draft 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, llm-inference, speculative-decoding, throughput, draft-verify]
+sense: common
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T18:01:58+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # speculative decoding

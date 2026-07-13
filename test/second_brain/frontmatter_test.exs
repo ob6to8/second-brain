@@ -41,4 +41,39 @@ defmodule SecondBrain.FrontmatterTest do
   test "errors when frontmatter is missing" do
     assert {:error, :missing_frontmatter} = Frontmatter.parse("no frontmatter here\n")
   end
+
+  test "parses a nested block map (one level) with scalars and inline lists" do
+    doc = """
+    ---
+    type: reference
+    attribution:
+      when: 2026-07-13T14:02:00Z
+      channel: auto-intake
+      agent: "Claude Code agent, /research daily Routine"
+      why: "featured in the digest; reason-tag: impactful"
+      from: [/meta/threads/2026-07-13-example.md, sb:4c9e1f]
+    timestamp: 2026-07-13
+    ---
+    body
+    """
+
+    assert {:ok, %{frontmatter: fm}} = Frontmatter.parse(doc)
+    assert fm["type"] == "reference"
+    assert fm["timestamp"] == "2026-07-13"
+
+    assert fm["attribution"] == %{
+             "when" => "2026-07-13T14:02:00Z",
+             "channel" => "auto-intake",
+             "agent" => "Claude Code agent, /research daily Routine",
+             "why" => "featured in the digest; reason-tag: impactful",
+             "from" => ["/meta/threads/2026-07-13-example.md", "sb:4c9e1f"]
+           }
+  end
+
+  test "a key with no value and no indented children stays an empty scalar" do
+    doc = "---\ntype: note\nresource:\ntitle: X\n---\nbody\n"
+    assert {:ok, %{frontmatter: fm}} = Frontmatter.parse(doc)
+    assert fm["resource"] == ""
+    assert fm["title"] == "X"
+  end
 end

@@ -6,7 +6,13 @@ description: An Elixir agent framework (2.x, 2026) that models agents as pure im
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, jido, elixir, agents, multi-agent, beam]
+sense: common
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T09:05:38+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # Jido

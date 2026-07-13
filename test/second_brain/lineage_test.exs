@@ -6,22 +6,35 @@ defmodule SecondBrain.LineageTest do
 
   @moduletag :tmp_dir
 
-  defp write_flow(dir, slug, lineage_block, body \\ "Body prose.") do
+  # Lineage derives from the flow doc's `attribution.from` refs (classified by
+  # governance path) plus each thread doc's `pr:` anchor.
+  defp write_flow(dir, slug, from_refs, body \\ "Body prose.") do
     path = Path.join([dir, "meta", "flows", "#{slug}.md"])
     File.mkdir_p!(Path.dirname(path))
 
-    fm = "---\ntype: note\ntitle: \"Flow #{slug}\"\n" <> lineage_block <> "---\n"
+    attribution =
+      "attribution:\n  when: 2026-07-13T10:00:00Z\n  channel: agent-authored\n" <>
+        "  agent: \"test fixture\"\n  why: \"probe\"\n" <>
+        case from_refs do
+          [] -> ""
+          refs -> "  from: [" <> Enum.join(refs, ", ") <> "]\n"
+        end
+
+    fm = "---\ntype: note\ntitle: \"Flow #{slug}\"\n" <> attribution <> "---\n"
     File.write!(path, fm <> "\n# Flow #{slug}\n\n" <> body <> "\n")
     path
   end
 
-  defp write_doc(dir, rel, title) do
+  defp write_doc(dir, rel, title, extra \\ "") do
     path = Path.join(dir, rel)
     File.mkdir_p!(Path.dirname(path))
-    File.write!(path, "---\ntype: plan\ntitle: \"#{title}\"\n---\nbody\n")
+    File.write!(path, "---\ntype: plan\ntitle: \"#{title}\"\n#{extra}---\nbody\n")
   end
 
-  describe "parse_lineage_block/1" do
+  defp write_thread(dir, rel, title, pr),
+    do: write_doc(dir, rel, title, "pr: #{pr}\n")
+
+  describe "parse_lineage_block/1 (migration reader)" do
     test "reads scalars, block lists, inline lists, and integers" do
       content = """
       ---
@@ -54,18 +67,16 @@ defmodule SecondBrain.LineageTest do
     setup %{tmp_dir: dir} do
       write_doc(dir, "meta/analysis/probe.md", "The Probe Analysis")
       write_doc(dir, "meta/plans/probe.md", "The Probe Plan")
-      write_doc(dir, "meta/threads/2026-07-12-probe.md", "Probe Session")
+      write_thread(dir, "meta/threads/2026-07-12-probe.md", "Probe Session", 50)
       :ok
     end
 
     test "full chain renders every hop with resolved titles", %{tmp_dir: dir} do
-      write_flow(dir, "probe", """
-      lineage:
-        analysis: /meta/analysis/probe.md
-        plan: /meta/plans/probe.md
-        thread: /meta/threads/2026-07-12-probe.md
-        pr: 50
-      """)
+      write_flow(dir, "probe", [
+        "/meta/analysis/probe.md",
+        "/meta/plans/probe.md",
+        "/meta/threads/2026-07-12-probe.md"
+      ])
 
       [flow] = Lineage.scan(dir)
       assert flow.pr == [50]
@@ -77,22 +88,31 @@ defmodule SecondBrain.LineageTest do
     end
 
     test "omitted hops are skipped and the first phrase is capitalized", %{tmp_dir: dir} do
-      write_flow(dir, "probe", """
-      lineage:
-        thread: /meta/threads/2026-07-12-probe.md
-        pr: 46
-      """)
+      write_thread(dir, "meta/threads/2026-07-12-other.md", "Other Session", 46)
+      write_flow(dir, "probe", ["/meta/threads/2026-07-12-other.md"])
 
       [flow] = Lineage.scan(dir)
       q = Lineage.blockquote(flow)
-      assert q =~ "Built in [Probe Session]"
+      assert q =~ "Built in [Other Session]"
       assert q =~ "merged in PR #46"
       refute q =~ "designed in"
       refute q =~ "identified in"
     end
 
-    test "a flow with no lineage has no blockquote", %{tmp_dir: dir} do
-      write_flow(dir, "bare", "")
+    test "two threads aggregate both PRs in order", %{tmp_dir: dir} do
+      write_thread(dir, "meta/threads/2026-07-13-second.md", "Second Session", 61)
+
+      write_flow(dir, "probe", [
+        "/meta/threads/2026-07-12-probe.md",
+        "/meta/threads/2026-07-13-second.md"
+      ])
+
+      [flow] = Lineage.scan(dir)
+      assert flow.pr == [50, 61]
+    end
+
+    test "a flow with no from refs has no blockquote", %{tmp_dir: dir} do
+      write_flow(dir, "bare", [])
       [flow] = Lineage.scan(dir)
       refute Flow.has_lineage?(flow)
       assert Lineage.blockquote(flow) == nil
@@ -101,14 +121,8 @@ defmodule SecondBrain.LineageTest do
 
   describe "materialize/2" do
     test "inserts after the H1, then replaces in place (idempotent)", %{tmp_dir: dir} do
-      write_doc(dir, "meta/threads/2026-07-12-probe.md", "Probe Session")
-
-      path =
-        write_flow(dir, "probe", """
-        lineage:
-          thread: /meta/threads/2026-07-12-probe.md
-          pr: 7
-        """)
+      write_thread(dir, "meta/threads/2026-07-12-probe.md", "Probe Session", 7)
+      path = write_flow(dir, "probe", ["/meta/threads/2026-07-12-probe.md"])
 
       [flow] = Lineage.scan(dir)
       content = File.read!(path)
@@ -128,16 +142,14 @@ defmodule SecondBrain.LineageTest do
   describe "write/1 + check/1 + render_index/1" do
     setup %{tmp_dir: dir} do
       write_doc(dir, "meta/plans/probe.md", "The Probe Plan")
-      write_doc(dir, "meta/threads/2026-07-12-probe.md", "Probe Session")
+      write_thread(dir, "meta/threads/2026-07-12-probe.md", "Probe Session", 50)
 
-      write_flow(dir, "probe", """
-      lineage:
-        plan: /meta/plans/probe.md
-        thread: /meta/threads/2026-07-12-probe.md
-        pr: 50
-      """)
+      write_flow(dir, "probe", [
+        "/meta/plans/probe.md",
+        "/meta/threads/2026-07-12-probe.md"
+      ])
 
-      write_flow(dir, "bare", "")
+      write_flow(dir, "bare", [])
       :ok
     end
 
@@ -151,7 +163,7 @@ defmodule SecondBrain.LineageTest do
       assert idx =~ "[Flow bare](/meta/flows/bare.md)"
     end
 
-    test "write then check is :ok (idempotent), and a frontmatter edit goes stale", %{
+    test "write then check is :ok (idempotent), and an upstream pr: edit goes stale", %{
       tmp_dir: dir
     } do
       assert Lineage.index_output_path() in Lineage.write(dir)
@@ -161,9 +173,9 @@ defmodule SecondBrain.LineageTest do
       assert Lineage.write(dir) == []
       assert Lineage.check(dir) == :ok
 
-      # change a flow's lineage -> its materialized block is now stale
-      probe = Path.join([dir, "meta", "flows", "probe.md"])
-      File.write!(probe, String.replace(File.read!(probe), "pr: 50", "pr: 51"))
+      # change the thread's PR anchor -> the derived views are now stale
+      thread = Path.join([dir, "meta", "threads", "2026-07-12-probe.md"])
+      File.write!(thread, String.replace(File.read!(thread), "pr: 50", "pr: 51"))
       assert {:stale, stale} = Lineage.check(dir)
       assert "meta/flows/probe.md" in stale
     end

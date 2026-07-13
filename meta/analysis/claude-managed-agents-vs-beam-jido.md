@@ -5,6 +5,11 @@ description: A first-principles division of labor for a system in which autonomo
 provenance: "Claude Code session (Claude Fable), 2026-07-12 — operator asked how Anthropic's Claude Managed Agents service compares architecturally to a Jido/BEAM runtime for an agent-operated knowledge system, and where each holds an advantage. CMA facts from the bundled claude-api skill reference (managed-agents docs, beta managed-agents-2026-04-01); Jido facts verified against hex.pm/hexdocs/GitHub the same day"
 tags: [meta, analysis, architecture, managed-agents, anthropic, beam, otp, jido, agents, two-plane, write-governance]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T09:49:27+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md]
 ---
 
 # Managed minds, owned machinery: Claude Managed Agents vs. Jido/BEAM for an agent-operated knowledge system

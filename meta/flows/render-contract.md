@@ -4,9 +4,11 @@ title: Render-contract — compile the operating contract from its policy source
 description: The end-to-end flow for changing a rule of the brain — edit the policy source, recompile CLAUDE.md, and let the drift gate hold source and artifact together — the file-by-file touch-sequence of a /render-contract run, actor boundaries, the gate suite, and the scenario test that pins the spine.
 tags: [meta, governance, policy, contract, compiled-artifact, flow, workflow]
 timestamp: 2026-07-11
-lineage:
-  thread: /meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md
-  pr: 46
+attribution:
+  when: 2026-07-11T19:04:28+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md]
 ---
 
 # Render-contract — compile the operating contract from its policy sources

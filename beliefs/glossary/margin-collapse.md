@@ -6,7 +6,13 @@ description: The AI-industry thesis that frontier labs' very high inference gros
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, ai-industry, economics, pointer]
+sense: common
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T10:25:03+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # margin collapse

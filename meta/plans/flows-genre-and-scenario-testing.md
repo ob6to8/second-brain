@@ -5,6 +5,11 @@ description: Collapse the capture flow's three overlapping prose docs into one m
 status: done
 tags: [meta, governance, flows, scenario-testing, elixir, testing, plan]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T12:10:09+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md]
 ---
 
 # Plan — the `flows` genre + formal scenario testing

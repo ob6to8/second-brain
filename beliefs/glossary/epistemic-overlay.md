@@ -6,7 +6,13 @@ description: A structural layer above a set of knowledge documents that classifi
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, epistemics, composable-beliefs]
+sense: repo
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-11T08:41:24+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # epistemic overlay

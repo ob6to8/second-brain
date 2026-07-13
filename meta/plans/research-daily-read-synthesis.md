@@ -6,6 +6,11 @@ status: done
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-11 — operator proposed the feature after the 2026-07-11 digest; ratified and implemented same session"
 tags: [meta, plan, research, inbox, synthesis, skills]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T17:29:20+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md]
 ---
 
 # The daily read: a cross-domain synthesis lede for /research digests

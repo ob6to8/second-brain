@@ -6,7 +6,13 @@ description: The full set of blocking verification checks a change must pass bef
 provenance: "Agent-distilled glossary definition, pointer to the defining tutorial"
 verified: false
 tags: [glossary, enforcement, ci, tooling]
+sense: repo
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T19:22:43+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # gate suite

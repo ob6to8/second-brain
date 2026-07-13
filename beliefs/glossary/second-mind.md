@@ -5,8 +5,14 @@ title: second mind
 description: An AI layer over a personal knowledge store that reasons with, synthesizes, and acts on the stored material, in contrast to a second brain, whose purpose is storage and retrieval.
 provenance: "Agent-distilled glossary definition, 2026-07-13 session"
 verified: false
+sense: common
 tags: [glossary, knowledge-management, terminology]
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-13T00:00:00Z
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the 2026-07-13 second-mind-taxonomy thread cited in Seen in"
 ---
 
 # second mind

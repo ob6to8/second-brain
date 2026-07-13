@@ -6,7 +6,13 @@ description: A block of generated output whose source has vanished — here, a d
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, routing, route-tagging, generated-artifacts]
+sense: repo
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-11T08:02:52+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # orphan block

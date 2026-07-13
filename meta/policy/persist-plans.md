@@ -3,10 +3,14 @@ type: policy
 title: Persist plans
 description: Any design or implementation plan the agent produces and the operator approves must be persisted as a type:plan doc under meta/plans/, not left in chat or the scratchpad.
 section: filing
-order: 6
+order: 7
 status: active
 tags: [meta, governance, plans, persistence]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T23:11:18+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 **Persist plans; don't leave them in the conversation.** A design spec or
 implementation plan is a durable record of *decisions and their rationale* — the

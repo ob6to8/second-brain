@@ -5,8 +5,14 @@ title: decision prior
 description: A proposition held true enough to guide action even when uncertain, subjective, or value-laden — the functional role beliefs play in a knowledge system.
 provenance: "Agent-distilled glossary definition, 2026-07-13 session"
 verified: false
+sense: common
 tags: [glossary, beliefs, epistemics, terminology]
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-13T00:00:00Z
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the 2026-07-13 second-mind-taxonomy thread cited in Seen in"
 ---
 
 # decision prior

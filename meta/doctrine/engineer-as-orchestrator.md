@@ -6,6 +6,11 @@ resource: "Anthropic — 2026 coding trends report, section: Role transformation
 provenance: "Operator-pasted excerpt from Anthropic's 2026 coding trends report, 2026-07-12 session; ratified as the first doctrine document"
 tags: [meta, doctrine, orchestration, role-transformation, direction, agents]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T15:19:42+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-doctrine-genre-and-orchestrator-alignment.md]
 ---
 
 # The engineer as orchestrator, not implementer

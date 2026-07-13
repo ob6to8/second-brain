@@ -70,17 +70,53 @@ Write each definition from understanding, not by transcription:
   the source said about it. The source goes in the citation line.
 - If a term carries different senses in different domains, keep **one entry with
   numbered senses**, not two entries.
+- **Classify the term's `sense`** — where its usage lives:
+  - `common` — portable: the wider world uses the term this way (industry, a
+    field, or an ecosystem like Claude Code, Elixir, git, ML). Ecosystem terms
+    count as common: what matters is whether the meaning survives outside this
+    repo.
+  - `repo` — this brain's own vocabulary: coined here (by operator or agent),
+    or naming this brain's machinery, genres, or rules — even when the
+    definition is written portably. A term whose only non-local sense is
+    everyday English (e.g. *graduation*) is `repo`, not `dual`.
+  - `dual` — both senses exist **and both are technical**: an established
+    common sense *plus* a specific repo referent (e.g.
+    [materialize](/beliefs/glossary/materialize.md), [digest](/beliefs/glossary/digest.md)).
+  When two repo entries would collide on one word, qualify the *title*
+  ("run (canonical run)", "sink (route-tag sink)") — title qualification
+  disambiguates between entries; `sense: dual` disambiguates within one.
 
 ### 4. Merge into `/beliefs/glossary/`
 - **One file per term**: `/beliefs/glossary/<kebab-slug>.md`, slug derived from the term
   (`route-tag.md`, `verified-by.md`). `type: concept`; `title` = the term
   (lowercase unless a proper noun or cased formalism); `description` = the
   definition in one sentence; `provenance` noting it's an agent-distilled
-  glossary definition; `verified: false`; `timestamp`.
+  glossary definition; `verified: false`; **`sense`** (`common`/`repo`/`dual` —
+  required; `mix brain.verify` gates on it); `timestamp`; **`attribution`** on
+  new term files (the ingestion event — written once, never rewritten by later
+  merges):
+
+  ```yaml
+  attribution:
+    when: <now, ISO 8601>
+    channel: glossary
+    agent: "Claude Code agent, /add-to-glossary"
+    why: "term surfaced by <the thread/doc/paper scanned>"
+  ```
 - Body: an `# <term>` heading, the definition paragraph, then a *Seen in:* line
   of citations — bundle-absolute links for threads and filed concepts, plain
   URLs for external papers/posts (a citation is not a parked bookmark; the
   link-processing policy governs filing URLs as *concepts*, not citing them).
+- **Dual entries define the common sense first**, then the repo sense in a
+  passage opening **In this brain:** (or *In this bundle:*) — common first so
+  the local usage never displaces the portable meaning. Never split a dual
+  term into two files: one string, one file, one id.
+- **Merge sense-aware.** On an existing `dual` entry, a citation using the
+  common sense extends the common paragraph; one using the repo sense extends
+  the *In this brain* paragraph — don't let the senses bleed together. When a
+  new source gives a `common` term a real local referent (or a `repo` term
+  turns out to be established outside), reclassify: update `sense`, restructure
+  the body to the dual shape, bump `timestamp`.
 - **Cross-link related terms, prose first.** When the relationship between two
   terms can be *stated*, weave the link into the definition prose itself
   ("distinct from a [plan](/beliefs/glossary/plan-type.md)…") — the prose carries the

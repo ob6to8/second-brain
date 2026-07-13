@@ -6,7 +6,13 @@ description: An architectural separation between a fast operational plane (ephem
 provenance: "Agent-distilled glossary definition — coined in the dark-factory scenario analysis"
 verified: false
 tags: [glossary, architecture, epistemics, dark-factory]
+sense: repo
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T09:05:38+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # two-plane rule

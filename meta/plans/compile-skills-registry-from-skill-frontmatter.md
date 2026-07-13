@@ -7,6 +7,11 @@ priority: 1
 provenance: "Claude Code session (2026-07-11) — commissioned by the operator following the contracts-and-rendered-aggregations analysis; marked top priority at commissioning"
 tags: [meta, plan, contract, skills, compiler, drift, tooling]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T20:01:40+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md]
 ---
 
 # Compile the contract's Skills section from SKILL.md frontmatter

@@ -16,9 +16,8 @@ defmodule SecondBrain.Site do
   subpath like `/second-brain/` without configuration.
   """
 
-  alias SecondBrain.{Frontmatter, Markdown}
+  alias SecondBrain.{Frontmatter, Markdown, SiteConfig}
 
-  @excluded_dirs ~w(.git .github .githooks _build deps tmp deprecated .claude lib test)
   @default_out "_site"
 
   @type page :: %{
@@ -84,7 +83,7 @@ defmodule SecondBrain.Site do
 
   defp excluded?(rel_path) do
     [top | _] = Path.split(rel_path)
-    top in @excluded_dirs
+    top in SiteConfig.excluded_dirs()
   end
 
   defp load_page(src, root) do
@@ -96,6 +95,7 @@ defmodule SecondBrain.Site do
         {:error, _} -> {%{}, raw}
       end
 
+    body = SiteConfig.expand_tokens(body)
     out = String.replace_suffix(src, ".md", ".html")
     dir = dir_of(src)
     depth = out |> Path.split() |> length() |> Kernel.-(1)

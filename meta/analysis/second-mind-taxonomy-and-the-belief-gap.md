@@ -3,6 +3,12 @@ type: analysis
 title: "Do the second-brain → second-mind taxonomies point anywhere this bundle should head?"
 description: Evaluates an external ChatGPT dialogue's layered taxonomies (facts/analysis/belief/doctrine/policy/plan; second brain vs. second mind) against the live bundle — finds the bundle already implements most of the stack with stronger enforcement, rejects confidence-scored beliefs and a values type, and isolates one real gap; the /beliefs/ namespace holds no beliefs and the type vocabulary has no home for operator-held, value-laden decision priors.
 provenance: "Claude Code session (2026-07-13) — distilled from an operator dialogue evaluating a shared ChatGPT conversation ('Second brain distinctions') against the bundle's type vocabulary and namespaces"
+attribution:
+  when: 2026-07-13T00:00:00Z
+  channel: agent-authored
+  agent: "Claude Code agent, second-mind taxonomy session"
+  why: "persists the judgment on whether the shared ChatGPT dialogue's taxonomies should redirect the bundle, so the convergence findings and the belief-gap diagnosis survive the session"
+  from: [/meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md]
 tags: [meta, analysis, taxonomy, beliefs, doctrine, second-mind, type-vocabulary]
 timestamp: 2026-07-13
 ---

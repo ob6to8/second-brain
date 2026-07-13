@@ -5,8 +5,14 @@ title: functional core, imperative shell
 description: A design pattern that isolates pure computation in a stateless core wrapped by a thin imperative layer handling state and effects — the structure an agent instantiates with the model as core and the loop as shell.
 provenance: "Agent-distilled glossary definition, 2026-07-13 session"
 verified: false
+sense: common
 tags: [glossary, functional-programming, agent-architecture, terminology]
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-13T00:00:00Z
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the 2026-07-13 second-mind-taxonomy thread cited in Seen in"
 ---
 
 # functional core, imperative shell

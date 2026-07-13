@@ -4,6 +4,10 @@ title: How the Pages deploy is gated on a verified bundle
 description: The live site is a published render of the brain, so it must never show an invalid one; because GitHub Actions workflows are isolated and a job in pages.yml cannot depend on a job in ci.yml, the same integrity checks are repeated inside the Pages build job so the deploy only proceeds when the bundle verifies.
 tags: [meta, tooling, ci, github-actions, github-pages, verification, deployment]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T07:15:29+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # How the Pages deploy is gated on a verified bundle

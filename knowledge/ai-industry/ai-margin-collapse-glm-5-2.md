@@ -7,6 +7,10 @@ resource: https://martinalderson.com/posts/the-upcoming-ai-margin-collapse-part-
 provenance: "Distilled from Martin Alderson's blog, fetched 2026-07-06; discussion context from Hacker News (https://news.ycombinator.com/item?id=48809877)"
 tags: [ai-industry, ai-economics, margins, open-weight-models, inference-cost, competition]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-07T13:32:19+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # GLM-5.2 and the coming AI margin collapse (Martin Alderson)

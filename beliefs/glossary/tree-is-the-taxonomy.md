@@ -6,7 +6,13 @@ description: The principle that the directory hierarchy — surfaced level-by-le
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, taxonomy, okf]
+sense: repo
 timestamp: 2026-07-10
+attribution:
+  when: 2026-07-11T08:41:24+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # tree is the taxonomy

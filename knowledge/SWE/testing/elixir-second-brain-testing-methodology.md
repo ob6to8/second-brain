@@ -6,6 +6,10 @@ description: An agent-facing synthesis of matklad's two testing essays (features
 provenance: "Claude Opus 4.8 — synthesized from the two matklad references filed in this directory, applied to this repo's lib/ and test/"
 tags: [testing, software-engineering, test-design, elixir, exunit]
 timestamp: 2026-07-08
+attribution:
+  when: 2026-07-08T17:41:45+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Testing methodology for the Second Brain Elixir tooling

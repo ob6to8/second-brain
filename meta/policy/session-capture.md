@@ -7,6 +7,11 @@ order: 1
 status: active
 tags: [meta, governance, threads, capture, workflow]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-08T11:54:45+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md]
 ---
 A working session (a **thread**) is non-linear: it touches many matters, pauses
 some on open questions, and routes each matter's synthesized content into a

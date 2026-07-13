@@ -6,6 +6,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 ## Contents
 
 - [analysis](/meta/analysis/index.md) — point-in-time evaluations and decision-support write-ups on questions about the brain (`type: analysis`)
+- [dev-history.md](/meta/dev-history.md) — **generated** per-PR overview of development progress, derived from the merge graph (`mix brain.dev_history`)
 - [doctrine](/meta/doctrine/index.md) — standing intention statements: guiding principles and directions the brain's design serves, which policies implement (`type: doctrine`)
 - [elaborations](/meta/elaborations/index.md) — persisted expansions of technical phrases (`type: elaboration`, written by `/elaborate`; each back-links its originating thread via a `thread` field set by `/create-pull-request`)
 - [evals](/meta/evals/index.md) — repeatable eval gold sets and their baselines: the fixtures a `mix brain.*` task re-scores on every run (distinct from a point-in-time `analysis`)
@@ -42,14 +43,19 @@ taxonomy. This is where the rules that compile into the operating contract live.
   - `mix brain.session_init` — compile the session-start digest: open issues and
     todos, active plans, dangling ledger strands, and a heuristic top-3 priority
     ranking.
+  - `mix brain.dev_history [--check]` — derive `/meta/dev-history.md` (per-PR
+    features and progress) from the default branch's first-parent merge graph;
+    `--check` is lag-tolerant (the checked-in copy cannot contain the merge that
+    ships it) and the Pages build re-derives the page at deploy time.
   - `mix brain.site [--out DIR]` — render the bundle into a static, navigable site
     (deployed to GitHub Pages); see the [tutorials](/meta/tutorials/index.md).
 - `.github/workflows/ci.yml` — CI enforcement on every push/PR: compile, format check,
   tests, `mix brain.contract --check`, `mix brain.registry --check`, `mix brain.verify`,
-  `mix brain.route_tags`, a non-gating `mix brain.dedup_probe` report, and a
-  `mix brain.site` build (blocks a stale contract/registry or a broken build).
-- `.github/workflows/pages.yml` — builds `mix brain.site` and deploys to GitHub Pages
-  on every push to `main`.
+  `mix brain.route_tags`, `mix brain.lineage --check`, `mix brain.dev_history --check`,
+  a non-gating `mix brain.dedup_probe` report, and a `mix brain.site` build (blocks a
+  stale contract/registry or a broken build).
+- `.github/workflows/pages.yml` — re-derives the dev history from the merge graph,
+  builds `mix brain.site`, and deploys to GitHub Pages on every push to `main`.
 - `.githooks/pre-commit` — optional fast local mirror of CI. Enable once with
   `git config core.hooksPath .githooks`.
 - `.claude/hooks/session-start.sh` — installs Elixir in Claude-on-web sandboxes so the

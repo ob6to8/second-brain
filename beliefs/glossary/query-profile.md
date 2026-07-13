@@ -6,7 +6,13 @@ description: The set of per-category interest signals derived by walking a knowl
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, research, search, taxonomy]
+sense: repo
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T08:41:24+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # query profile

@@ -6,7 +6,13 @@ description: The two-byte carriage-return + line-feed line ending (Windows conve
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, formats, encoding]
+sense: common
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T09:10:24+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # CRLF

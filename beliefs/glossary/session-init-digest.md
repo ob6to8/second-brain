@@ -6,7 +6,13 @@ description: A machine-compiled summary of a knowledge base's open work — open
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, session-init, hooks, tooling]
+sense: repo
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-11T19:30:56+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # session-init digest

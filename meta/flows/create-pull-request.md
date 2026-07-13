@@ -4,9 +4,11 @@ title: Create pull request — capture, glossary, commit, push, open
 description: The end-to-end flow for shipping a session — run the capture flow to completion, glossary its thread doc, then commit, push, and open the PR with no separate confirmation gate — a composition of two other flows plus the git/GitHub tail, and why its ordering (capture before commit) is the load-bearing decision.
 tags: [meta, governance, pull-request, capture, glossary, git, flow, workflow]
 timestamp: 2026-07-11
-lineage:
-  thread: /meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md
-  pr: 32
+attribution:
+  when: 2026-07-11T07:13:22+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md]
 ---
 
 # Create pull request — capture, glossary, commit, push, open

@@ -50,12 +50,61 @@ Frontmatter fields:
 | `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
 | `verified` | Only on agent statements | Boolean, and **only for agent-authored statements** (`claim`/`note`/`concept`). `false` = asserted but not checked; `true` = checked and backed by a non-empty `verified_by`. **Omit** on captures — a concept that stores a link (`resource`) is not verifiable. Default `false` for AI-generated statements. |
 | `verified_by` | When verified via evidence | Inline YAML list of stable ids (typically `source` captures) that jointly support this statement; targets must **exist** (they need not themselves be `verified`). The only committed representation of evidence edges. |
+| `attribution` | **Mandatory** (bundle concepts and governance docs) | Structured map recording the ingestion event — `when`/`channel`/`agent`/`why`, plus append-only `from` on governance docs. Immutable once written (except `from`). See the resource-attribution policy. |
 | `tags` | Recommended | YAML list of categorization strings. |
 | `timestamp` | Recommended | ISO 8601 datetime of last meaningful change. |
 
 Arbitrary extra keys are allowed and must be preserved.
 
 _Source: [`meta/policy/frontmatter-schema.md`](/meta/policy/frontmatter-schema.md)_
+
+**Attribution — the ingestion event, recorded on the doc.** Every bundle concept
+(everything with an `sb:` id) and every governance doc carries an `attribution`
+frontmatter map recording how it entered the brain (see the
+[attribution plan](/meta/plans/resource-attribution-property.md) for the design
+record):
+
+```yaml
+attribution:
+  when: 2026-07-13T14:02:00Z
+  channel: auto-intake
+  agent: "Claude Code agent, /research daily Routine"
+  why: "featured in the 2026-07-13 digest under agents/orchestration; reason-tag: impactful"
+  from: [/meta/threads/2026-07-13-example.md]   # governance docs only
+```
+
+| Sub-key | Holds | Form |
+|---------|-------|------|
+| `when` | The ingestion instant | ISO 8601 (date minimum; datetime preferred) |
+| `channel` | *How* it entered — the pathway | Controlled: `intake` · `auto-intake` · `glossary` · `agent-authored` · `backfill` (grows by operator ratification, like `type`) |
+| `agent` | *Who* acted — the operator, or the agent and the automation context it ran in. Names the **pathway, not the model** (the model is in the commit trailer) | Free text, one line |
+| `why` | Why it was deemed worth filing | Free text, one sentence (optional when `channel: backfill` — never invented) |
+| `from` | **Governance docs only.** The doc(s) this entry was extracted from — the thread it came out of, and/or the concept doc that resulted from that thread | Inline YAML list of refs, route-tag style: an `sb:` id (concept) or a bundle-absolute path (thread/governance doc); targets must exist |
+
+- **Immutable event, one carve-out.** The event sub-keys
+  (`when`/`channel`/`agent`/`why`) are written once at filing and never
+  rewritten — update-in-place merges bump `timestamp`, not attribution.
+  Governance `from` is **append-only**: later sessions that substantively
+  revise a doc add their thread (stamped by `/create-pull-request` after
+  `/capture`, when the thread path exists), never remove or rewrite entries.
+- **Orthogonal to the neighboring fields.** `resource` = *what asset* (canonical
+  URI); `provenance` = *where the content came from* (author/origin, possibly
+  predating the brain); `attribution` = *how it got here* (the ingestion event);
+  `timestamp` = *when it last changed*. Attribution is not a log: the commit
+  graph stays the single change-narrative layer, and this is one write-once
+  record, not a maintained history.
+- **Scope and exemptions.** Required on all bundle concepts and on governance
+  docs (`from` required on ratification-flow docs — `plan`, `analysis`,
+  `elaboration`, `issue`; permitted absent only where no source doc exists).
+  Exempt — and it is an **error** for them to carry `attribution`: thread docs
+  (they *are* the session record; `pr:` is their anchor), `inbox/` digests
+  (dated and self-describing by construction), and generated artifacts
+  (`CLAUDE.md`, `meta/registry.md`, `index.md` listings).
+- **Machine-enforced.** `mix brain.verify` checks shape (parseable map, valid
+  `when`/`channel`, non-empty `agent`, `why` per the backfill rule), `from` ref
+  resolution, exemption placement, and presence.
+
+_Source: [`meta/policy/resource-attribution.md`](/meta/policy/resource-attribution.md)_
 
 Reserved filenames (any directory level):
 
@@ -140,6 +189,38 @@ _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
   creating them.
 
 _Source: [`meta/policy/filenames-and-cross-linking.md`](/meta/policy/filenames-and-cross-linking.md)_
+
+**In responses, link resources to the deployed site, not to repo paths.** When an
+agent's **delivered response** (chat to the operator, a PR body, an issue comment —
+anything read outside a checkout) references a concept in the brain, cite it as a
+link to that concept's page on the **deployed Pages site**, not as a bundle-absolute
+(`/knowledge/…md`) or relative repo path. A repo path is not navigable for a reader
+in chat; the live URL is a click away.
+
+- **The site.** The bundle is published to GitHub Pages at
+  **`https://ob6to8.github.io/second-brain/`** (`mix brain.site` → `pages.yml`, one page per concept and
+  per `index.md`). That base URL lives in config
+  (`config/config.exs` → `SecondBrain.SiteConfig.base_url/0`); it is the single
+  source of truth, and this contract's copy of it is compiled in from that config —
+  a deploy move (e.g. a custom domain) is one config edit, not a doc rewrite.
+- **The mapping.** Take the resource's bundle path and swap the base and extension:
+  bundle path `P.md` → `https://ob6to8.github.io/second-brain/P.html`. So
+  `/knowledge/knowledge-management/open-knowledge-format.md` is cited as
+  `https://ob6to8.github.io/second-brain/knowledge/knowledge-management/open-knowledge-format.html`,
+  and a directory's `index.md` as `…/<dir>/index.html`. This covers governance docs
+  too (`meta/…`), which are rendered as well. `mix brain.url <path>` prints the
+  mapped URL for a bundle path — the mechanical way to get it right.
+- **Not rendered → no live URL.** Resources under directories the site excludes
+  (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page; cite those by repo path
+  (or link the file on GitHub) rather than fabricating a Pages URL.
+- **This is the response-side rule only.** Cross-links *inside* concept bodies stay
+  bundle-absolute markdown paths per
+  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — the
+  site rewrites those `.md` links to the right relative `.html` at build time. Do not
+  hardcode live URLs into concept bodies; use them when speaking to a human outside
+  the bundle.
+
+_Source: [`meta/policy/response-resource-links.md`](/meta/policy/response-resource-links.md)_
 
 - **Links must be processed, not parked.** A web resource enters the brain only once it
   has been **processed into a `reference`** (fetched and summarized/captured). Do not
@@ -260,8 +341,8 @@ Seed vocabulary:
 - `elaboration` — a persisted expansion of a technical **phrase or short passage**:
   the quoted target, definitions of the terms it uses, and a less technical overview
   of the concepts and actions it describes — produced by `/elaborate` and back-linked
-  to its originating session via a `thread` frontmatter field once that session is
-  captured (`/create-pull-request` sets it). Distinct from a glossary `concept` (one
+  to its originating session via `attribution.from` once that session is
+  captured (`/create-pull-request` stamps it). Distinct from a glossary `concept` (one
   *term*, source-independent) and a `tutorial` (long-form, standalone subject) — an
   elaboration unpacks *one specific mouthful in context* (lives under
   `meta/elaborations/`).
@@ -367,9 +448,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   in chat **and persisted** as a `type: elaboration` doc under
   [`meta/elaborations/`](/meta/elaborations/index.md) (governance namespace, no `sb:`
   id; link glossary terms that already exist; hand off to `/add-to-glossary` to
-  persist new ones per-term). The doc's `thread` back-link to its originating session
-  is set later by `/create-pull-request`, never by this skill. The phrase-scale
-  sibling of `/summarize-technical`. See `.claude/skills/elaborate/SKILL.md`.
+  persist new ones per-term). The doc's `attribution.from` back-link to its
+  originating session is set later by `/create-pull-request`, never by this skill.
+  The phrase-scale sibling of `/summarize-technical`. See
+  `.claude/skills/elaborate/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the glossary — **one concept file per term** under
@@ -384,17 +466,19 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   **auto-intake the featured items** into the bundle via `/intake`. The digest is the
   dated record in the non-bundle `inbox/` namespace (no `sb:` ids); its featured items
   graduate into filed concepts in the same run, bounded to the known tree (items needing
-  a new top-level domain are deferred for operator ratification) and tagged `auto-intake`
-  for the operator's post-intake editorial pass. See `.claude/skills/research/SKILL.md`.
+  a new top-level domain are deferred for operator ratification) and attributed
+  `channel: auto-intake` for the operator's post-intake editorial pass. See
+  `.claude/skills/research/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
-  over the captured thread doc, **back-link this session's elaboration docs** (set
-  `thread:` in each `meta/elaborations/` doc the session created or updated, pointing
-  at the just-captured thread), then commit the current working changes, push the
+  over the captured thread doc, **stamp the thread into `attribution.from`** (append
+  the just-captured thread's path to the `from` list of every governance doc the
+  session created or substantively revised — the append-only carve-out of the
+  resource-attribution policy), then commit the current working changes, push the
   branch, and open a pull request — so the frozen thread doc, the glossary updates it
-  feeds, and the elaboration trace all ship in the same PR. Invoking the skill **is**
-  the authorization to open the PR (no separate confirmation gate); PR-template
-  detection and the GitHub MCP tools handle the rest. See
-  `.claude/skills/create-pull-request/SKILL.md`.
+  feeds, and each governance doc's trace back to its session all ship in the same
+  PR. Invoking the skill **is** the authorization to open the PR (no separate
+  confirmation gate); PR-template detection and the GitHub MCP tools handle the
+  rest. See `.claude/skills/create-pull-request/SKILL.md`.
 - **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
   a subcommand argument: `/todo create <title>` files a new open todo (and maintains
   the index); `/todo list` shows the todos grouped by `status`. See

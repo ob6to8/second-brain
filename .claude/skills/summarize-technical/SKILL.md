@@ -36,6 +36,10 @@ on. For each term:
   that reads more naturally. Don't just mirror the source's table of contents.
 - Skip terms that don't materially change how a reader would describe the work —
   this is a working glossary, not an index of every noun in the paper.
+- Where a term already has an entry in the bundle glossary (`/beliefs/glossary/`), link
+  the term name to it — but keep the local, source-specific definition in place
+  (the glossary is cross-domain canonical; this section defines the term *as
+  this source uses it*).
 
 ### 3. Technical summary
 Cover the **same ground** as section 1 — same scope, same claims, same

@@ -6,16 +6,25 @@ description: To compute derived content and write it to disk as ordinary file co
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, tooling, generated-artifacts]
-timestamp: 2026-07-12
+sense: dual
+timestamp: 2026-07-13
+attribution:
+  when: 2026-07-11T08:02:52+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # materialize
 
 To compute derived content and write it to disk as ordinary file content,
-instead of recomputing it on demand. Materialized output is readable and
+instead of recomputing it on demand — the sense of a database's *materialized
+view*. Materialized output is readable and
 diffable without running the tool, but it can go stale the moment its source
 changes — which is why it pairs with a freshness check that re-derives and
-compares (the generated-not-hand-kept discipline). In this bundle the term
+compares (the generated-not-hand-kept discipline).
+
+**In this brain:** the term
 names `mix brain.route_tags --materialize`
 ([`SecondBrain.RouteTags.materialize/1`](/lib/second_brain/route_tags.ex)),
 a **two-directional projection** of the current
