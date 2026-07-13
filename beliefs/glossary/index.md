@@ -29,6 +29,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [compiled contract](/beliefs/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
 - [complementary priors](/beliefs/glossary/complementary-priors.md) — Hinton/Osindero/Teh's device for cancelling explaining-away correlations in a directed belief net, making a deep model tractable to learn layer by layer
 - [Composable Beliefs (cb)](/beliefs/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
+- [concept (type)](/beliefs/glossary/concept-type.md) — controlled type: "a definition or mental model", but in practice two speech acts (term definition vs accepted proposition) under a label nothing enforces; redefinition open
 - [contrastive divergence](/beliefs/glossary/contrastive-divergence.md) — a fast approximate training algorithm for restricted Boltzmann machines, using a short Gibbs-sampling run in place of the intractable exact gradient
 - [CRLF](/beliefs/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
 - [cron expression](/beliefs/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
@@ -138,6 +139,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [stable id (`sb:` id)](/beliefs/glossary/stable-id.md) — the opaque, immutable `sb:` + 6-hex identifier every bundle concept carries
 - [stale block](/beliefs/glossary/stale-block.md) — a materialized excerpt-log block diverged from its re-derivation (source changed, not re-materialized); distinct from an orphan block
 - [staleness propagation](/beliefs/glossary/staleness-propagation.md) — when a premise changes, follow dependency edges outward and flag every statement resting on it for re-verification
+- [statement type](/beliefs/glossary/statement-type.md) — the class of types (claim/note/concept) carrying agent-authored assertions, the only ones that may bear a `verified` field
 - [static-site generator](/beliefs/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
 - [strand](/beliefs/glossary/strand.md) — one topic's line of work through a session; the routing ledger tracks one row per strand, state orthogonal to routing
 - [supersession](/beliefs/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)

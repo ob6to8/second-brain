@@ -35,6 +35,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:23f009` | [beliefs/glossary/compiled-contract](/beliefs/glossary/compiled-contract.md) | concept | false |
 | `sb:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
 | `sb:04f8dd` | [beliefs/glossary/composable-beliefs](/beliefs/glossary/composable-beliefs.md) | concept | false |
+| `sb:d330fb` | [beliefs/glossary/concept-type](/beliefs/glossary/concept-type.md) | concept | false |
 | `sb:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
 | `sb:aea1cb` | [beliefs/glossary/credential-vault](/beliefs/glossary/credential-vault.md) | concept | false |
 | `sb:a48aeb` | [beliefs/glossary/crlf](/beliefs/glossary/crlf.md) | concept | false |
@@ -144,6 +145,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:4d71d3` | [beliefs/glossary/stable-id](/beliefs/glossary/stable-id.md) | concept | false |
 | `sb:e203a2` | [beliefs/glossary/stale-block](/beliefs/glossary/stale-block.md) | concept | false |
 | `sb:1e9cde` | [beliefs/glossary/staleness-propagation](/beliefs/glossary/staleness-propagation.md) | concept | false |
+| `sb:82cf3e` | [beliefs/glossary/statement-type](/beliefs/glossary/statement-type.md) | concept | false |
 | `sb:efad31` | [beliefs/glossary/static-site-generator](/beliefs/glossary/static-site-generator.md) | concept | false |
 | `sb:bb2968` | [beliefs/glossary/strand](/beliefs/glossary/strand.md) | concept | false |
 | `sb:ea95e4` | [beliefs/glossary/supersession](/beliefs/glossary/supersession.md) | concept | false |
