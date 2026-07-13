@@ -19,12 +19,14 @@ system works.
 - [approximate nearest neighbor (ANN)](/beliefs/glossary/approximate-nearest-neighbor.md) — index class trading exactness for speed on nearest-vector queries; worth it only at large corpus size
 - [assertion graph](/beliefs/glossary/assertion-graph.md) — the pre-OKF design: atomic claims (primitives + compounds with explicit deps) forming a DAG; remnants under `deprecated/`
 - [auto-intake](/beliefs/glossary/auto-intake.md) — the `/research` step that files its featured items into the bundle via `/intake` in the same run, moving the operator from a pre-intake gate to post-intake editorial work
+- [attribution shadow](/beliefs/glossary/attribution-shadow.md) — the enforceable trace of an unenforceable runtime act: model *selection* can't be gated, but committed provenance naming the producing model can
 - [backpressure](/beliefs/glossary/backpressure.md) — flow control where a slower downstream stage pushes back on producers (bounded queues, pool limits) so overload degrades gracefully
 - [BEAM](/beliefs/glossary/beam.md) — the Erlang/Elixir VM: lightweight heap-isolated processes, message passing, supervision — built for long-running concurrent services
 - [belief network](/beliefs/glossary/belief-network.md) — a probabilistic graphical model (a.k.a. Bayesian network): a DAG of stochastic variables, each conditioned on its parents; the "belief" in *deep belief network*
 - [BM25](/beliefs/glossary/bm25.md) — lexical full-text ranking by term frequency and rarity; the keyword-search tier between grep and semantic search
 - [bundle-absolute link](/beliefs/glossary/bundle-absolute-link.md) — a markdown link whose target begins at the bundle root with a leading slash, resolving identically from any document; breaks when the target moves, since it encodes the path, not the id
 - [candidate feed](/beliefs/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one
+- [capability-matched model selection](/beliefs/glossary/capability-matched-model-selection.md) — doctrine: match model tier to the epistemic weight of the motion — strongest where output becomes canonical or a judgment is rendered; cheaper tiers for derivational, oracle-checked work
 - [CI smoke check](/beliefs/glossary/ci-smoke-check.md) — a cheap CI check that fails the build on a basic broken invariant — a tripwire, not a full test
 - [Claude Managed Agents (CMA)](/beliefs/glossary/claude-managed-agents.md) — Anthropic's hosted agent service: the loop runs on Anthropic's infra, each session gets a sandboxed container; versioned agents, scheduled deployments, outcomes, vaults
 - [CloudEvents](/beliefs/glossary/cloudevents.md) — CNCF spec standardizing the event envelope (id/source/type/time/data) so events route across systems regardless of transport
@@ -33,6 +35,7 @@ system works.
 - [complementary priors](/beliefs/glossary/complementary-priors.md) — Hinton/Osindero/Teh's device for cancelling explaining-away correlations in a directed belief net, making a deep model tractable to learn layer by layer
 - [Composable Beliefs (cb)](/beliefs/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
 - [concept (OKF)](/beliefs/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
+- [constant tutorial mode](/beliefs/glossary/constant-tutorial-mode.md) — the operator's reader state when learning an agent-built system by using it; the audience the plain tier backstops
 - [contrastive divergence](/beliefs/glossary/contrastive-divergence.md) — a fast approximate training algorithm for restricted Boltzmann machines, using a short Gibbs-sampling run in place of the intractable exact gradient
 - [CRLF](/beliefs/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
 - [cron expression](/beliefs/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
@@ -70,6 +73,7 @@ system works.
 - [golden test (snapshot test)](/beliefs/glossary/golden-test.md) — a test comparing current output to a checked-in "golden" reference artifact, flagging any drift
 - [graduation](/beliefs/glossary/graduation.md) — a term outgrowing the glossary relocates into the domain taxonomy, id travelling with it, a pointer stub left behind
 - [greedy layer-wise pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) — building a deep network one layer at a time, each trained (unsupervised) on the layer below's output, before any end-to-end fine-tuning
+- [grounding tier](/beliefs/glossary/grounding-tier.md) — the third documentation tier: one abstraction level below the source doc, anchored by a planned `implemented_by` edge (code for a policy, policies for a doctrine)
 - [HTML escaping](/beliefs/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
 - [hybrid search](/beliefs/glossary/hybrid-search.md) — retrieval blending BM25 and vector-similarity scores so keyword precision and semantic matching cover each other's misses
 - [inbox namespace](/beliefs/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/research` candidate digests (no ids, never verified)
@@ -147,6 +151,7 @@ system works.
 - [supersession](/beliefs/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
 - [synonym expansion](/beliefs/glossary/synonym-expansion.md) — broadening a query with synonyms, jargon variants, and acronym expansions to bridge vocabulary mismatch without embeddings
 - [thread doc](/beliefs/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
+- [three-level documentation](/beliefs/glossary/three-level-documentation.md) — opt-in scheme: plain backstop / canonical technical body / grounding tier — one canonical level plus two anchored derivations
 - [todo (type)](/beliefs/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`
 - [tree is the taxonomy](/beliefs/glossary/tree-is-the-taxonomy.md) — the directory tree, surfaced via `index.md` files (progressive disclosure), *is* the canonical taxonomy
 - [Tree-sitter](/beliefs/glossary/tree-sitter.md) — incremental multi-language parser producing concrete syntax trees; the parsing layer under code knowledge graphs

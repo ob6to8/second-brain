@@ -21,6 +21,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:98ec38` | [beliefs/glossary/approval-gate](/beliefs/glossary/approval-gate.md) | concept | false |
 | `sb:e2377d` | [beliefs/glossary/approximate-nearest-neighbor](/beliefs/glossary/approximate-nearest-neighbor.md) | concept | false |
 | `sb:ac22a3` | [beliefs/glossary/assertion-graph](/beliefs/glossary/assertion-graph.md) | concept | false |
+| `sb:99aa8c` | [beliefs/glossary/attribution-shadow](/beliefs/glossary/attribution-shadow.md) | concept | false |
 | `sb:f8ae3a` | [beliefs/glossary/auto-intake](/beliefs/glossary/auto-intake.md) | concept | false |
 | `sb:6c7e32` | [beliefs/glossary/backpressure](/beliefs/glossary/backpressure.md) | concept | false |
 | `sb:b2dc54` | [beliefs/glossary/beam](/beliefs/glossary/beam.md) | concept | false |
@@ -28,6 +29,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:068a32` | [beliefs/glossary/bm25](/beliefs/glossary/bm25.md) | concept | false |
 | `sb:79ca74` | [beliefs/glossary/bundle-absolute-link](/beliefs/glossary/bundle-absolute-link.md) | concept | false |
 | `sb:ee8dfd` | [beliefs/glossary/candidate-feed](/beliefs/glossary/candidate-feed.md) | concept | false |
+| `sb:50efa2` | [beliefs/glossary/capability-matched-model-selection](/beliefs/glossary/capability-matched-model-selection.md) | concept | false |
 | `sb:21854a` | [beliefs/glossary/ci-smoke-check](/beliefs/glossary/ci-smoke-check.md) | concept | false |
 | `sb:04b9a8` | [beliefs/glossary/claude-managed-agents](/beliefs/glossary/claude-managed-agents.md) | concept | false |
 | `sb:8cfcb8` | [beliefs/glossary/cloudevents](/beliefs/glossary/cloudevents.md) | concept | false |
@@ -36,6 +38,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
 | `sb:04f8dd` | [beliefs/glossary/composable-beliefs](/beliefs/glossary/composable-beliefs.md) | concept | false |
 | `sb:317879` | [beliefs/glossary/concept-okf](/beliefs/glossary/concept-okf.md) | concept | false |
+| `sb:0bf58a` | [beliefs/glossary/constant-tutorial-mode](/beliefs/glossary/constant-tutorial-mode.md) | concept | false |
 | `sb:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
 | `sb:aea1cb` | [beliefs/glossary/credential-vault](/beliefs/glossary/credential-vault.md) | concept | false |
 | `sb:a48aeb` | [beliefs/glossary/crlf](/beliefs/glossary/crlf.md) | concept | false |
@@ -73,6 +76,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:61877f` | [beliefs/glossary/golden-test](/beliefs/glossary/golden-test.md) | concept | false |
 | `sb:0c8532` | [beliefs/glossary/graduation](/beliefs/glossary/graduation.md) | concept | false |
 | `sb:fbab7f` | [beliefs/glossary/greedy-layer-wise-pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) | concept | false |
+| `sb:8c4c5c` | [beliefs/glossary/grounding-tier](/beliefs/glossary/grounding-tier.md) | concept | false |
 | `sb:8fda94` | [beliefs/glossary/html-escaping](/beliefs/glossary/html-escaping.md) | concept | false |
 | `sb:3983f2` | [beliefs/glossary/hybrid-search](/beliefs/glossary/hybrid-search.md) | concept | false |
 | `sb:5b2e0f` | [beliefs/glossary/inbox-namespace](/beliefs/glossary/inbox-namespace.md) | concept | false |
@@ -150,6 +154,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:ea95e4` | [beliefs/glossary/supersession](/beliefs/glossary/supersession.md) | concept | false |
 | `sb:40133e` | [beliefs/glossary/synonym-expansion](/beliefs/glossary/synonym-expansion.md) | concept | false |
 | `sb:089fb2` | [beliefs/glossary/thread-doc](/beliefs/glossary/thread-doc.md) | concept | false |
+| `sb:ffa597` | [beliefs/glossary/three-level-documentation](/beliefs/glossary/three-level-documentation.md) | concept | false |
 | `sb:d7e3c5` | [beliefs/glossary/todo-type](/beliefs/glossary/todo-type.md) | concept | false |
 | `sb:8798e8` | [beliefs/glossary/tree-is-the-taxonomy](/beliefs/glossary/tree-is-the-taxonomy.md) | concept | false |
 | `sb:1efc5e` | [beliefs/glossary/tree-sitter](/beliefs/glossary/tree-sitter.md) | concept | false |
