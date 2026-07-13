@@ -153,6 +153,63 @@ defmodule SecondBrain.Attribution do
     end)
   end
 
+  # --- query ------------------------------------------------------------------
+
+  @doc """
+  List every attributed doc as a row map (`path`/`id`/`when`/`channel`/
+  `agent`/`why`/`from`), newest first. Options:
+
+    * `:channel` — keep only rows with this channel (e.g. `"auto-intake"`,
+      the operator's post-auto-intake editorial queue).
+    * `:since` — an ISO 8601 date string; keep only rows ingested on or
+      after it.
+  """
+  def list(root \\ File.cwd!(), opts \\ []) do
+    {entries, _errors} = SecondBrain.Registry.scan(root)
+    %{governance: governance} = governance_paths(root)
+
+    bundle_rows =
+      Enum.flat_map(entries, fn e ->
+        case e.attribution do
+          %{} = a -> [row(e.path, e.id, a)]
+          _ -> []
+        end
+      end)
+
+    governance_rows =
+      Enum.flat_map(governance, fn path ->
+        case frontmatter(root, path) do
+          {:ok, %{"attribution" => %{} = a}} -> [row(path, nil, a)]
+          _ -> []
+        end
+      end)
+
+    (bundle_rows ++ governance_rows)
+    |> filter_channel(opts[:channel])
+    |> filter_since(opts[:since])
+    |> Enum.sort_by(& &1.when, :desc)
+  end
+
+  defp row(path, id, attribution) do
+    %{
+      path: path,
+      id: id,
+      when: to_string(attribution["when"] || ""),
+      channel: attribution["channel"],
+      agent: attribution["agent"],
+      why: attribution["why"],
+      from: List.wrap(attribution["from"])
+    }
+  end
+
+  defp filter_channel(rows, nil), do: rows
+  defp filter_channel(rows, channel), do: Enum.filter(rows, &(&1.channel == channel))
+
+  defp filter_since(rows, nil), do: rows
+
+  defp filter_since(rows, since),
+    do: Enum.filter(rows, &(String.slice(&1.when, 0, 10) >= since))
+
   # --- shape ------------------------------------------------------------------
 
   defp shape_errors(attribution, path, _kind, _by_id, _root) when not is_map(attribution) do

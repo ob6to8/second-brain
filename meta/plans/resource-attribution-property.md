@@ -2,7 +2,7 @@
 type: plan
 title: "Attribution: a frontmatter record of the ingestion event"
 description: Add a structured `attribution` frontmatter property to bundle concepts recording when the concept was ingested, through which channel and by whom, and why it was deemed worth filing — an immutable event record, distinct from provenance (content origin) and timestamp (last change).
-status: accepted
+status: done
 provenance: "Claude Code session, 2026-07-13 — commissioned by the operator: 'create an attribution property for resources absorbed into the knowledge collection — including when it was ingested, how/who, and why'"
 attribution:
   when: 2026-07-13T09:29:41Z
@@ -307,6 +307,22 @@ moved `proposed` → `accepted` on their answers.
    step 5). Consequences folded into the spec: the append-only `from` carve-out
    (semantics rule 1) and `mix brain.attribution` promoted from optional to
    build step 6.
+
+## Execution note (2026-07-13, same session as ratification)
+
+All six build steps shipped: the policy (contract §1) and verifier rule 8
+(shape, `from` resolution, exemption placement, presence — mandatory, the
+backfill having landed); the skill writers (`/intake`, `/research`,
+`/add-to-glossary`, `/elaborate`, `/create-pull-request` stamping; the
+`auto-intake` tag and elaboration `thread:` field retired); the corpus
+backfill (265 docs reconstructed from git first-add commits, governance
+`from` derived through introducing-PR → thread `pr:` resolution, plus six
+dual-PR-branch docs hand-stamped from routing-ledger-confirmed threads);
+lineage derivation (`mix brain.lineage` reads `attribution.from` + `pr:`,
+confirmed byte-identical to the hand-kept blocks before their deletion);
+and the `mix brain.attribution` query surface (`--channel`/`--since`,
+`--backfill`). One advisory warning remains by design: this plan's own
+`from`, stamped when the session is captured.
 
 ## Revision note — governance attribution made explicit (2026-07-13)
 

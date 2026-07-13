@@ -151,6 +151,28 @@ defmodule SecondBrain.AttributionTest do
       assert Verifier.run(dir, presence: false) == :ok
     end
 
+    test "list/2 spans bundle and governance rows with channel/since filters", %{tmp_dir: dir} do
+      write_doc(
+        dir,
+        "concept.md",
+        "type: note\nid: sb:aaaaaa\n" <> attribution_block(when: "2026-07-10T08:00:00Z")
+      )
+
+      write_doc(
+        dir,
+        "meta/plans/some-plan.md",
+        "type: plan\n" <> attribution_block(channel: "agent-authored", when: "2026-07-12")
+      )
+
+      all = Attribution.list(dir)
+      assert Enum.map(all, & &1.path) == ["meta/plans/some-plan.md", "concept.md"]
+      assert %{id: "sb:aaaaaa", channel: "intake"} = List.last(all)
+
+      assert [%{path: "concept.md"}] = Attribution.list(dir, channel: "intake")
+      assert [%{path: "meta/plans/some-plan.md"}] = Attribution.list(dir, since: "2026-07-11")
+      assert Attribution.list(dir, channel: "intake", since: "2026-07-11") == []
+    end
+
     test "a ratification-flow doc without `from` warns (advisory)", %{tmp_dir: dir} do
       write_doc(
         dir,
