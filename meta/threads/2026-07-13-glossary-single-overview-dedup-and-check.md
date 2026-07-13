@@ -5,6 +5,7 @@ description: Rewrote all 148 glossary entry bodies to expansion-only under a sin
 provenance: "Claude Code session, 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, glossary, dedup, verification, flows]
 timestamp: 2026-07-13
+pr: 64
 ---
 
 # 2026-07-13-glossary-single-overview-dedup-and-check
