@@ -1,9 +1,9 @@
 ---
 type: plan
-title: "Rename the brain: second-brain → elixir-mind (including sb: → eb: id migration)"
-description: Spec for renaming the repository and all associated naming from "second-brain" to "elixir-mind" — the GitHub repo, the Elixir app/module namespace, hooks, docs, prose, and (operator-directed rescope) the stable-id prefix sb: → eb: as a bundle-wide namespace re-key that preserves every id's hex tail.
+title: "Rename the brain: second-brain → elixir-mind (including sb: → em: id migration)"
+description: Spec for renaming the repository and all associated naming from "second-brain" to "elixir-mind" — the GitHub repo, the Elixir app/module namespace, hooks, docs, prose, and (operator-directed rescope) the stable-id prefix sb: → em: as a bundle-wide namespace re-key that preserves every id's hex tail.
 status: proposed
-provenance: "Claude Code session, 2026-07-13 — operator asked to spec out the second-brain rename lift (initially targeting elixir-brain, later retargeted to elixir-mind); same session rescoped the plan to also migrate the id prefix sb: → eb:, explicitly accepting the increased scope"
+provenance: "Claude Code session, 2026-07-13 — operator asked to spec out the second-brain rename lift (initially targeting elixir-brain, later retargeted to elixir-mind); same session rescoped the plan to also migrate the id prefix sb: → em:, explicitly accepting the increased scope"
 tags: [meta, plan, rename, identity, migration, tooling, governance]
 timestamp: 2026-07-13
 ---
@@ -14,12 +14,14 @@ timestamp: 2026-07-13
 
 The operator wants the repository and all associated naming moved from
 **second-brain** to **elixir-mind** — including, per an explicit rescope, the
-stable-id prefix: every `sb:` id becomes an `eb:` id. (The target name was first
+stable-id prefix: every `sb:` id becomes an `em:` id. (The target name was first
 scoped as `elixir-brain`, then retargeted to `elixir-mind`; this plan reflects
-the current target and supersedes the earlier one. The `eb:` prefix is retained
-across that retarget — the two-letter token is an opaque namespace, not an
-abbreviation of the display name, so it needs no change when the name moves from
-brain to mind.) The original spec recommended keeping `sb:` (opaque, immutable
+the current target and supersedes the earlier one. The id prefix mirrors the
+display name — **em:** for **e**lixir-**m**ind — at the operator's direction.
+Because the migration rewrites every token in one deterministic pass, the
+replacement string is free to choose: `em:` costs exactly what `eb:` would have,
+so a mnemonic prefix is worth taking.) The original spec recommended keeping
+`sb:` (opaque, immutable
 per the stable-identity policy); the operator considered that and directed the
 migration anyway, accepting the larger scope. The operator authors and ratifies
 the policies, so this is a policy amendment plus a one-time migration, not a
@@ -29,7 +31,7 @@ The lift is two workstreams:
 
 - **Workstream A — the name rename** (repo, Elixir app, hooks, docs, prose):
   one mechanical in-repo PR plus minutes of operator action on GitHub.
-- **Workstream B — the id namespace migration** (`sb:` → `eb:`): a
+- **Workstream B — the id namespace migration** (`sb:` → `em:`): a
   deterministic, bundle-wide token rewrite plus code/policy updates, in its own
   atomic PR.
 
@@ -63,18 +65,18 @@ string sites** in `lib/` + `test/`.
 
 | Surface | What's there | Migration action |
 |---------|--------------|------------------|
-| **Minted ids** | 200 `id: sb:xxxxxx` frontmatter fields across the bundle | Rewrite prefix, **preserve the 6-hex tail**: `sb:4c9e1f` → `eb:4c9e1f` |
+| **Minted ids** | 200 `id: sb:xxxxxx` frontmatter fields across the bundle | Rewrite prefix, **preserve the 6-hex tail**: `sb:4c9e1f` → `em:4c9e1f` |
 | **Evidence edges** | `verified_by:` inline lists of `sb:` ids | Same prefix rewrite — edges stay internally consistent because tails are preserved |
-| **Route tags** | `<routes ref="sb:…">` in thread docs (including frozen bodies); `SecondBrain.RouteTags.classify_ref/1` pattern-matches the `"sb:" <>` prefix at `lib/second_brain/route_tags.ex:222` | Rewrite tag refs; update the code clause to `"eb:" <>` |
-| **Id-format code** | `registry.ex` `@id_format ~r/^sb:[0-9a-f]{6}$/` + minting `"sb:" <> …`; `verifier.ex` format check + error message; `dedup_probe.ex` `~r/sb:[0-9a-f]{6}/`; `mix brain.id` / `brain.evidence` docs; ~65 `"sb:"` string sites in `lib/` + `test/` (fixtures, assertions) | Flip to `eb:` in the same PR — the verifiers make a mixed state unrepresentable |
+| **Route tags** | `<routes ref="sb:…">` in thread docs (including frozen bodies); `SecondBrain.RouteTags.classify_ref/1` pattern-matches the `"sb:" <>` prefix at `lib/second_brain/route_tags.ex:222` | Rewrite tag refs; update the code clause to `"em:" <>` |
+| **Id-format code** | `registry.ex` `@id_format ~r/^sb:[0-9a-f]{6}$/` + minting `"sb:" <> …`; `verifier.ex` format check + error message; `dedup_probe.ex` `~r/sb:[0-9a-f]{6}/`; `mix brain.id` / `brain.evidence` docs; ~65 `"sb:"` string sites in `lib/` + `test/` (fixtures, assertions) | Flip to `em:` in the same PR — the verifiers make a mixed state unrepresentable |
 | **Dedup-probe gold set** | `meta/evals/dedup-probe.md` rows keyed on `sb:` acceptable-ids | Prefix rewrite; probe re-run as the check |
 | **Policies & contract** | `stable-identity.md`, `verification-grounding.md`, `route-tagging.md`, `session-capture.md`, and every policy/skill doc describing "`sb:` + 6 hex chars" or "no `sb:` id" (governance namespaces) | Edit policy sources (see Decision 1's amendment), recompile `CLAUDE.md` |
 | **Prose id mentions** | `sb:xxxxxx` tokens quoted in thread bodies, glossary *Seen in*/co-feeds lines, tutorials, flows, analyses, inbox digests, `deprecated/README.md` (1 token) | Global token rewrite per Decision 2; `deprecated/` excluded |
-| **Git history & commit messages** | Old commits reference `sb:` ids | **Untouched** (history is never rewritten); the deterministic tail-preserving mapping means any historical `sb:X` reads as today's `eb:X` |
+| **Git history & commit messages** | Old commits reference `sb:` ids | **Untouched** (history is never rewritten); the deterministic tail-preserving mapping means any historical `sb:X` reads as today's `em:X` |
 
 ## Decisions for ratification
 
-**Decision 1 — migrate `sb:` → `eb:` as a prefix swap, with a stable-identity
+**Decision 1 — migrate `sb:` → `em:` as a prefix swap, with a stable-identity
 policy amendment (operator-directed).**
 The original recommendation was to keep `sb:` — the stable-identity policy
 makes ids opaque and immutable, and the prefix is a namespace token, not a
@@ -82,10 +84,10 @@ display name. The operator weighed that and directed the migration; that
 ruling stands and this plan executes it. Two design choices make it safe:
 
 - **Prefix swap, never re-mint.** Every id keeps its 6-hex tail:
-  `sb:4c9e1f` → `eb:4c9e1f`. The mapping is total, deterministic, collision-free
+  `sb:4c9e1f` → `em:4c9e1f`. The mapping is total, deterministic, collision-free
   (tails are already unique), and mechanically reversible. Cross-references
   (`verified_by`, route tags, gold set, prose citations) all stay consistent
-  under one regex: `\bsb:([0-9a-f]{6})\b` → `eb:$1`.
+  under one regex: `\bsb:([0-9a-f]{6})\b` → `em:$1`.
 - **Amend the policy, don't silently break it.** `stable-identity.md` is
   reworded so the *tail* is the immutable identity and the *prefix* is the
   bundle's id namespace, changeable only by an operator-ratified, bundle-wide
@@ -93,11 +95,14 @@ ruling stands and this plan executes it. Two design choices make it safe:
   this plan ratifies the amendment; the policy edit and recompiled `CLAUDE.md`
   ship in the migration PR.
 
-The prefix is `eb:` (not, say, `em:` for elixir-mind) deliberately: it is an
-opaque identifier with no obligation to track the display name, and holding it
-stable across the brain→mind retarget avoids a second, gratuitous re-key. If a
-future operator wants the prefix to mirror the name, that is its own ratified
-migration under the amended policy — not part of this one.
+The prefix is `em:` — chosen to mirror the display name (**e**lixir-**m**ind) at
+the operator's direction. Nothing in the identity model requires this: the
+prefix is opaque, and edges (`verified_by`) and route tags key on the full
+token, not its meaning. But a mnemonic prefix is free here — the migration is
+one tail-preserving regex regardless of the target string, so `em:` costs
+exactly what an arbitrary two letters would. The amended policy still treats the
+prefix as opaque; `em:` is a mnemonic convenience, not a semantic dependency
+anything may rely on.
 
 **Decision 2 — the token rewrite is global, including frozen thread bodies
 and dated records (recommended: yes, with `deprecated/` excluded).**
@@ -107,7 +112,7 @@ in machinery. Leaving them would strand ~hundreds of permanently dangling
 identifiers that no longer resolve to anything. Because the mapping is 1:1,
 tail-preserving, and recorded in a single commit, rewriting the token inside
 frozen prose is a namespace re-key, not a falsification of the record — the
-freeze exists so the *content* of what was said survives, and `eb:4c9e1f`
+freeze exists so the *content* of what was said survives, and `em:4c9e1f`
 denotes exactly what `sb:4c9e1f` denoted. Ratifying this plan ratifies this
 one-time freeze exception, scoped to the exact regex above and nothing else.
 The alternative (machinery-only rewrite, prose keeps `sb:`) preserves
@@ -152,9 +157,8 @@ policy/tutorial prose but changes nothing structural.
 ## Scope boundaries — what does not change
 
 - **Id tails.** All 200 six-hex tails survive verbatim; no id is re-minted,
-  retired, or reused. Only the two-character namespace prefix changes.
-- **The `eb:` prefix choice.** Held stable across the brain→mind retarget; not
-  re-keyed to match the new name (Decision 1).
+  retired, or reused. Only the two-character namespace prefix changes
+  (`sb:` → `em:`); the identity that must not change is the tail.
 - **`mix brain.*` task names** — already repo-name-agnostic and domain-neutral.
 - **Frozen retained text** in `meta/threads/` bodies, beyond the two ratified
   exceptions: the Decision 2 id-token regex and the Decision 3 `<routes>` ref
@@ -202,7 +206,7 @@ stable-identity amendment (Decision 1) and the frozen-body exceptions
 9. PR, true merge, delete the head branch.
 
 **Phase 1b — id migration PR (workstream B, one session, after 1a merges).**
-Atomic by construction: the verifiers reject any mixed `sb:`/`eb:` state, so
+Atomic by construction: the verifiers reject any mixed `sb:`/`em:` state, so
 every step lands in one PR.
 
 1. Code flip: `registry.ex` (`@id_format`, minting), `verifier.ex` (format
@@ -214,7 +218,7 @@ every step lands in one PR.
    prefix = ratified-migration-only namespace; record this migration); update
    `sb:`-prefix mentions across `meta/policy/*` and `.claude/skills/*/SKILL.md`.
 3. Global token rewrite, one deterministic pass:
-   `\bsb:([0-9a-f]{6})\b` → `eb:$1` over all `*.md` excluding `deprecated/`
+   `\bsb:([0-9a-f]{6})\b` → `em:$1` over all `*.md` excluding `deprecated/`
    and `_build/` — covers the 200 `id:` fields, `verified_by` lists, route-tag
    refs, gold set, glossary citation lines, and prose mentions (Decision 2).
 4. Non-hex prose forms by hand: "`sb:` + 6 hex chars"-style descriptions in
@@ -227,7 +231,7 @@ every step lands in one PR.
    (expected: zero) and a `` `sb:` `` prose grep (expected: only historical
    references *about* the migration, e.g. this plan).
 7. PR, true merge, delete the head branch. The migration commit message states
-   the mapping rule (`sb:X → eb:X`, tails preserved) for readers of old
+   the mapping rule (`sb:X → em:X`, tails preserved) for readers of old
    commits.
 
 **Phase 2 — GitHub rename (operator, after Phase 1a merges; 1b need not
@@ -248,7 +252,7 @@ wait for it).**
 **Phase 3 — post-rename verification (first session in the renamed repo).**
 Confirm: session hook provisions and prints the new name; CI and the Pages
 deploy are green; the site serves at the new URL; `mix brain.verify`,
-`brain.route_tags`, and `brain.dedup_probe` pass; `mix brain.id` mints `eb:`
+`brain.route_tags`, and `brain.dedup_probe` pass; `mix brain.id` mints `em:`
 ids for a scratch concept. File an `issue` for anything that slipped.
 
 **Gate suite (both PRs):** `mix compile --warnings-as-errors`,
