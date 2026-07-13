@@ -1,27 +1,31 @@
 ---
 type: plan
-title: "Rename the brain: second-brain → elixir-brain (including sb: → eb: id migration)"
-description: Spec for renaming the repository and all associated naming from "second-brain" to "elixir-brain" — the GitHub repo, the Elixir app/module namespace, hooks, docs, prose, and (operator-directed rescope) the stable-id prefix sb: → eb: as a bundle-wide namespace re-key that preserves every id's hex tail.
+title: "Rename the brain: second-brain → elixir-mind (including sb: → eb: id migration)"
+description: Spec for renaming the repository and all associated naming from "second-brain" to "elixir-mind" — the GitHub repo, the Elixir app/module namespace, hooks, docs, prose, and (operator-directed rescope) the stable-id prefix sb: → eb: as a bundle-wide namespace re-key that preserves every id's hex tail.
 status: proposed
-provenance: "Claude Code session (claude-fable-5), 2026-07-13 — operator asked to spec out the second-brain → elixir-brain rename lift; same day, operator rescoped the plan to include migrating the id prefix sb: → eb:, explicitly accepting the increased scope"
+provenance: "Claude Code session, 2026-07-13 — operator asked to spec out the second-brain rename lift (initially targeting elixir-brain, later retargeted to elixir-mind); same session rescoped the plan to also migrate the id prefix sb: → eb:, explicitly accepting the increased scope"
 tags: [meta, plan, rename, identity, migration, tooling, governance]
 timestamp: 2026-07-13
 ---
 
-# Rename the brain: second-brain → elixir-brain
+# Rename the brain: second-brain → elixir-mind
 
 ## The ask
 
 The operator wants the repository and all associated naming moved from
-**second-brain** to **elixir-brain** — including, per an explicit rescope, the
-stable-id prefix: every `sb:` id becomes an `eb:` id. The original spec
-recommended keeping `sb:` (opaque, immutable per the stable-identity policy);
-the operator considered that and directed the migration anyway, accepting the
-larger scope. The operator authors and ratifies the policies, so this is a
-policy amendment plus a one-time migration, not a violation — but the plan must
-carry both explicitly.
+**second-brain** to **elixir-mind** — including, per an explicit rescope, the
+stable-id prefix: every `sb:` id becomes an `eb:` id. (The target name was first
+scoped as `elixir-brain`, then retargeted to `elixir-mind`; this plan reflects
+the current target and supersedes the earlier one. The `eb:` prefix is retained
+across that retarget — the two-letter token is an opaque namespace, not an
+abbreviation of the display name, so it needs no change when the name moves from
+brain to mind.) The original spec recommended keeping `sb:` (opaque, immutable
+per the stable-identity policy); the operator considered that and directed the
+migration anyway, accepting the larger scope. The operator authors and ratifies
+the policies, so this is a policy amendment plus a one-time migration, not a
+violation — but the plan must carry both explicitly.
 
-The lift is now two workstreams:
+The lift is two workstreams:
 
 - **Workstream A — the name rename** (repo, Elixir app, hooks, docs, prose):
   one mechanical in-repo PR plus minutes of operator action on GitHub.
@@ -42,16 +46,16 @@ string sites** in `lib/` + `test/`.
 
 | Surface | What's there | Rename action |
 |---------|--------------|---------------|
-| **GitHub repo** | `ob6to8/second-brain` | Operator renames in repo Settings → `ob6to8/elixir-brain` (Phase 2) |
-| **Elixir app** | `mix.exs` `app: :second_brain`; module namespace `SecondBrain` (~78 occurrences across `lib/` + `test/`); dirs `lib/second_brain/`, `test/second_brain/` | `:elixir_brain` / `ElixirBrain` / `lib/elixir_brain/` / `test/elixir_brain/` — fully mechanical |
-| **Mix tasks** | `mix brain.contract`, `brain.verify`, `brain.route_tags`, … | **Unchanged** — the task namespace is `brain.*`, not `second_brain.*`; skills and CI keep working |
+| **GitHub repo** | `ob6to8/second-brain` | Operator renames in repo Settings → `ob6to8/elixir-mind` (Phase 2) |
+| **Elixir app** | `mix.exs` `app: :second_brain`; module namespace `SecondBrain` (~78 occurrences across `lib/` + `test/`); dirs `lib/second_brain/`, `test/second_brain/` | `:elixir_mind` / `ElixirMind` / `lib/elixir_mind/` / `test/elixir_mind/` — fully mechanical |
+| **Mix tasks** | `mix brain.contract`, `brain.verify`, `brain.route_tags`, … | **Unchanged** — the task namespace is `brain.*`, not `second_brain.*`; skills and CI keep working. (Note: `brain.*` is domain-neutral and survives the brain→mind retarget too.) |
 | **Session hook** | `.claude/hooks/session-start.sh`: log path `/tmp/second-brain-session-start.log`, two `second-brain:` message prefixes | Rename strings |
 | **CI workflows** | `.github/workflows/ci.yml`, `pages.yml` | **No occurrences** — nothing to change |
 | **Generated artifacts** | `CLAUDE.md` (title "Operating Contract — Second Brain (OKF)"), `meta/registry.md`, route-tag excerpt logs, `meta/flows/lineage.md` | Never hand-edited — edit sources (`meta/preamble.md`, policies), then regenerate (`mix brain.contract`, `brain.registry`, `brain.route_tags --materialize`, `brain.lineage --materialize`) |
 | **Maintained docs** | `README.md`, root `index.md` (`# Second Brain`), `meta/preamble.md`, skill `SKILL.md`s, `meta/flows/*`, `meta/tutorials/*`, policy examples (e.g. route-tagging's `lib/second_brain/route_tags.ex` sample ref) | Update names and code paths |
 | **Route-tag path refs in frozen threads** | `<routes ref="… lib/second_brain/….ex">` attributes inside `meta/threads/` docs; `mix brain.route_tags` **fails CI** if a path ref doesn't resolve to a file on disk | Update the `ref` attributes when `lib/` moves — see Decision 3 |
 | **Filed concept slug** | `knowledge/SWE/testing/elixir-second-brain-testing-methodology.md` (`sb:d58da3`) | Rename file; id survives the move — see Decision 4 |
-| **GitHub Pages** | Site served at `ob6to8.github.io/second-brain/`; the site build uses relative URLs throughout (only doc comments mention the subpath) | No code change; URL moves to `…/elixir-brain/` on repo rename, **old Pages URL will 404** (Pages does not redirect) |
+| **GitHub Pages** | Site served at `ob6to8.github.io/second-brain/`; the site build uses relative URLs throughout (only doc comments mention the subpath) | No code change; URL moves to `…/elixir-mind/` on repo rename, **old Pages URL will 404** (Pages does not redirect) |
 | **Environment / sessions** | Claude Code remote environment source and session repo scope pinned to `ob6to8/second-brain`; local clone dir `/home/user/second-brain` | Operator updates the environment source after the repo rename; git-level redirects cover existing clones/Routines in the interim |
 | **Frozen / archival prose** | `meta/threads/` bodies, `deprecated/` (read-only), `inbox/` dated digests, point-in-time `meta/analysis/` docs | **Not renamed** (workstream A prose) — see scope boundaries |
 
@@ -89,6 +93,12 @@ ruling stands and this plan executes it. Two design choices make it safe:
   this plan ratifies the amendment; the policy edit and recompiled `CLAUDE.md`
   ship in the migration PR.
 
+The prefix is `eb:` (not, say, `em:` for elixir-mind) deliberately: it is an
+opaque identifier with no obligation to track the display name, and holding it
+stable across the brain→mind retarget avoids a second, gratuitous re-key. If a
+future operator wants the prefix to mirror the name, that is its own ratified
+migration under the amended policy — not part of this one.
+
 **Decision 2 — the token rewrite is global, including frozen thread bodies
 and dated records (recommended: yes, with `deprecated/` excluded).**
 `sb:` ids appear in *retained verbatim text* (e.g. the worked example quoting
@@ -120,27 +130,32 @@ permanent complexity to serve one rename. **Update the ref attributes.**
 (recommended: yes).**
 `knowledge/SWE/testing/elixir-second-brain-testing-methodology.md` names *this
 project*. Per the identity policy, identity survives refactors: rename to
-`elixir-brain-testing-methodology.md`, keep the id (tail `d58da3`), update
+`elixir-mind-testing-methodology.md`, keep the id (tail `d58da3`), update
 inbound prose links, regenerate the registry. By contrast,
 `meta/analysis/comparison-with-the-2026-second-brain-field.md` stays — there
 "second brain" is the product category being compared against, not this repo.
 
 **Decision 5 — prose policy: proper noun vs. category term.**
 Where "Second Brain" names *this repo* (README title, root `index.md` heading,
-`meta/preamble.md` title, hook messages), it becomes **Elixir Brain** /
-**elixir-brain**. Where "second brain" is the *category* ("a personal second
+`meta/preamble.md` title, hook messages), it becomes **Elixir Mind** /
+**elixir-mind**. Where "second brain" is the *category* ("a personal second
 brain stored as an OKF bundle", the field-comparison analysis, glossary
 definitions of the concept), the recommendation is to keep the category term —
 the repo is still *a* second brain; it is just no longer *named* that. The
-preamble's opening line can carry both: "…a personal second brain … named
-**elixir-brain**." Operator may instead direct a full prose sweep; that widens
-the diff into policy/tutorial prose but changes nothing structural.
+retarget to "mind" makes this cleaner than "brain" would have: "mind" is not
+the category word at all, so there is zero collision between the new proper
+noun and the standing "second brain" category term. The preamble's opening
+line can carry both: "…a personal second brain … named **elixir-mind**."
+Operator may instead direct a full prose sweep; that widens the diff into
+policy/tutorial prose but changes nothing structural.
 
 ## Scope boundaries — what does not change
 
 - **Id tails.** All 200 six-hex tails survive verbatim; no id is re-minted,
   retired, or reused. Only the two-character namespace prefix changes.
-- **`mix brain.*` task names** — already repo-name-agnostic.
+- **The `eb:` prefix choice.** Held stable across the brain→mind retarget; not
+  re-keyed to match the new name (Decision 1).
+- **`mix brain.*` task names** — already repo-name-agnostic and domain-neutral.
 - **Frozen retained text** in `meta/threads/` bodies, beyond the two ratified
   exceptions: the Decision 2 id-token regex and the Decision 3 `<routes>` ref
   attributes. Prose mentions of "second brain", old URLs, and quoted commit
@@ -162,11 +177,11 @@ stable-identity amendment (Decision 1) and the frozen-body exceptions
 
 **Phase 1a — name rename PR (workstream A, one session).**
 
-1. `mix.exs`: `SecondBrain.MixProject` → `ElixirBrain.MixProject`,
-   `app: :second_brain` → `app: :elixir_brain`.
-2. `git mv lib/second_brain lib/elixir_brain`,
-   `git mv test/second_brain test/elixir_brain`; sweep
-   `SecondBrain` → `ElixirBrain` and `second_brain` → `elixir_brain` across
+1. `mix.exs`: `SecondBrain.MixProject` → `ElixirMind.MixProject`,
+   `app: :second_brain` → `app: :elixir_mind`.
+2. `git mv lib/second_brain lib/elixir_mind`,
+   `git mv test/second_brain test/elixir_mind`; sweep
+   `SecondBrain` → `ElixirMind` and `second_brain` → `elixir_mind` across
    `lib/` and `test/` (~78 module references plus path strings in moduledocs).
 3. `.claude/hooks/session-start.sh`: log path and message prefixes.
 4. Maintained docs sweep: `README.md`, root `index.md`, `meta/preamble.md`,
@@ -194,7 +209,7 @@ every step lands in one PR.
    check + message), `dedup_probe.ex` (extraction regex), `route_tags.ex`
    (`classify_ref` clause + docs), `mix brain.id`/`brain.evidence` task docs,
    and the ~65 `"sb:"` sites in `lib/` + `test/` (fixtures and assertions
-   included).
+   included). (These live under `lib/elixir_mind/` once 1a has merged.)
 2. Policy amendment: reword `stable-identity.md` (tail = immutable identity;
    prefix = ratified-migration-only namespace; record this migration); update
    `sb:`-prefix mentions across `meta/policy/*` and `.claude/skills/*/SKILL.md`.
@@ -218,17 +233,17 @@ every step lands in one PR.
 **Phase 2 — GitHub rename (operator, after Phase 1a merges; 1b need not
 wait for it).**
 
-1. Repo Settings → rename to `elixir-brain`. Git remotes and web URLs
+1. Repo Settings → rename to `elixir-mind`. Git remotes and web URLs
    redirect; Actions, branch protection, and Pages settings carry over.
 2. The Pages site redeploys on the next push at
-   `ob6to8.github.io/elixir-brain/`; the **old Pages URL 404s** (no redirect
+   `ob6to8.github.io/elixir-mind/`; the **old Pages URL 404s** (no redirect
    at the Pages layer) — update any external bookmarks. Old-URL mentions
    inside frozen threads stay as historical record.
 3. Update the Claude Code environment source / session repo scope to
-   `ob6to8/elixir-brain`; existing Routines keep working through git
+   `ob6to8/elixir-mind`; existing Routines keep working through git
    redirects in the interim but should be re-pointed when convenient.
 4. Optionally re-point local clones: `git remote set-url origin
-   git@github.com:ob6to8/elixir-brain.git` (redirects make this non-urgent).
+   git@github.com:ob6to8/elixir-mind.git` (redirects make this non-urgent).
 
 **Phase 3 — post-rename verification (first session in the renamed repo).**
 Confirm: session hook provisions and prints the new name; CI and the Pages
