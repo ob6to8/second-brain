@@ -2,8 +2,18 @@
 
 Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
-## 2026-07-11
+## 2026-07-13
 
+- **Captured [`2026-07-13-council-round-suitability-evaluation`](/meta/threads/2026-07-13-council-round-suitability-evaluation.md)**
+  — the session that evaluated the council-round protocol and filed the
+  suitability analysis. Two ledger rows: the evaluation strand (`paused` on
+  operator ratification of the four bindings), and the distilled-vs-dumped
+  three-senses clarification (`closed`, unrouted). Regions back-linked to the
+  analysis doc and the distill-dont-dump / session-capture policies (path
+  refs — no `sb:` sinks fed, so no excerpt logs materialized). Also corrected
+  the analysis doc's `timestamp`/provenance dates from 2026-07-11 to
+  2026-07-13 (the actual session date) and moved its log entry under the
+  right heading.
 - **Filed [`council-round-suitability`](/meta/analysis/council-round-suitability.md)**
   (`type: analysis`) — operator-commissioned evaluation of the "council round"
   adversarial draft-PR review protocol. Verdict: integrate as a `/council`
@@ -13,6 +23,9 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   `/create-pull-request` and position against `/code-review`; land via a
   skills-registry policy edit + `/render-contract`). Evaluated prompt
   preserved verbatim in the doc's appendix.
+
+## 2026-07-11
+
 - **Third-close refresh of [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)**
   — appended the PR #42 exchanges verbatim (open, conflicted true merge
   `9ad1d4e`, the operator's settings confirmation and its ledger flip), one new

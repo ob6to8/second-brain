@@ -2,9 +2,9 @@
 type: analysis
 title: "Should the council-round protocol be integrated into this repo? Yes — as a skill, after four bindings"
 description: An adversarial multi-agent PR-review protocol ("council round") is evaluated against the bundle's operating contract; verdict is integrate-as-skill — it fills the undefined drafted→merged gate and leans on machinery this repo already has (true-merge provenance, persist-plans, distill-don't-dump) — but its no-transcripts rule collides with session-capture and four bindings must be ratified first.
-provenance: "Claude Code session (Claude Fable), 2026-07-11 — operator pasted the council-round prompt and asked for a suitability evaluation against this repo; evaluated against the live policy set under meta/policy/ and the existing skills"
+provenance: "Claude Code session (Claude Fable), 2026-07-13 — operator pasted the council-round prompt and asked for a suitability evaluation against this repo; evaluated against the live policy set under meta/policy/ and the existing skills"
 tags: [meta, analysis, council, review, adversarial, pr-workflow, skills, governance, provenance]
-timestamp: 2026-07-11
+timestamp: 2026-07-13
 ---
 
 # Should the council-round protocol be integrated into this repo?
@@ -163,7 +163,7 @@ hand-run round, labelled as such, on a real branch as the founding example;
 ## Appendix — the evaluated prompt (verbatim)
 
 Preserved as the evaluand; provenance: pasted by the operator in this session,
-2026-07-11.
+2026-07-13.
 
 > # Council: an adversarial review round on a draft PR
 >
