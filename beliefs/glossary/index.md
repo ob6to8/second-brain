@@ -155,6 +155,7 @@ system works.
 - [synonym expansion](/beliefs/glossary/synonym-expansion.md) — broadening a query with synonyms, jargon variants, and acronym expansions to bridge vocabulary mismatch without embeddings
 - [thread doc](/beliefs/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
 - [three-level documentation](/beliefs/glossary/three-level-documentation.md) — opt-in scheme: plain backstop / canonical technical body / grounding tier — one canonical level plus two anchored derivations
+- [timestamp](/beliefs/glossary/timestamp.md) — a last-modified date; in this brain, the frontmatter field and the ordering key every collection sorts by (glossary excepted)
 - [todo (type)](/beliefs/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`
 - [tree is the taxonomy](/beliefs/glossary/tree-is-the-taxonomy.md) — the directory tree, surfaced via `index.md` files (progressive disclosure), *is* the canonical taxonomy
 - [Tree-sitter](/beliefs/glossary/tree-sitter.md) — incremental multi-language parser producing concrete syntax trees; the parsing layer under code knowledge graphs

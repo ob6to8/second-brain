@@ -9,6 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, collection-ordering-by-date-modified session"
   why: "persists the operator-ratified extension of the date-ordered-collection convention to every collection surface per the persist-plans policy"
+  from: [/meta/threads/2026-07-13-collection-ordering-by-date-modified.md]
 tags: [meta, plan, indexes, collections, recency, timestamp, site]
 timestamp: 2026-07-13
 ---
