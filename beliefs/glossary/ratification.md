@@ -6,6 +6,7 @@ description: The operator's explicit approval that turns a proposed shape change
 provenance: "Agent-distilled glossary definition, pointer to the defining policy"
 verified: false
 tags: [glossary, governance, taxonomy]
+sense: repo
 timestamp: 2026-07-12
 ---
 

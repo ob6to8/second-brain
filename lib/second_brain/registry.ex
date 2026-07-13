@@ -24,7 +24,17 @@ defmodule SecondBrain.Registry do
   defmodule Entry do
     @moduledoc false
     @enforce_keys [:id, :concept_id, :path]
-    defstruct [:id, :concept_id, :path, :type, :title, :verified, :resource, verified_by: []]
+    defstruct [
+      :id,
+      :concept_id,
+      :path,
+      :type,
+      :title,
+      :verified,
+      :resource,
+      :sense,
+      verified_by: []
+    ]
   end
 
   @doc "Regex a valid stable id must match."
@@ -90,6 +100,7 @@ defmodule SecondBrain.Registry do
           title: fm["title"],
           verified: fm["verified"],
           resource: fm["resource"],
+          sense: fm["sense"],
           verified_by: List.wrap(fm["verified_by"])
         }
 

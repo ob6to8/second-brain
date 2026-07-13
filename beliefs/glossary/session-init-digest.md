@@ -6,6 +6,7 @@ description: A machine-compiled summary of a knowledge base's open work — open
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, session-init, hooks, tooling]
+sense: repo
 timestamp: 2026-07-12
 ---
 

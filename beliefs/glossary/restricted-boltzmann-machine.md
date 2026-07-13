@@ -6,6 +6,7 @@ description: A two-layer undirected generative network (visible and hidden units
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, deep-learning, neural-networks, generative-models]
+sense: common
 timestamp: 2026-07-12
 ---
 

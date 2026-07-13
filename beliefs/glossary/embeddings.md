@@ -6,6 +6,7 @@ description: Dense numeric vector representations of text produced by a model su
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, embeddings, search]
+sense: common
 timestamp: 2026-07-10
 ---
 

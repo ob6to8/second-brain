@@ -6,6 +6,7 @@ description: The controlled type for a design/decision record of a one-off inten
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, types, governance, planning]
+sense: repo
 timestamp: 2026-07-12
 ---
 

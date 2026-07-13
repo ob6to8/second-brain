@@ -6,6 +6,7 @@ description: A documentation artifact that traces a single canonical run of a wo
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, flows, testing, documentation]
+sense: repo
 timestamp: 2026-07-10
 ---
 

@@ -6,6 +6,7 @@ description: The stored key and value tensors for already-processed tokens in tr
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, kv-cache, llm-inference, transformers, attention]
+sense: common
 timestamp: 2026-07-11
 ---
 

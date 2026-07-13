@@ -6,6 +6,7 @@ description: A repeatable evaluation that issues a fixed set of natural-phrasing
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, evaluation]
+sense: repo
 timestamp: 2026-07-12
 ---
 

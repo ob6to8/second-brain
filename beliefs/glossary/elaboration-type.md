@@ -6,6 +6,7 @@ description: Controlled type — a persisted expansion of a technical phrase or 
 provenance: "Agent-distilled glossary definition, pointer to the defining policy"
 verified: false
 tags: [glossary, types, governance, elaborations]
+sense: repo
 timestamp: 2026-07-12
 ---
 

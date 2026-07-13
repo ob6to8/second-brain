@@ -6,6 +6,7 @@ description: (Operator-coined) The understanding gap a human operator accrues ab
 provenance: "Operator-coined term (mreveley, 2026-07-12 session); agent-distilled definition"
 verified: false
 tags: [glossary, knowledge-management, automation, coined]
+sense: repo
 timestamp: 2026-07-12
 ---
 

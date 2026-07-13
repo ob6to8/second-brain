@@ -6,6 +6,7 @@ description: A hook that runs automatically at the start of an agent/CLI session
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, claude-code, tooling, ci]
+sense: common
 timestamp: 2026-07-12
 ---
 

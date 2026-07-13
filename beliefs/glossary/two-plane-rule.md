@@ -6,6 +6,7 @@ description: An architectural separation between a fast operational plane (ephem
 provenance: "Agent-distilled glossary definition — coined in the dark-factory scenario analysis"
 verified: false
 tags: [glossary, architecture, epistemics, dark-factory]
+sense: repo
 timestamp: 2026-07-12
 ---
 

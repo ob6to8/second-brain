@@ -6,6 +6,7 @@ description: A time-based schedule specification — conventionally five fields 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, scheduling, automation]
+sense: common
 timestamp: 2026-07-10
 ---
 

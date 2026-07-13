@@ -6,6 +6,7 @@ description: The set of per-category interest signals derived by walking a knowl
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, research, search, taxonomy]
+sense: repo
 timestamp: 2026-07-11
 ---
 

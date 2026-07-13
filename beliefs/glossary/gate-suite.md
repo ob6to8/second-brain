@@ -6,6 +6,7 @@ description: The full set of blocking verification checks a change must pass bef
 provenance: "Agent-distilled glossary definition, pointer to the defining tutorial"
 verified: false
 tags: [glossary, enforcement, ci, tooling]
+sense: repo
 timestamp: 2026-07-12
 ---
 

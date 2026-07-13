@@ -6,6 +6,7 @@ description: An index/algorithm class that trades exactness for speed when findi
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, embeddings]
+sense: common
 timestamp: 2026-07-10
 ---
 

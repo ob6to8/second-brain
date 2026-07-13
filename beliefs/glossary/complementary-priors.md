@@ -6,6 +6,7 @@ description: A construction, introduced by Hinton, Osindero & Teh, that cancels 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, deep-learning, machine-learning, graphical-models]
+sense: common
 timestamp: 2026-07-12
 ---
 

@@ -6,6 +6,7 @@ description: The governed vocabulary (`recent`/`impactful`/`influential`/`ground
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, research, inbox]
+sense: repo
 timestamp: 2026-07-11
 ---
 

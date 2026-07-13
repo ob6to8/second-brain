@@ -6,6 +6,7 @@ description: A control that requires explicit human or permission approval befor
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, automation, security, claude-code]
+sense: common
 timestamp: 2026-07-10
 ---
 

@@ -6,6 +6,7 @@ description: An incremental parser-generator and library that builds a concrete 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, tree-sitter, parsing, code-intelligence, ast]
+sense: common
 timestamp: 2026-07-11
 ---
 

@@ -6,6 +6,7 @@ description: A derived document a compiler task generates from scattered canonic
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, governance, tooling, compiled-artifact]
+sense: repo
 timestamp: 2026-07-11
 ---
 

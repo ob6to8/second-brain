@@ -6,6 +6,7 @@ description: Following dependency edges outward when a source or premise changes
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, epistemics, verification, dependencies]
+sense: common
 timestamp: 2026-07-12
 ---
 

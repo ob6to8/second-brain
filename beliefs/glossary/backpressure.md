@@ -6,6 +6,7 @@ description: Flow control in which a slower downstream stage pushes back on fast
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, concurrency, flow-control, systems]
+sense: common
 timestamp: 2026-07-12
 ---
 

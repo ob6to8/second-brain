@@ -6,6 +6,7 @@ description: A component that parses markdown source and emits HTML, handling he
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, markdown, site-generator]
+sense: common
 timestamp: 2026-07-10
 ---
 

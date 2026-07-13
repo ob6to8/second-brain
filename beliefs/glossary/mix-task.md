@@ -6,6 +6,7 @@ description: A named, invocable command in Elixir's mix build tool (e.g. `mix te
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, elixir, tooling]
+sense: common
 timestamp: 2026-07-10
 ---
 

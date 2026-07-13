@@ -6,6 +6,7 @@ description: A generative neural network built as a stack of restricted Boltzman
 provenance: "Agent-distilled glossary definition; pointer to the filed concept"
 verified: false
 tags: [glossary, deep-learning, neural-networks, machine-learning]
+sense: common
 timestamp: 2026-07-12
 ---
 

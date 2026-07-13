@@ -6,6 +6,7 @@ description: A web vulnerability class in which unescaped attacker-controlled co
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, security]
+sense: common
 timestamp: 2026-07-10
 ---
 

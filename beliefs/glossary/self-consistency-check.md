@@ -6,6 +6,7 @@ description: A validation that re-derives a value from the same source data it i
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing]
+sense: common
 timestamp: 2026-07-10
 ---
 

@@ -6,6 +6,7 @@ description: A mechanical check that converts a rule violation or drift from a s
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, enforcement, tooling, ci]
+sense: repo
 timestamp: 2026-07-12
 ---
 

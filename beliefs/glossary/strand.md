@@ -6,6 +6,7 @@ description: One topic's line of work through a session — the unit a routing l
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, routing, capture, session-init]
+sense: repo
 timestamp: 2026-07-11
 ---
 

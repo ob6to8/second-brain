@@ -6,6 +6,7 @@ description: A test that constructs a known-bad input and asserts the check flag
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing]
+sense: common
 timestamp: 2026-07-12
 ---
 

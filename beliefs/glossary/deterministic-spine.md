@@ -6,6 +6,7 @@ description: The subset of a workflow whose output is fully determined by its in
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing, flows]
+sense: repo
 timestamp: 2026-07-10
 ---
 

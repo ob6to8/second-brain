@@ -6,6 +6,7 @@ description: A model that learns the joint distribution of its data so it can ge
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, machine-learning, generative-models]
+sense: common
 timestamp: 2026-07-12
 ---
 

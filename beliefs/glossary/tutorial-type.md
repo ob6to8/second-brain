@@ -6,6 +6,7 @@ description: The controlled type for a long-form explanatory note meant to be re
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, types, governance]
+sense: repo
 timestamp: 2026-07-10
 ---
 

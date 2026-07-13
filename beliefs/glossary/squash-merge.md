@@ -6,6 +6,7 @@ description: A merge that flattens a branch's commits into one brand-new commit 
 provenance: "Agent-distilled glossary definition; pointer to the reachability tutorial"
 verified: false
 tags: [glossary, git, merge, provenance]
+sense: common
 timestamp: 2026-07-11
 ---
 

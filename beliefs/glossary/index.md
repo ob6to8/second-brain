@@ -4,7 +4,10 @@ One concept file per technical term, alphabetical, maintained by
 [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md). Each definition
 is individually linkable — cite a term in any response as a bundle-absolute
 link (e.g. `[route tag](/beliefs/glossary/route-tag.md)`) and the link lands on its
-definition. See the [glossary hub](/beliefs/glossary.md) for how the system works.
+definition. Every entry carries a `sense` field marking where its usage lives —
+`common` (portable), `repo` (this brain's own vocabulary), or `dual` (both,
+defined common-first). See the [glossary hub](/beliefs/glossary.md) for how the
+system works.
 
 ## Terms
 
@@ -124,6 +127,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [section terminator](/beliefs/glossary/section-terminator.md) — the pattern deciding where a parsed section ends; reader and rewriter of one section must agree on it
 - [self-consistency check](/beliefs/glossary/self-consistency-check.md) — a check that re-derives a value from its own source; catches drift but is blind to shared-logic errors
 - [semantic search](/beliefs/glossary/semantic-search.md) — meaning-based retrieval via embedding similarity, bridging synonym/jargon gaps lexical search misses
+- [sense (glossary sense)](/beliefs/glossary/sense.md) — the frontmatter field classifying where a term's usage lives: common (portable), repo (local vocabulary), or dual (both, defined common-first); gated by verifier rule 7
 - [session capture](/beliefs/glossary/session-capture.md) — rendering a session into a verbatim thread doc, dropping only tool calls, reasoning, short pre-tool narration
 - [session-init digest](/beliefs/glossary/session-init-digest.md) — a machine-compiled summary of open work (issues, todos, plans, dangling strands) injected into a fresh session's context, ending in a heuristic priority ranking the agent refines
 - [SessionStart hook](/beliefs/glossary/sessionstart-hook.md) — a hook that runs at session start to provision or validate the environment (e.g. warm the Elixir toolchain) and brief the agent via its stdout

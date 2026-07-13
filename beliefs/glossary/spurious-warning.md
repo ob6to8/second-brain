@@ -6,6 +6,7 @@ description: A warning or match triggered by something that is not a real instan
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing, tooling]
+sense: common
 timestamp: 2026-07-12
 ---
 

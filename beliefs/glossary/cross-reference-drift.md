@@ -6,6 +6,7 @@ description: The failure mode in which a change that should update many interlin
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, failure-modes, links, corpus-health]
+sense: common
 timestamp: 2026-07-12
 ---
 

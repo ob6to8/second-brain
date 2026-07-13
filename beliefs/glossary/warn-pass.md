@@ -6,6 +6,7 @@ description: An advisory check that reports its findings without failing — the
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, enforcement, tooling, ci]
+sense: repo
 timestamp: 2026-07-12
 ---
 

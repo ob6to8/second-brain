@@ -6,6 +6,7 @@ description: A store that indexes items as high-dimensional embedding vectors an
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, embeddings]
+sense: common
 timestamp: 2026-07-10
 ---
 

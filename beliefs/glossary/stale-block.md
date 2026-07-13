@@ -6,6 +6,7 @@ description: A materialized excerpt-log block whose content no longer matches it
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, routing, route-tagging, generated-artifacts]
+sense: repo
 timestamp: 2026-07-12
 ---
 

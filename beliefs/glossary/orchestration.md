@@ -6,6 +6,7 @@ description: The engineering discipline of directing AI agents that implement â€
 provenance: "Agent-distilled glossary definition; term central to the engineer-as-orchestrator doctrine, 2026-07-12 session"
 verified: false
 tags: [glossary, agents, orchestration, role]
+sense: common
 timestamp: 2026-07-12
 ---
 

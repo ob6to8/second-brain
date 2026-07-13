@@ -6,6 +6,7 @@ description: Erlang's fault-tolerance philosophy — rather than defensively han
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, erlang, fault-tolerance, supervision]
+sense: common
 timestamp: 2026-07-12
 ---
 

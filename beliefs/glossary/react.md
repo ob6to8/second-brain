@@ -6,6 +6,7 @@ description: The foundational LLM agent loop — the model alternates free-form 
 provenance: "Agent-distilled glossary pointer entry"
 verified: false
 tags: [glossary, agentic-loop, react, pointer]
+sense: common
 timestamp: 2026-07-12
 ---
 

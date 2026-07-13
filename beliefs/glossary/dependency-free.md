@@ -6,6 +6,7 @@ description: A property of a program that relies only on its language/runtime st
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, tooling, ci]
+sense: common
 timestamp: 2026-07-12
 ---
 

@@ -6,6 +6,7 @@ description: An unsupervised training procedure for layered generative networks 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, deep-learning, machine-learning, training, unsupervised-learning]
+sense: common
 timestamp: 2026-07-12
 ---
 

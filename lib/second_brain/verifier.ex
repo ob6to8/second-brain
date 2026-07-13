@@ -19,11 +19,18 @@ defmodule SecondBrain.Verifier do
     6. The `verified` field (either value) may only appear on statement types
        (`claim`/`note`/`concept`) — captures, sources, and every other type
        omit it entirely.
+    7. Every glossary term file (a bundle concept under `beliefs/glossary/`)
+       carries a `sense` field classifying where the term's usage lives:
+       `common` (portable — the wider world uses it this way), `repo` (this
+       brain's own vocabulary), or `dual` (both senses, defined common-first).
+       The field is not policed outside the glossary.
   """
 
   alias SecondBrain.Registry
 
   @statement_types ~w(claim note concept)
+  @glossary_dir "beliefs/glossary/"
+  @senses ~w(common repo dual)
 
   @spec run(String.t()) :: :ok | {:error, [String.t()]}
   def run(root \\ File.cwd!()) do
@@ -33,7 +40,8 @@ defmodule SecondBrain.Verifier do
     errors =
       scan_errors ++
         Enum.flat_map(entries, fn e ->
-          type_errors(e) ++ id_errors(e) ++ edge_errors(e, by_id) ++ grounding_errors(e)
+          type_errors(e) ++
+            id_errors(e) ++ edge_errors(e, by_id) ++ grounding_errors(e) ++ sense_errors(e)
         end)
 
     if errors == [], do: :ok, else: {:error, errors}
@@ -85,4 +93,24 @@ defmodule SecondBrain.Verifier do
   end
 
   defp grounding_errors(_), do: []
+
+  # Every glossary term is classified by where its usage lives; the field is
+  # required there and ignored everywhere else.
+  defp sense_errors(%{sense: sense, path: @glossary_dir <> _ = path}) do
+    cond do
+      sense in @senses ->
+        []
+
+      is_nil(sense) ->
+        [
+          "#{path}: missing `sense` — every glossary term is classified " <>
+            "(common/repo/dual)"
+        ]
+
+      true ->
+        ["#{path}: invalid sense #{inspect(sense)} (expected common, repo, or dual)"]
+    end
+  end
+
+  defp sense_errors(_), do: []
 end

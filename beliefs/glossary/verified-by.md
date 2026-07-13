@@ -6,6 +6,7 @@ description: The frontmatter field holding a statement's evidence edges — an i
 provenance: "Agent-distilled glossary definition, pointer to the defining policy"
 verified: false
 tags: [glossary, verification, evidence]
+sense: repo
 timestamp: 2026-07-10
 ---
 

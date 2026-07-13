@@ -6,6 +6,7 @@ description: GitHub's superset of CommonMark adding tables, task lists, striketh
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, markdown]
+sense: common
 timestamp: 2026-07-10
 ---
 

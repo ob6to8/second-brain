@@ -6,6 +6,7 @@ description: From lights-out manufacturing (a plant so automated it runs with no
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, autonomy, agents, dark-factory, automation]
+sense: common
 timestamp: 2026-07-12
 ---
 

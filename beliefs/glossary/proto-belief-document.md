@@ -6,6 +6,7 @@ description: In Composable Beliefs, a durable single page that accretes synthesi
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, composable-beliefs, routing]
+sense: repo
 timestamp: 2026-07-10
 ---
 

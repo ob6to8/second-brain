@@ -6,6 +6,7 @@ description: Broadening a search query with alternate phrasings — synonyms, ja
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, intake]
+sense: common
 timestamp: 2026-07-12
 ---
 

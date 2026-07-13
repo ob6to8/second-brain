@@ -6,6 +6,7 @@ description: The AI-industry thesis that frontier labs' very high inference gros
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, ai-industry, economics, pointer]
+sense: common
 timestamp: 2026-07-12
 ---
 

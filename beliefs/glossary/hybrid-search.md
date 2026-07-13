@@ -6,6 +6,7 @@ description: Retrieval that combines a lexical ranker (typically BM25) with vect
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, retrieval, embeddings]
+sense: common
 timestamp: 2026-07-11
 ---
 

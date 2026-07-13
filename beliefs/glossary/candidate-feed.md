@@ -6,6 +6,7 @@ description: A regenerated list of external items surfaced as candidates for pos
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, research, inbox]
+sense: common
 timestamp: 2026-07-11
 ---
 

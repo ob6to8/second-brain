@@ -6,6 +6,7 @@ description: A test that pins a transform's output by comparing it against a pre
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing]
+sense: common
 timestamp: 2026-07-10
 ---
 

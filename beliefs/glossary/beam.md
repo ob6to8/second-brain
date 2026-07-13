@@ -6,6 +6,7 @@ description: The virtual machine that runs Erlang and Elixir, built around huge 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, beam, erlang, elixir, runtime]
+sense: common
 timestamp: 2026-07-12
 ---
 

@@ -6,6 +6,7 @@ description: A category of staleness whose instances share one detection mechani
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, enforcement, corpus-health, tooling]
+sense: repo
 timestamp: 2026-07-12
 ---
 

@@ -6,6 +6,7 @@ description: The pattern a parser uses to decide where a document section ends (
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, parsing, markdown, tooling]
+sense: common
 timestamp: 2026-07-12
 ---
 

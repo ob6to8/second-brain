@@ -6,6 +6,7 @@ description: A separate Elixir knowledge/belief-management system built on an OK
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, composable-beliefs, epistemics, provenance]
+sense: repo
 timestamp: 2026-07-10
 ---
 

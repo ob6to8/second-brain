@@ -6,6 +6,7 @@ description: Corpus rot that emits no signal while it happens — nothing distin
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, failure-modes, corpus-health, enforcement]
+sense: common
 timestamp: 2026-07-12
 ---
 

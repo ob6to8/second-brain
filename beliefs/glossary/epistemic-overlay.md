@@ -6,6 +6,7 @@ description: A structural layer above a set of knowledge documents that classifi
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, epistemics, composable-beliefs]
+sense: repo
 timestamp: 2026-07-12
 ---
 

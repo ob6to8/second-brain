@@ -6,6 +6,7 @@ description: A named, invocable capability packaged as a SKILL.md under .claude/
 provenance: "Agent-distilled glossary definition, pointer to the defining policy"
 verified: false
 tags: [glossary, claude-code, skills]
+sense: common
 timestamp: 2026-07-12
 ---
 

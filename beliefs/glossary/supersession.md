@@ -6,6 +6,7 @@ description: An update model where a revised item records a superseded-by relati
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, composable-beliefs, identity]
+sense: common
 timestamp: 2026-07-10
 ---
 

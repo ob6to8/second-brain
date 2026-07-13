@@ -6,6 +6,7 @@ description: An HTTP callback that inverts polling — instead of a client repea
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, http, events, integration, webhooks]
+sense: common
 timestamp: 2026-07-12
 ---
 

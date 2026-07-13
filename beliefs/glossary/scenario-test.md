@@ -6,6 +6,7 @@ description: An automated test that drives an entire workflow end-to-end against
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing, elixir]
+sense: common
 timestamp: 2026-07-10
 ---
 

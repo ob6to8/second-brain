@@ -6,6 +6,7 @@ description: A pure function that folds a current state and an action into a new
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, functional-programming, state, redux, elm, architecture]
+sense: common
 timestamp: 2026-07-12
 ---
 

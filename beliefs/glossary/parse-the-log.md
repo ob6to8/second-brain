@@ -6,6 +6,7 @@ description: A session-capture implementation path that renders a transcript by 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, capture, tooling]
+sense: repo
 timestamp: 2026-07-10
 ---
 

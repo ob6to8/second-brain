@@ -6,6 +6,7 @@ description: The file path where a third-party harness expects content to appear
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, governance, harness, claude-code]
+sense: repo
 timestamp: 2026-07-11
 ---
 

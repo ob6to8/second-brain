@@ -6,6 +6,7 @@ description: Retrieval based on meaning rather than surface tokens, typically vi
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, embeddings]
+sense: common
 timestamp: 2026-07-10
 ---
 

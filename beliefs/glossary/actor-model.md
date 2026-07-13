@@ -6,6 +6,7 @@ description: A concurrency model in which independent, share-nothing processes (
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, concurrency, actor-model, beam]
+sense: common
 timestamp: 2026-07-12
 ---
 

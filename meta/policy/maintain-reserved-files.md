@@ -3,7 +3,7 @@ type: policy
 title: Maintain the reserved files
 description: After filing, update the directory's index.md; the change itself is recorded by the commit, not a log entry.
 section: filing
-order: 5
+order: 6
 status: active
 tags: [meta, governance, filing, index]
 timestamp: 2026-07-11

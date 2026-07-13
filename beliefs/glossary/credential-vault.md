@@ -6,6 +6,7 @@ description: A store that holds a secret outside the process that uses it and su
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, security, credentials, secrets, egress, agents]
+sense: common
 timestamp: 2026-07-12
 ---
 

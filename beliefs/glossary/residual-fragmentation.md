@@ -6,6 +6,7 @@ description: The near-duplicate or fragmented concepts that remain after automat
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, intake, dedup, editorial]
+sense: repo
 timestamp: 2026-07-12
 ---
 

@@ -6,6 +6,7 @@ description: The move by which a glossary term that has outgrown its entry reloc
 provenance: "Agent-distilled glossary definition; coined by the /add-to-glossary skill"
 verified: false
 tags: [glossary, taxonomy, lifecycle]
+sense: repo
 timestamp: 2026-07-10
 ---
 

@@ -6,6 +6,7 @@ description: The pre-OKF knowledge-base design this brain replaced — atomic cl
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, knowledge-management, deprecated]
+sense: repo
 timestamp: 2026-07-11
 ---
 

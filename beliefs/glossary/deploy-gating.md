@@ -6,6 +6,7 @@ description: Making a deployment conditional on prior verification passing, so o
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, ci, deployment]
+sense: common
 timestamp: 2026-07-10
 ---
 

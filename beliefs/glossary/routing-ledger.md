@@ -6,6 +6,7 @@ description: The per-thread dispatch table (topic | state | routed-to | dangling
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, routing, capture]
+sense: repo
 timestamp: 2026-07-12
 ---
 

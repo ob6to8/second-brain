@@ -6,6 +6,7 @@ description: The generated "## Thread excerpts — route-tagged log" section a r
 provenance: "Agent-distilled glossary definition, pointer to the defining policy"
 verified: false
 tags: [glossary, routing, route-tagging, capture]
+sense: repo
 timestamp: 2026-07-11
 ---
 

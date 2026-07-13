@@ -6,6 +6,7 @@ description: A structured representation of entities as nodes and their relation
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, knowledge-graph, code-intelligence, graph, retrieval]
+sense: common
 timestamp: 2026-07-11
 ---
 

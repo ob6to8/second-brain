@@ -6,6 +6,7 @@ description: Anthropic's hosted agent service (beta) where the agent loop runs o
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, managed-agents, anthropic, agents, hosted, beam]
+sense: common
 timestamp: 2026-07-12
 ---
 

@@ -6,6 +6,7 @@ description: The principle that every piece of knowledge should have a single, a
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, principles, provenance]
+sense: common
 timestamp: 2026-07-11
 ---
 

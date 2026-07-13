@@ -6,6 +6,7 @@ description: The contamination of a shared knowledge base with false or attacker
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, security, epistemics, trust, dark-factory]
+sense: common
 timestamp: 2026-07-12
 ---
 

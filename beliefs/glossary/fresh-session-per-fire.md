@@ -6,6 +6,7 @@ description: A scheduling mode where each firing of a trigger starts a brand-new
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, scheduling, automation]
+sense: common
 timestamp: 2026-07-10
 ---
 

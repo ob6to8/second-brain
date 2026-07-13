@@ -6,6 +6,7 @@ description: A git merge where the target branch's tip is an ancestor of the inc
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, git]
+sense: common
 timestamp: 2026-07-10
 ---
 

@@ -6,6 +6,7 @@ description: An LLM inference technique that proposes tokens with a cheap draft 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, llm-inference, speculative-decoding, throughput, draft-verify]
+sense: common
 timestamp: 2026-07-11
 ---
 

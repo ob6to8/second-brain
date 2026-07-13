@@ -6,6 +6,7 @@ description: The /research step that files its featured items into the bundle vi
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, research, intake, automation]
+sense: repo
 timestamp: 2026-07-12
 ---
 

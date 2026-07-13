@@ -6,6 +6,7 @@ description: A top-level directory excluded from the identity registry, so its d
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, namespaces, identity]
+sense: repo
 timestamp: 2026-07-10
 ---
 

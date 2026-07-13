@@ -6,6 +6,7 @@ description: A retrieval metric measuring whether the correct target appears wit
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, evaluation]
+sense: common
 timestamp: 2026-07-11
 ---
 

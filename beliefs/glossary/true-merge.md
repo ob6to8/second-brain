@@ -6,6 +6,7 @@ description: A merge that creates a two-parent merge commit wiring the branch's 
 provenance: "Agent-distilled glossary definition; pointer to the reachability tutorial"
 verified: false
 tags: [glossary, git, merge, provenance]
+sense: common
 timestamp: 2026-07-11
 ---
 

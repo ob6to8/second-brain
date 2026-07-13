@@ -6,6 +6,7 @@ description: A lightweight check wired into continuous integration that fails th
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, ci, testing]
+sense: common
 timestamp: 2026-07-10
 ---
 

@@ -6,6 +6,7 @@ description: In information retrieval, the fraction of relevant items that a sea
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, information-retrieval]
+sense: common
 timestamp: 2026-07-12
 ---
 

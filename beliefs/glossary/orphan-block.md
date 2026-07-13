@@ -6,6 +6,7 @@ description: A block of generated output whose source has vanished — here, a d
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, routing, route-tagging, generated-artifacts]
+sense: repo
 timestamp: 2026-07-12
 ---
 

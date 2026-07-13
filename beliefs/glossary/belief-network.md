@@ -6,6 +6,7 @@ description: A probabilistic graphical model — a directed acyclic graph of sto
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, machine-learning, graphical-models, probability]
+sense: common
 timestamp: 2026-07-12
 ---
 

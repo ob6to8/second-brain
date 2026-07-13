@@ -6,6 +6,7 @@ description: The principle that the directory hierarchy — surfaced level-by-le
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, taxonomy, okf]
+sense: repo
 timestamp: 2026-07-10
 ---
 

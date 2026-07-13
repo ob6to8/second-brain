@@ -6,6 +6,7 @@ description: The rule that a `verified: true` agent statement must be backed by 
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, verification, identity]
+sense: repo
 timestamp: 2026-07-10
 ---
 

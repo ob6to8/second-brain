@@ -3,7 +3,7 @@ type: policy
 title: Links must be processed
 description: A web resource enters the brain only once processed into a reference; oversized sources are summarized with the link persisted.
 section: filing
-order: 4
+order: 5
 status: active
 tags: [meta, governance, filing, links, references]
 timestamp: 2026-07-05

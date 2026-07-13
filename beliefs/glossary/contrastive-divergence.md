@@ -6,6 +6,7 @@ description: A fast approximate training algorithm for restricted Boltzmann mach
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, deep-learning, machine-learning, training]
+sense: common
 timestamp: 2026-07-12
 ---
 

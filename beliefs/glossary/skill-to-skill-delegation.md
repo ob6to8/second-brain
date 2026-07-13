@@ -6,6 +6,7 @@ description: One skill invoking another as a sub-step so the callee's procedure 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, claude-code, skills]
+sense: common
 timestamp: 2026-07-10
 ---
 

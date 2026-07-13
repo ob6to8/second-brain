@@ -6,6 +6,7 @@ description: In the Claude Code Remote scheduler, a saved scheduled trigger that
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, automation, scheduling, claude-code]
+sense: common
 timestamp: 2026-07-10
 ---
 

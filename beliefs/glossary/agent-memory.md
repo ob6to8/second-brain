@@ -6,6 +6,7 @@ description: The mechanisms by which an AI agent persists knowledge beyond its c
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, agent-memory, context-engineering]
+sense: common
 timestamp: 2026-07-11
 ---
 

@@ -6,6 +6,7 @@ description: The root CLAUDE.md that every agent auto-loads at session start, co
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, governance]
+sense: repo
 timestamp: 2026-07-11
 ---
 

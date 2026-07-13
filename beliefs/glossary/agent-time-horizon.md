@@ -6,6 +6,7 @@ description: The human-completion-time length of task an AI agent can finish at 
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, agentic-loop, evaluation, long-horizon, metr]
+sense: common
 timestamp: 2026-07-11
 ---
 

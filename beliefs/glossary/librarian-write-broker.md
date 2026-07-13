@@ -6,6 +6,7 @@ description: A supervised process that solely owns mutation of a knowledge names
 provenance: "Agent-distilled glossary definition — coined in the dark-factory scenario analysis"
 verified: false
 tags: [glossary, architecture, actor-model, intake, write-governance, dark-factory]
+sense: repo
 timestamp: 2026-07-12
 ---
 

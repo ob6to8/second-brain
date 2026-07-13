@@ -6,6 +6,7 @@ description: Elixir's built-in unit-testing framework, shipped with the standard
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, elixir, testing]
+sense: common
 timestamp: 2026-07-10
 ---
 

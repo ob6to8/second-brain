@@ -6,6 +6,7 @@ description: In Claude Code, a packaged, distributable bundle of skills (and oth
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, claude-code, skills]
+sense: common
 timestamp: 2026-07-10
 ---
 

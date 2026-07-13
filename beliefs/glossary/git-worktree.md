@@ -6,6 +6,7 @@ description: A linked working directory attached to one git repository — its o
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, git, worktree, parallel-agents]
+sense: common
 timestamp: 2026-07-11
 ---
 

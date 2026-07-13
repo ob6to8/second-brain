@@ -131,6 +131,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:23844f` | [beliefs/glossary/section-terminator](/beliefs/glossary/section-terminator.md) | concept | false |
 | `sb:4e01f8` | [beliefs/glossary/self-consistency-check](/beliefs/glossary/self-consistency-check.md) | concept | false |
 | `sb:98acc0` | [beliefs/glossary/semantic-search](/beliefs/glossary/semantic-search.md) | concept | false |
+| `sb:60220a` | [beliefs/glossary/sense](/beliefs/glossary/sense.md) | concept | false |
 | `sb:243d56` | [beliefs/glossary/session-capture](/beliefs/glossary/session-capture.md) | concept | false |
 | `sb:6f2442` | [beliefs/glossary/session-init-digest](/beliefs/glossary/session-init-digest.md) | concept | false |
 | `sb:71f38a` | [beliefs/glossary/sessionstart-hook](/beliefs/glossary/sessionstart-hook.md) | concept | false |

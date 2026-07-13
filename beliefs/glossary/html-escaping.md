@@ -6,6 +6,7 @@ description: Replacing characters with special meaning in HTML (`&`, `"`, `<`, `
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, security, markdown]
+sense: common
 timestamp: 2026-07-10
 ---
 

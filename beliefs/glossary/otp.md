@@ -6,6 +6,7 @@ description: Erlang/Elixir's standard framework of battle-tested abstractions fo
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, otp, erlang, elixir, supervision, fault-tolerance]
+sense: common
 timestamp: 2026-07-12
 ---
 

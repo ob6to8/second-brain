@@ -6,6 +6,7 @@ description: A generative testing technique that asserts invariants ("properties
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing]
+sense: common
 timestamp: 2026-07-10
 ---
 

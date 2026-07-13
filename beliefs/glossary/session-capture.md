@@ -6,6 +6,7 @@ description: Rendering a working session into a thread doc, keeping every retain
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, capture]
+sense: repo
 timestamp: 2026-07-12
 ---
 

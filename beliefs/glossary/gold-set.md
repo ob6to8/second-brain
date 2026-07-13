@@ -6,6 +6,7 @@ description: A curated set of queries each paired with the item(s) that should b
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, evaluation, search]
+sense: common
 timestamp: 2026-07-12
 ---
 

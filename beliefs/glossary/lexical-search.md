@@ -6,6 +6,7 @@ description: Search that matches on the literal surface form of text — tokens 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search]
+sense: common
 timestamp: 2026-07-12
 ---
 

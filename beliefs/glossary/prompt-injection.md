@@ -6,6 +6,7 @@ description: An attack in which instructions embedded in untrusted content an LL
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, security, llm, agents]
+sense: common
 timestamp: 2026-07-12
 ---
 

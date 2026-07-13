@@ -6,6 +6,7 @@ description: The controlled type for a lightweight actionable task — a single 
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, types, governance]
+sense: repo
 timestamp: 2026-07-12
 ---
 

@@ -6,6 +6,7 @@ description: A glossary entry for a term canonically defined elsewhere in the br
 provenance: "Agent-distilled glossary definition; coined by the /add-to-glossary skill"
 verified: false
 tags: [glossary, cross-linking, dedup]
+sense: repo
 timestamp: 2026-07-10
 ---
 

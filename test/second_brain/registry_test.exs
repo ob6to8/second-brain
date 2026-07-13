@@ -106,6 +106,48 @@ defmodule SecondBrain.RegistryTest do
       assert joined =~ "ungrounded.md: verified: true but no evidence"
     end
 
+    test "passes glossary terms with a valid sense; ignores `sense` elsewhere", %{tmp_dir: dir} do
+      write_concept(dir, "beliefs/glossary/bm25.md",
+        type: "concept",
+        id: "sb:aaaaaa",
+        sense: "common"
+      )
+
+      write_concept(dir, "beliefs/glossary/route-tag.md",
+        type: "concept",
+        id: "sb:bbbbbb",
+        sense: "repo"
+      )
+
+      write_concept(dir, "beliefs/glossary/materialize.md",
+        type: "concept",
+        id: "sb:cccccc",
+        sense: "dual"
+      )
+
+      # Outside the glossary the field is neither required nor policed.
+      write_concept(dir, "elsewhere.md", type: "note", id: "sb:dddddd")
+      write_concept(dir, "graduated.md", type: "concept", id: "sb:eeeeee", sense: "dual")
+
+      assert Verifier.run(dir) == :ok
+    end
+
+    test "flags a glossary term with a missing or invalid sense", %{tmp_dir: dir} do
+      write_concept(dir, "beliefs/glossary/unclassified.md", type: "concept", id: "sb:aaaaaa")
+
+      write_concept(dir, "beliefs/glossary/mislabeled.md",
+        type: "concept",
+        id: "sb:bbbbbb",
+        sense: "local"
+      )
+
+      assert {:error, errors} = Verifier.run(dir)
+      joined = Enum.join(errors, "\n")
+
+      assert joined =~ "unclassified.md: missing `sense`"
+      assert joined =~ "mislabeled.md: invalid sense \"local\""
+    end
+
     test "flags `verified` (either value) on a non-statement type", %{tmp_dir: dir} do
       write_concept(dir, "how-to.md", type: "methodology", id: "sb:abc123", verified: false)
       write_concept(dir, "captured.md", type: "reference", id: "sb:def456", verified: false)

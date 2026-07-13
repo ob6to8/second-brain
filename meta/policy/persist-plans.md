@@ -3,7 +3,7 @@ type: policy
 title: Persist plans
 description: Any design or implementation plan the agent produces and the operator approves must be persisted as a type:plan doc under meta/plans/, not left in chat or the scratchpad.
 section: filing
-order: 6
+order: 7
 status: active
 tags: [meta, governance, plans, persistence]
 timestamp: 2026-07-09

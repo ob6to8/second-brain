@@ -6,6 +6,7 @@ description: The non-bundle `inbox/` waiting room holding `/research` candidate 
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, research, inbox, namespaces]
+sense: repo
 timestamp: 2026-07-10
 ---
 

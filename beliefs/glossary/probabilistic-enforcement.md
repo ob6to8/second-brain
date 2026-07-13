@@ -6,6 +6,7 @@ description: An integrity model in which rules live as prose an agent promises t
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, enforcement, failure-modes, governance]
+sense: common
 timestamp: 2026-07-12
 ---
 
