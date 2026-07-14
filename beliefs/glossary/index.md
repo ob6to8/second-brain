@@ -35,6 +35,7 @@ system works.
 - [belief network](/beliefs/glossary/belief-network.md) — a probabilistic graphical model (a.k.a. Bayesian network): a DAG of stochastic variables, each conditioned on its parents; the "belief" in *deep belief network*
 - [bipartite graph](/beliefs/glossary/bipartite-graph.md) — nodes split into two disjoint sets, edges only across the split; in belief graphs, belief vs. justification nodes
 - [blast radius (of a retracted premise)](/beliefs/glossary/blast-radius.md) — everything transitively dependent on a premise, needing re-examination when it falls; a staleness signal, not a truth score
+- [branch transplant](/beliefs/glossary/branch-transplant.md) — recovering a stale unmerged branch's useful content by copying it onto a fresh branch from current `main` (ids preserved), rather than merging and resurrecting since-moved paths
 - [BM25](/beliefs/glossary/bm25.md) — lexical full-text ranking by term frequency and rarity; the keyword-search tier between grep and semantic search
 - [bundle-absolute link](/beliefs/glossary/bundle-absolute-link.md) — a markdown link whose target begins at the bundle root with a leading slash, resolving identically from any document; breaks when the target moves, since it encodes the path, not the id
 - [candidate feed](/beliefs/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one

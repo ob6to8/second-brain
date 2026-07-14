@@ -12,7 +12,7 @@ fixed.
 ## Open
 
 - [Daily /research Routine: automated runs not landing on `main`](/meta/issues/daily-news-routine-runs-not-landing.md) — the scheduled Routine's fresh-session runs produce no commit/push; an environment-wide tool-approval gate is the suspected cause. Workaround: run `/research` manually. `status: open`.
-- [Orphaned remote branches: 15 merged undeleted, 6 unmerged untriaged](/meta/issues/orphaned-remote-branches-cleanup.md) — deletion of the 15 merged is ratified but blocked agent-side (env credential can't delete refs; operator command recorded in the issue); the 6 unmerged are kept per operator, tracked by the [triage todo](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md); auto-delete setting still pending. `status: open`.
+- [Orphaned remote branches: 15 merged undeleted, 6 unmerged untriaged](/meta/issues/orphaned-remote-branches-cleanup.md) — merged-branch deletion **executed by the operator 2026-07-13** (zero merged `claude/*` remain); unmerged-branch dispositions audited into the [triage todo](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md) (four small ports + one big transplant, two false orphans to ratify deleting); resolves once the auto-delete setting is confirmed on. `status: open`.
 
 ## Resolved
 

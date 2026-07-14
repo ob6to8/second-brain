@@ -5,12 +5,12 @@ description: The remote carries 21 lingering claude/* session branches predating
 status: open
 provenance: "Claude Code session (2026-07-11) — follow-up to the git-branch-deletion policy"
 tags: [meta, issue, git, branches, cleanup]
-timestamp: 2026-07-11
+timestamp: 2026-07-13
 attribution:
   when: 2026-07-11T09:49:17+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md]
+  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md, /meta/threads/2026-07-13-orphaned-branch-cleanup-and-transplant-plan.md]
 ---
 
 # Orphaned remote branches: 15 merged undeleted, 6 unmerged untriaged
@@ -22,6 +22,17 @@ existed, merged PR head branches were never deleted, and several sessions pushed
 branches whose PRs never merged. As of a pruned fetch on **2026-07-11**, the
 remote carries **21** lingering `claude/*` branches (plus `main` and the branch
 this issue ships on).
+
+**Update (2026-07-13, deletion executed):** the operator deleted every
+merged-and-Ahead-0 branch from the GitHub branches page — a pruned fetch
+confirms **zero merged `claude/*` branches remain** (21 refs dropped, including
+this issue's own branch and later-merged PRs' heads). The 2026-07-13 content
+audit of the surviving unmerged branches — what's portable, what's a false
+orphan — is recorded in the
+[triage todo](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md).
+The only condition left before `status: resolved` is confirming the
+**"Automatically delete head branches"** setting is enabled (Settings →
+General → Pull Requests), which agents cannot see or set.
 
 **Update (2026-07-11, deletion attempt):** the operator ratified deleting the
 15 merged branches and **keeping** all 6 unmerged ones (their final disposition
