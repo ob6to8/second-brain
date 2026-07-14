@@ -13,7 +13,7 @@ defmodule ElixirMind.Site do
 
   All internal links are **relative** (each page carries a `root_prefix` computed
   from its depth), so the site works both at a domain root and under a project
-  subpath like `/second-brain/` without configuration.
+  subpath like `/elixir-mind/` without configuration.
   """
 
   alias ElixirMind.{Frontmatter, Markdown, SiteConfig}

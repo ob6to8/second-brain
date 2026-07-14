@@ -7,7 +7,7 @@ defmodule ElixirMind.SiteConfig do
   URL is read from application config (`config/config.exs`), falling back to the
   GitHub Pages default so the tooling still runs in a bare checkout:
 
-      config :elixir_mind, site_base_url: "https://ob6to8.github.io/second-brain/"
+      config :elixir_mind, site_base_url: "https://ob6to8.github.io/elixir-mind/"
 
   Consumers:
 
@@ -21,7 +21,7 @@ defmodule ElixirMind.SiteConfig do
   re-run `mix brain.contract` and `mix brain.site`.
   """
 
-  @default_base_url "https://ob6to8.github.io/second-brain/"
+  @default_base_url "https://ob6to8.github.io/elixir-mind/"
 
   # Top-level directories the static site does not render (see ElixirMind.Site).
   # A resource under one of these has no page, hence no live URL.
