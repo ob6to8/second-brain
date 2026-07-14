@@ -9,6 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, dangling-strand reconciliation session"
   why: "persists the design for reconciling routing-ledger danglers into tracked work per the persist-plans policy, so the freezing question and tool shape survive the session"
+  from: [/meta/threads/2026-07-13-track-intake-todos-and-strand-reconciliation-plan.md]
 tags: [meta, plan, tooling, routing-ledger, priorities, provenance]
 timestamp: 2026-07-13
 ---

@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, second-mind taxonomy session"
   why: "the offered intake was left only as a paused routing-ledger strand; promoting it to a tracked task so it is not lost"
-  from: [/meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md]
+  from: [/meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md, /meta/threads/2026-07-13-track-intake-todos-and-strand-reconciliation-plan.md]
 ---
 
 # Intake the "Second brain distinctions" ChatGPT conversation as a reference
