@@ -7,6 +7,10 @@ resource: https://matklad.github.io/2022/07/04/unit-and-integration-tests.html
 provenance: "Distilled from Alex Kladov's (matklad) blog post, 2022-07-04"
 tags: [testing, software-engineering, test-design, unit-tests, integration-tests, flakiness]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T10:38:13+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Unit vs. integration tests: replace the dichotomy with purity and extent

@@ -7,6 +7,11 @@ order: 3
 status: active
 tags: [meta, governance, filing, links, naming]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-05T12:30:48+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
 ---
 - **Filenames**: kebab-case slug derived from the title
   (`open-knowledge-format.md`). Use a `YYYY-MM-DD-` prefix **only** for inherently

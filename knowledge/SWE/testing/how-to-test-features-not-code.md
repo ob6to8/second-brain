@@ -7,6 +7,10 @@ resource: https://matklad.github.io/2021/05/31/how-to-test.html
 provenance: "Distilled from Alex Kladov's (matklad) blog post, 2021-05-31"
 tags: [testing, software-engineering, test-design, property-based-testing, fuzzing, snapshot-tests]
 timestamp: 2026-07-06
+attribution:
+  when: 2026-07-06T10:39:56+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # How to test: test features, not code

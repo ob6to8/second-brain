@@ -7,6 +7,11 @@ order: 2
 status: active
 tags: [meta, governance, verification, provenance, evidence]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-05T19:41:08+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
 ---
 - **Provenance and verification are orthogonal.** `provenance` records where a
   statement came from and is **immutable history** — verifying a statement never

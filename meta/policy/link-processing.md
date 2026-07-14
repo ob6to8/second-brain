@@ -3,10 +3,15 @@ type: policy
 title: Links must be processed
 description: A web resource enters the brain only once processed into a reference; oversized sources are summarized with the link persisted.
 section: filing
-order: 4
+order: 5
 status: active
 tags: [meta, governance, filing, links, references]
 timestamp: 2026-07-05
+attribution:
+  when: 2026-07-05T12:30:48+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
 ---
 - **Links must be processed, not parked.** A web resource enters the brain only once it
   has been **processed into a `reference`** (fetched and summarized/captured). Do not

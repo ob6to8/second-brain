@@ -4,6 +4,10 @@ title: The three bundle scanners — Registry, Verifier, and RouteTags
 description: How the toolchain walks the repository — one base scanner (Registry.scan) that enumerates knowledge-bundle concepts through a directory-exclusion filter, and two consumers (the Verifier and RouteTags) that build on it, with RouteTags adding a second scan surface over meta/threads and bridging the governance and knowledge namespaces by stable id.
 tags: [meta, tooling, elixir, registry, verifier, route-tags, scanning, architecture]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T12:10:09+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # The three bundle scanners — Registry, Verifier, and RouteTags

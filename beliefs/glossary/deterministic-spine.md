@@ -6,7 +6,13 @@ description: The subset of a workflow whose output is fully determined by its in
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing, flows]
+sense: repo
 timestamp: 2026-07-10
+attribution:
+  when: 2026-07-11T08:41:24+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # deterministic spine

@@ -6,7 +6,13 @@ description: One skill invoking another as a sub-step so the callee's procedure 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, claude-code, skills]
+sense: common
 timestamp: 2026-07-10
+attribution:
+  when: 2026-07-11T08:41:24+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # skill-to-skill delegation

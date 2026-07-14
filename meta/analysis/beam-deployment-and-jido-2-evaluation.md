@@ -5,6 +5,11 @@ description: An architecture evaluation finding that the brain's Elixir layer is
 provenance: "Claude Code session (Claude Fable), 2026-07-12 — operator asked whether deploying to the BEAM or integrating the Jido 2 library could benefit this repo, and what direction could leverage BEAM/Elixir/Jido capabilities; Jido facts verified against hex.pm/hexdocs/GitHub by a research subagent the same day"
 tags: [meta, analysis, architecture, beam, otp, elixir, jido, agents, automation, tooling, mcp]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T00:15:58+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md]
 ---
 
 # Would deploying to the BEAM — or integrating Jido 2 — benefit this brain?

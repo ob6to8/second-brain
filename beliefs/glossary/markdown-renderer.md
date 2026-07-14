@@ -6,7 +6,13 @@ description: A component that parses markdown source and emits HTML, handling he
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, markdown, site-generator]
+sense: common
 timestamp: 2026-07-10
+attribution:
+  when: 2026-07-11T08:41:24+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # markdown renderer

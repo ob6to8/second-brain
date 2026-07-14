@@ -5,6 +5,11 @@ description: An evidence-backed evaluation, run against the live 39-concept corp
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09 — operator asked to stress-test a prior 'not yet' recommendation on adding a vector DB"
 tags: [meta, analysis, recall, dedup, vector-database, embeddings, search, intake, tooling]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T23:15:17+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md]
 ---
 
 # Would a vector DB improve recall as this bundle scales?
@@ -131,10 +136,10 @@ correct and untouched; only the "no signal yet" timing call was wrong.
 
 ## Relation to other concepts
 
-- [Context rot (Chroma)](/knowledge/SWE/agentic-coding/context-engineering/context-rot-chroma-research.md)
+- [Context rot (Chroma)](/knowledge/SWE/agentic/context-engineering/context-rot-chroma-research.md)
   — the concept the "lost in the middle" / "long context degradation" queries fail
   to find, and the capture that seeded this whole question.
-- [Conversation Tree Architecture](/knowledge/SWE/agentic-coding/context-engineering/conversation-tree-architecture.md)
+- [Conversation Tree Architecture](/knowledge/SWE/agentic/context-engineering/conversation-tree-architecture.md)
   — the "poisoning" vs "pollution" miss.
 - [tree-is-the-taxonomy](/meta/policy/tree-is-the-taxonomy.md) — why recall tooling
   never replaces the hand-curated tree.

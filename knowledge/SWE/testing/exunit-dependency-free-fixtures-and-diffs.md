@@ -7,6 +7,10 @@ resource: https://ex-unit.hexdocs.pm/ExUnit.Case.html
 provenance: "Distilled from ExUnit docs and the Elixir issue tracker via a test-harness research spike, 2026-07-09"
 tags: [elixir, exunit, testing, tmp_dir, snapshot-testing, golden-testing, dependency-free]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T12:23:15+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # ExUnit ships dependency-free fixtures and diffs (tmp_dir + built-in ==)

@@ -8,6 +8,10 @@ provenance: "Claude Opus 4.8 — pasted from a chat thread"
 verified: true
 verified_by: [sb:a3d27b, sb:f08c54]
 timestamp: 2026-07-05
+attribution:
+  when: 2026-07-05T11:10:01+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
 ---
 
 # Git local branches don't auto-advance on fetch

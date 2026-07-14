@@ -7,6 +7,11 @@ order: 1
 status: active
 tags: [meta, governance, git, branches]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T09:36:40+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md]
 ---
 - **Session branches are ephemeral; the default branch is durable.** Work enters
   the repo on a short-lived head branch (e.g. `claude/<slug>`) and lands in the

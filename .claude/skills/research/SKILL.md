@@ -163,10 +163,23 @@ For each featured item, in digest order:
   `⏸ deferred → needs new top-level domain, awaiting ratification`, and surface it in
   the report. Auto-intake never creates top-level shape — that stays the operator's
   to ratify (taxonomy-evolution protocol).
-- **Tag what you file `auto-intake`.** Add `auto-intake` to the filed concept's
-  `tags` and record its origin in `provenance` (e.g. "auto-intaken from /research inbox
-  YYYY-MM-DD"), so the whole auto-filed set — the operator's editorial queue — is a
-  single `tags: auto-intake` query.
+- **Attribute what you file.** Every filed/merged-into concept carries an
+  `attribution` block with `channel: auto-intake` (new files get the full event;
+  merges never touch the existing attribution — the event sub-keys are immutable):
+
+  ```yaml
+  attribution:
+    when: <now, ISO 8601>
+    channel: auto-intake
+    agent: "Claude Code agent, /research daily Routine"
+    why: "featured in the YYYY-MM-DD digest under <category>; reason-tag: <tag>"
+  ```
+
+  The `why` is the featuring rationale — the digest's category match and reason-tag,
+  landed on the concept itself. The whole auto-filed set — the operator's editorial
+  queue — is the `channel: auto-intake` slice (`mix brain.attribution --channel
+  auto-intake`). Do **not** add an `auto-intake` tag; the retired tag's job now
+  lives in `attribution.channel`.
 - **Gold-harvest no-ops here.** Intake's gold-harvest wants the *operator's* natural
   phrasing; auto-intake has none (the query is a synopsis), so intake skips it
   silently — correct; don't force a synthetic row.
@@ -192,7 +205,7 @@ so annotating it is not the immutability exception.
 ## The intake handoff
 
 Featured items are filed automatically (§6); the operator's role is the
-**editorial pass afterward** — review the `auto-intake`-tagged concepts, merge any
+**editorial pass afterward** — review the `channel: auto-intake` concepts, merge any
 residual duplicates, relabel, or reject. Two manual paths remain: **ratify a
 deferred item** (approve the new top-level domain, then it files), and **`/intake` a
 non-featured link** the operator wants filed by hand. When marking a *past* digest's

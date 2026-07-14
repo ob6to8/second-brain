@@ -6,6 +6,11 @@ status: done
 provenance: "Claude Code session, 2026-07-11 — operator-requested top-down review; staleness sweep partly delegated to a parallel read-only subagent, every reported finding independently re-verified. Retyped from `type: analysis` at operator direction: the write-up boils down to action."
 tags: [meta, plan, code-review, staleness, tooling, route-tagging, verifier, flows]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-11T07:13:22+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-code-review-flows-hardening-and-elaborations.md]
 ---
 
 # Plan — code review toolchain hardening

@@ -5,6 +5,11 @@ description: The 500+ concept failure chain decomposes into measurable eval task
 provenance: "Claude Code session (Claude Fable), 2026-07-10 — operator asked whether the failure space identified in the field-comparison analysis is rich content for evals; the session response is preserved verbatim at operator request, with the semantic-ground-truth fuzziness expanded"
 tags: [meta, analysis, evals, benchmarks, dedup, recall, ground-truth, corpus-health, failure-modes]
 timestamp: 2026-07-10
+attribution:
+  when: 2026-07-10T19:10:01+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-field-comparison-evals-and-cb-overlay-execution-path.md]
 ---
 
 # Is the corpus-maintenance failure space rich content for evals?
@@ -119,7 +124,7 @@ notes on git branches — one on fetch semantics, one on rebase workflow); *subs
 (two notes that share vocabulary but answer different questions). The merge
 threshold — which bands count as "duplicate, should have merged" — is an editorial
 choice. The live bundle demonstrates this: sixteen files legitimately coexist under
-`SWE/agentic-coding/agentic-loop/` because they are distinct *captures* of distinct
+`SWE/agentic/agentic-loop/` because they are distinct *captures* of distinct
 sources on one subject, while "context rot" and "lost in the middle" are one
 phenomenon under two names and should never become two concepts. No similarity
 score locates that line; only a policy does.

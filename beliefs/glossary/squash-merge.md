@@ -6,7 +6,13 @@ description: A merge that flattens a branch's commits into one brand-new commit 
 provenance: "Agent-distilled glossary definition; pointer to the reachability tutorial"
 verified: false
 tags: [glossary, git, merge, provenance]
+sense: common
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T18:09:19+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # squash merge

@@ -6,7 +6,13 @@ description: An inline <routes ref="…"> region marking which concept(s) a para
 provenance: "Agent-distilled glossary definition, pointer to the defining policy"
 verified: false
 tags: [glossary, capture, routing]
+sense: repo
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-10T23:09:18+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # route tag

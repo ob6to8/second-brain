@@ -6,7 +6,13 @@ description: A CNCF specification standardizing the envelope of an event — id,
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, events, cloudevents, protocol, interoperability]
+sense: common
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T09:05:38+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # CloudEvents

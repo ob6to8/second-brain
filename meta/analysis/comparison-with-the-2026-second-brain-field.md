@@ -5,6 +5,11 @@ description: A survey of the current second-brain landscape (Obsidian/PARA syste
 provenance: "Claude Code session (Claude Fable), 2026-07-10 — operator asked to evaluate the repo against the AI-influencer-verse second-brain landscape; web survey run the same day by a background research agent, primary sources fetched directly"
 tags: [meta, analysis, second-brain, landscape, pkm, obsidian, claude-code, enforcement, scale, failure-modes]
 timestamp: 2026-07-10
+attribution:
+  when: 2026-07-10T15:51:43+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-field-comparison-evals-and-cb-overlay-execution-path.md]
 ---
 
 # How does this bundle compare to the 2026 second-brain field?
@@ -75,7 +80,7 @@ a live argument for the plain-markdown portability bet this bundle makes.
 | Flow testing | claude-obsidian tests its plugin code | ExUnit scenario tests pinning the deterministic spine of `/intake` and `/capture` |
 | Semantic retrieval | eugeniughelbur retrieval evals + local embeddings; gbrain hybrid search at 146k pages | **Behind the field**: grep + LLM-in-context only; see [the vector-DB recall analysis](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md) |
 | Passive/scheduled automation | Hook auto-capture; nightly consolidation agents | Behind: `/capture` is manual by policy; the `/research` routine has a [tracked open issue](/meta/issues/daily-news-routine-runs-not-landing.md) |
-| Scale | gbrain 146k pages; mid-tier vaults in the thousands | 42 concepts, clustered in SWE/agentic-coding; `meta/` outweighs the bundle |
+| Scale | gbrain 146k pages; mid-tier vaults in the thousands | 42 concepts, clustered in SWE/agentic; `meta/` outweighs the bundle |
 
 ## The 500+ concept failure chain (new observation)
 

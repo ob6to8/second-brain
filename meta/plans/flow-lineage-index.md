@@ -6,6 +6,11 @@ status: done
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12 — operator asked whether the analysis → plan → PR → flow arc should be made explicit in flow docs; chose frontmatter + a derived flowchart index + include the thread, and to begin with the dedup reference instance then plan the full retrofit"
 tags: [meta, plan, flows, lineage, provenance, tooling, governance]
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T16:53:27+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-12-fuzzy-search-spike-and-flow-lineage.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md]
 ---
 
 # Flow lineage: frontmatter provenance + a derived flowchart
@@ -165,3 +170,15 @@ analysis' idea becoming a running flow) lives above individual commits and has n
 4. **Auto-materialize the per-doc blockquote** → **materialize**, consistent with the
    route-tag logs and the no-hand-kept-derived rule; `mix brain.lineage --materialize`
    owns the block between the `lineage:start`/`lineage:end` markers.
+
+## Addendum — source of truth migrated to `attribution.from` (2026-07-13)
+
+The hand-kept `lineage:` frontmatter block this plan introduced is retired.
+The [resource-attribution property](/meta/plans/resource-attribution-property.md)
+(operator-ratified decision 5) made the flow docs' `attribution.from`
+back-links plus each thread's `pr:` anchor the canonical source;
+`mix brain.lineage` now derives the same two views (per-doc blockquote,
+cross-flow index) from those edges. The migration check confirmed the
+derived views reproduced the hand-kept blocks byte-for-byte before the
+blocks were deleted. Everything else this plan decided — the views, the
+`--check` gate, feature-lineage semantics — stands.

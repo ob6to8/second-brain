@@ -5,7 +5,12 @@ description: Promote the latent attestation/aggregation/inference/prescription s
 status: proposed
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09 — derived from a comparison of this bundle against the Composable Beliefs repo"
 tags: [meta, plan, epistemics, graph, knowledge-representation, composable-beliefs, edges]
-timestamp: 2026-07-09
+timestamp: 2026-07-13
+attribution:
+  when: 2026-07-09T18:59:03+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md, /meta/threads/2026-07-13-epistemic-overlay-reconciliation.md]
 ---
 
 # Epistemic overlay: the four operations as a frontmatter-native graph over concepts
@@ -209,7 +214,7 @@ for Thread B to execute without ever opening CB.
   page-by-page web fetching.
 - **Freshness tiers** (record the tier in each capture's `provenance`):
   - *Tier 1 — authoritative:* `docs/guide/` (the most recent doc set),
-    `docs/beliefs/glossary.md`, the code (`CB.Schema.Verifier`, the deps / supersession /
+    `docs/glossary.md`, the code (`CB.Schema.Verifier`, the deps / supersession /
     dep-repoint implementations), and the live belief graph itself (`mix bs`
     queries) — per CB's own "query it rather than restating it."
   - *Tier 2 — secondary:* `cb-tut` (mostly accurate per the operator); verify any
@@ -223,9 +228,11 @@ for Thread B to execute without ever opening CB.
     Thread B and all later agents read only this bundle, so it would be noise.
     Targeted `git log` on schema/glossary files may be used the same way — as a
     dating instrument, not as content.
-- **Capture manifest** — file under `knowledge-management/composable-beliefs/`
-  (new subdirectory under the established top-level: autonomous per the taxonomy
-  protocol; create its `index.md`, log entries, mint ids):
+- **Capture manifest** — file under `knowledge/knowledge-management/composable-beliefs/`
+  (new subdirectory under the established `knowledge/knowledge-management/` domain:
+  autonomous per the taxonomy protocol; create its `index.md`, mint ids, and give
+  every new doc a mandatory `attribution` frontmatter map per the current contract —
+  no hand-kept `log.md` exists to append to; git history is the provenance layer):
   1. `reference` — CB overview as it currently is: typed nodes over a single
      `deps` edge, supersession chain, OKF-floor / CB-ceiling positioning.
   2. `source` — the four role definitions, verbatim from glossary/guide.
@@ -275,13 +282,82 @@ for Thread B to execute without ever opening CB.
   the design's technical claims carrying `verified_by` edges into the Thread A
   captures — the overlay's own evidence machinery, dogfooded.
 
+## Addendum — reconciliation with repo drift and a sibling plan (2026-07-13)
+
+Three days after the execution-path addendum was written, the bundle had moved:
+a root reorganization, an unrelated belief-decomposition exploration, and one
+concrete drift artifact all landed. This addendum corrects the operative
+instructions in place (rather than leaving them stale for Thread A/B to trip
+over) and records why, so the correction itself doesn't need re-deriving.
+
+**A live instance of the drift this plan exists to fight.** Two references to
+CB's own `docs/glossary.md` had been silently rewritten to `docs/beliefs/glossary.md`
+— an artifact of this bundle's *own* glossary restructuring (`/glossary/` →
+`/beliefs/glossary/`), whose rewrite tooling matched the literal string
+`glossary.md` without distinguishing an internal path from a quoted external
+one. Fixed in place above (Tier-1 list and Citations). This is stage-3
+cross-reference drift, mechanically caused, inside the very document
+proposing a mechanism against it — worth citing directly if `mix brain.graph`'s
+scope discussion ever needs a concrete motivating example.
+
+**Path drift from the root reorg.** `SWE/` and `knowledge-management/` moved
+under a new `knowledge/` top-level (now `knowledge/SWE/` and
+`knowledge/knowledge-management/`). Thread A's capture-manifest filing
+location is corrected above to `knowledge/knowledge-management/composable-beliefs/`.
+Thread B's worked example (the testing-methodology prescription and its two
+attestations) is unmoved in spirit but now lives at
+`knowledge/SWE/testing/elixir-second-brain-testing-methodology.md` — verify the
+live path before use rather than trusting either version of this plan's prose.
+
+**A sibling plan emerged: read it before deciding Q1/Q4.** On 2026-07-11 the
+operator independently proposed a related idea, producing
+[`belief-decomposition-analysis-mode`](/meta/plans/belief-decomposition-analysis-mode.md)
+(`proposed`) and its commissioning
+[analysis](/meta/analysis/belief-decomposition-derived-vs-authored.md). It
+addresses a different layer — a **derived, regenerable, never-authored** belief
+graph for ad hoc audit (groundedness/conflict/consensus over LLM-judged edges,
+no `sb:` ids, no CI gate) — and its own text declares itself "compatible with,
+not competing against" this plan: this plan governs the *storage* layer
+(concept-granularity roles and committed `deps` edges); the sibling adds an
+*analysis* mode that atomizes freely because it never stores. Both share the
+same no-atomization boundary, arrived at independently — a second
+triangulation of the line this plan already drew against CB.
+
+The sibling plan names a concrete dependency this plan must now honor: *"if
+[`mix brain.graph`]'s walker lands first, the audit algorithms (reachability,
+groundedness floor) should be shared library code, with this tool supplying
+derived nodes instead of concepts."* **Thread B's charter is amended
+accordingly:** before deciding Q1/Q4, read both the sibling plan and its
+analysis in full; when defining `mix brain.graph` v1, factor the
+reachability/groundedness core as pure functions over a generic node/edge
+shape (not hard-coded to bundle-concept frontmatter) so the analysis-mode plan
+can reuse it over its derived nodes rather than reimplementing the same graph
+algorithms twice. This does not change Q1/Q4 themselves, only the shape of
+the implementation once decided.
+
+**Housekeeping drift (no action required, noted for orientation).** The
+hand-kept `log.md` files were retired repo-wide — git's merge-commit history
+is now the sole provenance layer; reserved-file upkeep is `index.md` entries
+only. `/create-pull-request` now also runs `/add-to-glossary` and stamps the
+session's thread into `attribution.from` on every governance doc it revised —
+Thread A/B need not do this by hand. New governance docs (Thread A's captures,
+the revised plan) require the now-mandatory `attribution` frontmatter map
+(`channel: agent-authored`, per the resource-attribution policy) — the
+frontmatter-schema and verifier already enforce this; nothing in either
+thread's charter needs to change beyond including the field. And
+[`dedup-recall-probe`](/meta/plans/dedup-recall-probe.md), referenced in the
+prior addendum as `proposed`, is now `status: done` and fully shipped — purely
+informational; neither thread depends on it.
+
 # Citations
 
 - Comparison basis: [Composable Beliefs](https://github.com/composablebeliefs/composable-beliefs)
-  (`okf/standard/types.md`; the four structural types; `docs/beliefs/glossary.md` for the
+  (`okf/standard/types.md`; the four structural types; `docs/glossary.md` for the
   current schema — the thesis doc `docs/composable-beliefs-thesis.md` was found
   stale on 2026-07-10 and should not be treated as authoritative).
 - Prior in-bundle decisions this builds on: the `methodology` type ratification and the
   "type an edge only when a machine must traverse it" link-model principle (see the
   `stable-identity` and `filenames-and-cross-linking` policies).
 - Follow-on evaluation: [CB's overlay as a failure-chain stabilizer](/meta/analysis/cb-epistemic-overlay-as-failure-chain-stabilizer.md).
+- Sibling plan (reconciled 2026-07-13): [Belief decomposition as a derived analysis mode](/meta/plans/belief-decomposition-analysis-mode.md) and its
+  [commissioning analysis](/meta/analysis/belief-decomposition-derived-vs-authored.md).

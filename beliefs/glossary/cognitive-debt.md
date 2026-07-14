@@ -6,7 +6,13 @@ description: (Operator-coined) The understanding gap a human operator accrues ab
 provenance: "Operator-coined term (mreveley, 2026-07-12 session); agent-distilled definition"
 verified: false
 tags: [glossary, knowledge-management, automation, coined]
+sense: repo
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T10:25:03+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # cognitive debt

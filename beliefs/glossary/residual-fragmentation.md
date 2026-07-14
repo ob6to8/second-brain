@@ -6,7 +6,13 @@ description: The near-duplicate or fragmented concepts that remain after automat
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, intake, dedup, editorial]
+sense: repo
 timestamp: 2026-07-12
+attribution:
+  when: 2026-07-12T10:25:03+00:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # residual fragmentation

@@ -7,6 +7,11 @@ order: 1
 status: active
 tags: [meta, governance, identity, registry]
 timestamp: 2026-07-05
+attribution:
+  when: 2026-07-05T19:41:08+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
 ---
 - **Every bundle concept carries a stable `id`** in frontmatter: `sb:` + 6 lowercase
   hex chars (e.g. `sb:4c9e1f`). Ids are **opaque and immutable** — minted once

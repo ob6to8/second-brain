@@ -4,6 +4,12 @@ title: "Rename the brain: second-brain → elixir-mind (including sb: → em: id
 description: Spec for renaming the repository and all associated naming from "second-brain" to "elixir-mind" — the GitHub repo, the Elixir app/module namespace, hooks, docs, prose, and (operator-directed rescope) the stable-id prefix sb: → em: as a bundle-wide namespace re-key that preserves every id's hex tail.
 status: proposed
 provenance: "Claude Code session, 2026-07-13 — operator asked to spec out the second-brain rename lift (initially targeting elixir-brain, later retargeted to elixir-mind); same session rescoped the plan to also migrate the id prefix sb: → em:, explicitly accepting the increased scope"
+attribution:
+  when: 2026-07-13T00:00:00Z
+  channel: agent-authored
+  agent: "Claude Code agent, elixir-mind rename-plan session"
+  why: "persists the second-brain → elixir-mind rename spec (with the sb: → em: id migration) per the persist-plans policy"
+  from: [/meta/threads/2026-07-13-elixir-mind-rename-plan-and-model-orchestration.md]
 tags: [meta, plan, rename, identity, migration, tooling, governance]
 timestamp: 2026-07-13
 ---

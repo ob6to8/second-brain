@@ -6,7 +6,13 @@ description: The controlled type for a standing governance rule about how the br
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, types, governance]
+sense: repo
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T19:58:08+02:00
+  channel: glossary
+  agent: "Claude Code agent, /add-to-glossary"
+  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
 # policy (type)

@@ -15,6 +15,7 @@ the start if siblings are plausible.
 ## composition
 - [concept-anatomy](/meta/policy/concept-anatomy.md) — the repo root is the bundle; a concept is frontmatter + body; ID is path minus `.md`
 - [frontmatter-schema](/meta/policy/frontmatter-schema.md) — the controlled frontmatter fields and their requirement levels
+- [resource-attribution](/meta/policy/resource-attribution.md) — the `attribution` map: the ingestion event (when/channel/agent/why, plus governance `from`) recorded on every doc
 - [reserved-filenames](/meta/policy/reserved-filenames.md) — `index.md` structure; `log.md` reserved by OKF but not kept in this bundle
 
 ## directory-structure
@@ -26,6 +27,7 @@ the start if siblings are plausible.
 - [distill-dont-dump](/meta/policy/distill-dont-dump.md) — capture the knowledge, not the raw noise
 - [update-in-place](/meta/policy/update-in-place.md) — search first; update rather than fragment
 - [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — kebab-case slugs; bundle-absolute links
+- [response-resource-links](/meta/policy/response-resource-links.md) — in delivered responses, cite resources by their deployed Pages URL, not repo paths
 - [link-processing](/meta/policy/link-processing.md) — links enter only once processed; summarize oversized sources
 - [maintain-reserved-files](/meta/policy/maintain-reserved-files.md) — update `index.md` after filing; the commit carries the change narrative
 - [persist-plans](/meta/policy/persist-plans.md) — approved plans are persisted as `type: plan` docs under `meta/plans/`, not left in chat
