@@ -5,6 +5,7 @@ description: Continuation of the second-brain to elixir-mind rename after the ex
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-14; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, rename, elixir-mind, github-pages, verification, governance]
 timestamp: 2026-07-14
+pr: 91
 ---
 
 # 2026-07-14-elixir-mind-config-url-flip-and-phase-3-verification
