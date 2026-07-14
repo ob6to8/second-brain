@@ -10,3 +10,4 @@ and the practices they change.
 - [code-context](/knowledge/SWE/agentic/code-context/index.md) — tools that build and serve structured codebase context (knowledge graphs, indexes) to coding agents
 - [context-engineering](/knowledge/SWE/agentic/context-engineering/index.md) — structuring, curating, and managing LLM conversation/agent context
 - [frameworks](/knowledge/SWE/agentic/frameworks/index.md) — libraries for building and orchestrating agents
+- [supply-chain-security](/knowledge/SWE/agentic/supply-chain-security/index.md) — trust and governance risk in the agentic-AI dependency supply chain
