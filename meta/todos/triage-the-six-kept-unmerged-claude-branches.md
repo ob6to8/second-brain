@@ -45,8 +45,10 @@ todo just records the final disposition:
   deleted.
 - **`claude/git-fetch-merge-skill-ke7adg`** — ✅ **ported 2026-07-13**: the
   [`/sync-branch-with-main`](/.claude/skills/sync-branch-with-main/SKILL.md)
-  skill + registry entry transplanted, contract recompiled. Source branch now
-  safe to delete.
+  skill + registry entry transplanted (PR #82), contract recompiled; its
+  build-session record also rescued as
+  [`2026-07-10-sync-branch-with-main-skill`](/meta/threads/2026-07-10-sync-branch-with-main-skill.md).
+  Source branch now a **zero-loss** delete.
 - **`claude/ccr-architecture-notes-csbiuv`** — ✅ **ported 2026-07-13**: the
   Chroma **product** intake landed at
   [`chroma-vector-database.md`](/knowledge/SWE/llm-engineering/chroma-vector-database.md)
