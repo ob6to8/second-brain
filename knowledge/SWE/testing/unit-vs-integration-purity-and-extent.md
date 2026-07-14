@@ -1,5 +1,5 @@
 ---
-id: sb:73115b
+id: em:73115b
 type: reference
 title: "Unit vs. integration tests: replace the dichotomy with purity and extent (matklad)"
 description: Alex Kladov argues the unit/integration distinction is confused and harmful, and proposes measuring tests along two independent axes instead — purity (freedom from threads, time, filesystem, network, processes) and extent (how much code is exercised).

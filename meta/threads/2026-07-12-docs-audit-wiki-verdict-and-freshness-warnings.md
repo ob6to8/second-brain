@@ -100,7 +100,7 @@ All three Tier-2 items are shipped and pushed — three commits on `claude/repo-
 - `bc96c00` — **Flow docs for `/news` and `/create-pull-request`** (coverage now 4 of 8 skills). Each is honest about its spine: news's is write conventions with no tooling (scenario deferred, reasons recorded); create-pull-request's is borrowed — pinned by the capture scenario, the id gates, and CI-on-the-branch, with the git/GitHub half held by guardrails and the merge-strategy policy.
 - `8473447` — **The docs-freshness checker** (`SecondBrain.Links`): `mix brain.verify` now prints advisory warnings for unresolved internal links and index-coverage gaps (unlisted files, unlisted subdirectories, missing indexes). It never turns the gate red, scans `meta/` and `inbox/` (where the id gates don't look), and exempts frozen thread bodies, materialized excerpt logs, code spans, and `…` placeholders. Nine fixture tests; the live tree is warning-clean. Satisfying detail: during its own build-out it caught its first real case — a broken path quoted in my analysis doc — which is how it learned code spans are literal text.
 
-<routes ref="sb:e8c1a9 sb:e08db0 sb:1c53dc sb:0da4a3 meta/analysis/comparison-with-the-2026-second-brain-field.md">
+<routes ref="em:e8c1a9 em:e08db0 em:1c53dc em:0da4a3 meta/analysis/comparison-with-the-2026-second-brain-field.md">
 **Your question — what field-comparison, and what prevents the drift:**
 
 It's `/meta/analysis/comparison-with-the-2026-second-brain-field.md`, filed 2026-07-10 when you asked how this repo stacks up against the second-brain landscape (Obsidian/PARA systems, Karpathy-pattern Claude Code vaults, PKM products). Its central finding was that the whole field runs on *advisory* integrity — an LLM promising to follow CLAUDE.md prose — while this bundle converts rules into *structural* CI checks. It then modeled why advisory systems die past ~500 concepts, and two of its root causes are the prediction I was citing: **probabilistic enforcement** (rules living in prose have a roughly constant per-operation violation rate, and with no detector there's no repair signal, so errors compound) and **invisible degradation** (nothing distinguishes a healthy corpus from a rotting one until it visibly fails). Stage 3 of its failure chain — cross-reference drift — is exactly what the audit found in miniature: the enforced surfaces (contract, registry, route-tag logs) had *zero* drift, while every staleness hit sat on a surface no verifier watches — the README, two index entries, one example link.
@@ -122,7 +122,7 @@ Then, /create-pull-request
 
 ## Assistant
 
-<routes ref="sb:0b648f meta/tutorials/the-session-init-digest.md lib/elixir_mind/session_init.ex">
+<routes ref="em:0b648f meta/tutorials/the-session-init-digest.md lib/elixir_mind/session_init.ex">
 Glossary done — 7 terms added, `deduplication` extended. Now the answer to your visibility question implies a concrete gap worth closing before the PR: the warnings currently live in terminal output you never see. The fix is to surface them in the session-init digest, which *is* injected into every session you open. Implementing that now.
 </routes>
 

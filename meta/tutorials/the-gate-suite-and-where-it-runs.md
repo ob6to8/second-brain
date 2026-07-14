@@ -66,7 +66,7 @@ enforce — the mechanics are laid out in
 [the three bundle scanners](/meta/tutorials/the-three-bundle-scanners.md); here it
 is enough to know what turns them red:
 
-- `mix brain.verify` fails on a malformed or duplicate `sb:` id, a `verified_by`
+- `mix brain.verify` fails on a malformed or duplicate `em:` id, a `verified_by`
   edge pointing at an id that doesn't exist, a capture (a concept with a
   `resource`) marked `verified: true`, or a `verified: true` statement with no
   `verified_by`. On a green bundle it additionally prints **advisory

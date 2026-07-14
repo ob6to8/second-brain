@@ -1,5 +1,5 @@
 ---
-id: sb:1b3c79
+id: em:1b3c79
 type: note
 title: Future beliefs
 description: A running scratch list of facts and observations about the brain's tooling and governance worth formalizing later (into a tutorial, policy, or concept).

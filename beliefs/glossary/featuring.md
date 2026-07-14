@@ -1,5 +1,5 @@
 ---
-id: sb:f382b0
+id: em:f382b0
 type: concept
 title: featuring
 description: The gated criteria by which `/research` decides which candidates make the cut: relevance → novelty → a reason tag fires → source quality, under a quality-over-volume cap.

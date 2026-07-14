@@ -1,5 +1,5 @@
 ---
-id: sb:592342
+id: em:592342
 type: reference
 title: "The agent loop decoded — three levels of sophistication (Oracle)"
 description: The agent loop is a maturity ladder of three levels, from a bare tool-calling loop to sophisticated memory and in/out-of-loop operations, driven by long-horizon tasks.

@@ -14,7 +14,7 @@ glossary that lives and dies with its breakdown, this skill maintains the
 *persistent, cross-source* one: the same term seen in three threads and a paper has
 **one** file, with four citations.
 
-Each term file is a bundle concept like any other — its own `sb:` id, frontmatter,
+Each term file is a bundle concept like any other — its own `em:` id, frontmatter,
 and place in `mix brain.verify`/`registry` and the site renderer. That per-term
 granularity is the point: **every definition is individually linkable**, so a term
 can be cited anywhere as a bundle-absolute link (`[route tag](/beliefs/glossary/route-tag.md)`)
@@ -30,7 +30,7 @@ One source per invocation (or several, processed in sequence):
 - **A paper or post** — a URL (WebFetch; alphaXiv tools for arXiv papers), pasted
   text, or an attached file (for PDFs, read in page batches).
 - **An already-filed bundle concept** — a `reference`/`source`/`concept` named by
-  title, path, or `sb:` id.
+  title, path, or `em:` id.
 
 If nothing was given, ask the operator what to scan.
 
@@ -155,7 +155,7 @@ Link a term's first use in a response, not every occurrence.
 The glossary is a staging layer, not a terminal home. When a term's file
 outgrows a glossary definition — it accumulates senses, claims, or citations
 that belong in the domain tree — **move the file into the taxonomy** where it
-belongs (its `sb:` id travels with it; identity survives moves) and leave a
+belongs (its `em:` id travels with it; identity survives moves) and leave a
 pointer stub at `/beliefs/glossary/<slug>.md` linking to the new home, so glossary
 links keep landing somewhere useful. Update both `index.md` files and the
 registry (`mix brain.registry`).

@@ -1,5 +1,5 @@
 ---
-id: sb:d8d057
+id: em:d8d057
 type: concept
 title: well-founded support
 description: The anti-circularity condition on belief in a TMS — every held belief must trace to premises through non-circular arguments; mutually supporting beliefs with no external grounding don't count.

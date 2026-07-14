@@ -1,5 +1,5 @@
 ---
-id: sb:6a5115
+id: em:6a5115
 type: concept
 title: consensus core
 description: When comparing the belief systems of several artifacts, the subset of beliefs every system supports and none attacks — what survives conflict examination; kin to the grounded extension in argumentation semantics.

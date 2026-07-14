@@ -1,5 +1,5 @@
 ---
-id: sb:f948df
+id: em:f948df
 type: reference
 title: "smolagents — the agent loop as code-writing ReAct (Hugging Face)"
 description: Agents run a multi-step ReAct loop where an LLM repeatedly chooses and executes actions — ideally written as code — until observations show the task is solved.

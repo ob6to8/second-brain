@@ -1,5 +1,5 @@
 ---
-id: sb:802d4e
+id: em:802d4e
 type: concept
 title: directed acyclic graph
 description: A graph of nodes joined by directed edges that contains no cycles, so following edges never returns to a starting node — the shape of dependencies, pipelines, and orderings.

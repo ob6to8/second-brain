@@ -1,5 +1,5 @@
 ---
-id: sb:60d394
+id: em:60d394
 type: concept
 title: tutorial (type)
 description: The controlled type for a long-form explanatory note meant to be read start to finish — the why/how behind the tooling or a topic.

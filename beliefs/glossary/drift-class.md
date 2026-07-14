@@ -1,5 +1,5 @@
 ---
-id: sb:683301
+id: em:683301
 type: concept
 title: drift class
 description: A category of staleness whose instances share one detection mechanism — e.g. unresolved internal links, or files present in a directory but missing from its index — making the class as a whole checkable by a single detector.

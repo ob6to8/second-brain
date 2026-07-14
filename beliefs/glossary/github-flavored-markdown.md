@@ -1,5 +1,5 @@
 ---
-id: sb:680062
+id: em:680062
 type: concept
 title: GitHub Flavored Markdown (GFM)
 description: GitHub's superset of CommonMark adding tables, task lists, strikethrough, and autolinks; table column alignment is expressed with `:--`/`:-:`/`--:` markers in the header separator row.

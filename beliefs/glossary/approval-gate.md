@@ -1,5 +1,5 @@
 ---
-id: sb:98ec38
+id: em:98ec38
 type: concept
 title: approval gate
 description: A control that requires explicit human or permission approval before a tool/MCP action executes; while the approval is unresolved the action is blocked, and it is environment-wide when it blocks every session in an environment.

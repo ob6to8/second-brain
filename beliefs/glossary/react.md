@@ -1,5 +1,5 @@
 ---
-id: sb:f5c2bd
+id: em:f5c2bd
 type: concept
 title: ReAct
 description: The foundational LLM agent loop — the model alternates free-form reasoning traces with tool actions whose observations feed back into further reasoning; canonically defined in the filed reference on the Yao et al. paper.

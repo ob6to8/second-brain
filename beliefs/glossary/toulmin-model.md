@@ -1,5 +1,5 @@
 ---
-id: sb:cb4734
+id: em:cb4734
 type: concept
 title: Toulmin model
 description: Stephen Toulmin's six-part anatomy of practical argument — claim, grounds, warrant, backing, qualifier, rebuttal — from The Uses of Argument (1958); justification, not formal inference, as argument's first-class object.

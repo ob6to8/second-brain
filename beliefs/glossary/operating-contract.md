@@ -1,5 +1,5 @@
 ---
-id: sb:1349cb
+id: em:1349cb
 type: concept
 title: operating contract
 description: The root CLAUDE.md that every agent auto-loads at session start, codifying the brain's operative rules — a compiled artifact, not hand-edited.

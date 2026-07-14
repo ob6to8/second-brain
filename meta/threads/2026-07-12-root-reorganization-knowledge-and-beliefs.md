@@ -16,7 +16,7 @@ The operator ratified a reshaping of the bundle root: a `knowledge/` top-level
 absorbing the domain taxonomy (`SWE/`, `ai-industry/`, `knowledge-management/`)
 and a `beliefs/` top-level absorbing the brain's own working vocabulary (the
 glossary directory plus its hub, and `meta/future-beliefs.md`, which thereby
-entered the bundle as `sb:1b3c79`). The move preserved every `sb:` id, repointed
+entered the bundle as `em:1b3c79`). The move preserved every `sb:` id, repointed
 bundle-absolute links in live documents while leaving frozen thread bodies on
 their historical paths, and regenerated all compiled artifacts. Main advanced
 twice while the branch was open, forcing two substantial merges: the first
@@ -60,7 +60,7 @@ Done — the root reorganization is complete, committed (`81e67e5`), and pushed 
 **What changed** (164 files, all gates green):
 
 - **`knowledge/`** (new top-level) now holds the domain taxonomy: `SWE/`, `ai-industry/`, and `knowledge-management/` moved under it unchanged. Named lowercase per the directory-hierarchy policy.
-- **`beliefs/`** (new top-level) now holds `glossary/` (all 69 term files), the glossary hub `glossary.md` (which I moved alongside the directory since they're one system), and `meta/future-beliefs.md` → `beliefs/future-beliefs.md`. That last move took the file out of the governance namespace and into the bundle, so it was minted a stable id (`sb:1b3c79`).
+- **`beliefs/`** (new top-level) now holds `glossary/` (all 69 term files), the glossary hub `glossary.md` (which I moved alongside the directory since they're one system), and `meta/future-beliefs.md` → `beliefs/future-beliefs.md`. That last move took the file out of the governance namespace and into the bundle, so it was minted a stable id (`em:1b3c79`).
 - Both new roots got `index.md` files, and the bundle-root `index.md` now presents the two-branch structure with the old domains nested beneath.
 
 **Link and artifact hygiene:**

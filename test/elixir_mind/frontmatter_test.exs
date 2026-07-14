@@ -51,7 +51,7 @@ defmodule ElixirMind.FrontmatterTest do
       channel: auto-intake
       agent: "Claude Code agent, /research daily Routine"
       why: "featured in the digest; reason-tag: impactful"
-      from: [/meta/threads/2026-07-13-example.md, sb:4c9e1f]
+      from: [/meta/threads/2026-07-13-example.md, em:4c9e1f]
     timestamp: 2026-07-13
     ---
     body
@@ -66,7 +66,7 @@ defmodule ElixirMind.FrontmatterTest do
              "channel" => "auto-intake",
              "agent" => "Claude Code agent, /research daily Routine",
              "why" => "featured in the digest; reason-tag: impactful",
-             "from" => ["/meta/threads/2026-07-13-example.md", "sb:4c9e1f"]
+             "from" => ["/meta/threads/2026-07-13-example.md", "em:4c9e1f"]
            }
   end
 

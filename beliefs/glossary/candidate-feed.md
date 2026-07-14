@@ -1,5 +1,5 @@
 ---
-id: sb:ee8dfd
+id: em:ee8dfd
 type: concept
 title: candidate feed
 description: A regenerated list of external items surfaced as candidates for possible inclusion in a knowledge store, held in a waiting area outside the curated bundle until a human explicitly accepts one.

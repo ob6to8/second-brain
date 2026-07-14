@@ -1,5 +1,5 @@
 ---
-id: sb:601006
+id: em:601006
 type: source
 title: "Doyle (1979), \"A Truth Maintenance System\" — key passages"
 description: "Primary-source capture of Jon Doyle's founding TMS paper (Artificial Intelligence 12:231–272): verbatim definitions of nodes and justifications, in/out statuses, SL-justifications, assumptions, well-founded support, and dependency-directed backtracking."

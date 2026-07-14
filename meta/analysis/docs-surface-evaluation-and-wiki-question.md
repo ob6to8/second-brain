@@ -57,7 +57,7 @@ standing policy rather than taste:
 
 1. **A wiki is a second content store, and the brain's core invariant is a
    single one.** A GitHub wiki lives in a separate `*.wiki.git` repository with
-   its own history — no YAML frontmatter, no `sb:` ids, no `verified_by` edges,
+   its own history — no YAML frontmatter, no `em:` ids, no `verified_by` edges,
    no session trailers, and none of the eight CI gates. Every page written there
    would be invisible to `mix brain.verify`, the registry, route tags, and the
    dedup search that [update-in-place](/meta/policy/update-in-place.md)

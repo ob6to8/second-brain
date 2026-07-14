@@ -1,5 +1,5 @@
 ---
-id: sb:8048c6
+id: em:8048c6
 type: concept
 title: pipe table
 description: Markdown's pipe-delimited table syntax (a GFM extension) — a header row, a dashes/colons separator row, then one row per line, cells split on |.

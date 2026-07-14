@@ -1,5 +1,5 @@
 ---
-id: sb:3fd44a
+id: em:3fd44a
 type: reference
 title: "The agent execution loop — multi-step reasoning in a single run (Victor Dibia)"
 description: An agent is defined by an execution loop that takes multiple model-call-and-tool-execution steps within one run until the task is complete.

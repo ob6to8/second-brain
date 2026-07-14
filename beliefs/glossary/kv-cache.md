@@ -1,5 +1,5 @@
 ---
-id: sb:8415bd
+id: em:8415bd
 type: concept
 title: KV cache
 description: The stored key and value tensors for already-processed tokens in transformer inference, cached so each new token attends over them without recomputing the sequence — trading memory that grows with context length for speed.

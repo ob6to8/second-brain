@@ -131,7 +131,7 @@ rules, review the diff.**
 ## 6. The data model
 
 Policies are **governance docs, not bundle concepts**: they live under
-`meta/policy/`, carry no `sb:` id, and sit outside the identity registry. The
+`meta/policy/`, carry no `em:` id, and sit outside the identity registry. The
 compiler loads each into a `ElixirMind.Policy` struct (`id` = filename slug,
 `title`, `section`, `order`, `body`, `status`), rejects non-`policy` types and
 missing fields, excludes `superseded`, and sorts by `{section, order, id}`. The

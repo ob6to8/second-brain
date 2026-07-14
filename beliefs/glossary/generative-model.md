@@ -1,5 +1,5 @@
 ---
-id: sb:10e9cb
+id: em:10e9cb
 type: concept
 title: generative model
 description: A model that learns the joint distribution of its data so it can generate new samples resembling the training set, as opposed to a discriminative model that only learns to map inputs to labels.

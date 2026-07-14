@@ -61,23 +61,23 @@ defmodule ElixirMind.DedupProbeTest do
     write_concept(
       dir,
       "alpha",
-      "sb:aaaaaa",
+      "em:aaaaaa",
       "Alpha",
       "Alpha discusses context poisoning at length."
     )
 
-    write_concept(dir, "beta", "sb:bbbbbb", "Beta", "Beta covers a reranking step over results.")
+    write_concept(dir, "beta", "em:bbbbbb", "Beta", "Beta covers a reranking step over results.")
 
     write_gold(
       dir,
       [
-        {"context poisoning", "sb:aaaaaa", "target", "—", "control hit"},
-        {"context pollution", "sb:aaaaaa", "target", "context poisoning",
+        {"context poisoning", "em:aaaaaa", "target", "—", "control hit"},
+        {"context pollution", "em:aaaaaa", "target", "context poisoning",
          "miss plain, recovered expanded"},
-        {"totally absent phrase", "sb:bbbbbb", "target", "reranking",
+        {"totally absent phrase", "em:bbbbbb", "target", "reranking",
          "miss plain, recovered expanded"},
-        {"reranking", "sb:aaaaaa sb:bbbbbb", "negative", "—", "non-dup pair"},
-        {"future term", "sb:bbbbbb", "quarantine", "—", "undefined until supersession"}
+        {"reranking", "em:aaaaaa em:bbbbbb", "negative", "—", "non-dup pair"},
+        {"future term", "em:bbbbbb", "quarantine", "—", "undefined until supersession"}
       ],
       [{"plain", 1, 3}, {"expanded", 3, 3}]
     )
@@ -92,10 +92,10 @@ defmodule ElixirMind.DedupProbeTest do
     assert Enum.map(rows, & &1.band) == ~w(target target target negative quarantine)
 
     pollution = Enum.find(rows, &(&1.query == "context pollution"))
-    assert %Row{acceptable_ids: ["sb:aaaaaa"], variants: ["context poisoning"]} = pollution
+    assert %Row{acceptable_ids: ["em:aaaaaa"], variants: ["context poisoning"]} = pollution
 
     negative = Enum.find(rows, &(&1.band == "negative"))
-    assert negative.acceptable_ids == ["sb:aaaaaa", "sb:bbbbbb"]
+    assert negative.acceptable_ids == ["em:aaaaaa", "em:bbbbbb"]
     assert negative.variants == []
   end
 
@@ -159,11 +159,11 @@ defmodule ElixirMind.DedupProbeTest do
     write_gold(
       dir,
       [
-        {"context poisoning", "sb:aaaaaa", "target", "—", "control hit"},
-        {"context pollution", "sb:aaaaaa", "target", "context poisoning", "recovered expanded"},
-        {"totally absent phrase", "sb:bbbbbb", "target", "reranking", "recovered expanded"},
-        {"reranking", "sb:aaaaaa sb:bbbbbb", "negative", "—", "non-dup pair"},
-        {"future term", "sb:bbbbbb", "quarantine", "—", "undefined"}
+        {"context poisoning", "em:aaaaaa", "target", "—", "control hit"},
+        {"context pollution", "em:aaaaaa", "target", "context poisoning", "recovered expanded"},
+        {"totally absent phrase", "em:bbbbbb", "target", "reranking", "recovered expanded"},
+        {"reranking", "em:aaaaaa em:bbbbbb", "negative", "—", "non-dup pair"},
+        {"future term", "em:bbbbbb", "quarantine", "—", "undefined"}
       ],
       [{"plain", 0, 3}, {"expanded", 3, 3}]
     )
@@ -183,11 +183,11 @@ defmodule ElixirMind.DedupProbeTest do
     write_gold(
       dir,
       [
-        {"context poisoning", "sb:aaaaaa", "target", "—", "control hit"},
-        {"context pollution", "sb:aaaaaa", "target", "context poisoning", "recovered expanded"},
-        {"totally absent phrase", "sb:bbbbbb", "target", "reranking", "recovered expanded"},
-        {"reranking", "sb:aaaaaa sb:bbbbbb", "negative", "—", "non-dup pair"},
-        {"future term", "sb:bbbbbb", "quarantine", "—", "undefined"}
+        {"context poisoning", "em:aaaaaa", "target", "—", "control hit"},
+        {"context pollution", "em:aaaaaa", "target", "context poisoning", "recovered expanded"},
+        {"totally absent phrase", "em:bbbbbb", "target", "reranking", "recovered expanded"},
+        {"reranking", "em:aaaaaa em:bbbbbb", "negative", "—", "non-dup pair"},
+        {"future term", "em:bbbbbb", "quarantine", "—", "undefined"}
       ],
       [{"plain", 9, 9}, {"expanded", 9, 9}]
     )

@@ -1,5 +1,5 @@
 ---
-id: sb:e1c3b6
+id: em:e1c3b6
 type: concept
 title: epistemic poisoning
 description: The contamination of a shared knowledge base with false or attacker-shaped beliefs — typically via an agent ingesting untrusted content and filing it as fact — escalating prompt injection from hijacking one session to corrupting every future reader of the base.

@@ -1,5 +1,5 @@
 ---
-id: sb:1c53dc
+id: em:1c53dc
 type: concept
 title: cross-reference drift
 description: The failure mode in which a change that should update many interlinked documents only updates some, leaving the rest silently stale — the known killer of LLM-maintained wikis, and stage 3 of the second-brain failure chain.
@@ -23,13 +23,13 @@ The failure mode in which a change that should touch many interlinked documents 
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:1c53dc">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:1c53dc">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:1c53dc`]**  (co-feeds: `sb:e8c1a9 sb:e08db0 sb:0da4a3 meta/analysis/comparison-with-the-2026-second-brain-field.md`)
+**[`em:1c53dc`]**  (co-feeds: `em:e8c1a9 em:e08db0 em:0da4a3 meta/analysis/comparison-with-the-2026-second-brain-field.md`)
 
 **Your question — what field-comparison, and what prevents the drift:**
 

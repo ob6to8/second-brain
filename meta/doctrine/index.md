@@ -8,7 +8,7 @@ doctrine as the direction they serve. A separate namespace from `policy` (enforc
 *rules*) and `analysis` (reasoned judgments on questions): a doctrine is a *standing
 direction*.
 
-Each doctrine is a `type: doctrine` doc (governance namespace — no `sb:` id).
+Each doctrine is a `type: doctrine` doc (governance namespace — no `em:` id).
 
 ## Contents
 

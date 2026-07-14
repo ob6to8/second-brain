@@ -1,5 +1,5 @@
 ---
-id: sb:d7e3c5
+id: em:d7e3c5
 type: concept
 title: todo (type)
 description: The controlled type for a lightweight actionable task — a single thing to be done, carrying a status (open/done/cancelled), filed under meta/todos/ via the /todo skill.

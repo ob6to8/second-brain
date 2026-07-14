@@ -1,5 +1,5 @@
 ---
-id: sb:6a6054
+id: em:6a6054
 type: concept
 title: F1@K
 description: SAFE's long-form factuality aggregate — harmonic mean of factual precision (fraction of supplied facts supported) and recall against K, a stipulated facts-per-response target; penalizes both fabrication and under-informing.

@@ -1,5 +1,5 @@
 ---
-id: sb:f6e843
+id: em:f6e843
 type: reference
 title: ExUnit ships dependency-free fixtures and diffs (tmp_dir + built-in ==)
 description: Two built-in ExUnit features — the :tmp_dir tag for isolated, pre-cleaned, async-safe scratch directories and the semantic assertion diff for `assert left == right` (since Elixir 1.6) — cover the mechanics an external snapshot/approval library would provide, so file-generating and golden-style tests need no extra dependency.
@@ -60,13 +60,13 @@ built-ins alone, so no snapshot library was adopted.
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:f6e843">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:f6e843">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-09-flows-genre-and-scenario-testing (2026-07-09)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:f6e843`]**  (co-feeds: `sb:b1ba4b`)
+**[`em:f6e843`]**  (co-feeds: `em:b1ba4b`)
 
 **3 — Research spike — important, and I want to be straight with you: it did *not* cleanly reaffirm. Verdict was "adjust (mostly reaffirm)."** What it upheld: plain ExUnit + `@tag :tmp_dir`, no external dep, no DSL, no custom mix runner — that half was correct. What it corrected, and which I folded into the persisted spec before saving it:
 - **Drop whole-tree byte-exact golden as the primary oracle** — brittle, invites blind-approval of golden diffs, and for RouteTags re-encodes logic the tool already self-checks.

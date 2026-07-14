@@ -1,5 +1,5 @@
 ---
-id: sb:e203a2
+id: em:e203a2
 type: concept
 title: stale block
 description: A materialized excerpt-log block whose content no longer matches its re-derivation from the current tags — the source changed without re-materializing; caught by the log fidelity check, fixed by re-running --materialize.

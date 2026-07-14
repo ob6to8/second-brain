@@ -1,5 +1,5 @@
 ---
-id: sb:c12a2a
+id: em:c12a2a
 type: concept
 title: hot code loading
 description: The BEAM's ability to compile and load new module versions into a running system without restarting it, letting live processes migrate to the new code under supervision.

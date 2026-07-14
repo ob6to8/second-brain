@@ -1,5 +1,5 @@
 ---
-id: sb:a9bb1d
+id: em:a9bb1d
 type: concept
 title: context mesh
 description: Loomkin's memory architecture in which overflow conversation context is offloaded at full fidelity to dedicated Keeper processes — with staleness and access-frequency tracking and cross-agent retrieval — instead of being summarized away.

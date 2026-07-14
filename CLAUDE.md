@@ -42,7 +42,7 @@ Frontmatter fields:
 
 | Field | Requirement | Notes |
 |-------|-------------|-------|
-| `id` | **Mandatory** (bundle concepts) | Stable opaque identifier, `sb:` + 6 hex chars. Immutable once minted (`mix brain.id`); see the identity-and-verification section. |
+| `id` | **Mandatory** (bundle concepts) | Stable opaque identifier, `em:` + 6 hex chars. Immutable once minted (`mix brain.id`); see the identity-and-verification section. |
 | `type` | **Mandatory** | From the controlled vocabulary (see the type-vocabulary section). Non-empty. |
 | `title` | Strongly recommended | Human-readable display name. |
 | `description` | Strongly recommended | Single-sentence summary. |
@@ -59,7 +59,7 @@ Arbitrary extra keys are allowed and must be preserved.
 _Source: [`meta/policy/frontmatter-schema.md`](/meta/policy/frontmatter-schema.md)_
 
 **Attribution — the ingestion event, recorded on the doc.** Every bundle concept
-(everything with an `sb:` id) and every governance doc carries an `attribution`
+(everything with an `em:` id) and every governance doc carries an `attribution`
 frontmatter map recording how it entered the brain (see the
 [attribution plan](/meta/plans/resource-attribution-property.md) for the design
 record):
@@ -79,7 +79,7 @@ attribution:
 | `channel` | *How* it entered — the pathway | Controlled: `intake` · `auto-intake` · `glossary` · `agent-authored` · `backfill` (grows by operator ratification, like `type`) |
 | `agent` | *Who* acted — the operator, or the agent and the automation context it ran in. Names the **pathway, not the model** (the model is in the commit trailer) | Free text, one line |
 | `why` | Why it was deemed worth filing | Free text, one sentence (optional when `channel: backfill` — never invented) |
-| `from` | **Governance docs only.** The doc(s) this entry was extracted from — the thread it came out of, and/or the concept doc that resulted from that thread | Inline YAML list of refs, route-tag style: an `sb:` id (concept) or a bundle-absolute path (thread/governance doc); targets must exist |
+| `from` | **Governance docs only.** The doc(s) this entry was extracted from — the thread it came out of, and/or the concept doc that resulted from that thread | Inline YAML list of refs, route-tag style: an `em:` id (concept) or a bundle-absolute path (thread/governance doc); targets must exist |
 
 - **Immutable event, one carve-out.** The event sub-keys
   (`when`/`channel`/`agent`/`why`) are written once at filing and never
@@ -251,7 +251,7 @@ the session ends.
   acting on it. A throwaway one-liner is not a plan; a design worth a review pass
   is.
 - **Where.** As a `type: plan` document under [`meta/plans/`](/meta/plans/index.md)
-  (governance namespace — no `sb:` id, outside the identity registry, like
+  (governance namespace — no `em:` id, outside the identity registry, like
   `tutorials` and `threads`). Filename is a kebab-case slug of the title.
 - **What it holds.** The problem, the decisions and their reasoning, the artifact
   shape, and the build order — plus any commissioned design review (e.g. a
@@ -364,10 +364,20 @@ _Source: [`meta/policy/controlled-type-vocabulary.md`](/meta/policy/controlled-t
 
 ## 5. Identity & verification
 
-- **Every bundle concept carries a stable `id`** in frontmatter: `sb:` + 6 lowercase
-  hex chars (e.g. `sb:4c9e1f`). Ids are **opaque and immutable** — minted once
-  (`mix brain.id`), never changed, and never reused, even if the file moves, is
-  renamed, or is superseded. Identity survives refactors; paths don't have to.
+- **Every bundle concept carries a stable `id`** in frontmatter: the bundle's
+  id-namespace prefix + 6 lowercase hex chars — currently `em:` (e.g. `em:4c9e1f`).
+  The **6-hex tail is the immutable identity**: minted once (`mix brain.id`), never
+  changed, and never reused, even if the file moves, is renamed, or is superseded.
+  Identity survives refactors; paths don't have to.
+- **The prefix is a namespace token, not part of a concept's identity.** It is
+  **opaque** — nothing may depend on its letters carrying meaning — and it changes
+  only by an **operator-ratified, bundle-wide migration** that rewrites every id in
+  one deterministic, tail-preserving pass, never per-id. One such migration has
+  occurred: **2026-07, the `sb:` prefix → `em:`** (mirroring the repository rename
+  second-brain → elixir-mind), swapping the prefix on every id while preserving each
+  6-hex tail verbatim, so a historical `sb:`-prefixed token denotes exactly the `em:`
+  id sharing its tail. A future prefix change would follow the same
+  ratify-then-migrate path; absent one, the prefix is fixed.
 - **Typed edges reference ids, not paths.** Structured frontmatter references
   (`verified_by`, and future typed edges) point at stable ids as an inline YAML list.
   Prose links in bodies still use ordinary markdown paths.
@@ -446,7 +456,7 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   conversation, a doc, a commit message, or pasted text): define the terms it uses and
   give a less technical overview of the concepts and actions it describes, delivered
   in chat **and persisted** as a `type: elaboration` doc under
-  [`meta/elaborations/`](/meta/elaborations/index.md) (governance namespace, no `sb:`
+  [`meta/elaborations/`](/meta/elaborations/index.md) (governance namespace, no `em:`
   id; link glossary terms that already exist; hand off to `/add-to-glossary` to
   persist new ones per-term). The doc's `attribution.from` back-link to its
   originating session is set later by `/create-pull-request`, never by this skill.
@@ -456,7 +466,7 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the glossary — **one concept file per term** under
   [`/beliefs/glossary/`](/beliefs/glossary/index.md) (hub: [`/beliefs/glossary.md`](/beliefs/glossary.md)), each with
-  its own `sb:` id and *Seen in:* citations, so any response or concept can cite a
+  its own `em:` id and *Seen in:* citations, so any response or concept can cite a
   term by link (pointer entries defer to filed concepts instead of duplicating them).
   Also invoked automatically by `/create-pull-request` on the thread doc its
   `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
@@ -464,7 +474,7 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   papers, and resources matched against the brain's taxonomy, grouped by category and
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) — then
   **auto-intake the featured items** into the bundle via `/intake`. The digest is the
-  dated record in the non-bundle `inbox/` namespace (no `sb:` ids); its featured items
+  dated record in the non-bundle `inbox/` namespace (no `em:` ids); its featured items
   graduate into filed concepts in the same run, bounded to the known tree (items needing
   a new top-level domain are deferred for operator ratification) and attributed
   `channel: auto-intake` for the operator's post-intake editorial pass. See
@@ -540,7 +550,7 @@ record so it can be resumed from the record instead of from memory.
   verbatim. (The dialog UI has also proven flaky in these sessions — a second
   reason to keep questions in the chat.)
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
-  `type: reference`, in the governance namespace (no `sb:` id). It carries, in
+  `type: reference`, in the governance namespace (no `em:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
   landed), the **routing ledger** (`## Routing`), then the `## User`/`##
   Assistant` render body. Route tags are applied last, over the now-frozen body.
@@ -594,7 +604,7 @@ is an inline `<routes ref="...">` region, applied over the **frozen** body as
 the last motion of `/capture`.
 
 ```
-<routes ref="sb:4c9e1f lib/elixir_mind/route_tags.ex">
+<routes ref="em:4c9e1f lib/elixir_mind/route_tags.ex">
 ... one paragraph, feeding a concept and back-linking a code path ...
 </routes>
 ```
@@ -602,7 +612,7 @@ the last motion of `/capture`.
 Settled properties:
 
 - **Keyed on canonical ids, never free-text topics.** A ref is a concept's
-  stable **`sb:` id** (the aggregating sink — it accretes the log) or a **path**
+  stable **`em:` id** (the aggregating sink — it accretes the log) or a **path**
   (a non-aggregating back-link to code or a file — no log). Ids, not phrases, so
   two threads about the same matter emit the same string and the cross-thread
   join is exact. This mirrors the identity rule that typed edges reference ids,

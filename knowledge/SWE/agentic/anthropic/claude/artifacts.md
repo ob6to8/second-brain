@@ -1,5 +1,5 @@
 ---
-id: sb:a142be
+id: em:a142be
 type: concept
 title: Artifacts (Claude)
 description: Self-contained, hosted, client-side documents Claude generates alongside a chat reply — rendered as a live page, iterated in place, and shareable by URL.
@@ -100,13 +100,13 @@ artifact.
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:a142be">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:a142be">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-13-artifacts-concept-and-anthropic-node-restructure (2026-07-13)
 
 7 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:a142be`]**
+**[`em:a142be`]**
 
 Artifacts are standalone, renderable outputs Claude can generate alongside a chat reply — a single HTML/Markdown/SVG/React file that gets rendered as a live webpage (or document, diagram, etc.) rather than just printed as text or code in the conversation. Each one gets its own private URL the user can view, iterate on, and optionally share.
 
@@ -120,7 +120,7 @@ Is it "the new PowerPoint"? Partially, but that undersells it. It overlaps with 
 
 ---
 
-**[`sb:a142be`]**
+**[`em:a142be`]**
 
 Yes, that's exactly the intended usage pattern.
 
@@ -136,7 +136,7 @@ Yes, that's exactly the intended usage pattern.
 
 ---
 
-**[`sb:a142be`]**
+**[`em:a142be`]**
 
 Yes — a DAG is a natural fit for an artifact. You'd render it as an interactive/visual graph rather than describing it in prose, using something like:
 
@@ -150,7 +150,7 @@ Is there a specific DAG you want visualized — something from this second-brain
 
 ---
 
-**[`sb:a142be`]**
+**[`em:a142be`]**
 
 The core difference is scope, constraints, and lifecycle — they're solving different problems:
 
@@ -170,7 +170,7 @@ Rule of thumb: if what you want is a quick, disposable visual (a chart, a mockup
 
 ---
 
-**[`sb:a142be`]**
+**[`em:a142be`]**
 
 Technically, yes — a local dev server with hot module reload (Vite, webpack-dev-server, even a dumb file-watcher + browser-sync) gets you the same "edit → see it update instantly" loop. That's a legitimate DIY equivalent for a developer at their own machine.
 
@@ -184,7 +184,7 @@ So the honest tradeoff: if you're a developer, at your own machine, and want ful
 
 ---
 
-**[`sb:a142be`]**
+**[`em:a142be`]**
 
 Yes, once published, the artifact persists independently of this session — it's hosted on Claude's infrastructure with a stable URL, not stored in this container. Even after this session ends and the container is reclaimed, the artifact link keeps working.
 
@@ -196,7 +196,7 @@ So it outlives the session, but continuity across sessions is manual — you (or
 
 ---
 
-**[`sb:a142be`]**
+**[`em:a142be`]**
 
 The new session doesn't have local access to the original file at all — the container that wrote it is long gone. It has to reconstruct the code from the published page itself:
 

@@ -141,7 +141,7 @@ system works.
 - [lineage](/beliefs/glossary/lineage.md) — the provenance chain that produced an artifact (for a flow doc: analysis → plan → thread → PR), recorded as a canonical frontmatter block from which views are derived
 - [LLM-as-judge](/beliefs/glossary/llm-as-judge.md) — model judgment substituting for human annotation, validated by measured agreement with human raters
 - [macro](/beliefs/glossary/macro.md) — a compile-time function from code to code (AST to AST in Elixir), expanding a small declarative surface into full implementation with compile-time errors
-- [margin collapse](/beliefs/glossary/margin-collapse.md) — the AI-industry thesis that frontier labs' high inference margins erode under cheaper open-weight parity with frictionless switching (pointer to `sb:07610c`)
+- [margin collapse](/beliefs/glossary/margin-collapse.md) — the AI-industry thesis that frontier labs' high inference margins erode under cheaper open-weight parity with frictionless switching (pointer to `em:07610c`)
 - [markdown renderer](/beliefs/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `ElixirMind.Markdown`)
 - [materialize](/beliefs/glossary/materialize.md) — write derived content to disk as real file content instead of recomputing on demand; pairs with a freshness check
 - [methodology (type)](/beliefs/glossary/methodology-type.md) — controlled type: a repeatable prescriptive how-to/playbook for a recurring task
@@ -152,7 +152,7 @@ system works.
 - [Model Context Protocol (MCP)](/beliefs/glossary/model-context-protocol.md) — open client/server protocol exposing tools/resources/context to LLM agents over a uniform interface
 - [mounting point (harness)](/beliefs/glossary/mounting-point.md) — the file path a third-party harness dictates for content (`CLAUDE.md`, `SKILL.md`); distinct from the brain-defined role that fills it
 - [nogood](/beliefs/glossary/nogood.md) — an assumption set discovered jointly contradictory, recorded so no context is ever built on it again
-- [non-bundle namespace](/beliefs/glossary/non-bundle-namespace.md) — a top-level dir excluded from the registry — no `sb:` ids, skipped by verify (e.g. `meta/`, `inbox/`)
+- [non-bundle namespace](/beliefs/glossary/non-bundle-namespace.md) — a top-level dir excluded from the registry — no `em:` ids, skipped by verify (e.g. `meta/`, `inbox/`)
 - [non-monotonic reasoning](/beliefs/glossary/non-monotonic-reasoning.md) — adding information can remove conclusions: beliefs may rest on the absence of other beliefs
 - [ontology (knowledge representation)](/beliefs/glossary/ontology.md) — a machine-readable domain vocabulary (classes, properties, individuals, axioms) with formally defined meaning
 - [operating contract](/beliefs/glossary/operating-contract.md) — the root `CLAUDE.md` auto-loaded each session; a compiled artifact, never hand-edited; binds agents, not the operator
@@ -207,7 +207,7 @@ system works.
 - [SessionStart hook](/beliefs/glossary/sessionstart-hook.md) — a hook that runs at session start to provision or validate the environment (e.g. warm the Elixir toolchain) and brief the agent via its stdout
 - [shallow clone](/beliefs/glossary/shallow-clone.md) — a git clone truncated to limited commit depth (the CI checkout default); breaks history-derived tooling unless fetched full or guarded for
 - [single source of truth](/beliefs/glossary/single-source-of-truth.md) — a fact lives in one authoritative place; everything else is generated from it or points at it
-- [sink (route-tag sink)](/beliefs/glossary/route-tag-sink.md) — the doc a route tag feeds; an `sb:` id sink accretes a log, a path back-link does not
+- [sink (route-tag sink)](/beliefs/glossary/route-tag-sink.md) — the doc a route tag feeds; an `em:` id sink accretes a log, a path back-link does not
 - [skill](/beliefs/glossary/skill.md) — a named, invocable `SKILL.md` capability; the glossary holds the concepts a skill enacts, not its bare `/command` handle
 - [skill namespacing](/beliefs/glossary/skill-namespacing.md) — prefixing skill names to resolve as a set; in Claude Code only plugin skills are auto-namespaced
 - [skill-to-skill delegation](/beliefs/glossary/skill-to-skill-delegation.md) — one skill invoking another as a sub-step (e.g. `/create-pull-request` runs `/capture`), composing behavior
@@ -215,7 +215,7 @@ system works.
 - [speculative decoding](/beliefs/glossary/speculative-decoding.md) — draft cheap tokens, verify in parallel against the full model, accept the correct prefix; identical output, higher throughput
 - [spurious (warning)](/beliefs/glossary/spurious-warning.md) — a false-positive warning/match; never fails a build but teaches the reader to ignore the channel
 - [squash merge](/beliefs/glossary/squash-merge.md) — flattening a branch into one new commit on the target; linear history at the cost of per-commit provenance (disallowed here)
-- [stable id (`sb:` id)](/beliefs/glossary/stable-id.md) — the opaque, immutable `sb:` + 6-hex identifier every bundle concept carries
+- [stable id (`em:` id)](/beliefs/glossary/stable-id.md) — the opaque, immutable `em:` + 6-hex identifier every bundle concept carries
 - [stale block](/beliefs/glossary/stale-block.md) — a materialized excerpt-log block diverged from its re-derivation (source changed, not re-materialized); distinct from an orphan block
 - [staleness propagation](/beliefs/glossary/staleness-propagation.md) — when a premise changes, follow dependency edges outward and flag every statement resting on it for re-verification
 - [static-site generator](/beliefs/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)

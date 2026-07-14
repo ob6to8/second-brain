@@ -1,5 +1,5 @@
 ---
-id: sb:f9d319
+id: em:f9d319
 type: concept
 title: description logic
 description: A family of decidable first-order fragments engineered for reasoning over concepts, roles, and individuals — the formal basis of OWL (Direct Semantics aligns with the SROIQ description logic).

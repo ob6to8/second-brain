@@ -91,7 +91,7 @@ analysis' idea becoming a running flow) lives above individual commits and has n
    **Heterogeneous by design:** omit any hop a flow lacks (some flows emerged directly as
    a plan with no upstream analysis; the flows genre itself has neither). A flow may
    legitimately have *several* threads/PRs across its build; represent multiples as a YAML
-   list. Governance docs (`analysis`/`plan`/`thread`) carry no `sb:` id, so they are
+   list. Governance docs (`analysis`/`plan`/`thread`) carry no `em:` id, so they are
    referenced **by path**; `pr` is an integer. This differs from the identity rule that
    typed edges use ids — because these targets are outside the identity registry, path is
    the only stable handle they have.
@@ -151,7 +151,7 @@ analysis' idea becoming a running flow) lives above individual commits and has n
   [epistemic-overlay plan](/meta/plans/epistemic-overlay.md) proposes. If that overlay is
   built, this becomes a special case that folds into it — this plan is deliberately the
   smaller, shippable precursor.
-- **No `sb:` ids minted for governance docs.** Analyses/plans/threads stay outside the
+- **No `em:` ids minted for governance docs.** Analyses/plans/threads stay outside the
   identity registry; lineage references them by path.
 - **No new `type`.** Flow docs remain `type: note`; `lineage:` is an extra frontmatter key.
 - **No origin beyond the four roles in v1.** `issue`/`todo` origins (a flow that began as

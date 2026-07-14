@@ -1,5 +1,5 @@
 ---
-id: sb:01bb9a
+id: em:01bb9a
 type: reference
 title: "Loop engineering went mainstream (Sébastien Dubois)"
 description: The frontier has shifted from prompt-writing to "loop engineering" — designing the harness of triggers, validators, and stopping conditions that governs an agent's autonomous read-act-verify-decide cycle.

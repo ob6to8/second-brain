@@ -1,5 +1,5 @@
 ---
-id: sb:1e9cde
+id: em:1e9cde
 type: concept
 title: staleness propagation
 description: Following dependency edges outward when a source or premise changes, so every statement resting on it is flagged for re-verification instead of silently continuing to claim support that no longer holds.

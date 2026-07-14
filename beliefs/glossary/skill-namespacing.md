@@ -1,5 +1,5 @@
 ---
-id: sb:3be9b0
+id: em:3be9b0
 type: concept
 title: skill namespacing
 description: Prefixing invocable skill/command names with a group identifier so they resolve as a set; in Claude Code only plugin skills are auto-namespaced, while project skills are invoked bare and collisions resolve by hierarchy.

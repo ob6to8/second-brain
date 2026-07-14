@@ -1,5 +1,5 @@
 ---
-id: sb:50efa2
+id: em:50efa2
 type: concept
 title: capability-matched model selection
 description: The doctrine that model tier is matched to the epistemic weight of the motion — strongest models where output becomes canonical, a judgment is rendered, or errors are silent; cheaper tiers for derivational, oracle-checked, or high-volume motions.

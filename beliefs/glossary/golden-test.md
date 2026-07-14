@@ -1,5 +1,5 @@
 ---
-id: sb:61877f
+id: em:61877f
 type: concept
 title: golden test (snapshot test)
 description: A test that pins a transform's output by comparing it against a pre-recorded "expected" artifact checked into the repo, flagging any drift — including a wrong-but-internally-consistent change that self-consistency checks miss.

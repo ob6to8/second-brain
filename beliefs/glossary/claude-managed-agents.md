@@ -1,5 +1,5 @@
 ---
-id: sb:04b9a8
+id: em:04b9a8
 type: concept
 title: Claude Managed Agents (CMA)
 description: Anthropic's hosted agent service (beta) where the agent loop runs on Anthropic's orchestration layer and each session provisions a sandboxed container for tool execution — with versioned agent configs, scheduled deployments, rubric-graded outcomes, and egress-substituted credential vaults.

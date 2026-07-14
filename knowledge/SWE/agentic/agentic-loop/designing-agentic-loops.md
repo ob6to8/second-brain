@@ -1,5 +1,5 @@
 ---
-id: sb:3384ba
+id: em:3384ba
 type: reference
 title: "Designing agentic loops (Simon Willison)"
 description: An LLM agent solves goals by running tools in a loop, and the craft lies in carefully designing those tools, permissions, and the sandbox the loop runs in.

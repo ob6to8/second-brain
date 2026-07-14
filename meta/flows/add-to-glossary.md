@@ -65,7 +65,7 @@ definitions the bundle already holds canonically.
    └──────┬───────┘   source-independent, Seen-in citations)
           │  writes / updates
           ▼
-   glossary/<kebab-slug>.md    (type: concept · own sb: id · verified: false)
+   glossary/<kebab-slug>.md    (type: concept · own em: id · verified: false)
    glossary/index.md           (alphabetical, case-insensitive)
           │  mix brain.id  →  mix brain.registry  →  mix brain.verify
           ▼
@@ -103,7 +103,7 @@ Steps 6–8 are intake's spine verbatim — see
   grounded through the normal `verified_by` machinery; sources go in the
   citation line, not the definition.
 - **Graduation preserves identity** — a term that outgrows the glossary
-  *moves* into the domain taxonomy (its `sb:` id travels; identity survives
+  *moves* into the domain taxonomy (its `em:` id travels; identity survives
   moves) and leaves a pointer stub so existing links keep landing.
 - **The glossary is bundle, not governance** — unlike `meta/`, every term file
   is registry-visible, verifier-checked, and site-rendered like any concept.

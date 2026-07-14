@@ -13,4 +13,4 @@ The brain's own working vocabulary and observations — cross-domain material
   (hub: [glossary.md](/beliefs/glossary.md))
 - [Future beliefs](/beliefs/future-beliefs.md) — a running scratch list of facts
   and observations about the brain's tooling and governance worth formalizing
-  later (into a tutorial, policy, or concept). `sb:1b3c79` _(note)_
+  later (into a tutorial, policy, or concept). `em:1b3c79` _(note)_

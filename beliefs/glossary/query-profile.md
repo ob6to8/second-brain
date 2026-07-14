@@ -1,5 +1,5 @@
 ---
-id: sb:fb0bfb
+id: em:fb0bfb
 type: concept
 title: query profile
 description: The set of per-category interest signals derived by walking a knowledge base's taxonomy — its index tree plus concept titles and tags — used as the retrieval filter for finding candidate items.

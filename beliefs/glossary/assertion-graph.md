@@ -1,5 +1,5 @@
 ---
-id: sb:ac22a3
+id: em:ac22a3
 type: concept
 title: assertion graph
 description: The pre-OKF knowledge-base design this brain replaced — atomic claims (primitives backed by source evidence, compounds composing primitives via explicit deps) forming a DAG whose remnants live under deprecated/ pending migration.

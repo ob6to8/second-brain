@@ -1,5 +1,5 @@
 ---
-id: sb:23844f
+id: em:23844f
 type: concept
 title: section terminator
 description: The pattern a parser uses to decide where a document section ends (here, the next h1/h2 heading); two code paths that read and rewrite the same section must agree on it or their views of the file diverge.

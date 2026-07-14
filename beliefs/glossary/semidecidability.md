@@ -1,5 +1,5 @@
 ---
-id: sb:b7760e
+id: em:b7760e
 type: concept
 title: semidecidability
 description: The property of a question answerable by an always-terminating procedure only on the "yes" side — first-order entailment can be confirmed by proof search, but no algorithm decides arbitrary non-entailment.

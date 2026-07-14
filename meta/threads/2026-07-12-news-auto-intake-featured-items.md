@@ -62,13 +62,13 @@ Done. Today's inbox is written and pushed to `claude/news-feature-ur5wf7`.
 
 One day after a 10-item digest, the fresh signal concentrated on the brain's most active front. **The read** frames the week as an *open-weight surge with a sovereignty twist* pulling against an *agent-reliability floor*:
 
-**ai-industry** (extends `sb:07610c`, `sb:2867ac`)
+**ai-industry** (extends `em:07610c`, `em:2867ac`)
 - **LongCat-2.0** `groundbreaking` `impactful` — Meituan's 1.6T MoE, MIT-licensed, trained end-to-end on ~50k *domestic Chinese* accelerators (no Western hardware), leading OpenRouter on agentic coding. The thesis's geopolitical turn: the compute gap gets *sidestepped*, not just narrowed.
 - **Mistral "fat but sparse"** `recent` `impactful` — a new EU-sovereign open-weight MoE family, July early access. A Western front on the same sovereign-escape demand.
 
 **SWE**
-- **How Coding Agents Fail Their Users** `influential` `impactful` — 20,574-session taxonomy; 91% of misalignments still need explicit human correction, and the failures get *subtler* over time. The empirical floor under long-horizon reliability (`sb:c29a22`, `sb:f02167`).
-- **CompressKV** `impactful` — Semantic-Retrieval-Head-guided eviction: >97% quality at 3% cache. Next in the KV lineage (`sb:266c5e`).
+- **How Coding Agents Fail Their Users** `influential` `impactful` — 20,574-session taxonomy; 91% of misalignments still need explicit human correction, and the failures get *subtler* over time. The empirical floor under long-horizon reliability (`em:c29a22`, `em:f02167`).
+- **CompressKV** `impactful` — Semantic-Retrieval-Head-guided eviction: >97% quality at 3% cache. Next in the KV lineage (`em:266c5e`).
 
 I deliberately kept it to 4 well-sourced, genuinely-new items rather than pad against yesterday's big feed. Dropped: the Anthropic long-running-agents post (Nov 2025 — fails the freshness gate) and a standalone GLM-5.2 adoption datapoint (weak sourcing; LongCat covers the open-weight-coding angle better). The simultaneous GPT-5.6/Grok-4.5 frontier launch is noted in the read as context but not featured — it's a capability-race story, not economics.
 
@@ -95,7 +95,7 @@ On the proposal — I think it's a good direction and I'd support it, but "is th
 
 ## The real downsides (ranked)
 
-**1. Dedup debt — the load-bearing one.** This is the catch. There's already a filed finding (`sb`-less, in the `2026-07-09` vector-DB thread + the `dedup-recall-probe` plan) that **grep-based intake dedup already misses existing concepts semantically** — it's the un-fixed weak point of the whole intake pipeline. Auto-intake at machine speed points a firehose at exactly that weakness. Look at yesterday's digest: four ai-industry items all orbiting `sb:07610c`. Auto-intake them naively and you get four near-duplicate margin-collapse references instead of one concept updated in place four times — a direct violation of *update-in-place, don't fragment*. Your "growing corpus to test ingestion" cuts both ways: without the dedup fix, you're not *testing* the machinery, you're *accumulating the exact debt* the probe exists to catch. **This is the thing to sequence around.**
+**1. Dedup debt — the load-bearing one.** This is the catch. There's already a filed finding (`sb`-less, in the `2026-07-09` vector-DB thread + the `dedup-recall-probe` plan) that **grep-based intake dedup already misses existing concepts semantically** — it's the un-fixed weak point of the whole intake pipeline. Auto-intake at machine speed points a firehose at exactly that weakness. Look at yesterday's digest: four ai-industry items all orbiting `em:07610c`. Auto-intake them naively and you get four near-duplicate margin-collapse references instead of one concept updated in place four times — a direct violation of *update-in-place, don't fragment*. Your "growing corpus to test ingestion" cuts both ways: without the dedup fix, you're not *testing* the machinery, you're *accumulating the exact debt* the probe exists to catch. **This is the thing to sequence around.**
 
 **2. Taxonomy-shape changes can't be autonomous.** The contract bars an agent from creating a *new top-level directory* (or moving/merging) without your ratification. Some news items won't fit the existing tree. So the auto-path has to be bounded: file into established domains autonomously, and **defer** (leave in the inbox, flagged) anything that would need a new top-level domain. That's a clean rule, but it means auto-intake is "auto into the known tree," not "auto, period."
 
@@ -132,15 +132,15 @@ Regarding your points above, um, I think that my intention is to function as the
 
 ## Assistant
 
-<routes ref="sb:f17e05">
+<routes ref="em:f17e05">
 ## What "dedup" means
 
-**Dedup (deduplication)** here is one specific step inside `/intake`: *before* creating a new file, search the brain for a concept that's already about the same subject, so you **update that one in place** instead of spawning a near-duplicate. It's the machinery that enforces the contract's *"update-in-place, don't fragment"* rule. When you say "intake this margin-collapse piece" and the brain already has `sb:07610c` on exactly that, dedup is what's supposed to notice `sb:07610c` exists and route the new material *into* it rather than beside it.
+**Dedup (deduplication)** here is one specific step inside `/intake`: *before* creating a new file, search the brain for a concept that's already about the same subject, so you **update that one in place** instead of spawning a near-duplicate. It's the machinery that enforces the contract's *"update-in-place, don't fragment"* rule. When you say "intake this margin-collapse piece" and the brain already has `em:07610c` on exactly that, dedup is what's supposed to notice `em:07610c` exists and route the new material *into* it rather than beside it.
 
 So dedup isn't about the news feed's two dedup passes (those drop items already surfaced). It's the *intake-side* question: "does a home for this already exist in the bundle?"
 </routes>
 
-<routes ref="sb:792b23">
+<routes ref="em:792b23">
 ## What the problem is
 
 The intake dedup search is currently **lexical** — it matches on shared words (case-insensitive match over titles, descriptions, tags, bodies). Two failure modes:
@@ -182,7 +182,7 @@ Want me to persist this as `meta/plans/auto-intake-featured-news.md` (`status: a
 
 margin collapse, lexical search, recall failure, gold set, residual fragmentation
 
-<routes ref="sb:d676f0">
+<routes ref="em:d676f0">
 also: Add a term that I am coining - cognitive debt: when a human operator accrues an understanding gap related to a system and its content akin to technical debt through automation escaping their comprehension (note that its user defined)
 </routes>
 
@@ -198,7 +198,7 @@ I have another thread running the dedup plan - should i pause that?
 
 The format is clear. Key dedup calls:
 - **recall failure** → not a new file; it's the failure mode of low **recall** (`recall.md` exists) — I'll extend that entry and let it absorb the `/elaborate` chain.
-- **margin collapse** → canonically treated by the filed concept `sb:07610c`, so a **pointer entry**, not a duplicated definition.
+- **margin collapse** → canonically treated by the filed concept `em:07610c`, so a **pointer entry**, not a duplicated definition.
 - **lexical search, gold set, residual fragmentation, cognitive debt** → new full entries.
 
 Since `residual fragmentation` and `cognitive debt` are anchored in the auto-intake decision, I'll persist that plan (you authorized it) so they have a durable citation. Writing everything now.
@@ -211,14 +211,14 @@ Added, deduped against the existing 100+ terms:
 
 | Term | Entry |
 |---|---|
-| [lexical search](/glossary/lexical-search.md) | `sb:69e569` — new |
-| [gold set](/glossary/gold-set.md) | `sb:24a13d` — new |
-| [residual fragmentation](/glossary/residual-fragmentation.md) | `sb:96a610` — new |
-| [cognitive debt](/glossary/cognitive-debt.md) | `sb:d676f0` — new, **operator-coined**, flagged user-defined |
-| [margin collapse](/glossary/margin-collapse.md) | `sb:541206` — **pointer** to the filed concept `sb:07610c` (didn't duplicate its argument) |
+| [lexical search](/glossary/lexical-search.md) | `em:69e569` — new |
+| [gold set](/glossary/gold-set.md) | `em:24a13d` — new |
+| [residual fragmentation](/glossary/residual-fragmentation.md) | `em:96a610` — new |
+| [cognitive debt](/glossary/cognitive-debt.md) | `em:d676f0` — new, **operator-coined**, flagged user-defined |
+| [margin collapse](/glossary/margin-collapse.md) | `em:541206` — **pointer** to the filed concept `em:07610c` (didn't duplicate its argument) |
 | recall failure | **folded into** [recall](/glossary/recall.md), not a separate file — it's the failure mode of low recall, and fragmenting it would violate the very rule it's about |
 
-<routes ref="sb:5e7da1 sb:96a610">
+<routes ref="em:5e7da1 em:96a610">
 ## `/elaborate`: low recall → silent fragmentation
 
 This is now written into `recall.md`, but plainly: intake dedup fires a **lexical** search for an existing home for the new item. Because lexical search matches shared *words*, not *meaning*, it misses a concept that says the same thing in different terms (the recall failure). Intake therefore concludes "nothing exists" and files a **new** concept next to the one it should have updated. Crucially, **nothing errors** — the miss is invisible at write time — so the duplicate lands *silently*, gets committed to history, and the two files drift apart. That's why low recall is dangerous rather than merely lossy: it quietly converts a retrieval gap into committed fragmentation that only a later editorial pass, never an error message, can catch. (This is exactly the debt Fork A is meant to avoid paying.)
@@ -306,12 +306,12 @@ Ok, now it actually merged
 
 Genuine collision: PR #50's glossary work independently added `gold set` and `lexical search` too (same terms, parallel sessions), so those are add/add conflicts with divergent `sb:` ids. I'll prefer **main's** ids for those two files (main is the shared record; my ids only ever lived on this branch), reconciling the wording if mine adds anything. Let me inspect all three conflicts.
 
-Main's versions of both are richer and cross-link main-only concepts (synonym-expansion, the dedup thread) — I'll take **main's** files wholesale (its ids `sb:d9c5d9`, `sb:792b23`). My path-based links to them stay valid; my abandoned branch-only ids simply drop out when the registry regenerates. Then I'll reconcile the index so my unique terms (margin collapse, residual fragmentation) survive with no duplicates.
+Main's versions of both are richer and cross-link main-only concepts (synonym-expansion, the dedup thread) — I'll take **main's** files wholesale (its ids `em:d9c5d9`, `em:792b23`). My path-based links to them stay valid; my abandoned branch-only ids simply drop out when the registry regenerates. Then I'll reconcile the index so my unique terms (margin collapse, residual fragmentation) survive with no duplicates.
 
 Merged and pushed — `bbe0966`. The dedup fix (PR #50) is now in this branch, so **Fork A's prerequisite is satisfied.**
 
 **How the merge resolved:**
-- **`gold set` / `lexical search`** — PR #50 added these same two terms in parallel (its dedup-probe session). Genuine add/add collisions with divergent ids. I kept **main's** versions (`sb:d9c5d9`, `sb:792b23`) — richer definitions that cross-link main-only concepts like `synonym-expansion`. My branch-only ids (`sb:24a13d`, `sb:69e569`) dropped out of the regenerated registry; no dangling references since everything links by path, not id.
+- **`gold set` / `lexical search`** — PR #50 added these same two terms in parallel (its dedup-probe session). Genuine add/add collisions with divergent ids. I kept **main's** versions (`em:d9c5d9`, `em:792b23`) — richer definitions that cross-link main-only concepts like `synonym-expansion`. My branch-only ids (`em:24a13d`, `em:69e569`) dropped out of the regenerated registry; no dangling references since everything links by path, not id.
 - **My unique terms survived** — `margin collapse`, `residual fragmentation`, `cognitive debt` are intact and unduplicated in the index.
 - **`meta/plans/index.md`** auto-merged; the dedup-probe plan now reads `status: done` alongside my accepted auto-intake plan.
 - **`meta/registry.md`** regenerated deterministically.

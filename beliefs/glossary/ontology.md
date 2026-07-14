@@ -1,5 +1,5 @@
 ---
-id: sb:da67e8
+id: em:da67e8
 type: concept
 title: ontology (knowledge representation)
 description: A machine-readable vocabulary for a domain — classes, properties, individuals, and the axioms constraining them — with formally defined meaning, so terms and their relationships can be reasoned over mechanically.

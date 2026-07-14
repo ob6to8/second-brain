@@ -1,5 +1,5 @@
 ---
-id: sb:96a610
+id: em:96a610
 type: concept
 title: residual fragmentation
 description: The near-duplicate or fragmented concepts that remain after automated intake dedup has done its cheap best, left for a human editorial pass to catch and merge.
@@ -17,7 +17,7 @@ attribution:
 
 # residual fragmentation
 
-The duplicated or split-apart concepts that survive automated intake [deduplication](/beliefs/glossary/deduplication.md) — the leftover after the machine has done the cheap merges it can (e.g. updating in place on a known `relates to sb:` hint). It names a division of labor in the [auto-intake model](/meta/plans/auto-intake-featured-research.md): automation handles the *bulk* of don't-fragment via update-in-place, and the operator's editorial pass reconciles the *residual* that lexical [recall](/beliefs/glossary/recall.md) missed. The cost asymmetry matters — reconciling a fragmentation already committed to history (reassigning ids, redirecting [`verified_by`](/beliefs/glossary/verified-by.md) edges) is dearer than avoiding it at write time, which is why the residual is kept small rather than left to grow.
+The duplicated or split-apart concepts that survive automated intake [deduplication](/beliefs/glossary/deduplication.md) — the leftover after the machine has done the cheap merges it can (e.g. updating in place on a known `relates to em:` hint). It names a division of labor in the [auto-intake model](/meta/plans/auto-intake-featured-research.md): automation handles the *bulk* of don't-fragment via update-in-place, and the operator's editorial pass reconciles the *residual* that lexical [recall](/beliefs/glossary/recall.md) missed. The cost asymmetry matters — reconciling a fragmentation already committed to history (reassigning ids, redirecting [`verified_by`](/beliefs/glossary/verified-by.md) edges) is dearer than avoiding it at write time, which is why the residual is kept small rather than left to grow.
 
 *Seen in:* [auto-intake-featured-research plan](/meta/plans/auto-intake-featured-research.md)
 
@@ -25,13 +25,13 @@ The duplicated or split-apart concepts that survive automated intake [deduplicat
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:96a610">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:96a610">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-news-auto-intake-featured-items (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:96a610`]**  (co-feeds: `sb:5e7da1`)
+**[`em:96a610`]**  (co-feeds: `em:5e7da1`)
 
 **`/elaborate`: low recall → silent fragmentation**
 

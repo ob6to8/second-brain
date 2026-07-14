@@ -6,7 +6,7 @@ defmodule ElixirMind.Verifier do
 
     1. Every bundle concept has parseable frontmatter and a non-empty `type`
        (OKF conformance) — surfaced via `ElixirMind.Registry.scan/1`.
-    2. Every bundle concept carries a stable `id` matching `sb:[0-9a-f]{6}`;
+    2. Every bundle concept carries a stable `id` matching `em:[0-9a-f]{6}`;
        ids are unique.
     3. Every `verified_by` reference resolves to an existing id. (Targets are
        typically `source` captures, which are not themselves `verified` — they
@@ -67,7 +67,7 @@ defmodule ElixirMind.Verifier do
   defp id_errors(%{id: id, path: path}) do
     if id =~ Registry.id_format(),
       do: [],
-      else: ["#{path}: malformed id #{inspect(id)} (expected sb:xxxxxx hex)"]
+      else: ["#{path}: malformed id #{inspect(id)} (expected em:xxxxxx hex)"]
   end
 
   defp edge_errors(%{verified_by: refs, path: path}, by_id) do

@@ -17,7 +17,7 @@ defmodule ElixirMind.DedupProbe do
   ## The gold set
 
   `meta/evals/dedup-probe.md` — a prose-bearing doc whose `## Gold set` table this
-  module parses. Each row is a `query`, its `acceptable ids` (one or more `sb:`
+  module parses. Each row is a `query`, its `acceptable ids` (one or more `em:`
   ids), a `band`, `;`-separated `variants`, and an adjudication `note`.
 
     * **`target`** — a scored row: the query should surface at least one acceptable
@@ -143,7 +143,7 @@ defmodule ElixirMind.DedupProbe do
   # --- the searchable index -------------------------------------------------
 
   @doc """
-  Map of `id => searchable blob` for every bundle concept carrying an `sb:` id.
+  Map of `id => searchable blob` for every bundle concept carrying an `em:` id.
   The blob is the lowercased concatenation of title, description, tags, and body
   — the text the mechanical backend matches against.
   """
@@ -212,7 +212,7 @@ defmodule ElixirMind.DedupProbe do
   defp parse_row(_), do: []
 
   defp split_ids(cell) do
-    ~r/sb:[0-9a-f]{6}/
+    ~r/em:[0-9a-f]{6}/
     |> Regex.scan(cell)
     |> List.flatten()
   end

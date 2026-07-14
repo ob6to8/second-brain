@@ -1,5 +1,5 @@
 ---
-id: sb:8654d1
+id: em:8654d1
 type: concept
 title: prompt injection
 description: An attack in which instructions embedded in untrusted content an LLM processes — a web page, email, document, tool result — hijack the model into serving the attacker's intent instead of the user's task.

@@ -1,5 +1,5 @@
 ---
-id: sb:1efc5e
+id: em:1efc5e
 type: concept
 title: Tree-sitter
 description: An incremental parser-generator and library that builds a concrete syntax tree for source code across many languages, fast enough to reparse on every edit — the parsing layer code-intelligence tools use to extract structure.

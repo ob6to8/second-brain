@@ -1,5 +1,5 @@
 ---
-id: sb:184bae
+id: em:184bae
 type: concept
 title: git worktree
 description: A linked working directory attached to one git repository — its own HEAD, index, and file tree over a shared .git object store — letting multiple branches (and agents) be checked out at once.

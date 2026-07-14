@@ -1,5 +1,5 @@
 ---
-id: sb:43244e
+id: em:43244e
 type: concept
 title: argumentation framework (Dung)
 description: Dung's abstract model of argument as a directed graph — a set of arguments and a binary attack relation — over which acceptability semantics compute which sets of arguments can rationally stand together.

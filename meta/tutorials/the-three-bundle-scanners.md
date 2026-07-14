@@ -41,7 +41,7 @@ Each surviving path is read, its YAML frontmatter parsed, and folded into an
 `Entry` struct — `{id, concept_id, path, type, title, verified, resource,
 verified_by}`. `scan/1` returns `{entries, errors}`, where `errors` collects two
 failure classes: files whose frontmatter won't parse, and **duplicate ids**
-(two concepts claiming the same `sb:` id). That is the whole scan: *wildcard →
+(two concepts claiming the same `em:` id). That is the whole scan: *wildcard →
 exclude → parse → struct*, with duplicate-id detection folded in.
 
 The scoping is the interesting part. The registry is the **stable-identity
@@ -55,14 +55,14 @@ top-level directory or basename is on a fixed list:
 | `.claude` | skills — agent behavior, not concepts |
 | `lib` `test` | the Elixir toolchain (and its fixtures) |
 | `meta` | governance namespace — policies, threads, tutorials, this file |
-| `inbox` | the daily candidate feed — a non-bundle namespace with no `sb:` ids |
+| `inbox` | the daily candidate feed — a non-bundle namespace with no `em:` ids |
 | `deprecated` | the read-only archive of legacy content |
 | `index.md` `log.md` `README.md` `CLAUDE.md` | reserved/generated files, any level |
 
 A path survives only if it is a real concept living at the root or in a
 knowledge subdirectory. This single filter is what keeps the identity layer
 scoped, and it is why a `type: plan` doc under `meta/plans/` or a fixture concept
-under `test/scenarios/` never receives an `sb:` id or shows up in the registry —
+under `test/scenarios/` never receives an `em:` id or shows up in the registry —
 they are structurally outside the scan.
 
 `Registry` then adds the *compiled view* on top of the scan: `render/1` sorts the
@@ -84,7 +84,7 @@ over each entry, accumulating human-readable error strings:
 | Rule | What it enforces |
 |------|------------------|
 | **type** | every concept has a non-empty `type` (OKF conformance) |
-| **id** | every concept carries an `id` matching `sb:[0-9a-f]{6}` |
+| **id** | every concept carries an `id` matching `em:[0-9a-f]{6}` |
 | **edges** | every `verified_by` reference resolves to an existing id in the corpus |
 | **grounding — capture** | a concept with a `resource` (a capture) may not be `verified: true` |
 | **grounding — evidence** | `verified: true` requires a non-empty `verified_by` |
@@ -111,7 +111,7 @@ sinks    = scan_sinks(root, concepts)      # excerpt logs inside concepts
 - **`scan_threads/1`** globs `meta/threads/*.md` (minus `index.md`) and runs
   `parse_regions/1` over each to extract the `<routes ref="…">` tag regions.
   Note the directory: `meta/threads` is *excluded from the registry* — threads
-  are governance records with no `sb:` id. The registry's own scan would never
+  are governance records with no `em:` id. The registry's own scan would never
   surface them, so RouteTags reaches into that namespace directly.
 - **`bundle_concepts/1`** is just `Registry.scan(root)` keeping the id-bearing
   entries — the same base scanner again.
@@ -119,7 +119,7 @@ sinks    = scan_sinks(root, concepts)      # excerpt logs inside concepts
   `## Thread excerpts — route-tagged log` blocks via `parse_log_section/1`.
 
 The bridge is the **stable id**. A tag in a governance-namespace thread
-(`<routes ref="sb:d479e3">`) points at a knowledge-namespace concept via its
+(`<routes ref="em:d479e3">`) points at a knowledge-namespace concept via its
 registry id. So RouteTags is the one scanner that joins the two namespaces — it
 reads tags from files the registry excludes, and resolves them against the
 identity layer the registry compiles. Its five checks (wellformedness, ref
@@ -148,7 +148,7 @@ then walks back through the registry to resolve what it found.
 
 Because all three ultimately gate on the same exclusion filter, **anything under
 an excluded directory is invisible to the whole toolchain.** Put a markdown file
-with a fabricated `sb:` id under `test/`, and `mix brain.registry`,
+with a fabricated `em:` id under `test/`, and `mix brain.registry`,
 `mix brain.verify`, and `mix brain.route_tags` all sail past it: `test` is on the
 exclusion list, the verifier scans through the registry, and RouteTags only reads
 threads from `meta/threads`. That is precisely what makes on-disk scenario

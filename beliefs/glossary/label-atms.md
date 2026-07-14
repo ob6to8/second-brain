@@ -1,5 +1,5 @@
 ---
-id: sb:056746
+id: em:056746
 type: concept
 title: label (ATMS)
 description: The set of minimal consistent environments attached to a belief — every combination of assumptions from which it follows; kept consistent, sound, complete, and minimal by the ATMS, making context membership a subset test.

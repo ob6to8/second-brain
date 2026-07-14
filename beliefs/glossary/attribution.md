@@ -1,5 +1,5 @@
 ---
-id: sb:57c7d1
+id: em:57c7d1
 type: concept
 title: attribution
 description: In this brain, the frontmatter map recording a doc's ingestion event — when it entered, through which channel and by whom, and why — an immutable record orthogonal to provenance (content origin) and timestamp (last change).

@@ -31,13 +31,13 @@ defmodule ElixirMind.SiteTest do
 
     write(dir, "topic/a-claim.md", """
     ---
-    id: sb:aaaaaa
+    id: em:aaaaaa
     type: concept
     title: A verified claim
     description: One-sentence summary.
     tags: [alpha, beta]
     verified: true
-    verified_by: [sb:bbbbbb]
+    verified_by: [em:bbbbbb]
     ---
 
     # A verified claim
@@ -47,7 +47,7 @@ defmodule ElixirMind.SiteTest do
 
     write(dir, "topic/a-source.md", """
     ---
-    id: sb:bbbbbb
+    id: em:bbbbbb
     type: source
     title: A source capture
     resource: https://example.com/doc
@@ -99,7 +99,7 @@ defmodule ElixirMind.SiteTest do
     assert html =~ ~s(<p class="lede">One-sentence summary.</p>)
     assert html =~ ~s(data-tag="alpha")
     assert html =~ "✓ verified"
-    assert html =~ "<code>sb:aaaaaa</code>"
+    assert html =~ "<code>em:aaaaaa</code>"
     # body H1 is not duplicated
     refute html =~ "<h1 id="
   end

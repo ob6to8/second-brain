@@ -1,5 +1,5 @@
 ---
-id: sb:276c61
+id: em:276c61
 type: reference
 title: "Ralph — running a coding agent in an infinite bash loop (Geoffrey Huntley)"
 description: "Ralph" is a brute-force agentic technique that pipes one prompt into a coding agent inside an endless shell loop, trusting successive iterations to converge on working software.

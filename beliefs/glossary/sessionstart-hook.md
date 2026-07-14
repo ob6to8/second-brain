@@ -1,5 +1,5 @@
 ---
-id: sb:71f38a
+id: em:71f38a
 type: concept
 title: SessionStart hook
 description: A hook that runs automatically at the start of an agent/CLI session to provision or validate the environment — and, via its stdout, brief the agent — before the user interacts.
@@ -23,12 +23,12 @@ A hook that runs a script at the start of every session to provision or warm the
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:71f38a">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:71f38a">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-priorities-skill-and-persistence-listers (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:71f38a`]**  (co-feeds: `.claude/hooks/session-start.sh`)
+**[`em:71f38a`]**  (co-feeds: `.claude/hooks/session-start.sh`)
 
 **The hook** — one caveat worth flagging: you said "delete the hook," but the SessionStart hook did *two* jobs — emit the digest *and* install/warm Elixir in remote (Claude-on-web) sandboxes. That toolchain bootstrap is what makes `mix brain.*` — including the new `/priorities` skill itself — work at all in a fresh remote session. Deleting it entirely would break the very skill I was building. So I **removed the digest emission** (the "priorities work" is now skill-only, as you wanted) and **kept the toolchain bootstrap**, with a one-line `run /priorities` pointer. If you'd rather the file be gone completely and are fine expecting Elixir to be pre-present, say so and I'll delete it.

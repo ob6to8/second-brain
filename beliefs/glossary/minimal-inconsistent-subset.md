@@ -1,5 +1,5 @@
 ---
-id: sb:577155
+id: em:577155
 type: concept
 title: minimal inconsistent subset
 description: A set of beliefs that is jointly contradictory while every proper subset is consistent — the smallest witness that localizes a conflict, analogous to a minimal unsatisfiable core in SAT solving.

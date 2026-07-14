@@ -1,5 +1,5 @@
 ---
-id: sb:21854a
+id: em:21854a
 type: concept
 title: CI smoke check
 description: A lightweight check wired into continuous integration that fails the build if a basic invariant breaks — an early tripwire rather than a full test suite.

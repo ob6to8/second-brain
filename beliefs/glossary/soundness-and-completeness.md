@@ -1,5 +1,5 @@
 ---
-id: sb:2b6117
+id: em:2b6117
 type: concept
 title: soundness and completeness
 description: The paired correctness properties of a proof system — sound: everything derivable is valid; complete: everything valid is derivable. Gödel (1929) proved first-order logic has both, aligning syntax with semantics.

@@ -1,5 +1,5 @@
 ---
-id: sb:7adc45
+id: em:7adc45
 type: concept
 title: parse-the-log
 description: A session-capture implementation path that renders a transcript by mechanically parsing the host session log file rather than reproducing text from the agent's live context, for higher fidelity.

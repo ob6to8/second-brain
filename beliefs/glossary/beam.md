@@ -1,5 +1,5 @@
 ---
-id: sb:b2dc54
+id: em:b2dc54
 type: concept
 title: BEAM
 description: The virtual machine that runs Erlang and Elixir, built around huge numbers of lightweight, heap-isolated processes with preemptive scheduling and message passing — the substrate whose distinctive affordances (supervision, fault isolation, hot code upgrades) target long-running concurrent services.

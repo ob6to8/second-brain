@@ -1,5 +1,5 @@
 ---
-id: sb:8f37a6
+id: em:8f37a6
 type: concept
 title: actor model
 description: A concurrency model in which independent, share-nothing processes ("actors") each own their private state and interact only by asynchronous message passing, so contention over a resource becomes a message queue at its owning actor rather than a lock.

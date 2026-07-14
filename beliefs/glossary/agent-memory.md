@@ -1,5 +1,5 @@
 ---
-id: sb:37a83f
+id: em:37a83f
 type: concept
 title: agent memory
 description: The mechanisms by which an AI agent persists knowledge beyond its context window — spanning short-term, long-term, procedural, and working memory — implemented anywhere from plain markdown files to managed vector databases.

@@ -1,5 +1,5 @@
 ---
-id: sb:79ca74
+id: em:79ca74
 type: concept
 title: bundle-absolute link
 description: A markdown link whose target begins at the bundle root with a leading slash (e.g. /beliefs/glossary/route-tag.md), so it resolves identically from any document in the bundle.

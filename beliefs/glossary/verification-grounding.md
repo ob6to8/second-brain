@@ -1,5 +1,5 @@
 ---
-id: sb:4f4baf
+id: em:4f4baf
 type: concept
 title: verification grounding
 description: The rule that a `verified: true` agent statement must be backed by evidence — a non-empty `verified_by` pointing at captures — and never by its own `resource` link.

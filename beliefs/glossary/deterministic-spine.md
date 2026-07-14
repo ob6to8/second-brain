@@ -1,5 +1,5 @@
 ---
-id: sb:d18504
+id: em:d18504
 type: concept
 title: deterministic spine
 description: The subset of a workflow whose output is fully determined by its inputs — the mechanical tool transforms and checks — as opposed to the non-deterministic, judgment-driven parts; only the spine can be pinned by a conventional test.

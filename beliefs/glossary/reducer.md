@@ -1,5 +1,5 @@
 ---
-id: sb:eb67ce
+id: em:eb67ce
 type: concept
 title: reducer
 description: A pure function that folds a current state and an action into a new state (and, in effectful variants, a list of declared side effects), making state transitions total, unit-testable without their environment, and replayable from an action log — the Redux/Elm pattern.

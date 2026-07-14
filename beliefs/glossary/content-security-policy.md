@@ -1,5 +1,5 @@
 ---
-id: sb:37a60d
+id: em:37a60d
 type: concept
 title: Content Security Policy
 description: A browser-enforced security standard that restricts which resources a web page may load or connect to, expressed as a policy the page is served with.

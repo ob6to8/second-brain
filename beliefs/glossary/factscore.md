@@ -1,5 +1,5 @@
 ---
-id: sb:7d0700
+id: em:7d0700
 type: concept
 title: FActScore
 description: Min et al.'s factuality metric (EMNLP 2023) — the percentage of a generation's atomic facts supported by a fixed knowledge source — plus the retrieve-then-verify estimator that automates it to within 2% of human scores.

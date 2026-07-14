@@ -1,5 +1,5 @@
 ---
-id: sb:de14e6
+id: em:de14e6
 type: concept
 title: warn pass
 description: An advisory check that reports its findings without failing — the signal is a printed warning rather than a red gate — used where detection is mechanical but the underlying rule is tolerant or the judgment ultimately editorial.

@@ -1,5 +1,5 @@
 ---
-id: sb:048bca
+id: em:048bca
 type: concept
 title: deploy gating
 description: Making a deployment conditional on prior verification passing, so only a validated artifact is published; when a check fails the publish is skipped and the last good deploy stays live (fails safe).

@@ -23,8 +23,8 @@ glossary terms could cross-link similarity. Investigation found *doctrine* used
 nowhere in the bundle and *policy* canonically defined in the
 [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md) but
 missing the glossary pointer entry every sibling type already had — so
-[policy (type)](/glossary/policy-type.md) (`sb:fa15e7`) was added. The operator
-then directed a [doctrine](/glossary/doctrine.md) entry (`sb:6a9e78`), the term
+[policy (type)](/glossary/policy-type.md) (`em:fa15e7`) was added. The operator
+then directed a [doctrine](/glossary/doctrine.md) entry (`em:6a9e78`), the term
 having entered the brain's working vocabulary through the question itself. On
 cross-linking, the agent recommended — and the operator ratified — a
 **prose-first convention** codified in
@@ -59,20 +59,20 @@ Continue from where you left off.
 
 Pushed to `claude/glossary-doctrine-policy-lkabog` (commit `2a1b2dc`, all verifiers and 78 tests green). Here are the answers to your three questions:
 
-<routes ref="sb:fa15e7 sb:6a9e78">
+<routes ref="em:fa15e7 em:6a9e78">
 **Are "doctrine" and "policy" both defined?**
 
 **No — only "policy" is, and until this session it had no glossary entry either.**
 
 - **Doctrine** appears *nowhere* in the repo — not in the glossary, not in the contract, not in any policy doc, thread, or concept. It isn't part of this brain's vocabulary at all. I did **not** add a glossary entry for it, because the glossary's own guardrail is to define terms that sources actually use — an entry for a term nothing cites would be an orphan. If you want to introduce "doctrine" as a real concept in the brain, that's a quick `/add-to-glossary` or `/intake` away once something actually uses it.
-- **Policy** is canonically defined in the [controlled-type vocabulary](meta/policy/controlled-type-vocabulary.md): *"a governance rule for how the brain operates; the source from which `CLAUDE.md` is compiled."* But I found a gap: every other governance type (`plan`, `issue`, `methodology`, `tutorial`, `analysis`) had a glossary pointer entry, and `policy` didn't. I've added [`/glossary/policy-type.md`](glossary/policy-type.md) (`sb:fa15e7`) to fill it, cross-linked to its sibling types and cited to the bootstrap thread where the genre originated.
+- **Policy** is canonically defined in the [controlled-type vocabulary](meta/policy/controlled-type-vocabulary.md): *"a governance rule for how the brain operates; the source from which `CLAUDE.md` is compiled."* But I found a gap: every other governance type (`plan`, `issue`, `methodology`, `tutorial`, `analysis`) had a glossary pointer entry, and `policy` didn't. I've added [`/glossary/policy-type.md`](glossary/policy-type.md) (`em:fa15e7`) to fill it, cross-linked to its sibling types and cited to the bootstrap thread where the genre originated.
 
 **The conceptual difference**
 
 In ordinary governance usage, **doctrine** is the layer of *beliefs and principles* — the "why," a body of accepted tenets that guides judgment but doesn't prescribe specific action. **Policy** is the layer of *enforceable rules* — the "what you must do," specific and operational. Doctrine shapes policies; policies implement doctrine. In this brain's terms, the closest thing to "doctrine" is arguably the *preamble + the compiled operating contract as a whole* (the worldview: "the tree is the taxonomy," "distill, don't dump"), while each `type: policy` file is a concrete, enforceable rule — several of them literally machine-enforced by `mix brain.verify`.
 </routes>
 
-<routes ref="sb:0b648f .claude/skills/add-to-glossary/SKILL.md">
+<routes ref="em:0b648f .claude/skills/add-to-glossary/SKILL.md">
 **Cross-linking similarity between glossary terms**
 
 **Yes — two mechanisms exist today, and I used both in the new entry:**
@@ -80,7 +80,7 @@ In ordinary governance usage, **doctrine** is the layer of *beliefs and principl
 1. **Inline markdown links between term files.** Since every term is its own concept file, any entry can link related terms by bundle-absolute path — the new `policy (type)` entry links to `plan-type`, `issue-type`, `methodology-type`, and `operating-contract` right in its "distinct from…" sentence. These are untyped edges where the prose carries the meaning (per the cross-linking policy), and they render as clickable links on GitHub and the Pages site. Several entries already do this organically (e.g. `skill.md` → `session-capture.md`).
 2. **Shared frontmatter tags.** Entries carry tags like `[glossary, types, governance]`, so related clusters are already greppable/queryable (`policy-type`, `plan-type`, `issue-type` all share `types, governance`).
 
-**What doesn't exist yet:** a *structured* similarity edge — e.g. a `related:` frontmatter field holding `sb:` ids, analogous to `verified_by`, that tooling could traverse to render a "See also" block per entry. That would be a new typed edge, which under the stable-identity policy is a change to the brain's shape — so I'm proposing it rather than building it. If you like it, the design would be: `related: [sb:bf0524, sb:e9a82b]` on each term file, symmetric-checked by `mix brain.verify`, rendered as a *See also:* line. A lighter alternative is a plain *See also:* prose line convention added to the `/add-to-glossary` skill — no tooling change at all. Say the word on either and I'll build it.
+**What doesn't exist yet:** a *structured* similarity edge — e.g. a `related:` frontmatter field holding `sb:` ids, analogous to `verified_by`, that tooling could traverse to render a "See also" block per entry. That would be a new typed edge, which under the stable-identity policy is a change to the brain's shape — so I'm proposing it rather than building it. If you like it, the design would be: `related: [em:bf0524, em:e9a82b]` on each term file, symmetric-checked by `mix brain.verify`, rendered as a *See also:* line. A lighter alternative is a plain *See also:* prose line convention added to the `/add-to-glossary` skill — no tooling change at all. Say the word on either and I'll build it.
 </routes>
 
 ## User
@@ -91,11 +91,11 @@ Which do you recommend: related, see also, or neither?
 
 ## Assistant
 
-<routes ref="sb:6a9e78">
-Done — [`doctrine`](glossary/doctrine.md) is committed and pushed (`5a57194`, `sb:6a9e78`, all verifiers and 78 tests green). It defines doctrine as the principles layer ("the why") versus policy's enforceable rules, cross-links to `policy-type` and `operating-contract`, and notes that this brain has no `doctrine` type — the closest analogue being the preamble plus compiled contract read as a whole. The glossary is now 71 terms.
+<routes ref="em:6a9e78">
+Done — [`doctrine`](glossary/doctrine.md) is committed and pushed (`5a57194`, `em:6a9e78`, all verifiers and 78 tests green). It defines doctrine as the principles layer ("the why") versus policy's enforceable rules, cross-links to `policy-type` and `operating-contract`, and notes that this brain has no `doctrine` type — the closest analogue being the preamble plus compiled contract read as a whole. The glossary is now 71 terms.
 </routes>
 
-<routes ref="sb:0b648f .claude/skills/add-to-glossary/SKILL.md">
+<routes ref="em:0b648f .claude/skills/add-to-glossary/SKILL.md">
 **My recommendation: *See also* — not `related:`, not neither**
 
 **A prose *See also:* line, added as a convention in the `/add-to-glossary` skill, used sparingly.** Reasoning:
@@ -115,7 +115,7 @@ Proceed
 
 ## Assistant
 
-<routes ref="sb:0b648f .claude/skills/add-to-glossary/SKILL.md">
+<routes ref="em:0b648f .claude/skills/add-to-glossary/SKILL.md">
 Done — the convention is codified and pushed (`1f13ffc`, all verifiers and 78 tests green).
 
 What landed:

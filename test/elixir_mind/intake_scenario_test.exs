@@ -18,8 +18,8 @@ defmodule ElixirMind.IntakeScenarioTest do
   # A representative intake output: a primary `source` capture, and a `claim`
   # distilled from it, grounded against that source via `verified_by`. Ids stand
   # in for what `mix brain.id` would mint (the mint is random, so it isn't pinned).
-  @source_row "| `sb:bbb222` | [sources/paper](/sources/paper.md) | source |  |"
-  @claim_row "| `sb:aaa111` | [SWE/topic/insight](/SWE/topic/insight.md) | claim | true |"
+  @source_row "| `em:bbb222` | [sources/paper](/sources/paper.md) | source |  |"
+  @claim_row "| `em:aaa111` | [SWE/topic/insight](/SWE/topic/insight.md) | claim | true |"
 
   setup %{tmp_dir: root} do
     File.mkdir_p!(Path.join(root, "meta"))
@@ -28,7 +28,7 @@ defmodule ElixirMind.IntakeScenarioTest do
 
     write(root, "sources/paper.md", """
     ---
-    id: sb:bbb222
+    id: em:bbb222
     type: source
     title: A primary source
     resource: https://example.com/paper
@@ -45,12 +45,12 @@ defmodule ElixirMind.IntakeScenarioTest do
 
     write(root, "SWE/topic/insight.md", """
     ---
-    id: sb:aaa111
+    id: em:aaa111
     type: claim
     title: A grounded insight
     description: One sentence.
     verified: true
-    verified_by: [sb:bbb222]
+    verified_by: [em:bbb222]
     attribution:
       when: 2026-07-13T10:00:00Z
       channel: intake
@@ -97,7 +97,7 @@ defmodule ElixirMind.IntakeScenarioTest do
     # A common intake mistake: a `reference` that stores a link cannot be verified.
     write(root, "SWE/topic/bad-capture.md", """
     ---
-    id: sb:ccc333
+    id: em:ccc333
     type: reference
     title: A capture wrongly marked verified
     resource: https://example.com/article

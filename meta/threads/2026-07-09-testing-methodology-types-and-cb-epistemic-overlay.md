@@ -16,7 +16,7 @@ The session opened on a concrete task — synthesize the two matklad testing
 references already in the brain into an agent-facing testing methodology for this
 repo's dependency-free Elixir tooling — and filed
 [`elixir-second-brain-testing-methodology`](/SWE/testing/elixir-second-brain-testing-methodology.md)
-(`sb:d58da3`). Questioning its `type` led to ratifying a new **`methodology`**
+(`em:d58da3`). Questioning its `type` led to ratifying a new **`methodology`**
 type, adding reciprocal links to the two references, and aligning tags. A tangent
 on why cross-links stay untyped prose produced a durable principle — **"type an
 edge only when a machine must traverse it; prose carries the semantics humans
@@ -51,7 +51,7 @@ Read the two testing articles here, reference the fact this is an elixir app, an
 
 ## Assistant
 
-<routes ref="sb:d58da3">
+<routes ref="em:d58da3">
 I read the two testing articles already in the brain, grounded them in this repo's actual Elixir tooling, and filed a synthesized methodology. I produced `SWE/testing/elixir-second-brain-testing-methodology.md` — an agent-facing methodology that maps each principle onto this app's real modules rather than restating theory: **Purity → ExUnit mechanics** (`Frontmatter`/`Policy` are pure → `async: true`; the IO-touching `Registry`/`Contract`/`Verifier` → `async: false` + `@moduletag :tmp_dir`); **Features-not-code** (assert on the verifier's error strings and rendered output, not private helpers; inject the `root` arg instead of mocking `File`); **The `check` chokepoint** (the existing `write_concept`/`write_policy` fixture builders, promoted to `test/support/` when shared); **Golden/snapshot tests** (the `write`→`check`→drift round-trip for the generated `CLAUDE.md` and `meta/registry.md`); and a **generative ladder** (properties for `mint`/frontmatter round-trip, exhaustive enumeration for the `type` vocabulary — flagging that StreamData would be a new dependency needing ratification). Plus a concrete 7-step checklist and treating `mix brain.*`/`mix format --check` as part of the suite.
 </routes>
 
@@ -76,7 +76,7 @@ Good questions — these four probe exactly where this doc sits awkwardly agains
 
 **3. Tags.** Current: `[testing, software-engineering, elixir, exunit, test-strategy, methodology]`. One inconsistency: both source references use `test-design`, and I used `test-strategy` — I should align to the established tag so the three files cluster. My recommendation: `[testing, software-engineering, test-design, elixir, exunit]`.
 
-**4. How it becomes verified.** Per the contract, `verified: true` is eligible here (the note has no `resource`), and requires a non-empty `verified_by` of existing ids that jointly support it. But a methodology has two different claim-classes: **Fidelity** ("this faithfully distills matklad's essays") → grounded by `verified_by: [sb:a5ea86, sb:73115b]`; and the **app-mapping** ("`Frontmatter` is pure → `async: true`") → not supported by matklad at all, but capturable as `type: source` snippets of the code. And a legitimate third answer: a methodology is prescriptive, and `verified` speaks to checked-against-evidence factual claims, so `verified: false` may simply be its correct resting state.
+**4. How it becomes verified.** Per the contract, `verified: true` is eligible here (the note has no `resource`), and requires a non-empty `verified_by` of existing ids that jointly support it. But a methodology has two different claim-classes: **Fidelity** ("this faithfully distills matklad's essays") → grounded by `verified_by: [em:a5ea86, em:73115b]`; and the **app-mapping** ("`Frontmatter` is pure → `async: true`") → not supported by matklad at all, but capturable as `type: source` snippets of the code. And a legitimate third answer: a methodology is prescriptive, and `verified` speaks to checked-against-evidence factual claims, so `verified: false` may simply be its correct resting state.
 
 ## User
 
@@ -84,8 +84,8 @@ Good questions — these four probe exactly where this doc sits awkwardly agains
 
 ## Assistant
 
-<routes ref="sb:d58da3">
-You ratified `methodology`, so I minted it and wired everything through the four questions you raised. **1. Type — now `methodology`.** Added to the controlled vocabulary in `meta/policy/controlled-type-vocabulary.md`, recompiled `CLAUDE.md`, and retyped the doc `note` → `methodology`. **2. Linking — now reciprocal.** The methodology already linked to both articles; I added an "Applied in:" back-link to each reference (`sb:a5ea86`, `sb:73115b`), kept as untyped prose links. **3. Tags — aligned.** `test-strategy` → `test-design` and dropped `methodology` as a tag since it's now the type. Final: `[testing, software-engineering, test-design, elixir, exunit]`. **4. Verification — left at `verified: false`.** I didn't force it; the path stays open (`verified_by` the two references for fidelity, or `type: source` code captures for the mapping).
+<routes ref="em:d58da3">
+You ratified `methodology`, so I minted it and wired everything through the four questions you raised. **1. Type — now `methodology`.** Added to the controlled vocabulary in `meta/policy/controlled-type-vocabulary.md`, recompiled `CLAUDE.md`, and retyped the doc `note` → `methodology`. **2. Linking — now reciprocal.** The methodology already linked to both articles; I added an "Applied in:" back-link to each reference (`em:a5ea86`, `em:73115b`), kept as untyped prose links. **3. Tags — aligned.** `test-strategy` → `test-design` and dropped `methodology` as a tag since it's now the type. Final: `[testing, software-engineering, test-design, elixir, exunit]`. **4. Verification — left at `verified: false`.** I didn't force it; the path stays open (`verified_by` the two references for fidelity, or `type: source` code captures for the mapping).
 </routes>
 
 Also relabeled the index section Notes → Methodologies. All checks green (14 tests, `contract`/`registry --check`, `verify`, `format`), committed as `6dfaaae` and pushed. One note: `methodology` is now a permanent addition to the type vocabulary — every future agent will see it in `CLAUDE.md` and can file playbooks/SOPs under it.

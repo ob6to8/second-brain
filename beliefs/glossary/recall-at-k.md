@@ -1,5 +1,5 @@
 ---
-id: sb:0b95ed
+id: em:0b95ed
 type: concept
 title: recall@k
 description: A retrieval metric measuring whether the correct target appears within the top k returned results for a query; a probe reports it across a query set to quantify recall.

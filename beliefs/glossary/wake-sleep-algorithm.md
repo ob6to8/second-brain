@@ -1,5 +1,5 @@
 ---
-id: sb:e19e32
+id: em:e19e32
 type: concept
 title: wake-sleep algorithm
 description: An unsupervised training procedure for layered generative networks that alternates a "wake" phase (adjust generative weights from data-driven recognition) with a "sleep" phase (adjust recognition weights from the model's own generated samples).

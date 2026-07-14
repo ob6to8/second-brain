@@ -1,5 +1,5 @@
 ---
-id: sb:3c4af9
+id: em:3c4af9
 type: concept
 title: tower of interpreters
 description: The framing of an agent as stacked interpreters, each giving operational meaning to the layer above's output — model over natural language, loop over model emissions, tools over structured arguments.

@@ -21,7 +21,7 @@ The connective doc for how the *outside world* reaches the brain: `/research`
 scans for material matching what the brain already tracks, writes a dated
 **digest** into `inbox/`, and then **auto-intakes the featured items** into the
 bundle through the [intake flow](/meta/flows/intake.md). The digest itself stays
-outside the bundle (no `sb:` id); its featured items graduate into filed concepts
+outside the bundle (no `em:` id); its featured items graduate into filed concepts
 in the same run. Only items **deferred** for needing a new top-level domain linger
 as candidates, awaiting the operator's ratification.
 
@@ -71,12 +71,12 @@ a human decides an item is worth intake.
    └──────┬───────┘
           │  writes the digest (never acquires an id)
           ▼
-   inbox/YYYY-MM-DD.md      (type: reference · NO sb: id)
+   inbox/YYYY-MM-DD.md      (type: reference · NO em: id)
    inbox/index.md           (Latest + archive)
           │  §6 auto-intake: each FEATURED item → /intake
           ▼
    the /intake flow — fetch → distill → synonym-expanded dedup → file → mint id
-   → registry → verify   (update-in-place on a `relates to sb:` hint;
+   → registry → verify   (update-in-place on a `relates to em:` hint;
     new-top-level-domain items are deferred, not filed)
           │  annotate the digest line in place (same run)
           ▼
@@ -90,12 +90,12 @@ a human decides an item is worth intake.
 | # | Actor | Action | Files touched | Checked by |
 |---|-------|--------|---------------|------------|
 | 1 | operator | Say `/research` (or the daily schedule fires) | — | — |
-| 2 | agent | Build the query profile from the taxonomy: root + domain `index.md`s, concept titles/tags; note high-signal `sb:` ids to relate items to | — (reads bundle) | editorial |
+| 2 | agent | Build the query profile from the taxonomy: root + domain `index.md`s, concept titles/tags; note high-signal `em:` ids to relate items to | — (reads bundle) | editorial |
 | 3 | agent | Search per domain (web; paper tools for academic domains), current window | — (reads external) | editorial |
 | 4 | agent | Dedup twice: against the bundle, then against recent digests | — (reads) | editorial |
 | 5 | agent | Select through the four gates (relevance · novelty · a reason tag fires · source quality), cap for quality over volume | — | editorial |
-| 6 | agent | Write today's digest: `##` per KB domain, one bullet per item with reason-tag badges, synopsis, `→ would file under` hint, `relates to sb:…` | `inbox/YYYY-MM-DD.md` | editorial |
-| 7 | agent | **Auto-intake each featured item** via [`/intake`](/meta/flows/intake.md) (inherits its synonym-expanded dedup + gold-harvest); update-in-place on a `relates to sb:` hint; **defer** new-top-level-domain items; tag filed concepts `auto-intake` | bundle concept files, their `index.md`s, `meta/registry.md`, `meta/evals/dedup-probe.md` | the [intake flow](/meta/flows/intake.md)'s spine |
+| 6 | agent | Write today's digest: `##` per KB domain, one bullet per item with reason-tag badges, synopsis, `→ would file under` hint, `relates to em:…` | `inbox/YYYY-MM-DD.md` | editorial |
+| 7 | agent | **Auto-intake each featured item** via [`/intake`](/meta/flows/intake.md) (inherits its synonym-expanded dedup + gold-harvest); update-in-place on a `relates to em:` hint; **defer** new-top-level-domain items; tag filed concepts `auto-intake` | bundle concept files, their `index.md`s, `meta/registry.md`, `meta/evals/dedup-probe.md` | the [intake flow](/meta/flows/intake.md)'s spine |
 | 8 | agent | Annotate each featured digest line in place: `✓ auto-intaken` / `✓ merged` / `⏸ deferred` | `inbox/YYYY-MM-DD.md` | editorial |
 | 9 | agent | Maintain the index: Latest + archive in `inbox/index.md` (the run narrative lives in the commit message; no hand-kept log) | `inbox/index.md` | editorial |
 | 10 | operator | (later) Editorial pass over the `auto-intake`-tagged concepts (prune, relabel, merge residual dups); ratify any deferred item | — | operator |
@@ -110,7 +110,7 @@ itself; the featured items cross into the bundle deliberately, through intake's 
 
 ## 4. Invariants
 
-- **The digest is a record, not the bundle.** The digest file carries no `sb:` id
+- **The digest is a record, not the bundle.** The digest file carries no `em:` id
   and is never itself filed as a concept — enforced structurally by the registry
   exclusion. Its **featured items**, though, are auto-intaken into the bundle (§6):
   they acquire ids through `/intake` like any concept. Only **deferred** items (new

@@ -1,5 +1,5 @@
 ---
-id: sb:b1ba4b
+id: em:b1ba4b
 type: reference
 title: Elixir snapshot/approval-testing libraries all require a hex dependency
 description: Elixir's snapshot / self-updating-assertion tools (mneme, snapshy, assert_value) are third-party hex packages, not part of ExUnit — so a deliberately dependency-free project cannot use them and must hand-roll golden comparison from built-ins.
@@ -51,13 +51,13 @@ needed.
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:b1ba4b">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:b1ba4b">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-09-flows-genre-and-scenario-testing (2026-07-09)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:b1ba4b`]**  (co-feeds: `sb:f6e843`)
+**[`em:b1ba4b`]**  (co-feeds: `em:f6e843`)
 
 **3 — Research spike — important, and I want to be straight with you: it did *not* cleanly reaffirm. Verdict was "adjust (mostly reaffirm)."** What it upheld: plain ExUnit + `@tag :tmp_dir`, no external dep, no DSL, no custom mix runner — that half was correct. What it corrected, and which I folded into the persisted spec before saving it:
 - **Drop whole-tree byte-exact golden as the primary oracle** — brittle, invites blind-approval of golden diffs, and for RouteTags re-encodes logic the tool already self-checks.

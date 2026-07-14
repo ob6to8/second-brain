@@ -1,5 +1,5 @@
 ---
-id: sb:401ff6
+id: em:401ff6
 type: reference
 title: Truth maintenance systems (TMS / RMS)
 description: Classic-AI knowledge-representation machinery (Doyle's JTMS, de Kleer's ATMS) that tracks beliefs together with the justifications that support them, revising belief when premises change — the original bipartite belief/justification dependency graph.

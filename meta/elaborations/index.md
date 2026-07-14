@@ -8,7 +8,7 @@ defining concepts rather than re-inventing them), and a less technical
 walkthrough of the concepts and actions described.
 
 Each elaboration is a `type: elaboration` doc in the governance namespace (no
-`sb:` id). Once the session that prompted it is captured, the doc carries a
+`em:` id). Once the session that prompted it is captured, the doc carries a
 **`thread`** frontmatter field back-linking the persisted thread under
 [`meta/threads/`](/meta/threads/index.md) — set by
 [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) after

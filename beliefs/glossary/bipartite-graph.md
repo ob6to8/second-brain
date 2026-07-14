@@ -1,5 +1,5 @@
 ---
-id: sb:dcbb9e
+id: em:dcbb9e
 type: concept
 title: bipartite graph
 description: A graph whose nodes divide into two disjoint sets with edges only between the sets; in belief graphs, belief nodes vs. justification nodes, so one conclusion can carry several independent justifications.

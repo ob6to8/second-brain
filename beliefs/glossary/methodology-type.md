@@ -1,5 +1,5 @@
 ---
-id: sb:5fdc55
+id: em:5fdc55
 type: concept
 title: methodology (type)
 description: The controlled type for a repeatable, prescriptive procedure or playbook — the distilled how-to for a recurring task.

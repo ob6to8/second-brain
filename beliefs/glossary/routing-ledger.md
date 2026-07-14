@@ -1,5 +1,5 @@
 ---
-id: sb:570e22
+id: em:570e22
 type: concept
 title: routing ledger
 description: The per-thread dispatch table (topic | state | routed-to | dangling) a captured thread carries — pointers and states only, never synthesized content.

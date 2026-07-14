@@ -1,5 +1,5 @@
 ---
-id: sb:1dbcc9
+id: em:1dbcc9
 type: concept
 title: rendered aggregation
 description: A derived document a compiler task generates from scattered canonical sources, with a drift gate failing CI when the committed view and its sources diverge — sources are edited, the view is only ever re-rendered.

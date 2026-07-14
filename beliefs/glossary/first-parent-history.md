@@ -1,5 +1,5 @@
 ---
-id: sb:894631
+id: em:894631
 type: concept
 title: first-parent history
 description: The git log traversal (git log --first-parent) that follows only each merge commit's first parent, reading a branch's history as one entry per merge — on a PR-driven default branch, one line per landed pull request.

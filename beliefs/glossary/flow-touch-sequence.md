@@ -1,5 +1,5 @@
 ---
-id: sb:950a55
+id: em:950a55
 type: concept
 title: flow (touch-sequence)
 description: A documentation artifact that traces a single canonical run of a workflow as an ordered sequence of every file it touches, tagging each step with its actor — distinct from a rules doc, a why-tutorial, or a pass/fail checklist.

@@ -1,5 +1,5 @@
 ---
-id: sb:3ee2d2
+id: em:3ee2d2
 type: concept
 title: orphan block
 description: A block of generated output whose source has vanished — here, a dated per-thread block in a sink's excerpt log whose thread no longer tags that sink; the log fidelity check fails on it.

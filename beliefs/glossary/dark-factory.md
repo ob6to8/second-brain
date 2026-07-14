@@ -1,5 +1,5 @@
 ---
-id: sb:197b02
+id: em:197b02
 type: concept
 title: dark factory
 description: From lights-out manufacturing (a plant so automated it runs with no humans present, hence no lights) — an operation or company run end-to-end by autonomous agents, with humans reduced to governance rather than presence.

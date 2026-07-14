@@ -52,7 +52,7 @@ Three things are missing, and this flow supplies each:
 
 The transferable idea behind it is filed as a concept:
 [routing non-linear work sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md)
-(`sb:d479e3`). This page is the *implementation* of that idea in this bundle.
+(`em:d479e3`). This page is the *implementation* of that idea in this bundle.
 
 ---
 
@@ -68,22 +68,22 @@ The transferable idea behind it is filed as a concept:
    └──────┬───────┘   system/slash wrappers
           │  writes
           ▼
-   meta/threads/YYYY-MM-DD-<slug>.md   (type: reference, governance, no sb: id)
+   meta/threads/YYYY-MM-DD-<slug>.md   (type: reference, governance, no em: id)
    ┌───────────────────────────────────────────────┐
    │ frontmatter                                    │
    │ ## <narrative>   — what it was, where it landed │
    │ ## Routing       — the LEDGER (pointers+states) │◄── router, never a digest
    │ ## User / ## Assistant   — the frozen render    │
-   │   <routes ref="sb:… path/…"> … </routes>        │◄── ROUTE TAGS on frozen body
+   │   <routes ref="em:… path/…"> … </routes>        │◄── ROUTE TAGS on frozen body
    └──────┬─────────────────────────────────────────┘
           │  mix brain.route_tags --materialize
           ▼
-   the referenced concept docs (the SINKS, each with an sb: id)
+   the referenced concept docs (the SINKS, each with an em: id)
    ┌───────────────────────────────────────────────┐
    │ … the concept body …                           │
    │ ## Thread excerpts — route-tagged log           │◄── append-only, dated,
    │   ### <thread-slug> (<date>)                    │    GENERATED from the tags
-   │   **[`sb:…`]** (co-feeds: …) + region, whole    │
+   │   **[`em:…`]** (co-feeds: …) + region, whole    │
    └──────┬─────────────────────────────────────────┘
           │  mix brain.route_tags   (CI + pre-commit)
           ▼
@@ -110,7 +110,7 @@ CI scenario test over the deterministic spine), `tool` (a `mix brain.*` gate), o
 | 3 | agent | Draft the `## Routing` ledger — one row per topic, pointers + states only | `meta/threads/<slug>.md` | editorial (pointers-only) |
 | 4 | agent | Route each topic: create/update the target `concept` doc and mint its id | `<concept>.md`, `meta/registry.md` (via `mix brain.id` + `mix brain.registry`) | tool (registry/verify) |
 | 4a | operator | Ratify any **shape change** raised in step 4 — a new top-level dir or a new `type` | — | editorial |
-| 5 | agent | Tag the frozen body with each sink's `sb:` id (+ optional path back-links) | `meta/threads/<slug>.md` | scenario + tool |
+| 5 | agent | Tag the frozen body with each sink's `em:` id (+ optional path back-links) | `meta/threads/<slug>.md` | scenario + tool |
 | 6 | tool | `mix brain.route_tags --materialize` — write each fed concept's excerpt log from the tags | `<concept>.md` (log section) | **scenario** |
 | 7 | tool | `mix brain.route_tags` + the gate suite — verify, fail on divergence | — (reads all of the above) | tool |
 
@@ -138,11 +138,11 @@ Condensed; the rules live in the linked policies.
   content** — that lives in the sink. State and routed-to are orthogonal. See
   [routing-ledger](/meta/policy/routing-ledger.md).
 - **The concept sink — the per-matter aggregating page.** A `concept` doc with a
-  stable `sb:` id; every thread routing to it appends a dated block to its
+  stable `em:` id; every thread routing to it appends a dated block to its
   `## Thread excerpts — route-tagged log`. It **accepts appends while its matter is
   unresolved and freezes on resolution** — per matter, not on archival.
 - **Route tags — the located, auditable back-edge.** Over the frozen body,
-  `<routes ref="sb:… path/…"> … </routes>` marks each region with the concept(s)
+  `<routes ref="em:… path/…"> … </routes>` marks each region with the concept(s)
   it feeds. Keyed on canonical ids (so two threads emit the *same* string and the
   join is exact); per-paragraph, multi-ref, lifted whole; never crossing a
   `## User`/`## Assistant` boundary. See
@@ -170,14 +170,14 @@ tagging, minting, materializing) as operator to-dos. They are not — the
 
 | Thing | Where it lives | Identified by | Role |
 |-------|----------------|---------------|------|
-| Thread | `meta/threads/*.md` (`type: reference`) | filename slug + date | **source** of tags; not a bundle concept, no `sb:` id |
+| Thread | `meta/threads/*.md` (`type: reference`) | filename slug + date | **source** of tags; not a bundle concept, no `em:` id |
 | Ledger | `## Routing` in the thread | — | per-thread dispatch (pointers + states) |
-| Concept | anywhere in the tree (`type: concept`) | **`sb:` id** | aggregating **sink**; accretes the excerpt log |
+| Concept | anywhere in the tree (`type: concept`) | **`em:` id** | aggregating **sink**; accretes the excerpt log |
 | Excerpt log | `## Thread excerpts — route-tagged log` in the concept | — | generated from tags; verifier-owned |
 | Route tag | `<routes ref="…">` region in the frozen body | its ref set | the located back-edge |
 
 **`classify_ref/1` recognises exactly two kinds** (see
-[`route_tags.ex`](/lib/elixir_mind/route_tags.ex)): `sb:…` → **`{:doc, id}`**, an
+[`route_tags.ex`](/lib/elixir_mind/route_tags.ex)): `em:…` → **`{:doc, id}`**, an
 aggregating concept sink that accretes a log block; anything else →
 **`{:path, ref}`**, a back-link that must resolve to a real file but accretes
 **no** log. This is the one substantive adaptation from the source repo (§8).
@@ -199,7 +199,7 @@ The five checks, in order (a `:fail` fails the task; a `:warn` never does):
 | Check | Level | What it enforces | If red |
 |-------|-------|------------------|--------|
 | **tag wellformedness** | fail | regions line-anchored & outside fenced code, balanced, never nested, never crossing a turn boundary, non-empty ref set | fix the offending tag region |
-| **ref resolution** | fail | every ref resolves — `sb:` ids to a concept, paths to a real file | mint the id / fix the path |
+| **ref resolution** | fail | every ref resolves — `em:` ids to a concept, paths to a real file | mint the id / fix the path |
 | **sink logs** | fail | every concept a tagged thread feeds carries a dated block for that thread | run `--materialize` |
 | **log fidelity** | fail | each block equals its re-derivation from the current tags; a block for a thread that no longer tags the sink is an **orphan** | re-run `--materialize` |
 | **ledger cross-check** | warn | every concept-routed ledger row is covered by ≥1 tag | add a tag, or accept the warn |
@@ -232,8 +232,8 @@ acceptance when its matter resolves.
 at the **OKF floor only** (the belief DAG was out of scope). The key adaptation is
 the ref model: cb resolves doc refs by *flat slug* because its proto-beliefs share
 one directory; this bundle spreads concepts across a deep tree and gives each a
-stable `sb:` id, and its contract already says *typed edges reference ids, not
-paths* — so the aggregating sink ref here is the **`sb:` id**, and `classify_ref/1`
+stable `em:` id, and its contract already says *typed edges reference ids, not
+paths* — so the aggregating sink ref here is the **`em:` id**, and `classify_ref/1`
 collapses to two kinds instead of three. cb's capture Stop-**hook** became an
 on-demand **skill**; `mix cb.verify.route_tags` became **`mix brain.route_tags`**.
 
@@ -276,4 +276,4 @@ catches whole *rows* with zero tags, and only warns).
 **Reference instance.** The scenario fixture is the canonical green example. The
 first *live* end-to-end instance is thread
 [2026-07-08-adopt-session-capture-routing-and-route-tags](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md)
-↔ concept `sb:d479e3` — read them side by side to see a real tag → log round trip.
+↔ concept `em:d479e3` — read them side by side to see a real tag → log round trip.

@@ -1,5 +1,5 @@
 ---
-id: sb:990c2c
+id: em:990c2c
 type: concept
 title: entity resolution
 description: Deciding when two differently-phrased items refer to the same underlying entity; for belief graphs, unifying equivalently-worded beliefs across documents to a single node — the hard, LLM-mediated core of cross-document comparison.

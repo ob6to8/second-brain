@@ -36,7 +36,7 @@ defmodule ElixirMind.CaptureScenarioTest do
 
     ## Assistant
 
-    <routes ref="sb:aaa111 code/loop.ex">
+    <routes ref="em:aaa111 code/loop.ex">
 
     ## A heading
 
@@ -54,7 +54,7 @@ defmodule ElixirMind.CaptureScenarioTest do
 
     ## Assistant
 
-    <routes ref="sb:aaa111">
+    <routes ref="em:aaa111">
 
     Beta body paragraph.
 
@@ -65,7 +65,7 @@ defmodule ElixirMind.CaptureScenarioTest do
     write_concept(
       root,
       "routing-aggregator",
-      "sb:aaa111",
+      "em:aaa111",
       "# Routing aggregator\n\nBody prose.\n"
     )
 
@@ -78,13 +78,13 @@ defmodule ElixirMind.CaptureScenarioTest do
   @expected_section """
   ## Thread excerpts — route-tagged log
 
-  Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:aaa111">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+  Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:aaa111">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
   ### 2026-07-08-alpha (2026-07-08)
 
   1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-  **[`sb:aaa111`]**  (co-feeds: `code/loop.ex`)
+  **[`em:aaa111`]**  (co-feeds: `code/loop.ex`)
 
   **A heading**
 
@@ -94,7 +94,7 @@ defmodule ElixirMind.CaptureScenarioTest do
 
   1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-  **[`sb:aaa111`]**
+  **[`em:aaa111`]**
 
   Beta body paragraph.\
   """

@@ -1,5 +1,5 @@
 ---
-id: sb:16e171
+id: em:16e171
 type: concept
 title: elaboration (type)
 description: Controlled type — a persisted expansion of a technical phrase or short passage (quoted target, term definitions, plain walkthrough), written by /elaborate under meta/elaborations/ and back-linked to its originating thread once that session is captured.
@@ -20,7 +20,7 @@ attribution:
 Controlled type: a persisted expansion of a technical **phrase or short
 passage** — the quoted target, definitions of the terms it uses, and a less
 technical overview of the concepts and actions it describes — written by
-`/elaborate` under `meta/elaborations/` (governance namespace, no `sb:` id)
+`/elaborate` under `meta/elaborations/` (governance namespace, no `em:` id)
 and back-linked to its originating [thread doc](/beliefs/glossary/thread-doc.md) via a
 `thread` frontmatter field that `/create-pull-request` sets after capture.
 Distinct from a glossary `concept` (one *term*, source-independent) and a

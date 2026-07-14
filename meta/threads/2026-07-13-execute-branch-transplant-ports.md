@@ -21,7 +21,7 @@ new PR" flow (Option B) has to be **sequenced after the open PR merges**, not ru
 alongside it. The operator chose Option B and to merge PR #81. PR #81 was
 true-merged (after one more catch-up merge with a fast-moving `main`), the
 designated branch was restarted from the new tip, and the two ports were
-executed onto it: the **Chroma product intake** (`sb:ea15aa`) transplanted to
+executed onto it: the **Chroma product intake** (`em:ea15aa`) transplanted to
 `knowledge/SWE/llm-engineering/` with links repointed to the reorganized tree and
 cross-linked to `main`'s distinct Chroma *context-rot research* concept, and the
 **`/sync-branch-with-main` skill** transplanted verbatim (still accurate) with a
@@ -66,9 +66,9 @@ Merge 81
 
 ## Assistant
 
-PR #81 is merged (true merge `42b65c6`), the designated branch is restarted from `main`'s new tip, and both ports are executed and gate-green. Re-verifying before porting caught nothing vanished this time — the sync skill was still absent, and the "2 files carrying `sb:ea15aa`" on `main` turned out to be my own plan/todo mentioning the id in prose, not the concept (the registry had no entry), so the Chroma intake was genuinely still missing.
+PR #81 is merged (true merge `42b65c6`), the designated branch is restarted from `main`'s new tip, and both ports are executed and gate-green. Re-verifying before porting caught nothing vanished this time — the sync skill was still absent, and the "2 files carrying `em:ea15aa`" on `main` turned out to be my own plan/todo mentioning the id in prose, not the concept (the registry had no entry), so the Chroma intake was genuinely still missing.
 
-- **Chroma product intake** → [`knowledge/SWE/llm-engineering/chroma-vector-database.md`](/knowledge/SWE/llm-engineering/chroma-vector-database.md) (`sb:ea15aa`), cross-links repointed to the reorganized `knowledge/` paths, an `attribution` block added, cross-linked to `main`'s distinct context-rot-research concept, index updated.
+- **Chroma product intake** → [`knowledge/SWE/llm-engineering/chroma-vector-database.md`](/knowledge/SWE/llm-engineering/chroma-vector-database.md) (`em:ea15aa`), cross-links repointed to the reorganized `knowledge/` paths, an `attribution` block added, cross-linked to `main`'s distinct context-rot-research concept, index updated.
 - **`/sync-branch-with-main` skill** → transplanted verbatim (still accurate), skills-registry entry hand-added (the compile plan hasn't run), contract recompiled.
 
 The transplant plan is now `in-progress` and the triage todo's remainder is operator-only: delete the two false orphans and the two now-ported source branches, then the orphaned-branches issue resolves once the auto-delete setting is confirmed on.

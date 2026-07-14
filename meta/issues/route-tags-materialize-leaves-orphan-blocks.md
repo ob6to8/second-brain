@@ -54,7 +54,7 @@ it).
 ## Reproduce
 
 1. In a thread under `meta/threads/`, delete (or re-point) the only
-   `<routes ref="sb:xxxxxx">` region feeding some sink.
+   `<routes ref="em:xxxxxx">` region feeding some sink.
 2. `mix brain.route_tags --materialize` — the sink is untouched (no feeding
    pairs group to it).
 3. `mix brain.route_tags` — `log fidelity` fails with the orphan message; no

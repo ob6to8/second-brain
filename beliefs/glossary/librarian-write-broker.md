@@ -1,5 +1,5 @@
 ---
-id: sb:01be3a
+id: em:01be3a
 type: concept
 title: librarian write-broker
 description: A supervised process that solely owns mutation of a knowledge namespace — agents submit proposed concepts as messages, and the librarian runs the intake gauntlet (dedup, verification, grounding checks) and serializes commits, turning concurrent write contention into a mailbox and making integrity checks unbypassable.

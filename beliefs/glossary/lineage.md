@@ -1,5 +1,5 @@
 ---
-id: sb:f97e44
+id: em:f97e44
 type: concept
 title: lineage
 description: The provenance chain that produced an artifact — for a flow doc, the analysis → plan → thread → PR arc — recorded as a canonical frontmatter block from which human-readable views are derived.
@@ -25,13 +25,13 @@ In data engineering, lineage is the traceable chain of sources and transformatio
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:f97e44">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:f97e44">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-13-resource-attribution-property-spec-and-build (2026-07-13)
 
 2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:f97e44`]**  (co-feeds: `/meta/plans/resource-attribution-property.md`)
+**[`em:f97e44`]**  (co-feeds: `/meta/plans/resource-attribution-property.md`)
 
 All five ratified — I'll record the decisions in the plan and flip it to `accepted`. On Q5, my thoughts first, because agreeing with it has one structural consequence:
 
@@ -39,7 +39,7 @@ All five ratified — I'll record the decisions in the plan and flip it to `acce
 
 ---
 
-**[`sb:f97e44`]**  (co-feeds: `/meta/plans/resource-attribution-property.md sb:f8ae3a`)
+**[`em:f97e44`]**  (co-feeds: `/meta/plans/resource-attribution-property.md em:f8ae3a`)
 
 All five decisions are recorded and the plan is now `status: accepted` — pushed as `e615742`, gates green, and the index entry moved into "Accepted / In progress" (its first occupant).
 

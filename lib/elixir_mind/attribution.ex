@@ -20,7 +20,7 @@ defmodule ElixirMind.Attribution do
       `channel: backfill`, where a reconstructed event may honestly lack one.
     * **`from` placement** — `from` belongs to governance docs only; on a
       bundle concept it is an error.
-    * **`from` resolution** — every ref resolves: `sb:` ids to a bundle
+    * **`from` resolution** — every ref resolves: `em:` ids to a bundle
       concept, bundle-absolute paths to an existing file.
     * **Exemption placement** — exempt files (thread docs, `inbox/` digests,
       `index.md` listings, generated artifacts) must NOT carry `attribution`.
@@ -296,7 +296,7 @@ defmodule ElixirMind.Attribution do
     |> Enum.map(&"#{path}: attribution from #{inspect(&1)} does not resolve")
   end
 
-  defp resolves?("sb:" <> _ = id, by_id, _root), do: Map.has_key?(by_id, id)
+  defp resolves?("em:" <> _ = id, by_id, _root), do: Map.has_key?(by_id, id)
   defp resolves?("/" <> rel, _by_id, root), do: File.exists?(Path.join(root, rel))
   defp resolves?(_other, _by_id, _root), do: false
 

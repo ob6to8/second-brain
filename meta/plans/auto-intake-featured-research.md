@@ -68,7 +68,7 @@ effort; the operator shows up editorially, by design.
    *deferred* — left in the inbox, flagged for operator ratification — per the
    taxonomy-evolution protocol (new top-level shape is never autonomous).
 4. **Prefer update-in-place aggressively.** When a featured item carries a
-   `relates to sb:xxxxxx` hint (the digest already computes it), intake **updates
+   `relates to em:xxxxxx` hint (the digest already computes it), intake **updates
    that concept in place** rather than creating a sibling. This is free dedup that
    keeps [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) small, so the
    editorial pass reconciles the *residual*, not the bulk.
@@ -82,7 +82,7 @@ effort; the operator shows up editorially, by design.
 synonym-expansion [dedup](/beliefs/glossary/deduplication.md) step from the
 [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md) lands. Rationale: a
 fragmentation committed to history is costlier to reconcile (reassigning
-[`sb:` ids](/beliefs/glossary/stable-id.md) and redirecting
+[`em:` ids](/beliefs/glossary/stable-id.md) and redirecting
 [`verified_by`](/beliefs/glossary/verified-by.md) edges) than one avoided at write time,
 so the firehose should not open until intake dedup can merge in place. The
 operator chose this over ship-now-with-guardrails.
@@ -108,7 +108,7 @@ lands.
 
 1. ✅ *(prerequisite, PR #50)* tier-1 synonym-expansion `/intake` dedup step.
 2. ✅ `/research` gains the §6 auto-intake step: featured items → `/intake`, updating in
-   place on a `relates to sb:` hint, deferring new-top-level-domain items, tagging
+   place on a `relates to em:` hint, deferring new-top-level-domain items, tagging
    `auto-intake`.
 3. ✅ Digest lines marked `✓ auto-intaken` / `✓ merged` / `⏸ deferred` in the same run.
 4. ✅ Mirrored in the [research-inbox flow doc](/meta/flows/research-inbox.md) and the

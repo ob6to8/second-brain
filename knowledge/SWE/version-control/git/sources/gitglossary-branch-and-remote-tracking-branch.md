@@ -1,5 +1,5 @@
 ---
-id: sb:f08c54
+id: em:f08c54
 type: source
 title: gitglossary — branch head and remote-tracking branch
 description: Verbatim official glossary definitions establishing that a branch head moves forward with development and a remote-tracking branch follows another repository without local modifications.

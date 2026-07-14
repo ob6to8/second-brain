@@ -1,5 +1,5 @@
 ---
-id: sb:a215af
+id: em:a215af
 type: concept
 title: decision prior
 description: A proposition held true enough to guide action even when uncertain, subjective, or value-laden — the functional role beliefs play in a knowledge system.

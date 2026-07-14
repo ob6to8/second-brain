@@ -16,7 +16,7 @@ attribution:
 This note exists because of a finding made while adding the `inbox/` feed:
 
 > Registry (used by the verifier) scans all top-level dirs **except** an excluded
-> list — and `inbox` isn't on it. So `inbox/*.md` would be required to carry `sb:`
+> list — and `inbox` isn't on it. So `inbox/*.md` would be required to carry `em:`
 > ids and would break CI. I need to add `inbox` to that exclusion list. Let me
 > check the route-tags scanner and the site generator too.
 
@@ -32,7 +32,7 @@ notion of scope:
 
 | Scanner | Code | Question it answers | Scope source |
 |---------|------|---------------------|--------------|
-| **Identity / verify** | `ElixirMind.Registry` → `ElixirMind.Verifier` | Does every *bundle concept* carry a valid, unique `sb:` id, and are its evidence edges sound? | `Registry`'s `@excluded_dirs` / `@excluded_files` |
+| **Identity / verify** | `ElixirMind.Registry` → `ElixirMind.Verifier` | Does every *bundle concept* carry a valid, unique `em:` id, and are its evidence edges sound? | `Registry`'s `@excluded_dirs` / `@excluded_files` |
 | **Route tags** | `ElixirMind.RouteTags` | Are `<routes>` tags wellformed, and do the sink logs match? | `meta/threads/` (sources) + `Registry` concepts (sinks) |
 | **Contract** | `ElixirMind.Contract` ← `ElixirMind.Policy` | Is `CLAUDE.md` a faithful compile of the policies? | `meta/policy/*.md` with `type: policy` |
 | **Site** | `ElixirMind.Site` | Which pages get rendered into the published HTML? | `Site`'s *own* `@excluded_dirs` |
@@ -62,7 +62,7 @@ holds every survivor to the full identity contract. `ElixirMind.Verifier.run/1`
 does not re-scan the tree — it calls `Registry.scan/1` and applies its rules to
 whatever comes back:
 
-- **rule 2** — every concept carries a stable `id` matching `sb:[0-9a-f]{6}`,
+- **rule 2** — every concept carries a stable `id` matching `em:[0-9a-f]{6}`,
   unique across the bundle;
 - **rules 3–5** — `verified_by` edges resolve, captures (`resource`) are never
   `verified: true`, and `verified: true` requires non-empty evidence.
@@ -74,7 +74,7 @@ is governed by that single `@excluded_dirs` list.
 ## Why a bare new namespace breaks CI
 
 `inbox/` digests are, by design, **candidates, not concepts**: dated feed pages
-with `type: reference` and *no* `sb:` id (see the [`/research`](/.claude/skills/research/SKILL.md)
+with `type: reference` and *no* `em:` id (see the [`/research`](/.claude/skills/research/SKILL.md)
 skill). But `inbox` is a *new top-level
 directory*, and until it is named in `@excluded_dirs` the glob happily picks up
 `inbox/2026-07-09.md` as a bundle concept. The verifier then fires **rule 2** on
@@ -124,7 +124,7 @@ from pages that *have* an `id`).
 So a file's membership is really **two orthogonal decisions**:
 
 1. **Is it a bundle concept?** — governed by `Registry.@excluded_dirs`. Yes ⇒ it
-   must carry an `sb:` id and obey the verification rules. This is the *identity*
+   must carry an `em:` id and obey the verification rules. This is the *identity*
    boundary.
 2. **Is it published?** — governed by `Site.@excluded_dirs`. Yes ⇒ it becomes an
    HTML page. This is the *rendering* boundary.

@@ -1,5 +1,5 @@
 ---
-id: sb:393e3d
+id: em:393e3d
 type: concept
 title: pointer entry
 description: A glossary entry for a term canonically defined elsewhere in the brain — a one-line gloss plus a link to the defining doc, never a duplicated definition.

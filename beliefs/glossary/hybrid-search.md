@@ -1,5 +1,5 @@
 ---
-id: sb:3983f2
+id: em:3983f2
 type: concept
 title: hybrid search
 description: Retrieval that combines a lexical ranker (typically BM25) with vector similarity, blending the two scores so exact-keyword precision and semantic matching cover each other's misses.

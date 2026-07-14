@@ -1,5 +1,5 @@
 ---
-id: sb:e6f894
+id: em:e6f894
 type: concept
 title: REPL
 description: Read-eval-print loop — an interactive interpreter cycle that reads an expression, evaluates it, prints the result, and recurses; the structure the agent loop has over model output.

@@ -1,5 +1,5 @@
 ---
-id: sb:ffa597
+id: em:ffa597
 type: concept
 title: three-level documentation
 description: An opt-in scheme presenting a document at three tiers — a plain-speak backstop, the canonical terse technical body, and a grounding tier one abstraction below the source — built as one canonical level plus two anchored derivations, never three parallel texts.

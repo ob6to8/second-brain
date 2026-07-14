@@ -3,7 +3,7 @@ defmodule ElixirMind.Registry do
   The stable-identity layer for the knowledge bundle.
 
   Every bundle concept carries an opaque, immutable `id` in its frontmatter
-  (format `sb:` + 6 lowercase hex chars). The per-file `id` is the **canonical**
+  (format `em:` + 6 lowercase hex chars). The per-file `id` is the **canonical**
   data; `meta/registry.md` is a *compiled* id → path view (like `CLAUDE.md`),
   regenerated via `mix brain.registry`. References between concepts — e.g.
   `verified_by` — point at stable ids, so moving or renaming a file never
@@ -17,7 +17,7 @@ defmodule ElixirMind.Registry do
 
   alias ElixirMind.Frontmatter
 
-  @id_format ~r/^sb:[0-9a-f]{6}$/
+  @id_format ~r/^em:[0-9a-f]{6}$/
   @excluded_dirs ~w(.git .github .githooks .claude _build deps tmp lib test meta deprecated inbox)
   @excluded_files ~w(index.md log.md README.md CLAUDE.md)
 
@@ -43,7 +43,7 @@ defmodule ElixirMind.Registry do
 
   @doc "Mint a fresh stable id, guaranteed not to collide with `taken` (a MapSet)."
   def mint(taken \\ MapSet.new()) do
-    id = "sb:" <> (:crypto.strong_rand_bytes(3) |> Base.encode16(case: :lower))
+    id = "em:" <> (:crypto.strong_rand_bytes(3) |> Base.encode16(case: :lower))
     if MapSet.member?(taken, id), do: mint(taken), else: id
   end
 

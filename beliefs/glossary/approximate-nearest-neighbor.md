@@ -1,5 +1,5 @@
 ---
-id: sb:e2377d
+id: em:e2377d
 type: concept
 title: approximate nearest neighbor (ANN)
 description: An index/algorithm class that trades exactness for speed when finding the closest vectors to a query in high-dimensional space; its overhead only pays off at large corpus sizes.

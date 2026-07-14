@@ -1,5 +1,5 @@
 ---
-id: sb:aa0003
+id: em:aa0003
 type: concept
 title: skill
 description: A named, invocable capability packaged as a SKILL.md under .claude/skills/ (or shipped in a plugin), giving the agent a specialized procedure it runs on request.

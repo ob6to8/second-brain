@@ -1,5 +1,5 @@
 ---
-id: sb:7c640a
+id: em:7c640a
 type: concept
 title: GitHub Pages
 description: GitHub's static-site hosting service that publishes a repository's content or a build artifact to a public URL, commonly deployed via a GitHub Actions workflow.

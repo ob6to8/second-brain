@@ -1,5 +1,5 @@
 ---
-id: sb:eb418b
+id: em:eb418b
 type: source
 title: Claude Code on the web docs — environment caching (filesystem snapshots)
 description: Verbatim passages establishing that Anthropic snapshots the filesystem per environment after the setup script runs, reuses the snapshot for later sessions, captures files not processes, and rebuilds on config change or after roughly seven days.

@@ -14,7 +14,7 @@ down a whole document; this one unpacks a mouthful.
 
 The expansion is delivered in chat **and persisted** as a `type: elaboration`
 doc under [`meta/elaborations/`](/meta/elaborations/index.md) (governance
-namespace — no `sb:` id), so the unpacking survives the session and can be
+namespace — no `em:` id), so the unpacking survives the session and can be
 linked like any other doc.
 
 ## Input
@@ -72,7 +72,7 @@ label any simplification that loses precision ("roughly", "in effect").
 ```
 meta/elaborations/
   index.md           # genre description + contents list
-  <kebab-slug>.md    # one doc per elaborated phrase — type: elaboration, no sb: id
+  <kebab-slug>.md    # one doc per elaborated phrase — type: elaboration, no em: id
 ```
 
 Each doc carries, in order: frontmatter; a `> quote` of the exact target
@@ -133,7 +133,7 @@ doc, merge into it and bump `timestamp` rather than creating a near-duplicate.
   occurrence) applies. The elaboration doc is not a second glossary: its term
   definitions serve *this phrase*; the source-independent home for a term is
   `/beliefs/glossary/`.
-- **Governance namespace, not bundle** — elaboration docs carry no `sb:` id
+- **Governance namespace, not bundle** — elaboration docs carry no `em:` id
   and never a `verified` field; they are agent-authored expansions, like
   tutorials.
 - **One phrase, one doc** — dedup before writing; merge instead of creating

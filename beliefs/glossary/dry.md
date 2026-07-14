@@ -1,5 +1,5 @@
 ---
-id: sb:9074c1
+id: em:9074c1
 type: concept
 title: DRY (don't repeat yourself)
 description: The principle that every piece of knowledge should have a single, authoritative representation in a system — duplication creates copies that drift apart, so one of them is eventually wrong.

@@ -1,5 +1,5 @@
 ---
-id: sb:c2a18e
+id: em:c2a18e
 type: concept
 title: cross-site scripting (XSS)
 description: A web vulnerability class in which unescaped attacker-controlled content is interpreted by the browser as markup or script; an unescaped HTML attribute value is one common injection vector.

@@ -1,5 +1,5 @@
 ---
-id: sb:83b180
+id: em:83b180
 type: concept
 title: functional core, imperative shell
 description: A design pattern that isolates pure computation in a stateless core wrapped by a thin imperative layer handling state and effects — the structure an agent instantiates with the model as core and the loop as shell.

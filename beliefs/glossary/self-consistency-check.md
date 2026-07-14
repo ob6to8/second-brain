@@ -1,5 +1,5 @@
 ---
-id: sb:4e01f8
+id: em:4e01f8
 type: concept
 title: self-consistency check
 description: A validation that re-derives a value from the same source data it is checking and compares the two; it catches drift between artifacts but is structurally blind to an error in the shared derivation logic itself.

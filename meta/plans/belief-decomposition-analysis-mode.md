@@ -103,7 +103,7 @@ deprecated repo's `llm-call.sh` may apply; decide at build time.)
 
 ## Scope boundaries (deliberate exclusions)
 
-- **No stored belief nodes.** Nothing under the bundle gains an `sb:` id from
+- **No stored belief nodes.** Nothing under the bundle gains an `em:` id from
   this tool. The only committable output is a filed `analysis` doc. This *is*
   the epistemic-overlay plan's no-atomization line, restated for the analysis
   layer.

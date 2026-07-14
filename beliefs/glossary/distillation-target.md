@@ -1,5 +1,5 @@
 ---
-id: sb:04befc
+id: em:04befc
 type: concept
 title: distillation target
 description: The curated document that receives a review round's settled outcome — agreed findings as concrete items, rejected alternatives as a dated block — as distinct from a transcript of the exchange.

@@ -1,5 +1,5 @@
 ---
-id: sb:82c03c
+id: em:82c03c
 type: concept
 title: two-plane rule
 description: An architectural separation between a fast operational plane (ephemeral, high-frequency state — orders, telemetry, queues — living in databases and process state) and a slow epistemic plane (durable, verified beliefs living in the knowledge bundle), with writes to the epistemic plane kept deliberate and low-frequency by policy.

@@ -1,5 +1,5 @@
 ---
-id: sb:a5b3bd
+id: em:a5b3bd
 type: concept
 title: nogood
 description: An assumption set discovered to be jointly contradictory, recorded so no context is ever built on it (or any superset of it) again — the ATMS's memory of dead ends.

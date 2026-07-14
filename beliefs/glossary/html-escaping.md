@@ -1,5 +1,5 @@
 ---
-id: sb:8fda94
+id: em:8fda94
 type: concept
 title: HTML escaping
 description: Replacing characters with special meaning in HTML (`&`, `"`, `<`, `>`) with entity references so untrusted text cannot break out of its context — e.g. escaping a URL before interpolating it into an `href` attribute.

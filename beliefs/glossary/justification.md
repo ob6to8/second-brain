@@ -1,5 +1,5 @@
 ---
-id: sb:7d7a88
+id: em:7d7a88
 type: concept
 title: justification
 description: "The recorded license for holding a belief. Senses: (1) TMS — the record of one derivation step from premise nodes to a conclusion node; (2) GSN — a rationale annotation on a goal or strategy; (3) Toulmin/epistemology — warranted support for a claim."

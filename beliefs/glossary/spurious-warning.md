@@ -1,5 +1,5 @@
 ---
-id: sb:c67f48
+id: em:c67f48
 type: concept
 title: spurious (warning)
 description: A warning or match triggered by something that is not a real instance of what the check looks for — a false positive; tolerable at warn level but erosive, since repeated spurious output teaches the reader to ignore the channel.

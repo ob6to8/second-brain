@@ -1,5 +1,5 @@
 ---
-id: sb:0c8532
+id: em:0c8532
 type: concept
 title: graduation
 description: The move by which a glossary term that has outgrown its entry relocates into the domain taxonomy, its stable id travelling with it and a pointer stub left behind.

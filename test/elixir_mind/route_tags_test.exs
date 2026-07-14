@@ -12,7 +12,7 @@ defmodule ElixirMind.RouteTagsTest do
       body = """
       ## Assistant
 
-      <routes ref="sb:abc123 code/loop.ex">
+      <routes ref="em:abc123 code/loop.ex">
 
       First paragraph.
 
@@ -22,7 +22,7 @@ defmodule ElixirMind.RouteTagsTest do
       """
 
       {[region], []} = RouteTags.parse_regions(body)
-      assert region.refs == ["sb:abc123", "code/loop.ex"]
+      assert region.refs == ["em:abc123", "code/loop.ex"]
       assert region.line == 3
       assert Enum.join(region.content, "\n") =~ "First paragraph."
     end
@@ -32,7 +32,7 @@ defmodule ElixirMind.RouteTagsTest do
       The syntax looks like:
 
       ```
-      <routes ref="sb:abc123">
+      <routes ref="em:abc123">
       ... a paragraph ...
       </routes>
       ```
@@ -43,7 +43,7 @@ defmodule ElixirMind.RouteTagsTest do
 
     test "ignores tag syntax not anchored at line start" do
       body = """
-      Scan threads for `<routes ref="sb:abc123">` to find regions.
+      Scan threads for `<routes ref="em:abc123">` to find regions.
       """
 
       assert {[], []} = RouteTags.parse_regions(body)
@@ -51,7 +51,7 @@ defmodule ElixirMind.RouteTagsTest do
 
     test "reports an unclosed region" do
       body = """
-      <routes ref="sb:abc123">
+      <routes ref="em:abc123">
       dangling
       """
 
@@ -67,19 +67,19 @@ defmodule ElixirMind.RouteTagsTest do
 
     test "reports nesting" do
       body = """
-      <routes ref="sb:aaa111">
-      <routes ref="sb:bbb222">
+      <routes ref="em:aaa111">
+      <routes ref="em:bbb222">
       </routes>
       """
 
       {[region], [problem]} = RouteTags.parse_regions(body)
       assert problem =~ "nested"
-      assert region.refs == ["sb:aaa111"]
+      assert region.refs == ["em:aaa111"]
     end
 
     test "reports a region crossing a turn boundary" do
       body = """
-      <routes ref="sb:abc123">
+      <routes ref="em:abc123">
       tail of one turn
 
       ## User
@@ -107,8 +107,8 @@ defmodule ElixirMind.RouteTagsTest do
   # ---------------------------------------------------------------------
 
   describe "classify_ref/1" do
-    test "sb: ids are concept sinks, everything else is a path back-link" do
-      assert RouteTags.classify_ref("sb:b57200") == {:doc, "sb:b57200"}
+    test "em: ids are concept sinks, everything else is a path back-link" do
+      assert RouteTags.classify_ref("em:b57200") == {:doc, "em:b57200"}
 
       assert RouteTags.classify_ref("lib/elixir_mind/route_tags.ex") ==
                {:path, "lib/elixir_mind/route_tags.ex"}
@@ -118,8 +118,8 @@ defmodule ElixirMind.RouteTagsTest do
     end
 
     test "doc_refs keeps only concept sinks, in ref order" do
-      refs = ["sb:aaa111", "code/loop.ex", "sb:bbb222", "docs/x.md"]
-      assert RouteTags.doc_refs(refs) == ["sb:aaa111", "sb:bbb222"]
+      refs = ["em:aaa111", "code/loop.ex", "em:bbb222", "docs/x.md"]
+      assert RouteTags.doc_refs(refs) == ["em:aaa111", "em:bbb222"]
     end
   end
 
@@ -144,9 +144,9 @@ defmodule ElixirMind.RouteTagsTest do
       thread = %{slug: "2026-07-08-example-thread", date: "2026-07-08"}
 
       regions = [
-        %{refs: ["sb:aaa111"], line: 1, content: ["Only this matter."]},
+        %{refs: ["em:aaa111"], line: 1, content: ["Only this matter."]},
         %{
-          refs: ["sb:aaa111", "sb:bbb222", "code/loop.ex"],
+          refs: ["em:aaa111", "em:bbb222", "code/loop.ex"],
           line: 9,
           content: ["", "## Inner header", "", "Shared paragraph.", ""]
         }
@@ -156,19 +156,19 @@ defmodule ElixirMind.RouteTagsTest do
     end
 
     test "renders header, count line, co-feeds, and demoted content", ctx do
-      block = RouteTags.derive_block("sb:aaa111", ctx.thread, ctx.regions)
+      block = RouteTags.derive_block("em:aaa111", ctx.thread, ctx.regions)
 
       assert block =~ "### 2026-07-08-example-thread (2026-07-08)"
       assert block =~ "2 tagged region(s), lifted whole."
-      assert block =~ "**[`sb:aaa111`]**\n\nOnly this matter."
-      assert block =~ "**[`sb:aaa111`]**  (co-feeds: `sb:bbb222 code/loop.ex`)"
+      assert block =~ "**[`em:aaa111`]**\n\nOnly this matter."
+      assert block =~ "**[`em:aaa111`]**  (co-feeds: `em:bbb222 code/loop.ex`)"
       assert block =~ "**Inner header**\n\nShared paragraph."
       refute block =~ "## Inner header"
     end
 
     test "each sink sees the region under its own key with the rest as co-feeds", ctx do
-      block = RouteTags.derive_block("sb:bbb222", ctx.thread, [Enum.at(ctx.regions, 1)])
-      assert block =~ "**[`sb:bbb222`]**  (co-feeds: `sb:aaa111 code/loop.ex`)"
+      block = RouteTags.derive_block("em:bbb222", ctx.thread, [Enum.at(ctx.regions, 1)])
+      assert block =~ "**[`em:bbb222`]**  (co-feeds: `em:aaa111 code/loop.ex`)"
     end
   end
 
@@ -191,7 +191,7 @@ defmodule ElixirMind.RouteTagsTest do
 
       1 tagged region(s), lifted whole.
 
-      **[`sb:aaa111`]**
+      **[`em:aaa111`]**
 
       A block.
 
@@ -252,14 +252,14 @@ defmodule ElixirMind.RouteTagsTest do
 
       ## Assistant
 
-      <routes ref="sb:aaa111 code/loop.ex">
+      <routes ref="em:aaa111 code/loop.ex">
 
       The paragraph.
 
       </routes>
       """)
 
-      write_concept(root, "some-doc", "sb:aaa111", """
+      write_concept(root, "some-doc", "em:aaa111", """
       # Some doc
 
       ## Thread excerpts — route-tagged log
@@ -268,7 +268,7 @@ defmodule ElixirMind.RouteTagsTest do
 
       1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-      **[`sb:aaa111`]**  (co-feeds: `code/loop.ex`)
+      **[`em:aaa111`]**  (co-feeds: `code/loop.ex`)
 
       The paragraph.
       """)
@@ -289,7 +289,7 @@ defmodule ElixirMind.RouteTagsTest do
 
       File.write!(
         path,
-        String.replace(File.read!(path), "sb:aaa111 code/loop.ex", "sb:dead00 code/loop.ex")
+        String.replace(File.read!(path), "em:aaa111 code/loop.ex", "em:dead00 code/loop.ex")
       )
 
       results = RouteTags.run_checks(root)
@@ -299,7 +299,7 @@ defmodule ElixirMind.RouteTagsTest do
     @tag :tmp_dir
     test "a tagged sink without a dated block fails sink logs", %{root: root} do
       green_fixture(root)
-      write_concept(root, "some-doc", "sb:aaa111", "# Some doc\n\nno log section\n")
+      write_concept(root, "some-doc", "em:aaa111", "# Some doc\n\nno log section\n")
       results = RouteTags.run_checks(root)
       assert statuses(results)["sink logs"] == :fail
     end
@@ -322,7 +322,7 @@ defmodule ElixirMind.RouteTagsTest do
     test "a block for a thread that no longer tags the sink is an orphan", %{root: root} do
       green_fixture(root)
 
-      write_concept(root, "other-doc", "sb:ccc333", """
+      write_concept(root, "other-doc", "em:ccc333", """
       # Other doc
 
       ## Thread excerpts — route-tagged log
@@ -334,14 +334,14 @@ defmodule ElixirMind.RouteTagsTest do
 
       results = RouteTags.run_checks(root)
       {_, :fail, detail} = Enum.find(results, &(elem(&1, 0) == "log fidelity"))
-      assert detail =~ "sb:ccc333"
+      assert detail =~ "em:ccc333"
       assert detail =~ "no longer tags this sink"
     end
 
     @tag :tmp_dir
     test "a concept-routed ledger row with no covering tag warns, not fails", %{root: root} do
       green_fixture(root)
-      write_concept(root, "uncovered-doc", "sb:ddd444", "# Uncovered\n")
+      write_concept(root, "uncovered-doc", "em:ddd444", "# Uncovered\n")
 
       write_thread(root, "2026-07-09-second-thread", """
       ## Routing
@@ -364,7 +364,7 @@ defmodule ElixirMind.RouteTagsTest do
     @tag :tmp_dir
     test "a pipe table outside the ## Routing section is not read as the ledger", %{root: root} do
       green_fixture(root)
-      write_concept(root, "quoted-doc", "sb:eee555", "# Quoted\n")
+      write_concept(root, "quoted-doc", "em:eee555", "# Quoted\n")
 
       # A quoted comparison table whose 4th column links a concept — it is not
       # the ledger and must not produce a ledger-coverage warning.
@@ -392,14 +392,14 @@ defmodule ElixirMind.RouteTagsTest do
       write_thread(root, "2026-07-08-example-thread", """
       ## Assistant
 
-      <routes ref="sb:aaa111">
+      <routes ref="em:aaa111">
 
       The paragraph.
 
       </routes>
       """)
 
-      write_concept(root, "some-doc", "sb:aaa111", "# Some doc\n\nBody prose.\n")
+      write_concept(root, "some-doc", "em:aaa111", "# Some doc\n\nBody prose.\n")
 
       assert ["kb/some-doc.md"] = RouteTags.materialize(root)
 

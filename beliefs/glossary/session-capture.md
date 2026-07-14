@@ -1,5 +1,5 @@
 ---
-id: sb:243d56
+id: em:243d56
 type: concept
 title: session capture
 description: Rendering a working session into a thread doc, keeping every retained exchange verbatim and stripping only tool calls, reasoning, and short pre-tool narration.

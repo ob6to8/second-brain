@@ -164,7 +164,7 @@ Two entry points. **Checked by** is `scenario` (the CI test over the engine), `t
 
 Condensed; the mechanics live in the engine and the plan.
 
-- **Id-keyed, banded gold set.** Rows map a query to acceptable concept **`sb:` ids**
+- **Id-keyed, banded gold set.** Rows map a query to acceptable concept **`em:` ids**
   (surviving renames), banded `target` (scored), `negative` (a non-duplicate pair, not
   scored in v1), or `quarantine` (answer undefined until supersession exists; reported,
   never scored). Concept **merges** are the one case needing your eyes — a merge can

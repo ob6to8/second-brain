@@ -1,5 +1,5 @@
 ---
-id: sb:cc0302
+id: em:cc0302
 type: concept
 title: context rot
 description: The degradation of an LLM's effective attention and retrieval reliability as its context window fills — memory whose dependability drops with occupancy.

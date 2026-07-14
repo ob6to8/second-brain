@@ -1,5 +1,5 @@
 ---
-id: sb:5e7da1
+id: em:5e7da1
 type: concept
 title: recall
 description: In information retrieval, the fraction of relevant items that a search actually surfaces for a query; low recall means existing relevant material is missed.
@@ -27,13 +27,13 @@ A **recall failure** at intake sets off a quiet chain: intake dedup runs a [lexi
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:5e7da1">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:5e7da1">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-news-auto-intake-featured-items (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:5e7da1`]**  (co-feeds: `sb:96a610`)
+**[`em:5e7da1`]**  (co-feeds: `em:96a610`)
 
 **`/elaborate`: low recall → silent fragmentation**
 

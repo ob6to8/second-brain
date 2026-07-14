@@ -20,7 +20,7 @@ defmodule ElixirMind.RegistryTest do
   end
 
   test "scan finds bundle concepts, skips reserved files and excluded dirs", %{tmp_dir: dir} do
-    write_concept(dir, "a/b/concept.md", type: "note", id: "sb:aaaaaa")
+    write_concept(dir, "a/b/concept.md", type: "note", id: "em:aaaaaa")
     File.mkdir_p!(Path.join(dir, "a"))
     File.write!(Path.join(dir, "a/index.md"), "# a\n")
     write_concept(dir, "meta/policy/rule.md", type: "policy")
@@ -34,29 +34,29 @@ defmodule ElixirMind.RegistryTest do
   end
 
   test "scan reports duplicate ids", %{tmp_dir: dir} do
-    write_concept(dir, "one.md", type: "note", id: "sb:aaaaaa")
-    write_concept(dir, "two.md", type: "note", id: "sb:aaaaaa")
+    write_concept(dir, "one.md", type: "note", id: "em:aaaaaa")
+    write_concept(dir, "two.md", type: "note", id: "em:aaaaaa")
 
     {_entries, errors} = Registry.scan(dir)
     assert [error] = errors
-    assert error =~ "duplicate id sb:aaaaaa"
+    assert error =~ "duplicate id em:aaaaaa"
   end
 
   test "mint produces well-formed, collision-free ids" do
-    taken = MapSet.new(["sb:aaaaaa"])
+    taken = MapSet.new(["em:aaaaaa"])
     id = Registry.mint(taken)
     assert id =~ Registry.id_format()
     refute MapSet.member?(taken, id)
   end
 
   test "registry view write/check round-trips and detects staleness", %{tmp_dir: dir} do
-    write_concept(dir, "one.md", type: "note", id: "sb:aaaaaa", title: "One")
+    write_concept(dir, "one.md", type: "note", id: "em:aaaaaa", title: "One")
     File.mkdir_p!(Path.join(dir, "meta"))
 
     Registry.write(dir)
     assert Registry.check(dir) == :ok
 
-    write_concept(dir, "two.md", type: "note", id: "sb:bbbbbb", title: "Two")
+    write_concept(dir, "two.md", type: "note", id: "em:bbbbbb", title: "Two")
     assert {:stale, _} = Registry.check(dir)
   end
 
@@ -67,16 +67,16 @@ defmodule ElixirMind.RegistryTest do
       # A capture: stores a link, so it is evidence — never itself `verified`.
       write_concept(dir, "src.md",
         type: "source",
-        id: "sb:aaaaaa",
+        id: "em:aaaaaa",
         resource: "https://example.org/doc"
       )
 
       # An agent statement: verified via an evidence edge to the capture.
       write_concept(dir, "claim.md",
         type: "concept",
-        id: "sb:bbbbbb",
+        id: "em:bbbbbb",
         verified: true,
-        verified_by: "[sb:aaaaaa]"
+        verified_by: "[em:aaaaaa]"
       )
 
       assert Verifier.run(dir) == :ok
@@ -90,25 +90,25 @@ defmodule ElixirMind.RegistryTest do
       # verified: true on a link-storing capture is a defect.
       write_concept(dir, "verified-capture.md",
         type: "source",
-        id: "sb:cccccc",
+        id: "em:cccccc",
         verified: true,
         resource: "https://example.org/x"
       )
 
       write_concept(dir, "bad-claim.md",
         type: "concept",
-        id: "sb:dddddd",
+        id: "em:dddddd",
         verified: true,
-        verified_by: "[sb:ffffff]"
+        verified_by: "[em:ffffff]"
       )
 
-      write_concept(dir, "ungrounded.md", type: "claim", id: "sb:eeeeee", verified: true)
+      write_concept(dir, "ungrounded.md", type: "claim", id: "em:eeeeee", verified: true)
 
       assert {:error, errors} = Verifier.run(dir)
       joined = Enum.join(errors, "\n")
 
       assert joined =~ "no-id.md: missing stable `id`"
-      assert joined =~ "verified_by sb:ffffff does not resolve"
+      assert joined =~ "verified_by em:ffffff does not resolve"
       assert joined =~ "verified-capture.md: verified: true but stores a link"
       assert joined =~ "ungrounded.md: verified: true but no evidence"
     end
@@ -116,35 +116,35 @@ defmodule ElixirMind.RegistryTest do
     test "passes glossary terms with a valid sense; ignores `sense` elsewhere", %{tmp_dir: dir} do
       write_concept(dir, "beliefs/glossary/bm25.md",
         type: "concept",
-        id: "sb:aaaaaa",
+        id: "em:aaaaaa",
         sense: "common"
       )
 
       write_concept(dir, "beliefs/glossary/route-tag.md",
         type: "concept",
-        id: "sb:bbbbbb",
+        id: "em:bbbbbb",
         sense: "repo"
       )
 
       write_concept(dir, "beliefs/glossary/materialize.md",
         type: "concept",
-        id: "sb:cccccc",
+        id: "em:cccccc",
         sense: "dual"
       )
 
       # Outside the glossary the field is neither required nor policed.
-      write_concept(dir, "elsewhere.md", type: "note", id: "sb:dddddd")
-      write_concept(dir, "graduated.md", type: "concept", id: "sb:eeeeee", sense: "dual")
+      write_concept(dir, "elsewhere.md", type: "note", id: "em:dddddd")
+      write_concept(dir, "graduated.md", type: "concept", id: "em:eeeeee", sense: "dual")
 
       assert Verifier.run(dir) == :ok
     end
 
     test "flags a glossary term with a missing or invalid sense", %{tmp_dir: dir} do
-      write_concept(dir, "beliefs/glossary/unclassified.md", type: "concept", id: "sb:aaaaaa")
+      write_concept(dir, "beliefs/glossary/unclassified.md", type: "concept", id: "em:aaaaaa")
 
       write_concept(dir, "beliefs/glossary/mislabeled.md",
         type: "concept",
-        id: "sb:bbbbbb",
+        id: "em:bbbbbb",
         sense: "local"
       )
 
@@ -156,8 +156,8 @@ defmodule ElixirMind.RegistryTest do
     end
 
     test "flags `verified` (either value) on a non-statement type", %{tmp_dir: dir} do
-      write_concept(dir, "how-to.md", type: "methodology", id: "sb:abc123", verified: false)
-      write_concept(dir, "captured.md", type: "reference", id: "sb:def456", verified: false)
+      write_concept(dir, "how-to.md", type: "methodology", id: "em:abc123", verified: false)
+      write_concept(dir, "captured.md", type: "reference", id: "em:def456", verified: false)
 
       assert {:error, errors} = Verifier.run(dir)
       joined = Enum.join(errors, "\n")

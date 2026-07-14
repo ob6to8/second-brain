@@ -1,5 +1,5 @@
 ---
-id: sb:78580d
+id: em:78580d
 type: concept
 title: plugin
 description: In Claude Code, a packaged, distributable bundle of skills (and other extensions) whose skills receive an automatic collision-proof namespace; the sanctioned mechanism for grouping and sharing skills.

@@ -1,5 +1,5 @@
 ---
-id: sb:4c3f16
+id: em:4c3f16
 type: concept
 title: research spike
 description: A short, time-boxed investigation run to answer a specific design or feasibility question before committing to an implementation, yielding a verdict rather than shippable code.

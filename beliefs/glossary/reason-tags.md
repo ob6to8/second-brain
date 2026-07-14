@@ -1,5 +1,5 @@
 ---
-id: sb:99ec79
+id: em:99ec79
 type: concept
 title: reason tags
 description: The governed vocabulary (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) marking why each inbox candidate was surfaced.

@@ -1,5 +1,5 @@
 ---
-id: sb:a95adb
+id: em:a95adb
 type: concept
 title: ratification
 description: The operator's explicit approval that turns a proposed shape change — a new top-level directory, a new type, a plan's scope — into an adopted one; the agent proposes and waits.

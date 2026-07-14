@@ -1,5 +1,5 @@
 ---
-id: sb:f727fe
+id: em:f727fe
 type: concept
 title: epistemic overlay
 description: A structural layer above a set of knowledge documents that classifies each by its epistemic role and links them into a network of conceptual dependencies, enabling cross-resource explorability and machine-checkable integrity.

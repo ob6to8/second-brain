@@ -1,5 +1,5 @@
 ---
-id: sb:d49345
+id: em:d49345
 type: concept
 title: markdown renderer
 description: A component that parses markdown source and emits HTML, handling headings, nested lists, tables, fenced code, blockquotes, inline emphasis, and links (including link/anchor rewriting).

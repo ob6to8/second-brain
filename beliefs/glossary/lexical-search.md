@@ -1,5 +1,5 @@
 ---
-id: sb:792b23
+id: em:792b23
 type: concept
 title: lexical search
 description: Search that matches on the literal surface form of text — tokens or substrings — rather than meaning; fast and dependency-free, but blind to synonym and jargon gaps.
@@ -23,13 +23,13 @@ Search that matches on the literal surface form of text — tokens or substrings
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:792b23">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:792b23">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-news-auto-intake-featured-items (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:792b23`]**
+**[`em:792b23`]**
 
 **What the problem is**
 

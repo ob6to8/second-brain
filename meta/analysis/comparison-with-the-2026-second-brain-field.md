@@ -71,7 +71,7 @@ a live argument for the plain-markdown portability bet this bundle makes.
 
 | Capability | Best public equivalent | This bundle |
 |---|---|---|
-| Stable identity | vault-ld path-derived IRIs; Zettelkasten timestamp filenames | Opaque minted `sb:` ids, rename-proof, compiled registry checked in CI |
+| Stable identity | vault-ld path-derived IRIs; Zettelkasten timestamp filenames | Opaque minted `em:` ids, rename-proof, compiled registry checked in CI |
 | Type vocabulary | 5 enforced page types (jessepinkman9900); Tana supertags | 16 types under a propose-then-ratify governance protocol — no public equivalent for the ratification loop |
 | Provenance/verification | Confidence + freshness *annotations* (remember-md, eugeniughelbur) | A verification *model*: provenance orthogonal and immutable; `verified` restricted to statements, rejected on captures; evidence edges machine-checked |
 | CI on content | TheKnowledge's citation hook (alone in the field) | Seven gates incl. generated-artifact freshness; Pages deploy gated on bundle validity |

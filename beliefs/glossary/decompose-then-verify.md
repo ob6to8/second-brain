@@ -1,5 +1,5 @@
 ---
-id: sb:bc34de
+id: em:bc34de
 type: concept
 title: decompose-then-verify
 description: The evaluation pattern of atomizing a long output into individually checkable statements, verifying each against a source, and aggregating the local verdicts mechanically — validated at scale by FActScore and SAFE.

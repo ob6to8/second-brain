@@ -1,5 +1,5 @@
 ---
-id: sb:c86162
+id: em:c86162
 type: concept
 title: recall probe
 description: A repeatable evaluation that issues a fixed set of natural-phrasing queries mapped to known target items and measures whether the search surfaces them, used as an early-warning signal for retrieval degradation.

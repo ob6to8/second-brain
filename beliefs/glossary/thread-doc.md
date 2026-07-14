@@ -1,5 +1,5 @@
 ---
-id: sb:089fb2
+id: em:089fb2
 type: concept
 title: thread doc
 description: The frozen, verbatim record of a working session written by /capture under meta/threads/ — narrative, routing ledger, then the tagged User/Assistant render.

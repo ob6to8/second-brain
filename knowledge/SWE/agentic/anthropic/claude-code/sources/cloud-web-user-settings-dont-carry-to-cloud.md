@@ -1,5 +1,5 @@
 ---
-id: sb:3f35e1
+id: em:3f35e1
 type: source
 title: Claude Code on the web docs — user-level settings don't carry to cloud; hooks come from repo and org
 description: Verbatim passages establishing that user-level ~/.claude settings and hooks don't carry over to cloud sessions, and that in the cloud, hooks come from the repository and from the organization's server-managed settings.

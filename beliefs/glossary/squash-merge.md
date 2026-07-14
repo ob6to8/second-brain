@@ -1,5 +1,5 @@
 ---
-id: sb:4a235a
+id: em:4a235a
 type: concept
 title: squash merge
 description: A merge that flattens a branch's commits into one brand-new commit on the target, abandoning the originals — linearizing history at the cost of per-commit provenance (messages, trailers, cited SHAs, blame granularity).

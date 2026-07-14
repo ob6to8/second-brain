@@ -1,5 +1,5 @@
 ---
-id: sb:8ea139
+id: em:8ea139
 type: concept
 title: single source of truth
 description: The design guarantee that a given fact lives in exactly one authoritative place, with every other appearance either generated from it or pointing at it — the only structural (not behavioral) defense against stale copies.

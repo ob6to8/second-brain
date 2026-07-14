@@ -1,5 +1,5 @@
 ---
-id: sb:a8f067
+id: em:a8f067
 type: concept
 title: warrant
 description: In the Toulmin model, the statement authorizing the movement from grounds to claim — the usually implicit license that makes facts count as support for this conclusion; the thing a per-edge entailment judgment actually evaluates.

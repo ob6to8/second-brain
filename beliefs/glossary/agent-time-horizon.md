@@ -1,5 +1,5 @@
 ---
-id: sb:2523b4
+id: em:2523b4
 type: concept
 title: agent time horizon
 description: The human-completion-time length of task an AI agent can finish at a fixed success rate (e.g. the 50% time horizon), used to measure and track agent capability over time.

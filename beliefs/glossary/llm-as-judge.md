@@ -1,5 +1,5 @@
 ---
-id: sb:7ecfb6
+id: em:7ecfb6
 type: concept
 title: LLM-as-judge
 description: Using a language model's judgment in place of human annotation for evaluation tasks, validated by measured agreement with human raters — e.g. SAFE matching crowdworkers 72% of the time and winning 76% of disagreements at >20× lower cost.

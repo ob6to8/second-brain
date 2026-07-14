@@ -4,7 +4,7 @@ defmodule ElixirMind.RouteTags do
   convention; see `meta/policy/route-tagging.md`).
 
   A finalized thread body (under `meta/threads/`) carries `<routes ref="...">`
-  regions — per-paragraph, multi-ref, keyed on canonical ids. A **`sb:` id** is
+  regions — per-paragraph, multi-ref, keyed on canonical ids. A **`em:` id** is
   an aggregating sink: the concept it names carries the region in an append-only,
   per-thread, date-stamped excerpt log (`## Thread excerpts — route-tagged log`).
   A **path** ref (anything with a `/`) is a non-aggregating back-link and
@@ -24,7 +24,7 @@ defmodule ElixirMind.RouteTags do
   - **tag wellformedness** — regions are line-anchored and outside fenced code,
     balanced, never nested, never crossing a `## User`/`## Assistant` turn
     boundary, and carry a non-empty ref set.
-  - **ref resolution** — every ref resolves: `sb:` ids to a bundle concept (via
+  - **ref resolution** — every ref resolves: `em:` ids to a bundle concept (via
     the stable-id registry), path refs to files in the repository.
   - **sink logs** — every concept sink referenced by a tagged thread carries a
     dated block for that thread in its route-tagged log section.
@@ -214,12 +214,12 @@ defmodule ElixirMind.RouteTags do
   # ---------------------------------------------------------------------
 
   @doc """
-  Classify a ref. A `sb:` id is an aggregating concept sink; anything else is
+  Classify a ref. A `em:` id is an aggregating concept sink; anything else is
   treated as a path back-link (it must resolve to a file, and it accretes no
   log). There are deliberately only two kinds in this bundle — belief ids do not
   exist here.
   """
-  def classify_ref("sb:" <> _ = ref), do: {:doc, ref}
+  def classify_ref("em:" <> _ = ref), do: {:doc, ref}
   def classify_ref(ref), do: {:path, ref}
 
   @doc "Concept sinks (aggregating refs) of a region, in ref order."
@@ -482,7 +482,7 @@ defmodule ElixirMind.RouteTags do
   end
 
   @doc """
-  Concept sinks a thread's routing ledger routes to, as `sb:` ids: markdown
+  Concept sinks a thread's routing ledger routes to, as `em:` ids: markdown
   links in the `Routed to` column that resolve to a bundle concept (via its
   stable id). Only the `## Routing` section's table rows count — a thread body
   may quote other pipe tables, and those are not the ledger. Bundle-absolute

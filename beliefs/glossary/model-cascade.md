@@ -1,5 +1,5 @@
 ---
-id: sb:acf52e
+id: em:acf52e
 type: concept
 title: model cascade
 description: A cost strategy that routes each request to the cheapest model likely to handle it and escalates to a more capable, costlier model only on failure or low confidence — trading a small quality risk for large average-cost savings.

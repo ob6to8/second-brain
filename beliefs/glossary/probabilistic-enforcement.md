@@ -1,5 +1,5 @@
 ---
-id: sb:e8c1a9
+id: em:e8c1a9
 type: concept
 title: probabilistic enforcement
 description: An integrity model in which rules live as prose an agent promises to follow, so each operation has a roughly constant chance of violating them — meaning violations scale with operation count and, absent a detector, compound silently.
@@ -23,13 +23,13 @@ An integrity model in which the rules live as prose (a `CLAUDE.md` convention, a
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:e8c1a9">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:e8c1a9">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:e8c1a9`]**  (co-feeds: `sb:e08db0 sb:1c53dc sb:0da4a3 meta/analysis/comparison-with-the-2026-second-brain-field.md`)
+**[`em:e8c1a9`]**  (co-feeds: `em:e08db0 em:1c53dc em:0da4a3 meta/analysis/comparison-with-the-2026-second-brain-field.md`)
 
 **Your question — what field-comparison, and what prevents the drift:**
 

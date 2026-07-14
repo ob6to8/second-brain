@@ -44,7 +44,7 @@ record so it can be resumed from the record instead of from memory.
   verbatim. (The dialog UI has also proven flaky in these sessions — a second
   reason to keep questions in the chat.)
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
-  `type: reference`, in the governance namespace (no `sb:` id). It carries, in
+  `type: reference`, in the governance namespace (no `em:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
   landed), the **routing ledger** (`## Routing`), then the `## User`/`##
   Assistant` render body. Route tags are applied last, over the now-frozen body.

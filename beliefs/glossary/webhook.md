@@ -1,5 +1,5 @@
 ---
-id: sb:adf537
+id: em:adf537
 type: concept
 title: webhook
 description: An HTTP callback that inverts polling — instead of a client repeatedly asking a service whether something changed, the service POSTs to an endpoint the client operates the moment an event occurs, requiring an always-on receiver that authenticates and reacts to each delivery.

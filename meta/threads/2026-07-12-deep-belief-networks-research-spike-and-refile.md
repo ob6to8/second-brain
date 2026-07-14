@@ -28,7 +28,7 @@ self-reference or comparison**. That refile removed the analysis, and — becaus
 technical ML concept had no home in the tree (`SWE` is software-engineering practice,
 `ai-industry` is market analysis) — required a **new top-level domain**. The operator
 ratified `machine-learning/`, and the concept now lives at
-`machine-learning/deep-learning/deep-belief-networks.md` (`sb:1370e8`), a clean
+`machine-learning/deep-learning/deep-belief-networks.md` (`em:1370e8`), a clean
 self-contained definition. Index files added at the root and both new levels; the
 registry recompiled; all gates green.
 
@@ -55,7 +55,7 @@ This gives me a clear picture of "the work here": a symbolic knowledge-managemen
 
 Let me ground the DBN facts from primary sources rather than memory.
 
-<routes ref="sb:1370e8">
+<routes ref="em:1370e8">
 Done. Here's the spike.
 
 ## What Hinton's deep belief networks are
@@ -102,7 +102,7 @@ Done. Reframed and refiled.
 
 **What changed:**
 - Deleted the `meta/analysis/` spike (the "does it relate to us" framing) and its index entry.
-- Wrote **`machine-learning/deep-learning/deep-belief-networks.md`** as a `type: concept` — a clean, self-contained definition with no self-reference to the brain and no comparison: what a DBN is, the "belief network" term, the stacked-RBM architecture, the 2006 greedy layer-wise training algorithm (contrastive divergence, complementary priors, wake-sleep fine-tuning), what it's used for, and its significance-then-supersession. Minted `sb:1370e8`.
+- Wrote **`machine-learning/deep-learning/deep-belief-networks.md`** as a `type: concept` — a clean, self-contained definition with no self-reference to the brain and no comparison: what a DBN is, the "belief network" term, the stacked-RBM architecture, the 2006 greedy layer-wise training algorithm (contrastive divergence, complementary priors, wake-sleep fine-tuning), what it's used for, and its significance-then-supersession. Minted `em:1370e8`.
 - Established the ratified new top-level domain **`machine-learning/`** with a `deep-learning/` subdirectory, both with `index.md` files, and added it to the root index.
 - Recompiled `meta/registry.md`; all gates green (`brain.id`, `brain.registry`, `brain.verify`, and route-tags earlier).
 - Committed and pushed to `claude/hinton-deep-belief-networks-oqzph7`.

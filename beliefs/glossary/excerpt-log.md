@@ -1,5 +1,5 @@
 ---
-id: sb:3101ef
+id: em:3101ef
 type: concept
 title: excerpt log (route-tagged log)
 description: The generated "## Thread excerpts — route-tagged log" section a route-tag sink carries — per-thread, date-stamped blocks lifting each tagged region whole, re-derivable from the tags and never hand-edited.

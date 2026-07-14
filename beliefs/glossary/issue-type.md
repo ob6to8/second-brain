@@ -1,5 +1,5 @@
 ---
-id: sb:e9a82b
+id: em:e9a82b
 type: concept
 title: issue (type)
 description: The controlled type for a tracked operational problem or open concern about the brain's tooling, carrying a status (open/resolved/wontfix), filed under meta/issues/.

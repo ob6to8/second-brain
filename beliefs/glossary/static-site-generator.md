@@ -1,5 +1,5 @@
 ---
-id: sb:efad31
+id: em:efad31
 type: concept
 title: static-site generator
 description: A tool that renders source files — typically markdown with YAML frontmatter — into a complete set of pre-built static HTML/CSS/JS pages, served without any running application backend.

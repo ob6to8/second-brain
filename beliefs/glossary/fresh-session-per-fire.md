@@ -1,5 +1,5 @@
 ---
-id: sb:e56fb4
+id: em:e56fb4
 type: concept
 title: fresh-session-per-fire
 description: A scheduling mode where each firing of a trigger starts a brand-new, clean agent session rather than resuming a persistent one, so a run inherits no state from prior firings.

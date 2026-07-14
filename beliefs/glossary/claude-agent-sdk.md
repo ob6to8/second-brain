@@ -1,5 +1,5 @@
 ---
-id: sb:bee09c
+id: em:bee09c
 type: concept
 title: Claude Agent SDK
 description: Anthropic's Python/TypeScript library exposing the same agent engine as Claude Code — the agent loop, tool use, and context management — as an embeddable component you drive from your own process.

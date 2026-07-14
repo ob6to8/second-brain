@@ -97,11 +97,11 @@ timestamp: 2026-07-09
 - **[Anthropic's Q2 economic index shows uneven enterprise AI adoption](https://…)**
   `impactful` — Fresh data backing the "long ROI runway outside tech" thesis you
   already filed; names the same slow sectors (healthcare, insurance).
-  → would file under `/ai-industry/`  ·  relates to `sb:2867ac`
+  → would file under `/ai-industry/`  ·  relates to `em:2867ac`
 
 - **[GLM-6 released, matches frontier coding at 1/20th inference cost](https://…)**
   `groundbreaking` `buzz` — Extends the margin-collapse story directly.
-  → would file under `/ai-industry/`  ·  relates to `sb:07610c`
+  → would file under `/ai-industry/`  ·  relates to `em:07610c`
 
 ## SWE
 - **[Paper: Context compaction for long-horizon agent loops (arXiv)](https://…)**
@@ -213,7 +213,7 @@ Branch `claude/home-news-filter-inbox-wxqlpj` (commit `7efb6be`). All gates gree
 
 - **`/news` skill** (`.claude/skills/news/SKILL.md`) — reads the taxonomy as its query profile, searches per domain, dedups against both the bundle and prior digests, reason-tags each find, writes the dated digest, and maintains the inbox reserved files. Registered in the skills-registry policy; `CLAUDE.md` recompiled.
 - **`inbox/` namespace** — a non-bundle waiting room (like `meta/`): candidates carry no `sb:` ids and are never verified. One line in `registry.ex` (`inbox` added to excluded dirs) keeps it out of verify/registry/route-tags while the static site still renders it.
-- **First real digest** — `inbox/2026-07-09.md`, 7 live items across ai-industry (3), SWE (3), knowledge-management (1), exercising all five reason tags. Each item has a synopsis, a `→ would file under /path` hint, and `sb:` back-links where it extends an existing concept (e.g. the Epoch inference-price data and the Matsuoka arXiv paper both back-link your margin-collapse note `sb:07610c`).
+- **First real digest** — `inbox/2026-07-09.md`, 7 live items across ai-industry (3), SWE (3), knowledge-management (1), exercising all five reason tags. Each item has a synopsis, a `→ would file under /path` hint, and `sb:` back-links where it extends an existing concept (e.g. the Epoch inference-price data and the Matsuoka arXiv paper both back-link your margin-collapse note `em:07610c`).
 - **Home-page wiring** — `inbox/` is the landing section of the root `index.md`, and `inbox/index.md` carries Latest + Archive. In the published site it renders at `/inbox/`.
 - **Intake handoff** — say *"intake the TurboQuant item"* (or any item) and `/intake` fetches, distills, mints an id, and files it. `/news` proposes; `/intake` is still the only path into the bundle.
 

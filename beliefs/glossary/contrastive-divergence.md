@@ -1,5 +1,5 @@
 ---
-id: sb:e1e447
+id: em:e1e447
 type: concept
 title: contrastive divergence
 description: A fast approximate training algorithm for restricted Boltzmann machines that updates weights from a short (often single-step) Gibbs-sampling run instead of the intractable exact maximum-likelihood gradient.

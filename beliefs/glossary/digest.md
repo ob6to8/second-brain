@@ -1,5 +1,5 @@
 ---
-id: sb:d4fc9d
+id: em:d4fc9d
 type: concept
 title: digest
 description: Commonly, a compilation that condenses many items into one compact, periodic read; in this brain, the single dated document collecting a day's /research candidate items with synopses, grouped by category.

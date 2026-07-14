@@ -1,5 +1,5 @@
 ---
-id: sb:8798e8
+id: em:8798e8
 type: concept
 title: tree is the taxonomy
 description: The principle that the directory hierarchy — surfaced level-by-level through index.md files (progressive disclosure) rooted at /index.md — is itself the canonical taxonomy, not a separate maintained map.

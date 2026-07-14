@@ -1,5 +1,5 @@
 ---
-id: sb:d72938
+id: em:d72938
 type: reference
 title: "Dung's abstract argumentation frameworks"
 description: "Phan Minh Dung's 1995 theory modeling argumentation as a directed graph of arguments and an attack relation, with acceptability semantics (grounded, preferred, stable, complete extensions) that compute which sets of arguments can rationally stand together — the formal basis for consensus and conflict evaluation over belief systems."

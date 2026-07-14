@@ -1,5 +1,5 @@
 ---
-id: sb:da21de
+id: em:da21de
 type: concept
 title: embeddings
 description: Dense numeric vector representations of text produced by a model such that semantically similar text maps to nearby vectors, enabling similarity comparison via distance metrics like cosine.

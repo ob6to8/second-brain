@@ -1,5 +1,5 @@
 ---
-id: sb:6c7e32
+id: em:6c7e32
 type: concept
 title: backpressure
 description: Flow control in which a slower downstream stage pushes back on faster producers — through bounded queues, pool limits, or demand signalling — so overload degrades gracefully instead of overwhelming the system.

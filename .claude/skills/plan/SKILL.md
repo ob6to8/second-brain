@@ -14,7 +14,7 @@ questions — so a future session can execute against something concrete. It is
 [operating contract](/CLAUDE.md).
 
 Plans live in the **governance namespace**, so — like `issues`, `todos`, and
-`threads` — they carry **no `sb:` id** and are outside the identity registry.
+`threads` — they carry **no `em:` id** and are outside the identity registry.
 
 This skill is **list-focused**: it surfaces active plans so they can be reviewed
 and picked up. *Persisting* a new plan is governed by the contract's
@@ -49,5 +49,5 @@ instead — it is the whole-brain view; this skill is the plans-only slice.
 - **Read-only.** Listing changes no files. To advance a plan's lifecycle, edit
   its doc (`status`, bump `timestamp`) and move its index entry — per the
   contract, inline.
-- Governance namespace — never mint an `sb:` id for a plan.
+- Governance namespace — never mint an `em:` id for a plan.
 - Never touch `deprecated/`.

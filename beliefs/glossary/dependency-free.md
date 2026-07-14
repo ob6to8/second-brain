@@ -1,5 +1,5 @@
 ---
-id: sb:aa3e46
+id: em:aa3e46
 type: concept
 title: dependency-free
 description: A property of a program that relies only on its language/runtime standard library and pulls in no external packages, so it needs no package-fetch step and runs offline in restricted or ephemeral environments.

@@ -1,5 +1,5 @@
 ---
-id: sb:862042
+id: em:862042
 type: concept
 title: let-it-crash
 description: Erlang's fault-tolerance philosophy — rather than defensively handling every possible error in place, let a failing process crash and have a supervisor restart it in a known-good state, keeping error-handling logic out of business logic.

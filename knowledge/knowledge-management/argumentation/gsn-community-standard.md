@@ -1,5 +1,5 @@
 ---
-id: sb:01e477
+id: em:01e477
 type: source
 title: "GSN Community Standard (Version 1, 2011) — key passages"
 description: "Primary-source capture of the founding GSN Community Standard: verbatim definitions of the core elements (goal, strategy, solution, context, assumption, justification, undeveloped entity) and the two relationship types (SupportedBy, InContextOf)."

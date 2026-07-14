@@ -1,5 +1,5 @@
 ---
-id: sb:5d40bf
+id: em:5d40bf
 type: concept
 title: OTP
 description: Erlang/Elixir's standard framework of battle-tested abstractions for fault-tolerant systems on the BEAM — supervision trees that restart crashed processes by declared strategy, GenServers as generic stateful server processes, and applications as deployable, supervised units.

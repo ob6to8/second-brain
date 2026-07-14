@@ -1,5 +1,5 @@
 ---
-id: sb:4849ca
+id: em:4849ca
 type: concept
 title: property-based testing
 description: A generative testing technique that asserts invariants ("properties") hold across many automatically generated inputs, rather than over hand-written example cases.

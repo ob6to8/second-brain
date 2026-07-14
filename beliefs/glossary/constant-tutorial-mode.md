@@ -1,5 +1,5 @@
 ---
-id: sb:0bf58a
+id: em:0bf58a
 type: concept
 title: constant tutorial mode
 description: The reader state of an operator who builds systems through natural-language collaboration and is therefore always learning the system by using it — the audience the plain tier of three-level documentation exists to backstop.

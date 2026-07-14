@@ -52,7 +52,7 @@ Lets create an attribution property for resources absorbed into the knowledge co
 
 ## Assistant
 
-<routes ref="/meta/plans/resource-attribution-property.md sb:ea7acc">
+<routes ref="/meta/plans/resource-attribution-property.md em:ea7acc">
 Spec written, filed, and pushed. The plan is at [`meta/plans/resource-attribution-property.md`](meta/plans/resource-attribution-property.md) (`status: proposed`, awaiting your ratification since it changes the frontmatter schema), indexed in `meta/plans/index.md`, all gates green, pushed to `claude/resource-attribution-spec-l3hzjj`.
 
 **The proposed shape** — one new frontmatter key on bundle concepts:
@@ -124,7 +124,7 @@ Re: operator questions:
 
 ## Assistant
 
-<routes ref="/meta/plans/resource-attribution-property.md sb:f97e44">
+<routes ref="/meta/plans/resource-attribution-property.md em:f97e44">
 All five ratified — I'll record the decisions in the plan and flip it to `accepted`. On Q5, my thoughts first, because agreeing with it has one structural consequence:
 
 **I agree derivation is cleaner, and it fits a pattern this bundle already trusts** — the registry, `CLAUDE.md`, and the excerpt logs are all "hand-write the source once, compile the view, gate on `--check`". A hand-kept `lineage:` block is itself drift-prone (ironic, given the flow-lineage plan was anti-drift motivated). But deriving it forces one amendment to the spec: **`from` must be append-only, not frozen.** Feature lineage accretes — every thread that revises a plan is part of the chain — so if `from` were locked at creation like the rest of attribution, the derived lineage would stop at the first session. So the immutability rule splits: the event sub-keys (`when`/`channel`/`agent`/`why`) stay write-once, while `from` grows as later sessions' `/create-pull-request` stamps them. And "ASAP" has a hard dependency: derivation can only ship after the governance backfill populates `from` across the existing chain — so it slots in right after backfill in the build order, with the backfill diff doubling as the check that derived lineage matches the existing hand-kept blocks. Updating the plan now:
@@ -132,7 +132,7 @@ All five ratified — I'll record the decisions in the plan and flip it to `acce
 
 ## Assistant
 
-<routes ref="/meta/plans/resource-attribution-property.md sb:f97e44 sb:f8ae3a">
+<routes ref="/meta/plans/resource-attribution-property.md em:f97e44 em:f8ae3a">
 All five decisions are recorded and the plan is now `status: accepted` — pushed as `e615742`, gates green, and the index entry moved into "Accepted / In progress" (its first occupant).
 
 How each answer landed in the spec:

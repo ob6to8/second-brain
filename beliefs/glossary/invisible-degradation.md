@@ -1,5 +1,5 @@
 ---
-id: sb:e08db0
+id: em:e08db0
 type: concept
 title: invisible degradation
 description: Corpus rot that emits no signal while it happens — nothing distinguishes a healthy knowledge base from a rotting one until retrieval visibly fails, by which point remediation means auditing the whole corpus.
@@ -23,13 +23,13 @@ Corpus rot that emits no signal while it happens: a stale cross-reference, an un
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:e08db0">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:e08db0">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:e08db0`]**  (co-feeds: `sb:e8c1a9 sb:1c53dc sb:0da4a3 meta/analysis/comparison-with-the-2026-second-brain-field.md`)
+**[`em:e08db0`]**  (co-feeds: `em:e8c1a9 em:1c53dc em:0da4a3 meta/analysis/comparison-with-the-2026-second-brain-field.md`)
 
 **Your question — what field-comparison, and what prevents the drift:**
 

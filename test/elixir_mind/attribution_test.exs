@@ -33,7 +33,7 @@ defmodule ElixirMind.AttributionTest do
 
   describe "bundle concepts" do
     test "a well-formed attribution passes", %{tmp_dir: dir} do
-      write_doc(dir, "concept.md", "type: note\nid: sb:aaaaaa\n" <> attribution_block())
+      write_doc(dir, "concept.md", "type: note\nid: em:aaaaaa\n" <> attribution_block())
       assert Verifier.run(dir) == :ok
     end
 
@@ -41,7 +41,7 @@ defmodule ElixirMind.AttributionTest do
       write_doc(
         dir,
         "bad.md",
-        "type: note\nid: sb:aaaaaa\n" <>
+        "type: note\nid: em:aaaaaa\n" <>
           attribution_block(
             when: "sometime-in-july",
             channel: "carrier-pigeon",
@@ -63,7 +63,7 @@ defmodule ElixirMind.AttributionTest do
       write_doc(
         dir,
         "backfilled.md",
-        "type: note\nid: sb:aaaaaa\n" <>
+        "type: note\nid: em:aaaaaa\n" <>
           attribution_block(when: "2026-07-01", channel: "backfill", why: :omit)
       )
 
@@ -71,7 +71,7 @@ defmodule ElixirMind.AttributionTest do
     end
 
     test "a non-map attribution is flagged", %{tmp_dir: dir} do
-      write_doc(dir, "flat.md", "type: note\nid: sb:aaaaaa\nattribution: intake 2026-07-13")
+      write_doc(dir, "flat.md", "type: note\nid: em:aaaaaa\nattribution: intake 2026-07-13")
       assert {:error, errors} = Verifier.run(dir)
       assert Enum.join(errors, "\n") =~ "`attribution` is not a map"
     end
@@ -80,7 +80,7 @@ defmodule ElixirMind.AttributionTest do
       write_doc(
         dir,
         "concept.md",
-        "type: note\nid: sb:aaaaaa\n" <> attribution_block() <> "\n  from: [sb:aaaaaa]"
+        "type: note\nid: em:aaaaaa\n" <> attribution_block() <> "\n  from: [em:aaaaaa]"
       )
 
       assert {:error, errors} = Verifier.run(dir)
@@ -90,7 +90,7 @@ defmodule ElixirMind.AttributionTest do
     test "presence is enforced by default (post-backfill), relaxable via presence: false", %{
       tmp_dir: dir
     } do
-      write_doc(dir, "bare.md", "type: note\nid: sb:aaaaaa")
+      write_doc(dir, "bare.md", "type: note\nid: em:aaaaaa")
 
       assert {:error, errors} = Verifier.run(dir)
       assert Enum.join(errors, "\n") =~ "bare.md: missing `attribution`"
@@ -100,7 +100,7 @@ defmodule ElixirMind.AttributionTest do
 
   describe "governance docs" do
     test "attribution with resolving `from` refs passes", %{tmp_dir: dir} do
-      write_doc(dir, "concept.md", "type: note\nid: sb:aaaaaa\n" <> attribution_block())
+      write_doc(dir, "concept.md", "type: note\nid: em:aaaaaa\n" <> attribution_block())
       write_doc(dir, "meta/threads/2026-07-13-session.md", "type: reference")
 
       write_doc(
@@ -108,7 +108,7 @@ defmodule ElixirMind.AttributionTest do
         "meta/plans/some-plan.md",
         "type: plan\n" <>
           attribution_block(channel: "agent-authored") <>
-          "\n  from: [/meta/threads/2026-07-13-session.md, sb:aaaaaa]"
+          "\n  from: [/meta/threads/2026-07-13-session.md, em:aaaaaa]"
       )
 
       assert Verifier.run(dir) == :ok
@@ -121,13 +121,13 @@ defmodule ElixirMind.AttributionTest do
         "meta/plans/some-plan.md",
         "type: plan\n" <>
           attribution_block(channel: "agent-authored") <>
-          "\n  from: [/meta/threads/missing.md, sb:ffffff]"
+          "\n  from: [/meta/threads/missing.md, em:ffffff]"
       )
 
       assert {:error, errors} = Verifier.run(dir)
       joined = Enum.join(errors, "\n")
       assert joined =~ ~s(from "/meta/threads/missing.md" does not resolve)
-      assert joined =~ ~s(from "sb:ffffff" does not resolve)
+      assert joined =~ ~s(from "em:ffffff" does not resolve)
     end
 
     test "attribution on an exempt file is flagged", %{tmp_dir: dir} do
@@ -155,7 +155,7 @@ defmodule ElixirMind.AttributionTest do
       write_doc(
         dir,
         "concept.md",
-        "type: note\nid: sb:aaaaaa\n" <> attribution_block(when: "2026-07-10T08:00:00Z")
+        "type: note\nid: em:aaaaaa\n" <> attribution_block(when: "2026-07-10T08:00:00Z")
       )
 
       write_doc(
@@ -166,7 +166,7 @@ defmodule ElixirMind.AttributionTest do
 
       all = Attribution.list(dir)
       assert Enum.map(all, & &1.path) == ["meta/plans/some-plan.md", "concept.md"]
-      assert %{id: "sb:aaaaaa", channel: "intake"} = List.last(all)
+      assert %{id: "em:aaaaaa", channel: "intake"} = List.last(all)
 
       assert [%{path: "concept.md"}] = Attribution.list(dir, channel: "intake")
       assert [%{path: "meta/plans/some-plan.md"}] = Attribution.list(dir, since: "2026-07-11")

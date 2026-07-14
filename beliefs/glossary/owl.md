@@ -1,5 +1,5 @@
 ---
-id: sb:410879
+id: em:410879
 type: concept
 title: OWL (Web Ontology Language)
 description: The W3C standard for publishing ontologies on the web (OWL 2, 2009/2012) — description-logic semantics (SROIQ), RDF exchange, and the EL/QL/RL profiles trading expressiveness for guaranteed-fast reasoning.

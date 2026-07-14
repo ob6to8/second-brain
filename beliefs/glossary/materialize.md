@@ -1,5 +1,5 @@
 ---
-id: sb:15fe73
+id: em:15fe73
 type: concept
 title: materialize
 description: To compute derived content and write it to disk as ordinary file content, instead of recomputing it on demand — trading always-fresh derivation for inspectability, at the cost of needing a freshness check.

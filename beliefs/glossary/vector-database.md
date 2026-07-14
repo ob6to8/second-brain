@@ -1,5 +1,5 @@
 ---
-id: sb:36436d
+id: em:36436d
 type: concept
 title: vector database
 description: A store that indexes items as high-dimensional embedding vectors and answers nearest-neighbor queries by vector similarity, enabling semantic rather than lexical retrieval.

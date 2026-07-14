@@ -1,5 +1,5 @@
 ---
-id: sb:c2c638
+id: em:c2c638
 type: concept
 title: entailment (logical consequence)
 description: The relation "every interpretation satisfying the premises also satisfies the conclusion" — the formal notion a per-edge entailment judgment approximates when a belief graph asks whether premises license a conclusion.

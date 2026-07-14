@@ -37,7 +37,7 @@ the start if siblings are plausible.
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of concept types
 
 ## verification
-- [stable-identity](/meta/policy/stable-identity.md) — immutable `sb:xxxxxx` ids; edges reference ids; `meta/registry.md` is compiled
+- [stable-identity](/meta/policy/stable-identity.md) — immutable `em:xxxxxx` ids; edges reference ids; `meta/registry.md` is compiled
 - [verification-grounding](/meta/policy/verification-grounding.md) — provenance immutable; `verified` requires grounding; evidence edges live only in `verified_by`
 
 ## conformance
@@ -49,7 +49,7 @@ the start if siblings are plausible.
 ## session-workflow
 - [session-capture](/meta/policy/session-capture.md) — `/capture` renders a session into a distilled thread doc, on demand
 - [routing-ledger](/meta/policy/routing-ledger.md) — the per-thread `## Routing` dispatch table (pointers and states only)
-- [route-tagging](/meta/policy/route-tagging.md) — `<routes ref="sb:…">` tags materialize a re-derivable excerpt log into each concept
+- [route-tagging](/meta/policy/route-tagging.md) — `<routes ref="em:…">` tags materialize a re-derivable excerpt log into each concept
 
 ## git-workflow
 - [git-branch-deletion](/meta/policy/git-branch-deletion.md) — head branches are deleted on PR merge; the default branch and unmerged branches need operator approval

@@ -92,7 +92,7 @@ have drifted.
 
 ## The core idea (what you are adopting)
 
-<routes ref="sb:d479e3">
+<routes ref="em:d479e3">
 
 A single working session (a "thread") is non-linear: it touches many topics,
 pauses some on open questions, and routes each topic's synthesized content into
@@ -316,7 +316,7 @@ In scope: (A) capture skill, (B) routing-ledger convention, (C) concept-doc log-
 ## Two divergences from the task's assumptions I need to flag
 
 1. **No `thread` type here.** This bundle's threads live in `meta/threads/` typed `reference` (governance, *outside* the knowledge bundle, no `sb:` id) — the `/persist-thread` convention. The reference repo instead makes `thread` a first-class bundle type. Also note `/persist-thread` is **verbatim** archival; the cb-style capture is a **distilled** render (substantive responses only). So the capture skill is a *new* skill distinct from `/persist-thread`, and where its output lands + whether we mint a `thread` type is a shape decision for you.
-2. **Sink ref should be the `sb:` id, not a slug.** cb uses flat slugs because all its docs sit in one directory; here concepts are spread across a deep tree and each carries a stable `sb:` id. Your contract already says *"typed edges reference ids, not paths."* So `<routes ref="sb:4c9e1f">` is the idiomatic aggregating ref (resolved to its path via the registry), with a `path` as the non-aggregating back-link.
+2. **Sink ref should be the `sb:` id, not a slug.** cb uses flat slugs because all its docs sit in one directory; here concepts are spread across a deep tree and each carries a stable `sb:` id. Your contract already says *"typed edges reference ids, not paths."* So `<routes ref="em:4c9e1f">` is the idiomatic aggregating ref (resolved to its path via the registry), with a `path` as the non-aggregating back-link.
 
 Four decisions before I build:
 
@@ -329,7 +329,7 @@ The `AskUserQuestion` tool is failing in this environment (permission stream clo
 - Comment-fenced `<!-- routes: … -->` — invisible everywhere, but it's two comments not one element, so the line-anchored open/close/nesting checks need reworking.
 
 **2. Sink ref** — the id a `concept` doc accretes its excerpt log under
-- **★ Stable `sb:` id** — `<routes ref="sb:4c9e1f">`. Matches your contract's *"typed edges reference ids, not paths"*; unambiguous across the whole tree; survives moves. A `path` ref stays the non-aggregating back-link. `classify_ref`: `sb:…` → sink, contains `/` → back-link.
+- **★ Stable `sb:` id** — `<routes ref="em:4c9e1f">`. Matches your contract's *"typed edges reference ids, not paths"*; unambiguous across the whole tree; survives moves. A `path` ref stays the non-aggregating back-link. `classify_ref`: `sb:…` → sink, contains `/` → back-link.
 - Bundle-absolute path — `<routes ref="/SWE/…/foo.md">`. Readable but breaks on move and collides with the back-link kind.
 
 **3. Thread home & type** — where captured thread docs land
@@ -369,7 +369,7 @@ All four things you asked for, at the OKF floor (belief DAG ignored throughout),
 
 **D. Verifier** — `SecondBrain.RouteTags` + `mix brain.route_tags`, ported from `lib/cb/route_tags.ex`. All five checks preserved and the exact `derive_block/3` format. `classify_ref/1` reduced to two kinds: **`sb:` id** (aggregating sink, resolved via the registry) and **path** (non-aggregating back-link) — the `{:belief,…}` kind dropped. `ledger_doc_sinks/1` resolves the ledger's routed-to links to `sb:` ids for the cross-check. Added `--materialize` so the log is generated. Wired into `.github/workflows/ci.yml` and `.githooks/pre-commit` beside `mix brain.verify`.
 
-**Worked example** — concept `routing-non-linear-work-sessions.md` (`sb:d479e3`, filed beside `conversation-tree-architecture`) and thread `2026-07-08-adopt-session-capture-routing-and-route-tags.md`, whose route tag `<routes ref="sb:d479e3 lib/second_brain/route_tags.ex">` materialized the concept's excerpt log — demonstrating both a sink id and a co-feeding path back-link.
+**Worked example** — concept `routing-non-linear-work-sessions.md` (`em:d479e3`, filed beside `conversation-tree-architecture`) and thread `2026-07-08-adopt-session-capture-routing-and-route-tags.md`, whose route tag `<routes ref="em:d479e3 lib/second_brain/route_tags.ex">` materialized the concept's excerpt log — demonstrating both a sink id and a co-feeding path back-link.
 
 **Governance** — new `session-workflow` contract section (§8) with three policies; `/capture` registered; `CLAUDE.md`, `meta/registry.md`, and all `index.md`/`log.md` files updated.
 
@@ -426,7 +426,7 @@ Merged and pushed. `origin/main` is now fully integrated into `claude/okf-captur
 - `log.md` — kept both 2026-07-08 entries (my workflow adoption + main's knowledge-management domain), and noted the new `meta/session-workflow.md` guide.
 - `meta/index.md` — merged the tooling list so both `mix brain.route_tags` and `mix brain.site` are listed, plus both CI/pages workflow descriptions.
 
-**Generated files regenerated** rather than hand-merged: `CLAUDE.md` (main changed the type vocab + preamble OKF links; mine added §8) and `meta/registry.md` (main added `sb:24bd1e`) — both recompiled from source via `mix brain.contract` / `mix brain.registry` and confirmed `--check`-clean.
+**Generated files regenerated** rather than hand-merged: `CLAUDE.md` (main changed the type vocab + preamble OKF links; mine added §8) and `meta/registry.md` (main added `em:24bd1e`) — both recompiled from source via `mix brain.contract` / `mix brain.registry` and confirmed `--check`-clean.
 
 **Full merged gate suite green:** format, compile (warnings-as-errors), `brain.contract --check`, `brain.registry --check`, `brain.verify`, `brain.route_tags` (all 5 checks), `brain.site` (88 pages), and **69 tests, 0 failures** — my route-tags subsystem and main's site builder coexist cleanly. `_site/` is gitignored (not committed).
 
@@ -535,7 +535,7 @@ mix test
 - **Context completeness.** `/capture` renders from the agent's live context. If a long thread was summarized/compacted, the render can be partial — the skill will flag gaps honestly rather than invent dialogue. If you have the host `.jsonl` session log, the parse-the-log path is more complete.
 - **The excerpt log is append-only and freezes on matter-resolution.** Don't hand-edit a log block (let `--materialize` own it), and don't append to a concept whose matter is already resolved/frozen.
 
-The green worked example to compare against is `meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md` ↔ concept `sb:d479e3` — read them side by side to see the tag→log round trip you're reproducing. The full reference is `meta/session-workflow.md`.
+The green worked example to compare against is `meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md` ↔ concept `em:d479e3` — read them side by side to see the tag→log round trip you're reproducing. The full reference is `meta/session-workflow.md`.
 
 Want me to draft a short `/process-thread` checklist doc into `meta/` (or fold this runbook into the `/capture` skill) so you have it at hand while working the backlog?
 
@@ -672,7 +672,7 @@ The only exception is the **parse-the-log** path: if you have a host session log
 
 ## So, which do you actually want?
 
-**A — Dogfood this session.** Run `/capture` right here. This conversation is a legitimate, substantive thread (we adopted a whole subsystem and refined it), so it's a genuine first real use — and it'll route to concepts like `sb:d479e3` and back-link the code. Caveat: today is 2026-07-08 and there's already a hand-authored worked-example thread doc for the adoption; a real `/capture` of this session would be fuller (it includes the `/persist-thread` retirement, the rule fix, verification-flows, this exchange). I'd either supersede that demo doc or write a distinct dated one — your call.
+**A — Dogfood this session.** Run `/capture` right here. This conversation is a legitimate, substantive thread (we adopted a whole subsystem and refined it), so it's a genuine first real use — and it'll route to concepts like `em:d479e3` and back-link the code. Caveat: today is 2026-07-08 and there's already a hand-authored worked-example thread doc for the adoption; a real `/capture` of this session would be fuller (it includes the `/persist-thread` retirement, the rule fix, verification-flows, this exchange). I'd either supersede that demo doc or write a distinct dated one — your call.
 
 **B — Work the actual backlog.** Then the pattern per thread is: **you** open/resume that thread's session on its branch → run `/capture` there → I execute the flow in that session. Nothing to run *here*. I can hand you the per-session checklist (it's the verification-flow doc), or if you paste/point me at one backlog thread whose content is available, I can process that one from here.
 
@@ -705,7 +705,7 @@ First archived on 2026-07-05, then — in the same day's `22fbf4e` — the `/per
 38d13b2  2026-07-08  Adopt session capture, routing ledger, and route tags (OKF port)
 ```
 
-Single commit — this is the one **I wrote by hand** as the worked example when building the route-tagging feature. It's in the new `/capture` *style* (distilled + routing ledger + route tags + a materialized excerpt log in `sb:d479e3`), but it was **not produced by running any skill** — I authored it directly to demonstrate the format. So it's already "processed"; not really backlog.
+Single commit — this is the one **I wrote by hand** as the worked example when building the route-tagging feature. It's in the new `/capture` *style* (distilled + routing ledger + route tags + a materialized excerpt log in `em:d479e3`), but it was **not produced by running any skill** — I authored it directly to demonstrate the format. So it's already "processed"; not really backlog.
 
 ## The honest wrinkle
 
@@ -715,7 +715,7 @@ Two things worth clarifying before I proceed:
 - When you said "**two** backlog threads," did you mean these two repo files, or two **other** live sessions you have in mind? Thread 2 here is already in the new format, so if the backlog is "unprocessed threads," only the 2026-07-05 one qualifies among what's committed.
 - The 2026-07-05 thread is a *verbatim* archive. Retrofitting it means adding a `## Routing` ledger + route tags over its **existing frozen body** (I wouldn't re-render it — the body is already there, just in verbatim rather than distilled form). That's a slightly different motion than a fresh `/capture`. Want me to do that retrofit as the first real exercise?
 
-Branch is on the merged `main` (`284ccb0`); today is 2026-07-09. Per update-in-place, this session's thread file is the existing `2026-07-08-adopt-…` doc (I authored it mid-session as the worked example). I'll regenerate it as the real, full-session `/capture` — extending the render through all the later strands (merge, PRs, the `/persist-thread` retirement, the rule fix, verification-flows, and the backlog discussion), refreshing the ledger, and preserving the `sb:d479e3` route tag so the concept's log stays consistent.
+Branch is on the merged `main` (`284ccb0`); today is 2026-07-09. Per update-in-place, this session's thread file is the existing `2026-07-08-adopt-…` doc (I authored it mid-session as the worked example). I'll regenerate it as the real, full-session `/capture` — extending the render through all the later strands (merge, PRs, the `/persist-thread` retirement, the rule fix, verification-flows, and the backlog discussion), refreshing the ledger, and preserving the `em:d479e3` route tag so the concept's log stays consistent.
 
 `/capture` complete — the first real run of the skill, committed as `696e793` (not pushed/PR'd, since the skill only does that when you ask).
 
@@ -724,10 +724,10 @@ Branch is on the merged `main` (`284ccb0`); today is 2026-07-09. Per update-in-p
 Regenerated `meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md` **in place** (per update-in-place) as a genuine distilled render of this whole session — superseding the hand-authored worked-example version:
 
 - **Render** — every exchange kept, tool calls/reasoning/short pre-tool narration stripped; operator messages verbatim, my responses in distilled form. Covers the full arc: the port → main merge → PR #13 → the `meta/` guide → retiring `/persist-thread` → the keep/strip rule fix → `meta/verification-flows/` → PR #15 → the backlog discussion. I honestly flagged the one self-correction inline (the runbook's operator/agent framing mistake).
-- **Routing ledger** — expanded from 5 to 12 rows, one per strand; all `closed` except the backlog row (`paused`, with the 2026-07-05 retrofit as its dangling question). One concept-routed row → `sb:d479e3`.
-- **Route tag** — kept the `sb:d479e3` region on the core-idea paragraph (co-feeding `lib/second_brain/route_tags.ex`), so the concept's excerpt log re-materialized **unchanged** — the reference-instance claims elsewhere stay true.
+- **Routing ledger** — expanded from 5 to 12 rows, one per strand; all `closed` except the backlog row (`paused`, with the 2026-07-05 retrofit as its dangling question). One concept-routed row → `em:d479e3`.
+- **Route tag** — kept the `em:d479e3` region on the core-idea paragraph (co-feeding `lib/second_brain/route_tags.ex`), so the concept's excerpt log re-materialized **unchanged** — the reference-instance claims elsewhere stay true.
 
-**Verification (the flow's own checklist, applied to itself):** all five `mix brain.route_tags` checks green; `brain.verify`, `brain.contract`/`registry --check`, and `mix test` (69, 0) all pass. Editorially: the ledger is pointers-only, `sb:d479e3` carries its block, and the one concept-routed row is tag-covered.
+**Verification (the flow's own checklist, applied to itself):** all five `mix brain.route_tags` checks green; `brain.verify`, `brain.contract`/`registry --check`, and `mix test` (69, 0) all pass. Editorially: the ledger is pointers-only, `em:d479e3` carries its block, and the one concept-routed row is tag-covered.
 
 One notable outcome: this closes the "the skill has never actually been run" gap — `/capture` now has a real invocation behind it, not just a mock.
 
@@ -760,16 +760,16 @@ Then - create a tutorial explaining what's occurring with "The tip commit is now
 
 ## Assistant
 
-The bootstrap thread is fundamentally a **governance/tooling** session — its content is homed in `meta/` (policies, the contract compiler, the registry/verifier), none of which are `sb:`-id concept sinks. The one genuine knowledge concept it touches is **OKF** (`sb:24bd1e`). Let me read the OKF-discussing turns to find an honest region to tag, and glance at the OKF concept.
+The bootstrap thread is fundamentally a **governance/tooling** session — its content is homed in `meta/` (policies, the contract compiler, the registry/verifier), none of which are `sb:`-id concept sinks. The one genuine knowledge concept it touches is **OKF** (`em:24bd1e`). Let me read the OKF-discussing turns to find an honest region to tag, and glance at the OKF concept.
 
-This bootstrap session mostly built the brain's **governance/tooling** (policies, the contract compiler, the registry/verifier) — homed in `meta/`, not `concept` sinks — so honestly most strands are `unrouted`. The one genuine knowledge feed is turn 2's definition of *what an OKF bundle is* → the OKF concept (`sb:24bd1e`). Retrofitting the ledger and that one route tag over the frozen body:
+This bootstrap session mostly built the brain's **governance/tooling** (policies, the contract compiler, the registry/verifier) — homed in `meta/`, not `concept` sinks — so honestly most strands are `unrouted`. The one genuine knowledge feed is turn 2's definition of *what an OKF bundle is* → the OKF concept (`em:24bd1e`). Retrofitting the ledger and that one route tag over the frozen body:
 
 Task 1 committed (`6cb9110`). Now **task 2 — the tutorial.** This is a chance to be precise: my earlier one-liner ("set committer email → GitHub shows verified") was actually an oversimplification worth correcting, since GitHub's "Verified" fundamentally means a cryptographic *signature*, not an email. Let me check the existing tutorial format first.
 
 Both done — all three unpushed commits are correctly authored (`noreply@anthropic.com` for author and committer), so the stop-hook won't flag them.
 
 ## 1. Retrofit — `6cb9110`
-Added a `## Routing` ledger + a route tag over the **frozen body** of the 2026-07-05 bootstrap thread (no re-render — it's a verbatim `/persist-thread` archive). Honest outcome: that session mostly built governance/tooling homed in `meta/` (not `concept` sinks), so 11 of 12 ledger rows are `unrouted`; the one genuine knowledge feed — turn 2's definition of *what an OKF bundle is* — is tagged to the OKF concept (`sb:24bd1e`), whose excerpt log I materialized. All five `mix brain.route_tags` checks green. This demonstrated the retrofit motion (tag an existing frozen body, don't rewrite it) and honestly showed that not every thread has rich concept sinks.
+Added a `## Routing` ledger + a route tag over the **frozen body** of the 2026-07-05 bootstrap thread (no re-render — it's a verbatim `/persist-thread` archive). Honest outcome: that session mostly built governance/tooling homed in `meta/` (not `concept` sinks), so 11 of 12 ledger rows are `unrouted`; the one genuine knowledge feed — turn 2's definition of *what an OKF bundle is* — is tagged to the OKF concept (`em:24bd1e`), whose excerpt log I materialized. All five `mix brain.route_tags` checks green. This demonstrated the retrofit motion (tag an existing frozen body, don't rewrite it) and honestly showed that not every thread has rich concept sinks.
 
 ## 2. Tutorial — `8d7b806`
 `meta/tutorials/what-makes-a-commit-verified-on-github.md`. It deliberately **corrects** my earlier shorthand rather than repeating it:
@@ -813,14 +813,14 @@ Actually i believe we need to run /capture again to now capture the recent excha
 
 Good call — the last `/capture` only covered exchanges through "how were these threads created." Per update-in-place, I'll **extend the same session thread doc** with everything since (the push, the retrofit, the tutorial, the two commit-signing fixes, and PR #17), refresh the ledger and narrative, then re-materialize and verify. Let me re-read the current doc to edit precisely.
 
-The second `/capture` is committed as `ee23164` — all gates green (69 tests, route-tags 5/5, `sb:d479e3`'s log now lifts 2 regions).
+The second `/capture` is committed as `ee23164` — all gates green (69 tests, route-tags 5/5, `em:d479e3`'s log now lifts 2 regions).
 
 ## What this run did (extend-in-place)
 Rather than fork a new file, it **extended the same session thread doc** with everything since the first capture:
 - **Ledger** — the backlog row flipped `paused → closed`; five new rows (first capture, retrofit, git-verification, PR #17).
 - **Narrative** — updated to note PRs #15 and #17 and that the backlog is clear.
 - **Render** — appended the push, the retrofit+tutorial turn, both commit-signing fixes (as stage notes), and the PR #17 turn.
-- **One new route tag** — I tagged a genuinely-new insight the retrofit surfaced to `sb:d479e3`: *routing density tracks how much durable knowledge (vs process) a session produced — a thin, mostly-`unrouted` ledger is a signal about the session, not a tagging failure.* So the concept's excerpt log now aggregates two regions from this thread.
+- **One new route tag** — I tagged a genuinely-new insight the retrofit surfaced to `em:d479e3`: *routing density tracks how much durable knowledge (vs process) a session produced — a thin, mostly-`unrouted` ledger is a signal about the session, not a tagging failure.* So the concept's excerpt log now aggregates two regions from this thread.
 
 This also demonstrates the intended `/capture` behavior on a re-run: it updates a session's existing thread doc in place, it doesn't create a second one.
 
@@ -831,7 +831,7 @@ Want me to **push** (folding this recapture into PR #17), or hold it?
 Done. `d68a8dd` (the second `/capture`) is pushed and folded into **[PR #17](https://github.com/ob6to8/second-brain/pull/17)**, whose title and body I updated to reflect all **four** commits accurately.
 
 Summary of this turn:
-- **Second `/capture`** extended the session thread doc in place (not a new file) — ledger backlog row closed + 5 new rows, narrative refreshed, new turns appended, and one genuinely-new routing-technique insight tagged to `sb:d479e3` (its excerpt log now lifts 2 regions). All gates green.
+- **Second `/capture`** extended the session thread doc in place (not a new file) — ledger backlog row closed + 5 new rows, narrative refreshed, new turns appended, and one genuinely-new routing-technique insight tagged to `em:d479e3` (its excerpt log now lifts 2 regions). All gates green.
 - **Git hygiene** — the fresh commit was flagged `N` (unsigned, unpushed); re-authored the tip and pushed, which is what lets the environment's signature attach — the exact loop the new tutorial documents. Only the unpushed tip was touched; shared history untouched.
 - **PR #17** now reads as a 4-commit PR: first `/capture`, retrofit, tutorial, second `/capture`.
 
@@ -866,7 +866,7 @@ Merge PR #17 once CI is green
 The backlog is clear and the workflow is fully dogfooded on `main`:
 - `/capture` has two real runs behind it (initial + extend-in-place), proving the update-in-place behavior.
 - The lone backlog thread (2026-07-05) is retrofitted with a ledger + route tag.
-- Two concept sinks now carry route-tagged excerpt logs (`sb:d479e3`, `sb:24bd1e`).
+- Two concept sinks now carry route-tagged excerpt logs (`em:d479e3`, `em:24bd1e`).
 - The commit-verification tutorial is filed under `meta/tutorials/`.
 
 Since this branch's PR is merged, any further work should restart the branch from the updated `main` again. Anything else you'd like to tackle?
@@ -912,7 +912,7 @@ Corrected the `session-capture` policy, the `/capture` skill, `meta/session-work
 ## The recapture (the thread doc)
 Rather than reconstruct from memory, I used the skill's own **parse-the-log** path on the host session log (`~/.claude/projects/…/<session>.jsonl`), applying `transcript_hook.py`'s exact drop rule (`len < 300 and followed_by_tool`, drop tool calls/reasoning):
 - All **21 exchanges are now verbatim** — the actual delivered text, not summaries. The doc grew from ~290 to 891 lines, which is the honest cost of verbatim.
-- The `sb:d479e3` route tag now wraps the **operator's own verbatim definition** of the technique (the "core idea + 4 mechanisms" from the task prompt), replacing my earlier composed paragraph — so the concept's excerpt log lifts real conversation text, exactly as route-tagging intends.
+- The `em:d479e3` route tag now wraps the **operator's own verbatim definition** of the technique (the "core idea + 4 mechanisms" from the task prompt), replacing my earlier composed paragraph — so the concept's excerpt log lifts real conversation text, exactly as route-tagging intends.
 - My in-progress capture turn was truncated to a closing stage note (the accepted tail-gap).
 
 **Verification:** all five `mix brain.route_tags` checks green, plus `brain.verify`, `contract`/`registry --check`, `brain.site` (91 pages), and `mix test` (69, 0).
@@ -927,7 +927,7 @@ Reconciled and clean. The branch is now exactly **+1 commit over the real `main`
 
 ## What landed
 - **Docs fixed** so retained responses must be **verbatim** ("distilled" = noise dropped, not content condensed), with parse-the-log as the preferred faithful path — policy, skill, guide, verification-flow, and recompiled `CLAUDE.md`.
-- **Thread recaptured verbatim** from the host session log (parse-the-log): all 21 exchanges are now the actual delivered text, and `sb:d479e3`'s route tag lifts the operator's own verbatim definition of the technique.
+- **Thread recaptured verbatim** from the host session log (parse-the-log): all 21 exchanges are now the actual delivered text, and `em:d479e3`'s route tag lifts the operator's own verbatim definition of the technique.
 - All gates green (route-tags 5/5, 69 tests, 91-page site).
 
 This is a nice second-order proof of the workflow: the capture system caught and corrected a fidelity bug in its own output, then re-ran itself from the canonical source.

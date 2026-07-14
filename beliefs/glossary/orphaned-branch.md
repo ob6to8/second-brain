@@ -1,5 +1,5 @@
 ---
-id: sb:a9113e
+id: em:a9113e
 type: concept
 title: orphaned branch
 description: In this brain's git workflow, a remote session branch left lingering after its work concluded — merged-but-undeleted (deletable on sight) or unmerged (never deleted without operator ratification); distinct from git's own parentless orphan branch.
@@ -25,13 +25,13 @@ In git generally, an *orphan branch* is one created with `git checkout --orphan`
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:a9113e">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:a9113e">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-13-orphaned-branch-cleanup-and-transplant-plan (2026-07-13)
 
 2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:a9113e`]**
+**[`em:a9113e`]**
 
 Reading the five rows you're showing:
 
@@ -42,7 +42,7 @@ Reading the five rows you're showing:
 
 ---
 
-**[`sb:a9113e`]**  (co-feeds: `meta/todos/triage-the-six-kept-unmerged-claude-branches.md`)
+**[`em:a9113e`]**  (co-feeds: `meta/todos/triage-the-six-kept-unmerged-claude-branches.md`)
 
 **Worth saving — one big, four small:**
 

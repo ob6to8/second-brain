@@ -1,5 +1,5 @@
 ---
-id: sb:8255b8
+id: em:8255b8
 type: reference
 title: "FOL and OWL: fully formal knowledge representation"
 description: First-order logic and the W3C Web Ontology Language (OWL 2) — the fully formal end of the knowledge-representation spectrum, with provable semantics, decidability trade-offs, and the authoring cost that motivates semiformal middle layers.

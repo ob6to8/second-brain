@@ -148,7 +148,7 @@ for propositions: fuzzy, LLM-mediated, and the single largest design cost —
 larger than the graph machinery itself. It is the same lesson this brain
 already learned twice: cross-context joins must key on canonical identities,
 not free-text phrasings ([stable ids](/beliefs/glossary/stable-id.md); route tags
-keyed on `sb:` ids). Expect canonicalization plus decontextualization to
+keyed on `em:` ids). Expect canonicalization plus decontextualization to
 dominate the decomposer's design.
 
 ## Finding 5 — application ranking

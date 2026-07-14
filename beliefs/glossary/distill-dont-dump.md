@@ -1,5 +1,5 @@
 ---
-id: sb:bec37f
+id: em:bec37f
 type: concept
 title: distill, don't dump
 description: The filing rule that a concept captures the knowledge rather than the raw noise — clear title, one-sentence description, clean body — with original material kept as a resource URI or under a Citations section.

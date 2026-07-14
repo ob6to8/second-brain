@@ -185,7 +185,7 @@ Proceed with glossarying docs
 
 ## Assistant
 
-<routes ref="sb:0b648f">
+<routes ref="em:0b648f">
 Done — both pieces committed and pushed (`9665b73`, all verifiers green). The glossary run over the eight epistemic docs added **29 term files**, taking the glossary from 78 to 107 terms.
 
 **New full entries (20):**

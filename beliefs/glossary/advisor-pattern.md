@@ -1,5 +1,5 @@
 ---
-id: sb:bb0ef0
+id: em:bb0ef0
 type: concept
 title: advisor pattern
 description: An agent cost pattern where a fast, low-cost executor model does the bulk of generation and consults a higher-intelligence advisor model at moments where planning matters, so most tokens bill at the cheaper executor rate while quality approaches advisor-solo.

@@ -1,5 +1,5 @@
 ---
-id: sb:334e60
+id: em:334e60
 type: concept
 title: mounting point (harness)
 description: The file path where a third-party harness expects content to appear (CLAUDE.md at session start, a skill's SKILL.md on invocation) — the harness's convention, distinct from the brain-defined role that fills it.

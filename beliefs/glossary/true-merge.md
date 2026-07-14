@@ -1,5 +1,5 @@
 ---
-id: sb:a10e18
+id: em:a10e18
 type: concept
 title: true merge
 description: A merge that creates a two-parent merge commit wiring the branch's real history into the target's ancestry, keeping every original commit (and its SHA) permanently reachable after the branch is deleted.

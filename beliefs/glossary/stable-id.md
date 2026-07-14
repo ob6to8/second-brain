@@ -1,8 +1,8 @@
 ---
-id: sb:4d71d3
+id: em:4d71d3
 type: concept
-title: stable id (sb: id)
-description: The opaque, immutable sb: + 6-hex-char identifier every bundle concept carries in frontmatter; typed edges reference ids, not paths, so identity survives moves.
+title: stable id (em: id)
+description: The opaque, immutable em: + 6-hex-char identifier every bundle concept carries in frontmatter; typed edges reference ids, not paths, so identity survives moves.
 provenance: "Agent-distilled glossary definition, pointer to the defining policy"
 verified: false
 tags: [glossary, identity, registry]
@@ -15,9 +15,9 @@ attribution:
   why: "term surfaced by the captured sources cited in Seen in (backfilled)"
 ---
 
-# stable id (`sb:` id)
+# stable id (`em:` id)
 
-The opaque, immutable `sb:` + 6-hex-char identifier every bundle concept
+The opaque, immutable `em:` + 6-hex-char identifier every bundle concept
 carries in frontmatter; typed edges reference ids rather than paths, so
 identity survives moves and renames. Canonically defined by the
 [stable-identity policy](/meta/policy/stable-identity.md).

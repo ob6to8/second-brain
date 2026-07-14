@@ -1,5 +1,5 @@
 ---
-id: sb:f984a5
+id: em:f984a5
 type: concept
 title: paraconsistency
 description: Tolerating contradiction without explosion — unlike classical logic, where one inconsistency licenses every conclusion, a paraconsistent system quarantines contradictions so unaffected reasoning stays meaningful (e.g. per-context in an ATMS).

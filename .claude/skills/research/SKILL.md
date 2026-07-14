@@ -9,12 +9,12 @@ Scan the outside world for material that matches what this brain already cares
 about, and write it into today's **inbox digest** — a dated, categorized list of
 candidate links, each with a one-line synopsis and a reason tag — then **auto-intake
 the featured items into the bundle**. The digest is the daily *record* in the
-non-bundle `inbox/` namespace (no `sb:` ids); its featured items graduate into filed
+non-bundle `inbox/` namespace (no `em:` ids); its featured items graduate into filed
 concepts in the same run (§6). This is the standing decision from the
 [auto-intake plan](/meta/plans/auto-intake-featured-research.md): the featuring gates
 (§4) are already the quality filter, so a featured item needs no second human gate —
 the operator's contribution moves from a pre-intake gate to **post-intake editorial**
-(prune, relabel, merge). The digest file itself never acquires an `sb:` id; the
+(prune, relabel, merge). The digest file itself never acquires an `em:` id; the
 concepts its featured items become do.
 
 Read the [operating contract](../../../CLAUDE.md) first. Two rules shape this skill:
@@ -34,7 +34,7 @@ Read the [operating contract](../../../CLAUDE.md) first. Two rules shape this sk
 ```
 inbox/
   index.md          # landing view: links to the latest digest + the archive (reserved, no frontmatter)
-  YYYY-MM-DD.md     # one digest per day — type: reference, no sb: id, immutable once written
+  YYYY-MM-DD.md     # one digest per day — type: reference, no em: id, immutable once written
 ```
 
 Days are inherently time-ordered, so digests use the `YYYY-MM-DD.md` filename
@@ -47,7 +47,7 @@ convention. Previous days are **never rewritten** — they persist as the archiv
   concept titles/tags under each (Grep/Glob over `*.md`, excluding `deprecated/`
   and `inbox/`). This yields, per domain, a set of interest signals — the topics
   the brain actively tracks and the specific concepts it has already filed.
-- Note the `sb:` ids and titles of recent/high-signal concepts so items can
+- Note the `em:` ids and titles of recent/high-signal concepts so items can
   back-link to what they extend or challenge (e.g. a new margin datapoint relates
   to an existing margin-collapse `reference`).
 
@@ -111,21 +111,21 @@ are moving relative to what the brain already tracks*. See the design record in
 - **A perspective, not a re-listing.** 1–3 tight paragraphs. Never restate the item
   synopses — those live in the domain sections below. The read is the layer *above*
   them: the trend, tension, or throughline.
-- **Grounded in `sb:` ids.** Name the standing concepts the day bears on
-  (`sb:07610c`, `sb:2867ac`, …) so the synthesis is anchored to the actual taxonomy,
+- **Grounded in `em:` ids.** Name the standing concepts the day bears on
+  (`em:07610c`, `em:2867ac`, …) so the synthesis is anchored to the actual taxonomy,
   not free-floating commentary. Say whether today's items **reinforce, contest, or
   extend** those filed positions — that *is* the intake-relevant signal.
 - **Cross-domain by mandate.** Its explicit job is the connective tissue the
   per-domain buckets can't hold (e.g. a lossless-inference item + a long-horizon-agent
   item + a worktree item all pointing at one "agents running longer and cheaper" arc).
   On a single-domain day it collapses to one short paragraph.
-- **Candidate-side.** Distilled, no `sb:` id, asserts nothing beyond what the day's
+- **Candidate-side.** Distilled, no `em:` id, asserts nothing beyond what the day's
   selections support — a reading of candidates, not a filed claim.
 
 ### 5. Write today's digest
 - Path: `inbox/YYYY-MM-DD.md`. If today's digest already exists, **regenerate that
   same file** (don't create a second one for the same day).
-- Frontmatter: `type: reference`, no `sb:` id, `provenance` naming the tools/date,
+- Frontmatter: `type: reference`, no `em:` id, `provenance` naming the tools/date,
   `tags: [inbox, feed]`, `timestamp` today.
 - Body: lead with **`## The read`** (the cross-domain synthesis from §4.5), then an
   `##`-section **per KB domain touched**, mirroring the KB tree. A domain section may
@@ -134,7 +134,7 @@ are moving relative to what the brain already tracks*. See the design record in
   - **`[title](url)`** on the first line;
   - the reason tag(s) as inline `` `code` `` badges, then a one-to-two-line
     synopsis of *what it is and why it matters*;
-  - a `→ would file under /<kb-path>/` filing hint, and `· relates to sb:xxxxxx`
+  - a `→ would file under /<kb-path>/` filing hint, and `· relates to em:xxxxxx`
     when it extends/challenges an existing concept.
 - Keep synopses distilled — enough to decide intake-or-skip at a glance.
 
@@ -147,11 +147,11 @@ the volume knob on how many concepts a run files.
 For each featured item, in digest order:
 
 - **Hand `/intake` the item's URL plus the digest's two hints** — the
-  `→ would file under /<path>/` filing hint and any `· relates to sb:xxxxxx`. Intake
+  `→ would file under /<path>/` filing hint and any `· relates to em:xxxxxx`. Intake
   does the rest: fetch → distill → its own **synonym-expanded dedup** (its §3) →
   file → mint id → registry → verify. You inherit that dedup and its automatic
   gold-harvest for free — do not re-implement either here.
-- **Prefer update-in-place on a `relates to sb:` hint.** When an item carries one,
+- **Prefer update-in-place on a `relates to em:` hint.** When an item carries one,
   that related concept is intake's dedup target: **update it in place** rather than
   filing a sibling — *unless* the item is a genuinely distinct matter (a contrasting
   datapoint, not a continuation), which earns its own concept. This keeps
@@ -213,7 +213,7 @@ line with an intake backlink after the fact, that edit is the one allowed except
 to digest immutability.
 
 ## Guardrails
-- The **digest** is not the bundle: it stays under `inbox/` with no `sb:` id and no
+- The **digest** is not the bundle: it stays under `inbox/` with no `em:` id and no
   `verified` field. Auto-intake (§6) is the only thing that writes into the bundle,
   and it does so through `/intake` (which mints ids and runs the gates) — never by
   `/research` filing a concept directly.

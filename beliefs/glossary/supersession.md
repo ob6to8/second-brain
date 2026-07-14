@@ -1,5 +1,5 @@
 ---
-id: sb:ea95e4
+id: em:ea95e4
 type: concept
 title: supersession
 description: An update model where a revised item records a superseded-by relationship to its predecessor instead of overwriting it, preserving history and enabling staleness to propagate to dependents.

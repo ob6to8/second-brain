@@ -1,5 +1,5 @@
 ---
-id: sb:6e9584
+id: em:6e9584
 type: concept
 title: reachability
 description: In git, the property that a commit can be found by starting at some ref (branch, tag, or HEAD) and walking parent pointers back to it; reachable commits are safe from garbage collection, unreachable ones are eventually pruned.

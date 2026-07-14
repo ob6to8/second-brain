@@ -1,5 +1,5 @@
 ---
-id: sb:4f4f5c
+id: em:4f4f5c
 type: concept
 title: scenario test
 description: An automated test that drives an entire workflow end-to-end against a realistic fixture and asserts on the resulting state, rather than exercising a single function in isolation.

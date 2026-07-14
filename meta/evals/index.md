@@ -7,7 +7,7 @@ separate genre from [`analysis`](/meta/analysis/index.md) (a *point-in-time* jud
 on a question): an eval is a fixture the tooling re-scores on every run.
 
 Each gold set is a prose-bearing markdown doc whose table a `mix brain.*` task parses;
-governance namespace (no `sb:` id, like plans and threads).
+governance namespace (no `em:` id, like plans and threads).
 
 ## Contents
 

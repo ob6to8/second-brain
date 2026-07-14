@@ -1,5 +1,5 @@
 ---
-id: sb:c0ed08
+id: em:c0ed08
 type: concept
 title: feeding pairs
 description: The set of (thread, sink) pairs the current route tags induce — a thread feeds a sink when at least one of its tagged regions lists that sink's stable id; the set is the domain of materialization in both directions.

@@ -17,7 +17,7 @@ Frontmatter fields:
 
 | Field | Requirement | Notes |
 |-------|-------------|-------|
-| `id` | **Mandatory** (bundle concepts) | Stable opaque identifier, `sb:` + 6 hex chars. Immutable once minted (`mix brain.id`); see the identity-and-verification section. |
+| `id` | **Mandatory** (bundle concepts) | Stable opaque identifier, `em:` + 6 hex chars. Immutable once minted (`mix brain.id`); see the identity-and-verification section. |
 | `type` | **Mandatory** | From the controlled vocabulary (see the type-vocabulary section). Non-empty. |
 | `title` | Strongly recommended | Human-readable display name. |
 | `description` | Strongly recommended | Single-sentence summary. |

@@ -1,5 +1,5 @@
 ---
-id: sb:b74c61
+id: em:b74c61
 type: concept
 title: pure function
 description: A function whose output depends only on its explicit inputs, with no side effects or hidden state — the property an LLM forward pass with frozen weights literally has.

@@ -67,7 +67,7 @@ This is a substantial task — 12 threads. To conserve my context for the curati
 
 Done. All 12 outstanding thread docs are now processed into the glossary.
 
-<routes ref="sb:0b648f .claude/skills/add-to-glossary/SKILL.md">
+<routes ref="em:0b648f .claude/skills/add-to-glossary/SKILL.md">
 **Approach:** four parallel Explore subagents read the 12 threads and extracted candidate terms (source-independent definitions + pointer targets), so I could dedup across threads before writing — a term seen in three threads gets **one** file with three citations, not three files. I then generated all entries from a single controlled script to keep the format byte-identical to the existing entries.
 
 **Result — glossary grew from 7 → 68 terms:**
@@ -126,7 +126,7 @@ The glossary is now fully backfilled from all thread docs — 68 terms total, up
 
 `/create-pull-request` complete. Here's what happened end to end:
 
-**1. Captured the session** → `meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md` — a verbatim render parsed from the host session log (drop rule applied mechanically: tool calls, reasoning, and short pre-tool narration stripped), plus a `## Where this landed` narrative and a `## Routing` ledger. A route tag feeds the glossary hub (`sb:0b648f`); `mix brain.route_tags --materialize` appended its excerpt block.
+**1. Captured the session** → `meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md` — a verbatim render parsed from the host session log (drop rule applied mechanically: tool calls, reasoning, and short pre-tool narration stripped), plus a `## Where this landed` narrative and a `## Routing` ledger. A route tag feeds the glossary hub (`em:0b648f`); `mix brain.route_tags --materialize` appended its excerpt block.
 
 **2. Glossaried the thread** → this session's own terminology (the glossary-system terms it discussed) is already defined in the glossary from the #37 work; the thread introduced no *new* terms clearing the selection bar, so per the skill that's a legitimate no-op — I didn't pad the glossary to show activity.
 
@@ -194,7 +194,7 @@ Add a line to /create-pull-request to log the assigned name of the thread doc af
 Done — all three actions landed on the open PR (**#38**), plus your mid-turn skill edit.
 
 **The decision, executed:**
-- **`glossary/skill.md`** (`sb:aa0003`) — one category pointer entry for *skill*, deferring to the skills-registry policy, stating that the concept a skill enacts (not its `/command` handle) is what earns a glossary file.
+- **`glossary/skill.md`** (`em:aa0003`) — one category pointer entry for *skill*, deferring to the skills-registry policy, stating that the concept a skill enacts (not its `/command` handle) is what earns a glossary file.
 - **`/add-to-glossary` guardrail** — codified "**terminology, not invocables**" so future runs don't re-litigate it.
 - **Thread doc** — the routing-ledger row flipped `paused → closed` (marked `unrouted`, since the decision was reached in this follow-up, not the frozen body — which also keeps the route-tag verifier warning-free), and the narrative's open-matter sentence rewritten to record the resolution.
 - Logs updated (`log.md`, `meta/log.md`); glossary is now **69 terms**.

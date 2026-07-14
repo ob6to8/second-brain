@@ -1,5 +1,5 @@
 ---
-id: sb:0da4a3
+id: em:0da4a3
 type: concept
 title: detector
 description: A mechanical check that converts a rule violation or drift from a silent state into an announced signal (a failing gate or a printed warning), thereby creating the repair signal that probabilistic enforcement lacks.
@@ -23,13 +23,13 @@ A mechanical check that converts a rule violation or drift from a silent state i
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:0da4a3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:0da4a3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:0da4a3`]**  (co-feeds: `sb:e8c1a9 sb:e08db0 sb:1c53dc meta/analysis/comparison-with-the-2026-second-brain-field.md`)
+**[`em:0da4a3`]**  (co-feeds: `em:e8c1a9 em:e08db0 em:1c53dc meta/analysis/comparison-with-the-2026-second-brain-field.md`)
 
 **Your question — what field-comparison, and what prevents the drift:**
 

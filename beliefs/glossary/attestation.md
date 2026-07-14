@@ -1,5 +1,5 @@
 ---
-id: sb:0e6a29
+id: em:0e6a29
 type: concept
 title: attestation (belief role)
 description: A belief asserted directly by a source or artifact — a primary, atomic belief grounded in what a single source says, as opposed to one derived from other beliefs.

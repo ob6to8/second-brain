@@ -1,5 +1,5 @@
 ---
-id: sb:b467a5
+id: em:b467a5
 type: concept
 title: council round
 description: A structured, adversarial, multi-agent review of drafted work, run as comments on a draft PR through four motions (open, review, respond, close), gated on every finding receiving a disposition, and distilled into a curated target document.

@@ -1,5 +1,5 @@
 ---
-id: sb:07610c
+id: em:07610c
 type: reference
 title: "GLM-5.2 and the coming AI margin collapse (Martin Alderson)"
 description: Alderson argues frontier AI labs' ~90% inference gross margins are structurally exposed now that open-weight models like GLM-5.2 match quality at a fraction of the price with frictionless, API-compatible switching.

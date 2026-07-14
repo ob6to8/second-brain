@@ -1,5 +1,5 @@
 ---
-id: sb:7580df
+id: em:7580df
 type: concept
 title: shallow clone
 description: A git clone truncated to a limited commit depth (e.g. fetch-depth 1 in CI checkouts), which breaks tooling that derives views from full history unless the history is fetched or the tooling guards for it.

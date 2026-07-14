@@ -1,5 +1,5 @@
 ---
-id: sb:784985
+id: em:784985
 type: reference
 title: "Conversation Tree Architecture — branching context to avoid logical context poisoning"
 description: A proposed framework that structures LLM conversations as trees rather than a single linear window, using selective downstream/upstream context flow between branches to avoid degradation from topically unrelated accumulated context.

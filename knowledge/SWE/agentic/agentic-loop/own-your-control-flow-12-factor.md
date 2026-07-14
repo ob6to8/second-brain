@@ -1,5 +1,5 @@
 ---
-id: sb:b6353e
+id: em:b6353e
 type: reference
 title: "Own your control flow — Factor 8 of 12-Factor Agents (HumanLayer)"
 description: An agent should be built as a program you control, not a black-box loop, so you can interrupt, resume, and apply custom logic at each step of the reason-act cycle.

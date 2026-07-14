@@ -1,5 +1,5 @@
 ---
-id: sb:148cd9
+id: em:148cd9
 type: source
 title: "Dung (1995), \"On the acceptability of arguments\" — abstract and core definitions"
 description: "Primary-source capture of Dung's founding abstract-argumentation paper: the verbatim abstract, plus the standard formulations of its core definitions (framework, conflict-free, admissible, grounded/preferred/stable/complete extensions). NOTE: the definitions are standard formulations, not transcribed verbatim from the paper's body."

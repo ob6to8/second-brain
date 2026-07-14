@@ -1,5 +1,5 @@
 ---
-id: sb:44f899
+id: em:44f899
 type: concept
 title: Jido
 description: An Elixir agent framework (2.x, 2026) that models agents as pure immutable data processed through a single cmd/2 reducer, with schema-validated Actions doubling as LLM tools, CloudEvents-based Signals, runtime-interpreted Directives, and GenServer-backed supervision; its jido_ai layer adds LLM reasoning strategies.

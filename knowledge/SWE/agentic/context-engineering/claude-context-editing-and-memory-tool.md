@@ -1,5 +1,5 @@
 ---
-id: sb:bf8a85
+id: em:bf8a85
 type: reference
 title: "Context editing and the memory tool — productizing compaction and note-taking (Anthropic)"
 description: Anthropic shipped a server-side Context Editing API (auto-clearing stale tool results, cache-friendly) and a file-based Memory Tool on the Claude Developer Platform the same day as its "effective context engineering" essay, turning two of that essay's recommended techniques into literal API primitives.

@@ -1,5 +1,5 @@
 ---
-id: sb:ad7525
+id: em:ad7525
 type: concept
 title: mixture-of-experts (MoE)
 description: A neural-network architecture that sparsely routes each input to a small subset of specialized "expert" sub-networks instead of activating the whole model, giving a large parameter count at a smaller per-token compute cost.

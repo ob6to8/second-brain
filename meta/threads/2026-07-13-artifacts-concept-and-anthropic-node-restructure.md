@@ -22,7 +22,7 @@ into a taxonomy change: rename `knowledge/SWE/agentic-coding/` → `agentic/`, a
 introduce an `anthropic/` product-surface hub under it (`claude/`, `claude-code/`
 moved in from the old top-level node, plus empty `claude-code-sdk/` and
 `claude-managed-agents/` stubs). The Artifacts summary was filed as a new concept
-`sb:a142be` under `claude/`. Path references were rewritten across living docs
+`em:a142be` under `claude/`. Path references were rewritten across living docs
 only; frozen namespaces (`meta/threads/`, `inbox/`, `deprecated/`) were left with
 OKF-tolerated broken links. Full verify suite passed; the change was committed and
 pushed to `claude/artifact-design-skill-owss5r`. Two editorial items were left for
@@ -59,7 +59,7 @@ What are artifacts themselves? Is this the new PowerPoint?
 
 ## Assistant
 
-<routes ref="sb:a142be">
+<routes ref="em:a142be">
 Artifacts are standalone, renderable outputs Claude can generate alongside a chat reply — a single HTML/Markdown/SVG/React file that gets rendered as a live webpage (or document, diagram, etc.) rather than just printed as text or code in the conversation. Each one gets its own private URL the user can view, iterate on, and optionally share.
 
 A few things that distinguish them:
@@ -77,7 +77,7 @@ Is it meant to be used as a live display while you're interacting with the agent
 
 ## Assistant
 
-<routes ref="sb:a142be">
+<routes ref="em:a142be">
 Yes, that's exactly the intended usage pattern.
 
 **Live, progressive display**: An artifact is meant to sit alongside the chat as a persistent side panel. As the conversation continues — you ask for a change, add data, request a different chart type — the same artifact gets updated in place (same file path → same URL, just redeployed) rather than a new one spawned each turn. So it behaves like a live document/dashboard that evolves turn-by-turn instead of a one-shot export.
@@ -97,7 +97,7 @@ Could it be a dag?
 
 ## Assistant
 
-<routes ref="sb:a142be">
+<routes ref="em:a142be">
 Yes — a DAG is a natural fit for an artifact. You'd render it as an interactive/visual graph rather than describing it in prose, using something like:
 
 - **Mermaid** (`graph TD` / `flowchart`) — simplest option, declarative, renders directed edges, good for dependency graphs, pipelines, task graphs
@@ -115,7 +115,7 @@ What would be the difference between running an artifact in this case and the ag
 
 ## Assistant
 
-<routes ref="sb:a142be">
+<routes ref="em:a142be">
 The core difference is scope, constraints, and lifecycle — they're solving different problems:
 
 **Artifact**
@@ -139,7 +139,7 @@ Hey, Couldn't you create all these things in a dedicated website? You could crea
 
 ## Assistant
 
-<routes ref="sb:a142be">
+<routes ref="em:a142be">
 Technically, yes — a local dev server with hot module reload (Vite, webpack-dev-server, even a dumb file-watcher + browser-sync) gets you the same "edit → see it update instantly" loop. That's a legitimate DIY equivalent for a developer at their own machine.
 
 The coupling that's different isn't the reload mechanism, it's who has to run the infrastructure and where it lives:
@@ -157,7 +157,7 @@ So you could generate an artifact visible to me. Would that artifact persist acr
 
 ## Assistant
 
-<routes ref="sb:a142be">
+<routes ref="em:a142be">
 Yes, once published, the artifact persists independently of this session — it's hosted on Claude's infrastructure with a stable URL, not stored in this container. Even after this session ends and the container is reclaimed, the artifact link keeps working.
 
 Two things worth distinguishing:
@@ -173,7 +173,7 @@ If I give a new session the Artifact link, how does it actually gain access to t
 
 ## Assistant
 
-<routes ref="sb:a142be">
+<routes ref="em:a142be">
 The new session doesn't have local access to the original file at all — the container that wrote it is long gone. It has to reconstruct the code from the published page itself:
 
 1. **Fetch the live content**: call `WebFetch` on the artifact URL — this pulls down the actual rendered HTML that's currently hosted, which is effectively the source (artifacts are plain HTML/CSS/JS, not compiled/obfuscated).
@@ -278,7 +278,7 @@ agentic/anthropic/
   index.md                     (hub)
   claude/
     index.md
-    artifacts.md               ← new concept  sb:a142be
+    artifacts.md               ← new concept  em:a142be
   claude-code/                 (moved: cloud-env doc + 5 sources, all ids intact)
   claude-code-sdk/index.md     (stub, per 1-a)
   claude-managed-agents/index.md  (stub, per 1-a)
@@ -303,7 +303,7 @@ Committed and pushed to `claude/artifact-design-skill-owss5r`.
 
 **Summary of the change:**
 - Renamed `knowledge/SWE/agentic-coding/` → `agentic/` and introduced the `anthropic/` hub (`claude/`, `claude-code/`, `claude-code-sdk/`, `claude-managed-agents/`).
-- New concept `artifacts.md` (`sb:a142be`) under `claude/`, distilling this conversation.
+- New concept `artifacts.md` (`em:a142be`) under `claude/`, distilling this conversation.
 - 62 files in the commit (renames + link rewrites in living docs), registry + route-tag logs regenerated, full verify suite green.
 
 No PR opened — that's still your call. When you want it shipped as a PR (with session capture + glossary), just say the word and I'll run `/create-pull-request`.

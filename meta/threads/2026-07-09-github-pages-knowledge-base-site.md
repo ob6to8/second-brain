@@ -27,7 +27,7 @@ offline in CI and any sandbox; it was filed under a new `meta/tutorials/` namesp
 and a **`tutorial` type** was ratified into the controlled vocabulary. Then the
 operator asked to stop linking "Open Knowledge Format" at the raw external URL and
 instead point at an **internal node**. That ratified a new top-level domain,
-**`knowledge-management/`**, holding an OKF `reference` node (`sb:24bd1e`) that now
+**`knowledge-management/`**, holding an OKF `reference` node (`em:24bd1e`) that now
 owns the canonical URL; every OKF mention (root `index.md`, `README.md`,
 `meta/preamble.md` → recompiled `CLAUDE.md`) was repointed to it. Shipped in **PR #12**,
 which — a snag caught mid-session — had to also **replay two commits PR #11 left
@@ -47,7 +47,7 @@ fast-forwarded past its own merged PR, quieted by moving local `HEAD` back to `m
 | Dependency-free GitHub Pages static-site generator for the OKF bundle | closed | `unrouted` (tooling; back-linked to [`lib/second_brain/site.ex`](/lib/second_brain/site.ex)) | - |
 | Tutorial: why the `mix brain.*` toolchain runs offline in CI and any sandbox | closed | [Why the brain's toolchain runs offline…](/meta/tutorials/why-the-toolchain-runs-offline.md) (path back-link; `meta/`, no `sb:` id) | - |
 | Ratify the `tutorial` type in the controlled vocabulary | closed | [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) (path back-link) | - |
-| OKF as an internal reference node; repoint every OKF link to it | closed | [Open Knowledge Format (OKF)](/knowledge-management/open-knowledge-format.md) (`sb:24bd1e`) | - |
+| OKF as an internal reference node; repoint every OKF link to it | closed | [Open Knowledge Format (OKF)](/knowledge-management/open-knowledge-format.md) (`em:24bd1e`) | - |
 | Pages deploy red-X → enable GitHub Pages, then deploy | closed | `unrouted` (operational; one-time repo setting) | - |
 | Stop-hook "Unverified" false alarm after merging `main` into a merged feature branch | closed | `unrouted` (operational; quieted by moving `HEAD` to `main`) | - |
 
@@ -348,7 +348,7 @@ Anything else you'd like — e.g. a custom domain, or tuning the site's look?
 
 ## User
 
-<routes ref="sb:24bd1e">
+<routes ref="em:24bd1e">
 The okf link goes to https://github.com/GoogleCloudPlatform/knowledge-catalog
 
 Better would be to link to an internal node representing okf that contains that link in it
@@ -376,7 +376,7 @@ First, since PR #11 is merged, I'll restart my branch from the latest `main` per
 
 ## Assistant
 
-<routes ref="sb:24bd1e">
+<routes ref="em:24bd1e">
 That screenshot is your answer to my earlier question (the tool errored on my end): you selected **"New top-level `knowledge-management/`"**. That ratifies creating it as a new top-level — thank you, that's the cleaner home.
 
 Before I build on it, let me verify exactly what's on `main` now, because the branch reset surfaced some file states that suggest the tutorial commits may not all be there.
@@ -390,7 +390,7 @@ Done. **PR #12: https://github.com/ob6to8/second-brain/pull/12**
 **Your answer came through via the screenshot** — you picked **"New top-level `knowledge-management/`"**, so I created it as a ratified new domain rather than wedging OKF under SWE.
 
 **The OKF link fix (your request):**
-- Created `knowledge-management/open-knowledge-format.md` — a `type: reference` node (`sb:24bd1e`) that now holds the canonical `https://github.com/GoogleCloudPlatform/knowledge-catalog` URL (in `resource` + citations) and summarizes what OKF is and how this brain extends it.
+- Created `knowledge-management/open-knowledge-format.md` — a `type: reference` node (`em:24bd1e`) that now holds the canonical `https://github.com/GoogleCloudPlatform/knowledge-catalog` URL (in `resource` + citations) and summarizes what OKF is and how this brain extends it.
 - Repointed **every** internal "Open Knowledge Format" mention — root `index.md`, `README.md`, and `meta/preamble.md` (→ recompiled `CLAUDE.md`) — to that node. The raw external URL now appears **only** inside the node, exactly the "process the link once, reference it everywhere" pattern the contract calls for.
 - Listed the new domain in the root index, regenerated the registry, logged it.
 
@@ -416,7 +416,7 @@ Merged
 So the OKF link works exactly as you wanted: everything internal points to the node, and the node holds the external reference.
 
 ## Net result of this round
-- New ratified top-level domain **`knowledge-management/`** with the OKF `reference` node (`sb:24bd1e`).
+- New ratified top-level domain **`knowledge-management/`** with the OKF `reference` node (`em:24bd1e`).
 - Every "Open Knowledge Format" mention (home, README, contract) repointed to that node.
 - Recovered the two tutorial commits that PR #11 had left unmerged, so `main` now also has the `meta/tutorials/` doc and the `tutorial` type.
 - Deploys are fully automatic now — no settings step needed.
@@ -529,7 +529,7 @@ Good question. Let me separate **knowledge** (already filed) from the **session 
 - The site generator (code + 45 tests) and the Pages/CI workflows
 - The tutorial *"Why the brain's toolchain runs offline in CI and any sandbox"* (`type: tutorial`)
 - The ratified `tutorial` type in the controlled vocabulary
-- The `knowledge-management/` domain + the **OKF reference node** (`sb:24bd1e`), with all OKF links repointed to it
+- The `knowledge-management/` domain + the **OKF reference node** (`em:24bd1e`), with all OKF links repointed to it
 - Corresponding entries in `log.md` and `meta/log.md`
 
 So all the substance is persisted as concept docs, code, and log history.

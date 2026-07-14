@@ -1,5 +1,5 @@
 ---
-id: sb:e7689f
+id: em:e7689f
 type: concept
 title: fast-forward merge
 description: A git merge where the target branch's tip is an ancestor of the incoming branch, so the pointer simply advances with no new merge commit — leaving the branches identical.

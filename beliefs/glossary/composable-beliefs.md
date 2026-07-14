@@ -1,5 +1,5 @@
 ---
-id: sb:04f8dd
+id: em:04f8dd
 type: concept
 title: Composable Beliefs (cb)
 description: A separate Elixir knowledge/belief-management system built on an OKF-style substrate whose patterns (compiled contract, opaque ids, a route-tag verifier, an evidence/dependency model) were ported and adapted into this brain.

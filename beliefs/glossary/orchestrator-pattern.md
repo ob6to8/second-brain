@@ -1,5 +1,5 @@
 ---
-id: sb:121072
+id: em:121072
 type: concept
 title: orchestrator pattern
 description: A multi-agent cost pattern ("plan big, execute small") where a high-intelligence orchestrator model decomposes a task and dispatches subtasks to multiple cheaper worker models in parallel, so most tokens bill at the lower worker rate.

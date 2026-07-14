@@ -1,5 +1,5 @@
 ---
-id: sb:ac0e23
+id: em:ac0e23
 type: concept
 title: harness (agent harness)
 description: The software scaffolding that wraps a language model to make it an agent — the control loop that runs the model turn by turn, the tools it can call, and the context and memory management around it.

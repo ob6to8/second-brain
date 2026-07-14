@@ -1,5 +1,5 @@
 ---
-id: sb:34fbe3
+id: em:34fbe3
 type: concept
 title: von Neumann architecture
 description: The classic stored-program computer organization — processing unit, control unit, memory, and I/O — which the four-component agent decomposition (model, loop, memory, tools) reproduces.

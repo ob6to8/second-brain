@@ -1,5 +1,5 @@
 ---
-id: sb:54ea6d
+id: em:54ea6d
 type: concept
 title: artifact
 description: A self-contained, hosted, client-side document (HTML/Markdown/SVG/React) Claude generates alongside a chat reply, rendered as a live page and shareable by URL; canonically defined in the filed concept.

@@ -1,5 +1,5 @@
 ---
-id: sb:464ee6
+id: em:464ee6
 type: concept
 title: defeasibility
 description: The property of a claim or inference that holds subject to exceptions — good until defeated by a recognized rebuttal condition, rather than valid absolutely; Toulmin's rebuttal slot builds it into argument structure.

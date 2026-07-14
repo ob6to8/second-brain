@@ -2,7 +2,7 @@
 type: plan
 title: "Rename the brain: second-brain → elixir-mind (including sb: → em: id migration)"
 description: Spec for renaming the repository and all associated naming from "second-brain" to "elixir-mind" — the GitHub repo, the Elixir app/module namespace, hooks, docs, prose, and (operator-directed rescope) the stable-id prefix sb: → em: as a bundle-wide namespace re-key that preserves every id's hex tail.
-status: in-progress
+status: done
 provenance: "Claude Code session, 2026-07-13 — operator asked to spec out the second-brain rename lift (initially targeting elixir-brain, later retargeted to elixir-mind); same session rescoped the plan to also migrate the id prefix sb: → em:, explicitly accepting the increased scope"
 attribution:
   when: 2026-07-13T00:00:00Z
@@ -63,7 +63,7 @@ string sites** in `lib/` + `test/`.
 | **Maintained docs (name-prose + code refs)** | `README.md`, root `index.md` (`# Second Brain`), `meta/preamble.md`, skill `SKILL.md`s, `meta/flows/*`, `meta/tutorials/*`, policy examples (e.g. route-tagging's `lib/second_brain/route_tags.ex` sample ref) | Update names and code paths |
 | **Live code-identifier refs across *all* doc surfaces** | `SecondBrain.` module refs, `lib/second_brain/…` & `test/second_brain/…` paths, and `:second_brain` — appearing in **37 doc files** beyond the maintained-docs list above: `beliefs/glossary/*` (7) + `beliefs/glossary.md` + `beliefs/future-beliefs.md`, `knowledge/**` concept bodies, `meta/analysis/*` (3), `meta/issues/*`, `meta/evals/*`, `meta/elaborations/*`, `meta/plans/*` | **Grep is the worklist, not a file list** — update every live code-identifier occurrence (see Decision 6). These are pointers into moving code, distinct from name-prose |
 | **Route-tag path refs in frozen threads** | `<routes ref="… lib/second_brain/….ex">` attributes inside `meta/threads/` docs; `mix brain.route_tags` **fails CI** if a path ref doesn't resolve to a file on disk | Update the `ref` attributes when `lib/` moves — see Decision 3 |
-| **Filed concept slug + body** | `knowledge/SWE/testing/elixir-second-brain-testing-methodology.md` (`sb:d58da3`): the slug, the in-body `SecondBrain.Frontmatter`/`SecondBrain.Policy` module refs, and the "Second Brain testing methodology" display text in its 3 inbound links | Rename file, update body module refs and inbound display text; id survives — see Decision 4 |
+| **Filed concept slug + body** | `knowledge/SWE/testing/elixir-second-brain-testing-methodology.md` (`em:d58da3`): the slug, the in-body `SecondBrain.Frontmatter`/`SecondBrain.Policy` module refs, and the "Second Brain testing methodology" display text in its 3 inbound links | Rename file, update body module refs and inbound display text; id survives — see Decision 4 |
 | **GitHub Pages** | Site served at `ob6to8.github.io/second-brain/`; the site build uses relative URLs throughout (only doc comments mention the subpath) | No code change; URL moves to `…/elixir-mind/` on repo rename, **old Pages URL will 404** (Pages does not redirect) |
 | **Environment / sessions** | Claude Code remote environment source and session repo scope pinned to `ob6to8/second-brain`; local clone dir `/home/user/second-brain` | Operator updates the environment source after the repo rename; git-level redirects cover existing clones/Routines in the interim |
 | **Frozen / archival prose** | `meta/threads/` bodies, `deprecated/` (read-only), `inbox/` dated digests, `meta/analysis/` **name-prose** | Name-prose **not renamed** (workstream A) — but analysis's *live code pointers* are (see Decision 6 and scope boundaries) |
@@ -72,7 +72,7 @@ string sites** in `lib/` + `test/`.
 
 | Surface | What's there | Migration action |
 |---------|--------------|------------------|
-| **Minted ids** | 200 `id: sb:xxxxxx` frontmatter fields across the bundle | Rewrite prefix, **preserve the 6-hex tail**: `sb:4c9e1f` → `em:4c9e1f` |
+| **Minted ids** | 200 `id: sb:xxxxxx` frontmatter fields across the bundle | Rewrite prefix, **preserve the 6-hex tail**: `em:4c9e1f` → `em:4c9e1f` |
 | **Evidence edges** | `verified_by:` inline lists of `sb:` ids | Same prefix rewrite — edges stay internally consistent because tails are preserved |
 | **Route tags** | `<routes ref="sb:…">` in thread docs (including frozen bodies); `SecondBrain.RouteTags.classify_ref/1` pattern-matches the `"sb:" <>` prefix at `lib/second_brain/route_tags.ex:222` | Rewrite tag refs; update the code clause to `"em:" <>` |
 | **Id-format code** | `registry.ex` `@id_format ~r/^sb:[0-9a-f]{6}$/` + minting `"sb:" <> …`; `verifier.ex` format check + error message; `dedup_probe.ex` `~r/sb:[0-9a-f]{6}/`; `mix brain.id` / `brain.evidence` docs; ~65 `"sb:"` string sites in `lib/` + `test/` (fixtures, assertions) | Flip to `em:` in the same PR — the verifiers make a mixed state unrepresentable |
@@ -91,7 +91,7 @@ display name. The operator weighed that and directed the migration; that
 ruling stands and this plan executes it. Two design choices make it safe:
 
 - **Prefix swap, never re-mint.** Every id keeps its 6-hex tail:
-  `sb:4c9e1f` → `em:4c9e1f`. The mapping is total, deterministic, collision-free
+  `em:4c9e1f` → `em:4c9e1f`. The mapping is total, deterministic, collision-free
   (tails are already unique), and mechanically reversible. Cross-references
   (`verified_by`, route tags, gold set, prose citations) all stay consistent
   under one regex: `\bsb:([0-9a-f]{6})\b` → `em:$1`.
@@ -114,13 +114,13 @@ anything may rely on.
 **Decision 2 — the token rewrite is global, including frozen thread bodies
 and dated records (recommended: yes, with `deprecated/` excluded).**
 `sb:` ids appear in *retained verbatim text* (e.g. the worked example quoting
-`sb:d479e3` in the 2026-07-08 thread) and in dated `inbox/` digests, not just
+`em:d479e3` in the 2026-07-08 thread) and in dated `inbox/` digests, not just
 in machinery. Leaving them would strand ~hundreds of permanently dangling
 identifiers that no longer resolve to anything. Because the mapping is 1:1,
 tail-preserving, and recorded in a single commit, rewriting the token inside
 frozen prose is a namespace re-key, not a falsification of the record — the
 freeze exists so the *content* of what was said survives, and `em:4c9e1f`
-denotes exactly what `sb:4c9e1f` denoted. Ratifying this plan ratifies this
+denotes exactly what `em:4c9e1f` denoted. Ratifying this plan ratifies this
 one-time freeze exception, scoped to the exact regex above and nothing else.
 The alternative (machinery-only rewrite, prose keeps `sb:`) preserves
 byte-level freeze purity at the cost of a permanently split id space; not

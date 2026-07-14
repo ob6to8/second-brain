@@ -1,5 +1,5 @@
 ---
-id: sb:ea15aa
+id: em:ea15aa
 type: reference
 title: "Chroma — open-source embedding/search database for AI retrieval"
 description: Chroma is an open-source, serverless database for vector, full-text, regex, and metadata search, used for RAG and context engineering, with tiered storage across memory, SSD, and object storage to keep large-scale retrieval affordable.

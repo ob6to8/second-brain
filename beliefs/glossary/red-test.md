@@ -1,5 +1,5 @@
 ---
-id: sb:ae9b26
+id: em:ae9b26
 type: concept
 title: red test
 description: A test that constructs a known-bad input and asserts the check flags it — proving the detector actually fires, where a green test only proves good input passes.

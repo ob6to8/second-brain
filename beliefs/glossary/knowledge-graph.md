@@ -1,5 +1,5 @@
 ---
-id: sb:7498cf
+id: em:7498cf
 type: concept
 title: knowledge graph
 description: A structured representation of entities as nodes and their relationships as typed edges, queryable by traversing edges rather than scanning text; a code knowledge graph applies this to a codebase's files, symbols, calls, and imports.

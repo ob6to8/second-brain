@@ -1,5 +1,5 @@
 ---
-id: sb:d9c5d9
+id: em:d9c5d9
 type: concept
 title: gold set
 description: A curated set of queries each paired with the item(s) that should be returned — the ground truth an evaluation scores a retrieval or classification system against.

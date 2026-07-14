@@ -105,7 +105,7 @@ commissioning this doc and the [dedup recall probe plan](/meta/plans/dedup-recal
 >
 > If you want to pursue it, the natural first step is the one already recommended:
 > ship the dedup recall probe, since it's the smallest eval, guards the known
-> unguarded gate, and its harness (gold pairs keyed on `sb:` ids + a scoring task)
+> unguarded gate, and its harness (gold pairs keyed on `em:` ids + a scoring task)
 > is the substrate every later eval reuses. Happy to draft that as a plan doc or
 > start building the probe — say which.
 

@@ -1,5 +1,5 @@
 ---
-id: sb:d58da3
+id: em:d58da3
 type: methodology
 title: "Testing methodology for the Elixir Mind tooling"
 description: An agent-facing synthesis of matklad's two testing essays (features-not-code; purity and extent), applied to building the test suite for this bundle's dependency-free Elixir tooling.
@@ -177,18 +177,18 @@ Synthesized from:
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:d58da3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:d58da3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-09-testing-methodology-types-and-cb-epistemic-overlay (2026-07-09)
 
 2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:d58da3`]**
+**[`em:d58da3`]**
 
 I read the two testing articles already in the brain, grounded them in this repo's actual Elixir tooling, and filed a synthesized methodology. I produced `SWE/testing/elixir-second-brain-testing-methodology.md` — an agent-facing methodology that maps each principle onto this app's real modules rather than restating theory: **Purity → ExUnit mechanics** (`Frontmatter`/`Policy` are pure → `async: true`; the IO-touching `Registry`/`Contract`/`Verifier` → `async: false` + `@moduletag :tmp_dir`); **Features-not-code** (assert on the verifier's error strings and rendered output, not private helpers; inject the `root` arg instead of mocking `File`); **The `check` chokepoint** (the existing `write_concept`/`write_policy` fixture builders, promoted to `test/support/` when shared); **Golden/snapshot tests** (the `write`→`check`→drift round-trip for the generated `CLAUDE.md` and `meta/registry.md`); and a **generative ladder** (properties for `mint`/frontmatter round-trip, exhaustive enumeration for the `type` vocabulary — flagging that StreamData would be a new dependency needing ratification). Plus a concrete 7-step checklist and treating `mix brain.*`/`mix format --check` as part of the suite.
 
 ---
 
-**[`sb:d58da3`]**
+**[`em:d58da3`]**
 
-You ratified `methodology`, so I minted it and wired everything through the four questions you raised. **1. Type — now `methodology`.** Added to the controlled vocabulary in `meta/policy/controlled-type-vocabulary.md`, recompiled `CLAUDE.md`, and retyped the doc `note` → `methodology`. **2. Linking — now reciprocal.** The methodology already linked to both articles; I added an "Applied in:" back-link to each reference (`sb:a5ea86`, `sb:73115b`), kept as untyped prose links. **3. Tags — aligned.** `test-strategy` → `test-design` and dropped `methodology` as a tag since it's now the type. Final: `[testing, software-engineering, test-design, elixir, exunit]`. **4. Verification — left at `verified: false`.** I didn't force it; the path stays open (`verified_by` the two references for fidelity, or `type: source` code captures for the mapping).
+You ratified `methodology`, so I minted it and wired everything through the four questions you raised. **1. Type — now `methodology`.** Added to the controlled vocabulary in `meta/policy/controlled-type-vocabulary.md`, recompiled `CLAUDE.md`, and retyped the doc `note` → `methodology`. **2. Linking — now reciprocal.** The methodology already linked to both articles; I added an "Applied in:" back-link to each reference (`em:a5ea86`, `em:73115b`), kept as untyped prose links. **3. Tags — aligned.** `test-strategy` → `test-design` and dropped `methodology` as a tag since it's now the type. Final: `[testing, software-engineering, test-design, elixir, exunit]`. **4. Verification — left at `verified: false`.** I didn't force it; the path stays open (`verified_by` the two references for fidelity, or `type: source` code captures for the mapping).

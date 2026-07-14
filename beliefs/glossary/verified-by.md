@@ -1,5 +1,5 @@
 ---
-id: sb:c6e78a
+id: em:c6e78a
 type: concept
 title: verified_by
 description: The frontmatter field holding a statement's evidence edges — an inline YAML list of stable ids that jointly support it, required non-empty for verified true.

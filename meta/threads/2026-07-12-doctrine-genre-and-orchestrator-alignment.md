@@ -100,7 +100,7 @@ The clarifying-question tool failed to reach you, so I'll lay out the recommenda
 
 ## The naming question — my recommendation: **`doctrine`**
 
-<routes ref="sb:6a9e78 meta/doctrine/engineer-as-orchestrator.md">
+<routes ref="em:6a9e78 meta/doctrine/engineer-as-orchestrator.md">
 You're right that this is neither analysis nor concept — it's an *intention statement*: a direction that shapes judgment without prescribing action. The brain already named exactly this layer and noted the vocabulary was missing it. From [`/beliefs/glossary/doctrine.md`](/beliefs/glossary/doctrine.md):
 </routes>
 

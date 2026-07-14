@@ -15,7 +15,7 @@ tags: [meta, governance, attribution, frontmatter, provenance, intake, ingestion
 timestamp: 2026-07-13
 ---
 **Attribution — the ingestion event, recorded on the doc.** Every bundle concept
-(everything with an `sb:` id) and every governance doc carries an `attribution`
+(everything with an `em:` id) and every governance doc carries an `attribution`
 frontmatter map recording how it entered the brain (see the
 [attribution plan](/meta/plans/resource-attribution-property.md) for the design
 record):
@@ -35,7 +35,7 @@ attribution:
 | `channel` | *How* it entered — the pathway | Controlled: `intake` · `auto-intake` · `glossary` · `agent-authored` · `backfill` (grows by operator ratification, like `type`) |
 | `agent` | *Who* acted — the operator, or the agent and the automation context it ran in. Names the **pathway, not the model** (the model is in the commit trailer) | Free text, one line |
 | `why` | Why it was deemed worth filing | Free text, one sentence (optional when `channel: backfill` — never invented) |
-| `from` | **Governance docs only.** The doc(s) this entry was extracted from — the thread it came out of, and/or the concept doc that resulted from that thread | Inline YAML list of refs, route-tag style: an `sb:` id (concept) or a bundle-absolute path (thread/governance doc); targets must exist |
+| `from` | **Governance docs only.** The doc(s) this entry was extracted from — the thread it came out of, and/or the concept doc that resulted from that thread | Inline YAML list of refs, route-tag style: an `em:` id (concept) or a bundle-absolute path (thread/governance doc); targets must exist |
 
 - **Immutable event, one carve-out.** The event sub-keys
   (`when`/`channel`/`agent`/`why`) are written once at filing and never

@@ -1,5 +1,5 @@
 ---
-id: sb:f5eafa
+id: em:f5eafa
 type: concept
 title: gate suite
 description: The full set of blocking verification checks a change must pass before landing — in this brain, compile/format, the tests, and the mix brain.* checks, run manually, by the pre-commit hook, and in CI.

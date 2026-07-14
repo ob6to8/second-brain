@@ -1,5 +1,5 @@
 ---
-id: sb:40133e
+id: em:40133e
 type: concept
 title: synonym expansion
 description: Broadening a search query with alternate phrasings — synonyms, jargon and plain-language variants, acronyms and their expansions — so a lookup finds matches worded differently, bridging vocabulary mismatch without embeddings.

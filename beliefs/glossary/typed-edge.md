@@ -1,5 +1,5 @@
 ---
-id: sb:927eb2
+id: em:927eb2
 type: concept
 title: typed edge
 description: A machine-traversable, id-based relationship declared in a document's structured metadata, reserved for relationships tooling must consume or enforce — as opposed to an untyped prose link.

@@ -1,7 +1,7 @@
 ---
 type: policy
 title: Route tagging
-description: Per-paragraph <routes ref="sb:…"> tags on the frozen thread body materialize an append-only, date-stamped excerpt log into each referenced concept; mix brain.route_tags re-derives the log from the tags and fails on divergence.
+description: Per-paragraph <routes ref="em:…"> tags on the frozen thread body materialize an append-only, date-stamped excerpt log into each referenced concept; mix brain.route_tags re-derives the log from the tags and fails on divergence.
 section: session-workflow
 order: 3
 status: active
@@ -19,7 +19,7 @@ is an inline `<routes ref="...">` region, applied over the **frozen** body as
 the last motion of `/capture`.
 
 ```
-<routes ref="sb:4c9e1f lib/elixir_mind/route_tags.ex">
+<routes ref="em:4c9e1f lib/elixir_mind/route_tags.ex">
 ... one paragraph, feeding a concept and back-linking a code path ...
 </routes>
 ```
@@ -27,7 +27,7 @@ the last motion of `/capture`.
 Settled properties:
 
 - **Keyed on canonical ids, never free-text topics.** A ref is a concept's
-  stable **`sb:` id** (the aggregating sink — it accretes the log) or a **path**
+  stable **`em:` id** (the aggregating sink — it accretes the log) or a **path**
   (a non-aggregating back-link to code or a file — no log). Ids, not phrases, so
   two threads about the same matter emit the same string and the cross-thread
   join is exact. This mirrors the identity rule that typed edges reference ids,

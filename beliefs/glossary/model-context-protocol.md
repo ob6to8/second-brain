@@ -1,5 +1,5 @@
 ---
-id: sb:c66f10
+id: em:c66f10
 type: concept
 title: Model Context Protocol (MCP)
 description: An open client/server protocol standardizing how applications expose tools, resources, and context to LLM agents, so an agent calls a uniform interface instead of each integration being hand-wired.

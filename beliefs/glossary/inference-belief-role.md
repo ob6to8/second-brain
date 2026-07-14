@@ -1,5 +1,5 @@
 ---
-id: sb:1c0310
+id: em:1c0310
 type: concept
 title: inference (belief role)
 description: A belief derived from other beliefs rather than asserted directly — licensed to exceed its premises; the counterpart to an attestation in a belief graph.

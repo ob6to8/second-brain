@@ -1,5 +1,5 @@
 ---
-id: sb:b53ee1
+id: em:b53ee1
 type: concept
 title: complementary priors
 description: A construction, introduced by Hinton, Osindero & Teh, that cancels the "explaining-away" correlations between hidden causes in a directed belief net, making a deep model's hidden layers conditionally independent and so tractable to learn one layer at a time.

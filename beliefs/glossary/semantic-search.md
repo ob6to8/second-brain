@@ -1,5 +1,5 @@
 ---
-id: sb:98acc0
+id: em:98acc0
 type: concept
 title: semantic search
 description: Retrieval based on meaning rather than surface tokens, typically via embedding similarity, which can bridge synonym/jargon mismatches that lexical or typo-tolerant search cannot.

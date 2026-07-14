@@ -116,7 +116,7 @@ the `type` vocabulary):
 
 ### Scope
 
-**Bundle concepts** — everything that carries an `sb:` id — going forward from
+**Bundle concepts** — everything that carries an `em:` id — going forward from
 ratification. The operator's ask named "resources absorbed into the knowledge
 collection", and captures (`reference`/`source`) are indeed where attribution
 earns the most — but a uniform all-bundle-concepts rule is simpler to state,
@@ -137,7 +137,7 @@ plan generalizes that motion instead of leaving it genre-local. Governance docs
 
 | Sub-key | Holds | Form |
 |---------|-------|------|
-| `from` | The doc(s) this entry was extracted from — the thread it came out of, and/or the concept doc that resulted from that thread | YAML list of refs, route-tag style: an `sb:` id (concept) or a bundle-absolute path (thread or governance doc, which carry no ids) |
+| `from` | The doc(s) this entry was extracted from — the thread it came out of, and/or the concept doc that resulted from that thread | YAML list of refs, route-tag style: an `em:` id (concept) or a bundle-absolute path (thread or governance doc, which carry no ids) |
 
 - **Timing.** A governance doc authored mid-session can't name its thread — the
   thread doc doesn't exist until `/capture` runs at session close. So
@@ -166,7 +166,7 @@ New rules, in the verifier's existing named-error style:
   are non-empty strings — except `why`, which is optional when
   `channel: backfill` (the reason is often unrecoverable from history; invent
   nothing).
-- **`from` resolution:** every `from` ref resolves — an `sb:` id to an existing
+- **`from` resolution:** every `from` ref resolves — an `em:` id to an existing
   concept, a path to an existing file — reusing the route-tag ref-resolution
   machinery (`ElixirMind.RouteTags` already validates exactly this ref shape).
   Broken `from` refs are errors, like broken `verified_by` edges.

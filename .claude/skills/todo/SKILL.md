@@ -12,7 +12,7 @@ is a plain actionable task — a single thing to be done, tracked until finished
 work warrants them. Follow the [operating contract](/CLAUDE.md).
 
 Todos live in the **governance namespace**, so — like `issues`, `plans`, and
-`threads` — they carry **no `sb:` id** and are outside the identity registry.
+`threads` — they carry **no `em:` id** and are outside the identity registry.
 
 ## Dispatch
 
@@ -53,7 +53,7 @@ if still ambiguous, ask.
 4. **Maintain reserved files.**
    - Add a bulleted link under **Open** in [`meta/todos/index.md`](/meta/todos/index.md)
      with the one-line description and `status: open`.
-5. **Verify & report.** Run `mix brain.verify` (a todo carries no `sb:` id, so no
+5. **Verify & report.** Run `mix brain.verify` (a todo carries no `em:` id, so no
    `mix brain.id`/`registry` step). Report the path written.
 
 ## List
@@ -76,5 +76,5 @@ of the index. (A dedicated subcommand can be added later if this becomes frequen
 - A todo is a *task*, not a problem or a design — don't overload it; use `issue` or
   `plan` when those fit better.
 - Keep it OKF-conformant: parseable frontmatter, non-empty `type: todo`.
-- Governance namespace — never mint an `sb:` id for a todo.
+- Governance namespace — never mint an `em:` id for a todo.
 - Never touch `deprecated/`.

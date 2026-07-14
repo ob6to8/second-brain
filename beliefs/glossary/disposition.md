@@ -1,5 +1,5 @@
 ---
-id: sb:537412
+id: em:537412
 type: concept
 title: disposition
 description: The single verdict a review finding must receive before a review round can converge — agree (state what will change), refute (with evidence, not assertion), or defer (with a named destination where it is filed).

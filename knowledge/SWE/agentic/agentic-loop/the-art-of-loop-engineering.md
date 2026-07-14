@@ -1,5 +1,5 @@
 ---
-id: sb:1aefe2
+id: em:1aefe2
 type: reference
 title: "The art of loop engineering / loopcraft (LangChain)"
 description: Loop engineering means stacking multiple nested feedback loops — agent, verification, event-driven, and hill-climbing — so each outer loop makes the inner ones progressively more effective.

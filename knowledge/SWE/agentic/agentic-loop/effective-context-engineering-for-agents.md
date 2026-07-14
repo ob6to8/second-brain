@@ -1,5 +1,5 @@
 ---
-id: sb:c0961a
+id: em:c0961a
 type: reference
 title: "Effective context engineering for AI agents (Anthropic)"
 description: Anthropic frames an agent as an LLM autonomously using tools in a loop, where each turn accumulates context that must be continuously curated to preserve a finite attention budget.

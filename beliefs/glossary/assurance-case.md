@@ -1,5 +1,5 @@
 ---
-id: sb:6cf17b
+id: em:6cf17b
 type: concept
 title: assurance case
 description: A structured argument, supported by evidence, that a system satisfies a property (safety, security) in a given context — the regulator-facing deliverable of safety-critical industries, commonly diagrammed in GSN.

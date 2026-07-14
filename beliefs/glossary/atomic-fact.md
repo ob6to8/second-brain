@@ -1,5 +1,5 @@
 ---
-id: sb:fd5a1e
+id: em:fd5a1e
 type: concept
 title: atomic fact
 description: The decomposition unit of factuality evaluation — a short statement carrying a single independently checkable piece of information, extracted from a longer generation so each can be verified against a knowledge source on its own.

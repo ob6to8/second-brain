@@ -1,5 +1,5 @@
 ---
-id: sb:06d95d
+id: em:06d95d
 type: reference
 title: "Building effective agents — agents vs. workflows (Anthropic)"
 description: Anthropic frames an agent as an LLM that dynamically directs its own tool use in a loop, iterating on environmental feedback until the task is done, as opposed to a fixed-path workflow.

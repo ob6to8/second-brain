@@ -1,5 +1,5 @@
 ---
-id: sb:d131c1
+id: em:d131c1
 type: concept
 title: belief network
 description: A probabilistic graphical model — a directed acyclic graph of stochastic variables in which each variable's distribution is conditioned on its parents; also called a Bayesian network.
