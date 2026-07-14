@@ -16,7 +16,7 @@ attribution:
 A fresh agent session starts blind: it has the contract and whatever the
 operator types, but no memory of the issue left open on Tuesday or the plan
 ratified but never started. The brain's answer is **`mix brain.session_init`**
-([`SecondBrain.SessionInit`](/lib/second_brain/session_init.ex)) — a
+([`ElixirMind.SessionInit`](/lib/elixir_mind/session_init.ex)) — a
 point-in-time scan of open work, rendered as markdown. It is produced **on
 demand** by the [`/priorities`](/.claude/skills/priorities/SKILL.md) skill,
 which runs the task and relays its output with the agent's own appraisal.
@@ -52,7 +52,7 @@ malformed ledger row is skipped, never fatal — a broken thread doc must not be
 able to take down every future session's startup.
 
 A fifth section appears only when non-empty: the **docs-freshness warnings**
-from `SecondBrain.Links` (unresolved internal links, index-coverage gaps).
+from `ElixirMind.Links` (unresolved internal links, index-coverage gaps).
 These warnings also print in `mix brain.verify` output and CI logs, but an
 operator working purely in the Claude app never reads either surface — the
 digest is what actually reaches them, relayed by the session agent. A clean

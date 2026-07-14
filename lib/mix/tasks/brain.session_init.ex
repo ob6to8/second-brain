@@ -19,6 +19,6 @@ defmodule Mix.Tasks.Brain.SessionInit do
 
   @impl Mix.Task
   def run(_args) do
-    Mix.shell().info(SecondBrain.SessionInit.report())
+    Mix.shell().info(ElixirMind.SessionInit.report())
   end
 end

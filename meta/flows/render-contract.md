@@ -30,12 +30,12 @@ it work. It does **not** restate the rules or the procedure; those have homes.
 >   as a ratifiable change is in
 >   [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md).
 > - **Procedure** → the [`/render-contract` skill](/.claude/skills/render-contract/SKILL.md).
-> - **Mechanism + proof** → [`SecondBrain.Contract`](/lib/second_brain/contract.ex)
->   / [`SecondBrain.Policy`](/lib/second_brain/policy.ex) and the
+> - **Mechanism + proof** → [`ElixirMind.Contract`](/lib/elixir_mind/contract.ex)
+>   / [`ElixirMind.Policy`](/lib/elixir_mind/policy.ex) and the
 >   `mix brain.contract` task, unit-tested by
->   [`test/second_brain/contract_test.exs`](/test/second_brain/contract_test.exs)
+>   [`test/elixir_mind/contract_test.exs`](/test/elixir_mind/contract_test.exs)
 >   and pinned by the scenario
->   [`test/second_brain/contract_scenario_test.exs`](/test/second_brain/contract_scenario_test.exs).
+>   [`test/elixir_mind/contract_scenario_test.exs`](/test/elixir_mind/contract_scenario_test.exs).
 
 ---
 
@@ -59,7 +59,7 @@ discovery.
         │                       status: superseded → excluded)
         └──────────┬───────────────────┘
                    ▼
-        mix brain.contract        (SecondBrain.Contract / SecondBrain.Policy)
+        mix brain.contract        (ElixirMind.Contract / ElixirMind.Policy)
         validate sections against the ordered @sections list (in code)
         group by section · sort by order · trace-link every rule to its source
                    ▼
@@ -86,7 +86,7 @@ Every file a single `/render-contract` run touches, in order. **Checked by** is
 |---|-------|--------|---------------|------------|
 | 1 | operator | Ratify the rule change when it changes the brain's *shape* — a new kind of rule, a new `type`, a new top-level dir (contract §2, §4); plain edits to existing rules need no gate | — | editorial |
 | 2 | agent | Edit or add the policy source: `type: policy` frontmatter with `title`, `section`, integer `order` (supersede by setting `status: superseded`, never by deleting) | `meta/policy/<id>.md` | tool (the compile validates the fields) |
-| 2a | agent | Only if the rule opens a **new contract section**: add `{key, heading}` to `@sections` in the compiler, at the position it should render | `lib/second_brain/contract.ex` | scenario |
+| 2a | agent | Only if the rule opens a **new contract section**: add `{key, heading}` to `@sections` in the compiler, at the position it should render | `lib/elixir_mind/contract.ex` | scenario |
 | 3 | tool | `mix brain.contract` — recompile the artifact | `CLAUDE.md` | **scenario** |
 | 4 | tool | `mix brain.contract --check` + `mix test` — the round-trip and the compiler tests | — | **scenario** + tool |
 | 5 | agent | Maintain reserved files: the [policy index](/meta/policy/index.md) entry (hand-kept logs are retired — git history is the provenance layer) | `meta/policy/index.md` | editorial |
@@ -103,7 +103,7 @@ Condensed; the mechanics live in the compiler and the glossary entry.
   becomes the trace link under the rendered rule. A policy naming an unregistered
   section fails the compile outright.
 - **Sections are code, not frontmatter.** The ordered section list is `@sections`
-  in [`contract.ex`](/lib/second_brain/contract.ex) — adding a section (as
+  in [`contract.ex`](/lib/elixir_mind/contract.ex) — adding a section (as
   `git-workflow` was, 2026-07-11) is a compiler change shipped alongside the first
   policy that uses it.
 - **Supersession, not deletion.** A retired rule gets `status: superseded` and
@@ -132,7 +132,7 @@ rules, review the diff.**
 
 Policies are **governance docs, not bundle concepts**: they live under
 `meta/policy/`, carry no `sb:` id, and sit outside the identity registry. The
-compiler loads each into a `SecondBrain.Policy` struct (`id` = filename slug,
+compiler loads each into a `ElixirMind.Policy` struct (`id` = filename slug,
 `title`, `section`, `order`, `body`, `status`), rejects non-`policy` types and
 missing fields, excludes `superseded`, and sorts by `{section, order, id}`. The
 output artifact `CLAUDE.md` is likewise not a concept — it has no frontmatter at
@@ -169,7 +169,7 @@ is a full re-render, which is what makes the byte-diff a complete oracle.
 ## 9. Verify — the scenario, the gates, and the editorial spot-checks
 
 **The scenario test pins the spine.**
-[`test/second_brain/contract_scenario_test.exs`](/test/second_brain/contract_scenario_test.exs)
+[`test/elixir_mind/contract_scenario_test.exs`](/test/elixir_mind/contract_scenario_test.exs)
 drives a canonical run over an in-code fixture (a preamble plus rules in two
 sections, one of them the last-rendered `git-workflow`): compile → `check/1`
 round-trips, with the render byte-checked for the banner, the numbered section
@@ -179,7 +179,7 @@ flow's handoffs: a **source edit without a recompile** reports `{:stale, _}`
 fails the gate; a policy naming an **unregistered section** raises at compile
 (sections are code). A fourth case pins supersession: flipping a policy to
 `status: superseded` drops it from the next compile while the doc stays filed.
-[`contract_test.exs`](/test/second_brain/contract_test.exs) unit-tests the same
+[`contract_test.exs`](/test/elixir_mind/contract_test.exs) unit-tests the same
 compiler (grouping, ordering, field validation); the scenario frames it as the
 flow.
 

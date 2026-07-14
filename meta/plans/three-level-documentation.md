@@ -66,7 +66,7 @@ descend a level has no marked path down.
    Terse, dense, precise. This level is the source; nothing about it changes.
 3. **Grounding** — **one level of abstraction below whatever the source is.**
    This tier is *relative*, not fixed at "code": for a machine-enforced policy
-   it is the enforcing code (a path, e.g. `lib/second_brain/verifier.ex`); for
+   it is the enforcing code (a path, e.g. `lib/elixir_mind/verifier.ex`); for
    a doctrine it is the policies that implement the doctrine (`sb:` id edges);
    for a tooling doc it is the modules and tasks. It answers "what concretely
    realizes this, one step down?"
@@ -104,7 +104,7 @@ Two constraints discovered by inspecting the tooling before building; both
 reshape the artifact and are binding on the executing session:
 
 1. **Policy bodies are inlined into `CLAUDE.md`.** The contract compiler
-   (`SecondBrain.Contract`) renders each policy's body verbatim under its
+   (`ElixirMind.Contract`) renders each policy's body verbatim under its
    contract section, so a `## Plain` heading inside a policy would inject a
    sibling of the contract's own section headings and break its structure.
    The derived tiers therefore use **blockquote blocks**, which inline safely
@@ -137,7 +137,7 @@ reshape the artifact and are binding on the executing session:
 - **Pilot documents** (execution scope):
   - [verification-grounding](/meta/policy/verification-grounding.md) — the
     full three-tier case: plain block, existing body,
-    `implemented_by: [lib/second_brain/verifier.ex, lib/mix/tasks/brain.verify.ex]`
+    `implemented_by: [lib/elixir_mind/verifier.ex, lib/mix/tasks/brain.verify.ex]`
     with a grounding block on what the verifier rules actually check.
   - [engineer-as-orchestrator](/meta/doctrine/engineer-as-orchestrator.md) —
     the doctrine case: plain block, existing body, `implemented_by` path refs

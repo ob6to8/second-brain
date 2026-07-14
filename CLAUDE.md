@@ -5,11 +5,11 @@
   Verify (CI):     mix brain.contract --check
 -->
 
-# Operating Contract — Second Brain (OKF)
+# Operating Contract — Elixir Mind (OKF)
 
 This repository is a personal **second brain** stored as an
 [Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)
-(**OKF v0.1**) bundle. Every agent that operates here — including fresh, sandboxed
+(**OKF v0.1**) bundle, named **elixir-mind**. Every agent that operates here — including fresh, sandboxed
 agents spun up from the Claude Code app — MUST read and follow this contract. It is
 the backbone that keeps the brain consistent as it grows.
 
@@ -200,7 +200,7 @@ in chat; the live URL is a click away.
 - **The site.** The bundle is published to GitHub Pages at
   **`https://ob6to8.github.io/second-brain/`** (`mix brain.site` → `pages.yml`, one page per concept and
   per `index.md`). That base URL lives in config
-  (`config/config.exs` → `SecondBrain.SiteConfig.base_url/0`); it is the single
+  (`config/config.exs` → `ElixirMind.SiteConfig.base_url/0`); it is the single
   source of truth, and this contract's copy of it is compiled in from that config —
   a deploy move (e.g. a custom domain) is one config edit, not a doc rewrite.
 - **The mapping.** Take the resource's bundle path and swap the base and extension:
@@ -594,7 +594,7 @@ is an inline `<routes ref="...">` region, applied over the **frozen** body as
 the last motion of `/capture`.
 
 ```
-<routes ref="sb:4c9e1f lib/second_brain/route_tags.ex">
+<routes ref="sb:4c9e1f lib/elixir_mind/route_tags.ex">
 ... one paragraph, feeding a concept and back-linking a code path ...
 </routes>
 ```
@@ -619,7 +619,7 @@ regions whole (ATX headers demoted to bold). Each block quotes a *frozen* thread
 so it never goes stale; the section is **generated, not hand-kept** — `mix
 brain.route_tags --materialize` writes it from the current tags.
 
-**The verifier owns it.** `mix brain.route_tags` (see `SecondBrain.RouteTags`)
+**The verifier owns it.** `mix brain.route_tags` (see `ElixirMind.RouteTags`)
 runs beside `mix brain.verify` in CI and the pre-commit hook. It re-derives each
 sink's log from the current tags and **fails on divergence**, converting the
 log's freshness from procedural to structural, and checks tag wellformedness,

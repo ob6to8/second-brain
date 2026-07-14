@@ -70,7 +70,7 @@ is enough to know what turns them red:
   edge pointing at an id that doesn't exist, a capture (a concept with a
   `resource`) marked `verified: true`, or a `verified: true` statement with no
   `verified_by`. On a green bundle it additionally prints **advisory
-  docs-freshness warnings** (`SecondBrain.Links`): internal links that don't
+  docs-freshness warnings** (`ElixirMind.Links`): internal links that don't
   resolve and index-coverage gaps. These never turn the gate red — broken links
   are tolerated per OKF conformance and index coverage is ultimately
   editorial — but a warning in the output is a prompt to fix the drift in the

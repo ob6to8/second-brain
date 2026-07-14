@@ -30,9 +30,9 @@ homes.
 >   [route-tagging](/meta/policy/route-tagging.md) (compiled into
 >   [`/CLAUDE.md`](/CLAUDE.md) §8).
 > - **Procedure** → the [`/capture` skill](/.claude/skills/capture/SKILL.md).
-> - **Mechanism + proof** → [`SecondBrain.RouteTags`](/lib/second_brain/route_tags.ex)
+> - **Mechanism + proof** → [`ElixirMind.RouteTags`](/lib/elixir_mind/route_tags.ex)
 >   / [`mix brain.route_tags`](/lib/mix/tasks/brain.route_tags.ex), pinned by the
->   scenario [`test/second_brain/capture_scenario_test.exs`](/test/second_brain/capture_scenario_test.exs).
+>   scenario [`test/elixir_mind/capture_scenario_test.exs`](/test/elixir_mind/capture_scenario_test.exs).
 
 ---
 
@@ -177,7 +177,7 @@ tagging, minting, materializing) as operator to-dos. They are not — the
 | Route tag | `<routes ref="…">` region in the frozen body | its ref set | the located back-edge |
 
 **`classify_ref/1` recognises exactly two kinds** (see
-[`route_tags.ex`](/lib/second_brain/route_tags.ex)): `sb:…` → **`{:doc, id}`**, an
+[`route_tags.ex`](/lib/elixir_mind/route_tags.ex)): `sb:…` → **`{:doc, id}`**, an
 aggregating concept sink that accretes a log block; anything else →
 **`{:path, ref}`**, a back-link that must resolve to a real file but accretes
 **no** log. This is the one substantive adaptation from the source repo (§8).
@@ -242,7 +242,7 @@ on-demand **skill**; `mix cb.verify.route_tags` became **`mix brain.route_tags`*
 ## 9. Verify — the scenario, the gates, and the editorial spot-checks
 
 **The scenario test pins the spine.**
-[`test/second_brain/capture_scenario_test.exs`](/test/second_brain/capture_scenario_test.exs)
+[`test/elixir_mind/capture_scenario_test.exs`](/test/elixir_mind/capture_scenario_test.exs)
 drives steps 5→6 on an in-code fixture bundle: it tags two threads (one with a
 multi-ref, ATX-header-bearing region) feeding one concept sink, runs
 `RouteTags.materialize/1`, and asserts (a) only the fed sink is rewritten, (b) the

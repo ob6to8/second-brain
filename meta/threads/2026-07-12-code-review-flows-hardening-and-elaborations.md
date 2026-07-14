@@ -50,7 +50,7 @@ Review complete and pushed to `claude/code-review-docs-audit-j9ckd6` (commit `b8
 
 **Verdict:** the system is in unusually good health. Every "generated, never hand-kept" artifact matched its re-derivation, the tutorials' concrete claims (exclusion lists, check counts, workflow steps) match the code exactly, glossary counts are consistent (68 = 68 = 68), and plan/issue statuses reflect reality. The staleness sweep covered README, all 5 tutorials, both existing flow docs, all 7 skills, all 21 policies, and the meta indexes — most surfaces came back clean.
 
-<routes ref="lib/second_brain/markdown.ex lib/mix/tasks/brain.evidence.ex">
+<routes ref="lib/elixir_mind/markdown.ex lib/mix/tasks/brain.evidence.ex">
 
 Confirmed findings, fixed in the commit: (1) a **renderer bug** — `Markdown.inline/2` extracted links before code spans, so link syntax written inside inline code rendered as a live anchor inside `<code>` on ~10 live pages (glossary hub, compiled contract, two policies); extraction order swapped, regression test added. (2) **`mix brain.evidence` contradicted policy** — it printed "Grounded directly by resource: …", the exact claim verification-grounding forbids; it now reports a capture as trusted evidence, not a grounded statement. (3) **Stale docs** — the `render-contract` skill listed 6 of 8 valid contract sections; the offline tutorial said the SessionStart hook runs `mix brain.contract` (it runs `mix compile`); the flows index still said `specs` for the renamed `plans` genre. Filed as an open issue (design decision, not fixed inline): `route_tags --materialize` never visits a sink whose last feeding thread stopped tagging it — the checks correctly fail on the orphan block, but no tool path clears it.
 
@@ -132,7 +132,7 @@ Proceed
 
 ## Assistant
 
-<routes ref="lib/second_brain/route_tags.ex lib/second_brain/verifier.ex">
+<routes ref="lib/elixir_mind/route_tags.ex lib/elixir_mind/verifier.ex">
 
 The hardening plan is fully executed — four commits pushed (`b1dc1fc`, `b953a5c`, `4f1901c`, `90f70ba`), 87 tests and every gate green, plan flipped to `done`. **P1 — two-directional materialize** (was the top open issue): `materialize/1` now also visits every sink carrying a log section that no longer appears among the feeding pairs and removes the section — unconditionally, no flag, per the ratified design: the tags are the single source of truth and the PR diff is the review point. Two new scenario tests pin it. The issue is `resolved` with the settled design question recorded. **P2 — verifier rule 6:** a `verified` field (either value) on any type outside `claim`/`note`/`concept` is now a verifier error — the statement-type restriction went from editorial to structural. The pre-flight scan found exactly one live violation: the testing-methodology doc (`sb:d58da3`) carried `verified: false` from a pre-enforcement session; the field was removed (a methodology grounds through the claims it cites). **P3 — hygiene batch:** ledger parsing scoped to the `## Routing` section (with a regression test), the two section terminators now agree (h1 or h2), `brain.id` tolerates CRLF files, the route-tags closing line counts any warnings printed above it, and the `pages.yml` gate comment says "bundle-integrity checks" precisely.
 

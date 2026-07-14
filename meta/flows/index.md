@@ -7,7 +7,7 @@ together the three artifacts that make the flow work:
 
 - the **skill** — the agent's terse imperative procedure;
 - the **scenario** — a CI-checked ExUnit test over the flow's *deterministic
-  spine* (`test/second_brain/<flow>_scenario_test.exs`);
+  spine* (`test/elixir_mind/<flow>_scenario_test.exs`);
 - **this doc** — the *why*, the actor boundaries, the touch-sequence, and the
   did-it-work checklist.
 

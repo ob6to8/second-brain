@@ -16,7 +16,7 @@ attribution:
 A holding pen for small, true observations about how the brain works that are
 worth remembering but not yet formalized into a tutorial, policy, or concept.
 
-- Policies derive their `id` from filename (`SecondBrain.Policy.load!/1` sets
+- Policies derive their `id` from filename (`ElixirMind.Policy.load!/1` sets
   `id = Path.basename(path, ".md")`), not from a frontmatter field.
 - **LLM judgments stay local to edges; structure stays global and mechanical.**
   The design principle for any semiformal epistemic layer: the LLM answers

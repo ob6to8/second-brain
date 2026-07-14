@@ -35,7 +35,7 @@ corpus grows and becomes the quantified trigger for tier-2 embedding dedup.
 
 ## How the probe reads this doc
 
-`SecondBrain.DedupProbe` parses the **`## Gold set`** table below. Each row:
+`ElixirMind.DedupProbe` parses the **`## Gold set`** table below. Each row:
 
 | Column | Holds |
 |--------|-------|

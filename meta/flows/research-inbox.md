@@ -41,7 +41,7 @@ as candidates, awaiting the operator's ratification.
 >   deterministic spine (synonym-expanded dedup → id mint → registry → verify) and
 >   scenario test now backstop every auto-filed concept. The namespace boundary
 >   still holds for the digest itself — `inbox` sits in `Registry`'s
->   `@excluded_dirs` ([registry.ex](/lib/second_brain/registry.ex)), so the digest
+>   `@excluded_dirs` ([registry.ex](/lib/elixir_mind/registry.ex)), so the digest
 >   can never acquire an id — but the featured items deliberately cross that
 >   boundary via intake.
 

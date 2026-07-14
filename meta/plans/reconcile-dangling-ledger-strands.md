@@ -23,7 +23,7 @@ one row per topic with a `State` (`open`/`paused`/`closed`) and a `Dangling`
 question. Rows that are `open`/`paused`, or `closed` with a leftover `Dangling`
 cell, are **deferred work that lives only inside a frozen thread body**.
 
-`SecondBrain.SessionInit` (surfaced by [`/priorities`](/.claude/skills/priorities/SKILL.md))
+`ElixirMind.SessionInit` (surfaced by [`/priorities`](/.claude/skills/priorities/SKILL.md))
 already *scans* for these — `dangling_strands/1` collects pending rows across
 `meta/threads/*.md` and folds them into the priority ranking. But scanning is
 not reconciliation. There is no step that, for each strand, decides *this
@@ -68,7 +68,7 @@ is deliberately agnostic to which answer wins.
 
 ## The shape of the change
 
-1. **`mix brain.strands`** (`SecondBrain.Strands`, factoring the existing
+1. **`mix brain.strands`** (`ElixirMind.Strands`, factoring the existing
    `SessionInit.dangling_strands/1`): list every pending strand across
    `meta/threads/*.md` — thread, topic, state, routed-to, dangling — and, for
    each, its **reconciliation status**: already promoted (a todo/plan/issue
@@ -107,7 +107,7 @@ is deliberately agnostic to which answer wins.
 ## Build order (after the freezing question is ratified)
 
 1. Ratify the freezing answer and, if needed, the strand-anchor convention.
-2. Factor `dangling_strands/1` into `SecondBrain.Strands`; add `mix brain.strands`
+2. Factor `dangling_strands/1` into `ElixirMind.Strands`; add `mix brain.strands`
    with the reconciliation-status column.
 3. Wire the resolution representation into `SessionInit` so reconciled strands
    drop out of `/priorities`.

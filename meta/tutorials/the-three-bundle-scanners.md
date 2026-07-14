@@ -16,7 +16,7 @@ Three of the `mix brain.*` tasks work by **walking the repository and reading
 files**: the registry (`mix brain.registry`), the verifier (`mix brain.verify`),
 and the route-tag checker (`mix brain.route_tags`). It is tempting to think of
 them as three independent crawlers. They are not. There is **one** scanner —
-[`SecondBrain.Registry.scan/1`](/lib/second_brain/registry.ex) — and the other
+[`ElixirMind.Registry.scan/1`](/lib/elixir_mind/registry.ex) — and the other
 two are *consumers* of it. Understanding that hierarchy explains what each tool
 sees, what it deliberately ignores, and why fixtures placed under `test/` are
 invisible to all three.
@@ -71,7 +71,7 @@ what's on disk and reports staleness. But the crawl underneath is `scan/1`.
 
 ## Scanner 2: the Verifier — same corpus, plus rules
 
-[`SecondBrain.Verifier.run/1`](/lib/second_brain/verifier.ex) does **not** walk
+[`ElixirMind.Verifier.run/1`](/lib/elixir_mind/verifier.ex) does **not** walk
 the tree itself. Its first line delegates:
 
 ```elixir
@@ -97,7 +97,7 @@ thread, or a test fixture: none of them were ever in the corpus.
 
 ## Scanner 3: RouteTags — a second surface, bridged by id
 
-[`SecondBrain.RouteTags.run_checks/1`](/lib/second_brain/route_tags.ex) is the
+[`ElixirMind.RouteTags.run_checks/1`](/lib/elixir_mind/route_tags.ex) is the
 one that adds something genuinely new, because the route-tagging convention spans
 **two namespaces the registry keeps apart**:
 

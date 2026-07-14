@@ -79,7 +79,7 @@ Let's also create skills if they don't already exist for various persistence typ
 
 ## Assistant
 
-<routes ref="sb:6f2442 lib/second_brain/session_init.ex">
+<routes ref="sb:6f2442 lib/elixir_mind/session_init.ex">
 Done. Pushed to `claude/priorities-skill-persistence-vmp9tn`.
 
 **`/priorities` skill** — the on-demand successor to the session-start digest. It runs the existing `mix brain.session_init` (open issues, todos, active plans, dangling ledger strands + heuristic top-3) and has the agent relay it with its own judged appraisal. The ranking engine, class weights, and `priority:` escape hatch are unchanged — only *how it reaches a session* moved.

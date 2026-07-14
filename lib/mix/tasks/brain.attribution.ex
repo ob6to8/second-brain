@@ -2,7 +2,7 @@ defmodule Mix.Tasks.Brain.Attribution do
   @shortdoc "Query the attribution layer; --backfill reconstructs missing events from git"
 
   @moduledoc """
-  The attribution layer's command surface (see `SecondBrain.Attribution` and
+  The attribution layer's command surface (see `ElixirMind.Attribution` and
   `meta/policy/resource-attribution.md`).
 
       mix brain.attribution [--channel CHANNEL] [--since YYYY-MM-DD]
@@ -14,7 +14,7 @@ defmodule Mix.Tasks.Brain.Attribution do
       mix brain.attribution --backfill
 
   One-shot reconstruction of `attribution` for docs that predate the policy
-  (see `SecondBrain.Attribution.Backfill` for the derivation rules). Files
+  (see `ElixirMind.Attribution.Backfill` for the derivation rules). Files
   already carrying the field are skipped; review the diff before committing.
   """
 
@@ -34,7 +34,7 @@ defmodule Mix.Tasks.Brain.Attribution do
         exit({:shutdown, 1})
 
       opts[:backfill] ->
-        {written, skipped} = SecondBrain.Attribution.Backfill.run()
+        {written, skipped} = ElixirMind.Attribution.Backfill.run()
 
         Mix.shell().info(
           "Backfilled attribution into #{length(written)} doc(s); " <>
@@ -47,7 +47,7 @@ defmodule Mix.Tasks.Brain.Attribution do
   end
 
   defp list(opts) do
-    rows = SecondBrain.Attribution.list(File.cwd!(), opts)
+    rows = ElixirMind.Attribution.list(File.cwd!(), opts)
 
     Enum.each(rows, fn row ->
       date = String.slice(row.when, 0, 10)

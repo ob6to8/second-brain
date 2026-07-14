@@ -36,7 +36,7 @@ of segment/distill/file-by-taxonomy), but the deterministic spine is the same
 > - **Mechanism + proof** → the same identity spine as the
 >   [intake flow](/meta/flows/intake.md) — `mix brain.id` / `mix brain.registry` /
 >   `mix brain.verify` — already pinned by
->   [`test/second_brain/intake_scenario_test.exs`](/test/second_brain/intake_scenario_test.exs);
+>   [`test/elixir_mind/intake_scenario_test.exs`](/test/elixir_mind/intake_scenario_test.exs);
 >   this flow deliberately has no scenario of its own (same spine, one pin).
 
 ---

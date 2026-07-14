@@ -122,7 +122,7 @@ Then, /create-pull-request
 
 ## Assistant
 
-<routes ref="sb:0b648f meta/tutorials/the-session-init-digest.md lib/second_brain/session_init.ex">
+<routes ref="sb:0b648f meta/tutorials/the-session-init-digest.md lib/elixir_mind/session_init.ex">
 Glossary done — 7 terms added, `deduplication` extended. Now the answer to your visibility question implies a concrete gap worth closing before the PR: the warnings currently live in terminal output you never see. The fix is to surface them in the session-init digest, which *is* injected into every session you open. Implementing that now.
 </routes>
 

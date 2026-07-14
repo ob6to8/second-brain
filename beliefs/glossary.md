@@ -184,7 +184,7 @@ Done — three terms filed, all gates green, pushed as `9178648`. The glossary w
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:0b648f`]**  (co-feeds: `meta/tutorials/the-session-init-digest.md lib/second_brain/session_init.ex`)
+**[`sb:0b648f`]**  (co-feeds: `meta/tutorials/the-session-init-digest.md lib/elixir_mind/session_init.ex`)
 
 Glossary done — 7 terms added, `deduplication` extended. Now the answer to your visibility question implies a concrete gap worth closing before the PR: the warnings currently live in terminal output you never see. The fix is to surface them in the session-init digest, which *is* injected into every session you open. Implementing that now.
 
@@ -229,7 +229,7 @@ Since this changes the glossary's shape and the skill's rules, it's a ratificati
 
 ---
 
-**[`sb:0b648f`]**  (co-feeds: `lib/second_brain/verifier.ex .claude/skills/add-to-glossary/SKILL.md`)
+**[`sb:0b648f`]**  (co-feeds: `lib/elixir_mind/verifier.ex .claude/skills/add-to-glossary/SKILL.md`)
 
 Done — built, gated, and pushed as `543e0c5` on `claude/glossary-common-repo-specific-cj76kw` (156 files, all verifiers and 118 tests green).
 

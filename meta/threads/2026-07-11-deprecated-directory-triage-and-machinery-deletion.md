@@ -209,7 +209,7 @@ Done — committed and pushed (`ccaf6a0`; the branch was restarted from the late
 - All gates green; registry refreshed; root `log.md` updated. Glossary at 86 terms.
 </routes>
 
-<routes ref="lib/second_brain/session_init.ex beliefs/glossary/session-init-digest.md">
+<routes ref="lib/elixir_mind/session_init.ex beliefs/glossary/session-init-digest.md">
 **Is the log the best place to find that hierarchy? No** — and your question caught a real weakness. The log entry I quoted was just a change record, and it was already stale: it described the ranking *before* todos were added as a source. The canonical definition is the `@weights` map in `lib/second_brain/session_init.ex:35` (with the moduledoc stating it in prose at line 17): **issues → in-progress plans → todos → accepted plans → open strands → paused strands → leftover dangling questions → proposed plans**, newer first within a class. Since code isn't where you'd naturally look it up, I also stated the full order in the [session-init digest](/glossary/session-init-digest.md) glossary definition with a pointer to the module — so the glossary is now the best *prose* place to find it, and it cites where the truth lives.
 </routes>
 
@@ -279,7 +279,7 @@ Both pieces are done, tested, and pushed (`c6e3f9a`).
 
 **The plan:** [`meta/plans/retire-hand-kept-logs.md`](/meta/plans/retire-hand-kept-logs.md), `status: accepted` (this conversation is recorded as the design review and ratification). It carries the problem statement, the failed enumeration as a table (each claimed log benefit and what already covers it), the decision, a hard scope boundary — the generated, CI-verified route-tagged excerpt logs stay — a concrete execution checklist built from a grep of everything that references `log.md` (7 policies, 7 skills, the intake flow, tests, plus a contract recompile), and the deferred option of a generated `git log --first-parent` changelog for the rendered site if that gap ever matters.
 
-<routes ref="lib/second_brain/session_init.ex">
+<routes ref="lib/elixir_mind/session_init.ex">
 **The priority flag:** there was no such mechanism, so I built it. Any issue, todo, or plan can now carry an integer `priority:` frontmatter key (1 = most urgent); `SecondBrain.SessionInit` pins flagged items above every heuristic class, ordered by the integer, with a "why" line that says so. Strands can't be flagged (ledger rows have no frontmatter). It's documented in the moduledoc and the [session-init digest](/glossary/session-init-digest.md) glossary entry — updated in the same commit so the prose can't be stale about the very ranking it describes — and covered by a new test (82 pass, all gates green).
 </routes>
 

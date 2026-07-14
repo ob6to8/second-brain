@@ -26,7 +26,7 @@ compares (the generated-not-hand-kept discipline).
 
 **In this brain:** the term
 names `mix brain.route_tags --materialize`
-([`SecondBrain.RouteTags.materialize/1`](/lib/second_brain/route_tags.ex)),
+([`ElixirMind.RouteTags.materialize/1`](/lib/elixir_mind/route_tags.ex)),
 a **two-directional projection** of the current
 [route tags](/beliefs/glossary/route-tag.md): it writes each fed
 [sink](/beliefs/glossary/route-tag-sink.md)'s

@@ -2,12 +2,12 @@ defmodule Mix.Tasks.Brain.Verify do
   @shortdoc "Verify the bundle: conformance, stable ids, and verified_by evidence edges"
 
   @moduledoc """
-  Run the machine checks over the knowledge bundle (see `SecondBrain.Verifier`):
+  Run the machine checks over the knowledge bundle (see `ElixirMind.Verifier`):
   OKF conformance, stable-id presence/uniqueness/format, `verified_by` edge
   resolution, and grounding of every `verified: true`.
 
   On a green bundle, also prints advisory docs-freshness warnings (see
-  `SecondBrain.Links`): internal links that don't resolve and index-coverage
+  `ElixirMind.Links`): internal links that don't resolve and index-coverage
   gaps. Warnings never fail the task — broken links are tolerated per OKF
   conformance, and index coverage is ultimately editorial.
 
@@ -18,7 +18,7 @@ defmodule Mix.Tasks.Brain.Verify do
 
   @impl Mix.Task
   def run(_args) do
-    case SecondBrain.Verifier.run() do
+    case ElixirMind.Verifier.run() do
       :ok ->
         Mix.shell().info("Bundle verifies: ids, edges, and grounding all check out.")
         report_freshness_warnings()
@@ -30,7 +30,7 @@ defmodule Mix.Tasks.Brain.Verify do
   end
 
   defp report_freshness_warnings do
-    case SecondBrain.Links.check() ++ SecondBrain.Attribution.warnings() do
+    case ElixirMind.Links.check() ++ ElixirMind.Attribution.warnings() do
       [] ->
         :ok
 

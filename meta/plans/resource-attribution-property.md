@@ -168,7 +168,7 @@ New rules, in the verifier's existing named-error style:
   nothing).
 - **`from` resolution:** every `from` ref resolves — an `sb:` id to an existing
   concept, a path to an existing file — reusing the route-tag ref-resolution
-  machinery (`SecondBrain.RouteTags` already validates exactly this ref shape).
+  machinery (`ElixirMind.RouteTags` already validates exactly this ref shape).
   Broken `from` refs are errors, like broken `verified_by` edges.
 - **Governance presence:** ratification-flow docs (`plan`, `analysis`,
   `elaboration`, `issue`) missing `attribution.from` are flagged — as a

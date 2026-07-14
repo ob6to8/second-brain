@@ -25,11 +25,11 @@ attribution:
 - `meta/evals/` genre + [`meta/evals/dedup-probe.md`](/meta/evals/dedup-probe.md) —
   the gold set, seeded from the vector-DB analysis's 14 probes, re-keyed to `sb:`
   ids, with `target`/`negative`/`quarantine` bands and synonym-expansion variants.
-- [`SecondBrain.DedupProbe`](/lib/second_brain/dedup_probe.ex) +
+- [`ElixirMind.DedupProbe`](/lib/elixir_mind/dedup_probe.ex) +
   [`mix brain.dedup_probe`](/lib/mix/tasks/brain.dedup_probe.ex) — parser, lexical
   backend, scorer, plain + `--expanded` modes, baseline delta, and
   `--update-baseline` (the baseline is generated, not hand-kept); pinned by
-  [`test/second_brain/dedup_probe_test.exs`](/test/second_brain/dedup_probe_test.exs).
+  [`test/elixir_mind/dedup_probe_test.exs`](/test/elixir_mind/dedup_probe_test.exs).
 - First `## Baseline`: **plain 3/10, expanded 10/10** — the offline measurement of
   the recall the tier-1 synonym-expansion change recovers. Non-gating CI report step.
 
@@ -146,9 +146,9 @@ instrument.
   section; adjudication history notes.
 - `lib/mix/tasks/brain.dedup_probe.ex` — thin task wrapper, matching the existing
   pattern.
-- `lib/second_brain/dedup_probe.ex` — parse gold doc, run backend, score, render
+- `lib/elixir_mind/dedup_probe.ex` — parse gold doc, run backend, score, render
   report; pure core so the scenario test can pin it.
-- `test/second_brain/dedup_probe_test.exs` — fixture gold doc + fixture corpus;
+- `test/elixir_mind/dedup_probe_test.exs` — fixture gold doc + fixture corpus;
   asserts parsing, hit/miss logic, band handling (negatives ignored, quarantine
   reported-not-scored), `--expanded` semantics, and baseline-delta rendering.
 - One line in `.github/workflows/ci.yml` (non-gating report step) and a

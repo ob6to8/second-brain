@@ -286,7 +286,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:266c5e` | [knowledge/SWE/llm-engineering/kv-cache-compression-history](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `sb:41be22` | [knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
 | `sb:1cac23` | [knowledge/SWE/llm-engineering/vericache-lossless-kv-cache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |
-| `sb:d58da3` | [knowledge/SWE/testing/elixir-second-brain-testing-methodology](/knowledge/SWE/testing/elixir-second-brain-testing-methodology.md) | methodology |  |
+| `sb:d58da3` | [knowledge/SWE/testing/elixir-mind-testing-methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md) | methodology |  |
 | `sb:b1ba4b` | [knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency](/knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md) | reference |  |
 | `sb:f6e843` | [knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs](/knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md) | reference |  |
 | `sb:a5ea86` | [knowledge/SWE/testing/how-to-test-features-not-code](/knowledge/SWE/testing/how-to-test-features-not-code.md) | reference |  |

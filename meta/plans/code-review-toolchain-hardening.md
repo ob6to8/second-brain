@@ -45,7 +45,7 @@ registry header — checks out against the code as of `d830fd9`.
 
 ### F1 — Markdown renderer: link syntax inside a code span rendered live (fixed)
 
-`SecondBrain.Markdown.inline/2` extracted **links before code spans**, so
+`ElixirMind.Markdown.inline/2` extracted **links before code spans**, so
 inline code that *displays* link syntax — `` `[route tag](/beliefs/glossary/route-tag.md)` ``
 — rendered as a live `<a>` inside `<code>` instead of staying literal.
 Reproduced against the live renderer; affected real pages (the glossary hub,
@@ -54,10 +54,10 @@ Reproduced against the live renderer; affected real pages (the glossary hub,
 span is left literal" test only covered emphasis.
 
 **Fix:** extract code spans first and restore them last
-([markdown.ex](/lib/second_brain/markdown.ex), `inline/2`); a link label
+([markdown.ex](/lib/elixir_mind/markdown.ex), `inline/2`); a link label
 containing a code span still works because the label's code placeholder
 survives link extraction. Regression test added
-([markdown_test.exs](/test/second_brain/markdown_test.exs), "link syntax
+([markdown_test.exs](/test/elixir_mind/markdown_test.exs), "link syntax
 inside a code span is left literal").
 
 ### F2 — `mix brain.evidence` contradicted the grounding policy (fixed)
@@ -173,7 +173,7 @@ is where it gets caught — the same way every other generated-artifact change
 is reviewed.
 
 Deliverables: the `materialize/1` change; scenario-test extension in
-[capture_scenario_test.exs](/test/second_brain/capture_scenario_test.exs)
+[capture_scenario_test.exs](/test/elixir_mind/capture_scenario_test.exs)
 (delete the only feeding region → materialize removes the section → all five
 checks green; plus the partial case pinning that a still-fed sink drops a
 stale block); mark the
@@ -194,7 +194,7 @@ repo — and it is cheap (one `grounding_errors/1`-style clause plus tests).
 Pre-flight: scan the live registry for existing violations before enabling
 (none expected — the `verified` column is populated only by statements and
 glossary `concept`s today). Deliverables: the verifier clause; a red test in
-[registry_test.exs](/test/second_brain/registry_test.exs) or the intake
+[registry_test.exs](/test/elixir_mind/registry_test.exs) or the intake
 scenario; a one-line update to the verifier rule list in
 [intake §7](/meta/flows/intake.md) and the
 [frontmatter-schema](/meta/policy/frontmatter-schema.md) policy's `verified`

@@ -172,7 +172,7 @@ Other threads have merged, pull main
 
 ## Assistant
 
-<routes ref="/meta/plans/resource-attribution-property.md lib/second_brain/attribution.ex lib/second_brain/attribution/backfill.ex lib/second_brain/lineage.ex lib/mix/tasks/brain.attribution.ex">
+<routes ref="/meta/plans/resource-attribution-property.md lib/elixir_mind/attribution.ex lib/elixir_mind/attribution/backfill.ex lib/elixir_mind/lineage.ex lib/mix/tasks/brain.attribution.ex">
 Execution complete — all six build steps shipped, gates green (141 tests, verify/contract/registry/lineage/route-tags all pass), and everything is pushed on `claude/resource-attribution-spec-l3hzjj` as five commits, one per build phase:
 
 **What landed:**

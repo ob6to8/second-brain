@@ -10,7 +10,7 @@ defmodule Mix.Tasks.Brain.Registry do
 
   use Mix.Task
 
-  alias SecondBrain.Registry
+  alias ElixirMind.Registry
 
   @impl Mix.Task
   def run(args) do

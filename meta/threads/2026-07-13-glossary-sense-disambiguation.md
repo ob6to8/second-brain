@@ -84,7 +84,7 @@ Ratified — I'll build it. Plan of attack: persist the plan doc (per the persis
 
 First, branch setup and reconnaissance of the pieces I'll touch.
 
-<routes ref="sb:0b648f lib/second_brain/verifier.ex .claude/skills/add-to-glossary/SKILL.md">
+<routes ref="sb:0b648f lib/elixir_mind/verifier.ex .claude/skills/add-to-glossary/SKILL.md">
 Done — built, gated, and pushed as `543e0c5` on `claude/glossary-common-repo-specific-cj76kw` (156 files, all verifiers and 118 tests green).
 
 What landed:

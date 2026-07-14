@@ -5,11 +5,11 @@ description: Fixed framing text prepended to the compiled operating contract (CL
 tags: [meta, governance, contract]
 timestamp: 2026-07-11
 ---
-# Operating Contract — Second Brain (OKF)
+# Operating Contract — Elixir Mind (OKF)
 
 This repository is a personal **second brain** stored as an
 [Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)
-(**OKF v0.1**) bundle. Every agent that operates here — including fresh, sandboxed
+(**OKF v0.1**) bundle, named **elixir-mind**. Every agent that operates here — including fresh, sandboxed
 agents spun up from the Claude Code app — MUST read and follow this contract. It is
 the backbone that keeps the brain consistent as it grows.
 

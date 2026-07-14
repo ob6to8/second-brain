@@ -16,7 +16,7 @@ defmodule Mix.Tasks.Brain.Site do
 
   use Mix.Task
 
-  alias SecondBrain.Site
+  alias ElixirMind.Site
 
   @impl Mix.Task
   def run(args) do

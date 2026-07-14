@@ -18,7 +18,7 @@ attribution:
 Alex Kladov (matklad) argues the classic **unit vs. integration** distinction is
 "confused, and harmful," and should be replaced by two *independent* axes:
 **purity** and **extent**. Applied to this repo in
-[the Second Brain testing methodology](/knowledge/SWE/testing/elixir-second-brain-testing-methodology.md).
+[the Elixir Mind testing methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md).
 
 ## Why the old dichotomy fails
 

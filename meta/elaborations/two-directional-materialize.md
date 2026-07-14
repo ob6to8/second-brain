@@ -37,7 +37,7 @@ confirmation.
 - **[materialize](/beliefs/glossary/materialize.md)** — to compute derived content and write it to disk as
   ordinary file content, instead of recomputing it on demand. Here it names
   `mix brain.route_tags --materialize`
-  ([`SecondBrain.RouteTags.materialize/1`](/lib/second_brain/route_tags.ex)),
+  ([`ElixirMind.RouteTags.materialize/1`](/lib/elixir_mind/route_tags.ex)),
   which maintains each concept's excerpt log from the current tags; the log is
   "generated, never hand-kept."
 - **[route tag](/beliefs/glossary/route-tag.md)** — an inline `<routes ref="…">`
@@ -84,6 +84,6 @@ tag *must* vanish from the sink or the two diverge), and the safety net is
 review, not the tool: the deletion shows up plainly in the PR diff, which is
 where a mistakenly-removed tag gets caught, the same as any other change to a
 generated artifact. Two scenario tests in
-[capture_scenario_test.exs](/test/second_brain/capture_scenario_test.exs) pin
+[capture_scenario_test.exs](/test/elixir_mind/capture_scenario_test.exs) pin
 the behavior: a sink losing its last feeding thread loses its whole section,
 and a still-fed sink drops one departed thread's block.

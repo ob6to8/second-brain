@@ -19,7 +19,7 @@ is an inline `<routes ref="...">` region, applied over the **frozen** body as
 the last motion of `/capture`.
 
 ```
-<routes ref="sb:4c9e1f lib/second_brain/route_tags.ex">
+<routes ref="sb:4c9e1f lib/elixir_mind/route_tags.ex">
 ... one paragraph, feeding a concept and back-linking a code path ...
 </routes>
 ```
@@ -44,7 +44,7 @@ regions whole (ATX headers demoted to bold). Each block quotes a *frozen* thread
 so it never goes stale; the section is **generated, not hand-kept** — `mix
 brain.route_tags --materialize` writes it from the current tags.
 
-**The verifier owns it.** `mix brain.route_tags` (see `SecondBrain.RouteTags`)
+**The verifier owns it.** `mix brain.route_tags` (see `ElixirMind.RouteTags`)
 runs beside `mix brain.verify` in CI and the pre-commit hook. It re-derives each
 sink's log from the current tags and **fails on divergence**, converting the
 log's freshness from procedural to structural, and checks tag wellformedness,

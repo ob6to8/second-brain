@@ -80,7 +80,7 @@ Continue
 
 ## Assistant
 
-<routes ref="lib/second_brain/session_init.ex lib/mix/tasks/brain.session_init.ex .claude/hooks/session-start.sh test/second_brain/session_init_test.exs">
+<routes ref="lib/elixir_mind/session_init.ex lib/mix/tasks/brain.session_init.ex .claude/hooks/session-start.sh test/elixir_mind/session_init_test.exs">
 The picture is complete. My design: a new `SecondBrain.SessionInit` module + `mix brain.session_init` task that scans open issues (`meta/issues`), active plans (`meta/plans`), and dangling strands from thread routing ledgers, emits a digest with a heuristic top-3 priority ranking, and gets called by the SessionStart hook so it lands in the session context. Let me check the test idiom first.
 
 Done — pushed to `claude/session-init-log-priorities-vuvzo6`. Every fresh session will now open with a **session-init digest** injected into context by the SessionStart hook, ending in a top-3 priority appraisal.
@@ -222,7 +222,7 @@ Do the extension
 
 ## Assistant
 
-<routes ref="lib/second_brain/session_init.ex test/second_brain/session_init_test.exs">
+<routes ref="lib/elixir_mind/session_init.ex test/elixir_mind/session_init_test.exs">
 Done — the digest now scans `meta/todos/` as a fourth source, pushed as `c5078c8` on the same branch as the merge-strategy policy.
 
 What changed:

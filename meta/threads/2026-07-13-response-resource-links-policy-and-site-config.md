@@ -78,7 +78,7 @@ Commit then Yes, introduce config
 
 ## Assistant
 
-<routes ref="meta/policy/response-resource-links.md lib/second_brain/site_config.ex">
+<routes ref="meta/policy/response-resource-links.md lib/elixir_mind/site_config.ex">
 Committed and pushed. Both commits are on `claude/agent-resource-linking-k9p4og`.
 
 ## What the second commit added

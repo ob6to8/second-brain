@@ -193,11 +193,11 @@ One note worth surfacing: options 1 and 2 are genuine changes to the *shape* of 
 
 ## Assistant
 
-<routes ref="meta/tutorials/bundle-scope-and-non-bundle-namespaces.md lib/second_brain/registry.ex">
+<routes ref="meta/tutorials/bundle-scope-and-non-bundle-namespaces.md lib/elixir_mind/registry.ex">
 Critical finding: `Registry` (used by the verifier) scans all top-level dirs *except* an excluded list — and `inbox` isn't on it. So `inbox/*.md` would be required to carry `sb:` ids and would break CI. I need to add `inbox` to that exclusion list. Let me check the route-tags scanner and the site generator too.
 </routes>
 
-<routes ref="meta/tutorials/bundle-scope-and-non-bundle-namespaces.md lib/second_brain/registry.ex">
+<routes ref="meta/tutorials/bundle-scope-and-non-bundle-namespaces.md lib/elixir_mind/registry.ex">
 All clear on the mechanics. Route-tags scans only `meta/threads` + registry concepts, so excluding `inbox` from the registry keeps it out of every verifier. The site generator does *not* exclude `inbox`, so digests render into the published site automatically. My one required code change is adding `inbox` to the registry's excluded dirs.
 
 Let me set up task tracking, load WebSearch, and run real searches for the first digest.

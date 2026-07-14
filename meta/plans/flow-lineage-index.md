@@ -20,9 +20,9 @@ attribution:
 **Done** (2026-07-12). All four open questions resolved by the operator; tooling built,
 all eight flow docs retrofitted, `--check` wired into CI and the pre-commit hook.
 
-- **The instrument:** [`SecondBrain.Lineage`](/lib/second_brain/lineage.ex) +
+- **The instrument:** [`ElixirMind.Lineage`](/lib/elixir_mind/lineage.ex) +
   [`mix brain.lineage`](/lib/mix/tasks/brain.lineage.ex) (`--materialize` / `--check`),
-  pinned by [`test/second_brain/lineage_test.exs`](/test/second_brain/lineage_test.exs).
+  pinned by [`test/elixir_mind/lineage_test.exs`](/test/elixir_mind/lineage_test.exs).
   It parses each flow doc's `lineage:` block (a small nested-YAML reader, since the
   bundle's flat `Frontmatter` parser can't), materializes the per-doc blockquote between
   markers, and derives [`meta/flows/lineage.md`](/meta/flows/lineage.md) — a Mermaid
@@ -122,13 +122,13 @@ analysis' idea becoming a running flow) lives above individual commits and has n
 
 - **`lineage:` frontmatter** on each `meta/flows/*.md` (extra-keys-allowed; inert to
   `mix brain.verify`).
-- **`lib/second_brain/lineage.ex`** — parse the blocks, render the per-doc blockquote,
+- **`lib/elixir_mind/lineage.ex`** — parse the blocks, render the per-doc blockquote,
   render the flowchart index; pure core so a scenario test can pin it.
 - **`lib/mix/tasks/brain.lineage.ex`** — thin task wrapper (`--check`, `--materialize`),
   matching the existing `brain.*` pattern.
 - **The flowchart index** — `meta/flows/lineage.md` (generated; or a generated section of
   [`meta/flows/index.md`](/meta/flows/index.md) — see open question 2).
-- **`test/second_brain/lineage_test.exs`** — fixture flow docs with/without hops; assert
+- **`test/elixir_mind/lineage_test.exs`** — fixture flow docs with/without hops; assert
   parsing, blockquote materialization, flowchart rendering, heterogeneous omission, and
   `--check` divergence detection.
 - **One line in `.github/workflows/ci.yml`** and an entry in the gate suite / pre-commit
@@ -137,7 +137,7 @@ analysis' idea becoming a running flow) lives above individual commits and has n
 ## Build order
 
 1. Ratify the frontmatter schema + the two open questions below.
-2. `lib/second_brain/lineage.ex` + `mix brain.lineage` + tests. Blockquote materialization
+2. `lib/elixir_mind/lineage.ex` + `mix brain.lineage` + tests. Blockquote materialization
    first, then the flowchart index.
 3. Wire `--check` into CI + the pre-commit gate suite.
 4. Retrofit the seven remaining flow docs with their `lineage:` blocks (research each

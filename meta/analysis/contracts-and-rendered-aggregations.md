@@ -50,7 +50,7 @@ derived view with a drift check:
    — a filename dictated by the Claude Code harness for where agents look. The
    *contract* — the compiled aggregation of `meta/policy/` — would survive a
    harness change (`AGENTS.md`, a second surface) with only the output path in
-   [`contract.ex`](/lib/second_brain/contract.ex) moving. The abstraction's
+   [`contract.ex`](/lib/elixir_mind/contract.ex) moving. The abstraction's
    price is one word and one module name; its purchase is harness
    independence. It would become speculative generality only if the compiler
    started abstracting over hypothetical second instances — it hasn't.

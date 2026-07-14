@@ -16,7 +16,7 @@ defmodule Mix.Tasks.Brain.DevHistory do
 
   use Mix.Task
 
-  alias SecondBrain.DevHistory
+  alias ElixirMind.DevHistory
 
   @impl Mix.Task
   def run(args) do

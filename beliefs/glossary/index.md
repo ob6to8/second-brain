@@ -142,7 +142,7 @@ system works.
 - [LLM-as-judge](/beliefs/glossary/llm-as-judge.md) — model judgment substituting for human annotation, validated by measured agreement with human raters
 - [macro](/beliefs/glossary/macro.md) — a compile-time function from code to code (AST to AST in Elixir), expanding a small declarative surface into full implementation with compile-time errors
 - [margin collapse](/beliefs/glossary/margin-collapse.md) — the AI-industry thesis that frontier labs' high inference margins erode under cheaper open-weight parity with frictionless switching (pointer to `sb:07610c`)
-- [markdown renderer](/beliefs/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `SecondBrain.Markdown`)
+- [markdown renderer](/beliefs/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `ElixirMind.Markdown`)
 - [materialize](/beliefs/glossary/materialize.md) — write derived content to disk as real file content instead of recomputing on demand; pairs with a freshness check
 - [methodology (type)](/beliefs/glossary/methodology-type.md) — controlled type: a repeatable prescriptive how-to/playbook for a recurring task
 - [minimal inconsistent subset](/beliefs/glossary/minimal-inconsistent-subset.md) — a jointly contradictory belief set whose every proper subset is consistent; the smallest witness localizing a conflict

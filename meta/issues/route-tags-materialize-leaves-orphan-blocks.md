@@ -24,15 +24,15 @@ sink that carries a log section but no longer appears among the feeding pairs
 and removes the section, unconditionally (the design question below was settled
 as *no flag*: the tags are the single source of truth and the PR diff is the
 review point). Pinned by two scenario tests in
-[capture_scenario_test.exs](/test/second_brain/capture_scenario_test.exs)
+[capture_scenario_test.exs](/test/elixir_mind/capture_scenario_test.exs)
 (full-orphan removal; a still-fed sink dropping one thread's stale block).
 
 ## Summary
 
-`SecondBrain.RouteTags.materialize/1` regenerates the excerpt-log section of
+`ElixirMind.RouteTags.materialize/1` regenerates the excerpt-log section of
 every sink that **currently** has feeding threads — it groups the live
 `feeding_pairs` by sink and rewrites those sections
-([route_tags.ex](/lib/second_brain/route_tags.ex), `materialize/1`). A sink
+([route_tags.ex](/lib/elixir_mind/route_tags.ex), `materialize/1`). A sink
 that *used to* be fed but no longer is (a tag removed or re-pointed during a
 capture correction, or its thread deleted) is simply not visited: its stale
 section, or a stale per-thread block within a still-fed section, stays on

@@ -13,7 +13,7 @@ defmodule Mix.Tasks.Brain.Lineage do
 
   use Mix.Task
 
-  alias SecondBrain.Lineage
+  alias ElixirMind.Lineage
 
   @impl Mix.Task
   def run(args) do

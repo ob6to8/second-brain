@@ -20,7 +20,7 @@ suite is **how easily it lets you change the software** — not coverage numbers
 testing dogma. Related: his later reframing of test taxonomy into
 [purity and extent](/knowledge/SWE/testing/unit-vs-integration-purity-and-extent.md).
 Applied to this repo in
-[the Second Brain testing methodology](/knowledge/SWE/testing/elixir-second-brain-testing-methodology.md).
+[the Elixir Mind testing methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md).
 
 ## Thesis — test features, not code
 

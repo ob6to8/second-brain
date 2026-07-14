@@ -32,10 +32,10 @@ notion of scope:
 
 | Scanner | Code | Question it answers | Scope source |
 |---------|------|---------------------|--------------|
-| **Identity / verify** | `SecondBrain.Registry` → `SecondBrain.Verifier` | Does every *bundle concept* carry a valid, unique `sb:` id, and are its evidence edges sound? | `Registry`'s `@excluded_dirs` / `@excluded_files` |
-| **Route tags** | `SecondBrain.RouteTags` | Are `<routes>` tags wellformed, and do the sink logs match? | `meta/threads/` (sources) + `Registry` concepts (sinks) |
-| **Contract** | `SecondBrain.Contract` ← `SecondBrain.Policy` | Is `CLAUDE.md` a faithful compile of the policies? | `meta/policy/*.md` with `type: policy` |
-| **Site** | `SecondBrain.Site` | Which pages get rendered into the published HTML? | `Site`'s *own* `@excluded_dirs` |
+| **Identity / verify** | `ElixirMind.Registry` → `ElixirMind.Verifier` | Does every *bundle concept* carry a valid, unique `sb:` id, and are its evidence edges sound? | `Registry`'s `@excluded_dirs` / `@excluded_files` |
+| **Route tags** | `ElixirMind.RouteTags` | Are `<routes>` tags wellformed, and do the sink logs match? | `meta/threads/` (sources) + `Registry` concepts (sinks) |
+| **Contract** | `ElixirMind.Contract` ← `ElixirMind.Policy` | Is `CLAUDE.md` a faithful compile of the policies? | `meta/policy/*.md` with `type: policy` |
+| **Site** | `ElixirMind.Site` | Which pages get rendered into the published HTML? | `Site`'s *own* `@excluded_dirs` |
 
 The trap is assuming these share a boundary. They do not. A file can be **in scope
 for one and out of scope for another** — and that asymmetry is exactly what makes
@@ -44,7 +44,7 @@ non-bundle namespaces like `meta/` and `inbox/` possible.
 ## The registry is the definition of "bundle concept"
 
 The identity layer is where "is this a real concept?" is actually decided.
-`SecondBrain.Registry.concept_paths/1` globs `**/*.md` and then rejects anything
+`ElixirMind.Registry.concept_paths/1` globs `**/*.md` and then rejects anything
 excluded:
 
 ```elixir
@@ -58,7 +58,7 @@ end
 ```
 
 Everything that survives this filter is a **bundle concept**, and the verifier
-holds every survivor to the full identity contract. `SecondBrain.Verifier.run/1`
+holds every survivor to the full identity contract. `ElixirMind.Verifier.run/1`
 does not re-scan the tree — it calls `Registry.scan/1` and applies its rules to
 whatever comes back:
 
@@ -93,7 +93,7 @@ capture, and captures are never `verified`).
 
 ## Route tags come along for free — but check anyway
 
-`SecondBrain.RouteTags` has two inputs: **thread sources** under `meta/threads/`
+`ElixirMind.RouteTags` has two inputs: **thread sources** under `meta/threads/`
 (the files that may carry `<routes ref="…">` regions) and **concept sinks**, which
 it obtains from the registry's concept set. Because sinks are drawn from the same
 `Registry` scan, excluding `inbox` from the registry *also* removes inbox pages
@@ -110,7 +110,7 @@ Here is the asymmetry that makes the model worth understanding. The static-site
 generator keeps a **separate** exclusion list:
 
 ```elixir
-# SecondBrain.Site
+# ElixirMind.Site
 @excluded_dirs ~w(.git .github .githooks _build deps tmp deprecated .claude lib test)
 ```
 
@@ -139,7 +139,7 @@ separate is what lets the brain publish more than it identity-checks.
 When you add a top-level namespace that holds candidates, governance, or any
 non-concept material, walk these in order:
 
-1. **Add it to `SecondBrain.Registry.@excluded_dirs`.** This is the load-bearing
+1. **Add it to `ElixirMind.Registry.@excluded_dirs`.** This is the load-bearing
    step — it takes the namespace out of `mix brain.registry` *and* `mix brain.verify`
    (which delegates) *and* the route-tags concept set (which draws from the
    registry) in one edit.

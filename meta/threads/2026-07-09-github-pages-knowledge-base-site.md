@@ -57,7 +57,7 @@ Create website deployed via github pages that will render this collection of res
 
 ## Assistant
 
-<routes ref="lib/second_brain/site.ex">
+<routes ref="lib/elixir_mind/site.ex">
 I now have a thorough understanding. The repo has a strong, dependency-free Elixir tooling philosophy (`mix brain.*` tasks that compile generated artifacts, reusing `SecondBrain.Frontmatter`). The best-fitting approach is a native Elixir static-site generator (`mix brain.site`) plus a GitHub Pages deploy workflow — no external dependencies, consistent with the existing codebase.
 
 Let me set up task tracking and start building.

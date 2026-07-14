@@ -153,7 +153,7 @@ And the three blockers that make "not now" the verdict despite the fit:
    toolchain migration first — a prerequisite project, not a dependency bump.
 2. **The zero-dependency constraint is load-bearing.** The verifier core must run
    in any sandbox, offline. Pulling the Jido tree (jido, jido_action,
-   jido_signal, jido_ai, req_llm) into `second_brain` would tie contract
+   jido_signal, jido_ai, req_llm) into `elixir_mind` would tie contract
    compilation to hex availability and a young dependency tree. If a runtime is
    ever built, it must be a **separate mix project** (e.g. `runtime/` beside
    `lib/`, or a sibling repo) that *depends on* the core — the core never depends
@@ -200,4 +200,4 @@ section's baseline.
 - Jido 2.0 announcement — https://jido.run/blog/jido-2-0-is-here · HN discussion: https://news.ycombinator.com/item?id=47263036
 - Packages — https://hex.pm/packages/jido (2.3.2) · https://hex.pm/packages/jido_ai (2.2.0) · https://hex.pm/packages/jido_action · https://hex.pm/packages/jido_signal · https://hex.pm/packages/req_llm · https://hex.pm/packages/ash_jido
 - Unconfirmed at research time: fate of `Jido.Instruction` as a first-class 2.0 abstraction; `req_llm`'s "665+ models" count; "agentic memory" depth; `jido_cluster` maturity (unpublished); exact Elixir minimum (1.17 vs 1.18 — README/changelog disagree).
-- Repo evidence — `mix.exs` (zero-dep rationale), `lib/second_brain/*.ex` (batch tasks only), `.github/workflows/ci.yml` (OTP 25 / Elixir 1.14 matrix).
+- Repo evidence — `mix.exs` (zero-dep rationale), `lib/elixir_mind/*.ex` (batch tasks only), `.github/workflows/ci.yml` (OTP 25 / Elixir 1.14 matrix).

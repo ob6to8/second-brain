@@ -32,10 +32,10 @@ to which files — and points at the three artifacts that make it work. It does
 >   [stable-identity](/meta/policy/stable-identity.md) ·
 >   [verification-grounding](/meta/policy/verification-grounding.md).
 > - **Procedure** → the [`/intake` skill](/.claude/skills/intake/SKILL.md).
-> - **Mechanism + proof** → [`SecondBrain.Registry`](/lib/second_brain/registry.ex)
->   / [`SecondBrain.Verifier`](/lib/second_brain/verifier.ex) and the
+> - **Mechanism + proof** → [`ElixirMind.Registry`](/lib/elixir_mind/registry.ex)
+>   / [`ElixirMind.Verifier`](/lib/elixir_mind/verifier.ex) and the
 >   `mix brain.id` / `mix brain.registry` / `mix brain.verify` tasks, pinned by the
->   scenario [`test/second_brain/intake_scenario_test.exs`](/test/second_brain/intake_scenario_test.exs).
+>   scenario [`test/elixir_mind/intake_scenario_test.exs`](/test/elixir_mind/intake_scenario_test.exs).
 
 ---
 
@@ -181,7 +181,7 @@ mix brain.dedup_probe --update-baseline # (step 10) refresh the recall baseline 
   on-disk view is stale — the same generated-not-hand-kept discipline as the
   contract and the route-tag logs.
 - **`mix brain.verify`** enforces the six identity/grounding rules (see
-  [`verifier.ex`](/lib/second_brain/verifier.ex)): non-empty `type`; present,
+  [`verifier.ex`](/lib/elixir_mind/verifier.ex)): non-empty `type`; present,
   well-formed id; every `verified_by` resolves; a capture (`resource`) is never
   `verified: true`; `verified: true` requires a non-empty `verified_by`; and
   `verified` (either value) appears only on statement types
@@ -208,7 +208,7 @@ mix brain.dedup_probe --update-baseline # (step 10) refresh the recall baseline 
 ## 9. Verify — the scenario, the gates, and the editorial spot-checks
 
 **The scenario test pins the spine.**
-[`test/second_brain/intake_scenario_test.exs`](/test/second_brain/intake_scenario_test.exs)
+[`test/elixir_mind/intake_scenario_test.exs`](/test/elixir_mind/intake_scenario_test.exs)
 builds an in-code fixture representing a real intake output — a `source` capture
 and a `claim` distilled from it and grounded via `verified_by` — then compiles the
 registry and asserts: (a) `Registry.check/1` round-trips; (b) the rendered
