@@ -109,7 +109,7 @@ disposable output; the bundle is the record.
   [OKF conformance](/meta/policy/okf-conformance.md).
 - **Relative everything.** Each page carries a `root_prefix` computed from its
   depth, and every internal `.md` link is rewritten to the `.html` page, so the
-  site works at a domain root or under `/second-brain/` unchanged.
+  site works at a domain root or under `/elixir-mind/` unchanged.
 - **The renderer is scoped, not general.** `ElixirMind.Markdown` implements
   exactly the constructs the bundle uses (ATX headings with GitHub-style slug
   anchors, nested lists, fenced code, tables, blockquotes, emphasis, links,
