@@ -11,6 +11,7 @@ system works.
 
 ## Terms
 
+- [abstract syntax tree](/beliefs/glossary/abstract-syntax-tree.md) — the tree a parser builds from source code, nodes for constructs with surface syntax stripped; Elixir exposes its own as stdlib-manipulable data
 - [actor model](/beliefs/glossary/actor-model.md) — share-nothing processes owning private state, interacting only by async messages; contention becomes a mailbox, not a lock
 - [advisor pattern](/beliefs/glossary/advisor-pattern.md) — a cheap executor model does the bulk of generation and consults a higher-intelligence advisor model where planning matters; Anthropic's native advisor tool runs the advisor sub-inference server-side in one request
 - [agent memory](/beliefs/glossary/agent-memory.md) — how an agent persists knowledge beyond its context window (short-term/long-term/procedural/working); files to vector DBs
@@ -52,6 +53,7 @@ system works.
 - [consensus core](/beliefs/glossary/consensus-core.md) — across compared belief systems, the beliefs every system supports and none attacks; what survives conflict examination
 - [constant tutorial mode](/beliefs/glossary/constant-tutorial-mode.md) — the operator's reader state when learning an agent-built system by using it; the audience the plain tier backstops
 - [Content Security Policy](/beliefs/glossary/content-security-policy.md) — a browser-enforced standard restricting which resources a page may load or contact; what makes a Claude artifact a sealed client-side document
+- [context mesh](/beliefs/glossary/context-mesh.md) — Loomkin's overflow-memory architecture: full-fidelity context offloaded to Keeper processes (staleness/access tracking, cross-agent retrieval) instead of summarized away
 - [context rot](/beliefs/glossary/context-rot.md) — degradation of an LLM's effective attention as its context window fills; retrieval reliability drops with occupancy
 - [contrastive divergence](/beliefs/glossary/contrastive-divergence.md) — a fast approximate training algorithm for restricted Boltzmann machines, using a short Gibbs-sampling run in place of the intractable exact gradient
 - [council round](/beliefs/glossary/council-round.md) — an adversarial, multi-agent review of drafted work run as draft-PR comments through four motions, gated on dispositions, distilled into a curated target
@@ -61,6 +63,7 @@ system works.
 - [cross-reference drift](/beliefs/glossary/cross-reference-drift.md) — a change that should update many interlinked docs only updates some; the rest rot silently (the LLM-wiki killer)
 - [cross-site scripting (XSS)](/beliefs/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
 - [dark factory](/beliefs/glossary/dark-factory.md) — from lights-out manufacturing: an operation run end-to-end by autonomous agents, humans reduced to governance rather than presence
+- [decision graph](/beliefs/glossary/decision-graph.md) — a persistent DAG of an agent system's reasoning (goals, decisions, options, outcomes; typed edges), kept so later sessions recall what was tried and why; Loomkin's core memory structure
 - [decision prior](/beliefs/glossary/decision-prior.md) — a proposition held true enough to guide action even when uncertain or value-laden; same facts, different priors → different strategies
 - [decompose-then-verify](/beliefs/glossary/decompose-then-verify.md) — atomize a long output, verify each statement against a source, aggregate mechanically; validated by FActScore/SAFE
 - [decontextualization](/beliefs/glossary/decontextualization.md) — rewriting an extracted statement to be self-contained, so atomic claims keep their meaning out of context
@@ -79,10 +82,12 @@ system works.
 - [distill, don't dump](/beliefs/glossary/distill-dont-dump.md) — the filing rule that a concept captures the knowledge, not the raw noise; originals live in `resource`/Citations
 - [distillation target](/beliefs/glossary/distillation-target.md) — the curated document (plan, ADR, issue) that receives a review round's settled outcome; never a transcript
 - [doctrine](/beliefs/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
+- [domain-specific language](/beliefs/glossary/domain-specific-language.md) — a small language purpose-built for one domain, trading generality for concision and checkability; doubles as a constrained generation target for LLMs
 - [draft pull request](/beliefs/glossary/draft-pull-request.md) — a PR opened in draft state: full diff, commentable, explicitly not ready to merge; a council round's chamber
 - [drift class](/beliefs/glossary/drift-class.md) — a category of staleness whose instances share one detection mechanism, so a single detector covers the class
 - [DRY (don't repeat yourself)](/beliefs/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
 - [elaboration (type)](/beliefs/glossary/elaboration-type.md) — controlled type: a persisted expansion of a technical phrase (quoted target, term definitions, plain walkthrough), under `meta/elaborations/`
+- [elixir-mind](/beliefs/glossary/elixir-mind.md) — the ratified new name for this brain itself (repo, app namespace, and `sb:` → `em:` id prefix, per the accepted rename plan); also used narrowly for its prospective owned-runtime tier
 - [embeddings](/beliefs/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [entailment (logical consequence)](/beliefs/glossary/entailment.md) — premises force the conclusion in every interpretation; the question each belief-graph support edge poses
 - [entity resolution](/beliefs/glossary/entity-resolution.md) — deciding when two differently-phrased items denote the same entity; for beliefs, the hard core of cross-document comparison
@@ -117,6 +122,7 @@ system works.
 - [grounding tier](/beliefs/glossary/grounding-tier.md) — the third documentation tier: one abstraction level below the source doc, anchored by a planned `implemented_by` edge (code for a policy, policies for a doctrine)
 - [harness (agent harness)](/beliefs/glossary/harness.md) — the scaffolding wrapping a model into an agent: the turn-by-turn control loop, its tools, and context/memory management; decouples the "brain" (reasoning loop) from the "hands" (sandboxes, tools)
 - [HTML escaping](/beliefs/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
+- [hot code loading](/beliefs/glossary/hot-code-loading.md) — the BEAM's ability to load new module versions into a running system without restart; makes compilation a service the system can invoke on itself
 - [hot module reload (HMR)](/beliefs/glossary/hot-module-reload.md) — a dev-server technique swapping changed modules into a running app in place, updating the live view on each edit without a full reload; the local echo of an artifact's iteration loop
 - [hybrid search](/beliefs/glossary/hybrid-search.md) — retrieval blending BM25 and vector-similarity scores so keyword precision and semantic matching cover each other's misses
 - [inbox namespace](/beliefs/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/research` candidate digests (no ids, never verified)
@@ -134,6 +140,7 @@ system works.
 - [librarian write-broker](/beliefs/glossary/librarian-write-broker.md) — a supervised process solely owning mutation of a knowledge namespace: agents submit proposals, it runs the gauntlet and serializes commits
 - [lineage](/beliefs/glossary/lineage.md) — the provenance chain that produced an artifact (for a flow doc: analysis → plan → thread → PR), recorded as a canonical frontmatter block from which views are derived
 - [LLM-as-judge](/beliefs/glossary/llm-as-judge.md) — model judgment substituting for human annotation, validated by measured agreement with human raters
+- [macro](/beliefs/glossary/macro.md) — a compile-time function from code to code (AST to AST in Elixir), expanding a small declarative surface into full implementation with compile-time errors
 - [margin collapse](/beliefs/glossary/margin-collapse.md) — the AI-industry thesis that frontier labs' high inference margins erode under cheaper open-weight parity with frictionless switching (pointer to `sb:07610c`)
 - [markdown renderer](/beliefs/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `SecondBrain.Markdown`)
 - [materialize](/beliefs/glossary/materialize.md) — write derived content to disk as real file content instead of recomputing on demand; pairs with a freshness check
