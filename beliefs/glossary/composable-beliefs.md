@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, composable-beliefs, epistemics, provenance]
 sense: repo
-timestamp: 2026-07-10
+timestamp: 2026-07-13
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -19,4 +19,4 @@ attribution:
 
 A separate Elixir knowledge/belief-management repository (referred to as "cb") built on an OKF-style substrate with a four-type epistemic ontology (attestation → aggregation → inference → prescription), stable immutable ids, evidence/dependency edges, supersession-based updates, and a compiled contract. It served as the reference implementation from which this brain ported session capture, the routing ledger, and route-tagging.
 
-*Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md), [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md)
+*Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md), [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md), [2026-07-13 epistemic-overlay reconciliation](/meta/threads/2026-07-13-epistemic-overlay-reconciliation.md)

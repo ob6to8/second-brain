@@ -26,4 +26,4 @@ accuracy cost. VeriCache applies the same draft-and-verify pattern to a *compres
 KV cache* (draft from the compressed cache, verify against the full one) to make lossy
 compression lossless.
 
-*Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [VeriCache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md)
+*Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [VeriCache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md), [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md)

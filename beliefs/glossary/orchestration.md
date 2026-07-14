@@ -29,6 +29,6 @@ brain it is the direction named by the [engineer-as-orchestrator doctrine](/meta
 the brain's own operating loop (agents file and organize; the operator ratifies
 shape and evaluates gated output) is a practiced instance of it.
 
-*Seen in:* [engineer-as-orchestrator doctrine](/meta/doctrine/engineer-as-orchestrator.md), [orchestrator-role alignment analysis](/meta/analysis/alignment-with-the-orchestrator-role.md), [2026-07-12 doctrine-genre-and-orchestrator-alignment thread](/meta/threads/2026-07-12-doctrine-genre-and-orchestrator-alignment.md)
+*Seen in:* [engineer-as-orchestrator doctrine](/meta/doctrine/engineer-as-orchestrator.md), [orchestrator-role alignment analysis](/meta/analysis/alignment-with-the-orchestrator-role.md), [2026-07-12 doctrine-genre-and-orchestrator-alignment thread](/meta/threads/2026-07-12-doctrine-genre-and-orchestrator-alignment.md), [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md)
 
 *See also:* [doctrine](/beliefs/glossary/doctrine.md), [ratification](/beliefs/glossary/ratification.md), [session-init digest](/beliefs/glossary/session-init-digest.md)

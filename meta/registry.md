@@ -15,6 +15,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:1b3c79` | [beliefs/future-beliefs](/beliefs/future-beliefs.md) | note |  |
 | `sb:0b648f` | [beliefs/glossary](/beliefs/glossary.md) | concept | false |
 | `sb:8f37a6` | [beliefs/glossary/actor-model](/beliefs/glossary/actor-model.md) | concept | false |
+| `sb:bb0ef0` | [beliefs/glossary/advisor-pattern](/beliefs/glossary/advisor-pattern.md) | concept | false |
 | `sb:37a83f` | [beliefs/glossary/agent-memory](/beliefs/glossary/agent-memory.md) | concept | false |
 | `sb:2523b4` | [beliefs/glossary/agent-time-horizon](/beliefs/glossary/agent-time-horizon.md) | concept | false |
 | `sb:73e13b` | [beliefs/glossary/analysis-type](/beliefs/glossary/analysis-type.md) | concept | false |
@@ -43,6 +44,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:ee8dfd` | [beliefs/glossary/candidate-feed](/beliefs/glossary/candidate-feed.md) | concept | false |
 | `sb:50efa2` | [beliefs/glossary/capability-matched-model-selection](/beliefs/glossary/capability-matched-model-selection.md) | concept | false |
 | `sb:21854a` | [beliefs/glossary/ci-smoke-check](/beliefs/glossary/ci-smoke-check.md) | concept | false |
+| `sb:bee09c` | [beliefs/glossary/claude-agent-sdk](/beliefs/glossary/claude-agent-sdk.md) | concept | false |
 | `sb:04b9a8` | [beliefs/glossary/claude-managed-agents](/beliefs/glossary/claude-managed-agents.md) | concept | false |
 | `sb:8cfcb8` | [beliefs/glossary/cloudevents](/beliefs/glossary/cloudevents.md) | concept | false |
 | `sb:d676f0` | [beliefs/glossary/cognitive-debt](/beliefs/glossary/cognitive-debt.md) | concept | false |
@@ -53,6 +55,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:6a5115` | [beliefs/glossary/consensus-core](/beliefs/glossary/consensus-core.md) | concept | false |
 | `sb:0bf58a` | [beliefs/glossary/constant-tutorial-mode](/beliefs/glossary/constant-tutorial-mode.md) | concept | false |
 | `sb:37a60d` | [beliefs/glossary/content-security-policy](/beliefs/glossary/content-security-policy.md) | concept | false |
+| `sb:cc0302` | [beliefs/glossary/context-rot](/beliefs/glossary/context-rot.md) | concept | false |
 | `sb:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
 | `sb:b467a5` | [beliefs/glossary/council-round](/beliefs/glossary/council-round.md) | concept | false |
 | `sb:aea1cb` | [beliefs/glossary/credential-vault](/beliefs/glossary/credential-vault.md) | concept | false |
@@ -61,6 +64,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:1c53dc` | [beliefs/glossary/cross-reference-drift](/beliefs/glossary/cross-reference-drift.md) | concept | false |
 | `sb:c2a18e` | [beliefs/glossary/cross-site-scripting](/beliefs/glossary/cross-site-scripting.md) | concept | false |
 | `sb:197b02` | [beliefs/glossary/dark-factory](/beliefs/glossary/dark-factory.md) | concept | false |
+| `sb:a215af` | [beliefs/glossary/decision-prior](/beliefs/glossary/decision-prior.md) | concept | false |
 | `sb:bc34de` | [beliefs/glossary/decompose-then-verify](/beliefs/glossary/decompose-then-verify.md) | concept | false |
 | `sb:a757bb` | [beliefs/glossary/decontextualization](/beliefs/glossary/decontextualization.md) | concept | false |
 | `sb:f17e05` | [beliefs/glossary/deduplication](/beliefs/glossary/deduplication.md) | concept | false |
@@ -88,6 +92,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:9054ac` | [beliefs/glossary/environment-atms](/beliefs/glossary/environment-atms.md) | concept | false |
 | `sb:f727fe` | [beliefs/glossary/epistemic-overlay](/beliefs/glossary/epistemic-overlay.md) | concept | false |
 | `sb:e1c3b6` | [beliefs/glossary/epistemic-poisoning](/beliefs/glossary/epistemic-poisoning.md) | concept | false |
+| `sb:735b38` | [beliefs/glossary/epistemic-teleological-split](/beliefs/glossary/epistemic-teleological-split.md) | concept | false |
 | `sb:3101ef` | [beliefs/glossary/excerpt-log](/beliefs/glossary/excerpt-log.md) | concept | false |
 | `sb:9e1592` | [beliefs/glossary/exunit](/beliefs/glossary/exunit.md) | concept | false |
 | `sb:6a6054` | [beliefs/glossary/f1-at-k](/beliefs/glossary/f1-at-k.md) | concept | false |
@@ -100,6 +105,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:950a55` | [beliefs/glossary/flow-touch-sequence](/beliefs/glossary/flow-touch-sequence.md) | concept | false |
 | `sb:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
 | `sb:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
+| `sb:83b180` | [beliefs/glossary/functional-core-imperative-shell](/beliefs/glossary/functional-core-imperative-shell.md) | concept | false |
 | `sb:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
 | `sb:10e9cb` | [beliefs/glossary/generative-model](/beliefs/glossary/generative-model.md) | concept | false |
 | `sb:184bae` | [beliefs/glossary/git-worktree](/beliefs/glossary/git-worktree.md) | concept | false |
@@ -112,6 +118,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:fbab7f` | [beliefs/glossary/greedy-layer-wise-pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) | concept | false |
 | `sb:fe0ebd` | [beliefs/glossary/grounded-extension](/beliefs/glossary/grounded-extension.md) | concept | false |
 | `sb:8c4c5c` | [beliefs/glossary/grounding-tier](/beliefs/glossary/grounding-tier.md) | concept | false |
+| `sb:ac0e23` | [beliefs/glossary/harness](/beliefs/glossary/harness.md) | concept | false |
 | `sb:00e798` | [beliefs/glossary/hot-module-reload](/beliefs/glossary/hot-module-reload.md) | concept | false |
 | `sb:8fda94` | [beliefs/glossary/html-escaping](/beliefs/glossary/html-escaping.md) | concept | false |
 | `sb:3983f2` | [beliefs/glossary/hybrid-search](/beliefs/glossary/hybrid-search.md) | concept | false |
@@ -136,6 +143,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:5fdc55` | [beliefs/glossary/methodology-type](/beliefs/glossary/methodology-type.md) | concept | false |
 | `sb:577155` | [beliefs/glossary/minimal-inconsistent-subset](/beliefs/glossary/minimal-inconsistent-subset.md) | concept | false |
 | `sb:102785` | [beliefs/glossary/mix-task](/beliefs/glossary/mix-task.md) | concept | false |
+| `sb:ad7525` | [beliefs/glossary/mixture-of-experts](/beliefs/glossary/mixture-of-experts.md) | concept | false |
+| `sb:acf52e` | [beliefs/glossary/model-cascade](/beliefs/glossary/model-cascade.md) | concept | false |
 | `sb:c66f10` | [beliefs/glossary/model-context-protocol](/beliefs/glossary/model-context-protocol.md) | concept | false |
 | `sb:334e60` | [beliefs/glossary/mounting-point](/beliefs/glossary/mounting-point.md) | concept | false |
 | `sb:a5b3bd` | [beliefs/glossary/nogood](/beliefs/glossary/nogood.md) | concept | false |
@@ -144,6 +153,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:da67e8` | [beliefs/glossary/ontology](/beliefs/glossary/ontology.md) | concept | false |
 | `sb:1349cb` | [beliefs/glossary/operating-contract](/beliefs/glossary/operating-contract.md) | concept | false |
 | `sb:83ea50` | [beliefs/glossary/orchestration](/beliefs/glossary/orchestration.md) | concept | false |
+| `sb:121072` | [beliefs/glossary/orchestrator-pattern](/beliefs/glossary/orchestrator-pattern.md) | concept | false |
 | `sb:3ee2d2` | [beliefs/glossary/orphan-block](/beliefs/glossary/orphan-block.md) | concept | false |
 | `sb:a9113e` | [beliefs/glossary/orphaned-branch](/beliefs/glossary/orphaned-branch.md) | concept | false |
 | `sb:5d40bf` | [beliefs/glossary/otp](/beliefs/glossary/otp.md) | concept | false |
@@ -160,6 +170,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:4849ca` | [beliefs/glossary/property-based-testing](/beliefs/glossary/property-based-testing.md) | concept | false |
 | `sb:573229` | [beliefs/glossary/proto-belief-document](/beliefs/glossary/proto-belief-document.md) | concept | false |
 | `sb:ea7acc` | [beliefs/glossary/provenance](/beliefs/glossary/provenance.md) | concept | false |
+| `sb:b74c61` | [beliefs/glossary/pure-function](/beliefs/glossary/pure-function.md) | concept | false |
 | `sb:fb0bfb` | [beliefs/glossary/query-profile](/beliefs/glossary/query-profile.md) | concept | false |
 | `sb:a95adb` | [beliefs/glossary/ratification](/beliefs/glossary/ratification.md) | concept | false |
 | `sb:6e9584` | [beliefs/glossary/reachability](/beliefs/glossary/reachability.md) | concept | false |
@@ -171,6 +182,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:ae9b26` | [beliefs/glossary/red-test](/beliefs/glossary/red-test.md) | concept | false |
 | `sb:eb67ce` | [beliefs/glossary/reducer](/beliefs/glossary/reducer.md) | concept | false |
 | `sb:1dbcc9` | [beliefs/glossary/rendered-aggregation](/beliefs/glossary/rendered-aggregation.md) | concept | false |
+| `sb:e6f894` | [beliefs/glossary/repl](/beliefs/glossary/repl.md) | concept | false |
 | `sb:4c3f16` | [beliefs/glossary/research-spike](/beliefs/glossary/research-spike.md) | concept | false |
 | `sb:96a610` | [beliefs/glossary/residual-fragmentation](/beliefs/glossary/residual-fragmentation.md) | concept | false |
 | `sb:fd9873` | [beliefs/glossary/restricted-boltzmann-machine](/beliefs/glossary/restricted-boltzmann-machine.md) | concept | false |
@@ -181,6 +193,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:e55bda` | [beliefs/glossary/run](/beliefs/glossary/run.md) | concept | false |
 | `sb:371597` | [beliefs/glossary/safe](/beliefs/glossary/safe.md) | concept | false |
 | `sb:4f4f5c` | [beliefs/glossary/scenario-test](/beliefs/glossary/scenario-test.md) | concept | false |
+| `sb:9fdaf8` | [beliefs/glossary/second-mind](/beliefs/glossary/second-mind.md) | concept | false |
 | `sb:23844f` | [beliefs/glossary/section-terminator](/beliefs/glossary/section-terminator.md) | concept | false |
 | `sb:4e01f8` | [beliefs/glossary/self-consistency-check](/beliefs/glossary/self-consistency-check.md) | concept | false |
 | `sb:98acc0` | [beliefs/glossary/semantic-search](/beliefs/glossary/semantic-search.md) | concept | false |
@@ -209,6 +222,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:ffa597` | [beliefs/glossary/three-level-documentation](/beliefs/glossary/three-level-documentation.md) | concept | false |
 | `sb:d7e3c5` | [beliefs/glossary/todo-type](/beliefs/glossary/todo-type.md) | concept | false |
 | `sb:cb4734` | [beliefs/glossary/toulmin-model](/beliefs/glossary/toulmin-model.md) | concept | false |
+| `sb:3c4af9` | [beliefs/glossary/tower-of-interpreters](/beliefs/glossary/tower-of-interpreters.md) | concept | false |
 | `sb:8798e8` | [beliefs/glossary/tree-is-the-taxonomy](/beliefs/glossary/tree-is-the-taxonomy.md) | concept | false |
 | `sb:1efc5e` | [beliefs/glossary/tree-sitter](/beliefs/glossary/tree-sitter.md) | concept | false |
 | `sb:a10e18` | [beliefs/glossary/true-merge](/beliefs/glossary/true-merge.md) | concept | false |
@@ -220,6 +234,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:36436d` | [beliefs/glossary/vector-database](/beliefs/glossary/vector-database.md) | concept | false |
 | `sb:4f4baf` | [beliefs/glossary/verification-grounding](/beliefs/glossary/verification-grounding.md) | concept | false |
 | `sb:c6e78a` | [beliefs/glossary/verified-by](/beliefs/glossary/verified-by.md) | concept | false |
+| `sb:34fbe3` | [beliefs/glossary/von-neumann-architecture](/beliefs/glossary/von-neumann-architecture.md) | concept | false |
 | `sb:e19e32` | [beliefs/glossary/wake-sleep-algorithm](/beliefs/glossary/wake-sleep-algorithm.md) | concept | false |
 | `sb:de14e6` | [beliefs/glossary/warn-pass](/beliefs/glossary/warn-pass.md) | concept | false |
 | `sb:a8f067` | [beliefs/glossary/warrant](/beliefs/glossary/warrant.md) | concept | false |
