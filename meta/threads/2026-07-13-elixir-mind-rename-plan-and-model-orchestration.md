@@ -1,7 +1,7 @@
 ---
 type: reference
 title: 2026-07-13-elixir-mind-rename-plan-and-model-orchestration
-description: Spec'd the second-brain → elixir-mind rename as a type:plan doc (rescoped mid-session to also migrate the sb: → em: stable-id prefix, retargeted from an earlier elixir-brain), and held a model-orchestration discussion — which tier executes a mechanical refactor, and the diverge→converge (Fable-plan → Opus-execute) workflow with Sonnet/Haiku placement — whose agent-employment doctrine was left to a separate thread.
+description: Spec'd the second-brain → elixir-mind rename as a type:plan doc (rescoped mid-session to also migrate the sb: → em: stable-id prefix, retargeted from an earlier elixir-brain), plus a model-orchestration discussion (which tier executes a mechanical refactor; the diverge→converge Fable-plan→Opus-execute workflow; agent-employment judged doctrine-shaped, its model doctrine authored in a separate thread); opened PR #65, then a docs-coverage audit added Decision 6 (name-prose vs. code-identifier sweep) and origin/main was merged in.
 provenance: "Claude Code session (Claude Fable 5, then Claude Opus 4.8 via /model), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, rename, identity, migration, model-selection, orchestration, planning]
 timestamp: 2026-07-13
@@ -16,7 +16,10 @@ short pre-tool narration are stripped. Rendered from context via `/capture`'s
 render-from-context path. The session ran on Claude Fable 5 and switched to
 Claude Opus 4.8 via `/model` at the point marked below; the in-render discussion
 of "Fable plans, Opus executes" is the workflow being reasoned about, and it
-matched the session's own arc.
+matched the session's own arc. **This doc was refreshed in place** after PR #65
+opened, extending the render with the later exchanges (the docs-coverage audit,
+the Decision 6 edits, and the `origin/main` merge) per the capture update-in-place
+rule.
 
 ## Where this landed
 
@@ -26,7 +29,8 @@ first to `elixir-brain`, then retargeted to **`elixir-mind`**; and the scope was
 rescoped from a name-only rename to **also migrate the stable-id prefix**
 `sb:` → **`em:`**. The deliverable is one `type: plan` doc,
 [`meta/plans/rename-second-brain-to-elixir-mind.md`](/meta/plans/rename-second-brain-to-elixir-mind.md)
-(`status: proposed`), built up over four commits.
+(`status: proposed`). The plan was captured, opened as **PR #65**, then
+hardened by a docs-coverage audit and caught up to `main`.
 
 Settled shape of the plan:
 
@@ -47,16 +51,28 @@ Settled shape of the plan:
   inverted mid-session when the operator asked for `em:`: it had argued for
   holding the prefix stable across the brain→mind retarget; it now states the
   mnemonic-but-opaque rationale.
-- **Five decisions for ratification** (id-prefix migration + policy amendment;
+- **Six decisions for ratification** (id-prefix migration + policy amendment;
   a scoped freeze-exception to rewrite `sb:` tokens inside frozen thread bodies
   and dated records; updating `<routes>` path refs in frozen threads; renaming
-  the one filed concept whose slug carries the name; and proper-noun vs.
-  category-term prose — where "mind" removes the collision "brain" would have
-  had with the standing "second brain" category term).
-- **Measured surface:** `grep -ri 'second[-_ ]?brain'` finds 459 occurrences
-  across 128 files (most frozen, generated, or category-term prose); the id side
-  is 200 `id:` fields, ~940 `sb:` tokens, 65 `"sb:"` code sites. `deprecated/`
-  is excluded from both.
+  the one filed concept whose slug carries the name — plus its body module refs
+  and inbound display text; proper-noun vs. category-term prose — where "mind"
+  removes the collision "brain" would have had with the standing "second brain"
+  category term; and **Decision 6**, added by a post-capture docs-coverage audit:
+  sweep *live code identifiers* (`SecondBrain.`, `lib/second_brain/…`,
+  `:second_brain`) everywhere they appear — grep-defined across ~37 doc surfaces,
+  distinct from name-prose — resolving a keep-list trap where `meta/analysis/`
+  was marked frozen yet held live `lib/second_brain/…` links).
+- **Measured surface:** `grep -ri 'second[-_ ]?brain'` found 459 occurrences
+  across 128 files (most frozen, generated, or category-term prose) at capture
+  time; the id side was 200 `id:` fields / ~940 `sb:` tokens / 65 `"sb:"` code
+  sites. **The `origin/main` merge (~100 commits) roughly doubled the id count**
+  (363 files with `sb:` ids afterward), so the token figures are stale and must
+  be re-measured at execution. `deprecated/` is excluded from both.
+- **Merge reconciliation.** Merging `main` required adding the now-mandatory
+  `attribution` block to the plan doc (main's resource-attribution policy +
+  verify rule 8); the thread doc stays exempt. `meta/threads/index.md` conflicted
+  (both sides added 2026-07-13 entries) — kept all of main's plus this one. Full
+  gate suite green (156 tests).
 
 The second strand was **model/agent orchestration**. The operator asked which
 model to use to *execute* the rename (answer: Claude Opus 4.8 — the gate suite
@@ -270,3 +286,121 @@ That's the session wrapped. Whenever you're ready, the natural next steps are in
 - Or **open the PR** for this planning branch if you want the spec reviewed/merged first — just say so and I'll run `/create-pull-request`.
 
 No action needed from me unless you want one of those.
+
+## User
+
+_(invoked `/create-pull-request`)_
+
+## Assistant
+
+Done. **PR #65 is open:** https://github.com/ob6to8/second-brain/pull/65
+
+What `/create-pull-request` did, in order:
+
+1. **Captured** the session to `meta/threads/2026-07-13-elixir-mind-rename-plan-and-model-orchestration.md` — verbatim render, a `## Where this landed` narrative, and a two-row routing ledger. No route tags, because the session's only durable artifacts are the plan (a `type: plan`, no `sb:` id) and a doctrine that lives in another thread — there's no `sb:`-id concept sink to feed.
+2. **Glossary** — a legitimate no-op: the vocabulary is already in the glossary (148 terms), and the new orchestration concepts belong with the separately-authored model doctrine.
+3. **Elaboration back-links** — none created this session, skipped.
+4. **Committed and pushed** the capture, then **stamped `pr: 65`** into the thread frontmatter and pushed that.
+
+**The captured thread doc's final name:** `meta/threads/2026-07-13-elixir-mind-rename-plan-and-model-orchestration.md`.
+
+All gates were green before the PR (`route_tags`, `contract --check`, `registry --check`, `verify`). The branch now carries six commits: four building the plan, one capture, one PR-stamp.
+
+**Two honesty notes on the capture:**
+- The render reproduces my mid-session claim that "this session is running on Fable 5" verbatim, and the provenance reflects it as `Claude Fable 5, then Claude Opus 4.8 via /model` — consistent with the commit co-authors and the `/model` switch, though I'll flag that the environment's own identity line named Opus 4.8 throughout, so there's some genuine ambiguity about the pre-switch model.
+- Nothing about the model doctrine was written to this branch, per your instruction — it stays with the thread that authored it.
+
+Want me to **watch this PR** for CI and review comments (via `subscribe_pr_activity`)? I won't subscribe unless you say so.
+
+## User
+
+Does this cover all docs as well as code?
+
+## Assistant
+
+Here's the honest answer: **the plan's categories are complete, but its docs coverage has a real gap — and one active conflict.** The audit found **37 doc files** carrying *live code-identifier* references (`SecondBrain.` modules, `lib/second_brain/…` paths, `:second_brain`), and the plan's docs-sweep step (1a.4) names only about half the surfaces they live in.
+
+The distinction that matters — the plan half-conflates these:
+
+- **Name-as-prose** ("Second Brain" the project, "the second-brain field" the category) → correctly handled: frozen threads stay, category term stays (Decision 5).
+- **Code identifiers** (`SecondBrain.Contract`, `lib/second_brain/contract.ex`) → these are *live pointers into the code that Workstream A moves*. A dangling code pointer isn't frozen history; it's a broken reference. And these appear in surfaces the sweep list omits.
+
+**What 1a.4 covers:** skills, flows, tutorials, policy examples, README, root index, preamble. ✅
+
+**What it misses** (all carrying live code refs):
+- `beliefs/glossary/` (7 entries — e.g. `compiled-contract.md` refs `lib/second_brain/contract.ex`, `markdown-renderer.md` refs `SecondBrain.Markdown`) + `beliefs/glossary.md`, `beliefs/future-beliefs.md`
+- `knowledge/SWE/testing/elixir-second-brain-testing-methodology.md` — Decision 4 renames the *file*, but says nothing about the `SecondBrain.Frontmatter`/`SecondBrain.Policy` refs in its *body*, or the "Second Brain testing methodology" display text in its 3 inbound links
+- `meta/issues/`, `meta/evals/`, `meta/elaborations/`, and several `meta/plans/`
+
+**The active conflict:** `meta/analysis/` (3 files) contains live `lib/second_brain/contract.ex` links, yet the plan's scope boundaries put "point-in-time `meta/analysis/` docs" on the **frozen — not renamed** keep-list. So the plan's own keep-list would *mislead an executor into leaving broken code pointers there.*
+
+The mitigant is that the step-8 residue grep (`grep -ri 'second[-_ ]?brain'`) would surface every one of these — so a careful executor won't *ship* dangling refs. But they'd be making ad-hoc keep/rename calls the plan should have pre-classified, and the keep-list points them the wrong way on analysis.
+
+**The fix is three targeted plan edits:**
+1. **Redefine the sweep by identifier, not file list.** 1a.4 becomes: *sweep every live occurrence of the code identifiers across all non-frozen, non-`deprecated/` surfaces — the grep is the worklist (37 doc files today).*
+2. **Split the frozen boundary:** frozen threads and analysis keep their *name-prose* verbatim, but their *live code pointers* get updated. (Thread-*body* prose code mentions can stay as historical record — those aren't links the tooling repoints; analysis links are.)
+3. **Extend Decision 4** to cover the testing-methodology file's in-body module refs and inbound display text, not just the slug.
+
+Want me to make those three edits to the plan now? It's a cheap plan-edit that tightens the spec before ratification — and it's exactly the kind of gap better closed now than discovered mid-execution.
+
+## User
+
+Make those plan edits
+
+## Assistant
+
+The three edits are in, gates pass, and the push has updated **PR #65**. Here's what changed in the plan:
+
+**1. Docs sweep is now grep-defined, not file-list-defined.** The inventory gained a "Live code-identifier refs across *all* doc surfaces" row, and build-order step 1a.4 split into two: a **name-prose sweep** (Decision 5 — proper-noun uses, leaving the category term) and a **code-identifier sweep** (Decision 6 — every live `SecondBrain.` / `lib/second_brain/` / `:second_brain` across the ~37 doc files, worklist = the grep).
+
+**2. The frozen boundary is split by kind, resolving the conflict.** New **Decision 6** draws the line the plan was blurring: *name-prose* (frozen threads, the "second brain" category, analysis prose) stays; *code identifiers* are live pointers into moving code and move wherever they're live. `meta/analysis/` is now "name-prose frozen, code pointers updated" — no longer a keep-list trap. The one carve-out: prose code mentions inside frozen thread *bodies* stay as historical record (only `<routes>` refs repoint, per Decision 3).
+
+**3. Decision 4 covers the whole file, not just the slug** — the testing-methodology rename now also fixes its in-body `SecondBrain.*` refs and the three inbound links' display text ("Second Brain testing methodology" → "Elixir Mind…") and paths.
+
+Supporting updates: Phase 0 ratification now covers Decisions 5–6; step 1a.9 gained a **dedicated code-identifier residue check** (expects zero live-tree hits outside frozen threads) alongside the name grep; the estimate reflects the ~37-file code sweep; the index entry notes the sixth decision.
+
+**Net effect:** an executor following the plan can no longer be misled into leaving a dangling `lib/second_brain/contract.ex` link in a glossary entry or analysis doc — the sweep is defined by what's actually live, and the two residue greps are the completeness oracle. Your question caught a real hole; it's closed before ratification rather than mid-execution.
+
+The plan is still `status: proposed` — ready for your Phase 0 ratification whenever you want to green-light execution.
+
+## User
+
+Merge main into branch
+
+## Assistant
+
+`main` is merged into the branch and pushed — **PR #65** now reflects it. It was a true merge (per policy), catching the branch up on ~100 commits.
+
+**What needed reconciling:**
+
+- **`meta/threads/index.md` — content conflict.** Both sides appended 2026-07-13 entries. Kept all of main's and added the elixir-mind thread entry at the end of the day's group.
+- **`meta/plans/index.md`** — auto-merged cleanly (distinct additions on each side).
+- **New mandatory `attribution` block.** Main landed a resource-attribution policy with `mix brain.verify` rule 8 requiring an `attribution` map on every governance doc. My rename plan predated it, so verify failed — I added the block (`channel: agent-authored`, `from:` → this session's thread doc). The thread doc is correctly left **without** attribution, since main's policy makes threads exempt (it's an *error* for them to carry it — they use `provenance` + `pr`).
+
+**Verification:** full gate suite green — `brain.verify`, `route_tags`, `contract`/`registry`/`lineage --check`, and 156/156 tests. The only remaining warnings are advisory and pre-existing on main (unresolved `inbox/` links and one main thread's route-tag coverage) — none from this branch. `dev_history --check` skipped (shallow clone, expected).
+
+One thing worth surfacing from the merge: main has moved a lot while this plan sat — notably the **`attribution` property is now on every concept/governance doc**, and there's a new **`sense` field on glossary terms**. Neither changes the rename plan's logic, but when Phase 1b's corpus rewrite eventually runs, the `\bsb:([0-9a-f]{6})\b` → `em:$1` pass will now also sweep `sb:` ids inside `attribution.from` lists and any `sb:` refs in the new content — the regex already covers them, so it's in scope, just a larger token count than the ~940 measured earlier. Worth re-measuring at execution time. The plan stays `status: proposed`.
+
+Want me to leave PR #65 as-is, or is there anything else on it before you review?
+
+## User
+
+Have sb refs been changed to em yet, or is that in the plan you've written?
+Are we ready for /create-pull-request ?
+
+## Assistant
+
+**Q1 — No, nothing has been migrated.** Confirmed by the repo state:
+- **0** `em:` minted ids anywhere; **363** files still carry `sb:` ids; the id-format code is still `~r/^sb:[0-9a-f]{6}$/`.
+- The only `em:` tokens in the entire repo are the *illustrative examples inside the plan doc*. The `sb:` → `em:` migration is entirely described in the rename plan, `status: proposed` — not executed.
+
+One thing the merge changed: that `363` was `~200` when I first measured. Pulling in main's ~100 commits roughly doubled the id count (new glossary terms and concepts), so the plan's "200 ids / ~940 tokens" figures are now stale — worth re-measuring at execution time. The migration regex still covers everything; it's just a bigger corpus now.
+
+**Q2 — We already ran it; PR #65 is open.** So the answer isn't "run `/create-pull-request`" — that would try to open a *second* PR for the same branch. The state is:
+
+- PR #65 exists, branch pushed, gates green. ✅
+- But the **captured thread doc is now stale.** It was written at the "wrap with the plan" point, *before* three later exchanges: the docs-coverage audit, the Decision 6 edits, and this main-merge. Per the capture policy's update-in-place rule, the right move is to **regenerate that same thread doc** to include those exchanges, then push to #65 — not open a new PR.
+
+So the precise readiness answer: **the branch is ready; the thread record is one refresh behind.**
+
+Want me to **refresh the capture** — regenerate `2026-07-13-elixir-mind-rename-plan-and-model-orchestration.md` in place with the later exchanges (docs audit → Decision 6 → merge), re-check the glossary (likely still a no-op), and push to PR #65? That's the finalize motion here, rather than a fresh `/create-pull-request`.
