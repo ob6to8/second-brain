@@ -18,9 +18,9 @@ still holds for every other flow.)
 - The operator says "/create-pull-request", "commit and PR this", or "open a PR".
 
 **Merge is opt-in, off by default.** A bare invocation ends with the PR **open and
-handed back** for the operator to merge. Pass a `merge` argument
-(`/create-pull-request merge`; `--merge` is accepted too, case-insensitive) to have
-the skill drive CI to green and true-merge it as well — see step 9.
+handed back** for the operator to merge. Pass the bare `merge` argument
+(`/create-pull-request merge`) to have the skill drive CI to green and true-merge it
+as well — see step 9.
 
 ## Procedure
 
@@ -124,10 +124,10 @@ the skill drive CI to green and true-merge it as well — see step 9.
 
 ### 9. Merge — only with the `merge` argument
 - **Gated on an explicit opt-in.** Merge as part of this skill *only* when it was
-  invoked with a `merge` argument (`/create-pull-request merge`; also accept
-  `--merge`, case-insensitive). **Without that argument, stop after step 8** — the
-  open PR is handed back and the operator merges it when ready. A bare invocation
-  never merges (invoking authorizes *opening*, not merging).
+  invoked with the bare `merge` argument (`/create-pull-request merge`, matched
+  case-insensitively). **Without that argument, stop after step 8** — the open PR is
+  handed back and the operator merges it when ready. A bare invocation never merges
+  (invoking authorizes *opening*, not merging).
 - **Never merge red.** When the argument *is* present: poll the PR's checks
   (`mcp__github__pull_request_read` with `get_check_runs`) until CI is green, then
   merge with a **true merge commit** — `merge_method: "merge"`, never `squash` or
