@@ -6,7 +6,7 @@ section: composition
 order: 4
 status: active
 tags: [meta, governance, okf, index, log]
-timestamp: 2026-07-11
+timestamp: 2026-07-15
 attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
@@ -25,5 +25,5 @@ Reserved filenames (any directory level):
   [retire-hand-kept-logs plan](/meta/plans/retire-hand-kept-logs.md)). Do not
   create `log.md` files or append log entries; the change narrative belongs in
   commit messages. (The generated `## Thread excerpts — route-tagged log`
-  sections inside concepts are unrelated — they are compiled, CI-verified
+  sections inside documents are unrelated — they are compiled, CI-verified
   artifacts and stay.)

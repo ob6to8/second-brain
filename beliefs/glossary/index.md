@@ -49,7 +49,7 @@ system works.
 - [compiled contract](/beliefs/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
 - [complementary priors](/beliefs/glossary/complementary-priors.md) — Hinton/Osindero/Teh's device for cancelling explaining-away correlations in a directed belief net, making a deep model tractable to learn layer by layer
 - [Composable Beliefs (cb)](/beliefs/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
-- [concept (OKF)](/beliefs/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
+- [concept (type)](/beliefs/glossary/concept-type.md) — the controlled `type` for a definition or mental model; in practice two speech acts (term definition vs accepted proposition) sharing a name, a tension recorded for redefinition
 - [consensus core](/beliefs/glossary/consensus-core.md) — across compared belief systems, the beliefs every system supports and none attacks; what survives conflict examination
 - [constant tutorial mode](/beliefs/glossary/constant-tutorial-mode.md) — the operator's reader state when learning an agent-built system by using it; the audience the plain tier backstops
 - [Content Security Policy](/beliefs/glossary/content-security-policy.md) — a browser-enforced standard restricting which resources a page may load or contact; what makes a Claude artifact a sealed client-side document
@@ -82,6 +82,7 @@ system works.
 - [distill, don't dump](/beliefs/glossary/distill-dont-dump.md) — the filing rule that a concept captures the knowledge, not the raw noise; originals live in `resource`/Citations
 - [distillation target](/beliefs/glossary/distillation-target.md) — the curated document (plan, ADR, issue) that receives a review round's settled outcome; never a transcript
 - [doctrine](/beliefs/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
+- [document (OKF)](/beliefs/glossary/document-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`; OKF's own term for it is "concept document"
 - [domain-specific language](/beliefs/glossary/domain-specific-language.md) — a small language purpose-built for one domain, trading generality for concision and checkability; doubles as a constrained generation target for LLMs
 - [draft pull request](/beliefs/glossary/draft-pull-request.md) — a PR opened in draft state: full diff, commentable, explicitly not ready to merge; a council round's chamber
 - [drift class](/beliefs/glossary/drift-class.md) — a category of staleness whose instances share one detection mechanism, so a single detector covers the class
@@ -219,6 +220,7 @@ system works.
 - [stable id (`em:` id)](/beliefs/glossary/stable-id.md) — the opaque, immutable `em:` + 6-hex identifier every bundle concept carries
 - [stale block](/beliefs/glossary/stale-block.md) — a materialized excerpt-log block diverged from its re-derivation (source changed, not re-materialized); distinct from an orphan block
 - [staleness propagation](/beliefs/glossary/staleness-propagation.md) — when a premise changes, follow dependency edges outward and flag every statement resting on it for re-verification
+- [statement type](/beliefs/glossary/statement-type.md) — the controlled types (claim/note/concept) whose docs are agent-authored assertions and so may carry a `verified` field; the verifier draws no distinction among them
 - [static-site generator](/beliefs/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
 - [strand](/beliefs/glossary/strand.md) — one topic's line of work through a session; the routing ledger tracks one row per strand, state orthogonal to routing
 - [supersession](/beliefs/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)

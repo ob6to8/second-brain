@@ -23,7 +23,7 @@ fruits") rather than derived from other beliefs. One of the two node roles the
 belief-decomposition idea cuts on (the other being
 [inference](/beliefs/glossary/inference-belief-role.md)); it corresponds to the first
 of Composable Beliefs' four operations (attestation → aggregation → inference →
-prescription) and to a [source](/beliefs/glossary/concept-okf.md)-grounded leaf in a
+prescription) and to a [source](/beliefs/glossary/document-okf.md)-grounded leaf in a
 [truth maintenance system](/beliefs/glossary/truth-maintenance-system.md). A groundedness
 audit requires every inference to trace transitively to at least one attestation.
 

@@ -1,12 +1,12 @@
 ---
 type: policy
 title: Controlled type vocabulary
-description: The bundle uses a controlled, deliberately-growing list of concept types; the operator ratifies additions.
+description: The bundle uses a controlled, deliberately-growing list of document `type` values; the operator ratifies additions.
 section: type-vocabulary
 order: 1
 status: active
 tags: [meta, governance, types, vocabulary]
-timestamp: 2026-07-11
+timestamp: 2026-07-15
 attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
