@@ -488,7 +488,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   feeds, and each governance doc's trace back to its session all ship in the same
   PR. Invoking the skill **is** the authorization to open the PR (no separate
   confirmation gate); PR-template detection and the GitHub MCP tools handle the
-  rest. See `.claude/skills/create-pull-request/SKILL.md`.
+  rest. **Merging is opt-in, off by default:** a bare invocation ends with the PR
+  open and handed back to the operator; passing a `merge` argument
+  (`/create-pull-request merge`) has the skill drive CI to green and true-merge it.
+  See `.claude/skills/create-pull-request/SKILL.md`.
 - **`/sync-branch-with-main`** — fetch `origin/main` and merge it into the current
   working branch, keeping a feature branch current so its diff reflects only its own
   changes and a later PR merges cleanly. Refuses to run on `main`; surfaces conflicts
