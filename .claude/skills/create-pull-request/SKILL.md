@@ -17,6 +17,11 @@ still holds for every other flow.)
   turned into a PR.
 - The operator says "/create-pull-request", "commit and PR this", or "open a PR".
 
+**Merge is opt-in, off by default.** A bare invocation ends with the PR **open and
+handed back** for the operator to merge. Pass the bare `merge` argument
+(`/create-pull-request merge`) to have the skill drive CI to green and true-merge it
+as well — see step 9.
+
 ## Procedure
 
 ### 1. Capture the session first
@@ -105,10 +110,9 @@ still holds for every other flow.)
   thread's durable anchor; the ephemeral branch is deliberately not recorded).
   This is the *last* metadata motion, done after the PR exists because the
   number can't be known before. Skip if capture was skipped.
-- **If asked to merge the PR** (now or later in the session): use a **true merge
-  commit** — `merge_method: "merge"`, never `squash` or `rebase` — per the
-  [merge-strategy policy](/meta/policy/merge-strategy.md): the commit graph is a
-  provenance layer (session trailers, SHA citations), and squashing severs it.
+- **Do not merge here.** Opening + stamping is the end of the default flow. Merging
+  is gated behind the explicit opt-in in step 9 — without it, the open PR is handed
+  back for the operator to merge.
 - **Report the captured thread doc's assigned name.** After everything is done,
   state the `meta/threads/YYYY-MM-DD-<slug>.md` path that step 1 wrote (or note
   that capture was skipped), so the operator has the record's final name without
@@ -118,6 +122,22 @@ still holds for every other flow.)
 - After opening, offer to monitor the PR for CI failures and review comments via
   `subscribe_pr_activity` — don't subscribe unless the operator asks.
 
+### 9. Merge — only with the `merge` argument
+- **Gated on an explicit opt-in.** Merge as part of this skill *only* when it was
+  invoked with the bare `merge` argument (`/create-pull-request merge`, matched
+  case-insensitively). **Without that argument, stop after step 8** — the open PR is
+  handed back and the operator merges it when ready. A bare invocation never merges
+  (invoking authorizes *opening*, not merging).
+- **Never merge red.** When the argument *is* present: poll the PR's checks
+  (`mcp__github__pull_request_read` with `get_check_runs`) until CI is green, then
+  merge with a **true merge commit** — `merge_method: "merge"`, never `squash` or
+  `rebase` (see the [merge-strategy policy](/meta/policy/merge-strategy.md): the
+  commit graph is a provenance layer of session trailers and SHA citations, and
+  squashing severs it). If a check fails, **stop and surface it** — do not merge a
+  red PR.
+- After merging, report the merge SHA and confirm the head branch deleted (or delete
+  it if auto-delete is off).
+
 ## Guardrails
 - **Capture, glossary, and `from` stamping before committing.** Steps 1–3 run
   the full `/capture` skill, then `/add-to-glossary` over its thread doc, then
@@ -125,9 +145,11 @@ still holds for every other flow.)
   so the session record, the terms it introduced, *and* the trace from each
   governance doc back to its session all ship in the same PR; don't commit the
   change and leave any of them for later.
-- **The invocation is the authorization.** This skill opens the PR without a
-  separate confirmation — running it *is* the operator's yes. Don't add a
-  confirmation step back in.
+- **The invocation authorizes *opening*, not merging.** Running this skill is the
+  operator's yes to capture, commit, push, and open the PR — no separate
+  confirmation for those. **Merging is a separate opt-in:** it happens only when the
+  skill is invoked with the `merge` argument (step 9). A bare invocation ends with
+  the PR open and handed back — never self-merge it.
 - **Never commit to a default branch.** Develop on the designated feature branch.
 - **Never squash- or rebase-merge.** Merges are true merge commits only — see the
   [merge-strategy policy](/meta/policy/merge-strategy.md).

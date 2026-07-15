@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md]
 ---
 - **`/intake`** — process pasted content into one or more filed concepts. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -63,7 +63,10 @@ attribution:
   feeds, and each governance doc's trace back to its session all ship in the same
   PR. Invoking the skill **is** the authorization to open the PR (no separate
   confirmation gate); PR-template detection and the GitHub MCP tools handle the
-  rest. See `.claude/skills/create-pull-request/SKILL.md`.
+  rest. **Merging is opt-in, off by default:** a bare invocation ends with the PR
+  open and handed back to the operator; passing a `merge` argument
+  (`/create-pull-request merge`) has the skill drive CI to green and true-merge it.
+  See `.claude/skills/create-pull-request/SKILL.md`.
 - **`/sync-branch-with-main`** — fetch `origin/main` and merge it into the current
   working branch, keeping a feature branch current so its diff reflects only its own
   changes and a later PR merges cleanly. Refuses to run on `main`; surfaces conflicts
