@@ -6,14 +6,14 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-12
+timestamp: 2026-07-15
 attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
   from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md]
 ---
-- **`/intake`** — process pasted content into one or more filed concepts. See
+- **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
   brain.
 - **`/render-contract`** — recompile `CLAUDE.md` from `meta/policy/*.md` after editing
@@ -38,11 +38,11 @@ attribution:
   The phrase-scale sibling of `/summarize-technical`. See
   `.claude/skills/elaborate/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
-  or a filed concept; extract the technical terms it actually uses; and merge distilled
-  definitions into the glossary — **one concept file per term** under
+  or a filed document; extract the technical terms it actually uses; and merge distilled
+  definitions into the glossary — **one `concept` document per term** under
   [`/beliefs/glossary/`](/beliefs/glossary/index.md) (hub: [`/beliefs/glossary.md`](/beliefs/glossary.md)), each with
-  its own `em:` id and *Seen in:* citations, so any response or concept can cite a
-  term by link (pointer entries defer to filed concepts instead of duplicating them).
+  its own `em:` id and *Seen in:* citations, so any response or document can cite a
+  term by link (pointer entries defer to filed documents instead of duplicating them).
   Also invoked automatically by `/create-pull-request` on the thread doc its
   `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
 - **`/research`** — generate today's **inbox**: a daily candidate feed of research, articles,
@@ -50,7 +50,7 @@ attribution:
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) — then
   **auto-intake the featured items** into the bundle via `/intake`. The digest is the
   dated record in the non-bundle `inbox/` namespace (no `em:` ids); its featured items
-  graduate into filed concepts in the same run, bounded to the known tree (items needing
+  graduate into filed documents in the same run, bounded to the known tree (items needing
   a new top-level domain are deferred for operator ratification) and attributed
   `channel: auto-intake` for the operator's post-intake editorial pass. See
   `.claude/skills/research/SKILL.md`.

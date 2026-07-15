@@ -6,7 +6,7 @@ section: session-workflow
 order: 2
 status: active
 tags: [meta, governance, threads, routing, workflow]
-timestamp: 2026-07-08
+timestamp: 2026-07-15
 attribution:
   when: 2026-07-08T11:54:45+00:00
   channel: backfill
@@ -24,18 +24,20 @@ Four columns:
 |--------|-------|
 | **Topic** | what the strand is about, one line |
 | **State** | `open` (live) · `paused` (waiting on a dangling question) · `closed` (resolved; nothing further expected) |
-| **Routed to** | a markdown link to the `concept` doc that absorbed the strand's content, or `unrouted` |
+| **Routed to** | a markdown link to the document that absorbed the strand's content, or `unrouted` |
 | **Dangling** | the open question, when `open`/`paused` (else `-`) |
 
 - **Pointers and states only — never content.** Synthesized content lands in the
-  routed-to `concept` doc; if it also lived in the ledger the ledger would become
+  routed-to document; if it also lived in the ledger the ledger would become
   a stale shadow copy of that doc. State (the strand) and routed-to (the
   dispatch) are orthogonal: a strand can be routed yet still `open`, or `closed`
   and `unrouted`.
-- **Routed-to targets are `concept` docs**, linked by bundle-absolute path
-  (e.g. `[foo](/knowledge/SWE/…/foo.md)`). The route-tagging cross-check reads this column
-  to confirm every concept-routed row is covered by a tag (see the route-tagging
-  policy).
+- **Routed-to targets are documents** — bundle or governance, of any `type` —
+  linked by bundle-absolute path (e.g. `[foo](/knowledge/SWE/…/foo.md)`). The
+  route-tagging cross-check reads this column to confirm every row routed to a
+  **bundle** document (one carrying a stable `em:` id) is covered by a tag;
+  governance targets carry no id and drop out of that check (see the
+  route-tagging policy).
 - **In-doc, maintained at capture time.** The ledger is a section of the thread
   doc itself (not a sibling file), written and updated by `/capture` in the same
   motion that routes content — routing and ledger update are one act, not a

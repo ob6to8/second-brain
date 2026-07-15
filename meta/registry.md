@@ -52,7 +52,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:23f009` | [beliefs/glossary/compiled-contract](/beliefs/glossary/compiled-contract.md) | concept | false |
 | `em:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
 | `em:04f8dd` | [beliefs/glossary/composable-beliefs](/beliefs/glossary/composable-beliefs.md) | concept | false |
-| `em:317879` | [beliefs/glossary/concept-okf](/beliefs/glossary/concept-okf.md) | concept | false |
+| `em:4a590f` | [beliefs/glossary/concept-type](/beliefs/glossary/concept-type.md) | concept | false |
 | `em:6a5115` | [beliefs/glossary/consensus-core](/beliefs/glossary/consensus-core.md) | concept | false |
 | `em:0bf58a` | [beliefs/glossary/constant-tutorial-mode](/beliefs/glossary/constant-tutorial-mode.md) | concept | false |
 | `em:37a60d` | [beliefs/glossary/content-security-policy](/beliefs/glossary/content-security-policy.md) | concept | false |
@@ -85,6 +85,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:bec37f` | [beliefs/glossary/distill-dont-dump](/beliefs/glossary/distill-dont-dump.md) | concept | false |
 | `em:04befc` | [beliefs/glossary/distillation-target](/beliefs/glossary/distillation-target.md) | concept | false |
 | `em:6a9e78` | [beliefs/glossary/doctrine](/beliefs/glossary/doctrine.md) | concept | false |
+| `em:317879` | [beliefs/glossary/document-okf](/beliefs/glossary/document-okf.md) | concept | false |
 | `em:8b3e30` | [beliefs/glossary/domain-specific-language](/beliefs/glossary/domain-specific-language.md) | concept | false |
 | `em:f5523f` | [beliefs/glossary/draft-pull-request](/beliefs/glossary/draft-pull-request.md) | concept | false |
 | `em:683301` | [beliefs/glossary/drift-class](/beliefs/glossary/drift-class.md) | concept | false |
@@ -222,6 +223,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:4d71d3` | [beliefs/glossary/stable-id](/beliefs/glossary/stable-id.md) | concept | false |
 | `em:e203a2` | [beliefs/glossary/stale-block](/beliefs/glossary/stale-block.md) | concept | false |
 | `em:1e9cde` | [beliefs/glossary/staleness-propagation](/beliefs/glossary/staleness-propagation.md) | concept | false |
+| `em:0fd614` | [beliefs/glossary/statement-type](/beliefs/glossary/statement-type.md) | concept | false |
 | `em:efad31` | [beliefs/glossary/static-site-generator](/beliefs/glossary/static-site-generator.md) | concept | false |
 | `em:bb2968` | [beliefs/glossary/strand](/beliefs/glossary/strand.md) | concept | false |
 | `em:ea95e4` | [beliefs/glossary/supersession](/beliefs/glossary/supersession.md) | concept | false |
