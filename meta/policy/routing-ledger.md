@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-08T11:54:45+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md]
+  from: [/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md, /meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md]
 ---
 Every captured thread carries a **`## Routing`** section: a per-thread dispatch
 table with one row per topic the session touched. It is a **router, never a

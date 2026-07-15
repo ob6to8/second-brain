@@ -29,6 +29,6 @@ Notably the verifier draws *no* distinction among the three statement types
 themselves: the only enforceable difference between a `claim` and a `concept` is
 the word in the frontmatter.
 
-*Seen in:* [concept-terminology plan](/meta/plans/concept-terminology-and-type-redefinition.md)
+*Seen in:* [2026-07-15 concept→document replication thread](/meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md), [concept-terminology plan](/meta/plans/concept-terminology-and-type-redefinition.md)
 
 *See also:* [verification grounding](/beliefs/glossary/verification-grounding.md), [verified_by](/beliefs/glossary/verified-by.md), [provenance](/beliefs/glossary/provenance.md)

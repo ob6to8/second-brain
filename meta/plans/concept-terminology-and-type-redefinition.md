@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, replication of PR 71 onto current main"
   why: "re-lands the concept/document terminology split and carries forward the open concept-type questions after PR 71 went stale unmerged"
+  from: [/meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md]
 ---
 
 # Concept terminology: the document/concept split and the concept-type redefinition

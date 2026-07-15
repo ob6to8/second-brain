@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md]
 ---
 - **The repo root is the OKF bundle.** Documents live at the root and in
   subdirectories. `.claude/` (skills), `meta/` (governance), the Elixir tooling

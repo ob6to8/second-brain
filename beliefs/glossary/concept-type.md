@@ -35,4 +35,4 @@ Distinct from [document (OKF)](/beliefs/glossary/document-okf.md), the *unit* th
 OKF spec calls a "concept document" (any frontmatter-plus-body file, regardless
 of type).
 
-*Seen in:* [concept-terminology plan](/meta/plans/concept-terminology-and-type-redefinition.md)
+*Seen in:* [2026-07-15 concept→document replication thread](/meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md), [concept-terminology plan](/meta/plans/concept-terminology-and-type-redefinition.md)
