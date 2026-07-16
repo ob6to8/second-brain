@@ -225,6 +225,7 @@ system works.
 - [synonym expansion](/beliefs/glossary/synonym-expansion.md) — broadening a query with synonyms, jargon variants, and acronym expansions to bridge vocabulary mismatch without embeddings
 - [thread doc](/beliefs/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
 - [three-level documentation](/beliefs/glossary/three-level-documentation.md) — opt-in scheme: plain backstop / canonical technical body / grounding tier — one canonical level plus two anchored derivations
+- [timestamp](/beliefs/glossary/timestamp.md) — commonly a recorded date-time; here the frontmatter field for last *meaningful* change — the semantic modified-date beside `attribution.when` (created) and git dates (mechanical)
 - [todo (type)](/beliefs/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`
 - [Toulmin model](/beliefs/glossary/toulmin-model.md) — claim/grounds/warrant/backing/qualifier/rebuttal: justification, not formal inference, as argument's first-class object
 - [tower of interpreters](/beliefs/glossary/tower-of-interpreters.md) — the agent as stacked interpreters: model over natural language, loop over model emissions, tools over structured arguments

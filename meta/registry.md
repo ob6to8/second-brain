@@ -228,6 +228,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:40133e` | [beliefs/glossary/synonym-expansion](/beliefs/glossary/synonym-expansion.md) | concept | false |
 | `em:089fb2` | [beliefs/glossary/thread-doc](/beliefs/glossary/thread-doc.md) | concept | false |
 | `em:ffa597` | [beliefs/glossary/three-level-documentation](/beliefs/glossary/three-level-documentation.md) | concept | false |
+| `em:59cff6` | [beliefs/glossary/timestamp](/beliefs/glossary/timestamp.md) | concept | false |
 | `em:d7e3c5` | [beliefs/glossary/todo-type](/beliefs/glossary/todo-type.md) | concept | false |
 | `em:cb4734` | [beliefs/glossary/toulmin-model](/beliefs/glossary/toulmin-model.md) | concept | false |
 | `em:3c4af9` | [beliefs/glossary/tower-of-interpreters](/beliefs/glossary/tower-of-interpreters.md) | concept | false |
