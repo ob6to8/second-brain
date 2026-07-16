@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, epistemics, logic, consistency, atms]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T20:14:11+00:00
   channel: glossary
@@ -17,14 +17,11 @@ attribution:
 
 # paraconsistency
 
-Tolerating contradiction without explosion. In classical logic a single
-inconsistency licenses *every* conclusion (ex falso quodlibet), so one
-contradiction poisons the whole store; a paraconsistent arrangement quarantines
-contradictions so that reasoning not touching them stays meaningful. The ATMS
+The ATMS
 achieves this structurally — classical within each context, tolerant across
 contexts — because each belief's
 [label](/beliefs/glossary/label-atms.md) says exactly which assumption sets it depends
-on, so "is this affected by the contradiction?" has a direct answer. The
+on, so "is this affected by the contradiction?" has a direct answer. It is the
 property any multi-document belief comparison needs, since two artifacts can
 each be coherent and mutually contradictory.
 

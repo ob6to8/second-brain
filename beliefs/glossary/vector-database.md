@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, embeddings]
 sense: common
-timestamp: 2026-07-10
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # vector database
 
-A store that indexes items as high-dimensional embedding vectors and answers nearest-neighbor queries by vector similarity, enabling semantic rather than lexical retrieval (e.g. Chroma, sqlite-vec, LanceDB, Qdrant). Its cost only pays off past a corpus size where lexical search's recall genuinely breaks down.
+Examples include Chroma, sqlite-vec, LanceDB, and Qdrant. Its cost only pays off past a corpus size where lexical search's recall genuinely breaks down.
 
 *Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)

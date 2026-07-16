@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, cross-linking, okf]
 sense: repo
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T19:22:43+00:00
   channel: glossary
@@ -17,10 +17,9 @@ attribution:
 
 # bundle-absolute link
 
-A markdown link whose target begins at the bundle root with a leading slash —
-`[route tag](/beliefs/glossary/route-tag.md)` — so it resolves identically from
-any document in the bundle, unlike a relative link, which depends on the linking
-file's own location. The
+The leading slash is what distinguishes it from a relative link, whose target
+depends on the linking file's own location; the canonical form is
+`[route tag](/beliefs/glossary/route-tag.md)`. The
 [cross-linking policy](/meta/policy/filenames-and-cross-linking.md) prefers this
 form for prose links between concepts *inside* the bundle; a separate
 [response-resource-links policy](/meta/policy/response-resource-links.md) governs

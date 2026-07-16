@@ -26,6 +26,11 @@ the policy set, the `concept-anatomy.md` → `document-anatomy.md` rename, the
 Part 2 (the `concept`-type redefinition questions filed as a proposed plan), and the
 glossary accretion (`concept (type)`, `statement type`, `graduation` sense 2). All
 gates green; committed and pushed to `claude/concept-document-terminology-84avtt`.
+The operator then ran `/create-pull-request merge`: this thread was captured,
+glossaried, and `attribution.from`-stamped, shipped as **PR #93**, CI driven green,
+and true-merged into `main` (`e745f08`). The superseded **PR #71** was closed with a
+pointer comment to #93, and its stale branch (`claude/concept-definition-review-wmvtl2`,
+whose four commits are reproduced in `main` and pinned by the closed PR) cleaned up.
 
 ## Routing
 
@@ -112,4 +117,54 @@ Done. PR #71's terminology work is now replicated onto current `main` and pushed
 **All gates green:** `mix brain.contract --check`, `mix brain.registry --check`, `mix brain.verify`, `mix brain.route_tags`, `mix test` (156 tests, 0 failures).
 
 I did not open a PR (per your standing instruction), and did not carry over the original 2026-07-13 thread doc — this session gets its own capture. PR #71 is now superseded and still open on GitHub; you'll likely want to close it.
+</routes>
+
+## Assistant
+
+<routes ref="/meta/plans/concept-terminology-and-type-redefinition.md">
+Done — the full `/create-pull-request merge` flow completed and the change is merged into `main`.
+
+- **PR #93** — merged into `main` via a true merge commit **`e745f08`**. Head branch auto-deleted.
+- **CI green** before merge: both `verify` checks succeeded on the head commit; `mergeable_state: clean`.
+- Confirmed on `main`: `document-anatomy.md` present, `concept-anatomy.md` removed, compiled contract now reads "Document ID = file path minus `.md`" sourced from `document-anatomy.md`.
+
+The captured thread doc is `meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md`.
+
+One loose end: **PR #71 is now superseded but still open** on GitHub. Want me to close it with a comment pointing to #93?
+</routes>
+
+## User
+
+Yes proceed
+
+## Assistant
+
+<routes ref="/meta/plans/concept-terminology-and-type-redefinition.md">
+Done. PR #71 is now **closed** with a comment pointing to the merged #93.
+
+One note per the git-branch-deletion policy: #71's head branch `claude/concept-definition-review-wmvtl2` still exists and carries **unmerged** commits (its work landed via re-application, not a merge, so git considers those commits unmerged). The policy is not to delete unmerged branches without your say-so. Its content is fully reproduced in `main` now, so it's safe to delete — want me to remove it?
+</routes>
+
+## User
+
+Yes delete
+
+## Assistant
+
+The `git push --delete` keeps failing — the git-over-HTTP proxy here appears to reject ref deletions (it hangs up rather than erroring cleanly), and there's no GitHub MCP tool for deleting a branch. Since you offered — go ahead and delete `claude/concept-definition-review-wmvtl2` on your side.
+
+## User
+
+Its 4 commits ahead, still ok to delete?
+
+## Assistant
+
+<routes ref="/meta/plans/concept-terminology-and-type-redefinition.md">
+Yes — safe to delete.
+
+**The "4 ahead" are exactly PR #71's commits** (never merged, so they were never in `main`'s ancestry — being ahead is expected for a closed-unmerged PR): `fe5aa52` (Part 1 sweep), `cef9192` (the plan), `f476f74` (capture/glossary), `2eea08a` (pr:71 stamp).
+
+**Their content is fully reproduced in `main`** via #93 (re-applied fresh), so no work is lost.
+
+**One thing I checked** because it's the exact risk the merge-strategy policy warns about: my new plan and thread doc on `main` *do* cite `fe5aa52` (and `cef9192`) by SHA. Normally deleting a branch with cited SHAs can turn them into garbage — but that warning is about squash-merges that leave commits unreachable. Here it's fine: **GitHub permanently retains a closed PR's commits**, so `fe5aa52` et al. keep resolving via PR #71's "Commits" tab and their commit URLs even after the branch is deleted. The citations stay live. (They won't appear in `git log`/`git blame` of `main` — but they never would have, since #71 was closed unmerged, not merged.)
 </routes>

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition; term introduced by operator qu
 verified: false
 tags: [glossary, governance, terminology]
 sense: dual
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T19:58:08+02:00
   channel: glossary
@@ -17,7 +17,7 @@ attribution:
 
 # doctrine
 
-The layer of guiding principles and accepted tenets in a governance system — the "why" that shapes judgment without prescribing specific action. Doctrine informs policy; a [policy](/beliefs/glossary/policy-type.md) implements doctrine as a concrete, enforceable rule.
+A [policy](/beliefs/glossary/policy-type.md) implements doctrine as a concrete, enforceable rule — the direction runs one way, doctrine informing policy and not the reverse.
 
 **In this brain:** a controlled `type` and a [`meta/doctrine/`](/meta/doctrine/index.md) genre (since 2026-07-12) for standing intention statements (first document: [the engineer as orchestrator](/meta/doctrine/engineer-as-orchestrator.md)); the *worldview* doctrine — "the tree is the taxonomy", "distill, don't dump" — still lives distributed across the preamble and compiled [operating contract](/beliefs/glossary/operating-contract.md) read as a whole, while each `type: policy` file is a single standing rule.
 

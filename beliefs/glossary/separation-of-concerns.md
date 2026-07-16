@@ -17,14 +17,12 @@ attribution:
 
 # separation of concerns
 
-The design principle that a system should be divided so each part addresses one
-distinct *concern* — one responsibility or axis of change — with the boundaries
-between parts made explicit, so parts can evolve, be versioned, and be reused
-independently. A "concern" is anything that changes for its own reasons: mixing
-two concerns in one artifact couples their change cadences and consumers.
-Applied to this repo, the two concerns are the knowledge bundle (an opinionated
-OKF collection) and the Elixir Mind library (the tooling and the metadata
-schema it enforces) — cohabiting one root today, delineated by the
-[separation plan](/meta/plans/separate-okf-bundle-and-elixir-mind-library.md).
+A "concern" is anything that changes for its own reasons: mixing two in one
+artifact couples their change cadences, consumers, and review surfaces, so a
+delivery-focused edit and a knowledge-filing edit end up competing for the same
+history. In this repo the principle names the split between the knowledge
+bundle (an opinionated OKF collection) and the Elixir Mind library (the tooling
+and the metadata schema it enforces) — cohabiting one root today, delineated by
+the [separation plan](/meta/plans/separate-okf-bundle-and-elixir-mind-library.md).
 
 *Seen in:* [2026-07-15 bundle-library separation thread](/meta/threads/2026-07-15-bundle-library-separation-plan.md)

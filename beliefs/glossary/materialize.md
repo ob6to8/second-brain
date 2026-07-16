@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, tooling, generated-artifacts]
 sense: dual
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:02:52+00:00
   channel: glossary
@@ -17,9 +17,7 @@ attribution:
 
 # materialize
 
-To compute derived content and write it to disk as ordinary file content,
-instead of recomputing it on demand — the sense of a database's *materialized
-view*. Materialized output is readable and
+The name borrows the sense of a database's *materialized view*. Materialized output is readable and
 diffable without running the tool, but it can go stale the moment its source
 changes — which is why it pairs with a freshness check that re-derives and
 compares (the generated-not-hand-kept discipline).

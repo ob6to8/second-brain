@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, types, governance]
 sense: repo
-timestamp: 2026-07-10
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # methodology (type)
 
-The controlled `type` for a repeatable, prescriptive procedure or playbook: the distilled *how-to* for carrying out a recurring task. Distinct from a `note` (an idea) and a `concept` (a mental model). Defined in the [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md).
+Distinct from a `note` (an idea) and a `concept` (a mental model), and defined in the [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md).
 
 *Seen in:* [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md)

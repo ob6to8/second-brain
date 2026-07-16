@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, evaluation]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # recall@k
 
-A retrieval metric measuring whether the correct target appears within the top k returned results for a query. A [recall probe](/beliefs/glossary/recall-probe.md) reports recall@k across a query set to quantify how reliably a search surfaces known targets.
+The metric a [recall probe](/beliefs/glossary/recall-probe.md) aggregates across its query set.
 
 *Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)

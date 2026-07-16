@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, agents, llm-orchestration, cost-optimization, anthropic, advisor-tool]
 sense: common
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13T12:00:00Z
   channel: glossary
@@ -17,11 +17,7 @@ attribution:
 
 # advisor pattern
 
-An agent cost-optimization pattern in which a fast, low-cost **executor** model
-does the bulk of token generation and consults a higher-intelligence **advisor**
-model only at the moments where a good plan or course-correction matters — so most
-tokens bill at the cheaper executor rate while output quality approaches
-advisor-solo. Anthropic ships a native implementation as the **advisor tool** (a
+Anthropic ships a native implementation as the **advisor tool** (a
 beta Messages API server-side tool, `advisor_20260301`): the executor emits an
 empty `server_tool_use` block, Anthropic runs the advisor sub-inference over the
 full transcript *inside the same request*, and the advice returns as an

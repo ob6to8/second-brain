@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, parsing, markdown, tooling]
 sense: common
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T09:10:24+00:00
   channel: glossary
@@ -17,8 +17,7 @@ attribution:
 
 # section terminator
 
-The pattern a parser uses to decide where a document section *ends* — in this
-bundle's tooling, the next h1 or h2 heading closes the
+In this bundle's tooling, the next h1 or h2 heading closes the
 [excerpt log](/beliefs/glossary/excerpt-log.md) section. The subtlety is agreement:
 when one code path **reads** a section and another **rewrites** it, the two
 must share the same terminator, or the reader includes content the writer

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, review, adversarial]
 sense: dual
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13T20:28:57+00:00
   channel: glossary
@@ -17,10 +17,8 @@ attribution:
 
 # disposition
 
-The single verdict a review finding must receive before a review round can
-converge: **agree** (the finding stands; state what will change), **refute**
-(the finding is wrong; give evidence — code, tests, docs — not assertion), or
-**defer** (real but out of scope; name where it goes and file it there). In a
+Refute demands evidence — code, tests, docs — not assertion; defer must name
+where the finding goes and file it there. In a
 [council round](/beliefs/glossary/council-round.md) the close motion is a gate on
 dispositions: it enumerates every finding and refuses to close while any lacks
 one, because silent omission is the failure mode the review exists to catch.

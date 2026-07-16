@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, enforcement, tooling, ci]
 sense: repo
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T09:43:37+00:00
   channel: glossary
@@ -17,7 +17,7 @@ attribution:
 
 # detector
 
-A mechanical check that converts a rule violation or drift from a silent state into an announced signal, thereby creating the *repair signal* that [probabilistic enforcement](/beliefs/glossary/probabilistic-enforcement.md) lacks — a violation with a detector gets fixed once; a violation without one compounds. Detectors come in two strengths: **gates** (the signal is a failure — CI blocks the merge) and [warn passes](/beliefs/glossary/warn-pass.md) (the signal is advisory — printed, never blocking). The recurring design move in this brain is shrinking the set of surfaces that rely on discipline by giving each [drift class](/beliefs/glossary/drift-class.md) a detector; what remains detector-less (README prose accuracy, semantic duplication) is known and named rather than assumed covered.
+A violation with a detector gets fixed once; a violation without one compounds — that *repair signal* is what [probabilistic enforcement](/beliefs/glossary/probabilistic-enforcement.md) lacks. Detectors come in two strengths: **gates** (the signal is a failure — CI blocks the merge) and [warn passes](/beliefs/glossary/warn-pass.md) (the signal is advisory — printed, never blocking). The recurring design move in this brain is shrinking the set of surfaces that rely on discipline by giving each [drift class](/beliefs/glossary/drift-class.md) a detector; what remains detector-less (README prose accuracy, semantic duplication) is known and named rather than assumed covered.
 
 *Seen in:* [docs-surface evaluation and the wiki question](/meta/analysis/docs-surface-evaluation-and-wiki-question.md), [the gate suite tutorial](/meta/tutorials/the-gate-suite-and-where-it-runs.md), [2026-07-12 docs-audit thread](/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md)
 
