@@ -5,6 +5,7 @@ description: Investigated unmergeable PR #70, and the operator redirected from r
 provenance: "Claude Code session (claude-fable-5), 2026-07-16; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, indexes, collections, generated-artifact, llm-placement, plans]
 timestamp: 2026-07-16
+pr: 97
 ---
 
 # 2026-07-16-derived-index-listings-plan
