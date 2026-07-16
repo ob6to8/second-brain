@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, elixir-mind, beam, elixir, runtime, second-mind, architecture]
 sense: repo
-timestamp: 2026-07-14
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-14T00:00:00Z
   channel: glossary
@@ -17,7 +17,7 @@ attribution:
 
 # elixir-mind
 
-The ratified new name for **this brain itself**: per the accepted
+Per the accepted
 [rename plan](/meta/plans/rename-second-brain-to-elixir-mind.md), the
 `second-brain` repository, its Elixir app/module namespace, and the stable-id
 prefix (`sb:` → `em:`) all move to **elixir-mind**. The name marries

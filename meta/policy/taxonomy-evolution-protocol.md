@@ -6,7 +6,7 @@ section: directory-structure
 order: 3
 status: active
 tags: [meta, governance, taxonomy, ratification]
-timestamp: 2026-07-05
+timestamp: 2026-07-15
 attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
@@ -15,7 +15,7 @@ attribution:
 ---
 The taxonomy-evolution protocol (important):
 
-- Filing a concept into an **existing** directory, or creating **subdirectories
+- Filing a document into an **existing** directory, or creating **subdirectories
   under an already-established top-level domain**, → the agent does this
   **autonomously** (create the path and each new directory's `index.md`).
 - Creating a **new top-level directory** (or renaming/moving/merging directories) is

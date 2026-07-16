@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, elixir, testing]
 sense: common
-timestamp: 2026-07-10
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # ExUnit
 
-Elixir's built-in unit-testing framework, shipped with the standard distribution. It supports fixtures and test tags such as `:tmp_dir` (a temp-directory-scoped case), and is what this brain's dependency-free tooling uses for its scenario tests.
+It is what this brain's dependency-free tooling uses for its scenario tests.
 
 *Seen in:* [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md)

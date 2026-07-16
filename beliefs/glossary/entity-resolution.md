@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, epistemics, belief-decomposition, canonicalization, nlp]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13T20:34:46+00:00
   channel: glossary
@@ -17,12 +17,10 @@ attribution:
 
 # entity resolution
 
-The task of deciding when two differently-phrased items denote the same
-underlying entity. Applied to belief graphs it becomes *entity resolution for
-propositions*: unifying "apples are fruits" (doc A) and "an apple is a kind of
-fruit" (doc B) to one node, so cross-document comparison and consensus/conflict
-detection have a shared vocabulary to compare over. It is the single largest
-design cost of a belief decomposer — fuzzy, LLM-mediated, and the same
+Applied to belief graphs it becomes *entity resolution for propositions*:
+"apples are fruits" (doc A) and "an apple is a kind of fruit" (doc B) collapse
+to one node, giving consensus/conflict detection a shared vocabulary to compare
+over. It is the single largest design cost of a belief decomposer — the same
 canonical-identity lesson this brain learned with [stable ids](/beliefs/glossary/stable-id.md)
 and route tags (join on ids, not free-text phrasings). Pairs with
 [decontextualization](/beliefs/glossary/decontextualization.md): a belief must be made

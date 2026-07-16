@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, graphs, formalism, dag]
 sense: common
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13
   channel: glossary
@@ -17,12 +17,10 @@ attribution:
 
 # directed acyclic graph
 
-A graph (DAG) whose edges have a direction and which contains no cycles: starting
-from any node and following edges, you can never return to it. This is the natural
-shape for anything with a one-way dependency or ordering — build pipelines, task
-dependencies, git commit history, and knowledge graphs of cross-linked concepts —
-and it guarantees a valid topological order (a linear sequence respecting every
-edge). Renders well as a visual — e.g. a Mermaid `flowchart` inside a Claude
+Concrete instances: build pipelines, task dependencies, git commit history, and
+knowledge graphs of cross-linked concepts. The acyclicity guarantees a valid
+topological order — a linear sequence respecting every edge. Renders well as a
+visual — e.g. a Mermaid `flowchart` inside a Claude
 [artifact](/beliefs/glossary/artifact.md).
 
 *Seen in:* [2026-07-13 artifacts-concept-and-anthropic-node-restructure thread](/meta/threads/2026-07-13-artifacts-concept-and-anthropic-node-restructure.md)

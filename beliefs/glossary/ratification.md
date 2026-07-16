@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, pointer to the defining policy
 verified: false
 tags: [glossary, governance, taxonomy]
 sense: repo
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T09:10:24+00:00
   channel: glossary
@@ -17,12 +17,10 @@ attribution:
 
 # ratification
 
-The operator's explicit approval that turns a *proposed* change to the shape
-of the brain — a new top-level directory, a new `type`, a plan's scope — into
-an *adopted* one. The division of labor is the point: the agent files and
-organizes autonomously within the existing shape, but **proposes and waits**
-on anything that changes the shape itself; a plan moves `proposed` →
-`accepted` only on the operator's say-so. Canonically defined by the
+The division of labor is the point: the agent files and organizes
+autonomously within the existing shape, but **proposes and waits** on anything
+that changes the shape itself; a plan moves `proposed` → `accepted` only on the
+operator's say-so. Canonically defined by the
 [taxonomy-evolution protocol](/meta/policy/taxonomy-evolution-protocol.md)
 (and, for plan scopes, the [persist-plans policy](/meta/policy/persist-plans.md)).
 

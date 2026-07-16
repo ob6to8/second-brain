@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, types, governance]
 sense: repo
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # issue (type)
 
-The controlled `type` for a tracked operational problem, defect, or open concern about how the brain or its tooling behaves — carrying a `status` (`open`/`resolved`/`wontfix`) and filed under `meta/issues/`. Distinct from a `policy` (a rule) and a `note` (an idea). Defined in the [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md).
+Distinct from a `policy` (a rule) and a `note` (an idea). Defined in the [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md).
 
 *Seen in:* [2026-07-09 news-issue thread](/meta/threads/2026-07-09-news-routine-issue-and-featuring.md), [2026-07-12 priorities-skill thread](/meta/threads/2026-07-12-priorities-skill-and-persistence-listers.md)

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, pointer to the defining policy
 verified: false
 tags: [glossary, identity, registry]
 sense: repo
-timestamp: 2026-07-14
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-10T23:09:18+00:00
   channel: glossary
@@ -17,9 +17,7 @@ attribution:
 
 # stable id (`em:` id)
 
-The opaque, immutable `em:` + 6-hex-char identifier every bundle concept
-carries in frontmatter; typed edges reference ids rather than paths, so
-identity survives moves and renames. Canonically defined by the
+Canonically defined by the
 [stable-identity policy](/meta/policy/stable-identity.md); the prefix is an opaque
 namespace token changed only by an [id-namespace migration](/beliefs/glossary/id-namespace-migration.md),
 never per-id.

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, identity, migration, registry, governance]
 sense: repo
-timestamp: 2026-07-14
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-14T00:00:00Z
   channel: glossary
@@ -17,15 +17,13 @@ attribution:
 
 # id-namespace migration
 
-A one-time, **operator-ratified** rewrite of the id-namespace **prefix** carried by
-every bundle concept's [stable id](/beliefs/glossary/stable-id.md). It is
-**tail-preserving**: only the two-character prefix changes (e.g. `sb:` → `em:`) while
-each id's 6-hex tail — the immutable identity — is kept verbatim, so the mapping is
-total, deterministic, and collision-free, and every typed edge that references an id
-([`verified_by`](/beliefs/glossary/verified-by.md), route-tag refs, `attribution.from`)
-stays internally consistent under a single regex pass. It is **verifier-atomic**: the
-id-format checks reject any mixed-prefix state, so a partial migration cannot merge
-green — the whole re-key lands in one PR or not at all.
+Its target is the prefix carried by every bundle concept's
+[stable id](/beliefs/glossary/stable-id.md); because only the two-character prefix
+changes (e.g. `sb:` → `em:`), the mapping is total, deterministic, and collision-free,
+and every typed edge that references an id ([`verified_by`](/beliefs/glossary/verified-by.md),
+route-tag refs, `attribution.from`) stays internally consistent under a single regex
+pass. **Verifier-atomic** means the id-format checks reject any mixed-prefix state, so a
+partial migration cannot merge green — the whole re-key lands in one PR or not at all.
 
 **In this brain:** the [stable-identity policy](/meta/policy/stable-identity.md) treats
 the prefix as an opaque namespace token — *not* part of a concept's identity — and

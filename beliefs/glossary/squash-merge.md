@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition; pointer to the reachability tu
 verified: false
 tags: [glossary, git, merge, provenance]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T18:09:19+00:00
   channel: glossary
@@ -17,8 +17,8 @@ attribution:
 
 # squash merge
 
-A merge that combines all of a branch's commits into one brand-new commit on
-the target branch, leaving the originals outside the target's ancestry. It
+It leaves the branch's original commits outside the target's ancestry rather
+than woven into its history. It
 buys a linear one-commit-per-PR history at the cost of per-commit provenance:
 original messages and trailers, SHAs cited in durable docs (garbage-collectible
 once the branch is deleted), and `git blame` granularity. Canonically explained

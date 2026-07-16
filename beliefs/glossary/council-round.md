@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition; pointer to the suitability ana
 verified: false
 tags: [glossary, review, adversarial, pr-workflow]
 sense: repo
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13T20:28:57+00:00
   channel: glossary
@@ -17,8 +17,7 @@ attribution:
 
 # council round
 
-A structured, adversarial, multi-agent review of drafted work, run at the gate
-between *committed to a branch* and *merged*. The [draft pull
+It runs at the gate between *committed to a branch* and *merged*. The [draft pull
 request](/beliefs/glossary/draft-pull-request.md) is the chamber: reviewer subagents
 post ID'd findings as PR comments (never committed files), the author replies
 to each with a [disposition](/beliefs/glossary/disposition.md), and the round can only

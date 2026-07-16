@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, logic, proof-theory, metatheory]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T20:14:11+00:00
   channel: glossary
@@ -17,10 +17,8 @@ attribution:
 
 # soundness and completeness
 
-The paired correctness properties of a deductive system relative to a
-semantics: **sound** — everything derivable is semantically valid (the system
-proves no falsehoods); **complete** — everything semantically valid is
-derivable (no truth is out of reach). Gödel's 1929 completeness theorem
+Both properties hold relative to a semantics: **soundness** means the system
+proves no falsehoods, **completeness** that no truth lies out of reach. Gödel's 1929 completeness theorem
 established both for first-order logic, making syntactic derivation and
 semantic [entailment](/beliefs/glossary/entailment.md) coincide. The same vocabulary
 recurs wherever a mechanical procedure answers for a semantic notion — e.g. an

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing, flows]
 sense: repo
-timestamp: 2026-07-10
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # deterministic spine
 
-The subset of a workflow whose output is fully determined by its inputs — the mechanical tool transforms and checks — as opposed to the non-deterministic, judgment-driven parts. Only the spine can be pinned by a conventional automated test, which is what a flow's scenario test targets.
+A flow's scenario test targets exactly this spine, leaving the judgment-driven remainder outside what a conventional automated test can pin.
 
 *Seen in:* [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md)

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, evals, factuality, claim-decomposition, epistemics]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T20:14:11+00:00
   channel: glossary
@@ -17,10 +17,8 @@ attribution:
 
 # atomic fact
 
-The decomposition unit of factuality evaluation: a short statement carrying a
-single, independently checkable piece of information, extracted (by an LM)
-from a longer generation so that each can be verified against a knowledge
-source on its own and the results aggregated mechanically. The granularity is
+Extraction is done by an LM, and the per-statement results are aggregated
+mechanically. The granularity is
 the whole method — real generations mix true and false, and only atomic
 statements localize the error. The general belief-decomposition analogue is
 the atomic belief node; extraction requires

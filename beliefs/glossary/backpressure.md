@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, concurrency, flow-control, systems]
 sense: common
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T09:05:38+00:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # backpressure
 
-Flow control in which a slower downstream stage pushes back on faster upstream producers — via bounded queues, worker-pool limits, or explicit demand signalling — so that overload turns into orderly waiting rather than unbounded memory growth or dropped work. The canonical agent-fleet case: many agents wanting concurrent LLM calls against a rate-limited, expensive provider, where bounded mailboxes and pools are the native answer.
+Under backpressure, overload turns into orderly waiting rather than unbounded memory growth or dropped work. The canonical agent-fleet case: many agents wanting concurrent LLM calls against a rate-limited, expensive provider, where bounded mailboxes and pools are the native answer.
 
 *Seen in:* [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md)

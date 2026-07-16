@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, llm-orchestration, cost-optimization, routing, cascade]
 sense: common
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13T12:00:00Z
   channel: glossary
@@ -17,10 +17,7 @@ attribution:
 
 # model cascade
 
-A cost-optimization strategy that routes each request to the cheapest model
-likely to handle it and **escalates** to a more capable (and costlier) model only
-on failure or low confidence — trading a small quality risk on individual
-requests for large average-cost savings across a mixed request load. The approach
+The approach
 was popularized by FrugalGPT-style research on LLM API cost reduction. It is a
 relative of the [advisor pattern](/beliefs/glossary/advisor-pattern.md) and
 [orchestrator pattern](/beliefs/glossary/orchestrator-pattern.md): all three are

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, agents, harness, agent-loop, anthropic]
 sense: common
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13T12:00:00Z
   channel: glossary
@@ -17,9 +17,7 @@ attribution:
 
 # harness (agent harness)
 
-The software scaffolding that wraps a language model to turn it into an agent: the
-**control loop** that runs the model turn by turn, the **tools** it can call, and
-the **context/memory management** around it. The same model can run under
+The same model can run under
 different harnesses tuned for different work — an interactive coding harness
 (Claude Code), a narrow task-specific harness, or a hosted one
 ([Claude Managed Agents](/beliefs/glossary/claude-managed-agents.md)) — and Anthropic frames

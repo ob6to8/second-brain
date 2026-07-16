@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, enforcement, corpus-health, tooling]
 sense: repo
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T09:43:37+00:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # drift class
 
-A category of staleness whose instances all share one detection mechanism, making the whole class checkable by a single [detector](/beliefs/glossary/detector.md) rather than instance-by-instance vigilance. The docs audit identified two: **unresolved internal links** (a link's target no longer exists on disk) and **index-coverage gaps** (a file or subdirectory present in a directory but unlisted in its `index.md`) — both now announced by the docs-freshness [warn pass](/beliefs/glossary/warn-pass.md). Classifying drift this way separates what can be made structural from what stays editorial: a drift class with a mechanical oracle gets a detector; staleness without one (a README paragraph describing retired behavior) must be minimized by design instead, e.g. by keeping such prose a thin pointer into generated surfaces.
+Grouping this way lets one [detector](/beliefs/glossary/detector.md) replace instance-by-instance vigilance. The docs audit identified two: **unresolved internal links** (a link's target no longer exists on disk) and **index-coverage gaps** (a file or subdirectory present in a directory but unlisted in its `index.md`) — both now announced by the docs-freshness [warn pass](/beliefs/glossary/warn-pass.md). Classifying drift this way separates what can be made structural from what stays editorial: a drift class with a mechanical oracle gets a detector; staleness without one (a README paragraph describing retired behavior) must be minimized by design instead, e.g. by keeping such prose a thin pointer into generated surfaces.
 
 *Seen in:* [docs-surface evaluation and the wiki question](/meta/analysis/docs-surface-evaluation-and-wiki-question.md), [2026-07-12 docs-audit thread](/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md)

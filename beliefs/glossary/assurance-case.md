@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, argumentation, assurance-case, safety-critical]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T20:14:11+00:00
   channel: glossary
@@ -17,10 +17,9 @@ attribution:
 
 # assurance case
 
-A structured argument, supported by evidence, that a system satisfies a
-property (safety, security) in a given operating context — the deliverable
-regulators assess in safety-critical industries, and the industrial-scale
-proof-of-concept for auditing explicit claim trees over engineering artifacts.
+Beyond its native safety-critical setting, an assurance case is the
+industrial-scale proof-of-concept for auditing explicit claim trees over
+engineering artifacts.
 Commonly diagrammed in
 [Goal Structuring Notation](/beliefs/glossary/goal-structuring-notation.md).
 Canonically defined in
