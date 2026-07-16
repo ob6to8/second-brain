@@ -8,7 +8,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, workflow-execution-convention session"
   why: "persists the investigation and recommendation on Workflow-driven plan execution as a decision-support analysis, per the operator's redirect"
-  from: []
+  from: [/meta/threads/2026-07-16-workflow-driven-plan-execution-convention.md]
 tags: [meta, analysis, orchestration, workflow, agents, execution, fresh-context, delegation]
 timestamp: 2026-07-15
 ---

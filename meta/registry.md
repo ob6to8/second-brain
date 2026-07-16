@@ -100,6 +100,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e1c3b6` | [beliefs/glossary/epistemic-poisoning](/beliefs/glossary/epistemic-poisoning.md) | concept | false |
 | `em:735b38` | [beliefs/glossary/epistemic-teleological-split](/beliefs/glossary/epistemic-teleological-split.md) | concept | false |
 | `em:3101ef` | [beliefs/glossary/excerpt-log](/beliefs/glossary/excerpt-log.md) | concept | false |
+| `em:34e823` | [beliefs/glossary/execution-context-payload](/beliefs/glossary/execution-context-payload.md) | concept | false |
 | `em:9e1592` | [beliefs/glossary/exunit](/beliefs/glossary/exunit.md) | concept | false |
 | `em:6a6054` | [beliefs/glossary/f1-at-k](/beliefs/glossary/f1-at-k.md) | concept | false |
 | `em:7d0700` | [beliefs/glossary/factscore](/beliefs/glossary/factscore.md) | concept | false |
@@ -110,6 +111,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:894631` | [beliefs/glossary/first-parent-history](/beliefs/glossary/first-parent-history.md) | concept | false |
 | `em:950a55` | [beliefs/glossary/flow-touch-sequence](/beliefs/glossary/flow-touch-sequence.md) | concept | false |
 | `em:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
+| `em:27e7a7` | [beliefs/glossary/fresh-context-execution](/beliefs/glossary/fresh-context-execution.md) | concept | false |
 | `em:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
 | `em:83b180` | [beliefs/glossary/functional-core-imperative-shell](/beliefs/glossary/functional-core-imperative-shell.md) | concept | false |
 | `em:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
@@ -250,6 +252,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a8f067` | [beliefs/glossary/warrant](/beliefs/glossary/warrant.md) | concept | false |
 | `em:adf537` | [beliefs/glossary/webhook](/beliefs/glossary/webhook.md) | concept | false |
 | `em:d8d057` | [beliefs/glossary/well-founded-support](/beliefs/glossary/well-founded-support.md) | concept | false |
+| `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
 | `em:97d2a8` | [knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop](/knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop.md) | reference |  |
 | `em:c29a22` | [knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md) | reference |  |
 | `em:06d95d` | [knowledge/SWE/agentic/agentic-loop/building-effective-agents](/knowledge/SWE/agentic/agentic-loop/building-effective-agents.md) | reference |  |

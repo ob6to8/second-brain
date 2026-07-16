@@ -97,6 +97,7 @@ system works.
 - [epistemic poisoning](/beliefs/glossary/epistemic-poisoning.md) — contaminating a shared knowledge base with false beliefs via untrusted intake; prompt injection escalated to every future reader
 - [epistemic/teleological split](/beliefs/glossary/epistemic-teleological-split.md) — the filing distinction between what-is-true statements (beliefs, claims) and standing-direction statements (doctrine)
 - [excerpt log (route-tagged log)](/beliefs/glossary/excerpt-log.md) — the generated per-thread excerpt section a route-tag sink carries, re-derivable from the tags, never hand-edited
+- [Execution Context Payload (ECP)](/beliefs/glossary/execution-context-payload.md) — the minimal packet a fresh-context executor receives to start a plan's workstream cold: a thin pointer packet into the ratified plan on disk (plan ref, workstream id, scope + reading allowlist, deliverable, gates), not the deliberation history
 - [ExUnit](/beliefs/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
 - [F1@K](/beliefs/glossary/f1-at-k.md) — SAFE's factuality aggregate: harmonic mean of factual precision and recall against a facts-per-response target K
 - [FActScore](/beliefs/glossary/factscore.md) — the percentage of a generation's atomic facts supported by a knowledge source (Min et al., EMNLP 2023)
@@ -107,6 +108,7 @@ system works.
 - [first-parent history](/beliefs/glossary/first-parent-history.md) — the `git log --first-parent` traversal that follows only each merge's first parent, reading a PR-driven branch as one entry per landed PR
 - [flow (touch-sequence)](/beliefs/glossary/flow-touch-sequence.md) — a per-workflow touch-sequence doc tracing one canonical run, each step actor-tagged (`meta/flows/`)
 - [force-with-lease](/beliefs/glossary/force-with-lease.md) — a guarded git force-push that overwrites the remote branch only if its tip still matches what you last saw, refusing to clobber unseen work
+- [fresh-context execution](/beliefs/glossary/fresh-context-execution.md) — running a bounded unit of work in a newly-spawned agent given only minimal, task-scoped context rather than the full session history
 - [fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) — a scheduling mode where every trigger firing spawns a clean session, inheriting no prior state
 - [functional core, imperative shell](/beliefs/glossary/functional-core-imperative-shell.md) — pure decision logic in a stateless core, state and effects in a thin wrapper; the agent = model core + loop shell
 - [gate suite](/beliefs/glossary/gate-suite.md) — the full set of blocking verification checks a change must pass before landing, run manually, by the pre-commit hook, and in CI; pointer to the gate-suite tutorial
@@ -247,3 +249,4 @@ system works.
 - [verified_by](/beliefs/glossary/verified-by.md) — the frontmatter field holding a statement's evidence edges (inline list of stable ids)
 - [von Neumann architecture](/beliefs/glossary/von-neumann-architecture.md) — stored-program computer organization (ALU, control, memory, I/O) that the model/loop/memory/tools decomposition reproduces
 - [well-founded support](/beliefs/glossary/well-founded-support.md) — the anti-circularity condition: every held belief traces to premises through non-circular arguments
+- [Workflow (orchestration tool)](/beliefs/glossary/workflow-tool.md) — the Claude Code environment's orchestration primitive: a script fanning work out to fresh-context subagents (agent()/parallel()/pipeline()/phase(), optional worktree isolation) and returning synthesized results to a thin orchestrating session
