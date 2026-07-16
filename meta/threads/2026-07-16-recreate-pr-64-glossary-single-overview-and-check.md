@@ -5,7 +5,7 @@ description: Investigated PR #64 (glossary single-overview + mix brain.glossary 
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-16; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, glossary, verification, dedup, workflow, tooling, pr-recreation]
 timestamp: 2026-07-16
-# pr: <N>  ← added by /create-pull-request once the PR is opened
+pr: 98
 ---
 
 # 2026-07-16-recreate-pr-64-glossary-single-overview-and-check
