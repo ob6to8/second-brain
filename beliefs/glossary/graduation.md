@@ -2,12 +2,12 @@
 id: em:0c8532
 type: concept
 title: graduation
-description: A document earning promotion up a level — a glossary term relocating into the domain taxonomy (sense 1), or a grounded claim becoming a concept (sense 2).
+description: A document or work item earning promotion up a level — a glossary term relocating into the domain taxonomy (sense 1), a grounded claim becoming a concept (sense 2), or a deferred strand or analysis residue becoming a plan (sense 3).
 provenance: "Agent-distilled glossary definition; coined by the /add-to-glossary skill"
 verified: false
 tags: [glossary, taxonomy, lifecycle]
 sense: repo
-timestamp: 2026-07-15
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-10T23:09:18+00:00
   channel: glossary
@@ -35,5 +35,11 @@ A document earning promotion up a level once it has been earned. Two senses:
    proposition-shaped `concept` then *is*, versus a verified claim, is an open
    question — see the
    [concept-terminology plan](/meta/plans/concept-terminology-and-type-redefinition.md).)
+3. **Strand → plan.** Deferred work living only as a paused
+   [routing-ledger](/beliefs/glossary/routing-ledger.md)
+   [strand](/beliefs/glossary/strand.md) (or as an analysis's "if commissioned"
+   residue) is promoted into a `type: plan` doc once the operator commissions
+   it — a *new* plan citing its source as decision record, never a retype of
+   the source. The promotion is what resolves the dangling strand.
 
-*Seen in:* [2026-07-15 concept→document replication thread](/meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md), [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md), [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md), [2026-07-09 news-inbox thread](/meta/threads/2026-07-09-home-page-news-filter-inbox.md), [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md)
+*Seen in:* [2026-07-16 harness-plan graduation thread](/meta/threads/2026-07-16-graduate-swarm-eval-harness-plan.md) (sense 3: the swarm-eval harness strand → the [harness plan](/meta/plans/inkling-beam-swarm-eval-harness.md)), [2026-07-15 concept→document replication thread](/meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md), [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md), [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md), [2026-07-09 news-inbox thread](/meta/threads/2026-07-09-home-page-news-filter-inbox.md), [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md)

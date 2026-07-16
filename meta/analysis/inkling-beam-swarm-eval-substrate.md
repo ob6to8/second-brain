@@ -10,7 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator-commissioned research spike"
   why: "operator asked what advantages Inkling in conjunction with Elixir/BEAM might offer for running evals on agent swarm dynamics and failure modes; the spike's findings and their sources are persisted so the judgment survives the session"
-  from: [/meta/threads/2026-07-16-inkling-beam-swarm-eval-spike.md]
+  from: [/meta/threads/2026-07-16-inkling-beam-swarm-eval-spike.md, /meta/threads/2026-07-16-graduate-swarm-eval-harness-plan.md]
 ---
 
 # Research spike: Inkling + Elixir/BEAM as an eval substrate for agent-swarm dynamics and failure modes

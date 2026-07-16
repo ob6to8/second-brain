@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator-directed plan graduation"
   why: "the swarm-eval harness was a paused routing-ledger strand ('graduate into a plan?') on the spike thread; the operator resolved it by commissioning this plan"
-  from: [/meta/threads/2026-07-16-inkling-beam-swarm-eval-spike.md, /meta/analysis/inkling-beam-swarm-eval-substrate.md]
+  from: [/meta/threads/2026-07-16-inkling-beam-swarm-eval-spike.md, /meta/analysis/inkling-beam-swarm-eval-substrate.md, /meta/threads/2026-07-16-graduate-swarm-eval-harness-plan.md]
 ---
 
 # Swarm-eval harness: an Inkling-backed OTP application for measuring agent-swarm dynamics and failure modes
