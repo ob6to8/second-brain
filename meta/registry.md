@@ -84,6 +84,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:537412` | [beliefs/glossary/disposition](/beliefs/glossary/disposition.md) | concept | false |
 | `em:bec37f` | [beliefs/glossary/distill-dont-dump](/beliefs/glossary/distill-dont-dump.md) | concept | false |
 | `em:04befc` | [beliefs/glossary/distillation-target](/beliefs/glossary/distillation-target.md) | concept | false |
+| `em:733448` | [beliefs/glossary/distributed-erlang](/beliefs/glossary/distributed-erlang.md) | concept | false |
 | `em:6a9e78` | [beliefs/glossary/doctrine](/beliefs/glossary/doctrine.md) | concept | false |
 | `em:317879` | [beliefs/glossary/document-okf](/beliefs/glossary/document-okf.md) | concept | false |
 | `em:8b3e30` | [beliefs/glossary/domain-specific-language](/beliefs/glossary/domain-specific-language.md) | concept | false |
@@ -174,6 +175,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:78580d` | [beliefs/glossary/plugin](/beliefs/glossary/plugin.md) | concept | false |
 | `em:393e3d` | [beliefs/glossary/pointer-entry](/beliefs/glossary/pointer-entry.md) | concept | false |
 | `em:fa15e7` | [beliefs/glossary/policy-type](/beliefs/glossary/policy-type.md) | concept | false |
+| `em:1ddce3` | [beliefs/glossary/posttooluse-hook](/beliefs/glossary/posttooluse-hook.md) | concept | false |
 | `em:e8c1a9` | [beliefs/glossary/probabilistic-enforcement](/beliefs/glossary/probabilistic-enforcement.md) | concept | false |
 | `em:8654d1` | [beliefs/glossary/prompt-injection](/beliefs/glossary/prompt-injection.md) | concept | false |
 | `em:4849ca` | [beliefs/glossary/property-based-testing](/beliefs/glossary/property-based-testing.md) | concept | false |
@@ -192,6 +194,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:eb67ce` | [beliefs/glossary/reducer](/beliefs/glossary/reducer.md) | concept | false |
 | `em:1dbcc9` | [beliefs/glossary/rendered-aggregation](/beliefs/glossary/rendered-aggregation.md) | concept | false |
 | `em:e6f894` | [beliefs/glossary/repl](/beliefs/glossary/repl.md) | concept | false |
+| `em:b171b5` | [beliefs/glossary/req-llm](/beliefs/glossary/req-llm.md) | concept | false |
 | `em:4c3f16` | [beliefs/glossary/research-spike](/beliefs/glossary/research-spike.md) | concept | false |
 | `em:96a610` | [beliefs/glossary/residual-fragmentation](/beliefs/glossary/residual-fragmentation.md) | concept | false |
 | `em:fd9873` | [beliefs/glossary/restricted-boltzmann-machine](/beliefs/glossary/restricted-boltzmann-machine.md) | concept | false |

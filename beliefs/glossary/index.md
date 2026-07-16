@@ -81,6 +81,7 @@ system works.
 - [disposition](/beliefs/glossary/disposition.md) — the single verdict a review finding must receive before a round can converge: agree, refute with evidence, or defer with a destination
 - [distill, don't dump](/beliefs/glossary/distill-dont-dump.md) — the filing rule that a concept captures the knowledge, not the raw noise; originals live in `resource`/Citations
 - [distillation target](/beliefs/glossary/distillation-target.md) — the curated document (plan, ADR, issue) that receives a review round's settled outcome; never a transcript
+- [distributed Erlang](/beliefs/glossary/distributed-erlang.md) — the BEAM's built-in clustering (transparent inter-node messaging, `:global`, `:pg`); the substrate for cross-node scale/failover, which a framework must deliberately opt into (Jido doesn't)
 - [doctrine](/beliefs/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
 - [document (OKF)](/beliefs/glossary/document-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`; OKF's own term for it is "concept document"
 - [domain-specific language](/beliefs/glossary/domain-specific-language.md) — a small language purpose-built for one domain, trading generality for concision and checkability; doubles as a constrained generation target for LLMs
@@ -171,6 +172,7 @@ system works.
 - [plugin](/beliefs/glossary/plugin.md) — a distributable bundle of Claude Code skills; its skills get an automatic `plugin-name:` namespace
 - [pointer entry](/beliefs/glossary/pointer-entry.md) — an entry for a term canonically defined elsewhere: one-line gloss + link, never a duplicate definition
 - [policy (type)](/beliefs/glossary/policy-type.md) — controlled type: a standing governance rule for how the brain operates, under `meta/policy/`; the source `CLAUDE.md` is compiled from
+- [PostToolUse hook](/beliefs/glossary/posttooluse-hook.md) — a Claude Code hook firing after a tool call; exit 2 (or `block` JSON) injects its output into the session as context on the next turn — the mechanism a post-edit linter uses to alert the agent
 - [probabilistic enforcement](/beliefs/glossary/probabilistic-enforcement.md) — rules as prose an agent promises to follow; violations scale with operation count and compound without a detector
 - [prompt injection](/beliefs/glossary/prompt-injection.md) — instructions embedded in untrusted content an LLM processes hijack it into serving the attacker's intent instead of the user's task
 - [property-based testing](/beliefs/glossary/property-based-testing.md) — testing that asserts invariants over many generated inputs, not hand-picked examples
@@ -189,6 +191,7 @@ system works.
 - [red test](/beliefs/glossary/red-test.md) — a test feeding a known-bad input and asserting the check flags it; proves the detector fires, not just that good input passes
 - [rendered aggregation](/beliefs/glossary/rendered-aggregation.md) — a derived doc compiled from scattered canonical sources with a drift gate; sources are edited, the view only re-rendered
 - [REPL](/beliefs/glossary/repl.md) — read-eval-print loop; the agent loop is one over model output (read emission, dispatch, evaluate tool, append, recurse)
+- [req_llm](/beliefs/glossary/req-llm.md) — Jido's in-house Elixir LLM client (on `Req`) owning provider adapters, model catalog, streaming, and tool-call encoding; the single dependency every Jido inference routes through
 - [research spike](/beliefs/glossary/research-spike.md) — a time-boxed investigation answering a design/feasibility question, yielding a verdict not code
 - [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) — the near-duplicate concepts left after automated dedup's cheap best, handed to a human editorial pass to merge
 - [restricted Boltzmann machine (RBM)](/beliefs/glossary/restricted-boltzmann-machine.md) — a two-layer undirected generative net with bipartite (no within-layer) connectivity, so each layer is conditionally independent given the other; the building block of a deep belief network
