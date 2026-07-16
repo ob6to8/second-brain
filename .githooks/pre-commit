@@ -17,6 +17,9 @@ mix brain.contract --check
 echo "pre-commit: mix brain.registry --check"
 mix brain.registry --check
 
+echo "pre-commit: mix brain.codemap --check"
+mix brain.codemap --check
+
 echo "pre-commit: mix brain.verify"
 mix brain.verify
 

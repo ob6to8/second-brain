@@ -35,6 +35,9 @@ jobs:
       - name: Registry is compiled and current
         run: mix brain.registry --check
 
+      - name: Code map is compiled and current
+        run: mix brain.codemap --check
+
       - name: Bundle verifies (ids, evidence edges, grounding)
         run: mix brain.verify
 
