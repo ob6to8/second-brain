@@ -2,7 +2,7 @@
 type: plan
 title: "Code tutorial and generated code-map: a prose architecture tour plus a compiled function/struct glossary"
 description: Document the elixir_mind tooling with two coupled artifacts — a hand-written architecture-spine tutorial (with subsystem tours) under meta/tutorials/, and a single generated meta/code-map.md compiled from the source docstrings by a new zero-dep `mix brain.codemap` task, CI-gated with `--check` exactly like CLAUDE.md and registry.md.
-status: accepted
+status: done
 provenance: "Claude Code session, 2026-07-16 — operator request for a code tutorial (prose walkthrough of services/functions/architecture) plus a code glossary of function and data-structure intent; agent surveyed lib/ (27 files, ~6k LOC, 30/30 @moduledoc, 85 @doc, deps: []) and recommended the compiled-artifact model; operator ratified (persist plan, single generated code-map, agent's discretion on tutorial shape)."
 tags: [meta, plan, tooling, documentation, tutorial, code-map, codegen]
 timestamp: 2026-07-16
@@ -15,9 +15,13 @@ attribution:
 
 # Plan — code tutorial and generated code-map
 
-**Status:** `accepted`. Operator ratified the shape (2026-07-16): a hand-written
+**Status:** `done`. Operator ratified the shape (2026-07-16): a hand-written
 prose tour plus a *single generated* code glossary, with tutorial count left to
-agent discretion.
+agent discretion. Built in the same session: `mix brain.codemap` +
+[`meta/code-map.md`](/meta/code-map.md) (gated in CI/pre-commit) and the
+[tooling-architecture tutorial](/meta/tutorials/the-tooling-architecture.md)
+(one spine doc linking the existing narrow tutorials), with the gate-suite
+tutorial updated for the new freshness gate.
 
 ## Problem
 
