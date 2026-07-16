@@ -27,4 +27,4 @@ different layer of the stack from application-level patterns like the
 complete, separate model inferences; the two are easily conflated because both
 involve "routing to capacity where it's needed."
 
-*Seen in:* [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md)
+*Seen in:* [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md), [2026-07-16 Inkling/BEAM swarm-eval spike thread](/meta/threads/2026-07-16-inkling-beam-swarm-eval-spike.md) (Inkling's 6-of-256-experts sparse routing as the architecture of a 975B-total/41B-active open-weights model)
