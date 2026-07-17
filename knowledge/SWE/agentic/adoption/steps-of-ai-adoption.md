@@ -194,3 +194,17 @@ Model selection for automation
   <https://www.linkedin.com/posts/bcherny_steps-of-ai-adoption-activity-7483695059843043328-LBg_/>
 - Rendered artifact of the table:
   <https://claude.ai/code/artifact/bfdfaef9-bc62-4dfe-ba9e-c58a26c9accf>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:974060">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-17-tier-3-4-interface-and-trust-with-adoption-intake (2026-07-17)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:974060`]**
+
+**The model itself**
+
+The most useful thing about Cherny's ladder is that **every rung is gated by verification trust, not by agent count**. The step 1→2 lever is "a self-verification loop you trust"; the step 3 trap is explicitly "scaling agent count before the loop has earned widespread trust." Agents are the dependent variable; the harness is the independent one. That's the same thesis as the loop-engineering capture already in the brain, now expressed as an org maturity model. The other sharp observation is that the human bottleneck *migrates* — attention (1), review throughput (2), decision throughput and trust (3), work-identification (4) — which means each tier's tooling is obsolete at the next tier. It is also, worth remembering, a vendor's map drawn by the vendor: the products column is a Claude catalog, and the tiers double as a sales funnel. The bottleneck/guardrail analysis stands on its own; the product mapping should be read as one vendor's instantiation.
