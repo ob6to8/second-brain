@@ -122,8 +122,12 @@ session, no code changes):
   reserved filenames. The oracle: the library compiles and its tests pass
   against a fixture bundle that is *not* this one.
 
-**Phase 4 — spin-out** (deferred; graduates into its own plan when built, per
-the persist-plans policy):
+**Phase 4 — spin-out** (deferred; graduated into its own plan 2026-07-17 —
+see
+[library-spin-out-and-dependency-distribution](/meta/plans/library-spin-out-and-dependency-distribution.md),
+which specs the target shape, decides the dependency mechanism weighed in open
+question 4 below (git-tag dep first, Hex when stable), and records why the
+bundle keeps this repo while the code leaves):
 
 - New repo for the library; a short demo OKF bundle inside it for tests and
   demonstration purposes only; this repo consumes the library as a dependency
