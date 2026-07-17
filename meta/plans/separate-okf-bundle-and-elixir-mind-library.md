@@ -153,7 +153,10 @@ bundle keeps this repo while the code leaves):
    and hence the library; the operator's framing ("the remaining OKF
    collection I would maintain") suggests the library carries the name
    outward and the collection could keep it or take its own. Operator call at
-   spin-out time.
+   spin-out time. **Resolved 2026-07-17** (in the
+   [spin-out plan](/meta/plans/library-spin-out-and-dependency-distribution.md)):
+   this repo keeps **elixir-mind**; the library spins out as
+   **composable-beliefs-3**.
 2. **Where does the schema spec live post-spin-out?** In the library repo (it
    defines and enforces it) with the bundle citing a version, or duplicated as
    a governance doc here? Leaning library-side with a version pin here.
