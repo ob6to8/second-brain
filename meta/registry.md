@@ -309,6 +309,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1aefe2` | [knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering](/knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering.md) | reference |  |
 | `em:d580ce` | [knowledge/SWE/agentic/agentic-loop/the-coming-loop](/knowledge/SWE/agentic/agentic-loop/the-coming-loop.md) | reference |  |
 | `em:52aefa` | [knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture](/knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture.md) | note | false |
+| `em:02731b` | [knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern](/knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern.md) | reference |  |
 | `em:564b8e` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox.md) | source |  |
 | `em:eb418b` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-caching](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-caching.md) | source |  |
 | `em:3420c8` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity.md) | source |  |
