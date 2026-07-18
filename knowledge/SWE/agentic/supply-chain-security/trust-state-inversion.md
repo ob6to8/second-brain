@@ -1,5 +1,5 @@
 ---
-id: sb:f3beb0
+id: em:f3beb0
 type: reference
 title: "Trust-state inversion: when clean code doesn't mean a safe dependency"
 description: "A component can become unsafe to depend on because the trust relationships around it collapsed, not because its code changed — illustrated by the 2026 GSD framework governance incident."
