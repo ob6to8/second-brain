@@ -181,6 +181,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a5b3bd` | [beliefs/glossary/nogood](/beliefs/glossary/nogood.md) | concept | false |
 | `em:54995c` | [beliefs/glossary/non-bundle-namespace](/beliefs/glossary/non-bundle-namespace.md) | concept | false |
 | `em:724e2f` | [beliefs/glossary/non-monotonic-reasoning](/beliefs/glossary/non-monotonic-reasoning.md) | concept | false |
+| `em:617977` | [beliefs/glossary/observer-agent](/beliefs/glossary/observer-agent.md) | concept | false |
 | `em:da67e8` | [beliefs/glossary/ontology](/beliefs/glossary/ontology.md) | concept | false |
 | `em:02dc95` | [beliefs/glossary/open-weights](/beliefs/glossary/open-weights.md) | concept | false |
 | `em:1349cb` | [beliefs/glossary/operating-contract](/beliefs/glossary/operating-contract.md) | concept | false |

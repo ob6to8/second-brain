@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-12T09:50:13+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md]
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md]
 ---
 
 # Dedup recall probe — gold set
