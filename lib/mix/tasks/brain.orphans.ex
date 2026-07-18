@@ -20,8 +20,7 @@ defmodule Mix.Tasks.Brain.Orphans do
 
   @impl Mix.Task
   def run(argv) do
-    {opts, _, _} =
-      OptionParser.parse(argv, strict: [include_index: :boolean, all: :boolean])
+    {opts, _, _} = OptionParser.parse(argv, strict: [include_index: :boolean, all: :boolean])
 
     case Orphans.find(File.cwd!(), opts) do
       [] ->
