@@ -66,6 +66,7 @@ being mechanically rewritten.
 | MQA | em:266c5e | target | multi-query attention | Acronym present verbatim in the KV-cache concept — a straightforward control hit. |
 | reranking | em:41be22 | target | re-ranking; rerank | Present verbatim in the RAG-pruning concept — a control hit. |
 | context poisoning | em:784985 | target | logical context poisoning | The concept's exact wording — a control hit, deliberately paired with the row-1 "pollution" miss to isolate vocabulary as the failure. |
+| is this approach to software design in elixir viable for domains other than gaming | em:f03f9c | target | entity component system; ECS; composition over inheritance | harvested at intake 2026-07-18: the operator's ask names neither "entity", "component" nor "ECS" — a pure vocabulary-gap row; the "entity component system" variant recovers it. |
 | kv cache | em:266c5e em:1cac23 | negative | — | A non-duplicate pair: kv-cache-compression-history (survey of eviction/quantization) vs vericache-lossless-kv-cache (one lossless technique). They share heavy vocabulary but must **not** be judged duplicates. Seeded for the later duplicate-judgment tiers; not scored in v1. |
 | context rot | em:77d68a em:c0961a | negative | — | Another non-duplicate pair: the context-rot capture vs effective-context-engineering-for-agents, which merely discusses the phenomenon. Overlapping vocabulary, distinct concepts. Not scored in v1. |
 | lossless kv cache | em:1cac23 | quarantine | — | Gold answer is time-relative: once supersession is modeled, a newer lossless-KV concept could supersede VeriCache and become the correct dedup target. Undefined until then (see the [epistemic overlay plan](/meta/plans/epistemic-overlay.md)); parsed and reported, never scored. |
@@ -82,8 +83,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 3 | 10 |
-| expanded | 10 | 10 |
+| plain | 3 | 11 |
+| expanded | 11 | 11 |
 
 The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
 of how much recall the tier-1 `/intake` synonym-expansion change is expected to
