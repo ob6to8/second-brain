@@ -1,5 +1,5 @@
 ---
-id: sb:649457
+id: em:649457
 type: reference
 title: "When F1 fails: granularity-aware evaluation for dialogue topic segmentation (Michael Coen)"
 description: Standard boundary-based F1/W-F1 metrics for dialogue topic segmentation conflate boundary placement quality with segmentation granularity; the paper separates boundary scoring from boundary selection and shows that sweeping boundary density changes W-F1 more than switching segmentation methods does.

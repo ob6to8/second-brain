@@ -1,12 +1,12 @@
 ---
-id: sb:4c9e1f
+id: em:4c9e1f
 type: concept
 title: Git local branches don't auto-advance on fetch
 description: A git fetch only updates remote-tracking refs; your local branch moves only when you pull, merge, reset, or commit — the two refs are decoupled by design.
 tags: [git, version-control, branches, refs, fetch]
 provenance: "Claude Opus 4.8 — pasted from a chat thread"
 verified: true
-verified_by: [sb:a3d27b, sb:f08c54]
+verified_by: [em:a3d27b, em:f08c54]
 timestamp: 2026-07-05
 attribution:
   when: 2026-07-05T11:10:01+00:00

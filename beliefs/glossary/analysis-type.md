@@ -1,5 +1,5 @@
 ---
-id: sb:73e13b
+id: em:73e13b
 type: concept
 title: analysis (type)
 description: The controlled type for a point-in-time evaluation of a question against evidence, yielding findings and a recommendation, filed under meta/analysis/.

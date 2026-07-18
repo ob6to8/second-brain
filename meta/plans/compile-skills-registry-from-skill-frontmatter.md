@@ -46,9 +46,9 @@ view**, same as `meta/registry.md` is derived from per-file ids.
 
 ## 2. The shape of the change
 
-- **A skills scanner** (`SecondBrain.Skills` or similar): enumerate
+- **A skills scanner** (`ElixirMind.Skills` or similar): enumerate
   `.claude/skills/*/SKILL.md`, parse each frontmatter's `name` + `description`
-  (reusing `SecondBrain.Frontmatter`), error on a missing/empty pair.
+  (reusing `ElixirMind.Frontmatter`), error on a missing/empty pair.
 - **Render §7 from the scan.** `mix brain.contract` composes the Skills section
   as one generated bullet per skill (`**/<name>** — <description> See
   .claude/skills/<name>/SKILL.md.`) plus the standing trailer ("New skills are
@@ -84,14 +84,14 @@ view**, same as `meta/registry.md` is derived from per-file ids.
 
 1. ~~Teach the session-init digest to respect a priority override~~ —
    **already built** (ratified here 2026-07-11; independently implemented the
-   same day on `main` by PR #45, `62d9327`): `SecondBrain.SessionInit` reads
+   same day on `main` by PR #45, `62d9327`): `ElixirMind.SessionInit` reads
    an integer `priority:` frontmatter key on issues/todos/plans and ranks
    flagged items ahead of the status heuristic (lower = higher). This plan
    carries `priority: 1` accordingly. Nothing left to build.
 2. Scanner module + unit tests (missing frontmatter is a compile error).
 3. Wire into `Contract.render/1` per the Q1/Q2 decisions; regenerate.
 4. Extend
-   [`contract_scenario_test.exs`](/test/second_brain/contract_scenario_test.exs):
+   [`contract_scenario_test.exs`](/test/elixir_mind/contract_scenario_test.exs):
    a fixture skill appears in the render; deleting it without recompiling
    fails `check/1`.
 5. Update the connective layer in the same motion: the

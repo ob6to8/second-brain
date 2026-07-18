@@ -1,5 +1,5 @@
 ---
-id: sb:d818b8
+id: em:d818b8
 type: concept
 title: first-order logic (FOL)
 description: The standard formal language of objects, predicates, and quantifiers, with Tarskian semantics; sound and complete (Gödel 1929) but only semidecidable — the fully formal pole of knowledge representation.

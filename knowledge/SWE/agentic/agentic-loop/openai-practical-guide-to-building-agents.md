@@ -1,5 +1,5 @@
 ---
-id: sb:a030d9
+id: em:a030d9
 type: reference
 title: "A practical guide to building agents — the 'run' loop (OpenAI)"
 description: OpenAI defines an agent as a system that independently accomplishes tasks by having an LLM manage workflow execution in a 'run' loop that continues until an exit condition is reached.

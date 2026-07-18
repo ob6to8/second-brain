@@ -1,7 +1,7 @@
 ---
 type: policy
 title: Resource attribution
-description: Every bundle concept and governance doc carries a structured `attribution` frontmatter map recording the ingestion event — when it entered, through which channel and by whom, and why — immutable except the append-only governance `from` back-link.
+description: Every bundle document and governance doc carries a structured `attribution` frontmatter map recording the ingestion event — when it entered, through which channel and by whom, and why — immutable except the append-only governance `from` back-link.
 section: composition
 order: 3
 status: active
@@ -12,10 +12,10 @@ attribution:
   why: "compiles the ratified attribution plan into an enforceable contract rule"
   from: [/meta/plans/resource-attribution-property.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md]
 tags: [meta, governance, attribution, frontmatter, provenance, intake, ingestion]
-timestamp: 2026-07-13
+timestamp: 2026-07-15
 ---
-**Attribution — the ingestion event, recorded on the doc.** Every bundle concept
-(everything with an `sb:` id) and every governance doc carries an `attribution`
+**Attribution — the ingestion event, recorded on the doc.** Every bundle document
+(everything with an `em:` id) and every governance doc carries an `attribution`
 frontmatter map recording how it entered the brain (see the
 [attribution plan](/meta/plans/resource-attribution-property.md) for the design
 record):
@@ -35,7 +35,7 @@ attribution:
 | `channel` | *How* it entered — the pathway | Controlled: `intake` · `auto-intake` · `glossary` · `agent-authored` · `backfill` (grows by operator ratification, like `type`) |
 | `agent` | *Who* acted — the operator, or the agent and the automation context it ran in. Names the **pathway, not the model** (the model is in the commit trailer) | Free text, one line |
 | `why` | Why it was deemed worth filing | Free text, one sentence (optional when `channel: backfill` — never invented) |
-| `from` | **Governance docs only.** The doc(s) this entry was extracted from — the thread it came out of, and/or the concept doc that resulted from that thread | Inline YAML list of refs, route-tag style: an `sb:` id (concept) or a bundle-absolute path (thread/governance doc); targets must exist |
+| `from` | **Governance docs only.** The doc(s) this entry was extracted from — the thread it came out of, and/or the document that resulted from that thread | Inline YAML list of refs, route-tag style: an `em:` id (document) or a bundle-absolute path (thread/governance doc); targets must exist |
 
 - **Immutable event, one carve-out.** The event sub-keys
   (`when`/`channel`/`agent`/`why`) are written once at filing and never
@@ -49,7 +49,7 @@ attribution:
   `timestamp` = *when it last changed*. Attribution is not a log: the commit
   graph stays the single change-narrative layer, and this is one write-once
   record, not a maintained history.
-- **Scope and exemptions.** Required on all bundle concepts and on governance
+- **Scope and exemptions.** Required on all bundle documents and on governance
   docs (`from` required on ratification-flow docs — `plan`, `analysis`,
   `elaboration`, `issue`; permitted absent only where no source doc exists).
   Exempt — and it is an **error** for them to carry `attribution`: thread docs

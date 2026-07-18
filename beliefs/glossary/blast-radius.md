@@ -1,5 +1,5 @@
 ---
-id: sb:d73148
+id: em:d73148
 type: concept
 title: blast radius (of a retracted premise)
 description: The set of beliefs transitively dependent on a premise — everything that needs re-examination when it is retracted or changed; an importance/staleness signal, never a truth score.

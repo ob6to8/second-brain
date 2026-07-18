@@ -12,7 +12,7 @@ automatically at session start — it is produced here, when the operator asks f
 it. Follow the [operating contract](/CLAUDE.md).
 
 The engine is unchanged: this skill runs the existing
-[`mix brain.session_init`](/lib/second_brain/session_init.ex) task, which scans
+[`mix brain.session_init`](/lib/elixir_mind/session_init.ex) task, which scans
 four surfaces already kept current by policy and ends in a heuristic top-3. The
 full mechanics — the four sources, the class weights, the `priority:` escape
 hatch, and why *the script ranks, the agent judges* — are narrated in

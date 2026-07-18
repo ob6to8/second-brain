@@ -1,5 +1,5 @@
 ---
-id: sb:15fe73
+id: em:15fe73
 type: concept
 title: materialize
 description: To compute derived content and write it to disk as ordinary file content, instead of recomputing it on demand — trading always-fresh derivation for inspectability, at the cost of needing a freshness check.
@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, tooling, generated-artifacts]
 sense: dual
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:02:52+00:00
   channel: glossary
@@ -17,16 +17,14 @@ attribution:
 
 # materialize
 
-To compute derived content and write it to disk as ordinary file content,
-instead of recomputing it on demand — the sense of a database's *materialized
-view*. Materialized output is readable and
+The name borrows the sense of a database's *materialized view*. Materialized output is readable and
 diffable without running the tool, but it can go stale the moment its source
 changes — which is why it pairs with a freshness check that re-derives and
 compares (the generated-not-hand-kept discipline).
 
 **In this brain:** the term
 names `mix brain.route_tags --materialize`
-([`SecondBrain.RouteTags.materialize/1`](/lib/second_brain/route_tags.ex)),
+([`ElixirMind.RouteTags.materialize/1`](/lib/elixir_mind/route_tags.ex)),
 a **two-directional projection** of the current
 [route tags](/beliefs/glossary/route-tag.md): it writes each fed
 [sink](/beliefs/glossary/route-tag-sink.md)'s

@@ -1,5 +1,5 @@
 ---
-id: sb:04befc
+id: em:04befc
 type: concept
 title: distillation target
 description: The curated document that receives a review round's settled outcome — agreed findings as concrete items, rejected alternatives as a dated block — as distinct from a transcript of the exchange.
@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, review, distillation]
 sense: repo
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13T20:28:57+00:00
   channel: glossary
@@ -17,10 +17,9 @@ attribution:
 
 # distillation target
 
-The curated document that receives a review round's settled outcome: agreed
-findings and their resolutions become concrete items, rejected alternatives
-fold into a dated "rejected: X because Y" block, and the raw exchange is cited
-by PR link and commit SHA rather than copied in. A target is a curated document
+Agreed findings and their resolutions become concrete items, rejected
+alternatives fold into a dated "rejected: X because Y" block, and the raw
+exchange is cited by PR link and commit SHA rather than copied in. A target is a curated document
 — a design doc, ADR, issue, or plan — never a transcript. In a
 [council round](/beliefs/glossary/council-round.md) run against this bundle, the target
 binds to a [plan](/beliefs/glossary/plan-type.md) doc under `meta/plans/`, with

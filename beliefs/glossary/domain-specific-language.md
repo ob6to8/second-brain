@@ -1,5 +1,5 @@
 ---
-id: sb:8b3e30
+id: em:8b3e30
 type: concept
 title: domain-specific language
 description: A small language purpose-built for one problem domain, trading generality for concision and checkability; in Elixir, typically implemented as a macro layer that expands declarations into full code.

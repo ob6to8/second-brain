@@ -13,7 +13,7 @@ defmodule Mix.Tasks.Brain.Contract do
 
   use Mix.Task
 
-  alias SecondBrain.Contract
+  alias ElixirMind.Contract
 
   @impl Mix.Task
   def run(args) do
@@ -28,7 +28,7 @@ defmodule Mix.Tasks.Brain.Contract do
 
   defp write do
     path = Contract.write()
-    Mix.shell().info("Compiled #{path} from #{SecondBrain.Policy.dir()}/*.md")
+    Mix.shell().info("Compiled #{path} from #{ElixirMind.Policy.dir()}/*.md")
   end
 
   defp check do

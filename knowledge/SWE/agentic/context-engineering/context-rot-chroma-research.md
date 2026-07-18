@@ -1,5 +1,5 @@
 ---
-id: sb:77d68a
+id: em:77d68a
 type: reference
 title: "Context rot — LLM performance degrades non-uniformly as input length grows (Chroma)"
 description: Chroma tested 18 frontier models and found performance degrades unevenly as context length increases, even on simple tasks, and models sometimes perform better on shuffled than logically coherent long contexts — evidence that bigger context windows don't remove the need for careful context curation.

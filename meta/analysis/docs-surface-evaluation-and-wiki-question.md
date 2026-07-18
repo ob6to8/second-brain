@@ -57,7 +57,7 @@ standing policy rather than taste:
 
 1. **A wiki is a second content store, and the brain's core invariant is a
    single one.** A GitHub wiki lives in a separate `*.wiki.git` repository with
-   its own history — no YAML frontmatter, no `sb:` ids, no `verified_by` edges,
+   its own history — no YAML frontmatter, no `em:` ids, no `verified_by` edges,
    no session trailers, and none of the eight CI gates. Every page written there
    would be invisible to `mix brain.verify`, the registry, route tags, and the
    dedup search that [update-in-place](/meta/policy/update-in-place.md)
@@ -121,7 +121,7 @@ quotes (reproduced verbatim into materialized excerpt logs — the
 
 ### Tier 2 — comprehensiveness gaps, propose as follow-ups
 
-- **No tutorial for the session-init digest.** `SecondBrain.SessionInit` is the
+- **No tutorial for the session-init digest.** `ElixirMind.SessionInit` is the
   newest subsystem (open-work digest + heuristic priorities at session start)
   and the only `mix brain.*` task without tutorial or flow coverage.
 - **Flow-doc coverage is 2 of 8 skills.** `capture` and `intake` have flow
@@ -147,7 +147,7 @@ quotes (reproduced verbatim into materialized excerpt logs — the
 
 The operator ratified the full Tier-2 list the same day. Shipped in this
 branch: the [session-init digest tutorial](/meta/tutorials/the-session-init-digest.md)
-and the warn-only docs-freshness pass (`SecondBrain.Links`, printed by
+and the warn-only docs-freshness pass (`ElixirMind.Links`, printed by
 `mix brain.verify`, also surfaced in the session-init digest) — which caught
 its first real case (a quoted broken path in this very analysis) during its
 own build-out, resolved by teaching it that code spans are literal text. The

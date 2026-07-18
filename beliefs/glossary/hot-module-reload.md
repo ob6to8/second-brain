@@ -1,5 +1,5 @@
 ---
-id: sb:00e798
+id: em:00e798
 type: concept
 title: hot module reload
 description: A dev-server technique that swaps changed modules into a running app in place, updating the live view on each edit without a full page reload or losing state.

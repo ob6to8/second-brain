@@ -1,5 +1,5 @@
 ---
-id: sb:5c3ab0
+id: em:5c3ab0
 type: reference
 title: The Toulmin model of argument
 description: "Stephen Toulmin's six-part anatomy of practical argument (claim, grounds, warrant, backing, qualifier, rebuttal) from The Uses of Argument (1958) — the case that real-world justification, not formal inference, is argument's first-class object."

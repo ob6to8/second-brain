@@ -1,5 +1,5 @@
 ---
-id: sb:d580ce
+id: em:d580ce
 type: reference
 title: "The coming loop — nested agent and harness loops (Armin Ronacher)"
 description: Ronacher frames agentic development as two nested loops — the model's inner tool-calling loop and an outer harness loop that decides when work is done — warning this shift sidelines human comprehension.

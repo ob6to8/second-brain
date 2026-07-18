@@ -42,7 +42,7 @@ they **cannot be plain-merged**: `main` was reorganized after they were cut
 (`SWE/` → `knowledge/SWE/`, `glossary/` → `beliefs/glossary/`, hand-kept
 `log.md` files retired). A straight merge would resurrect dead paths and deleted
 log files. Each salvage is therefore a **transplant**: copy the useful docs onto
-a fresh branch under the new layout, preserving `sb:` ids (identity survives
+a fresh branch under the new layout, preserving `em:` ids (identity survives
 moves — never re-mint), file by the current tree, and let the source branch be
 deleted once its content lands.
 
@@ -53,7 +53,7 @@ Verdicts and sizing from the audit (see the triage todo for the full reasoning).
 ### Ports — bring the content forward (✅ done 2026-07-13)
 
 - **`ccr-architecture-notes-csbiuv`** (small) — ✅ **ported.** The Chroma
-  vector-database **product** intake (`sb:ea15aa`) is now at
+  vector-database **product** intake (`em:ea15aa`) is now at
   [`knowledge/SWE/llm-engineering/chroma-vector-database.md`](/knowledge/SWE/llm-engineering/chroma-vector-database.md),
   its cross-links repointed to the reorganized tree and an `attribution` block
   added. Cross-linked to the *distinct* Chroma concept already on `main` —

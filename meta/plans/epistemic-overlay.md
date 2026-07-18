@@ -252,7 +252,7 @@ for Thread B to execute without ever opening CB.
   never as ported code. Captures are evidence (no `verified` field). All gates
   green before finishing.
 - **Deliverable:** the captures filed and indexed, and this plan's Citations
-  updated to reference their `sb:` ids.
+  updated to reference their `em:` ids.
 
 ### Thread B — architecture sketch (run after A)
 
@@ -275,7 +275,7 @@ for Thread B to execute without ever opening CB.
   amends update-in-place) — including how `superseded_by` interacts with the
   registry and `verified_by`.
 - **Define `mix brain.graph` v1** (groundedness floor; staleness once
-  supersession lands), reimplemented `second_brain`-style against
+  supersession lands), reimplemented `elixir_mind`-style against
   frontmatter-native concepts; mirror the captured CB test cases in the
   scenario-test idiom.
 - **Output:** this plan revised to `accepted` (or a superseding revision), with
@@ -306,7 +306,7 @@ under a new `knowledge/` top-level (now `knowledge/SWE/` and
 location is corrected above to `knowledge/knowledge-management/composable-beliefs/`.
 Thread B's worked example (the testing-methodology prescription and its two
 attestations) is unmoved in spirit but now lives at
-`knowledge/SWE/testing/elixir-second-brain-testing-methodology.md` — verify the
+`knowledge/SWE/testing/elixir-mind-testing-methodology.md` — verify the
 live path before use rather than trusting either version of this plan's prose.
 
 **A sibling plan emerged: read it before deciding Q1/Q4.** On 2026-07-11 the
@@ -316,7 +316,7 @@ operator independently proposed a related idea, producing
 [analysis](/meta/analysis/belief-decomposition-derived-vs-authored.md). It
 addresses a different layer — a **derived, regenerable, never-authored** belief
 graph for ad hoc audit (groundedness/conflict/consensus over LLM-judged edges,
-no `sb:` ids, no CI gate) — and its own text declares itself "compatible with,
+no `em:` ids, no CI gate) — and its own text declares itself "compatible with,
 not competing against" this plan: this plan governs the *storage* layer
 (concept-granularity roles and committed `deps` edges); the sibling adds an
 *analysis* mode that atomizes freely because it never stores. Both share the

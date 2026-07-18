@@ -5,11 +5,11 @@
   Verify (CI):     mix brain.contract --check
 -->
 
-# Operating Contract — Second Brain (OKF)
+# Operating Contract — Elixir Mind (OKF)
 
 This repository is a personal **second brain** stored as an
 [Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)
-(**OKF v0.1**) bundle. Every agent that operates here — including fresh, sandboxed
+(**OKF v0.1**) bundle, named **elixir-mind**. Every agent that operates here — including fresh, sandboxed
 agents spun up from the Claude Code app — MUST read and follow this contract. It is
 the backbone that keeps the brain consistent as it grows.
 
@@ -27,30 +27,36 @@ behavior, which the operator authors and ratifies but is never subject to.
 
 ## 1. What the brain is made of
 
-- **The repo root is the OKF bundle.** Concepts live at the root and in
+- **The repo root is the OKF bundle.** Documents live at the root and in
   subdirectories. `.claude/` (skills), `meta/` (governance), the Elixir tooling
   (`mix.exs`, `lib/`, `test/`), and `deprecated/` (archived legacy content,
   read-only) sit alongside but are **not** part of the knowledge bundle.
-- **A concept** is a single UTF-8 markdown file with two parts:
+- **A document** is a single UTF-8 markdown file with two parts:
   1. **YAML frontmatter** (required), delimited by `---`.
   2. **Markdown body** (distilled prose; no required sections).
-- **Concept ID** = file path minus `.md` (e.g. `areas/health.md` → `areas/health`).
+- **Document ID** = file path minus `.md` (e.g. `areas/health.md` → `areas/health`).
+- **Terminology: "document", not "concept".** The OKF spec calls this unit a
+  *concept document*, but the anatomy above is purely structural — nothing in it
+  guarantees concept-like content. This bundle therefore says **document** for
+  the unit and reserves **`concept`** for the controlled `type` of that name (a
+  definition or mental model). When reading the OKF spec, its "concept" is this
+  bundle's "document".
 
-_Source: [`meta/policy/concept-anatomy.md`](/meta/policy/concept-anatomy.md)_
+_Source: [`meta/policy/document-anatomy.md`](/meta/policy/document-anatomy.md)_
 
 Frontmatter fields:
 
 | Field | Requirement | Notes |
 |-------|-------------|-------|
-| `id` | **Mandatory** (bundle concepts) | Stable opaque identifier, `sb:` + 6 hex chars. Immutable once minted (`mix brain.id`); see the identity-and-verification section. |
+| `id` | **Mandatory** (bundle documents) | Stable opaque identifier, `em:` + 6 hex chars. Immutable once minted (`mix brain.id`); see the identity-and-verification section. |
 | `type` | **Mandatory** | From the controlled vocabulary (see the type-vocabulary section). Non-empty. |
 | `title` | Strongly recommended | Human-readable display name. |
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
 | `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
-| `verified` | Only on agent statements | Boolean, and **only for agent-authored statements** (`claim`/`note`/`concept`). `false` = asserted but not checked; `true` = checked and backed by a non-empty `verified_by`. **Omit** on captures — a concept that stores a link (`resource`) is not verifiable. Default `false` for AI-generated statements. |
+| `verified` | Only on agent statements | Boolean, and **only for agent-authored statements** (`claim`/`note`/`concept`). `false` = asserted but not checked; `true` = checked and backed by a non-empty `verified_by`. **Omit** on captures — a document that stores a link (`resource`) is not verifiable. Default `false` for AI-generated statements. |
 | `verified_by` | When verified via evidence | Inline YAML list of stable ids (typically `source` captures) that jointly support this statement; targets must **exist** (they need not themselves be `verified`). The only committed representation of evidence edges. |
-| `attribution` | **Mandatory** (bundle concepts and governance docs) | Structured map recording the ingestion event — `when`/`channel`/`agent`/`why`, plus append-only `from` on governance docs. Immutable once written (except `from`). See the resource-attribution policy. |
+| `attribution` | **Mandatory** (bundle documents and governance docs) | Structured map recording the ingestion event — `when`/`channel`/`agent`/`why`, plus append-only `from` on governance docs. Immutable once written (except `from`). See the resource-attribution policy. |
 | `tags` | Recommended | YAML list of categorization strings. |
 | `timestamp` | Recommended | ISO 8601 datetime of last meaningful change. |
 
@@ -58,8 +64,8 @@ Arbitrary extra keys are allowed and must be preserved.
 
 _Source: [`meta/policy/frontmatter-schema.md`](/meta/policy/frontmatter-schema.md)_
 
-**Attribution — the ingestion event, recorded on the doc.** Every bundle concept
-(everything with an `sb:` id) and every governance doc carries an `attribution`
+**Attribution — the ingestion event, recorded on the doc.** Every bundle document
+(everything with an `em:` id) and every governance doc carries an `attribution`
 frontmatter map recording how it entered the brain (see the
 [attribution plan](/meta/plans/resource-attribution-property.md) for the design
 record):
@@ -79,7 +85,7 @@ attribution:
 | `channel` | *How* it entered — the pathway | Controlled: `intake` · `auto-intake` · `glossary` · `agent-authored` · `backfill` (grows by operator ratification, like `type`) |
 | `agent` | *Who* acted — the operator, or the agent and the automation context it ran in. Names the **pathway, not the model** (the model is in the commit trailer) | Free text, one line |
 | `why` | Why it was deemed worth filing | Free text, one sentence (optional when `channel: backfill` — never invented) |
-| `from` | **Governance docs only.** The doc(s) this entry was extracted from — the thread it came out of, and/or the concept doc that resulted from that thread | Inline YAML list of refs, route-tag style: an `sb:` id (concept) or a bundle-absolute path (thread/governance doc); targets must exist |
+| `from` | **Governance docs only.** The doc(s) this entry was extracted from — the thread it came out of, and/or the document that resulted from that thread | Inline YAML list of refs, route-tag style: an `em:` id (document) or a bundle-absolute path (thread/governance doc); targets must exist |
 
 - **Immutable event, one carve-out.** The event sub-keys
   (`when`/`channel`/`agent`/`why`) are written once at filing and never
@@ -93,7 +99,7 @@ attribution:
   `timestamp` = *when it last changed*. Attribution is not a log: the commit
   graph stays the single change-narrative layer, and this is one write-once
   record, not a maintained history.
-- **Scope and exemptions.** Required on all bundle concepts and on governance
+- **Scope and exemptions.** Required on all bundle documents and on governance
   docs (`from` required on ratification-flow docs — `plan`, `analysis`,
   `elaboration`, `issue`; permitted absent only where no source doc exists).
   Exempt — and it is an **error** for them to carry `attribution`: thread docs
@@ -118,7 +124,7 @@ Reserved filenames (any directory level):
   [retire-hand-kept-logs plan](/meta/plans/retire-hand-kept-logs.md)). Do not
   create `log.md` files or append log entries; the change narrative belongs in
   commit messages. (The generated `## Thread excerpts — route-tagged log`
-  sections inside concepts are unrelated — they are compiled, CI-verified
+  sections inside documents are unrelated — they are compiled, CI-verified
   artifacts and stay.)
 
 _Source: [`meta/policy/reserved-filenames.md`](/meta/policy/reserved-filenames.md)_
@@ -127,10 +133,10 @@ _Source: [`meta/policy/reserved-filenames.md`](/meta/policy/reserved-filenames.m
 
 ## 2. Directory structure — unix-like, domain-agnostic, evolving
 
-- Organize concepts into a **unix-like hierarchy**: lowercase, kebab-case directory
+- Organize documents into a **unix-like hierarchy**: lowercase, kebab-case directory
   names (short, established acronyms like `SWE` may stay uppercase); each directory
-  holds a coherent set of related concepts.
-- **Create the natural directory path even for a single concept.** Do not flatten to
+  holds a coherent set of related documents.
+- **Create the natural directory path even for a single document.** Do not flatten to
   avoid nesting — a lone note about git belongs in `knowledge/SWE/version-control/git/`, not
   dumped at the root. Depth that mirrors the real structure of the knowledge is good.
 
@@ -150,7 +156,7 @@ _Source: [`meta/policy/tree-is-the-taxonomy.md`](/meta/policy/tree-is-the-taxono
 
 The taxonomy-evolution protocol (important):
 
-- Filing a concept into an **existing** directory, or creating **subdirectories
+- Filing a document into an **existing** directory, or creating **subdirectories
   under an already-established top-level domain**, → the agent does this
   **autonomously** (create the path and each new directory's `index.md`).
 - Creating a **new top-level directory** (or renaming/moving/merging directories) is
@@ -166,7 +172,7 @@ _Source: [`meta/policy/taxonomy-evolution-protocol.md`](/meta/policy/taxonomy-ev
 
 ## 3. Filing conventions
 
-**Distill, don't dump.** Capture the *knowledge*, not the raw noise. A concept has
+**Distill, don't dump.** Capture the *knowledge*, not the raw noise. A document has
 a clear title, a one-sentence `description`, and a clean body. Keep the original
 material as a `resource` URI and/or under a `# Citations` section — not as the
 whole document.
@@ -174,16 +180,16 @@ whole document.
 _Source: [`meta/policy/distill-dont-dump.md`](/meta/policy/distill-dont-dump.md)_
 
 **Update in place; don't fragment.** Before creating a file, **search the bundle**
-for an existing concept on the same subject. If one exists, update it (merge new
+for an existing document on the same subject. If one exists, update it (merge new
 info, bump `timestamp`) instead of creating a near-duplicate.
 
 _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
 
 - **Filenames**: kebab-case slug derived from the title
   (`open-knowledge-format.md`). Use a `YYYY-MM-DD-` prefix **only** for inherently
-  time-ordered entries (journal/log-style notes); topical concepts stay purely
+  time-ordered entries (journal/log-style notes); topical documents stay purely
   topical.
-- **Cross-link** related concepts with markdown links. Prefer bundle-absolute paths
+- **Cross-link** related documents with markdown links. Prefer bundle-absolute paths
   (begin with `/`, e.g. `[OKF](/knowledge/knowledge-management/open-knowledge-format.md)`). Links are
   untyped edges; the prose carries the meaning. Broken links are tolerated but avoid
   creating them.
@@ -192,42 +198,42 @@ _Source: [`meta/policy/filenames-and-cross-linking.md`](/meta/policy/filenames-a
 
 **In responses, link resources to the deployed site, not to repo paths.** When an
 agent's **delivered response** (chat to the operator, a PR body, an issue comment —
-anything read outside a checkout) references a concept in the brain, cite it as a
-link to that concept's page on the **deployed Pages site**, not as a bundle-absolute
+anything read outside a checkout) references a document in the brain, cite it as a
+link to that document's page on the **deployed Pages site**, not as a bundle-absolute
 (`/knowledge/…md`) or relative repo path. A repo path is not navigable for a reader
 in chat; the live URL is a click away.
 
 - **The site.** The bundle is published to GitHub Pages at
-  **`https://ob6to8.github.io/second-brain/`** (`mix brain.site` → `pages.yml`, one page per concept and
+  **`https://ob6to8.github.io/elixir-mind/`** (`mix brain.site` → `pages.yml`, one page per document and
   per `index.md`). That base URL lives in config
-  (`config/config.exs` → `SecondBrain.SiteConfig.base_url/0`); it is the single
+  (`config/config.exs` → `ElixirMind.SiteConfig.base_url/0`); it is the single
   source of truth, and this contract's copy of it is compiled in from that config —
   a deploy move (e.g. a custom domain) is one config edit, not a doc rewrite.
 - **The mapping.** Take the resource's bundle path and swap the base and extension:
-  bundle path `P.md` → `https://ob6to8.github.io/second-brain/P.html`. So
+  bundle path `P.md` → `https://ob6to8.github.io/elixir-mind/P.html`. So
   `/knowledge/knowledge-management/open-knowledge-format.md` is cited as
-  `https://ob6to8.github.io/second-brain/knowledge/knowledge-management/open-knowledge-format.html`,
+  `https://ob6to8.github.io/elixir-mind/knowledge/knowledge-management/open-knowledge-format.html`,
   and a directory's `index.md` as `…/<dir>/index.html`. This covers governance docs
   too (`meta/…`), which are rendered as well. `mix brain.url <path>` prints the
   mapped URL for a bundle path — the mechanical way to get it right.
 - **Not rendered → no live URL.** Resources under directories the site excludes
   (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page; cite those by repo path
   (or link the file on GitHub) rather than fabricating a Pages URL.
-- **This is the response-side rule only.** Cross-links *inside* concept bodies stay
+- **This is the response-side rule only.** Cross-links *inside* document bodies stay
   bundle-absolute markdown paths per
   [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — the
   site rewrites those `.md` links to the right relative `.html` at build time. Do not
-  hardcode live URLs into concept bodies; use them when speaking to a human outside
+  hardcode live URLs into document bodies; use them when speaking to a human outside
   the bundle.
 
 _Source: [`meta/policy/response-resource-links.md`](/meta/policy/response-resource-links.md)_
 
 - **Links must be processed, not parked.** A web resource enters the brain only once it
   has been **processed into a `reference`** (fetched and summarized/captured). Do not
-  file bare, unprocessed URLs as their own concepts — process it now, or don't file it.
+  file bare, unprocessed URLs as their own documents — process it now, or don't file it.
   (There is deliberately no lightweight "bookmark" type.)
 - **Oversized linked resources**: if a linked source is too large to reasonably copy,
-  **write a faithful summary** as the concept body and **persist the link** in the
+  **write a faithful summary** as the document body and **persist the link** in the
   `resource` frontmatter field (and/or `# Citations`) so nothing is lost.
 
 _Source: [`meta/policy/link-processing.md`](/meta/policy/link-processing.md)_
@@ -251,7 +257,7 @@ the session ends.
   acting on it. A throwaway one-liner is not a plan; a design worth a review pass
   is.
 - **Where.** As a `type: plan` document under [`meta/plans/`](/meta/plans/index.md)
-  (governance namespace — no `sb:` id, outside the identity registry, like
+  (governance namespace — no `em:` id, outside the identity registry, like
   `tutorials` and `threads`). Filename is a kebab-case slug of the title.
 - **What it holds.** The problem, the decisions and their reasoning, the artifact
   shape, and the build order — plus any commissioned design review (e.g. a
@@ -364,10 +370,20 @@ _Source: [`meta/policy/controlled-type-vocabulary.md`](/meta/policy/controlled-t
 
 ## 5. Identity & verification
 
-- **Every bundle concept carries a stable `id`** in frontmatter: `sb:` + 6 lowercase
-  hex chars (e.g. `sb:4c9e1f`). Ids are **opaque and immutable** — minted once
-  (`mix brain.id`), never changed, and never reused, even if the file moves, is
-  renamed, or is superseded. Identity survives refactors; paths don't have to.
+- **Every bundle document carries a stable `id`** in frontmatter: the bundle's
+  id-namespace prefix + 6 lowercase hex chars — currently `em:` (e.g. `em:4c9e1f`).
+  The **6-hex tail is the immutable identity**: minted once (`mix brain.id`), never
+  changed, and never reused, even if the file moves, is renamed, or is superseded.
+  Identity survives refactors; paths don't have to.
+- **The prefix is a namespace token, not part of a document's identity.** It is
+  **opaque** — nothing may depend on its letters carrying meaning — and it changes
+  only by an **operator-ratified, bundle-wide migration** that rewrites every id in
+  one deterministic, tail-preserving pass, never per-id. One such migration has
+  occurred: **2026-07, the `sb:` prefix → `em:`** (mirroring the repository rename
+  second-brain → elixir-mind), swapping the prefix on every id while preserving each
+  6-hex tail verbatim, so a historical `sb:`-prefixed token denotes exactly the `em:`
+  id sharing its tail. A future prefix change would follow the same
+  ratify-then-migrate path; absent one, the prefix is fixed.
 - **Typed edges reference ids, not paths.** Structured frontmatter references
   (`verified_by`, and future typed edges) point at stable ids as an inline YAML list.
   Prose links in bodies still use ordinary markdown paths.
@@ -383,10 +399,10 @@ _Source: [`meta/policy/stable-identity.md`](/meta/policy/stable-identity.md)_
   rewrites its provenance.
 - **Verification is only for agent-authored statements.** `verified: true` applies
   to a statement the agent distilled from a thread (a `claim`, `note`, or `concept`)
-  and asserts it has been **checked against evidence**. A concept that stores a
+  and asserts it has been **checked against evidence**. A document that stores a
   link — anything carrying a `resource` — is a **capture**, not a statement:
   verification is **not possible** for it, so a capture never carries `verified`
-  (omit the field). `mix brain.verify` rejects `verified: true` on any concept that
+  (omit the field). `mix brain.verify` rejects `verified: true` on any document that
   has a `resource`, and rejects a `verified` field (either value) on any type
   outside `claim`/`note`/`concept` — the statement-type restriction is
   machine-enforced, not editorial.
@@ -428,7 +444,7 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 
 ## 7. Skills
 
-- **`/intake`** — process pasted content into one or more filed concepts. See
+- **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
   brain.
 - **`/render-contract`** — recompile `CLAUDE.md` from `meta/policy/*.md` after editing
@@ -446,26 +462,26 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   conversation, a doc, a commit message, or pasted text): define the terms it uses and
   give a less technical overview of the concepts and actions it describes, delivered
   in chat **and persisted** as a `type: elaboration` doc under
-  [`meta/elaborations/`](/meta/elaborations/index.md) (governance namespace, no `sb:`
+  [`meta/elaborations/`](/meta/elaborations/index.md) (governance namespace, no `em:`
   id; link glossary terms that already exist; hand off to `/add-to-glossary` to
   persist new ones per-term). The doc's `attribution.from` back-link to its
   originating session is set later by `/create-pull-request`, never by this skill.
   The phrase-scale sibling of `/summarize-technical`. See
   `.claude/skills/elaborate/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
-  or a filed concept; extract the technical terms it actually uses; and merge distilled
-  definitions into the glossary — **one concept file per term** under
+  or a filed document; extract the technical terms it actually uses; and merge distilled
+  definitions into the glossary — **one `concept` document per term** under
   [`/beliefs/glossary/`](/beliefs/glossary/index.md) (hub: [`/beliefs/glossary.md`](/beliefs/glossary.md)), each with
-  its own `sb:` id and *Seen in:* citations, so any response or concept can cite a
-  term by link (pointer entries defer to filed concepts instead of duplicating them).
+  its own `em:` id and *Seen in:* citations, so any response or document can cite a
+  term by link (pointer entries defer to filed documents instead of duplicating them).
   Also invoked automatically by `/create-pull-request` on the thread doc its
   `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
 - **`/research`** — generate today's **inbox**: a daily candidate feed of research, articles,
   papers, and resources matched against the brain's taxonomy, grouped by category and
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`) — then
   **auto-intake the featured items** into the bundle via `/intake`. The digest is the
-  dated record in the non-bundle `inbox/` namespace (no `sb:` ids); its featured items
-  graduate into filed concepts in the same run, bounded to the known tree (items needing
+  dated record in the non-bundle `inbox/` namespace (no `em:` ids); its featured items
+  graduate into filed documents in the same run, bounded to the known tree (items needing
   a new top-level domain are deferred for operator ratification) and attributed
   `channel: auto-intake` for the operator's post-intake editorial pass. See
   `.claude/skills/research/SKILL.md`.
@@ -478,7 +494,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   feeds, and each governance doc's trace back to its session all ship in the same
   PR. Invoking the skill **is** the authorization to open the PR (no separate
   confirmation gate); PR-template detection and the GitHub MCP tools handle the
-  rest. See `.claude/skills/create-pull-request/SKILL.md`.
+  rest. **Merging is opt-in, off by default:** a bare invocation ends with the PR
+  open and handed back to the operator; passing a `merge` argument
+  (`/create-pull-request merge`) has the skill drive CI to green and true-merge it.
+  See `.claude/skills/create-pull-request/SKILL.md`.
 - **`/sync-branch-with-main`** — fetch `origin/main` and merge it into the current
   working branch, keeping a feature branch current so its diff reflects only its own
   changes and a later PR merges cleanly. Refuses to run on `main`; surfaces conflicts
@@ -540,7 +559,7 @@ record so it can be resumed from the record instead of from memory.
   verbatim. (The dialog UI has also proven flaky in these sessions — a second
   reason to keep questions in the chat.)
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
-  `type: reference`, in the governance namespace (no `sb:` id). It carries, in
+  `type: reference`, in the governance namespace (no `em:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
   landed), the **routing ledger** (`## Routing`), then the `## User`/`##
   Assistant` render body. Route tags are applied last, over the now-frozen body.
@@ -569,18 +588,20 @@ Four columns:
 |--------|-------|
 | **Topic** | what the strand is about, one line |
 | **State** | `open` (live) · `paused` (waiting on a dangling question) · `closed` (resolved; nothing further expected) |
-| **Routed to** | a markdown link to the `concept` doc that absorbed the strand's content, or `unrouted` |
+| **Routed to** | a markdown link to the document that absorbed the strand's content, or `unrouted` |
 | **Dangling** | the open question, when `open`/`paused` (else `-`) |
 
 - **Pointers and states only — never content.** Synthesized content lands in the
-  routed-to `concept` doc; if it also lived in the ledger the ledger would become
+  routed-to document; if it also lived in the ledger the ledger would become
   a stale shadow copy of that doc. State (the strand) and routed-to (the
   dispatch) are orthogonal: a strand can be routed yet still `open`, or `closed`
   and `unrouted`.
-- **Routed-to targets are `concept` docs**, linked by bundle-absolute path
-  (e.g. `[foo](/knowledge/SWE/…/foo.md)`). The route-tagging cross-check reads this column
-  to confirm every concept-routed row is covered by a tag (see the route-tagging
-  policy).
+- **Routed-to targets are documents** — bundle or governance, of any `type` —
+  linked by bundle-absolute path (e.g. `[foo](/knowledge/SWE/…/foo.md)`). The
+  route-tagging cross-check reads this column to confirm every row routed to a
+  **bundle** document (one carrying a stable `em:` id) is covered by a tag;
+  governance targets carry no id and drop out of that check (see the
+  route-tagging policy).
 - **In-doc, maintained at capture time.** The ledger is a section of the thread
   doc itself (not a sibling file), written and updated by `/capture` in the same
   motion that routes content — routing and ledger update are one act, not a
@@ -588,21 +609,21 @@ Four columns:
 
 _Source: [`meta/policy/routing-ledger.md`](/meta/policy/routing-ledger.md)_
 
-Mark each region of a finalized thread body with the concept(s) its content
+Mark each region of a finalized thread body with the document(s) its content
 feeds, so a matter's cross-thread discussion aggregates into one place. The tag
 is an inline `<routes ref="...">` region, applied over the **frozen** body as
 the last motion of `/capture`.
 
 ```
-<routes ref="sb:4c9e1f lib/second_brain/route_tags.ex">
-... one paragraph, feeding a concept and back-linking a code path ...
+<routes ref="em:4c9e1f lib/elixir_mind/route_tags.ex">
+... one paragraph, feeding a document and back-linking a code path ...
 </routes>
 ```
 
 Settled properties:
 
-- **Keyed on canonical ids, never free-text topics.** A ref is a concept's
-  stable **`sb:` id** (the aggregating sink — it accretes the log) or a **path**
+- **Keyed on canonical ids, never free-text topics.** A ref is a document's
+  stable **`em:` id** (the aggregating sink — it accretes the log) or a **path**
   (a non-aggregating back-link to code or a file — no log). Ids, not phrases, so
   two threads about the same matter emit the same string and the cross-thread
   join is exact. This mirrors the identity rule that typed edges reference ids,
@@ -612,14 +633,14 @@ Settled properties:
   the auditable selection — no within-region trimming. A region must not cross a
   `## User`/`## Assistant` turn boundary.
 
-**The doc-side log.** Each referenced concept carries a
+**The doc-side log.** Each referenced document carries a
 **`## Thread excerpts — route-tagged log`** section: an append-only, per-thread,
 date-stamped block for every thread that tags it, each block lifting the tagged
 regions whole (ATX headers demoted to bold). Each block quotes a *frozen* thread,
 so it never goes stale; the section is **generated, not hand-kept** — `mix
 brain.route_tags --materialize` writes it from the current tags.
 
-**The verifier owns it.** `mix brain.route_tags` (see `SecondBrain.RouteTags`)
+**The verifier owns it.** `mix brain.route_tags` (see `ElixirMind.RouteTags`)
 runs beside `mix brain.verify` in CI and the pre-commit hook. It re-derives each
 sink's log from the current tags and **fails on divergence**, converting the
 log's freshness from procedural to structural, and checks tag wellformedness,
@@ -628,7 +649,7 @@ feeding paragraph was tagged — has no mechanical oracle and stays editorial; a
 routing-ledger cross-check lifts it to row granularity and **warns** (never
 fails).
 
-**Freeze on matter-resolution.** A concept accepts new excerpt blocks while its
+**Freeze on matter-resolution.** A document accepts new excerpt blocks while its
 matter is unresolved and freezes acceptance when the matter resolves — per
 matter, not on archival.
 

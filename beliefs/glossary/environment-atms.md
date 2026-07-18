@@ -1,5 +1,5 @@
 ---
-id: sb:9054ac
+id: em:9054ac
 type: concept
 title: environment (ATMS)
 description: A set of assumptions, read logically as their conjunction; the unit the ATMS labels beliefs with, and — via its consistent-closure context — the model for one coherent worldview among many.

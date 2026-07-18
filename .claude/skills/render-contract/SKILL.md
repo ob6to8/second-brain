@@ -10,7 +10,7 @@ description: Recompile CLAUDE.md from the source policy documents under meta/pol
 - `meta/preamble.md` — fixed framing text
 - `meta/policy/*.md` — the rules, as `type: policy` OKF documents
 
-The compiler is the Elixir mix task `brain.contract` (`lib/second_brain/contract.ex`).
+The compiler is the Elixir mix task `brain.contract` (`lib/elixir_mind/contract.ex`).
 It groups each policy under its declared `section`, orders by `order`, and emits a
 visible trace link under each rule back to its `meta/policy/<id>.md`.
 
@@ -43,12 +43,12 @@ scenario test that pins the spine — is narrated in
   policy docs instead.
 - To change a rule, edit its `meta/policy/<id>.md`, or add a new one with the correct
   `section` and `order`, then recompile. The **authoritative section list is the
-  ordered `@sections` in `lib/second_brain/contract.ex`** (as of 2026-07-11:
+  ordered `@sections` in `lib/elixir_mind/contract.ex`** (as of 2026-07-11:
   composition, directory-structure, filing, type-vocabulary, verification,
   conformance, skills, session-workflow, git-workflow) — a policy naming any other
   section fails the compile, so check the code, not this list, when in doubt.
 - Adding a genuinely new contract *section* is a compiler change: add
-  `{key, heading}` to `@sections` in `lib/second_brain/contract.ex` at the position
+  `{key, heading}` to `@sections` in `lib/elixir_mind/contract.ex` at the position
   it should render, then recompile.
 - Adding a genuinely new *kind* of rule, a new `type`, or a new top-level directory
   still follows governance: propose it to the operator first.

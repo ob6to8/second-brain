@@ -7,7 +7,7 @@ together the three artifacts that make the flow work:
 
 - the **skill** — the agent's terse imperative procedure;
 - the **scenario** — a CI-checked ExUnit test over the flow's *deterministic
-  spine* (`test/second_brain/<flow>_scenario_test.exs`);
+  spine* (`test/elixir_mind/<flow>_scenario_test.exs`);
 - **this doc** — the *why*, the actor boundaries, the touch-sequence, and the
   did-it-work checklist.
 
@@ -27,7 +27,7 @@ a reader, and a cross-flow **flowchart index** — [flow lineage](/meta/flows/li
 `--check`-gated in CI like `/CLAUDE.md` and [`meta/registry.md`](/meta/registry.md)). The chain is **heterogeneous**: omit hops a
 flow doesn't have (some flows emerged directly as a plan, with no upstream analysis;
 the genre itself came from the [flows-genre plan](/meta/plans/flows-genre-and-scenario-testing.md)
-with none). Governance docs carry no `sb:` id, so lineage fields reference them by
+with none). Governance docs carry no `em:` id, so lineage fields reference them by
 path; `pr` is a number. The reference instance is the
 [dedup recall probe flow](/meta/flows/dedup-recall-probe.md) (full `analysis → plan →
 thread → PR → flow` chain); the encoding, the derived flowchart, and the retrofit of

@@ -1,5 +1,5 @@
 ---
-id: sb:a74152
+id: em:a74152
 type: concept
 title: append-only
 description: A data structure or field that admits new entries but never allows existing ones to be modified or removed — so its history is immutable even as it grows.

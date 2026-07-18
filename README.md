@@ -1,4 +1,4 @@
-# second-brain
+# elixir-mind
 
 A personal knowledge base stored as an
 [Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)

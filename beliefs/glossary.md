@@ -1,5 +1,5 @@
 ---
-id: sb:0b648f
+id: em:0b648f
 type: concept
 title: Glossary
 description: Hub for the cross-domain glossary — one concept file per term under /beliefs/glossary/, accreted from threads, papers, and posts by /add-to-glossary.
@@ -16,7 +16,7 @@ attribution:
 # Glossary
 
 The hub for the brain's cross-domain glossary. **Each term is its own concept
-file under [`/beliefs/glossary/`](/beliefs/glossary/index.md)** — with its own `sb:` id,
+file under [`/beliefs/glossary/`](/beliefs/glossary/index.md)** — with its own `em:` id,
 frontmatter, and *Seen in:* citations — so every definition is individually
 linkable: cite a term anywhere (a response, another concept, a thread) as a
 bundle-absolute link like `[route tag](/beliefs/glossary/route-tag.md)` and the link
@@ -25,7 +25,13 @@ lands on the definition.
 Entries are accreted by
 [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md) from persisted
 threads, papers, posts, and filed concepts — one file per term, listed
-alphabetically in [`/beliefs/glossary/index.md`](/beliefs/glossary/index.md). A term whose
+alphabetically in [`/beliefs/glossary/index.md`](/beliefs/glossary/index.md). Each term
+carries **one canonical overview**: its `description` frontmatter, rendered as
+the entry page's lede and shown verbatim as the index gloss; the body below is
+expansion-only, never a restatement. Both halves are machine-checked by
+`mix brain.glossary`, whose `--materialize` mode regenerates the index
+`## Terms` section (see the
+[glossary plan](/meta/plans/glossary-single-overview-and-dedup-check.md)). A term whose
 canonical definition lives in a filed concept (or in the operating contract)
 gets a [pointer entry](/beliefs/glossary/pointer-entry.md), not a duplicate
 definition; a term that outgrows the glossary
@@ -47,13 +53,13 @@ decision record is the
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:0b648f">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:0b648f">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-10-add-to-glossary-skill-and-pr-wiring (2026-07-10)
 
 2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
+**[`em:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
 
 Built and pushed. The `/add-to-glossary` skill now exists on `claude/add-to-glossary-skill-jz1ewh` (commit `f45940f`), with all verifiers green (`brain.verify`, `brain.route_tags`, contract check, 78 tests passing).
 
@@ -61,7 +67,7 @@ Built and pushed. The `/add-to-glossary` skill now exists on `claude/add-to-glos
 
 **Key design decisions**, since your proposal left a couple open:
 
-- **`glossary.md`, not `glossary.json`.** The glossary is a bundle concept like any other (`type: concept`, id `sb:0b648f`), so it flows through `mix brain.verify`/`registry` and the site renderer. JSON would sit outside all of that; the entry structure (alphabetical `##` headings + a *Seen in:* citation line) is regular enough to parse mechanically if tooling ever wants it.
+- **`glossary.md`, not `glossary.json`.** The glossary is a bundle concept like any other (`type: concept`, id `em:0b648f`), so it flows through `mix brain.verify`/`registry` and the site renderer. JSON would sit outside all of that; the entry structure (alphabetical `##` headings + a *Seen in:* citation line) is regular enough to parse mechanically if tooling ever wants it.
 - **One glossary, cross-domain, at the bundle root** — listed under a new "Cross-domain" heading in the root `index.md`. A term seen in three threads and a paper gets one entry with four citations, which is the thing `/summarize-technical`'s per-document glossaries can't give you.
 - **Pointer entries instead of duplicates.** A term already canonically defined by a filed concept (or by the operating contract itself, like *route tag*) gets a one-line gloss plus a link, honoring update-in-place/don't-fragment.
 - **A graduation path.** When an entry outgrows a few sentences it gets filed as a proper concept via `/intake` and the glossary entry shrinks to a pointer — the glossary is a staging layer, not a terminal home.
@@ -71,14 +77,14 @@ The skill is registered in `meta/policy/skills-registry.md` with `CLAUDE.md` re-
 
 ---
 
-**[`sb:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
+**[`em:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
 
 Done — restructured and pushed (commit `b61ee57`, now part of PR #35). Each glossary term is its own concept file under `/glossary/`, so I can now cite definitions exactly the way you described: a response can link [route tag](/glossary/route-tag.md), [pointer entry](/glossary/pointer-entry.md), or [verified_by](/glossary/verified-by.md), and clicking lands on the definition — on GitHub and on the Pages site alike.
 
 How the pieces landed:
 
 - **Seven term files** under `/glossary/`, each a full bundle concept with its own minted `sb:` id, frontmatter, definition, and *Seen in:* citations. `glossary/index.md` lists them alphabetically with one-line descriptions.
-- **`/glossary.md` stayed, repurposed as the hub.** It couldn't simply be deleted: it's `sb:0b648f`, the route-tag sink for this session's thread, and it carries the generated excerpt log — ids are immutable and the verifier re-derives that log. So it now describes the system and points into the directory, and all existing links to it still resolve.
+- **`/glossary.md` stayed, repurposed as the hub.** It couldn't simply be deleted: it's `em:0b648f`, the route-tag sink for this session's thread, and it carries the generated excerpt log — ids are immutable and the verifier re-derives that log. So it now describes the system and points into the directory, and all existing links to it still resolve.
 - **Graduation got more elegant.** Since every term is already a concept, an outgrown term no longer needs re-filing via `/intake` — the file just *moves* into the domain taxonomy, its id travels with it, and a pointer stub stays at `/glossary/<slug>.md` so old glossary links keep landing somewhere useful.
 - **The `/add-to-glossary` skill** was updated to the per-term model (kebab-slug files, per-file merge rules, index upkeep) and gained a "Citing terms in responses" section: link a term's first use in a response, not every occurrence. The skills-registry policy, `CLAUDE.md`, `/create-pull-request`'s step 2, the root `index.md`, and the registry are all in sync, and every gate passes (verify, route tags, contract/registry checks, 78 tests).
 
@@ -88,7 +94,7 @@ One governance note: `glossary/` is a new top-level directory, which the taxonom
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:0b648f`]**
+**[`em:0b648f`]**
 
 Done — both pieces committed and pushed (`9665b73`, all verifiers green). The glossary run over the eight epistemic docs added **29 term files**, taking the glossary from 78 to 107 terms.
 
@@ -112,7 +118,7 @@ One scan-worthy spot for you: the multi-sense **justification** and **assumption
 
 3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
+**[`em:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
 
 **Cross-linking similarity between glossary terms**
 
@@ -121,11 +127,11 @@ One scan-worthy spot for you: the multi-sense **justification** and **assumption
 1. **Inline markdown links between term files.** Since every term is its own concept file, any entry can link related terms by bundle-absolute path — the new `policy (type)` entry links to `plan-type`, `issue-type`, `methodology-type`, and `operating-contract` right in its "distinct from…" sentence. These are untyped edges where the prose carries the meaning (per the cross-linking policy), and they render as clickable links on GitHub and the Pages site. Several entries already do this organically (e.g. `skill.md` → `session-capture.md`).
 2. **Shared frontmatter tags.** Entries carry tags like `[glossary, types, governance]`, so related clusters are already greppable/queryable (`policy-type`, `plan-type`, `issue-type` all share `types, governance`).
 
-**What doesn't exist yet:** a *structured* similarity edge — e.g. a `related:` frontmatter field holding `sb:` ids, analogous to `verified_by`, that tooling could traverse to render a "See also" block per entry. That would be a new typed edge, which under the stable-identity policy is a change to the brain's shape — so I'm proposing it rather than building it. If you like it, the design would be: `related: [sb:bf0524, sb:e9a82b]` on each term file, symmetric-checked by `mix brain.verify`, rendered as a *See also:* line. A lighter alternative is a plain *See also:* prose line convention added to the `/add-to-glossary` skill — no tooling change at all. Say the word on either and I'll build it.
+**What doesn't exist yet:** a *structured* similarity edge — e.g. a `related:` frontmatter field holding `sb:` ids, analogous to `verified_by`, that tooling could traverse to render a "See also" block per entry. That would be a new typed edge, which under the stable-identity policy is a change to the brain's shape — so I'm proposing it rather than building it. If you like it, the design would be: `related: [em:bf0524, em:e9a82b]` on each term file, symmetric-checked by `mix brain.verify`, rendered as a *See also:* line. A lighter alternative is a plain *See also:* prose line convention added to the `/add-to-glossary` skill — no tooling change at all. Say the word on either and I'll build it.
 
 ---
 
-**[`sb:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
+**[`em:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
 
 **My recommendation: *See also* — not `related:`, not neither**
 
@@ -141,7 +147,7 @@ Adding that convention is a one-paragraph edit to the `/add-to-glossary` skill (
 
 ---
 
-**[`sb:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
+**[`em:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
 
 Done — the convention is codified and pushed (`1f13ffc`, all verifiers and 78 tests green).
 
@@ -157,7 +163,7 @@ The branch now holds three commits: the `policy (type)` entry, the `doctrine` en
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
+**[`em:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
 
 **Approach:** four parallel Explore subagents read the 12 threads and extracted candidate terms (source-independent definitions + pointer targets), so I could dedup across threads before writing — a term seen in three threads gets **one** file with three citations, not three files. I then generated all entries from a single controlled script to keep the format byte-identical to the existing entries.
 
@@ -170,13 +176,13 @@ The branch now holds three commits: the `policy (type)` entry, the `doctrine` en
 
 2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:0b648f`]**
+**[`em:0b648f`]**
 
-Done — three terms filed, all gates green, pushed as `9178648`. The glossary went 68 → 71: **materialize** (`sb:15fe73`) — defined source-independently (write derived content to disk vs. recompute on demand, paired with a freshness check), noting `CLAUDE.md` and the registry as materializations in the same sense; **excerpt log (route-tagged log)** (`sb:3101ef`) — definition plus a pointer to the route-tagging policy that canonically defines it, per the pointer-entry rule; and **orphan block** (`sb:3ee2d2`) — the general idea (generated output whose source vanished) grounded in this bundle's specific case, citing the issue and the hardening plan. Each carries its minted `sb:` id, *Seen in:* citations, and cross-links to the already-filed `route tag` / `sink` terms. The index stayed alphabetical, the registry was recompiled, and — per link-don't-duplicate — the elaboration doc's three inline definitions now link their new canonical homes rather than standing alone.
+Done — three terms filed, all gates green, pushed as `9178648`. The glossary went 68 → 71: **materialize** (`em:15fe73`) — defined source-independently (write derived content to disk vs. recompute on demand, paired with a freshness check), noting `CLAUDE.md` and the registry as materializations in the same sense; **excerpt log (route-tagged log)** (`em:3101ef`) — definition plus a pointer to the route-tagging policy that canonically defines it, per the pointer-entry rule; and **orphan block** (`em:3ee2d2`) — the general idea (generated output whose source vanished) grounded in this bundle's specific case, citing the issue and the hardening plan. Each carries its minted `sb:` id, *Seen in:* citations, and cross-links to the already-filed `route tag` / `sink` terms. The index stayed alphabetical, the registry was recompiled, and — per link-don't-duplicate — the elaboration doc's three inline definitions now link their new canonical homes rather than standing alone.
 
 ---
 
-**[`sb:0b648f`]**
+**[`em:0b648f`]**
 
 **Glossary report** (93 → 101 terms): *Added (7):* **feeding pairs** — the (thread, sink) pairs the current tags induce; the domain of materialization in both directions; **stale block** — a block diverged from its re-derivation (source *changed*), defined against **orphan block** (source *vanished*); **red test** — proves the detector fires, not just that good input passes; **pipe table** — GFM's `|` table syntax, with the scoping lesson attached; **spurious (warning)** — the false positive that teaches readers to ignore the channel; **section terminator** — where a parsed section ends; reader and rewriter must agree; **CRLF** — normalize on read or honor the file's ending on write. *Pointer (1):* **ratification** — one-line gloss deferring to the taxonomy-evolution protocol and persist-plans policies that canonically define it. *Merged (2):* **sink** and **materialize** already existed — each gained the two-directional-projection nuance from this session (an unfed sink loses its section) plus a citation, rather than a duplicate file.
 
@@ -184,7 +190,7 @@ Done — three terms filed, all gates green, pushed as `9178648`. The glossary w
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:0b648f`]**  (co-feeds: `meta/tutorials/the-session-init-digest.md lib/second_brain/session_init.ex`)
+**[`em:0b648f`]**  (co-feeds: `meta/tutorials/the-session-init-digest.md lib/elixir_mind/session_init.ex`)
 
 Glossary done — 7 terms added, `deduplication` extended. Now the answer to your visibility question implies a concrete gap worth closing before the PR: the warnings currently live in terminal output you never see. The fix is to surface them in the session-init digest, which *is* injected into every session you open. Implementing that now.
 
@@ -192,7 +198,7 @@ Glossary done — 7 terms added, `deduplication` extended. Now the answer to you
 
 2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
+**[`em:0b648f`]**  (co-feeds: `.claude/skills/add-to-glossary/SKILL.md`)
 
 I read the glossary hub, the index (~115 terms), and a few entries that likely carry both senses (`materialize`, `deduplication`, `provenance`, `doctrine`). Here's my assessment.
 
@@ -229,7 +235,7 @@ Since this changes the glossary's shape and the skill's rules, it's a ratificati
 
 ---
 
-**[`sb:0b648f`]**  (co-feeds: `lib/second_brain/verifier.ex .claude/skills/add-to-glossary/SKILL.md`)
+**[`em:0b648f`]**  (co-feeds: `lib/elixir_mind/verifier.ex .claude/skills/add-to-glossary/SKILL.md`)
 
 Done — built, gated, and pushed as `543e0c5` on `claude/glossary-common-repo-specific-cj76kw` (156 files, all verifiers and 118 tests green).
 

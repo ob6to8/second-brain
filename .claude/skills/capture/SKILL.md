@@ -22,9 +22,9 @@ noise, it does not summarize what it keeps.
 - **Title = the filename stem.** The frontmatter `title` (and the body `# H1`)
   is exactly the filename without `.md` — e.g. `2026-07-09-flows-genre-and-scenario-testing`:
   date-prefixed kebab-case, **no `Thread` prefix, no em-dashes, no spaces**.
-- **Type**: `reference`, governance namespace (`meta/`) — **no `sb:` id**; the
+- **Type**: `reference`, governance namespace (`meta/`) — **no `em:` id**; the
   registry and `mix brain.verify` ignore it. Threads are tag *sources*; the
-  `concept` docs they route to (which carry `sb:` ids) are the sinks.
+  `concept` docs they route to (which carry `em:` ids) are the sinks.
 - **Update in place**: if this session already has a thread file, regenerate that
   same file — do not create a second one.
 
@@ -109,12 +109,12 @@ the strand; routed-to describes dispatch — they are independent.
 Now that the render is frozen, mark each region that feeds a concept:
 
 ```
-<routes ref="sb:4c9e1f lib/foo.ex">
+<routes ref="em:4c9e1f lib/foo.ex">
 ... the paragraph(s), lifted whole ...
 </routes>
 ```
 
-- Ref a concept's **`sb:` id** (the aggregating sink — grep the target concept's
+- Ref a concept's **`em:` id** (the aggregating sink — grep the target concept's
   frontmatter, or `meta/registry.md`, for its id). A **path** ref is an optional
   non-aggregating back-link (code/file) — it gets no log.
 - Per-paragraph, multi-ref on one region; never nest; never cross a

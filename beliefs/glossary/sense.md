@@ -1,5 +1,5 @@
 ---
-id: sb:60220a
+id: em:60220a
 type: concept
 title: sense (glossary sense)
 description: The frontmatter field classifying where a glossary term's usage lives — common (portable), repo (this brain's own vocabulary), or dual (both senses, defined common-first) — required on every glossary entry and gated by mix brain.verify.

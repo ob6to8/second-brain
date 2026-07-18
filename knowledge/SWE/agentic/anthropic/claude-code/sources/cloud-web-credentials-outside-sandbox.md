@@ -1,5 +1,5 @@
 ---
-id: sb:564b8e
+id: em:564b8e
 type: source
 title: Claude Code on the web docs — credentials and signing keys never inside the sandbox
 description: Verbatim passages establishing that sensitive credentials such as git credentials or signing keys are never inside the sandbox, authentication is handled through a secure proxy with scoped credentials, and pushes are restricted to the current working branch.

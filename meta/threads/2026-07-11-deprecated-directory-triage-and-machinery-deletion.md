@@ -24,7 +24,7 @@ Three things happened. First, the initial migration:
 `deprecated/sources/ai-agent-memory-markdown-files.md` was processed via
 [`/intake`](/.claude/skills/intake/SKILL.md) into
 [AI agent memory management — when markdown files are all you need](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md)
-(`sb:41a1e3`), re-fetched from the live dev.to article rather than copied, so
+(`em:41a1e3`), re-fetched from the live dev.to article rather than copied, so
 the capture gained detail the legacy summary lacked. Second, on the operator's
 direction, the legacy system's **machinery was deleted** (commit `d1ef400`,
 3,423 lines): scripts, schema, templates, publish staging, old skills, the
@@ -97,8 +97,8 @@ Continue from where you left off.
 
 The intake is filed, verified, and pushed. Here's where things stand:
 
-<routes ref="sb:41a1e3">
-**Intake result.** `deprecated/sources/ai-agent-memory-markdown-files.md` is now migrated into the bundle as [`SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md`](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md) (`sb:41a1e3`, `type: reference`). I re-fetched the dev.to article rather than just copying the legacy capture, which added detail the old summary lacked (the author's name, Manus's `task_plan.md`/`notes.md`/deliverables pattern, and OpenClaw's 70:30 vector-to-BM25 weighting at 89% recall). It's cross-linked to the Anthropic memory-tool reference and the context-engineering essay, and the provenance records the migration from the legacy bundle. Directory `index.md`, root `log.md`, and `meta/registry.md` are updated; `mix brain.verify`, `brain.route_tags`, and `brain.contract --check` all pass. Committed and pushed to `claude/deprecated-directory-deletion-myusjh` (no PR opened — say the word or run `/create-pull-request` when you want one).
+<routes ref="em:41a1e3">
+**Intake result.** `deprecated/sources/ai-agent-memory-markdown-files.md` is now migrated into the bundle as [`SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md`](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md) (`em:41a1e3`, `type: reference`). I re-fetched the dev.to article rather than just copying the legacy capture, which added detail the old summary lacked (the author's name, Manus's `task_plan.md`/`notes.md`/deliverables pattern, and OpenClaw's 70:30 vector-to-BM25 weighting at 89% recall). It's cross-linked to the Anthropic memory-tool reference and the context-engineering essay, and the provenance records the migration from the legacy bundle. Directory `index.md`, root `log.md`, and `meta/registry.md` are updated; `mix brain.verify`, `brain.route_tags`, and `brain.contract --check` all pass. Committed and pushed to `claude/deprecated-directory-deletion-myusjh` (no PR opened — say the word or run `/create-pull-request` when you want one).
 </routes>
 
 <routes ref="deprecated/README.md">
@@ -120,7 +120,7 @@ What about deleting the artifacts you deem safe to remove, old code etc?
 Done — the legacy machinery is deleted and pushed (commit `d1ef400`, 3,423 lines removed, all verification suites green).
 
 <routes ref="deprecated/README.md">
-**Deleted** (all recoverable from git history): `scripts/` (the whole shell toolchain and its tests), `schema/`, `templates/`, `publish/` staging, the old `.claude/skills/` (`search`, `conclude`, `publish` — this also stops them auto-loading into sessions), the generated `index.json`, and the old system's `CLAUDE.md` and `README.md`, which only described the machinery that's now gone. I also removed `sources/ai-agent-memory-markdown-files.md`, since its content now lives in the bundle as `sb:41a1e3`.
+**Deleted** (all recoverable from git history): `scripts/` (the whole shell toolchain and its tests), `schema/`, `templates/`, `publish/` staging, the old `.claude/skills/` (`search`, `conclude`, `publish` — this also stops them auto-loading into sessions), the generated `index.json`, and the old system's `CLAUDE.md` and `README.md`, which only described the machinery that's now gone. I also removed `sources/ai-agent-memory-markdown-files.md`, since its content now lives in the bundle as `em:41a1e3`.
 
 **Kept — it's content, not code**: `sources/` (13 captures), `assertions/` (9 claims), `plans/` (the old system's architecture decision records), and one thing worth flagging: `intake/intake.md` turned out to be a **604-line backlog of raw collected URLs** — a reading list you gathered in March that was never processed. That's real material, so it stayed. I replaced the README with a short one that states what remains, why, and tracks migration status, and logged the deletion in root `log.md`.
 </routes>
@@ -143,7 +143,7 @@ Pausing is fine — let me add the todo.
 
 Todo added — **Task #1: "Go through rest of deprecated/"** — with the full remaining inventory baked into its description (the source batching order, the 9 assertions, the URL backlog and old plans that need your call, and the branch/commit references), so a future session can pick it up without re-deriving any of this.
 
-Pausing here. Current state: branch `claude/deprecated-directory-deletion-myusjh` is pushed with two commits — the first migration (`sb:41a1e3`) and the machinery deletion — and `deprecated/` now contains only content pending triage. No PR has been opened; when you're ready to resume, "continue with deprecated" (or just pointing at the task) is enough.
+Pausing here. Current state: branch `claude/deprecated-directory-deletion-myusjh` is pushed with two commits — the first migration (`em:41a1e3`) and the machinery deletion — and `deprecated/` now contains only content pending triage. No PR has been opened; when you're ready to resume, "continue with deprecated" (or just pointing at the task) is enough.
 
 ## User
 
@@ -153,7 +153,7 @@ Pausing here. Current state: branch `claude/deprecated-directory-deletion-myusjh
 
 `/create-pull-request` complete, end to end:
 
-- **PR opened:** https://github.com/ob6to8/second-brain/pull/43 — three commits on `claude/deprecated-directory-deletion-myusjh` into `main`: the first migration out of `deprecated/` (`sb:41a1e3`), the machinery deletion (3,423 lines), and the capture + glossary commit.
+- **PR opened:** https://github.com/ob6to8/second-brain/pull/43 — three commits on `claude/deprecated-directory-deletion-myusjh` into `main`: the first migration out of `deprecated/` (`em:41a1e3`), the machinery deletion (3,423 lines), and the capture + glossary commit.
 - **Captured thread doc:** `meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md` — parsed verbatim from the host session log (the three early prompts that hit the session-limit banner are noted honestly as harness errors, not rendered as dialogue). Its routing ledger has one open row: the remaining `deprecated/` migration, which stays tracked in Task #1.
 - **Glossary:** four new terms from this session — [agent memory](/glossary/agent-memory.md), [assertion graph](/glossary/assertion-graph.md), [BM25](/glossary/bm25.md), and [hybrid search](/glossary/hybrid-search.md) — taking the glossary from 69 to 73 terms.
 - **Gates:** format, contract, registry, verify, route-tags, and all 78 tests green before the commit.
@@ -174,7 +174,7 @@ Two things came up along the way, both resolved:
 
 2. **The PR had conflicts** — `main` had absorbed four other PRs from today's parallel sessions (session-init digest, news digest + six intakes, doctrine/policy glossary work, the merge-strategy policy). The conflicts were the usual append-collision suspects: `log.md`, `meta/log.md`, `meta/threads/index.md`, `glossary/index.md` (resolved as a union of both sides' entries — nothing dropped), and `meta/registry.md` (regenerated with `mix brain.registry`, never hand-merged). I also corrected my log entry's glossary count, since the parallel sessions had added terms concurrently: the glossary now stands at **85 terms**. Full gate suite passed before the merge (format, contract, registry, verify, route-tags, and 81 tests).
 
-So `main` now has the first `deprecated/` migration (`sb:41a1e3`), the machinery deletion, the captured thread doc, and the four glossary terms. The remaining migration work stays tracked in Task #1 ("Go through rest of deprecated/") — and I noticed the repo also gained a `/todo` skill today, so a future session could mirror that task into `meta/todos/` where the new session-init digest would surface it automatically. Want me to do that now, or leave it for the next session?
+So `main` now has the first `deprecated/` migration (`em:41a1e3`), the machinery deletion, the captured thread doc, and the four glossary terms. The remaining migration work stays tracked in Task #1 ("Go through rest of deprecated/") — and I noticed the repo also gained a `/todo` skill today, so a future session could mirror that task into `meta/todos/` where the new session-init digest would surface it automatically. Want me to do that now, or leave it for the next session?
 
 ## User
 
@@ -202,14 +202,14 @@ Is the log the best place to find that hierarchy?
 
 Done — committed and pushed (`ccaf6a0`; the branch was restarted from the latest `main` first, since PR #43 had merged).
 
-<routes ref="sb:bb2968">
+<routes ref="em:bb2968">
 **Glossary results:**
-- **Added** [strand](/glossary/strand.md) (`sb:bb2968`) — one topic's line of work through a session: the unit the routing ledger tracks one row per, with a state (`open`/`paused`/`closed`) orthogonal to where its content routed, and "dangling strand" defined as the form the session-init digest harvests.
+- **Added** [strand](/glossary/strand.md) (`em:bb2968`) — one topic's line of work through a session: the unit the routing ledger tracks one row per, with a state (`open`/`paused`/`closed`) orthogonal to where its content routed, and "dangling strand" defined as the form the session-init digest harvests.
 - **Merged, not duplicated:** *ledger* is the same concept as the existing [routing ledger](/glossary/routing-ledger.md) entry, so per the one-term-one-file rule that entry got the short-form note ("often shortened to just 'the ledger'") and a prose cross-link to *strand*, rather than a second file.
 - All gates green; registry refreshed; root `log.md` updated. Glossary at 86 terms.
 </routes>
 
-<routes ref="lib/second_brain/session_init.ex beliefs/glossary/session-init-digest.md">
+<routes ref="lib/elixir_mind/session_init.ex beliefs/glossary/session-init-digest.md">
 **Is the log the best place to find that hierarchy? No** — and your question caught a real weakness. The log entry I quoted was just a change record, and it was already stale: it described the ranking *before* todos were added as a source. The canonical definition is the `@weights` map in `lib/second_brain/session_init.ex:35` (with the moduledoc stating it in prose at line 17): **issues → in-progress plans → todos → accepted plans → open strands → paused strands → leftover dangling questions → proposed plans**, newer first within a class. Since code isn't where you'd naturally look it up, I also stated the full order in the [session-init digest](/glossary/session-init-digest.md) glossary definition with a pointer to the module — so the glossary is now the best *prose* place to find it, and it cites where the truth lives.
 </routes>
 
@@ -279,7 +279,7 @@ Both pieces are done, tested, and pushed (`c6e3f9a`).
 
 **The plan:** [`meta/plans/retire-hand-kept-logs.md`](/meta/plans/retire-hand-kept-logs.md), `status: accepted` (this conversation is recorded as the design review and ratification). It carries the problem statement, the failed enumeration as a table (each claimed log benefit and what already covers it), the decision, a hard scope boundary — the generated, CI-verified route-tagged excerpt logs stay — a concrete execution checklist built from a grep of everything that references `log.md` (7 policies, 7 skills, the intake flow, tests, plus a contract recompile), and the deferred option of a generated `git log --first-parent` changelog for the rendered site if that gap ever matters.
 
-<routes ref="lib/second_brain/session_init.ex">
+<routes ref="lib/elixir_mind/session_init.ex">
 **The priority flag:** there was no such mechanism, so I built it. Any issue, todo, or plan can now carry an integer `priority:` frontmatter key (1 = most urgent); `SecondBrain.SessionInit` pins flagged items above every heuristic class, ordered by the integer, with a "why" line that says so. Strands can't be flagged (ledger rows have no frontmatter). It's documented in the moduledoc and the [session-init digest](/glossary/session-init-digest.md) glossary entry — updated in the same commit so the prose can't be stale about the very ranking it describes — and covered by a new test (82 pass, all gates green).
 </routes>
 

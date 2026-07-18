@@ -1,5 +1,5 @@
 ---
-id: sb:a832e0
+id: em:a832e0
 type: reference
 title: "How coding agents work (Simon Willison)"
 description: A coding agent is a harness that wraps an LLM with a system prompt and callable tools, running them in a loop that feeds tool results back as new context.

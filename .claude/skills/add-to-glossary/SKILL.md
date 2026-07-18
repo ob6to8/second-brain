@@ -14,7 +14,7 @@ glossary that lives and dies with its breakdown, this skill maintains the
 *persistent, cross-source* one: the same term seen in three threads and a paper has
 **one** file, with four citations.
 
-Each term file is a bundle concept like any other — its own `sb:` id, frontmatter,
+Each term file is a bundle concept like any other — its own `em:` id, frontmatter,
 and place in `mix brain.verify`/`registry` and the site renderer. That per-term
 granularity is the point: **every definition is individually linkable**, so a term
 can be cited anywhere as a bundle-absolute link (`[route tag](/beliefs/glossary/route-tag.md)`)
@@ -30,7 +30,7 @@ One source per invocation (or several, processed in sequence):
 - **A paper or post** — a URL (WebFetch; alphaXiv tools for arXiv papers), pasted
   text, or an attached file (for PDFs, read in page batches).
 - **An already-filed bundle concept** — a `reference`/`source`/`concept` named by
-  title, path, or `sb:` id.
+  title, path, or `em:` id.
 
 If nothing was given, ask the operator what to scan.
 
@@ -90,7 +90,10 @@ Write each definition from understanding, not by transcription:
 - **One file per term**: `/beliefs/glossary/<kebab-slug>.md`, slug derived from the term
   (`route-tag.md`, `verified-by.md`). `type: concept`; `title` = the term
   (lowercase unless a proper noun or cased formalism); `description` = the
-  definition in one sentence; `provenance` noting it's an agent-distilled
+  definition in one sentence — this is the term's **one canonical overview**,
+  rendered as the entry page's lede *and* shown verbatim as the term's gloss in
+  the index `## Terms` section (one overview, three surfaces — write it to stand
+  alone); `provenance` noting it's an agent-distilled
   glossary definition; `verified: false`; **`sense`** (`common`/`repo`/`dual` —
   required; `mix brain.verify` gates on it); `timestamp`; **`attribution`** on
   new term files (the ingestion event — written once, never rewritten by later
@@ -103,10 +106,18 @@ Write each definition from understanding, not by transcription:
     agent: "Claude Code agent, /add-to-glossary"
     why: "term surfaced by <the thread/doc/paper scanned>"
   ```
-- Body: an `# <term>` heading, the definition paragraph, then a *Seen in:* line
+- Body: an `# <term>` heading, **expansion-only prose**, then a *Seen in:* line
   of citations — bundle-absolute links for threads and filed concepts, plain
   URLs for external papers/posts (a citation is not a parked bookmark; the
   link-processing policy governs filing URLs as *concepts*, not citing them).
+- **The body never restates the description.** The site renders the description
+  as the lede directly above the body, so body prose that re-defines the term
+  stacks two definitions on one page. Body paragraphs add only what the
+  description doesn't carry: mechanism, consequences, examples, senses,
+  distinctions, cross-links. A body with nothing non-redundant to add is left
+  empty (heading, then *Seen in:*). `mix brain.glossary` enforces this
+  mechanically: a body sentence whose content-word vocabulary is largely
+  contained in the description **fails**; moderate overlap warns.
 - **Dual entries define the common sense first**, then the repo sense in a
   passage opening **In this brain:** (or *In this bundle:*) — common first so
   the local usage never displaces the portable meaning. Never split a dual
@@ -128,12 +139,18 @@ Write each definition from understanding, not by transcription:
   new source genuinely adds nuance (or a new sense); always append the citation;
   bump that file's `timestamp`. Never delete or rewrite-from-scratch a file the
   operator may have touched.
-- Keep `/beliefs/glossary/index.md` current: one bulleted link + one-line description
-  per term, **alphabetical, case-insensitive**.
+- The index `## Terms` section is a **generated artifact**: one bulleted link
+  per term, title-sorted case-insensitively, gloss = the term's `description`
+  verbatim. Never hand-edit it — run `mix brain.glossary --materialize` after
+  adding or changing entries.
 
 ### 5. Maintain and verify
 - Mint ids for the new term files and refresh the registry:
   `mix brain.id && mix brain.registry`.
+- Regenerate the index and check the glossary layer:
+  `mix brain.glossary --materialize` (index `## Terms` sync, descriptions,
+  body-dedup — see the
+  [glossary plan](/meta/plans/glossary-single-overview-and-dedup-check.md)).
 - Run `mix brain.verify`. (No log entry — the commit message records which
   source was scanned and which terms were added/updated.)
 
@@ -155,7 +172,7 @@ Link a term's first use in a response, not every occurrence.
 The glossary is a staging layer, not a terminal home. When a term's file
 outgrows a glossary definition — it accumulates senses, claims, or citations
 that belong in the domain tree — **move the file into the taxonomy** where it
-belongs (its `sb:` id travels with it; identity survives moves) and leave a
+belongs (its `em:` id travels with it; identity survives moves) and leave a
 pointer stub at `/beliefs/glossary/<slug>.md` linking to the new home, so glossary
 links keep landing somewhere useful. Update both `index.md` files and the
 registry (`mix brain.registry`).

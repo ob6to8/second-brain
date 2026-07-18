@@ -9,7 +9,7 @@ defmodule Mix.Tasks.Brain.Url do
 
   The mechanical form of the response-resource-links policy: use it to cite a brain
   resource by its live URL instead of hand-constructing one. The base URL comes from
-  config (`SecondBrain.SiteConfig.base_url/0`). Paths under non-rendered directories
+  config (`ElixirMind.SiteConfig.base_url/0`). Paths under non-rendered directories
   (`deprecated/`, `.claude/`, `lib/`, `test/`, …) have no page and print a notice —
   cite those by repo path.
   """
@@ -18,7 +18,7 @@ defmodule Mix.Tasks.Brain.Url do
 
   @impl Mix.Task
   def run([path | _]) when is_binary(path) do
-    case SecondBrain.SiteConfig.live_url(path) do
+    case ElixirMind.SiteConfig.live_url(path) do
       {:ok, url} ->
         Mix.shell().info(url)
 

@@ -1,5 +1,5 @@
 ---
-id: sb:102785
+id: em:102785
 type: concept
 title: mix task
 description: A named, invocable command in Elixir's mix build tool (e.g. `mix test`, `mix brain.site`), defined as a module under `Mix.Tasks`.
@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, elixir, tooling]
 sense: common
-timestamp: 2026-07-10
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # mix task
 
-A named, invocable command in Elixir's `mix` build tool (e.g. `mix test`, `mix brain.site`), defined as a module under the `Mix.Tasks` namespace. This brain's verifiers and generators (`mix brain.verify`, `mix brain.id`, `mix brain.route_tags`, …) are all mix tasks.
+This brain's verifiers and generators (`mix brain.verify`, `mix brain.id`, `mix brain.route_tags`, …) are all mix tasks.
 
-*Seen in:* [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md)
+*Seen in:* [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md), [2026-07-16 render-contract-invocation thread](/meta/threads/2026-07-16-render-contract-invocation-and-auto-render.md) (the contract render is a mix task, `mix brain.contract`)

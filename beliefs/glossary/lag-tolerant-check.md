@@ -1,5 +1,5 @@
 ---
-id: sb:731c59
+id: em:731c59
 type: concept
 title: lag-tolerant check
 description: A staleness gate for a generated artifact that accepts the on-disk copy being behind its source (missing the newest entries) but fails on any divergence in the content it does contain — used where regeneration structurally trails the data.

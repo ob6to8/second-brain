@@ -1,5 +1,5 @@
 ---
-id: sb:863b32
+id: em:863b32
 type: source
 title: Claude Code on the web docs — environments carry config; each session gets a fresh VM
 description: Verbatim passages establishing that a cloud environment controls network access, environment variables, and the setup script, and that each session runs in a fresh Anthropic-managed VM with the repository cloned.

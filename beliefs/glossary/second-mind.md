@@ -1,5 +1,5 @@
 ---
-id: sb:9fdaf8
+id: em:9fdaf8
 type: concept
 title: second mind
 description: An AI layer over a personal knowledge store that reasons with, synthesizes, and acts on the stored material, in contrast to a second brain, whose purpose is storage and retrieval.

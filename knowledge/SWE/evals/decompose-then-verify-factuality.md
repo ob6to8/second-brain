@@ -1,5 +1,5 @@
 ---
-id: sb:d6cb97
+id: em:d6cb97
 type: reference
 title: "Decompose-then-verify factuality evaluation (FActScore, SAFE)"
 description: "The LLM-evals literature that atomizes long-form generations into individual facts, verifies each against a knowledge source, and aggregates mechanically — FActScore (EMNLP 2023) and SAFE/LongFact (NeurIPS 2024) validate the pattern at scale."

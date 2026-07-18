@@ -1,5 +1,5 @@
 ---
-id: sb:d82615
+id: em:d82615
 type: source
 title: "de Kleer (1986), \"An Assumption-based TMS\" — key passages"
 description: "Primary-source capture of Johan de Kleer's ATMS paper (Artificial Intelligence 28:127–162): verbatim definitions of assumptions as primitive data, environments, labels (consistent/sound/complete/minimal), contexts, nogoods, and subset-test context membership."

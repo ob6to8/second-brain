@@ -10,13 +10,13 @@ defmodule Mix.Tasks.Brain.Site do
   The output is dependency-free HTML/CSS/JS: a sidebar mirroring the directory
   taxonomy, per-concept metadata panels (type, tags, verification, evidence edges),
   and a client-side search index. All links are relative, so the site works at a
-  domain root or under a project subpath (e.g. `/second-brain/`). Deployed to
+  domain root or under a project subpath (e.g. `/elixir-mind/`). Deployed to
   GitHub Pages by `.github/workflows/pages.yml`.
   """
 
   use Mix.Task
 
-  alias SecondBrain.Site
+  alias ElixirMind.Site
 
   @impl Mix.Task
   def run(args) do

@@ -80,7 +80,7 @@ Continue
 
 ## Assistant
 
-<routes ref="lib/second_brain/session_init.ex lib/mix/tasks/brain.session_init.ex .claude/hooks/session-start.sh test/second_brain/session_init_test.exs">
+<routes ref="lib/elixir_mind/session_init.ex lib/mix/tasks/brain.session_init.ex .claude/hooks/session-start.sh test/elixir_mind/session_init_test.exs">
 The picture is complete. My design: a new `SecondBrain.SessionInit` module + `mix brain.session_init` task that scans open issues (`meta/issues`), active plans (`meta/plans`), and dangling strands from thread routing ledgers, emits a digest with a heuristic top-3 priority ranking, and gets called by the SessionStart hook so it lands in the session context. Let me check the test idiom first.
 
 Done — pushed to `claude/session-init-log-priorities-vuvzo6`. Every fresh session will now open with a **session-init digest** injected into context by the SessionStart hook, ending in a top-3 priority appraisal.
@@ -116,7 +116,7 @@ PR opened: **https://github.com/ob6to8/second-brain/pull/39**
 The full `/create-pull-request` flow ran to completion:
 
 1. **Captured** the session as `meta/threads/2026-07-11-session-init-digest-and-priorities.md` — verbatim render (two kept assistant blocks plus your messages), a routing ledger with three closed strands, and one dangling note carried forward: *soften the open-every-session agent note if the appraisal proves noisy*. Route tags are path back-links to the new tooling files (no concept sinks, so no excerpt logs to materialize).
-2. **Glossaried** the thread: one new term, [session-init digest](/glossary/session-init-digest.md) (`sb:6f2442`), and the existing **SessionStart hook** entry extended with the context-injection nuance (hook stdout briefs the agent) plus a third citation. Registry, glossary index, and both logs updated.
+2. **Glossaried** the thread: one new term, [session-init digest](/glossary/session-init-digest.md) (`em:6f2442`), and the existing **SessionStart hook** entry extended with the context-injection nuance (hook stdout briefs the agent) plus a third citation. Registry, glossary index, and both logs updated.
 3. **Committed and pushed** to `claude/session-init-log-priorities-vuvzo6` (two commits: the feature, then capture + glossary), with all gates green — contract, registry, verify, route-tags, and 81/81 tests.
 
 A nice proof point along the way: the digest fired live on this session's own resume, and its top-3 ranking (the /news Routine issue first) matched what I'd have judged by hand.
@@ -222,7 +222,7 @@ Do the extension
 
 ## Assistant
 
-<routes ref="lib/second_brain/session_init.ex test/second_brain/session_init_test.exs">
+<routes ref="lib/elixir_mind/session_init.ex test/elixir_mind/session_init_test.exs">
 Done — the digest now scans `meta/todos/` as a fourth source, pushed as `c5078c8` on the same branch as the merge-strategy policy.
 
 What changed:
@@ -246,7 +246,7 @@ PR opened: **https://github.com/ob6to8/second-brain/pull/42**
 The full flow ran:
 
 1. **Capture** — the session's thread doc was refreshed **in place** (update-in-place rule, since PR #39 already shipped its first version): the post-merge exchanges appended verbatim — the squash-merge of #39, your commits-as-provenance question, the trade-off analysis, the ratification, and the todos extension — plus four new ledger rows and four tagged regions. One dangling item is now on record and will surface in future session-init digests: *disable squash/rebase in the GitHub repo settings* (still a you-step).
-2. **Glossary** — two pointer entries added, deferring to the reachability tutorial: [true merge](/glossary/true-merge.md) (`sb:a10e18`) and [squash merge](/glossary/squash-merge.md) (`sb:4a235a`), both cross-linked to the merge-strategy policy and the existing fast-forward-merge entry.
+2. **Glossary** — two pointer entries added, deferring to the reachability tutorial: [true merge](/glossary/true-merge.md) (`em:a10e18`) and [squash merge](/glossary/squash-merge.md) (`em:4a235a`), both cross-linked to the merge-strategy policy and the existing fast-forward-merge entry.
 3. **Committed, pushed, PR'd** — the branch carries three atomic commits (policy ratification `be8fbbc`, todos extension `c5078c8`, capture refresh + glossary `0a10f85`), all gates green including the formatter.
 
 **Thread doc name:** `meta/threads/2026-07-11-session-init-digest-and-priorities.md` (refreshed in place, same file as before).

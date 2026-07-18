@@ -1,5 +1,5 @@
 ---
-id: sb:3420c8
+id: em:3420c8
 type: source
 title: Claude Code on the web docs — environments are reclaimed after inactivity
 description: Verbatim passages establishing that cloud sessions stop after a period of inactivity and the underlying environment is reclaimed, and that the VM clones from GitHub rather than the local machine so local commits must be pushed first.

@@ -52,7 +52,7 @@ todo just records the final disposition:
 - **`claude/ccr-architecture-notes-csbiuv`** — ✅ **ported 2026-07-13**: the
   Chroma **product** intake landed at
   [`chroma-vector-database.md`](/knowledge/SWE/llm-engineering/chroma-vector-database.md)
-  (`sb:ea15aa`), links repointed, cross-linked to `main`'s Chroma context-rot
+  (`em:ea15aa`), links repointed, cross-linked to `main`'s Chroma context-rot
   *research* concept. Source branch now safe to delete.
 - **`claude/glossary-thread-docs-zwfk6i`** — ❌ false orphan; ratify deletion.
 - **`claude/glossary-doctrine-policy-lkabog`** — ❌ false orphan (content landed

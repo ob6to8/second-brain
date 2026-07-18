@@ -2,7 +2,7 @@
 okf_version: "0.1"
 ---
 
-# Second Brain
+# Elixir Mind
 
 An [Open Knowledge Format](/knowledge/knowledge-management/open-knowledge-format.md)
 (OKF v0.1) bundle. This file is the bundle-root index — the entry point for

@@ -1,5 +1,5 @@
 ---
-id: sb:41be22
+id: em:41be22
 type: reference
 title: "Pruning RAG context with a small LLM before generation (Kapa.ai)"
 description: Kapa.ai inserts a cheap LLM scoring step between retrieval and generation that grades each retrieved chunk's relevance and discards low scorers, cutting 68% of chunks while preserving 96% recall and 34% net cost.

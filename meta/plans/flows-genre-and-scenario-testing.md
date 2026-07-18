@@ -36,12 +36,12 @@ prose docs plus a hidden test fixture:
   into [`meta/flows/session-capture.md`](/meta/flows/session-capture.md))*.
 - `meta/verification-flows/session-capture-routing-route-tags.md` — the
   "did-it-work?" checklist, which named a **live** thread↔concept pair
-  (`2026-07-08…` ↔ `sb:d479e3`) as "the green example to diff against" *(also
+  (`2026-07-08…` ↔ `em:d479e3`) as "the green example to diff against" *(also
   collapsed into the flow doc; the scenario test is now the canonical green
   example)*.
 - [`.claude/skills/capture/SKILL.md`](/.claude/skills/capture/SKILL.md) — the
   agent's procedure.
-- `test/second_brain/route_tags_test.exs` — a `green_fixture` mini-bundle run
+- `test/elixir_mind/route_tags_test.exs` — a `green_fixture` mini-bundle run
   through `RouteTags.run_checks/1`, with one red test per failure mode. **This is
   already a scenario test**, just written as in-code heredocs, scoped to one
   module, and invisible to the prose.
@@ -92,7 +92,7 @@ Per flow, three artifacts, zero overlap:
 | Doc | Audience | Holds | Must NOT hold |
 |-----|----------|-------|---------------|
 | **Skill** `.claude/skills/<f>/SKILL.md` | agent, at run time | terse imperative procedure incl. judgment steps | the why; verification detail; narrative |
-| **Scenario** `test/second_brain/<f>_scenario_test.exs` | CI | ExUnit over the deterministic spine — structured + targeted assertions | prose; anything non-deterministic |
+| **Scenario** `test/elixir_mind/<f>_scenario_test.exs` | CI | ExUnit over the deterministic spine — structured + targeted assertions | prose; anything non-deterministic |
 | **Flow doc** `meta/flows/<f>.md` | operator + agent (comprehension) | touch-sequence narrative, the why, actor boundaries, the human-readable step table, pointers to skill + scenario | restating skill steps or duplicating tool logic |
 
 The flow doc **supersedes** `meta/session-workflow.md` and
@@ -157,7 +157,7 @@ Resulting artifacts:
   (why/pipeline/data-model) + the verification-flow (who-does-what, gates,
   editorial spot-checks), with the human-readable step table and a pointer to the
   scenario as its reference instance.
-- `test/second_brain/capture_scenario_test.exs` — ExUnit scenario: `materialize`
+- `test/elixir_mind/capture_scenario_test.exs` — ExUnit scenario: `materialize`
   writes the expected log block (asserted content), the 5 checks green, and the
   transform edge cases (multi-ref lift, ATX→bold demotion, dated-block ordering).
 - **Removals:** `meta/session-workflow.md` and `meta/verification-flows/` (dir +
@@ -230,16 +230,16 @@ architecture against Elixir best practices and the repo's `deps: []` constraint.
     character-level diff (since 1.6) — no helper dep needed, but diff one file at a
     time. Evidence:
     [ExUnit ships dependency-free fixtures and diffs](/knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
-    (`sb:f6e843`).
+    (`em:f6e843`).
   - **`steps.md` stays human documentation, not machine-parsed** — avoiding the
     bespoke DSL. (Reflected in §4: the step list is a table in the flow doc.)
 
 **Outside references (intook, with the full citations).** The two design changes
 above trace to these captures — the *drop-the-snapshot-library* decision to
 [Elixir snapshot/approval-testing libraries require a dependency](/knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md)
-(`sb:b1ba4b`), and the *built-ins-are-enough* basis to
+(`em:b1ba4b`), and the *built-ins-are-enough* basis to
 [ExUnit ships dependency-free fixtures and diffs](/knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
-(`sb:f6e843`); each capture holds the underlying hexdocs / issue-tracker / repo
+(`em:f6e843`); each capture holds the underlying hexdocs / issue-tracker / repo
 URLs under its `# Citations`. Repo evidence (in-tree, not intook): `mix.exs`
 (`deps: []`), `route_tags_test.exs`, `site_test.exs`.
 
@@ -247,7 +247,7 @@ URLs under its `# Citations`. Repo evidence (in-tree, not intook): `mix.exs`
 
 ## 9. Build order (once build is authorized)
 
-1. `test/second_brain/capture_scenario_test.exs` — in-code fixture seeded from
+1. `test/elixir_mind/capture_scenario_test.exs` — in-code fixture seeded from
    `green_fixture`; assert `materialize` output content + `run_checks` statuses +
    the transform edge cases; green against current `RouteTags`. *(Formal spine
    first — per "spec the hard thing first".)*

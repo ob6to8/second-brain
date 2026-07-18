@@ -1,5 +1,5 @@
 ---
-id: sb:7c0b1d
+id: em:7c0b1d
 type: concept
 title: skill-to-skill delegation
 description: One skill invoking another as a sub-step so the callee's procedure becomes part of the caller's flow, composing behavior instead of duplicating it.

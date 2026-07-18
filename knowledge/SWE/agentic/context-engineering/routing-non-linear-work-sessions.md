@@ -1,5 +1,5 @@
 ---
-id: sb:d479e3
+id: em:d479e3
 type: concept
 title: Routing non-linear work sessions — per-topic pages plus a dispatch ledger
 description: A technique for managing a single working session that touches many topics — synthesize each topic's content into a durable per-topic page, and track dispatch (which strands opened, paused, or routed where) in a per-thread ledger of pointers and states — so the session is resumable from the record, not from memory.
@@ -66,13 +66,13 @@ workflow into this brain (see the operating contract's *Session capture, routing
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:d479e3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:d479e3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-08-adopt-session-capture-routing-and-route-tags (2026-07-08)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:d479e3`]**
+**[`em:d479e3`]**
 
 A single working session (a "thread") is non-linear: it touches many topics,
 pauses some on open questions, and routes each topic's synthesized content into

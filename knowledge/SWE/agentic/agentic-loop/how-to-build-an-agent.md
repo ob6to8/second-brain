@@ -1,5 +1,5 @@
 ---
-id: sb:8e885f
+id: em:8e885f
 type: reference
 title: "How to build an agent — an LLM, a loop, and enough tokens (Thorsten Ball)"
 description: A capable code agent demystified to a simple loop feeding an LLM's tool calls and their results back into the conversation, with sophistication coming from engineering rather than any algorithmic trick.

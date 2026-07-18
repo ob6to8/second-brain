@@ -32,10 +32,10 @@ to which files — and points at the three artifacts that make it work. It does
 >   [stable-identity](/meta/policy/stable-identity.md) ·
 >   [verification-grounding](/meta/policy/verification-grounding.md).
 > - **Procedure** → the [`/intake` skill](/.claude/skills/intake/SKILL.md).
-> - **Mechanism + proof** → [`SecondBrain.Registry`](/lib/second_brain/registry.ex)
->   / [`SecondBrain.Verifier`](/lib/second_brain/verifier.ex) and the
+> - **Mechanism + proof** → [`ElixirMind.Registry`](/lib/elixir_mind/registry.ex)
+>   / [`ElixirMind.Verifier`](/lib/elixir_mind/verifier.ex) and the
 >   `mix brain.id` / `mix brain.registry` / `mix brain.verify` tasks, pinned by the
->   scenario [`test/second_brain/intake_scenario_test.exs`](/test/second_brain/intake_scenario_test.exs).
+>   scenario [`test/elixir_mind/intake_scenario_test.exs`](/test/elixir_mind/intake_scenario_test.exs).
 
 ---
 
@@ -67,7 +67,7 @@ toolchain (registry, verifier, site) will accept.
    │ frontmatter (type, title, description, …)      │
    │ distilled body; links → resource / # Citations │◄── distill, don't dump
    └──────┬─────────────────────────────────────────┘
-          │  mix brain.id          (mint sb: id if absent)
+          │  mix brain.id          (mint em: id if absent)
           │  mix brain.registry    (compile id→path view)
           ▼
    meta/registry.md   (the generated identity view)
@@ -96,7 +96,7 @@ gate), or `editorial` (a judgment with no mechanical oracle).
 | 4 | agent | **Dedup** — generate 3–5 alternate phrasings (synonyms/jargon/acronyms) and search the bundle for each; find any existing concept on the subject before writing | — (reads bundle) | editorial |
 | 5 | agent | Distill and write the concept (frontmatter + clean body, cross-links) — or update an existing one in place. For a **technical paper/article/spec**, the distill action delegates to [`/summarize-technical`](/.claude/skills/summarize-technical/SKILL.md), whose three-part breakdown *is* the body | `<concept>.md` (new/updated) | scenario (conformance) |
 | 5a | operator | Ratify a **shape change** — a new top-level directory or a new `type` | — | editorial |
-| 6 | tool | `mix brain.id` — mint a stable `sb:` id if the concept lacks one | `<concept>.md` (id line) | scenario |
+| 6 | tool | `mix brain.id` — mint a stable `em:` id if the concept lacks one | `<concept>.md` (id line) | scenario |
 | 7 | tool | `mix brain.registry` — compile the id→path view | `meta/registry.md` | **scenario** |
 | 8 | tool | `mix brain.verify` — conformance, id format, edge resolution, grounding | — (reads all) | **scenario** + tool |
 | 9 | agent | Maintain reserved files: the dir's `index.md` (and root `index.md` for a new top-level dir); the commit message carries the change narrative | `index.md` | editorial |
@@ -130,7 +130,7 @@ Condensed; the rules live in the linked policies.
   a **new top-level directory** (or a new `type`) is a shape change the agent
   **proposes and waits** for the operator to ratify. See
   [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md).
-- **Join the identity layer.** Every bundle concept carries an immutable `sb:` id;
+- **Join the identity layer.** Every bundle concept carries an immutable `em:` id;
   `meta/registry.md` is the compiled id→path view. Captures (anything with a
   `resource`) are never `verified`; an agent statement marked `verified: true`
   needs a non-empty `verified_by`. See
@@ -154,7 +154,7 @@ shape change, review.**
 ## 6. The data model
 
 Intake produces **bundle concepts** — markdown files with YAML frontmatter, an
-`sb:` id, and a body, filed anywhere in the knowledge tree. The identity layer
+`em:` id, and a body, filed anywhere in the knowledge tree. The identity layer
 that receives them is the same one the [three bundle
 scanners](/meta/tutorials/the-three-bundle-scanners.md) tutorial describes:
 `Registry.scan/1` enumerates them (a fresh concept is in scope the moment it lands
@@ -167,7 +167,7 @@ targets — `/intake` files knowledge, not governance.
 ## 7. The tooling: `brain.id` · `brain.registry` · `brain.verify`
 
 ```
-mix brain.id                            # insert a minted `id: sb:xxxxxx` into every concept lacking one
+mix brain.id                            # insert a minted `id: em:xxxxxx` into every concept lacking one
 mix brain.registry                      # compile meta/registry.md (id→path); --check guards it in CI
 mix brain.verify                        # conformance, id uniqueness/format, verified_by edges, grounding
 mix brain.dedup_probe --update-baseline # (step 10) refresh the recall baseline after harvesting a gold row
@@ -181,7 +181,7 @@ mix brain.dedup_probe --update-baseline # (step 10) refresh the recall baseline 
   on-disk view is stale — the same generated-not-hand-kept discipline as the
   contract and the route-tag logs.
 - **`mix brain.verify`** enforces the six identity/grounding rules (see
-  [`verifier.ex`](/lib/second_brain/verifier.ex)): non-empty `type`; present,
+  [`verifier.ex`](/lib/elixir_mind/verifier.ex)): non-empty `type`; present,
   well-formed id; every `verified_by` resolves; a capture (`resource`) is never
   `verified: true`; `verified: true` requires a non-empty `verified_by`; and
   `verified` (either value) appears only on statement types
@@ -208,7 +208,7 @@ mix brain.dedup_probe --update-baseline # (step 10) refresh the recall baseline 
 ## 9. Verify — the scenario, the gates, and the editorial spot-checks
 
 **The scenario test pins the spine.**
-[`test/second_brain/intake_scenario_test.exs`](/test/second_brain/intake_scenario_test.exs)
+[`test/elixir_mind/intake_scenario_test.exs`](/test/elixir_mind/intake_scenario_test.exs)
 builds an in-code fixture representing a real intake output — a `source` capture
 and a `claim` distilled from it and grounded via `verified_by` — then compiles the
 registry and asserts: (a) `Registry.check/1` round-trips; (b) the rendered

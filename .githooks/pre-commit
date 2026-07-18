@@ -17,11 +17,17 @@ mix brain.contract --check
 echo "pre-commit: mix brain.registry --check"
 mix brain.registry --check
 
+echo "pre-commit: mix brain.codemap --check"
+mix brain.codemap --check
+
 echo "pre-commit: mix brain.verify"
 mix brain.verify
 
 echo "pre-commit: mix brain.route_tags"
 mix brain.route_tags
+
+echo "pre-commit: mix brain.glossary"
+mix brain.glossary
 
 echo "pre-commit: mix brain.lineage --check"
 mix brain.lineage --check

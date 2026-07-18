@@ -1,5 +1,5 @@
 ---
-id: sb:83ea50
+id: em:83ea50
 type: concept
 title: orchestration
 description: The engineering discipline of directing AI agents that implement — decomposing problems, coordinating agents, evaluating their output, and setting strategic direction — as distinct from hand-implementing the work oneself.

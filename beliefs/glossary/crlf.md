@@ -1,5 +1,5 @@
 ---
-id: sb:a48aeb
+id: em:a48aeb
 type: concept
 title: CRLF
 description: The two-byte carriage-return + line-feed line ending (Windows convention), versus Unix's bare LF; tools that pattern-match on line boundaries must normalize it or honor the file's own ending when writing.

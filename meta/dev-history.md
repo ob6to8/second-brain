@@ -14,7 +14,126 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
-## [PR #67](https://github.com/ob6to8/second-brain/pull/67) — Three-level documentation plan (accepted) + capability-matched model selection doctrine *(2026-07-13)*
+## [PR #88](https://github.com/ob6to8/elixir-mind/pull/88) — Capture the second-brain → elixir-mind rename-execution session *(2026-07-14)*
+
+- Capture the second-brain → elixir-mind rename-execution session
+- Stamp pr: 88 into the rename-execution thread doc
+
+## [PR #87](https://github.com/ob6to8/elixir-mind/pull/87) — Migrate stable-id prefix sb: → em: (Phase 1b: id migration) *(2026-07-14)*
+
+- Migrate stable-id prefix sb: → em: (Phase 1b: id migration)
+
+## [PR #86](https://github.com/ob6to8/elixir-mind/pull/86) — Rename Second Brain → Elixir Mind (Phase 1a: name rename) *(2026-07-14)*
+
+- Rename Second Brain → Elixir Mind (Phase 1a: name rename)
+
+## [PR #85](https://github.com/ob6to8/elixir-mind/pull/85) — Elixir AST/macro implications and the Loomkin evaluation — third and fourth BEAM/Jido analyses, with the captured session thread and its glossary residue. *(2026-07-14)*
+
+- File the Elixir AST/macro implications analysis
+- File the Loomkin evaluation as the fourth BEAM/Jido analysis
+- Capture the AST/macros + Loomkin session, glossary its terms, stamp attribution
+- Stamp pr: 85 into the AST/macros + Loomkin thread doc
+
+## [PR #65](https://github.com/ob6to8/elixir-mind/pull/65) — rename plan (second-brain → elixir-mind, sb: → em: id migration), ratified *(2026-07-14)*
+
+- Persist plan: rename second-brain -> elixir-brain (spec, status: proposed)
+- Rescope rename plan: include sb: -> eb: id-prefix migration
+- Retarget rename plan: elixir-brain -> elixir-mind
+- Change id prefix target eb: -> em: in rename plan
+- Capture session: elixir-mind rename plan and model orchestration
+- Stamp thread doc with pr: 65
+- Close docs-coverage gap in rename plan: name-prose vs code identifiers
+- Refresh capture: extend thread doc with post-capture exchanges
+- Ratify rename plan: status proposed -> accepted
+
+## [PR #83](https://github.com/ob6to8/elixir-mind/pull/83) — rescue the /sync-branch-with-main build-session thread doc *(2026-07-14)*
+
+- Rescue the /sync-branch-with-main build-session thread doc; sharpen orphaned-branch
+
+## [PR #84](https://github.com/ob6to8/elixir-mind/pull/84) — Track the two intake follow-ups as todos; plan a dangling-strand reconciliation sweep *(2026-07-14)*
+
+- Track the two intake follow-ups as todos; plan a dangling-strand reconciliation sweep
+- Capture the intake-todos + strand-reconciliation tail as its own thread
+- Stamp pr: 84 into the intake-todos tail thread doc
+
+## [PR #82](https://github.com/ob6to8/elixir-mind/pull/82) — execute the two branch-transplant ports *(2026-07-14)*
+
+- Execute the two branch-transplant ports: Chroma intake + /sync-branch-with-main skill
+- Stamp pr: 82 into the port-execution thread doc
+
+## [PR #81](https://github.com/ob6to8/elixir-mind/pull/81) — orphaned-branch cleanup, transplant plan, and session capture *(2026-07-14)*
+
+- Record 2026-07-13 branch cleanup and unmerged-branch content audit
+- Plan: transplant salvageable content from surviving unmerged branches
+- Capture 2026-07-13 orphaned-branch cleanup + transplant plan; glossary the thread
+- Stamp pr: 81 into the orphaned-branch-cleanup thread doc
+
+## [PR #79](https://github.com/ob6to8/elixir-mind/pull/79) — analysis: when to roll your own advisor-pattern harness (+ session capture, glossary) *(2026-07-14)*
+
+- analysis: when to roll your own advisor-pattern harness vs. Anthropic's native advisor tool
+- capture: 2026-07-13 advisor-pattern-and-rolling-your-own-harness thread + glossary
+- capture: stamp pr: 79 on the advisor-pattern thread doc
+
+## [PR #78](https://github.com/ob6to8/elixir-mind/pull/78) — Reconcile epistemic-overlay plan against repo drift and a sibling plan *(2026-07-14)*
+
+- Reconcile epistemic-overlay plan against repo drift and a sibling plan
+- stamp thread with pr: 78
+
+## [PR #80](https://github.com/ob6to8/elixir-mind/pull/80) — Second-mind taxonomy analysis, belief-layer plan, and session capture *(2026-07-14)*
+
+- File the second-mind taxonomy analysis and the belief-layer plan
+- Rename second-mind to elixir-mind across the taxonomy analysis and belief plan
+- Revert "Rename second-mind to elixir-mind across the taxonomy analysis and belief plan"
+- Capture the 2026-07-13 session and glossary its terms
+- Stamp pr: 80 into the 2026-07-13 thread doc
+
+## [PR #77](https://github.com/ob6to8/elixir-mind/pull/77) — Branch-lifecycle tutorial and the git-workflow docs triad *(2026-07-14)*
+
+- tutorial: the agent's branch lifecycle across merged PRs
+- tutorial: add attribution block to branch-lifecycle doc
+- capture + reconcile: branch-lifecycle tutorial and git-workflow triad
+- capture: stamp pr: 77 into the branch-lifecycle thread doc
+
+## [PR #76](https://github.com/ob6to8/elixir-mind/pull/76) — Ratify the council-round verdict as a deferred /council skill plan *(2026-07-14)*
+
+- Ratify the council-round verdict as a deferred-execution plan
+- Capture the tail of the previous turn before shipping via /create-pull-request
+
+## [PR #72](https://github.com/ob6to8/elixir-mind/pull/72) — Council-round protocol: suitability analysis, thread capture, and glossary terms *(2026-07-14)*
+
+- Analysis: council-round protocol suitability — integrate as /council after four bindings
+- Capture the council-round evaluation session; correct analysis dates to 2026-07-13
+- Second-close capture refresh + glossary for the council-round thread
+
+## [PR #75](https://github.com/ob6to8/elixir-mind/pull/75) — Artifacts concept + anthropic/ node restructure *(2026-07-14)*
+
+- restructure: rename agentic-coding→agentic, add anthropic/ node, file Artifacts concept
+- capture: freeze 2026-07-13 artifacts/anthropic-restructure thread; glossary 4 terms
+- capture: stamp pr: 75 into the artifacts/anthropic-restructure thread doc
+
+## [PR #74](https://github.com/ob6to8/elixir-mind/pull/74) — Capture: reconcile and land the belief-decomposition PR (#73) *(2026-07-13)*
+
+- Capture the reconcile-and-land session for PR #73
+- stamp thread with pr: 74
+
+## [PR #73](https://github.com/ob6to8/elixir-mind/pull/73) — Belief decomposition: analysis, plan, epistemic prior-art, and glossary *(2026-07-13)*
+
+- Belief decomposition: analysis, plan, prior-art intake, glossary terms
+- Layered breakdowns for the five prior-art references; second future-belief
+- Primary-source captures: Doyle 1979, de Kleer 1986, GSN Standard v1
+- Glossary the epistemic prior-art docs: 29 terms; skill amendment
+- Intake Dung's abstract argumentation frameworks; phrase-type deferral note
+- Capture the belief-decomposition session; glossary its thread doc
+
+## [PR #69](https://github.com/ob6to8/elixir-mind/pull/69) — Derived dev history: per-PR progress view compiled from the merge graph *(2026-07-13)*
+
+- persist plan: derived dev history from the merge graph
+- mix brain.dev_history: derive the per-PR dev history from the merge graph
+- derive meta/dev-history.md; list it in the meta index
+- capture: derived dev-history session; glossary + from-stamping
+- stamp thread with pr: 69
+
+## [PR #67](https://github.com/ob6to8/elixir-mind/pull/67) — Three-level documentation plan (accepted) + capability-matched model selection doctrine *(2026-07-13)*
 
 - persist plan: three-level documentation (plain / technical / grounding tiers)
 - ratify plan: three-level documentation -> accepted, with pre-execution design findings
@@ -22,7 +141,7 @@ deployed site is regenerated at deploy time and is always current.
 - capture session: three-level documentation plan and model doctrine
 - stamp thread with pr: 67
 
-## [PR #66](https://github.com/ob6to8/second-brain/pull/66) — Attribution — a frontmatter record of the ingestion event *(2026-07-13)*
+## [PR #66](https://github.com/ob6to8/elixir-mind/pull/66) — Attribution — a frontmatter record of the ingestion event *(2026-07-13)*
 
 - Propose the attribution property: a frontmatter record of the ingestion event
 - Attribution plan: governance namespace gets explicit attribution with a from back-link
@@ -36,56 +155,56 @@ deployed site is regenerated at deploy time and is always current.
 - Capture the attribution spec-and-build session; glossary + from-stamping
 - Stamp PR #66 into the attribution spec-and-build thread doc
 
-## [PR #63](https://github.com/ob6to8/second-brain/pull/63) — Glossary sense disambiguation: common vs. repo-specific usage *(2026-07-13)*
+## [PR #63](https://github.com/ob6to8/elixir-mind/pull/63) — Glossary sense disambiguation: common vs. repo-specific usage *(2026-07-13)*
 
 - Disambiguate glossary senses: common vs repo-specific usage
 - Capture the glossary sense-disambiguation session; glossary the thread
 - Stamp pr: 63 into the session thread doc
 
-## [PR #62](https://github.com/ob6to8/second-brain/pull/62) — Policy: cite brain resources by their live Pages URL, sourced from config *(2026-07-13)*
+## [PR #62](https://github.com/ob6to8/elixir-mind/pull/62) — Policy: cite brain resources by their live Pages URL, sourced from config *(2026-07-13)*
 
 - Add policy: cite brain resources by their live Pages URL in responses
 - Source the site base URL from config, not a hardcoded literal
 - Capture the response-resource-links session; glossary 5 citations
 - Stamp pr: 62 into the response-resource-links thread doc
 
-## [PR #61](https://github.com/ob6to8/second-brain/pull/61) — Thread doc: rename /news Routine references to /research *(2026-07-13)*
+## [PR #61](https://github.com/ob6to8/elixir-mind/pull/61) — Thread doc: rename /news Routine references to /research *(2026-07-13)*
 
 - Thread doc: rename /news Routine references to /research
 
-## [PR #60](https://github.com/ob6to8/second-brain/pull/60) — Doctrine genre + engineer-as-orchestrator direction and alignment analysis *(2026-07-13)*
+## [PR #60](https://github.com/ob6to8/elixir-mind/pull/60) — Doctrine genre + engineer-as-orchestrator direction and alignment analysis *(2026-07-13)*
 
 - Analysis: alignment with the engineer-as-orchestrator role
 - Doctrine: mint the type + genre; file the engineer-as-orchestrator direction
 - capture: doctrine genre and orchestrator alignment thread; glossary the terms
 
-## [PR #59](https://github.com/ob6to8/second-brain/pull/59) — Rename the /news skill to /research (and scrub the feature name) *(2026-07-12)*
+## [PR #59](https://github.com/ob6to8/elixir-mind/pull/59) — Rename the /news skill to /research (and scrub the feature name) *(2026-07-12)*
 
 - Rename the /news skill to /research
 - Scrub the "news" feature name in favor of "research"
 - Capture the /news→/research rename session; glossary citations
 - Stamp PR #59 into the rename thread doc
 
-## [PR #58](https://github.com/ob6to8/second-brain/pull/58) — root reorganization — knowledge/ and beliefs/ top-levels *(2026-07-12)*
+## [PR #58](https://github.com/ob6to8/elixir-mind/pull/58) — root reorganization — knowledge/ and beliefs/ top-levels *(2026-07-12)*
 
 - Reorganize root: new knowledge/ and beliefs/ top-level directories
 - Capture the root-reorganization thread; glossary 2 new terms + 3 citations
 - Stamp pr: 58 into the root-reorganization thread doc
 
-## [PR #57](https://github.com/ob6to8/second-brain/pull/57) — /priorities skill + /issue and /plan listers *(2026-07-12)*
+## [PR #57](https://github.com/ob6to8/elixir-mind/pull/57) — /priorities skill + /issue and /plan listers *(2026-07-12)*
 
 - Move priorities appraisal to /priorities skill; add /issue and /plan listers
 - Capture the priorities-skill session + glossary citations
 - Stamp PR #57 into the priorities-skill thread doc
 
-## [PR #54](https://github.com/ob6to8/second-brain/pull/54) — Deep belief networks: research spike refiled as a concept under a new machine-learning/ domain *(2026-07-12)*
+## [PR #54](https://github.com/ob6to8/elixir-mind/pull/54) — Deep belief networks: research spike refiled as a concept under a new machine-learning/ domain *(2026-07-12)*
 
 - Research spike: Hinton's deep belief networks vs. the epistemic overlay
 - Refile deep belief networks as a concept under machine-learning/
 - Capture DBN session and accrete its ML vocabulary into the glossary
 - Stamp PR #54 into the DBN thread doc
 
-## [PR #56](https://github.com/ob6to8/second-brain/pull/56) — Flow lineage: frontmatter provenance + a derived flowchart *(2026-07-12)*
+## [PR #56](https://github.com/ob6to8/elixir-mind/pull/56) — Flow lineage: frontmatter provenance + a derived flowchart *(2026-07-12)*
 
 - Add lineage header to flow docs; apply to dedup-recall-probe flow
 - Revise flow lineage to frontmatter + thread; add retrofit plan
@@ -93,13 +212,13 @@ deployed site is regenerated at deploy time and is always current.
 - Capture the fuzzy-search-spike & flow-lineage session; glossary "lineage"
 - Stamp thread with pr: 56
 
-## [PR #55](https://github.com/ob6to8/second-brain/pull/55) — Ban the dialog-box question UI within threads (session-capture policy) *(2026-07-12)*
+## [PR #55](https://github.com/ob6to8/elixir-mind/pull/55) — Ban the dialog-box question UI within threads (session-capture policy) *(2026-07-12)*
 
 - policy(session-capture): ban the dialog-box question UI within threads
 - capture: 2026-07-12 ban dialog-box questions in threads
 - capture: stamp pr: 55 into the ban-dialog-box-questions thread
 
-## [PR #53](https://github.com/ob6to8/second-brain/pull/53) — /news auto-intake of featured items *(2026-07-12)*
+## [PR #53](https://github.com/ob6to8/elixir-mind/pull/53) — /news auto-intake of featured items *(2026-07-12)*
 
 - news: 2026-07-12 inbox — open-weight sovereignty surge vs. agent-reliability floor
 - glossary: add lexical search, gold set, residual fragmentation, cognitive debt, margin collapse; accept auto-intake plan
@@ -108,7 +227,7 @@ deployed site is regenerated at deploy time and is always current.
 - capture: 2026-07-12 /news auto-intake session; glossary +auto-intake
 - Stamp pr: 53 onto this session's thread doc
 
-## [PR #50](https://github.com/ob6to8/second-brain/pull/50) — Dedup recall probe + tier-1 synonym-expanded intake dedup + auditability flow doc *(2026-07-12)*
+## [PR #50](https://github.com/ob6to8/elixir-mind/pull/50) — Dedup recall probe + tier-1 synonym-expanded intake dedup + auditability flow doc *(2026-07-12)*
 
 - Build the dedup recall probe instrument (mix brain.dedup_probe)
 - Ship tier-1 synonym-expanded intake dedup + automated gold-harvest
@@ -116,19 +235,19 @@ deployed site is regenerated at deploy time and is always current.
 - Add dedup-recall-probe flow doc — make the eval loop auditable
 - capture: fold the flow-doc / auditability exchange into the thread
 
-## [PR #52](https://github.com/ob6to8/second-brain/pull/52) — Analysis: Claude Managed Agents vs. Jido/BEAM — a first-principles division of labor *(2026-07-12)*
+## [PR #52](https://github.com/ob6to8/elixir-mind/pull/52) — Analysis: Claude Managed Agents vs. Jido/BEAM — a first-principles division of labor *(2026-07-12)*
 
 - Analysis: Claude Managed Agents vs. the BEAM/Jido direction
 - Rewrite the CMA-vs-BEAM/Jido analysis around the two-plane verdict
 - Rewrite CMA-vs-Jido analysis from first principles as a standalone thesis
 - capture: extend the BEAM/Jido thread with the CMA comparison + glossary
 
-## [PR #51](https://github.com/ob6to8/second-brain/pull/51) — Stamp threads with their PR (not their branch): backfill 25 + make it a convention *(2026-07-12)*
+## [PR #51](https://github.com/ob6to8/elixir-mind/pull/51) — Stamp threads with their PR (not their branch): backfill 25 + make it a convention *(2026-07-12)*
 
 - Stamp threads with their PR (not their branch): backfill 25 + make it a convention
 - Stamp pr: 51 onto this session's thread (dogfood the new convention)
 
-## [PR #49](https://github.com/ob6to8/second-brain/pull/49) — Docs audit: no-wiki verdict, staleness fixes, session-init tutorial, and a docs-freshness warn pass *(2026-07-12)*
+## [PR #49](https://github.com/ob6to8/elixir-mind/pull/49) — Docs audit: no-wiki verdict, staleness fixes, session-init tutorial, and a docs-freshness warn pass *(2026-07-12)*
 
 - Analysis: docs-surface audit and the wiki question — no wiki, the Pages site is one
 - Docs: apply the audit's Tier-1 staleness fixes
@@ -139,7 +258,7 @@ deployed site is regenerated at deploy time and is always current.
 - Session-init digest: surface docs-freshness warnings where the operator can see them
 - capture: docs-audit session — wiki verdict, freshness warnings, and the drift vocabulary
 
-## [PR #48](https://github.com/ob6to8/second-brain/pull/48) — Code review + hardening: renderer/evidence fixes, flows genre growth, elaborations genre, verifier rule 6, two-directional materialize, glossary accretion. *(2026-07-12)*
+## [PR #48](https://github.com/ob6to8/elixir-mind/pull/48) — Code review + hardening: renderer/evidence fixes, flows genre growth, elaborations genre, verifier rule 6, two-directional materialize, glossary accretion. *(2026-07-12)*
 
 - Code review + docs staleness audit: two fixes, one issue, five new flow docs
 - Retype the review write-up analysis → plan: code-review-toolchain-hardening
@@ -155,14 +274,14 @@ deployed site is regenerated at deploy time and is always current.
 - Refresh two-directional-materialize elaboration: P1 landed
 - capture: 2026-07-12 code review, flows 2→7, elaborations genre, hardening execution
 
-## [PR #47](https://github.com/ob6to8/second-brain/pull/47) — BEAM/Jido evaluation, dark-factory scenario analysis, and 14 glossary terms *(2026-07-12)*
+## [PR #47](https://github.com/ob6to8/elixir-mind/pull/47) — BEAM/Jido evaluation, dark-factory scenario analysis, and 14 glossary terms *(2026-07-12)*
 
 - Analysis: would BEAM deployment or Jido 2 integration benefit this brain?
 - Analysis: dark-factory scenario — the BEAM/Jido case re-scored
 - Glossary: 14 terms from the BEAM/Jido and dark-factory analyses
 - capture: BEAM/Jido evaluation and dark-factory scenario thread
 
-## [PR #46](https://github.com/ob6to8/second-brain/pull/46) — git branch-deletion policy, orphan cleanup, render-contract flow, contract-as-abstraction thread *(2026-07-12)*
+## [PR #46](https://github.com/ob6to8/elixir-mind/pull/46) — git branch-deletion policy, orphan cleanup, render-contract flow, contract-as-abstraction thread *(2026-07-12)*
 
 - Add git-branch-deletion policy and git-workflow contract section
 - File orphaned-branches issue; elaborate compiled-contract glossary; refresh render-contract skill
@@ -173,54 +292,54 @@ deployed site is regenerated at deploy time and is always current.
 - Plan amendment: session-init priority: top support as build-order step 1
 - Capture session thread and glossary its terms
 
-## [PR #45](https://github.com/ob6to8/second-brain/pull/45) — deprecated directory deletion *(2026-07-11)*
+## [PR #45](https://github.com/ob6to8/elixir-mind/pull/45) — deprecated directory deletion *(2026-07-11)*
 
 - glossary: strand + ledger short-form; state the session-init ranking order
 - Plan: retire hand-kept logs (accepted, priority 1); add digest priority override
 - Retire the hand-kept chronological logs; git history is the provenance layer
 - capture: refresh deprecated-triage thread with the log retirement; glossary DRY + single source of truth
 
-## [PR #44](https://github.com/ob6to8/second-brain/pull/44) — Close the merge-policy loop: settings-disabled ledger flip + final capture refresh *(2026-07-11)*
+## [PR #44](https://github.com/ob6to8/elixir-mind/pull/44) — Close the merge-policy loop: settings-disabled ledger flip + final capture refresh *(2026-07-11)*
 
 - Clear the repo-settings dangling item: squash/rebase merging disabled
 - Third-close capture refresh: PR #42 true merge and settings confirmation
 
-## [PR #43](https://github.com/ob6to8/second-brain/pull/43) — Deprecated-directory triage: first migration, machinery deletion, capture + glossary *(2026-07-11)*
+## [PR #43](https://github.com/ob6to8/elixir-mind/pull/43) — Deprecated-directory triage: first migration, machinery deletion, capture + glossary *(2026-07-11)*
 
 - intake: migrate ai-agent-memory-markdown-files from deprecated/ into context-engineering
 - deprecated: delete legacy machinery, keep content pending migration
 - capture: 2026-07-11 deprecated-directory triage and machinery deletion; glossary 4 terms
 
-## [PR #42](https://github.com/ob6to8/second-brain/pull/42) — Merge-strategy policy (true merge commits only) + session-init digest scans meta/todos/ *(2026-07-11)*
+## [PR #42](https://github.com/ob6to8/elixir-mind/pull/42) — Merge-strategy policy (true merge commits only) + session-init digest scans meta/todos/ *(2026-07-11)*
 
 - Ratify the merge-strategy policy: true merge commits only, no squash/rebase
 - Session-init digest: scan meta/todos/ as a fourth source
 - Refresh the session-init thread capture in place and glossary merge terms
 
-## [PR #41](https://github.com/ob6to8/second-brain/pull/41) — 2026-07-11 news digest, six SWE intakes, and the /news daily-read synthesis *(2026-07-11)*
+## [PR #41](https://github.com/ob6to8/elixir-mind/pull/41) — 2026-07-11 news digest, six SWE intakes, and the /news daily-read synthesis *(2026-07-11)*
 
 - news: 2026-07-11 inbox digest — contested margin-collapse thesis + inference/agent advances
 - news: expand 2026-07-11 digest with code-context, worktree, testing items
 - Intake 6 SWE candidates from 2026-07-11 digest; add /news 'daily read' synthesis
 - Capture 2026-07-11 news-digest/intake/daily-read session + glossary its terms
 
-## [PR #40](https://github.com/ob6to8/second-brain/pull/40) — Glossary: doctrine + policy (type) entries and the prose-first cross-linking convention *(2026-07-11)*
+## [PR #40](https://github.com/ob6to8/elixir-mind/pull/40) — Glossary: doctrine + policy (type) entries and the prose-first cross-linking convention *(2026-07-11)*
 
 - glossary: add the missing policy (type) pointer entry
 - glossary: add doctrine (operator-directed)
 - add-to-glossary: codify the cross-linking convention (prose first, See also fallback)
 - capture: 2026-07-11 doctrine-vs-policy and glossary cross-linking
 
-## [PR #39](https://github.com/ob6to8/second-brain/pull/39) — Session-init digest: open work + top-3 priorities at session start *(2026-07-11)*
+## [PR #39](https://github.com/ob6to8/elixir-mind/pull/39) — Session-init digest: open work + top-3 priorities at session start *(2026-07-11)*
 
 - *(no branch commits recorded)*
 
-## [PR #36](https://github.com/ob6to8/second-brain/pull/36) — Add tutorial: why a true merge (not a squash) keeps cited commits reachable *(2026-07-11)*
+## [PR #36](https://github.com/ob6to8/elixir-mind/pull/36) — Add tutorial: why a true merge (not a squash) keeps cited commits reachable *(2026-07-11)*
 
 - Add tutorial: why a true merge keeps cited commits reachable
 - capture: 2026-07-10 merge-commit reachability tutorial session
 
-## [PR #34](https://github.com/ob6to8/second-brain/pull/34) — Field-comparison and eval analyses, dedup-recall-probe plan, and the CB-overlay execution path *(2026-07-11)*
+## [PR #34](https://github.com/ob6to8/elixir-mind/pull/34) — Field-comparison and eval analyses, dedup-recall-probe plan, and the CB-overlay execution path *(2026-07-11)*
 
 - Analysis: this bundle vs the 2026 second-brain field, and the 500+ failure chain
 - Analysis: eval suitability of the corpus-maintenance failure space
@@ -230,23 +349,23 @@ deployed site is regenerated at deploy time and is always current.
 - Execution path: Thread A setup is repos-on-disk, not an agent clone step
 - capture: 2026-07-10 field comparison, evals, and CB-overlay execution path
 
-## [PR #33](https://github.com/ob6to8/second-brain/pull/33) — Add todo type + /todo skill, and a gate-suite tutorial *(2026-07-11)*
+## [PR #33](https://github.com/ob6to8/elixir-mind/pull/33) — Add todo type + /todo skill, and a gate-suite tutorial *(2026-07-11)*
 
 - Add todo type, meta/todos/ genre, and /todo skill
 - Add tutorial on the repository gate suite
 - Capture session: /todo skill and gate-suite tutorial
 
-## [PR #38](https://github.com/ob6to8/second-brain/pull/38) — Capture 2026-07-11 glossary-backfill thread + resolve skill-command glossary policy *(2026-07-11)*
+## [PR #38](https://github.com/ob6to8/elixir-mind/pull/38) — Capture 2026-07-11 glossary-backfill thread + resolve skill-command glossary policy *(2026-07-11)*
 
 - Capture 2026-07-11 glossary-backfill thread
 - Resolve skill-command glossary question; log thread name in create-PR
 - Refresh capture: extend render with the skill-command decision
 
-## [PR #37](https://github.com/ob6to8/second-brain/pull/37) — Backfill glossary from remaining thread docs *(2026-07-11)*
+## [PR #37](https://github.com/ob6to8/elixir-mind/pull/37) — Backfill glossary from remaining thread docs *(2026-07-11)*
 
 - *(no branch commits recorded)*
 
-## [PR #35](https://github.com/ob6to8/second-brain/pull/35) — /add-to-glossary skill, per-term glossary, and /create-pull-request wiring *(2026-07-11)*
+## [PR #35](https://github.com/ob6to8/elixir-mind/pull/35) — /add-to-glossary skill, per-term glossary, and /create-pull-request wiring *(2026-07-11)*
 
 - add-to-glossary: new skill + bundle-root glossary scaffold
 - create-pull-request: glossary the captured thread via /add-to-glossary
@@ -254,52 +373,52 @@ deployed site is regenerated at deploy time and is always current.
 - glossary: one concept file per term under /glossary/
 - capture: refresh thread doc with the per-term glossary restructure
 
-## [PR #32](https://github.com/ob6to8/second-brain/pull/32) — create-pull-request: run /capture first, and capture this session *(2026-07-10)*
+## [PR #32](https://github.com/ob6to8/elixir-mind/pull/32) — create-pull-request: run /capture first, and capture this session *(2026-07-10)*
 
 - create-pull-request: run /capture to completion before committing
 - capture: 2026-07-10 create-pull-request skill and intake delegation
 
-## [PR #31](https://github.com/ob6to8/second-brain/pull/31) — Add /create-pull-request skill and wire /intake into /summarize-technical *(2026-07-10)*
+## [PR #31](https://github.com/ob6to8/elixir-mind/pull/31) — Add /create-pull-request skill and wire /intake into /summarize-technical *(2026-07-10)*
 
 - intake: delegate to /summarize-technical for technical sources
 - intake flow: mirror the /summarize-technical delegation branch
 - Add /create-pull-request skill
 - create-pull-request: drop the confirmation gate
 
-## [PR #30](https://github.com/ob6to8/second-brain/pull/30) — Capture session thread: remove operator email from operating contract *(2026-07-10)*
+## [PR #30](https://github.com/ob6to8/elixir-mind/pull/30) — Capture session thread: remove operator email from operating contract *(2026-07-10)*
 
 - Capture session thread: remove operator email from operating contract
 
-## [PR #29](https://github.com/ob6to8/second-brain/pull/29) — Capture session thread: testing methodology, types, and CB epistemic-overlay *(2026-07-10)*
+## [PR #29](https://github.com/ob6to8/elixir-mind/pull/29) — Capture session thread: testing methodology, types, and CB epistemic-overlay *(2026-07-10)*
 
 - Capture session thread: testing methodology, types, and CB epistemic-overlay
 
-## [PR #28](https://github.com/ob6to8/second-brain/pull/28) — Capture session thread: live-render appraisal and Pages-site hardening *(2026-07-10)*
+## [PR #28](https://github.com/ob6to8/elixir-mind/pull/28) — Capture session thread: live-render appraisal and Pages-site hardening *(2026-07-10)*
 
 - Capture session thread: live-render appraisal and Pages-site hardening
 
-## [PR #27](https://github.com/ob6to8/second-brain/pull/27) — Capture the flows-genre session as a thread *(2026-07-10)*
+## [PR #27](https://github.com/ob6to8/elixir-mind/pull/27) — Capture the flows-genre session as a thread *(2026-07-10)*
 
 - Capture the flows-genre session as a thread
 - Extend the flows-genre thread capture in place
 - Extend the flows-genre thread capture in place (fold prior summary)
 
-## [PR #25](https://github.com/ob6to8/second-brain/pull/25) — Capture session thread: vector-DB recall evaluation and the `analysis` type *(2026-07-10)*
+## [PR #25](https://github.com/ob6to8/elixir-mind/pull/25) — Capture session thread: vector-DB recall evaluation and the `analysis` type *(2026-07-10)*
 
 - Capture session thread: vector-DB recall evaluation and the analysis type
 - Lead thread title with the date per convention
 - Drop redundant 'Thread —' from thread title
 - Adopt filename-stem thread-title convention; fix this thread's title
 
-## [PR #26](https://github.com/ob6to8/second-brain/pull/26) — Capture: GitHub Pages knowledge-base site, offline-toolchain tutorial, and the OKF node *(2026-07-10)*
+## [PR #26](https://github.com/ob6to8/elixir-mind/pull/26) — Capture: GitHub Pages knowledge-base site, offline-toolchain tutorial, and the OKF node *(2026-07-10)*
 
 - Capture GitHub Pages / OKF-node session thread
 
-## [PR #24](https://github.com/ob6to8/second-brain/pull/24) — Ratify `analysis` type; file vector-DB recall evaluation *(2026-07-10)*
+## [PR #24](https://github.com/ob6to8/elixir-mind/pull/24) — Ratify `analysis` type; file vector-DB recall evaluation *(2026-07-10)*
 
 - Ratify `analysis` type; file vector-DB recall evaluation
 
-## [PR #23](https://github.com/ob6to8/second-brain/pull/23) — flows paths documentation *(2026-07-10)*
+## [PR #23](https://github.com/ob6to8/elixir-mind/pull/23) — flows paths documentation *(2026-07-10)*
 
 - Add scanners tutorial; establish meta/specs genre + persist-specs policy
 - Add meta/future-beliefs.md holding-pen note
@@ -308,113 +427,113 @@ deployed site is regenerated at deploy time and is always current.
 - Add the /intake flow (second flow), completing the flows spec scope
 - Collapse the spec genre into plan (unify on meta/plans/)
 
-## [PR #22](https://github.com/ob6to8/second-brain/pull/22) — elixir testing methodology *(2026-07-10)*
+## [PR #22](https://github.com/ob6to8/elixir-mind/pull/22) — elixir testing methodology *(2026-07-10)*
 
 - Add agent-facing testing methodology for the Elixir tooling
 - Ratify `methodology` type; retype testing doc and add reciprocal links
 - Ratify `plan` type; file epistemic-overlay plan
 
-## [PR #16](https://github.com/ob6to8/second-brain/pull/16) — Harden the Pages site: gate deploy on verify, escape link hrefs *(2026-07-10)*
+## [PR #16](https://github.com/ob6to8/elixir-mind/pull/16) — Harden the Pages site: gate deploy on verify, escape link hrefs *(2026-07-10)*
 
 - Harden the Pages site: gate deploy on verify, escape link hrefs
 - Add tutorial: how the Pages deploy is gated on a verified bundle
 
-## [PR #21](https://github.com/ob6to8/second-brain/pull/21) — Add issue tracking (meta/issues + `issue` type), file the news-Routine issue, document /news featuring *(2026-07-09)*
+## [PR #21](https://github.com/ob6to8/elixir-mind/pull/21) — Add issue tracking (meta/issues + `issue` type), file the news-Routine issue, document /news featuring *(2026-07-09)*
 
 - Add issue type + meta/issues; file news-Routine issue; document /news featuring
 - Capture session thread: news Routine verification, issue, /news featuring
 
-## [PR #20](https://github.com/ob6to8/second-brain/pull/20) — Capture session thread: daily news-inbox Routine *(2026-07-09)*
+## [PR #20](https://github.com/ob6to8/elixir-mind/pull/20) — Capture session thread: daily news-inbox Routine *(2026-07-09)*
 
 - Capture session thread: daily news-inbox Routine
 
-## [PR #19](https://github.com/ob6to8/second-brain/pull/19) — home news filter inbox *(2026-07-09)*
+## [PR #19](https://github.com/ob6to8/elixir-mind/pull/19) — home news filter inbox *(2026-07-09)*
 
 - Add inbox: daily taxonomy-matched candidate feed (/news)
 - Add tutorial: bundle scope and non-bundle namespaces
 - Capture session thread: home-page news-filter inbox
 
-## [PR #18](https://github.com/ob6to8/second-brain/pull/18) — okf capture ledger tags *(2026-07-09)*
+## [PR #18](https://github.com/ob6to8/elixir-mind/pull/18) — okf capture ledger tags *(2026-07-09)*
 
 - Capture semantics: retained responses are verbatim; recapture from log
 - Capture (3rd run): extend the verbatim render with the semantics-fix arc
 
-## [PR #17](https://github.com/ob6to8/second-brain/pull/17) — First /capture (2 runs), backlog thread retrofit, and a git-verification tutorial *(2026-07-09)*
+## [PR #17](https://github.com/ob6to8/elixir-mind/pull/17) — First /capture (2 runs), backlog thread retrofit, and a git-verification tutorial *(2026-07-09)*
 
 - Capture: first real /capture run (dogfood this session)
 - Retrofit the 2026-07-05 bootstrap thread with a routing ledger + route tag
 - Add tutorial: what makes a commit show as "Verified" on GitHub
 - Capture (2nd run): extend the adopt thread with the recent exchanges
 
-## [PR #15](https://github.com/ob6to8/second-brain/pull/15) — Retire /persist-thread, clarify the /capture rule, add verification-flows *(2026-07-09)*
+## [PR #15](https://github.com/ob6to8/elixir-mind/pull/15) — Retire /persist-thread, clarify the /capture rule, add verification-flows *(2026-07-09)*
 
 - Retire /persist-thread in favor of /capture
 - Clarify /capture keep-strip rule to match cb transcript_hook.py
 - Add meta/verification-flows/ with the capture/routing/route-tags walkthrough
 
-## [PR #14](https://github.com/ob6to8/second-brain/pull/14) — remove email operating contract *(2026-07-09)*
+## [PR #14](https://github.com/ob6to8/elixir-mind/pull/14) — remove email operating contract *(2026-07-09)*
 
 - Remove operator email from operating contract
 
-## [PR #13](https://github.com/ob6to8/second-brain/pull/13) — Adopt session capture, routing ledger & route tags (OKF port) *(2026-07-09)*
+## [PR #13](https://github.com/ob6to8/elixir-mind/pull/13) — Adopt session capture, routing ledger & route tags (OKF port) *(2026-07-09)*
 
 - Adopt session capture, routing ledger, and route tags (OKF port)
 - Document the session-capture / routing / route-tags flow in meta/
 
-## [PR #12](https://github.com/ob6to8/second-brain/pull/12) — github pages knowledge base *(2026-07-08)*
+## [PR #12](https://github.com/ob6to8/elixir-mind/pull/12) — github pages knowledge base *(2026-07-08)*
 
 - Add meta/tutorials namespace and offline-toolchain tutorial
 - Ratify `tutorial` type in the controlled vocabulary
 - Add knowledge-management/ domain with OKF node; repoint OKF links
 
-## [PR #11](https://github.com/ob6to8/second-brain/pull/11) — github pages knowledge base *(2026-07-08)*
+## [PR #11](https://github.com/ob6to8/elixir-mind/pull/11) — github pages knowledge base *(2026-07-08)*
 
 - Add GitHub Pages knowledge-base site generator
 
-## [PR #10](https://github.com/ob6to8/second-brain/pull/10) — Currency check: Anthropic's context-engineering essay, 9 months on *(2026-07-08)*
+## [PR #10](https://github.com/ob6to8/elixir-mind/pull/10) — Currency check: Anthropic's context-engineering essay, 9 months on *(2026-07-08)*
 
 - Currency check: Anthropic's context-engineering essay, 9 months on
 
-## [PR #9](https://github.com/ob6to8/second-brain/pull/9) — ccr architecture notes *(2026-07-08)*
+## [PR #9](https://github.com/ob6to8/elixir-mind/pull/9) — ccr architecture notes *(2026-07-08)*
 
 - Intake: Conversation Tree Architecture (arXiv:2603.21278)
 - Intake: granularity-aware evaluation for dialogue topic segmentation
 - Add /summarize-technical skill; apply to the two context-engineering papers
 
-## [PR #8](https://github.com/ob6to8/second-brain/pull/8) — Recover GitNexus + intake: LLM-engineering, sagents, and new ai-industry domain *(2026-07-07)*
+## [PR #8](https://github.com/ob6to8/elixir-mind/pull/8) — Recover GitNexus + intake: LLM-engineering, sagents, and new ai-industry domain *(2026-07-07)*
 
 - Intake: LLM-engineering (RAG pruning, KV-cache history) + sagents framework
 - Intake: GitNexus — client-side code knowledge graph for agent context
 - Ratified: new ai-industry/ domain — AI ROI runway and margin collapse
 
-## [PR #7](https://github.com/ob6to8/second-brain/pull/7) — ccr architecture notes *(2026-07-06)*
+## [PR #7](https://github.com/ob6to8/elixir-mind/pull/7) — ccr architecture notes *(2026-07-06)*
 
 - Research spike: agentic looping — 16 primary sources as references
 
-## [PR #6](https://github.com/ob6to8/second-brain/pull/6) — ccr architecture notes *(2026-07-06)*
+## [PR #6](https://github.com/ob6to8/elixir-mind/pull/6) — ccr architecture notes *(2026-07-06)*
 
 - Intake: matklad on unit vs integration tests (purity and extent)
 - Intake: matklad 'How to Test' (test features, not code)
 - Reframe verification: only agent statements, never link-storing captures
 
-## [PR #5](https://github.com/ob6to8/second-brain/pull/5) — ccr architecture notes *(2026-07-06)*
+## [PR #5](https://github.com/ob6to8/elixir-mind/pull/5) — ccr architecture notes *(2026-07-06)*
 
 - Intake: Claude Code cloud (CCR) environment/orchestration architecture notes
 - Ground CCR architecture note against official docs
 
-## [PR #4](https://github.com/ob6to8/second-brain/pull/4) — move code deprecated *(2026-07-06)*
+## [PR #4](https://github.com/ob6to8/elixir-mind/pull/4) — move code deprecated *(2026-07-06)*
 
 - Close bootstrap thread archive (final /persist-thread extension)
 
-## [PR #3](https://github.com/ob6to8/second-brain/pull/3) — move code deprecated *(2026-07-06)*
+## [PR #3](https://github.com/ob6to8/elixir-mind/pull/3) — move code deprecated *(2026-07-06)*
 
 - Extend bootstrap thread archive through PR #2 merge (/persist-thread)
 
-## [PR #2](https://github.com/ob6to8/second-brain/pull/2) — move code deprecated *(2026-07-06)*
+## [PR #2](https://github.com/ob6to8/elixir-mind/pull/2) — move code deprecated *(2026-07-06)*
 
 - Make thread archive verbatim; add /persist-thread skill
 
-## [PR #1](https://github.com/ob6to8/second-brain/pull/1) — move code deprecated *(2026-07-05)*
+## [PR #1](https://github.com/ob6to8/elixir-mind/pull/1) — move code deprecated *(2026-07-05)*
 
 - Move all existing code and content into deprecated/
 - Scaffold greenfield OKF second-brain with /intake skill

@@ -29,11 +29,11 @@ to which files.
 >   and [why the toolchain runs offline](/meta/tutorials/why-the-toolchain-runs-offline.md).
 > - **Procedure** → none (no skill): the trigger is `git push` to `main`;
 >   [`.github/workflows/pages.yml`](/.github/workflows/pages.yml) is the runbook.
-> - **Mechanism + proof** → [`SecondBrain.Site`](/lib/second_brain/site.ex) /
->   [`SecondBrain.Markdown`](/lib/second_brain/markdown.ex) and the
+> - **Mechanism + proof** → [`ElixirMind.Site`](/lib/elixir_mind/site.ex) /
+>   [`ElixirMind.Markdown`](/lib/elixir_mind/markdown.ex) and the
 >   `mix brain.site [--out DIR]` task, pinned by
->   [`test/second_brain/site_test.exs`](/test/second_brain/site_test.exs) and
->   [`markdown_test.exs`](/test/second_brain/markdown_test.exs) (this flow
+>   [`test/elixir_mind/site_test.exs`](/test/elixir_mind/site_test.exs) and
+>   [`markdown_test.exs`](/test/elixir_mind/markdown_test.exs) (this flow
 >   predates the `*_scenario_test.exs` naming; these tests are its scenario).
 
 ---
@@ -109,8 +109,8 @@ disposable output; the bundle is the record.
   [OKF conformance](/meta/policy/okf-conformance.md).
 - **Relative everything.** Each page carries a `root_prefix` computed from its
   depth, and every internal `.md` link is rewritten to the `.html` page, so the
-  site works at a domain root or under `/second-brain/` unchanged.
-- **The renderer is scoped, not general.** `SecondBrain.Markdown` implements
+  site works at a domain root or under `/elixir-mind/` unchanged.
+- **The renderer is scoped, not general.** `ElixirMind.Markdown` implements
   exactly the constructs the bundle uses (ATX headings with GitHub-style slug
   anchors, nested lists, fenced code, tables, blockquotes, emphasis, links,
   autolinks) — dependency-free, like everything else.
@@ -137,12 +137,12 @@ disposable output; the bundle is the record.
 
 CI (`ci.yml`) runs `mix brain.site` on every push/PR as a smoke check, so a
 render crash is caught before it ever reaches the deploy workflow.
-[`site_test.exs`](/test/second_brain/site_test.exs) pins the generator over a
+[`site_test.exs`](/test/elixir_mind/site_test.exs) pins the generator over a
 tmp-dir bundle: page-per-concept with exclusions honoured, assets +
 search index + `.nojekyll` written, the metadata panel (badge, tags,
 verification), evidence edges *and* reverse backlinks resolving to page
 titles, body links rewritten relative, and the sidebar marking the current
-page. [`markdown_test.exs`](/test/second_brain/markdown_test.exs) pins the
+page. [`markdown_test.exs`](/test/elixir_mind/markdown_test.exs) pins the
 renderer construct by construct, including the escaping properties.
 
 The editorial residue: whether the *rendered* pages read well (layout, search

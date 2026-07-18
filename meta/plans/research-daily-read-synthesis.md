@@ -1,7 +1,7 @@
 ---
 type: plan
 title: "The daily read: a cross-domain synthesis lede for /research digests"
-description: Promote the ad-hoc per-domain framing paragraph in /research digests to a first-class '## The read' section at the top of each digest — a short, sb:-id-grounded perspective that reads the day's selections as a set against the brain's standing concerns, connecting threads across domains.
+description: Promote the ad-hoc per-domain framing paragraph in /research digests to a first-class '## The read' section at the top of each digest — a short, em:-id-grounded perspective that reads the day's selections as a set against the brain's standing concerns, connecting threads across domains.
 status: done
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-11 — operator proposed the feature after the 2026-07-11 digest; ratified and implemented same session"
 tags: [meta, plan, research, inbox, synthesis, skills]
@@ -28,7 +28,7 @@ part of this plan. Filed as the durable decision record per the persist-plans po
 The `/research` digest is a good *list* but a weak *read*. Its body is per-domain
 buckets of item synopses; the only synthesis is whatever framing paragraph the agent
 happens to write inline (e.g. the 2026-07-11 ai-industry lede: "the throughline is
-that the brain's margin-collapse thesis `sb:07610c` is now actively contested").
+that the brain's margin-collapse thesis `em:07610c` is now actively contested").
 That framing is the most valuable part of the digest — it's what turns a pile of
 links into *a view of where things are moving relative to what the brain already
 cares about* — but it was incidental, single-domain, and non-guaranteed.
@@ -36,7 +36,7 @@ cares about* — but it was incidental, single-domain, and non-guaranteed.
 Two things the per-domain lists structurally can't do:
 
 1. **Connect across domains.** The day's real story often spans buckets — e.g.
-   2026-07-11's lossless inference (`sb:266c5e`), long-horizon agents (agentic-loop),
+   2026-07-11's lossless inference (`em:266c5e`), long-horizon agents (agentic-loop),
    and worktree isolation all point at one arc: *agents running longer and cheaper*.
    Nothing in the digest says that.
 2. **Read the set against standing concerns.** Whether today's items *reinforce,
@@ -50,13 +50,13 @@ before the per-domain lists.
 
 - **1–3 short paragraphs.** A *perspective*, not a re-listing — the item synopses
   stay in the domain sections below; the read never restates them.
-- **Grounded in `sb:` ids.** It names the standing concepts the day bears on
-  (`sb:07610c`, `sb:2867ac`, …) so the synthesis is anchored to the actual taxonomy,
+- **Grounded in `em:` ids.** It names the standing concepts the day bears on
+  (`em:07610c`, `em:2867ac`, …) so the synthesis is anchored to the actual taxonomy,
   not free-floating commentary. This mirrors the route-tagging discipline of keying
   on ids, not phrases.
 - **Cross-domain by mandate.** Its explicit job is the connective tissue the buckets
   can't hold: the trend, tension, or throughline that runs across domains.
-- **Candidate-side, like everything in `/research`.** No `sb:` id, `inbox/` namespace,
+- **Candidate-side, like everything in `/research`.** No `em:` id, `inbox/` namespace,
   distilled, and asserts nothing beyond what the day's selections support. It is a
   reading of candidates, not a filed claim.
 
@@ -73,7 +73,7 @@ Digest body order becomes:
 <one-line candidate-feed preamble>
 
 ## The read
-<1–3 paragraphs, sb:-grounded, cross-domain perspective>
+<1–3 paragraphs, em:-grounded, cross-domain perspective>
 
 ## <domain-1>
 <optional domain lede> + item bullets

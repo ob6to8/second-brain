@@ -23,7 +23,7 @@ defmodule Mix.Tasks.Brain.DedupProbe do
   upkeep.
 
   See the [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md) and
-  `SecondBrain.DedupProbe`.
+  `ElixirMind.DedupProbe`.
   """
 
   use Mix.Task
@@ -34,10 +34,10 @@ defmodule Mix.Tasks.Brain.DedupProbe do
       OptionParser.parse(args, strict: [expanded: :boolean, update_baseline: :boolean])
 
     if opts[:update_baseline] do
-      path = SecondBrain.DedupProbe.update_baseline(File.cwd!())
+      path = ElixirMind.DedupProbe.update_baseline(File.cwd!())
       Mix.shell().info("Refreshed baseline in #{Path.relative_to_cwd(path)}.\n")
     end
 
-    Mix.shell().info(SecondBrain.DedupProbe.report(File.cwd!(), Keyword.take(opts, [:expanded])))
+    Mix.shell().info(ElixirMind.DedupProbe.report(File.cwd!(), Keyword.take(opts, [:expanded])))
   end
 end

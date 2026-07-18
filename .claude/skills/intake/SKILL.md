@@ -121,7 +121,7 @@ This runs on **every** intake; the operator does nothing. See the gold doc's
   material (the operator's own words: their request text, a subject line, how they
   described it), append one row to the `## Gold set` table in
   [`/meta/evals/dedup-probe.md`](/meta/evals/dedup-probe.md):
-  `| <that phrasing> | <filed/merged concept's sb: id> | target | <2–3 synonym variants> | harvested at intake YYYY-MM-DD |`.
+  `| <that phrasing> | <filed/merged concept's em: id> | target | <2–3 synonym variants> | harvested at intake YYYY-MM-DD |`.
   Use the operator's **actual** phrasing as the query — never a synthetic paraphrase.
   If the intake was a bare URL/paste with **no natural phrasing to harvest**, skip
   this silently; don't invent a query.

@@ -66,8 +66,8 @@ descend a level has no marked path down.
    Terse, dense, precise. This level is the source; nothing about it changes.
 3. **Grounding** — **one level of abstraction below whatever the source is.**
    This tier is *relative*, not fixed at "code": for a machine-enforced policy
-   it is the enforcing code (a path, e.g. `lib/second_brain/verifier.ex`); for
-   a doctrine it is the policies that implement the doctrine (`sb:` id edges);
+   it is the enforcing code (a path, e.g. `lib/elixir_mind/verifier.ex`); for
+   a doctrine it is the policies that implement the doctrine (`em:` id edges);
    for a tooling doc it is the modules and tasks. It answers "what concretely
    realizes this, one step down?"
 
@@ -89,7 +89,7 @@ derived evidence narratives).
    drifting account.
 3. **The grounding tier is relative.** `implemented_by` on a doctrine points
    at the policies implementing it; on a policy it points at the enforcing
-   code. Refs follow the route-tag ref rule exactly: a stable `sb:` id when
+   code. Refs follow the route-tag ref rule exactly: a stable `em:` id when
    the target is a bundle concept, a repo path otherwise (see design finding
    2 — governance docs carry no ids, so doctrine→policy edges are paths).
 4. **The plain tier is committed, not site-only.** An earlier alternative —
@@ -104,17 +104,17 @@ Two constraints discovered by inspecting the tooling before building; both
 reshape the artifact and are binding on the executing session:
 
 1. **Policy bodies are inlined into `CLAUDE.md`.** The contract compiler
-   (`SecondBrain.Contract`) renders each policy's body verbatim under its
+   (`ElixirMind.Contract`) renders each policy's body verbatim under its
    contract section, so a `## Plain` heading inside a policy would inject a
    sibling of the contract's own section headings and break its structure.
    The derived tiers therefore use **blockquote blocks**, which inline safely
    anywhere and typographically encode "subordinate to the canonical body":
    `> **In plain terms:** …` and `> **Grounding:** …`.
-2. **Governance docs carry no `sb:` ids.** The identity registry deliberately
+2. **Governance docs carry no `em:` ids.** The identity registry deliberately
    excludes `meta/` (per the stable-identity policy), so a doctrine cannot
    reference its implementing policies by id — those edges are **repo paths**
    (e.g. `meta/policy/verification-grounding.md`). This is not an exception
-   invented here: route tags already define exactly this ref rule (`sb:` id
+   invented here: route tags already define exactly this ref rule (`em:` id
    for bundle concepts, path for everything outside the registry).
 
 ## Artifact shape (ratified)
@@ -126,7 +126,7 @@ reshape the artifact and are binding on the executing session:
   the body, it re-renders the plain block *in the same motion* (the
   update-in-place discipline applied to a derived section).
 - **Level 3**: an `implemented_by:` frontmatter field — inline YAML list of
-  `sb:` ids and/or repo paths — plus an optional `> **Grounding:** …`
+  `em:` ids and/or repo paths — plus an optional `> **Grounding:** …`
   blockquote at the bottom of the body describing what the referenced level
   does. The edge is the anchor; the prose is editorial.
 - **Verification**: `mix brain.verify` checks what has a mechanical oracle —
@@ -137,7 +137,7 @@ reshape the artifact and are binding on the executing session:
 - **Pilot documents** (execution scope):
   - [verification-grounding](/meta/policy/verification-grounding.md) — the
     full three-tier case: plain block, existing body,
-    `implemented_by: [lib/second_brain/verifier.ex, lib/mix/tasks/brain.verify.ex]`
+    `implemented_by: [lib/elixir_mind/verifier.ex, lib/mix/tasks/brain.verify.ex]`
     with a grounding block on what the verifier rules actually check.
   - [engineer-as-orchestrator](/meta/doctrine/engineer-as-orchestrator.md) —
     the doctrine case: plain block, existing body, `implemented_by` path refs
@@ -168,7 +168,7 @@ reshape the artifact and are binding on the executing session:
 2. Policy doc under `meta/policy/` (the levels convention, the blockquote
    markers, the `implemented_by` field, the opt-in rule) + `/render-contract`.
 3. Verifier rule for `implemented_by` resolution — refs on bundle concepts
-   *and* governance docs; `sb:` ids resolve in the registry, paths exist in
+   *and* governance docs; `em:` ids resolve in the registry, paths exist in
    the repo — with red + green tests.
 4. Pilot the two documents above.
 5. Gate suite, commit, push; flip to `done` with any editorial calls

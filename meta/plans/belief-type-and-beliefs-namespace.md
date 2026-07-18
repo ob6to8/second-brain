@@ -54,7 +54,7 @@ or asking every time (see the analysis, Finding 3).
    ("I hold that the world works this way"), a doctrine is teleological ("this
    is the standing direction"). Distinct from a `claim` (which is on the
    verification ladder and expects evidence or graduation) and a `note` (not
-   citable as a prior). Bundle concept: carries an `sb:` id, lives in the
+   citable as a prior). Bundle concept: carries an `em:` id, lives in the
    identity registry, citable by plans, analyses, and priority rankings the way
    doctrine already is.
 2. **`/beliefs/` becomes the belief layer's home.** Its index is rewritten to

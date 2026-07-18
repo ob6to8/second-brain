@@ -1,5 +1,5 @@
 ---
-id: sb:eeb2bb
+id: em:eeb2bb
 type: reference
 title: "sagents — agent orchestration framework for Elixir (built on LangChain)"
 description: An Elixir library providing AgentServer process management, a middleware system, and state management for building and orchestrating LLM agents on top of the Elixir LangChain library.

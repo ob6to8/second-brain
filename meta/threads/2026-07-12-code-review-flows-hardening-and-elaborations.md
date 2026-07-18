@@ -50,7 +50,7 @@ Review complete and pushed to `claude/code-review-docs-audit-j9ckd6` (commit `b8
 
 **Verdict:** the system is in unusually good health. Every "generated, never hand-kept" artifact matched its re-derivation, the tutorials' concrete claims (exclusion lists, check counts, workflow steps) match the code exactly, glossary counts are consistent (68 = 68 = 68), and plan/issue statuses reflect reality. The staleness sweep covered README, all 5 tutorials, both existing flow docs, all 7 skills, all 21 policies, and the meta indexes — most surfaces came back clean.
 
-<routes ref="lib/second_brain/markdown.ex lib/mix/tasks/brain.evidence.ex">
+<routes ref="lib/elixir_mind/markdown.ex lib/mix/tasks/brain.evidence.ex">
 
 Confirmed findings, fixed in the commit: (1) a **renderer bug** — `Markdown.inline/2` extracted links before code spans, so link syntax written inside inline code rendered as a live anchor inside `<code>` on ~10 live pages (glossary hub, compiled contract, two policies); extraction order swapped, regression test added. (2) **`mix brain.evidence` contradicted policy** — it printed "Grounded directly by resource: …", the exact claim verification-grounding forbids; it now reports a capture as trusted evidence, not a grounded statement. (3) **Stale docs** — the `render-contract` skill listed 6 of 8 valid contract sections; the offline tutorial said the SessionStart hook runs `mix brain.contract` (it runs `mix compile`); the flows index still said `specs` for the renamed `plans` genre. Filed as an open issue (design decision, not fixed inline): `route_tags --materialize` never visits a sink whose last feeding thread stopped tagging it — the checks correctly fail on the orphan block, but no tool path clears it.
 
@@ -108,9 +108,9 @@ Yes, add those three terms to the glossary
 
 ## Assistant
 
-<routes ref="sb:0b648f">
+<routes ref="em:0b648f">
 
-Done — three terms filed, all gates green, pushed as `9178648`. The glossary went 68 → 71: **materialize** (`sb:15fe73`) — defined source-independently (write derived content to disk vs. recompute on demand, paired with a freshness check), noting `CLAUDE.md` and the registry as materializations in the same sense; **excerpt log (route-tagged log)** (`sb:3101ef`) — definition plus a pointer to the route-tagging policy that canonically defines it, per the pointer-entry rule; and **orphan block** (`sb:3ee2d2`) — the general idea (generated output whose source vanished) grounded in this bundle's specific case, citing the issue and the hardening plan. Each carries its minted `sb:` id, *Seen in:* citations, and cross-links to the already-filed `route tag` / `sink` terms. The index stayed alphabetical, the registry was recompiled, and — per link-don't-duplicate — the elaboration doc's three inline definitions now link their new canonical homes rather than standing alone.
+Done — three terms filed, all gates green, pushed as `9178648`. The glossary went 68 → 71: **materialize** (`em:15fe73`) — defined source-independently (write derived content to disk vs. recompute on demand, paired with a freshness check), noting `CLAUDE.md` and the registry as materializations in the same sense; **excerpt log (route-tagged log)** (`em:3101ef`) — definition plus a pointer to the route-tagging policy that canonically defines it, per the pointer-entry rule; and **orphan block** (`em:3ee2d2`) — the general idea (generated output whose source vanished) grounded in this bundle's specific case, citing the issue and the hardening plan. Each carries its minted `sb:` id, *Seen in:* citations, and cross-links to the already-filed `route tag` / `sink` terms. The index stayed alphabetical, the registry was recompiled, and — per link-don't-duplicate — the elaboration doc's three inline definitions now link their new canonical homes rather than standing alone.
 
 </routes>
 
@@ -132,9 +132,9 @@ Proceed
 
 ## Assistant
 
-<routes ref="lib/second_brain/route_tags.ex lib/second_brain/verifier.ex">
+<routes ref="lib/elixir_mind/route_tags.ex lib/elixir_mind/verifier.ex">
 
-The hardening plan is fully executed — four commits pushed (`b1dc1fc`, `b953a5c`, `4f1901c`, `90f70ba`), 87 tests and every gate green, plan flipped to `done`. **P1 — two-directional materialize** (was the top open issue): `materialize/1` now also visits every sink carrying a log section that no longer appears among the feeding pairs and removes the section — unconditionally, no flag, per the ratified design: the tags are the single source of truth and the PR diff is the review point. Two new scenario tests pin it. The issue is `resolved` with the settled design question recorded. **P2 — verifier rule 6:** a `verified` field (either value) on any type outside `claim`/`note`/`concept` is now a verifier error — the statement-type restriction went from editorial to structural. The pre-flight scan found exactly one live violation: the testing-methodology doc (`sb:d58da3`) carried `verified: false` from a pre-enforcement session; the field was removed (a methodology grounds through the claims it cites). **P3 — hygiene batch:** ledger parsing scoped to the `## Routing` section (with a regression test), the two section terminators now agree (h1 or h2), `brain.id` tolerates CRLF files, the route-tags closing line counts any warnings printed above it, and the `pages.yml` gate comment says "bundle-integrity checks" precisely.
+The hardening plan is fully executed — four commits pushed (`b1dc1fc`, `b953a5c`, `4f1901c`, `90f70ba`), 87 tests and every gate green, plan flipped to `done`. **P1 — two-directional materialize** (was the top open issue): `materialize/1` now also visits every sink carrying a log section that no longer appears among the feeding pairs and removes the section — unconditionally, no flag, per the ratified design: the tags are the single source of truth and the PR diff is the review point. Two new scenario tests pin it. The issue is `resolved` with the settled design question recorded. **P2 — verifier rule 6:** a `verified` field (either value) on any type outside `claim`/`note`/`concept` is now a verifier error — the statement-type restriction went from editorial to structural. The pre-flight scan found exactly one live violation: the testing-methodology doc (`em:d58da3`) carried `verified: false` from a pre-enforcement session; the field was removed (a methodology grounds through the claims it cites). **P3 — hygiene batch:** ledger parsing scoped to the `## Routing` section (with a regression test), the two section terminators now agree (h1 or h2), `brain.id` tolerates CRLF files, the route-tags closing line counts any warnings printed above it, and the `pages.yml` gate comment says "bundle-integrity checks" precisely.
 
 </routes>
 
@@ -152,7 +152,7 @@ Commit, then
 
 All three requests are done — nothing was pending for the initial "commit" (the hardening work was already committed and pushed), and two commits followed: the glossary batch (`14f46ef`) and the elaboration refresh (`578d354`). All gates green.
 
-<routes ref="sb:0b648f">
+<routes ref="em:0b648f">
 
 **Glossary report** (93 → 101 terms): *Added (7):* **feeding pairs** — the (thread, sink) pairs the current tags induce; the domain of materialization in both directions; **stale block** — a block diverged from its re-derivation (source *changed*), defined against **orphan block** (source *vanished*); **red test** — proves the detector fires, not just that good input passes; **pipe table** — GFM's `|` table syntax, with the scoping lesson attached; **spurious (warning)** — the false positive that teaches readers to ignore the channel; **section terminator** — where a parsed section ends; reader and rewriter must agree; **CRLF** — normalize on read or honor the file's ending on write. *Pointer (1):* **ratification** — one-line gloss deferring to the taxonomy-evolution protocol and persist-plans policies that canonically define it. *Merged (2):* **sink** and **materialize** already existed — each gained the two-directional-projection nuance from this session (an unfed sink loses its section) plus a citation, rather than a duplicate file.
 

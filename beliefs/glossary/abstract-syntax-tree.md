@@ -1,5 +1,5 @@
 ---
-id: sb:35c992
+id: em:35c992
 type: concept
 title: abstract syntax tree
 description: The tree-shaped data structure a parser produces from source code — nodes for the program's constructs, stripped of surface syntax — which programs can then inspect, transform, and render back to source.

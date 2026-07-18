@@ -1,5 +1,5 @@
 ---
-id: sb:5e7da1
+id: em:5e7da1
 type: concept
 title: recall
 description: In information retrieval, the fraction of relevant items that a search actually surfaces for a query; low recall means existing relevant material is missed.
@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, information-retrieval]
 sense: common
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,7 +17,7 @@ attribution:
 
 # recall
 
-In information retrieval, the fraction of relevant items that a search actually surfaces for a query. Low recall means existing relevant material is missed — the failure mode that matters for [dedup](/beliefs/glossary/deduplication.md) at intake time.
+The failure mode that matters here is [dedup](/beliefs/glossary/deduplication.md) at intake time.
 
 A **recall failure** at intake sets off a quiet chain: intake dedup runs a [lexical search](/beliefs/glossary/lexical-search.md) for an existing home; because that search misses the semantically-equivalent concept (it shares meaning but not enough surface tokens), intake concludes *nothing exists* and files a **new** concept beside the one it should have updated. Nothing errors — the miss is invisible at write time — so the duplicate lands silently and the two concepts drift apart, splitting one subject's knowledge across [residual fragments](/beliefs/glossary/residual-fragmentation.md). That is why low recall is dangerous rather than merely lossy: it converts a retrieval gap into committed [fragmentation](/beliefs/glossary/deduplication.md) that only a later editorial pass, not an error message, can catch.
 
@@ -27,13 +27,13 @@ A **recall failure** at intake sets off a quiet chain: intake dedup runs a [lexi
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:5e7da1">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:5e7da1">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-news-auto-intake-featured-items (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:5e7da1`]**  (co-feeds: `sb:96a610`)
+**[`em:5e7da1`]**  (co-feeds: `em:96a610`)
 
 **`/elaborate`: low recall → silent fragmentation**
 

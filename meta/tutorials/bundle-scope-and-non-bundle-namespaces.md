@@ -16,7 +16,7 @@ attribution:
 This note exists because of a finding made while adding the `inbox/` feed:
 
 > Registry (used by the verifier) scans all top-level dirs **except** an excluded
-> list — and `inbox` isn't on it. So `inbox/*.md` would be required to carry `sb:`
+> list — and `inbox` isn't on it. So `inbox/*.md` would be required to carry `em:`
 > ids and would break CI. I need to add `inbox` to that exclusion list. Let me
 > check the route-tags scanner and the site generator too.
 
@@ -32,10 +32,10 @@ notion of scope:
 
 | Scanner | Code | Question it answers | Scope source |
 |---------|------|---------------------|--------------|
-| **Identity / verify** | `SecondBrain.Registry` → `SecondBrain.Verifier` | Does every *bundle concept* carry a valid, unique `sb:` id, and are its evidence edges sound? | `Registry`'s `@excluded_dirs` / `@excluded_files` |
-| **Route tags** | `SecondBrain.RouteTags` | Are `<routes>` tags wellformed, and do the sink logs match? | `meta/threads/` (sources) + `Registry` concepts (sinks) |
-| **Contract** | `SecondBrain.Contract` ← `SecondBrain.Policy` | Is `CLAUDE.md` a faithful compile of the policies? | `meta/policy/*.md` with `type: policy` |
-| **Site** | `SecondBrain.Site` | Which pages get rendered into the published HTML? | `Site`'s *own* `@excluded_dirs` |
+| **Identity / verify** | `ElixirMind.Registry` → `ElixirMind.Verifier` | Does every *bundle concept* carry a valid, unique `em:` id, and are its evidence edges sound? | `Registry`'s `@excluded_dirs` / `@excluded_files` |
+| **Route tags** | `ElixirMind.RouteTags` | Are `<routes>` tags wellformed, and do the sink logs match? | `meta/threads/` (sources) + `Registry` concepts (sinks) |
+| **Contract** | `ElixirMind.Contract` ← `ElixirMind.Policy` | Is `CLAUDE.md` a faithful compile of the policies? | `meta/policy/*.md` with `type: policy` |
+| **Site** | `ElixirMind.Site` | Which pages get rendered into the published HTML? | `Site`'s *own* `@excluded_dirs` |
 
 The trap is assuming these share a boundary. They do not. A file can be **in scope
 for one and out of scope for another** — and that asymmetry is exactly what makes
@@ -44,7 +44,7 @@ non-bundle namespaces like `meta/` and `inbox/` possible.
 ## The registry is the definition of "bundle concept"
 
 The identity layer is where "is this a real concept?" is actually decided.
-`SecondBrain.Registry.concept_paths/1` globs `**/*.md` and then rejects anything
+`ElixirMind.Registry.concept_paths/1` globs `**/*.md` and then rejects anything
 excluded:
 
 ```elixir
@@ -58,11 +58,11 @@ end
 ```
 
 Everything that survives this filter is a **bundle concept**, and the verifier
-holds every survivor to the full identity contract. `SecondBrain.Verifier.run/1`
+holds every survivor to the full identity contract. `ElixirMind.Verifier.run/1`
 does not re-scan the tree — it calls `Registry.scan/1` and applies its rules to
 whatever comes back:
 
-- **rule 2** — every concept carries a stable `id` matching `sb:[0-9a-f]{6}`,
+- **rule 2** — every concept carries a stable `id` matching `em:[0-9a-f]{6}`,
   unique across the bundle;
 - **rules 3–5** — `verified_by` edges resolve, captures (`resource`) are never
   `verified: true`, and `verified: true` requires non-empty evidence.
@@ -74,7 +74,7 @@ is governed by that single `@excluded_dirs` list.
 ## Why a bare new namespace breaks CI
 
 `inbox/` digests are, by design, **candidates, not concepts**: dated feed pages
-with `type: reference` and *no* `sb:` id (see the [`/research`](/.claude/skills/research/SKILL.md)
+with `type: reference` and *no* `em:` id (see the [`/research`](/.claude/skills/research/SKILL.md)
 skill). But `inbox` is a *new top-level
 directory*, and until it is named in `@excluded_dirs` the glob happily picks up
 `inbox/2026-07-09.md` as a bundle concept. The verifier then fires **rule 2** on
@@ -93,7 +93,7 @@ capture, and captures are never `verified`).
 
 ## Route tags come along for free — but check anyway
 
-`SecondBrain.RouteTags` has two inputs: **thread sources** under `meta/threads/`
+`ElixirMind.RouteTags` has two inputs: **thread sources** under `meta/threads/`
 (the files that may carry `<routes ref="…">` regions) and **concept sinks**, which
 it obtains from the registry's concept set. Because sinks are drawn from the same
 `Registry` scan, excluding `inbox` from the registry *also* removes inbox pages
@@ -110,7 +110,7 @@ Here is the asymmetry that makes the model worth understanding. The static-site
 generator keeps a **separate** exclusion list:
 
 ```elixir
-# SecondBrain.Site
+# ElixirMind.Site
 @excluded_dirs ~w(.git .github .githooks _build deps tmp deprecated .claude lib test)
 ```
 
@@ -124,7 +124,7 @@ from pages that *have* an `id`).
 So a file's membership is really **two orthogonal decisions**:
 
 1. **Is it a bundle concept?** — governed by `Registry.@excluded_dirs`. Yes ⇒ it
-   must carry an `sb:` id and obey the verification rules. This is the *identity*
+   must carry an `em:` id and obey the verification rules. This is the *identity*
    boundary.
 2. **Is it published?** — governed by `Site.@excluded_dirs`. Yes ⇒ it becomes an
    HTML page. This is the *rendering* boundary.
@@ -139,7 +139,7 @@ separate is what lets the brain publish more than it identity-checks.
 When you add a top-level namespace that holds candidates, governance, or any
 non-concept material, walk these in order:
 
-1. **Add it to `SecondBrain.Registry.@excluded_dirs`.** This is the load-bearing
+1. **Add it to `ElixirMind.Registry.@excluded_dirs`.** This is the load-bearing
    step — it takes the namespace out of `mix brain.registry` *and* `mix brain.verify`
    (which delegates) *and* the route-tags concept set (which draws from the
    registry) in one edit.

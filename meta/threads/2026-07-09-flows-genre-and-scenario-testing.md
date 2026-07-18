@@ -89,7 +89,7 @@ Two things none of the above delivers:
 
 **On the testing angle — be honest about it or mechanize it, don't split the difference.** A prose "scenario" that claims to be a test but isn't machine-run is exactly the hand-kept shadow this repo refuses to tolerate; it'll drift the moment code changes and quietly lie. Two clean options:
 - **(a)** Ship it as an operator/agent *comprehension* doc and don't oversell the testing claim — its correctness gets spot-checked, like the tutorials.
-- **(b)** Anchor each trace to the existing green **reference instance** (the verification-flow already names one: thread `2026-07-08-…` ↔ `sb:d479e3`) so the trace narrates a *real, checked* run rather than an idealized one. That keeps it honest without needing new tooling.
+- **(b)** Anchor each trace to the existing green **reference instance** (the verification-flow already names one: thread `2026-07-08-…` ↔ `em:d479e3`) so the trace narrates a *real, checked* run rather than an idealized one. That keeps it honest without needing new tooling.
 
 Your two-tier format (abbreviated tour on top, detailed operator trace below) is good and mirrors `summarize-technical`'s layered structure — no objection there.
 
@@ -134,7 +134,7 @@ This changes the picture in a good way. The repo already contains proto-scenario
 ## Direct answer: you already have both halves, unmerged
 
 - **The formal half exists but is hidden in code.** `route_tags_test.exs` builds a `green_fixture` — a real mini-bundle (a thread + a concept with a materialized log) — then runs `RouteTags.run_checks/1` and asserts each check's status, with one red test per failure mode (unresolved ref, missing block, divergent fidelity, orphan, uncovered row). That *is* a scenario test. It's just written as Elixir heredocs, scoped to one module, and invisible to the prose.
-- **The informal half is the "reference instance."** The verification-flow doc points at a *live* thread↔concept pair (`2026-07-08…` ↔ `sb:d479e3`) as "the green worked example to diff against." That's a narrated scenario with no executable teeth, and it can drift when either file is edited.
+- **The informal half is the "reference instance."** The verification-flow doc points at a *live* thread↔concept pair (`2026-07-08…` ↔ `em:d479e3`) as "the green worked example to diff against." That's a narrated scenario with no executable teeth, and it can drift when either file is edited.
 
 So your proposal, precisely stated: **promote the hidden fixture to a first-class, named artifact, and make the prose narrate that same artifact instead of a drift-prone live pair.** One scenario, executed by CI and narrated by prose.
 
@@ -241,7 +241,7 @@ Done — all four items landed on `claude/flows-paths-documentation-b6mzee` (com
 
 **2 — Where the eval-layer doc is persisted:** it lives as **§7 ("Deferred: the eval layer") of the flows spec**, now at `meta/specs/flows-genre-and-scenario-testing.md`. Per the new policy, a deferred phase stays inside its parent spec under an explicit "deferred" heading until it's actually built, at which point it graduates into its own `meta/specs/` doc. So today: one file, §7. Before this change it existed nowhere durable — only in the scratchpad — which is exactly the gap the persist-specs policy closes.
 
-<routes ref="sb:f6e843 sb:b1ba4b">
+<routes ref="em:f6e843 em:b1ba4b">
 
 **3 — Research spike — important, and I want to be straight with you: it did *not* cleanly reaffirm. Verdict was "adjust (mostly reaffirm)."** What it upheld: plain ExUnit + `@tag :tmp_dir`, no external dep, no DSL, no custom mix runner — that half was correct. What it corrected, and which I folded into the persisted spec before saving it:
 - **Drop whole-tree byte-exact golden as the primary oracle** — brittle, invites blind-approval of golden diffs, and for RouteTags re-encodes logic the tool already self-checks.
@@ -282,12 +282,12 @@ All four items are done and pushed to `claude/flows-paths-documentation-b6mzee` 
 So the persisted spec reflects the corrected design, not the pre-spike one.
 
 **Intake + traceability** — filed two distilled `reference` captures under `SWE/testing/` (autonomous — existing domain):
-- `exunit-dependency-free-fixtures-and-diffs` (`sb:f6e843`) — `:tmp_dir` + built-in `assert ==` diff.
-- `elixir-snapshot-libraries-require-a-dependency` (`sb:b1ba4b`) — mneme/snapshy/assert_value are hex deps.
+- `exunit-dependency-free-fixtures-and-diffs` (`em:f6e843`) — `:tmp_dir` + built-in `assert ==` diff.
+- `elixir-snapshot-libraries-require-a-dependency` (`em:b1ba4b`) — mneme/snapshy/assert_value are hex deps.
 
 I grouped the six source URLs into two genuinely-reusable concepts (distill-don't-dump) rather than six thin bookmarks; each holds its full URL set under `# Citations`. Ids minted, `meta/registry.md` regenerated, index + root log updated.
 
-**On your cross-linking assumption — you're right, with one refinement.** Cross-linking is the correct mechanism, and I made it **bidirectional**: each capture carries an `# Influence` section back-linking the spec, and the spec's §8 links *forward* to each capture, tying a specific design change to the resource that drove it (drop-the-snapshot-library → `sb:b1ba4b`; built-ins-are-enough → `sb:f6e843`). The refinement: I deliberately did *not* use the repo's typed `verified_by` edges for this. Those are reserved for verification-grounding of agent-authored *claims* — a spec isn't a verified claim, and these references *inform a decision* rather than *prove a statement*, so a typed edge would be a semantic misuse (and specs live in the governance namespace with no `sb:` id, so they can't be an edge endpoint anyway). Untyped bundle-absolute markdown links — the repo's standard for related concepts — are exactly the right tool here.
+**On your cross-linking assumption — you're right, with one refinement.** Cross-linking is the correct mechanism, and I made it **bidirectional**: each capture carries an `# Influence` section back-linking the spec, and the spec's §8 links *forward* to each capture, tying a specific design change to the resource that drove it (drop-the-snapshot-library → `em:b1ba4b`; built-ins-are-enough → `em:f6e843`). The refinement: I deliberately did *not* use the repo's typed `verified_by` edges for this. Those are reserved for verification-grounding of agent-authored *claims* — a spec isn't a verified claim, and these references *inform a decision* rather than *prove a statement*, so a typed edge would be a semantic misuse (and specs live in the governance namespace with no `sb:` id, so they can't be an edge endpoint anyway). Untyped bundle-absolute markdown links — the repo's standard for related concepts — are exactly the right tool here.
 
 Nothing from the flows *build* has started — that remains spec'd and awaiting your go.
 
@@ -531,7 +531,7 @@ Session captured and pushed (`42044ef`).
 **The thread** — `meta/threads/2026-07-09-flows-genre-and-scenario-testing.md`:
 - **Parse-the-log render** from the host `.jsonl` (818 lines), so the retained text is mechanically exact — all **18 operator messages** and **22 agent turns** verbatim, with tool calls/results, reasoning, and `<300`-char pre-tool narration dropped, and the `/capture` slash-command wrapper stripped.
 - **Eight-row routing ledger**, mostly `unrouted` — honestly reflecting that the session was overwhelmingly governance/tooling homed in `meta/` (matching the bootstrap-thread precedent). The one knowledge feed — the dependency-free-testing strand — routes to the ExUnit reference.
-- **One route-tag region** (the research-spike verdict paragraph) feeding both `SWE/testing` captures `sb:f6e843` and `sb:b1ba4b`; their excerpt logs were materialized, giving a real tag→log round-trip.
+- **One route-tag region** (the research-spike verdict paragraph) feeding both `SWE/testing` captures `em:f6e843` and `em:b1ba4b`; their excerpt logs were materialized, giving a real tag→log round-trip.
 
 **Reserved files** — threads index, `meta/log.md` (capture entry), and root `log.md` (the two references' excerpt logs changed) all updated.
 
@@ -548,7 +548,7 @@ Extended in place and pushed (`81b3f2b`).
 This was an **extend-in-place**, not a new capture: the session already had its thread doc, so per the update-in-place rule I regenerated the same file (`meta/threads/2026-07-09-flows-genre-and-scenario-testing.md`) rather than forking a second one.
 
 - **What changed:** re-parsed the now-longer host log (881 lines) → the render picked up **one new agent turn** (the previous `/capture`'s summary), which the drop rule keeps as a closing reply. Both `/capture` slash-commands stayed dropped. 18 operator messages, 23 agent turns, all verbatim.
-- **What didn't:** same routing ledger, same single route-tag region (the research-spike verdict → `sb:f6e843`/`sb:b1ba4b`). The excerpt logs re-materialized **identically**, so the two `SWE/testing` references are untouched — the only file in the diff is the thread doc. No log/index changes were warranted (the existing capture entry still holds).
+- **What didn't:** same routing ledger, same single route-tag region (the research-spike verdict → `em:f6e843`/`em:b1ba4b`). The excerpt logs re-materialized **identically**, so the two `SWE/testing` references are untouched — the only file in the diff is the thread doc. No log/index changes were warranted (the existing capture entry still holds).
 - **Verification:** `mix brain.route_tags` green, full gate suite green (78 tests).
 
 The inherent tail limitation still applies — this capture can't include its own closing summary (not yet in the log); a future `/capture` would fold it in if you run one. Nothing else outstanding.

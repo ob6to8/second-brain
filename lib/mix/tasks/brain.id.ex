@@ -1,8 +1,8 @@
 defmodule Mix.Tasks.Brain.Id do
-  @shortdoc "Mint stable ids (sb:xxxxxx) for bundle concepts that lack one"
+  @shortdoc "Mint stable ids (em:xxxxxx) for bundle concepts that lack one"
 
   @moduledoc """
-  Insert a freshly minted `id: sb:xxxxxx` as the first frontmatter line of every
+  Insert a freshly minted `id: em:xxxxxx` as the first frontmatter line of every
   bundle concept that does not already carry one. Existing ids are never touched —
   ids are immutable for the life of a concept.
 
@@ -11,7 +11,7 @@ defmodule Mix.Tasks.Brain.Id do
 
   use Mix.Task
 
-  alias SecondBrain.Registry
+  alias ElixirMind.Registry
 
   @impl Mix.Task
   def run(_args) do

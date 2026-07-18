@@ -1,5 +1,5 @@
 ---
-id: sb:59895a
+id: em:59895a
 type: reference
 title: Assurance cases and Goal Structuring Notation (GSN)
 description: The safety-engineering practice of arguing a system property as an explicit claim tree — goals decomposed via strategies down to evidence — standardized as GSN (University of York, Tim Kelly; Community Standard 2011) and used across aviation, automotive, rail, nuclear, and clinical domains.

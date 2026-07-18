@@ -1,5 +1,5 @@
 ---
-id: sb:121072
+id: em:121072
 type: concept
 title: orchestrator pattern
 description: A multi-agent cost pattern ("plan big, execute small") where a high-intelligence orchestrator model decomposes a task and dispatches subtasks to multiple cheaper worker models in parallel, so most tokens bill at the lower worker rate.
@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, agents, multi-agent, llm-orchestration, cost-optimization, anthropic]
 sense: common
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13T12:00:00Z
   channel: glossary
@@ -17,10 +17,7 @@ attribution:
 
 # orchestrator pattern
 
-A multi-agent cost pattern — Anthropic's phrasing is "plan big, execute small" —
-in which a high-intelligence **orchestrator** model decomposes a task and
-dispatches the subtasks to multiple cheaper **worker** models running in
-parallel, so the bulk of tokens bill at the lower worker rate. Anthropic
+Anthropic
 benchmarked it under [Claude Managed Agents](/beliefs/glossary/claude-managed-agents.md)
 (a Fable orchestrator with Sonnet workers reaching roughly 96% of all-Fable
 BrowseComp performance at about 46% of the cost). It is the heavier sibling of the

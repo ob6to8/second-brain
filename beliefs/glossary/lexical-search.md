@@ -1,5 +1,5 @@
 ---
-id: sb:792b23
+id: em:792b23
 type: concept
 title: lexical search
 description: Search that matches on the literal surface form of text — tokens or substrings — rather than meaning; fast and dependency-free, but blind to synonym and jargon gaps.
@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search]
 sense: common
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T10:25:03+00:00
   channel: glossary
@@ -17,19 +17,19 @@ attribution:
 
 # lexical search
 
-Search that matches on the literal surface form of text — tokens or substrings, case-folded at most — rather than on meaning. It is fast, deterministic, and dependency-free (a `grep`-class match, or a ranked variant like [BM25](/beliefs/glossary/bm25.md)), which is why it is the default backend for intake [deduplication](/beliefs/glossary/deduplication.md) here. Its blind spot is vocabulary mismatch: it cannot bridge synonym/jargon gaps the way [semantic search](/beliefs/glossary/semantic-search.md) or [hybrid search](/beliefs/glossary/hybrid-search.md) can — the gap that [synonym expansion](/beliefs/glossary/synonym-expansion.md) papers over without embeddings.
+Concretely it is a deterministic `grep`-class match — or a ranked variant like [BM25](/beliefs/glossary/bm25.md) — which is why it is the default backend for intake [deduplication](/beliefs/glossary/deduplication.md) here. Where it falls down is vocabulary mismatch: [semantic search](/beliefs/glossary/semantic-search.md) and [hybrid search](/beliefs/glossary/hybrid-search.md) close that gap, and [synonym expansion](/beliefs/glossary/synonym-expansion.md) papers over it without embeddings.
 
 *Seen in:* [2026-07-12 dedup recall probe thread](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md)
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:792b23">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:792b23">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-news-auto-intake-featured-items (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:792b23`]**
+**[`em:792b23`]**
 
 **What the problem is**
 

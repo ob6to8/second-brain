@@ -1,5 +1,5 @@
 ---
-id: sb:fe0ebd
+id: em:fe0ebd
 type: concept
 title: grounded extension
 description: In a Dung argumentation framework, the unique minimal (most skeptical) set of arguments that is admissible and self-defending — the arguments beyond dispute; the formal model of a consensus core.

@@ -1,5 +1,5 @@
 ---
-id: sb:724e2f
+id: em:724e2f
 type: concept
 title: non-monotonic reasoning
 description: Reasoning in which adding information can remove conclusions — beliefs may rest on the absence of other beliefs (TMS outlists, default rules), so the conclusion set does not grow monotonically with the premise set.

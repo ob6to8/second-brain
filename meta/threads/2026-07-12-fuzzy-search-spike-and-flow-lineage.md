@@ -192,7 +192,7 @@ Key finding before I write code: the bundle's `SecondBrain.Frontmatter` parser i
 
 ## Assistant
 
-<routes ref="/meta/plans/flow-lineage-index.md lib/second_brain/lineage.ex">
+<routes ref="/meta/plans/flow-lineage-index.md lib/elixir_mind/lineage.ex">
 Executed and pushed. The whole thing shipped this session.
 
 ## What got built

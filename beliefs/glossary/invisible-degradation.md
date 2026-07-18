@@ -1,5 +1,5 @@
 ---
-id: sb:e08db0
+id: em:e08db0
 type: concept
 title: invisible degradation
 description: Corpus rot that emits no signal while it happens — nothing distinguishes a healthy knowledge base from a rotting one until retrieval visibly fails, by which point remediation means auditing the whole corpus.
@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, failure-modes, corpus-health, enforcement]
 sense: common
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T09:43:37+00:00
   channel: glossary
@@ -17,19 +17,19 @@ attribution:
 
 # invisible degradation
 
-Corpus rot that emits no signal while it happens: a stale cross-reference, an unlisted file, or a silently filed near-duplicate changes nothing observable, so nothing distinguishes a healthy knowledge base from a rotting one until retrieval visibly fails — and by then remediation means auditing hundreds of files rather than fixing one. It is the compounding consequence of [probabilistic enforcement](/beliefs/glossary/probabilistic-enforcement.md) (violations occur but nothing announces them) and the reason this brain's countermeasures are all *announcement* mechanisms: gates that fail, [warn passes](/beliefs/glossary/warn-pass.md) that report, and the session-init digest that surfaces open work every session start.
+Its mechanism is concrete: a stale cross-reference, an unlisted file, or a silently filed near-duplicate changes nothing observable, so the damage accrues unnoticed — and by the time retrieval visibly fails, the fix has grown from one file to hundreds. It is the compounding consequence of [probabilistic enforcement](/beliefs/glossary/probabilistic-enforcement.md) (violations occur but nothing announces them) and the reason this brain's countermeasures are all *announcement* mechanisms: gates that fail, [warn passes](/beliefs/glossary/warn-pass.md) that report, and the session-init digest that surfaces open work every session start.
 
 *Seen in:* [comparison with the 2026 second-brain field](/meta/analysis/comparison-with-the-2026-second-brain-field.md), [docs-surface evaluation and the wiki question](/meta/analysis/docs-surface-evaluation-and-wiki-question.md), [the session-init digest tutorial](/meta/tutorials/the-session-init-digest.md), [2026-07-12 docs-audit thread](/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md)
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:e08db0">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:e08db0">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:e08db0`]**  (co-feeds: `sb:e8c1a9 sb:1c53dc sb:0da4a3 meta/analysis/comparison-with-the-2026-second-brain-field.md`)
+**[`em:e08db0`]**  (co-feeds: `em:e8c1a9 em:1c53dc em:0da4a3 meta/analysis/comparison-with-the-2026-second-brain-field.md`)
 
 **Your question — what field-comparison, and what prevents the drift:**
 

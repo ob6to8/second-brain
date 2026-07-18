@@ -1,5 +1,5 @@
 ---
-id: sb:1cac23
+id: em:1cac23
 type: reference
 title: "VeriCache — turning lossy KV-cache compression into lossless inference"
 description: A draft-and-verify framework that decodes from a compressed KV cache and verifies each token against the full cache, yielding output bit-identical to full-KV decoding at up to 4× throughput, over any token-dropping or quantization compressor.
@@ -55,13 +55,13 @@ VeriCache (arXiv:2605.17613) — <https://arxiv.org/abs/2605.17613>
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:1cac23">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:1cac23">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-11-news-digest-intake-and-daily-read (2026-07-11)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:1cac23`]**  (co-feeds: `sb:532b22 sb:f02167 sb:c29a22 sb:8b9548 sb:49eae4`)
+**[`em:1cac23`]**  (co-feeds: `em:532b22 em:f02167 em:c29a22 em:8b9548 em:49eae4`)
 
 Both jobs are done and pushed to `claude/news-feature-w5dsgl`.
 
@@ -71,11 +71,11 @@ Each is now a permanent bundle concept — ids minted, registry recompiled, inde
 
 | Concept | id | Filed under | Extends |
 |---|---|---|---|
-| Codebase-Memory (paper + repo) | `sb:532b22` | code-context | GitNexus `sb:b89ea1` |
-| VeriCache — lossless KV cache | `sb:1cac23` | llm-engineering | KV-cache history `sb:266c5e` |
-| PARC — self-reflective long-horizon agent | `sb:f02167` | agentic-loop | — |
-| METR agent time-horizons | `sb:c29a22` | agentic-loop | — |
-| Git worktrees for parallel agents | `sb:8b9548` | version-control/git | branches note `sb:4c9e1f` |
-| State of AI Coding 2026 (New Relic) | `sb:49eae4` | testing | test-features `sb:a5ea86` |
+| Codebase-Memory (paper + repo) | `em:532b22` | code-context | GitNexus `em:b89ea1` |
+| VeriCache — lossless KV cache | `em:1cac23` | llm-engineering | KV-cache history `em:266c5e` |
+| PARC — self-reflective long-horizon agent | `em:f02167` | agentic-loop | — |
+| METR agent time-horizons | `em:c29a22` | agentic-loop | — |
+| Git worktrees for parallel agents | `em:8b9548` | version-control/git | branches note `em:4c9e1f` |
+| State of AI Coding 2026 (New Relic) | `em:49eae4` | testing | test-features `em:a5ea86` |
 
 One judgment call worth flagging: I captured **Codebase-Memory the paper and its repo as one concept** (resource = the GitHub repo, arXiv cited in the body) rather than two files — the anti-fragmentation policy says one project = one concept, matching how GitNexus was filed. PARC and time-horizons landed under a new **"Reliability & long-horizon"** section of the agentic-loop index. Say the word if you'd rather split Codebase-Memory into a separate paper `source` + tool `reference`.

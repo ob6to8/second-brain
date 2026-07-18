@@ -1,5 +1,5 @@
 ---
-id: sb:f8ae3a
+id: em:f8ae3a
 type: concept
 title: auto-intake
 description: The /research step that files its featured items into the bundle via /intake in the same run, moving the operator from a pre-intake gate to a post-intake editorial role.
@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, research, intake, automation]
 sense: repo
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T15:51:02+00:00
   channel: glossary
@@ -17,7 +17,7 @@ attribution:
 
 # auto-intake
 
-The step where [`/research`](/.claude/skills/research/SKILL.md) files each of its **featured** items into the bundle by running [`/intake`](/.claude/skills/intake/SKILL.md) in the same run — rather than leaving them as candidates for a human to pick. Its premise is that the [featuring](/beliefs/glossary/featuring.md) gates are already the quality filter, so a featured item needs no second pre-intake gate; the operator's contribution moves to the *post-intake editorial* pass (prune, relabel, merge). It is bounded to the known tree — items needing a new top-level directory are **deferred** for ratification, never filed autonomously — prefers update-in-place on a `relates to sb:` hint to keep [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) small, and records what it files with `channel: auto-intake` in the concept's [attribution](/beliefs/glossary/attribution.md) so the editorial queue is one query (`mix brain.attribution --channel auto-intake`; this superseded an earlier `auto-intake` *tag*, retired when attribution landed). The digest itself stays a non-bundle record; only its featured items acquire ids. The tradeoff it accepts is [cognitive debt](/beliefs/glossary/cognitive-debt.md): the corpus can grow faster than the operator internalizes it.
+[`/research`](/.claude/skills/research/SKILL.md) runs [`/intake`](/.claude/skills/intake/SKILL.md) on each **featured** item rather than leaving them as candidates for a human to pick. Its premise is that the [featuring](/beliefs/glossary/featuring.md) gates are already the quality filter, so a featured item needs no second pre-intake gate; the operator's contribution moves to the *post-intake editorial* pass (prune, relabel, merge). It is bounded to the known tree — items needing a new top-level directory are **deferred** for ratification, never filed autonomously — prefers update-in-place on a `relates to em:` hint to keep [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) small, and records what it files with `channel: auto-intake` in the concept's [attribution](/beliefs/glossary/attribution.md) so the editorial queue is one query (`mix brain.attribution --channel auto-intake`; this superseded an earlier `auto-intake` *tag*, retired when attribution landed). The digest itself stays a non-bundle record; only its featured items acquire ids. The tradeoff it accepts is [cognitive debt](/beliefs/glossary/cognitive-debt.md): the corpus can grow faster than the operator internalizes it.
 
 *Seen in:* [auto-intake-featured-research plan](/meta/plans/auto-intake-featured-research.md), [2026-07-12 news auto-intake thread](/meta/threads/2026-07-12-news-auto-intake-featured-items.md), [2026-07-13 resource-attribution property thread](/meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md)
 
@@ -25,13 +25,13 @@ The step where [`/research`](/.claude/skills/research/SKILL.md) files each of it
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:f8ae3a">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:f8ae3a">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-13-resource-attribution-property-spec-and-build (2026-07-13)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:f8ae3a`]**  (co-feeds: `/meta/plans/resource-attribution-property.md sb:f97e44`)
+**[`em:f8ae3a`]**  (co-feeds: `/meta/plans/resource-attribution-property.md em:f97e44`)
 
 All five decisions are recorded and the plan is now `status: accepted` — pushed as `e615742`, gates green, and the index entry moved into "Accepted / In progress" (its first occupant).
 

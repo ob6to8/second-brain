@@ -1,5 +1,5 @@
 ---
-id: sb:c68b6d
+id: em:c68b6d
 type: concept
 title: dependency-directed backtracking
 description: On contradiction, tracing the recorded justification structure backwards to the assumptions actually responsible and retracting a culprit — instead of undoing choices in chronological order.

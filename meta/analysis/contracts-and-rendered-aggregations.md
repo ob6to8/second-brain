@@ -23,14 +23,14 @@ potential compilation target of the same kind?
 ## Evidence: the rendered-aggregation family
 
 The generated-not-hand-kept pattern (see
-[compiled contract](/beliefs/glossary/compiled-contract.md), `sb:23f009`) has several
+[compiled contract](/beliefs/glossary/compiled-contract.md), `em:23f009`) has several
 live instances in this bundle, each aggregating scattered sources into one
 derived view with a drift check:
 
 | Artifact | Sources | Compiler | Persisted? | Drift gate |
 |----------|---------|----------|------------|------------|
 | `/CLAUDE.md` | `meta/preamble.md` + `meta/policy/*.md` | `mix brain.contract` | committed | `--check` (CI + pre-commit) |
-| [`meta/registry.md`](/meta/registry.md) | per-file `sb:` ids | `mix brain.registry` | committed | `--check` (CI) |
+| [`meta/registry.md`](/meta/registry.md) | per-file `em:` ids | `mix brain.registry` | committed | `--check` (CI) |
 | `## Thread excerpts` logs in concepts | `<routes>` tags in frozen threads | `mix brain.route_tags --materialize` | committed | `mix brain.route_tags` (fails on divergence) |
 | GitHub Pages site | the whole bundle | `mix brain.site` | published | rebuilt per deploy |
 | Session-init digest | `meta/issues/` · `meta/todos/` · `meta/plans/` · thread ledgers | `mix brain.session_init` | ephemeral (per session) | re-rendered each start, never stale |
@@ -50,7 +50,7 @@ derived view with a drift check:
    — a filename dictated by the Claude Code harness for where agents look. The
    *contract* — the compiled aggregation of `meta/policy/` — would survive a
    harness change (`AGENTS.md`, a second surface) with only the output path in
-   [`contract.ex`](/lib/second_brain/contract.ex) moving. The abstraction's
+   [`contract.ex`](/lib/elixir_mind/contract.ex) moving. The abstraction's
    price is one word and one module name; its purchase is harness
    independence. It would become speculative generality only if the compiler
    started abstracting over hypothetical second instances — it hasn't.

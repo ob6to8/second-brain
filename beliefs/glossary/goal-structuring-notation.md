@@ -1,5 +1,5 @@
 ---
-id: sb:f9daf3
+id: em:f9daf3
 type: concept
 title: Goal Structuring Notation (GSN)
 description: The dominant graphical standard for assurance cases — goals decomposed via strategies down to evidence solutions, scoped by context/assumption/justification annotations, linked by SupportedBy and InContextOf relations.

@@ -1,5 +1,5 @@
 ---
-id: sb:97d2a8
+id: em:97d2a8
 type: reference
 title: "The agent loop is a while-loop; reliability is the real work (Steve Kinney)"
 description: The agentic loop is a trivial six-line while-loop; the hard engineering is making that loop reliable in production.

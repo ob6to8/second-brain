@@ -13,7 +13,7 @@ brain or its tooling behaves — recorded for follow-up. It is *not* a
 [operating contract](/CLAUDE.md).
 
 Issues live in the **governance namespace**, so — like `todos`, `plans`, and
-`threads` — they carry **no `sb:` id** and are outside the identity registry.
+`threads` — they carry **no `em:` id** and are outside the identity registry.
 
 This skill is **list-focused**: it surfaces open issues so they can be reviewed
 and acted on. *Filing* a new issue is a heavier act governed by the contract's
@@ -46,5 +46,5 @@ instead — it is the whole-brain view; this skill is the issues-only slice.
 - **Read-only.** Listing changes no files. To resolve an issue, edit its doc
   (`status: resolved`/`wontfix`, bump `timestamp`) and move its index entry —
   per the contract, inline.
-- Governance namespace — never mint an `sb:` id for an issue.
+- Governance namespace — never mint an `em:` id for an issue.
 - Never touch `deprecated/`.

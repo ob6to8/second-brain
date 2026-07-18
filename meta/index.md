@@ -6,6 +6,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 ## Contents
 
 - [analysis](/meta/analysis/index.md) — point-in-time evaluations and decision-support write-ups on questions about the brain (`type: analysis`)
+- [code-map.md](/meta/code-map.md) — **generated** module/function/type intent glossary for the `lib/` tooling, compiled from its docstrings (`mix brain.codemap`)
 - [dev-history.md](/meta/dev-history.md) — **generated** per-PR overview of development progress, derived from the merge graph (`mix brain.dev_history`)
 - [doctrine](/meta/doctrine/index.md) — standing intention statements: guiding principles and directions the brain's design serves, which policies implement (`type: doctrine`)
 - [elaborations](/meta/elaborations/index.md) — persisted expansions of technical phrases (`type: elaboration`, written by `/elaborate`; each back-links its originating thread via a `thread` field set by `/create-pull-request`)
@@ -26,13 +27,15 @@ taxonomy. This is where the rules that compile into the operating contract live.
   - `mix brain.contract [--check]` — compile `/CLAUDE.md` from preamble + policies.
   - `mix brain.id` — mint stable ids for bundle concepts that lack one.
   - `mix brain.registry [--check]` — compile `/meta/registry.md` (id → concept).
+  - `mix brain.codemap [--check]` — compile `/meta/code-map.md`, the module/function/
+    type intent glossary for the tooling, from each `lib/` module's docstrings.
   - `mix brain.verify` — enforce conformance, id uniqueness/format, `verified_by`
     edge resolution, and grounding of every `verified: true`; on a green bundle,
     also print advisory docs-freshness warnings (unresolved internal links,
     index-coverage gaps) that never fail the gate.
-  - `mix brain.evidence <sb:id|path>` — derive a concept's verification narrative
+  - `mix brain.evidence <em:id|path>` — derive a concept's verification narrative
     (the prose is never committed; only the edges are).
-  - `mix brain.route_tags [--materialize]` — verify `<routes ref="sb:…">` tags on
+  - `mix brain.route_tags [--materialize]` — verify `<routes ref="em:…">` tags on
     threads and the excerpt logs they materialize into concepts (re-derives each
     log from the current tags and fails on divergence); `--materialize` writes the
     log sections from the tags.
@@ -50,10 +53,11 @@ taxonomy. This is where the rules that compile into the operating contract live.
   - `mix brain.site [--out DIR]` — render the bundle into a static, navigable site
     (deployed to GitHub Pages); see the [tutorials](/meta/tutorials/index.md).
 - `.github/workflows/ci.yml` — CI enforcement on every push/PR: compile, format check,
-  tests, `mix brain.contract --check`, `mix brain.registry --check`, `mix brain.verify`,
-  `mix brain.route_tags`, `mix brain.lineage --check`, `mix brain.dev_history --check`,
-  a non-gating `mix brain.dedup_probe` report, and a `mix brain.site` build (blocks a
-  stale contract/registry or a broken build).
+  tests, `mix brain.contract --check`, `mix brain.registry --check`,
+  `mix brain.codemap --check`, `mix brain.verify`, `mix brain.route_tags`,
+  `mix brain.lineage --check`, `mix brain.dev_history --check`, a non-gating
+  `mix brain.dedup_probe` report, and a `mix brain.site` build (blocks a stale
+  contract/registry/code-map or a broken build).
 - `.github/workflows/pages.yml` — re-derives the dev history from the merge graph,
   builds `mix brain.site`, and deploys to GitHub Pages on every push to `main`.
 - `.githooks/pre-commit` — optional fast local mirror of CI. Enable once with

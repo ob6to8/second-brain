@@ -1,5 +1,5 @@
 ---
-id: sb:cd2537
+id: em:cd2537
 type: concept
 title: truth maintenance system (TMS)
 description: Classic-AI bookkeeping machinery that records beliefs with the justifications supporting them and revises belief when premises change; justification-based (JTMS, Doyle) and assumption-based (ATMS, de Kleer) variants.

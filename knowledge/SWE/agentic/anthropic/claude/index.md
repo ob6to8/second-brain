@@ -6,4 +6,4 @@ agent and the [Agent SDK](/knowledge/SWE/agentic/anthropic/claude-code-sdk/index
 
 ## Notes
 
-- [Artifacts](/knowledge/SWE/agentic/anthropic/claude/artifacts.md) — self-contained, hosted, client-side documents Claude generates alongside a chat reply, iterated in place and shareable by URL. `sb:a142be` _(concept, unverified)_
+- [Artifacts](/knowledge/SWE/agentic/anthropic/claude/artifacts.md) — self-contained, hosted, client-side documents Claude generates alongside a chat reply, iterated in place and shareable by URL. `em:a142be` _(concept, unverified)_

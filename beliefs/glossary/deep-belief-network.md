@@ -1,5 +1,5 @@
 ---
-id: sb:e092bc
+id: em:e092bc
 type: concept
 title: deep belief network
 description: A generative neural network built as a stack of restricted Boltzmann machines, trained greedily one layer at a time, whose 2006 layer-wise learning algorithm helped reignite deep learning.

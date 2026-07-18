@@ -1,5 +1,5 @@
 ---
-id: sb:6a5115
+id: em:6a5115
 type: concept
 title: consensus core
 description: When comparing the belief systems of several artifacts, the subset of beliefs every system supports and none attacks — what survives conflict examination; kin to the grounded extension in argumentation semantics.
@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, epistemics, consensus, conflict, argumentation]
 sense: repo
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T09:07:29+00:00
   channel: glossary
@@ -17,9 +17,8 @@ attribution:
 
 # consensus core
 
-When several artifacts' belief systems are compared, the consensus core is the
-subset of beliefs that every system supports and no system attacks — the
-uncontested common ground that survives conflict examination. Everything
+The consensus core is the uncontested common ground that survives conflict
+examination. Everything
 outside the core is where the interesting disagreement lives. The notion is
 kin to the [grounded extension](/beliefs/glossary/grounded-extension.md) in Dung-style
 [argumentation semantics](/beliefs/glossary/argumentation-framework.md) (the uniquely

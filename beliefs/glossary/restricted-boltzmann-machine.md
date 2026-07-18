@@ -1,5 +1,5 @@
 ---
-id: sb:fd9873
+id: em:fd9873
 type: concept
 title: restricted Boltzmann machine
 description: A two-layer undirected generative network (visible and hidden units) whose bipartite connectivity — no within-layer edges — makes the hidden units conditionally independent given the visible ones, so it can be trained efficiently.

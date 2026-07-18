@@ -1,5 +1,5 @@
 ---
-id: sb:735b38
+id: em:735b38
 type: concept
 title: epistemic/teleological split
 description: The distinction between statements about what is true (epistemic — beliefs, claims) and statements of standing direction (teleological — doctrine), used as a filing test for where a statement belongs in the type vocabulary.

@@ -5,13 +5,13 @@ defmodule Mix.Tasks.Brain.Evidence do
   Render the evidence chain for a concept, derived live from frontmatter — the
   bundle commits only the `verified_by` edges; the prose is generated on demand.
 
-      mix brain.evidence sb:4c9e1f
+      mix brain.evidence em:4c9e1f
       mix brain.evidence SWE/version-control/git/some-concept
   """
 
   use Mix.Task
 
-  alias SecondBrain.Registry
+  alias ElixirMind.Registry
 
   @impl Mix.Task
   def run([ref]) do
@@ -24,7 +24,7 @@ defmodule Mix.Tasks.Brain.Evidence do
     Mix.shell().info(render(entry, index))
   end
 
-  def run(_), do: Mix.raise("usage: mix brain.evidence <sb:id | concept/path>")
+  def run(_), do: Mix.raise("usage: mix brain.evidence <em:id | concept/path>")
 
   defp render(entry, index) do
     header = """

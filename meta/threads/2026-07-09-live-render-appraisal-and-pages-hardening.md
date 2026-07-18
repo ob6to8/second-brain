@@ -190,7 +190,7 @@ So the two of us converged on the same design; they just took it further. I'd **
 Their `pages.yml` is a standalone workflow: on push to `main` it checks out, builds, and deploys — with no dependency on `ci.yml`'s `verify` job. The two run in parallel, so if `mix brain.verify` fails (broken evidence edge, stale `CLAUDE.md`, duplicate id), **the site still deploys**. Their `ci.yml` adds a "site builds" smoke check, but *builds ≠ verifies*. My branch gated deploy on `needs: verify`, so the live site was only ever a render of a valid, verified brain. I'd fold that gating in — either give the Pages `build` job a `needs`/verify dependency, or move deployment into `ci.yml` after `verify`.
 </routes>
 
-<routes ref="lib/second_brain/markdown.ex">
+<routes ref="lib/elixir_mind/markdown.ex">
 **2. Unescaped `href` in the markdown converter (a real, verifiable bug).**
 Their inline pipeline lifts links out *before* the escape pass and never escapes the URL, so I confirmed:
 - `[x](…/?a=1&b=2)` → `href="…/?a=1&b=2"` (should be `&amp;` — invalid HTML)

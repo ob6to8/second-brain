@@ -1,5 +1,5 @@
 ---
-id: sb:a3d27b
+id: em:a3d27b
 type: source
 title: Pro Git — remote-tracking branches and fetch
 description: Verbatim passages from the Pro Git book establishing that fetch moves remote-tracking pointers and does not modify local branches or the working directory.

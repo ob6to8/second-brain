@@ -1,5 +1,5 @@
 ---
-id: sb:a9113e
+id: em:a9113e
 type: concept
 title: orphaned branch
 description: In this brain's git workflow, a remote session branch left lingering after its work concluded — merged-but-undeleted (deletable on sight) or unmerged (never deleted without operator ratification); distinct from git's own parentless orphan branch.
@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, git, branches, workflow]
 sense: dual
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T20:15:23+00:00
   channel: glossary
@@ -19,19 +19,19 @@ attribution:
 
 In git generally, an *orphan branch* is one created with `git checkout --orphan`: a branch that starts with no parent history, disconnected from every existing commit.
 
-**In this brain:** a remote session branch left lingering after its work concluded. Two kinds with opposite handling under the [git-branch-deletion policy](/meta/policy/git-branch-deletion.md): **merged-but-undeleted** (fully contained in the default branch's history, so deletable on sight — nothing is lost) and **unmerged** (carrying commits with no other home — never deleted without operator ratification). A *false* orphan is an unmerged branch whose content already landed on `main` via a different branch — most often because a **[squash merge](/beliefs/glossary/squash-merge.md)** replayed the content as one new commit, so git ancestry reports the original branch as unmerged while its content is fully present — making it superseded rather than stranded. Salvageable true orphans are recovered by [branch transplant](/beliefs/glossary/branch-transplant.md), not merge, when the mainline has since been reorganized. A practical consequence: both false orphans and transplanted branches show a **nonzero "ahead" count forever** (their commits never entered `main`'s ancestry), so the "delete when Ahead is 0" heuristic — valid only for [true-merged](/beliefs/glossary/true-merge.md) branches — cannot clear them; that they are safe to delete is established by the content audit, not the count, which is exactly why the policy routes them through operator ratification.
+**In this brain**, the two kinds carry opposite handling under the [git-branch-deletion policy](/meta/policy/git-branch-deletion.md): a merged branch is fully contained in the default branch's history, so nothing is lost by deleting it, whereas an unmerged one carries commits with no other home. A *false* orphan is an unmerged branch whose content already landed on `main` via a different branch — most often because a **[squash merge](/beliefs/glossary/squash-merge.md)** replayed the content as one new commit, so git ancestry reports the original branch as unmerged while its content is fully present — making it superseded rather than stranded. Salvageable true orphans are recovered by [branch transplant](/beliefs/glossary/branch-transplant.md), not merge, when the mainline has since been reorganized. A practical consequence: both false orphans and transplanted branches show a **nonzero "ahead" count forever** (their commits never entered `main`'s ancestry), so the "delete when Ahead is 0" heuristic — valid only for [true-merged](/beliefs/glossary/true-merge.md) branches — cannot clear them; that they are safe to delete is established by the content audit, not the count, which is exactly why the policy routes them through operator ratification.
 
 *Seen in:* [2026-07-11 branch-deletion/contract thread](/meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md), [2026-07-13 orphaned-branch cleanup thread](/meta/threads/2026-07-13-orphaned-branch-cleanup-and-transplant-plan.md)
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:a9113e">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:a9113e">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-13-orphaned-branch-cleanup-and-transplant-plan (2026-07-13)
 
 2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:a9113e`]**
+**[`em:a9113e`]**
 
 Reading the five rows you're showing:
 
@@ -42,7 +42,7 @@ Reading the five rows you're showing:
 
 ---
 
-**[`sb:a9113e`]**  (co-feeds: `meta/todos/triage-the-six-kept-unmerged-claude-branches.md`)
+**[`em:a9113e`]**  (co-feeds: `meta/todos/triage-the-six-kept-unmerged-claude-branches.md`)
 
 **Worth saving — one big, four small:**
 

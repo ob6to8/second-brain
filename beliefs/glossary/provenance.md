@@ -1,5 +1,5 @@
 ---
-id: sb:ea7acc
+id: em:ea7acc
 type: concept
 title: provenance
 description: Commonly, the documented origin and history of an artifact — where it came from and how it got here; in this brain, the frontmatter field recording a statement's immutable origin, orthogonal to verification.
@@ -27,13 +27,13 @@ The documented origin and history of an artifact — where data, a claim, or an 
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:ea7acc">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:ea7acc">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-13-resource-attribution-property-spec-and-build (2026-07-13)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:ea7acc`]**  (co-feeds: `/meta/plans/resource-attribution-property.md`)
+**[`em:ea7acc`]**  (co-feeds: `/meta/plans/resource-attribution-property.md`)
 
 Spec written, filed, and pushed. The plan is at [`meta/plans/resource-attribution-property.md`](meta/plans/resource-attribution-property.md) (`status: proposed`, awaiting your ratification since it changes the frontmatter schema), indexed in `meta/plans/index.md`, all gates green, pushed to `claude/resource-attribution-spec-l3hzjj`.
 

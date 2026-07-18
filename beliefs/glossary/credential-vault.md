@@ -1,5 +1,5 @@
 ---
-id: sb:aea1cb
+id: em:aea1cb
 type: concept
 title: credential vault
 description: A store that holds a secret outside the process that uses it and substitutes the real value into outbound requests at egress, so the running (possibly untrusted) code sees only an opaque placeholder — containing the blast radius of prompt injection or code compromise to what the egress boundary allows.

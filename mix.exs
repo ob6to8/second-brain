@@ -1,11 +1,11 @@
-defmodule SecondBrain.MixProject do
+defmodule ElixirMind.MixProject do
   use Mix.Project
 
   @moduledoc false
 
   def project do
     [
-      app: :second_brain,
+      app: :elixir_mind,
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,

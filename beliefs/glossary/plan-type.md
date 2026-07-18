@@ -1,5 +1,5 @@
 ---
-id: sb:bf0524
+id: em:bf0524
 type: concept
 title: plan (type)
 description: The controlled type for a design/decision record of a one-off intended change, carrying a status, so a future session can execute it.

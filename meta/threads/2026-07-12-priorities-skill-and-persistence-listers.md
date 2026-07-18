@@ -79,7 +79,7 @@ Let's also create skills if they don't already exist for various persistence typ
 
 ## Assistant
 
-<routes ref="sb:6f2442 lib/second_brain/session_init.ex">
+<routes ref="em:6f2442 lib/elixir_mind/session_init.ex">
 Done. Pushed to `claude/priorities-skill-persistence-vmp9tn`.
 
 **`/priorities` skill** — the on-demand successor to the session-start digest. It runs the existing `mix brain.session_init` (open issues, todos, active plans, dangling ledger strands + heuristic top-3) and has the agent relay it with its own judged appraisal. The ranking engine, class weights, and `priority:` escape hatch are unchanged — only *how it reaches a session* moved.
@@ -87,7 +87,7 @@ Done. Pushed to `claude/priorities-skill-persistence-vmp9tn`.
 
 **`/issue` and `/plan` skills** — list-focused, as you asked. Each lists open artifacts of its type grouped by status (`/issue` defaults to `open`; `/plan` defaults to `active` = proposed/accepted/in-progress). They're read-only slices of `/priorities`; creation stays inline per the contract. `/todo` already covered todos (create + list), so I left it as-is.
 
-<routes ref="sb:71f38a .claude/hooks/session-start.sh">
+<routes ref="em:71f38a .claude/hooks/session-start.sh">
 **The hook** — one caveat worth flagging: you said "delete the hook," but the SessionStart hook did *two* jobs — emit the digest *and* install/warm Elixir in remote (Claude-on-web) sandboxes. That toolchain bootstrap is what makes `mix brain.*` — including the new `/priorities` skill itself — work at all in a fresh remote session. Deleting it entirely would break the very skill I was building. So I **removed the digest emission** (the "priorities work" is now skill-only, as you wanted) and **kept the toolchain bootstrap**, with a one-line `run /priorities` pointer. If you'd rather the file be gone completely and are fine expecting Elixir to be pre-present, say so and I'll delete it.
 </routes>
 

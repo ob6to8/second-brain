@@ -97,11 +97,11 @@ timestamp: 2026-07-09
 - **[Anthropic's Q2 economic index shows uneven enterprise AI adoption](https://…)**
   `impactful` — Fresh data backing the "long ROI runway outside tech" thesis you
   already filed; names the same slow sectors (healthcare, insurance).
-  → would file under `/ai-industry/`  ·  relates to `sb:2867ac`
+  → would file under `/ai-industry/`  ·  relates to `em:2867ac`
 
 - **[GLM-6 released, matches frontier coding at 1/20th inference cost](https://…)**
   `groundbreaking` `buzz` — Extends the margin-collapse story directly.
-  → would file under `/ai-industry/`  ·  relates to `sb:07610c`
+  → would file under `/ai-industry/`  ·  relates to `em:07610c`
 
 ## SWE
 - **[Paper: Context compaction for long-horizon agent loops (arXiv)](https://…)**
@@ -193,11 +193,11 @@ One note worth surfacing: options 1 and 2 are genuine changes to the *shape* of 
 
 ## Assistant
 
-<routes ref="meta/tutorials/bundle-scope-and-non-bundle-namespaces.md lib/second_brain/registry.ex">
+<routes ref="meta/tutorials/bundle-scope-and-non-bundle-namespaces.md lib/elixir_mind/registry.ex">
 Critical finding: `Registry` (used by the verifier) scans all top-level dirs *except* an excluded list — and `inbox` isn't on it. So `inbox/*.md` would be required to carry `sb:` ids and would break CI. I need to add `inbox` to that exclusion list. Let me check the route-tags scanner and the site generator too.
 </routes>
 
-<routes ref="meta/tutorials/bundle-scope-and-non-bundle-namespaces.md lib/second_brain/registry.ex">
+<routes ref="meta/tutorials/bundle-scope-and-non-bundle-namespaces.md lib/elixir_mind/registry.ex">
 All clear on the mechanics. Route-tags scans only `meta/threads` + registry concepts, so excluding `inbox` from the registry keeps it out of every verifier. The site generator does *not* exclude `inbox`, so digests render into the published site automatically. My one required code change is adding `inbox` to the registry's excluded dirs.
 
 Let me set up task tracking, load WebSearch, and run real searches for the first digest.
@@ -213,7 +213,7 @@ Branch `claude/home-news-filter-inbox-wxqlpj` (commit `7efb6be`). All gates gree
 
 - **`/news` skill** (`.claude/skills/news/SKILL.md`) — reads the taxonomy as its query profile, searches per domain, dedups against both the bundle and prior digests, reason-tags each find, writes the dated digest, and maintains the inbox reserved files. Registered in the skills-registry policy; `CLAUDE.md` recompiled.
 - **`inbox/` namespace** — a non-bundle waiting room (like `meta/`): candidates carry no `sb:` ids and are never verified. One line in `registry.ex` (`inbox` added to excluded dirs) keeps it out of verify/registry/route-tags while the static site still renders it.
-- **First real digest** — `inbox/2026-07-09.md`, 7 live items across ai-industry (3), SWE (3), knowledge-management (1), exercising all five reason tags. Each item has a synopsis, a `→ would file under /path` hint, and `sb:` back-links where it extends an existing concept (e.g. the Epoch inference-price data and the Matsuoka arXiv paper both back-link your margin-collapse note `sb:07610c`).
+- **First real digest** — `inbox/2026-07-09.md`, 7 live items across ai-industry (3), SWE (3), knowledge-management (1), exercising all five reason tags. Each item has a synopsis, a `→ would file under /path` hint, and `sb:` back-links where it extends an existing concept (e.g. the Epoch inference-price data and the Matsuoka arXiv paper both back-link your margin-collapse note `em:07610c`).
 - **Home-page wiring** — `inbox/` is the landing section of the root `index.md`, and `inbox/index.md` carries Latest + Archive. In the published site it renders at `/inbox/`.
 - **Intake handoff** — say *"intake the TurboQuant item"* (or any item) and `/intake` fetches, distills, mints an id, and files it. `/news` proposes; `/intake` is still the only path into the bundle.
 

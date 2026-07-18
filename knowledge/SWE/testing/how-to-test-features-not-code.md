@@ -1,5 +1,5 @@
 ---
-id: sb:a5ea86
+id: em:a5ea86
 type: reference
 title: "How to test: test features, not code (matklad)"
 description: Alex Kladov's methodology for testing — couple tests to features rather than code structure so refactors don't break them, funnel assertions through a single check helper, keep logic sans-IO, drive tests from serializable data, and climb from example tests to property-based, exhaustive, and coverage-guided generation.
@@ -20,7 +20,7 @@ suite is **how easily it lets you change the software** — not coverage numbers
 testing dogma. Related: his later reframing of test taxonomy into
 [purity and extent](/knowledge/SWE/testing/unit-vs-integration-purity-and-extent.md).
 Applied to this repo in
-[the Second Brain testing methodology](/knowledge/SWE/testing/elixir-second-brain-testing-methodology.md).
+[the Elixir Mind testing methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md).
 
 ## Thesis — test features, not code
 

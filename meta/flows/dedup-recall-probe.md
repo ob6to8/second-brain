@@ -32,9 +32,9 @@ the procedure; those have homes.
 > - **The gold set** → [`meta/evals/dedup-probe.md`](/meta/evals/dedup-probe.md) —
 >   the id-keyed queries, bands, variants, adjudication notes, and generated `## Baseline`.
 > - **Procedure (harvest step)** → the [`/intake` skill](/.claude/skills/intake/SKILL.md), step 8.
-> - **Mechanism + proof** → [`SecondBrain.DedupProbe`](/lib/second_brain/dedup_probe.ex)
+> - **Mechanism + proof** → [`ElixirMind.DedupProbe`](/lib/elixir_mind/dedup_probe.ex)
 >   and the `mix brain.dedup_probe` task, pinned by
->   [`test/second_brain/dedup_probe_test.exs`](/test/second_brain/dedup_probe_test.exs).
+>   [`test/elixir_mind/dedup_probe_test.exs`](/test/elixir_mind/dedup_probe_test.exs).
 
 ---
 
@@ -98,9 +98,9 @@ Open any of these directly — that is the point of listing them.
 | Artifact | What it is | Read it / run it |
 |---|---|---|
 | [`meta/evals/dedup-probe.md`](/meta/evals/dedup-probe.md) | The gold set: queries → acceptable concept ids, bands, synonym variants, adjudication notes, and the generated baseline. **The human-readable heart of the system.** | open the file |
-| [`lib/second_brain/dedup_probe.ex`](/lib/second_brain/dedup_probe.ex) | The engine: parse the gold doc, build the search index, score, render, regenerate the baseline. | open the file |
+| [`lib/elixir_mind/dedup_probe.ex`](/lib/elixir_mind/dedup_probe.ex) | The engine: parse the gold doc, build the search index, score, render, regenerate the baseline. | open the file |
 | [`lib/mix/tasks/brain.dedup_probe.ex`](/lib/mix/tasks/brain.dedup_probe.ex) | The command wrapper. | `mix brain.dedup_probe` |
-| [`test/second_brain/dedup_probe_test.exs`](/test/second_brain/dedup_probe_test.exs) | The scenario: a fixture corpus + gold set pinning every rule (parsing, hit/miss, bands, expanded recovery, baseline regen). | `mix test test/second_brain/dedup_probe_test.exs` |
+| [`test/elixir_mind/dedup_probe_test.exs`](/test/elixir_mind/dedup_probe_test.exs) | The scenario: a fixture corpus + gold set pinning every rule (parsing, hit/miss, bands, expanded recovery, baseline regen). | `mix test test/elixir_mind/dedup_probe_test.exs` |
 | [`/intake` SKILL.md](/.claude/skills/intake/SKILL.md), steps 3 & 8 | Where the loop touches your workflow: synonym-expanded dedup search, then the automatic harvest/baseline step. | open the file |
 | CI report step (`.github/workflows/ci.yml`) | Prints the current numbers on every push; **non-gating** — it never blocks a merge. | the PR's checks |
 
@@ -164,7 +164,7 @@ Two entry points. **Checked by** is `scenario` (the CI test over the engine), `t
 
 Condensed; the mechanics live in the engine and the plan.
 
-- **Id-keyed, banded gold set.** Rows map a query to acceptable concept **`sb:` ids**
+- **Id-keyed, banded gold set.** Rows map a query to acceptable concept **`em:` ids**
   (surviving renames), banded `target` (scored), `negative` (a non-duplicate pair, not
   scored in v1), or `quarantine` (answer undefined until supersession exists; reported,
   never scored). Concept **merges** are the one case needing your eyes — a merge can
@@ -223,7 +223,7 @@ Named honestly, because the operator raised it.
 ## 9. Verify — the scenario and the gates
 
 **The scenario test pins the engine.**
-[`test/second_brain/dedup_probe_test.exs`](/test/second_brain/dedup_probe_test.exs)
+[`test/elixir_mind/dedup_probe_test.exs`](/test/elixir_mind/dedup_probe_test.exs)
 builds an in-code fixture corpus and gold set and asserts the whole contract: gold-row
 parsing (bands, id sets, variants); plain-mode hit/miss; `--expanded` recovery via a
 recorded variant (with the phrasing that recovered it); band handling (negatives and

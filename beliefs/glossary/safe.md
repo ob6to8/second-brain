@@ -1,5 +1,5 @@
 ---
-id: sb:371597
+id: em:371597
 type: concept
 title: SAFE (Search-Augmented Factuality Evaluator)
 description: Wei et al.'s open-domain factuality checker (NeurIPS 2024) — split a response into facts, revise each to be self-contained, then iteratively search and reason to label it; matches human annotators 72% of the time at >20× lower cost.

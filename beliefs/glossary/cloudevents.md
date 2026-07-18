@@ -1,5 +1,5 @@
 ---
-id: sb:8cfcb8
+id: em:8cfcb8
 type: concept
 title: CloudEvents
 description: A CNCF specification standardizing the envelope of an event — id, source, type, time, data — so events can be produced, routed, and consumed across systems regardless of transport or vendor.

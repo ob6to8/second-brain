@@ -80,7 +80,7 @@ orchestrator's scope exceeds what fits in one head or one session. The brain
 externalizes exactly the state that makes broad scope tractable: verbatim frozen
 [thread docs](/meta/threads/index.md) preserve what was decided and why; the
 commit graph carries session-level provenance (which delegated session changed
-what); stable `sb:` ids keep references alive through reorganization; route tags
+what); stable `em:` ids keep references alive through reorganization; route tags
 aggregate a matter's discussion across many sessions into one sink. Judgment
 context — the thing that evaporates when work is delegated — is the brain's
 primary cargo.

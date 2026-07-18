@@ -1,5 +1,5 @@
 ---
-id: sb:570738
+id: em:570738
 type: concept
 title: ungrounded inference
 description: A derived belief that does not resolve, transitively through its justifications, to any evidence leaf (attestation/source) — the primary defect an epistemic-graph integrity check flags.

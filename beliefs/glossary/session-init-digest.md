@@ -1,5 +1,5 @@
 ---
-id: sb:6f2442
+id: em:6f2442
 type: concept
 title: session-init digest
 description: A machine-compiled summary of a knowledge base's open work — open issues, open todos, active plans, and dangling thread strands — surfaced on demand by the /priorities skill and ending in a heuristic priority ranking for the agent to refine.
@@ -28,7 +28,7 @@ heuristic top-3 priority ranking that the agent is asked to refine with
 judgment — the script ranks, the agent judges. The ranking order is: open
 issues, in-progress plans, open todos, accepted plans, open strands, paused
 strands, leftover dangling questions, proposed plans — newer first within a
-class; canonically the `@weights` map in `lib/second_brain/session_init.ex`.
+class; canonically the `@weights` map in `lib/elixir_mind/session_init.ex`.
 An explicit integer `priority:` frontmatter key on an issue/todo/plan pins it
 above every heuristic class (1 = most urgent), the operator's manual override. Distinct from the
 [digest](/beliefs/glossary/digest.md) sense used by the research inbox (a day's candidate
@@ -38,13 +38,13 @@ items); this one summarizes internal state, not external material.
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="sb:6f2442">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:6f2442">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-12-priorities-skill-and-persistence-listers (2026-07-12)
 
 1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`sb:6f2442`]**  (co-feeds: `lib/second_brain/session_init.ex`)
+**[`em:6f2442`]**  (co-feeds: `lib/elixir_mind/session_init.ex`)
 
 Done. Pushed to `claude/priorities-skill-persistence-vmp9tn`.
 

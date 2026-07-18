@@ -1,5 +1,5 @@
 ---
-id: sb:99aa8c
+id: em:99aa8c
 type: concept
 title: attribution shadow
 description: The enforceable trace of an unenforceable runtime act — a choice like model selection cannot itself be gated because the repository never records it, but the committed attribution of who/what performed the act can be required and checked.

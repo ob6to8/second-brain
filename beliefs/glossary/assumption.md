@@ -1,5 +1,5 @@
 ---
-id: sb:7a467d
+id: em:7a467d
 type: concept
 title: assumption
 description: "A belief held provisionally rather than on evidence. Senses: (1) TMS — a node whose support depends on the absence of other beliefs, hence retractable; (2) ATMS — a primitive datum from which all others derive; (3) GSN — an intentionally unsubstantiated statement scoped to the whole argument."

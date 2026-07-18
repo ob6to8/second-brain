@@ -101,7 +101,7 @@ touch-set as of filing:
    `/create-pull-request` — drop the log-entry instructions.
 3. **Flows + tests**: `meta/flows/intake.md` (and session-capture flow);
    update any scenario test asserting log upkeep; `docs_in/2` in
-   `lib/second_brain/session_init.ex` already skips `log.md` — remove the
+   `lib/elixir_mind/session_init.ex` already skips `log.md` — remove the
    special-case once the files are gone (harmless either way).
 4. **Delete** the three log files; run the full gate suite; commit with a
    message that carries this plan's rationale pointer.

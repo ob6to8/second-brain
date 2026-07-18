@@ -79,7 +79,7 @@ I expect the overall directory structure to evolve organically over time. This s
 
 The interactive question card failed to render (a transient permission-stream error). Rather than retry it, here are the same decisions in plain text — answer inline however you like (e.g. "1a, 2 blank, 3 auto-file, 4 all three").
 
-<routes ref="sb:24bd1e">
+<routes ref="em:24bd1e">
 
 I've read the full **OKF v0.1 spec**, so these are grounded in it. A bundle is just a directory of markdown concept files (YAML frontmatter with a mandatory `type` field + a markdown body), with reserved `index.md` (progressive-disclosure listings) and `log.md` (chronological history) allowed at any level, and `okf_version` declared in the root `index.md`.
 
@@ -539,14 +539,14 @@ Shipped (`1c696e2`). The registry is built, and the git claim is now formally ve
 - The canonical data is the per-file `id:`; **`meta/registry.md` is a compiled view** (`mix brain.registry`, with `--check` in CI) — same generated-artifact pattern as `CLAUDE.md`, so no DRY violation there either.
 
 **Verification layer, per your two rulings:**
-- **No committed prose.** `verified_by:` (inline list of stable ids) is the *only* committed representation of evidence. The narrative is derived on demand — `mix brain.evidence sb:4c9e1f` prints the claim, its status, and its supporting sources with their official URLs.
+- **No committed prose.** `verified_by:` (inline list of stable ids) is the *only* committed representation of evidence. The narrative is derived on demand — `mix brain.evidence em:4c9e1f` prints the claim, its status, and its supporting sources with their official URLs.
 - **`mix brain.verify`** enforces the whole model: ids present/unique/well-formed, every `verified_by` edge resolves to a concept that is itself verified, and every `verified: true` is grounded (has `resource` or `verified_by`). Wired into CI and the pre-commit hook.
 
 **The git claim, verified from primary sources exactly as you sketched:**
 - Two `type: source` concepts under `SWE/version-control/git/sources/`, each holding **verbatim passages** with `resource` = the official URL and provenance = "extracted from that resource":
-  - `sb:a3d27b` — Pro Git §3.5: fetch moves `origin/*` pointers, "will not modify your working directory at all"
-  - `sb:f08c54` — gitglossary: a branch head "moves forward as additional development is done"; remote-tracking branches take no local modifications
-- `sb:4c9e1f` graduated **`claim` → `concept`**, `verified: true`, `verified_by: [sb:a3d27b, sb:f08c54]` — and `provenance` still reads "Claude Opus 4.8, chat thread", because origin is immutable history.
+  - `em:a3d27b` — Pro Git §3.5: fetch moves `origin/*` pointers, "will not modify your working directory at all"
+  - `em:f08c54` — gitglossary: a branch head "moves forward as additional development is done"; remote-tracking branches take no local modifications
+- `em:4c9e1f` graduated **`claim` → `concept`**, `verified: true`, `verified_by: [em:a3d27b, em:f08c54]` — and `provenance` still reads "Claude Opus 4.8, chat thread", because origin is immutable history.
 
 **Governance:** two new ratified-by-this-conversation policies (`stable-identity`, `verification-grounding`) in a new "Identity & verification" contract section; frontmatter schema gained `id` and `verified_by`; `CLAUDE.md` recompiled; `/intake` now mints ids as part of filing.
 
@@ -621,7 +621,7 @@ One nuance worth knowing: the local runs and CI runs are deliberately redundant.
 That closes out the babysit: CI was green, no review comments ever needed action, and the subscription has been automatically removed. Nothing was left dangling (the hourly self check-in never armed, so there's nothing to cancel).
 
 Where things stand:
-- **`main` now is the OKF bundle** — compiled `CLAUDE.md`, the `/intake` and `/render-contract` skills, the stable-id registry, grounded verification, and one fully verified concept (`sb:4c9e1f`) with its two primary sources.
+- **`main` now is the OKF bundle** — compiled `CLAUDE.md`, the `/intake` and `/render-contract` skills, the stable-id registry, grounded verification, and one fully verified concept (`em:4c9e1f`) with its two primary sources.
 - **The SessionStart hook and CI are live on the default branch**, so every future web session gets Elixir automatically, and every push/PR runs the full gauntlet (format, tests, contract/registry checks, `brain.verify`).
 - The `deprecated/` archive rode along read-only.
 

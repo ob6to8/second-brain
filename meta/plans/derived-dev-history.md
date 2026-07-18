@@ -36,7 +36,7 @@ commits reachable forever. So the overview is a **generated artifact** on the
 same discipline as `CLAUDE.md`, `meta/registry.md`, and
 `meta/flows/lineage.md`:
 
-- **`mix brain.dev_history`** (`SecondBrain.DevHistory`) derives
+- **`mix brain.dev_history`** (`ElixirMind.DevHistory`) derives
   [`meta/dev-history.md`](/meta/dev-history.md): one section per merged PR,
   newest first — linked PR number, title, merge date — bulleted with the merged
   branch's commit subjects in order. Nothing is authored; everything re-derives
@@ -48,7 +48,7 @@ same discipline as `CLAUDE.md`, `meta/registry.md`, and
 - **Titles** come from the merge subject or body first line (HTML entities
   decoded); an empty merge body falls back to a humanized branch slug.
 - **PR links** use a new `repo_url` config key
-  (`SecondBrain.SiteConfig.repo_url/0`), beside `site_base_url`.
+  (`ElixirMind.SiteConfig.repo_url/0`), beside `site_base_url`.
 
 ## The staleness carve-out (why the check is lag-tolerant)
 
@@ -82,8 +82,8 @@ fighting it:
 
 ## Build order (all shipped in this plan's PR)
 
-1. `SecondBrain.DevHistory` + `mix brain.dev_history [--check]`, with pure,
-   unit-tested parsing/rendering (`test/second_brain/dev_history_test.exs`).
+1. `ElixirMind.DevHistory` + `mix brain.dev_history [--check]`, with pure,
+   unit-tested parsing/rendering (`test/elixir_mind/dev_history_test.exs`).
 2. `repo_url` config + `SiteConfig.repo_url/0`; attribution exemption for the
    generated file.
 3. The generated `meta/dev-history.md` itself; `meta/index.md` listing.

@@ -1,5 +1,5 @@
 ---
-id: sb:fbab7f
+id: em:fbab7f
 type: concept
 title: greedy layer-wise pretraining
 description: An unsupervised training strategy that builds a deep network one layer at a time — each layer trained on the representation produced by the layer below it — before any end-to-end fine-tuning.

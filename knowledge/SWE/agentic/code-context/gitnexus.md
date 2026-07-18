@@ -1,5 +1,5 @@
 ---
-id: sb:b89ea1
+id: em:b89ea1
 type: reference
 title: "GitNexus — client-side code knowledge graph for agent context"
 description: A zero-server tool that parses a codebase into a multi-layered knowledge graph (calls, imports, clusters, execution flows) and serves it to coding agents over MCP so they get architectural context in one query.

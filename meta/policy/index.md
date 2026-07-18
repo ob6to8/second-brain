@@ -13,13 +13,13 @@ domain reads as a group in listings. Single-policy domains adopt the prefix from
 the start if siblings are plausible.
 
 ## composition
-- [concept-anatomy](/meta/policy/concept-anatomy.md) — the repo root is the bundle; a concept is frontmatter + body; ID is path minus `.md`
+- [document-anatomy](/meta/policy/document-anatomy.md) — the repo root is the bundle; a document is frontmatter + body; ID is path minus `.md`
 - [frontmatter-schema](/meta/policy/frontmatter-schema.md) — the controlled frontmatter fields and their requirement levels
 - [resource-attribution](/meta/policy/resource-attribution.md) — the `attribution` map: the ingestion event (when/channel/agent/why, plus governance `from`) recorded on every doc
 - [reserved-filenames](/meta/policy/reserved-filenames.md) — `index.md` structure; `log.md` reserved by OKF but not kept in this bundle
 
 ## directory-structure
-- [directory-hierarchy](/meta/policy/directory-hierarchy.md) — unix-like, kebab-case; create the natural path even for one concept
+- [directory-hierarchy](/meta/policy/directory-hierarchy.md) — unix-like, kebab-case; create the natural path even for one document
 - [tree-is-the-taxonomy](/meta/policy/tree-is-the-taxonomy.md) — the tree + `index.md` files are the canonical taxonomy
 - [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md) — subdirs autonomous; new top-level dirs ratified
 
@@ -34,10 +34,10 @@ the start if siblings are plausible.
 - [merge-strategy](/meta/policy/merge-strategy.md) — PRs land via a true merge commit only; squash/rebase disallowed because commit history is provenance
 
 ## type-vocabulary
-- [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of concept types
+- [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of document `type` values
 
 ## verification
-- [stable-identity](/meta/policy/stable-identity.md) — immutable `sb:xxxxxx` ids; edges reference ids; `meta/registry.md` is compiled
+- [stable-identity](/meta/policy/stable-identity.md) — immutable `em:xxxxxx` ids; edges reference ids; `meta/registry.md` is compiled
 - [verification-grounding](/meta/policy/verification-grounding.md) — provenance immutable; `verified` requires grounding; evidence edges live only in `verified_by`
 
 ## conformance
@@ -49,7 +49,7 @@ the start if siblings are plausible.
 ## session-workflow
 - [session-capture](/meta/policy/session-capture.md) — `/capture` renders a session into a distilled thread doc, on demand
 - [routing-ledger](/meta/policy/routing-ledger.md) — the per-thread `## Routing` dispatch table (pointers and states only)
-- [route-tagging](/meta/policy/route-tagging.md) — `<routes ref="sb:…">` tags materialize a re-derivable excerpt log into each concept
+- [route-tagging](/meta/policy/route-tagging.md) — `<routes ref="em:…">` tags materialize a re-derivable excerpt log into each referenced document
 
 ## git-workflow
 - [git-branch-deletion](/meta/policy/git-branch-deletion.md) — head branches are deleted on PR merge; the default branch and unmerged branches need operator approval

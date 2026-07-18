@@ -1,5 +1,5 @@
 ---
-id: sb:2867ac
+id: em:2867ac
 type: reference
 title: "The AI ROI runway could be long outside the tech sector (Torsten Slok / Apollo)"
 description: Apollo's chief economist argues AI valuations assume margin expansion that isn't showing up outside tech, and that most sectors face structural barriers (process re-engineering, data governance) that could delay real productivity gains well past current market timelines.

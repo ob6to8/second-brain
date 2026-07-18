@@ -1,5 +1,5 @@
 ---
-id: sb:a757bb
+id: em:a757bb
 type: concept
 title: decontextualization
 description: Rewriting an extracted statement to be self-contained — resolving pronouns and implicit scope — because atomic claims ripped from context change or lose meaning; SAFE's revision step, and a required stage of any artifact decomposer.

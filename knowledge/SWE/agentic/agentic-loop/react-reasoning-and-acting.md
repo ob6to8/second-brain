@@ -1,5 +1,5 @@
 ---
-id: sb:f63910
+id: em:f63910
 type: reference
 title: "ReAct — reasoning + acting as the thought-action-observation loop (Yao et al.)"
 description: ReAct establishes the foundational agent loop by having an LLM alternate free-form reasoning traces with task actions whose observations feed back into further reasoning.

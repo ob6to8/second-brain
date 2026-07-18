@@ -1,5 +1,5 @@
 ---
-id: sb:266c5e
+id: em:266c5e
 type: reference
 title: "A brief history of KV cache compression (Martin Alderson)"
 description: Alderson traces how KV-cache memory per token fell roughly 100x since 2017 through a sequence of architectural compressions (MQA, GQA, sliding window, MLA, quantization, linear-attention hybrids), arguing the memory wall was solved with math rather than more VRAM.

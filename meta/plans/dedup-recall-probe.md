@@ -23,13 +23,13 @@ attribution:
 **The instrument (steps 1–4, 6):**
 
 - `meta/evals/` genre + [`meta/evals/dedup-probe.md`](/meta/evals/dedup-probe.md) —
-  the gold set, seeded from the vector-DB analysis's 14 probes, re-keyed to `sb:`
+  the gold set, seeded from the vector-DB analysis's 14 probes, re-keyed to `em:`
   ids, with `target`/`negative`/`quarantine` bands and synonym-expansion variants.
-- [`SecondBrain.DedupProbe`](/lib/second_brain/dedup_probe.ex) +
+- [`ElixirMind.DedupProbe`](/lib/elixir_mind/dedup_probe.ex) +
   [`mix brain.dedup_probe`](/lib/mix/tasks/brain.dedup_probe.ex) — parser, lexical
   backend, scorer, plain + `--expanded` modes, baseline delta, and
   `--update-baseline` (the baseline is generated, not hand-kept); pinned by
-  [`test/second_brain/dedup_probe_test.exs`](/test/second_brain/dedup_probe_test.exs).
+  [`test/elixir_mind/dedup_probe_test.exs`](/test/elixir_mind/dedup_probe_test.exs).
 - First `## Baseline`: **plain 3/10, expanded 10/10** — the offline measurement of
   the recall the tier-1 synonym-expansion change recovers. Non-gating CI report step.
 
@@ -83,14 +83,14 @@ instrument.
    probe time (agent-in-the-loop measurement is deferred; see scope boundaries).
 2. **The gold set is a markdown document, not a data file:**
    `meta/evals/dedup-probe.md` — a prose-bearing, versioned doc in the governance
-   namespace (no `sb:` id, like plans and threads), whose table the task parses.
+   namespace (no `em:` id, like plans and threads), whose table the task parses.
    Markdown-as-substrate matches the rest of the bundle, and the eval-suitability
    analysis requires the gold set to carry adjudication notes and its own
    provenance — a bare data file can't.
    **This creates a new `meta/evals/` directory; accepting this plan ratifies it.**
 3. **Rows are id-keyed with acceptable-id *sets*.** Each row:
    `| query | acceptable ids | band | note |` where *acceptable ids* is one or more
-   `sb:` ids (query-relativity: several concepts can legitimately answer one
+   `em:` ids (query-relativity: several concepts can legitimately answer one
    phrasing), *band* labels the row's role (see 4), and *note* records the
    adjudication reasoning. Ids survive renames; concept **merges** flag the row for
    human re-adjudication rather than mechanical rewriting.
@@ -142,13 +142,13 @@ instrument.
   their baselines; distinct from `analysis` — an eval is a *repeatable instrument*,
   an analysis is a *point-in-time judgment*).
 - `meta/evals/dedup-probe.md` — purpose prose; the gold table (seeded with the 14
-  probes from the vector-DB analysis, re-keyed to `sb:` ids); a `## Baseline`
+  probes from the vector-DB analysis, re-keyed to `em:` ids); a `## Baseline`
   section; adjudication history notes.
 - `lib/mix/tasks/brain.dedup_probe.ex` — thin task wrapper, matching the existing
   pattern.
-- `lib/second_brain/dedup_probe.ex` — parse gold doc, run backend, score, render
+- `lib/elixir_mind/dedup_probe.ex` — parse gold doc, run backend, score, render
   report; pure core so the scenario test can pin it.
-- `test/second_brain/dedup_probe_test.exs` — fixture gold doc + fixture corpus;
+- `test/elixir_mind/dedup_probe_test.exs` — fixture gold doc + fixture corpus;
   asserts parsing, hit/miss logic, band handling (negatives ignored, quarantine
   reported-not-scored), `--expanded` semantics, and baseline-delta rendering.
 - One line in `.github/workflows/ci.yml` (non-gating report step) and a

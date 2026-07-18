@@ -1,5 +1,5 @@
 ---
-id: sb:cd979f
+id: em:cd979f
 type: concept
 title: decision graph
 description: A persistent DAG of an agent system's reasoning — goals, decisions, options, outcomes as typed nodes and edges — kept so later sessions can recall what was tried, what was rejected, and why; Loomkin's core memory structure.

@@ -44,7 +44,7 @@ While being fully aware that we recently removed the log document from the repo,
 
 ## Assistant
 
-<routes ref="/meta/plans/derived-dev-history.md lib/second_brain/dev_history.ex">
+<routes ref="/meta/plans/derived-dev-history.md lib/elixir_mind/dev_history.ex">
 The retired hand-kept log doesn't rule this out — what was retired was *hand-written* history; generated artifacts (like `meta/registry.md` and `CLAUDE.md`) are explicitly fine. So the natural shape is a **derived** dev-history doc compiled from the merge commits on `main` (`git log --first-parent`), which is exactly the per-PR record the merge-strategy policy preserves. Let me look at the existing tooling to see how to build this consistently.
 
 This is very buildable, and there's already a matching pattern in the repo: generated artifacts derived from canonical sources (`registry.md`, `lineage.md`). Here the canonical source is the **git merge history itself** — `git log --first-parent main` gives exactly one line per PR, and each merge's branch commits give the bullet points. No hand-crafting; a `mix brain.dev_history` task derives the whole doc. Let me check the remaining details (CI checkout depth, verifier exclusions, non-merge commits on main).
@@ -54,7 +54,7 @@ The history has three eras I need to handle: true merge commits ("Merge pull req
 Everything's in place. The design writes itself from the repo's own conventions: a generated `meta/dev-history.md` (same discipline as `registry.md` and `lineage.md`), derived entirely from the merge graph — the very thing the merge-strategy policy preserves as the provenance layer. No hand-crafting; `mix brain.dev_history` re-derives it, and the Pages build regenerates it at deploy so the live site page is always current. Building it now.
 </routes>
 
-<routes ref="/meta/plans/derived-dev-history.md lib/second_brain/dev_history.ex meta/dev-history.md">
+<routes ref="/meta/plans/derived-dev-history.md lib/elixir_mind/dev_history.ex meta/dev-history.md">
 Yes — and it's built and pushed to `claude/dev-history-log-0nfdtf`. The key insight is that the craft of the old log isn't needed, because the data already exists in exactly the shape you want: the true-merge policy means `git log --first-parent` reads as one commit per PR, and each merge keeps its branch's deliberately-messaged commits reachable forever. So the dev history is now a **derived artifact**, on the same discipline as `CLAUDE.md` and `meta/registry.md` — never hand-written, always regenerable.
 
 What shipped:
