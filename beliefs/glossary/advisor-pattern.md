@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, agents, llm-orchestration, cost-optimization, anthropic, advisor-tool]
 sense: common
-timestamp: 2026-07-16
+timestamp: 2026-07-18
 attribution:
   when: 2026-07-13T12:00:00Z
   channel: glossary
@@ -30,6 +30,6 @@ dispatching parallel cheap workers) and, at a different layer entirely, from
 [mixture-of-experts](/beliefs/glossary/mixture-of-experts.md) — a model-internal routing
 architecture, not application-level orchestration.
 
-*Seen in:* [when-to-roll-your-own-advisor-harness analysis](/meta/analysis/when-to-roll-your-own-advisor-harness.md), [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md)
+*Seen in:* [when-to-roll-your-own-advisor-harness analysis](/meta/analysis/when-to-roll-your-own-advisor-harness.md), [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md), [2026-07-18 observer-subagent-pattern intake](/meta/threads/2026-07-18-observer-subagent-pattern-intake.md)
 
-*See also:* [model cascade](/beliefs/glossary/model-cascade.md), [harness](/beliefs/glossary/harness.md), [speculative decoding](/beliefs/glossary/speculative-decoding.md)
+*See also:* [model cascade](/beliefs/glossary/model-cascade.md), [harness](/beliefs/glossary/harness.md), [speculative decoding](/beliefs/glossary/speculative-decoding.md), [observer agent](/beliefs/glossary/observer-agent.md)

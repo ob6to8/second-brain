@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, Claude Code session"
 verified: false
 sense: common
 tags: [supervision, autonomy, interface, management]
-timestamp: 2026-07-17
+timestamp: 2026-07-18
 attribution:
   when: 2026-07-17T18:24:00Z
   channel: glossary
@@ -27,6 +27,6 @@ where the cases needing judgment land. It presupposes a system calibrated to esc
 ambiguous rather than plow through it, since an agent that never asks for a human is
 merely confident, not trustworthy.
 
-*Seen in:* [tier-3-4-interface-and-trust-determination](/meta/analysis/tier-3-4-interface-and-trust-determination.md), [2026-07-17 tier-3/4 interface and trust](/meta/threads/2026-07-17-tier-3-4-interface-and-trust-with-adoption-intake.md)
+*Seen in:* [tier-3-4-interface-and-trust-determination](/meta/analysis/tier-3-4-interface-and-trust-determination.md), [2026-07-17 tier-3/4 interface and trust](/meta/threads/2026-07-17-tier-3-4-interface-and-trust-with-adoption-intake.md), [2026-07-18 observer-subagent-pattern intake](/meta/threads/2026-07-18-observer-subagent-pattern-intake.md)
 
-*See also:* [escape rate](/beliefs/glossary/escape-rate.md), [maturity model](/beliefs/glossary/maturity-model.md)
+*See also:* [escape rate](/beliefs/glossary/escape-rate.md), [maturity model](/beliefs/glossary/maturity-model.md), [observer agent](/beliefs/glossary/observer-agent.md)
