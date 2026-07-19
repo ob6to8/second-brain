@@ -5,6 +5,7 @@ description: The operator framed the repo as two conflated concerns — the know
 provenance: "Claude Code session (Claude Fable), 2026-07-15; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, architecture, separation-of-concerns, okf, tooling, plan]
 timestamp: 2026-07-15
+session: https://claude.ai/code/session_01X53jhQ3j7pvGG4VgiC6CTs
 pr: 100
 ---
 

@@ -5,6 +5,7 @@ description: Executed the operator-ratified root reorganization — new knowledg
 provenance: "Claude Code session (Claude Fable 5), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, taxonomy, reorganization, knowledge, beliefs, merge]
 timestamp: 2026-07-12
+session: https://claude.ai/code/session_01ETv8Y7cfuRjWkhEfV5F5D2
 pr: 58
 ---
 

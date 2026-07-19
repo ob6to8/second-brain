@@ -5,6 +5,7 @@ description: Generated the 2026-07-12 inbox digest, then across the session desi
 provenance: "Claude Code session (claude-opus-4-8), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, news, auto-intake, intake, dedup, glossary, cognitive-debt, ai-industry]
 timestamp: 2026-07-12
+session: https://claude.ai/code/session_01JFSPiy5Jr6e7xXxMbJFyr9
 pr: 53
 ---
 

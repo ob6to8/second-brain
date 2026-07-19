@@ -5,6 +5,7 @@ description: Moved the session-init open-work appraisal off the SessionStart hoo
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, priorities, skills, hooks, session-init, tooling]
 timestamp: 2026-07-12
+session: https://claude.ai/code/session_01LLFfnKXnCGFDUnA5vakBJk
 pr: 57
 ---
 

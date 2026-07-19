@@ -273,6 +273,50 @@ the session ends.
 
 _Source: [`meta/policy/persist-plans.md`](/meta/policy/persist-plans.md)_
 
+**Two records of a change sit in different tenses.** A `type: plan`
+([persist-plans](/meta/policy/persist-plans.md)) is **prospective** — decisions
+and their rationale written *before* the work, so a session that lacks the
+context can execute it. A thread doc
+([session-capture](/meta/policy/session-capture.md)) is **retrospective** — the
+frozen record of what a session *actually did*, produced at its close. The
+commit graph ([merge-strategy](/meta/policy/merge-strategy.md)) is the third
+layer: the durable *what-changed*, cited by SHA. Choosing between "persist a
+plan" and "just do it" is choosing whether the work needs the prospective
+artifact or whether the retrospective ones suffice.
+
+**Default: execute in-session; the commit and the capture are the record.** When
+this session holds the context and can finish the work, a plan doc is a
+redundant third copy of decisions the commit message and thread render already
+carry. Persisting one then is pure overhead, and worse, it *invites* a future
+session to re-derive settled work.
+
+**Escalate to a prospective plan when any of these hold:**
+
+- **Deferred.** The work will not run in this session. Whatever context justified
+  it goes cold the moment the session ends, so the decisions must be written down
+  to survive — this is the core [persist-plans](/meta/policy/persist-plans.md)
+  case.
+- **Cold-context handoff.** The work will be executed by a *fresh* agent that
+  does not share this session's reasoning. A plan is the context-transfer
+  vehicle; without it the fresh agent restarts the thinking (and may re-land on a
+  worse answer).
+- **Cross-session build order.** The work is large enough to span sessions and
+  needs an explicit sequence — a new subsystem, a genre or policy change, a
+  multi-step migration — where the *order* itself is a decision worth recording.
+- **Substantial standalone design.** The decisions and alternatives are weighty
+  enough to deserve a first-class, queryable doc rather than being buried in a
+  thread render, *even if* the work also runs now.
+
+**The discriminator is context-transfer, not effort.** A mechanical task is not
+plan-worthy merely because it touches many files, once its approach is decided
+and validated in-session — hand a fresh agent a fully-solved task and the plan
+adds nothing but a re-derivation risk. Conversely, a small but *deferred* or
+*cold-handoff* decision is plan-worthy precisely because its context will not
+survive. Ask "will the executor share this session's context?" — if yes, execute
+and let the commit and capture record it; if no, persist the plan first.
+
+_Source: [`meta/policy/plan-vs-capture.md`](/meta/policy/plan-vs-capture.md)_
+
 **Merge with a true merge commit; never squash or rebase.** The commit graph is
 a **provenance layer**, not an implementation detail: session-authored commits
 carry the session trailer linking them to the agent session that produced them,
@@ -610,8 +654,14 @@ record so it can be resumed from the record instead of from memory.
   by the operator logged into claude.ai, unreadable by agents), and deletable —
   it complements `pr:`, never substitutes for it. Write-once at capture, never
   rewritten. When the variable is unset (local-terminal sessions have no cloud
-  transcript), the key is **omitted** — never invented, never guessed. Threads
-  captured before this rule simply lack the key; do not backfill.
+  transcript), the key is **omitted** — never invented, never guessed.
+  Threads captured before this rule were backfilled **only from recorded
+  evidence** — a thread's own capture commit carries the `Claude-Session:`
+  trailer, and a squash-era thread whose trailer was lost recovers the URL from
+  its PR body (found via the thread's `pr:` anchor). A thread predating the
+  trailer feature entirely, or produced by a local-terminal session, has no
+  recorded URL and correctly stays bare. Backfill from recorded evidence only;
+  never infer or guess a URL for a thread that lacks one.
 - **Freeze then tag.** Because capture runs once at close, the body is frozen
   when written; tagging and ledger upkeep are one finalization motion over that
   frozen body, not a per-turn rewrite.

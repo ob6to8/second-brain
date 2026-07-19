@@ -68,8 +68,14 @@ record so it can be resumed from the record instead of from memory.
   by the operator logged into claude.ai, unreadable by agents), and deletable —
   it complements `pr:`, never substitutes for it. Write-once at capture, never
   rewritten. When the variable is unset (local-terminal sessions have no cloud
-  transcript), the key is **omitted** — never invented, never guessed. Threads
-  captured before this rule simply lack the key; do not backfill.
+  transcript), the key is **omitted** — never invented, never guessed.
+  Threads captured before this rule were backfilled **only from recorded
+  evidence** — a thread's own capture commit carries the `Claude-Session:`
+  trailer, and a squash-era thread whose trailer was lost recovers the URL from
+  its PR body (found via the thread's `pr:` anchor). A thread predating the
+  trailer feature entirely, or produced by a local-terminal session, has no
+  recorded URL and correctly stays bare. Backfill from recorded evidence only;
+  never infer or guess a URL for a thread that lacks one.
 - **Freeze then tag.** Because capture runs once at close, the body is frozen
   when written; tagging and ledger upkeep are one finalization motion over that
   frozen body, not a per-turn rewrite.

@@ -5,6 +5,7 @@ description: Assessed the operator's idea of decomposing artifacts into belief D
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-11; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, epistemics, belief-decomposition, prior-art, glossary, argumentation, knowledge-representation, evals]
 timestamp: 2026-07-11
+session: https://claude.ai/code/session_01YFjcju6GNnQgLsJ5EQvdJP
 pr: 73
 ---
 
