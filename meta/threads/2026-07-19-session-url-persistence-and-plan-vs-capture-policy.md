@@ -4,6 +4,7 @@ title: 2026-07-19-session-url-persistence-and-plan-vs-capture-policy
 description: Compared the web-docs transcript-URL technique to the repo's /capture strategy, established that cloud transcripts persist server-side but are account-bound and deletable, then ratified three governance changes — a merge-strategy guard on the harness-injected session trailer, a session: frontmatter stamp on thread docs (backfilled into 70 existing threads from recorded evidence), and a new plan-vs-capture policy.
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-19; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 session: https://claude.ai/code/session_01FBDre38cUCeGRfbiBTsDfw
+pr: 111
 tags: [meta, thread, session-capture, provenance, git-trailer, policy, backfill, plan-vs-capture]
 timestamp: 2026-07-19
 ---
