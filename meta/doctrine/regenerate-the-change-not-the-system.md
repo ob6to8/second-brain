@@ -88,6 +88,31 @@ Four commitments follow, and they are the direction:
   different jobs. The first is licensed by the equivalence-class frame; the second
   is a replacement and must justify itself as one.
 
+## Sibling directions — the code-as-derived-artifact cluster
+
+This doctrine is one of three 2026-07-20 facets of a single question — *if code is
+an agent-generated, derived artifact, what must the human and the process still
+guarantee?* — each a child of
+[the engineer as orchestrator](/meta/doctrine/engineer-as-orchestrator.md):
+
+- [Intent is the source; opacity is earned by the oracle](/meta/doctrine/intent-is-the-source.md)
+  answers *what is authoritative* — intent, with code opaque to the degree a
+  mechanical oracle covers its behavior (the vertical companion this doctrine
+  already positions against).
+- **This doctrine** answers *how to change it safely* — regenerate the change, not
+  the system, because a live artifact accretes unstated load-bearing properties.
+- [The operator must reconstruct a mental model of code they did not write](/meta/doctrine/comprehension-of-generated-code.md)
+  answers *whether the human can still understand it*, and the two meet directly:
+  the **emergent load-bearing set** this doctrine says a rebuild must not discard is
+  part of the very mental model that doctrine says the process must produce — a
+  from-scratch regeneration that silently changes the unstated surface also
+  invalidates the operator's model of it.
+
+Preserving the *why* behind these changes — the causal chain a mental model's causal
+half needs — is the subject of the
+[decision-records analysis](/meta/analysis/decision-records-as-history-abstraction.md)
+and its [decision-graph plan](/meta/plans/decision-extraction-and-compiled-decision-graph.md).
+
 ## Standing against this direction
 
 The argument that produced this direction — including the point where the

@@ -10,7 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, localized-code-conversation session"
   why: "names the standing intention the capture/routing/tagging apparatus instrumentally serves, so plans and policies for operator comprehension have a direction to cite"
-  from: [/meta/threads/2026-07-20-localized-code-conversation-and-comprehension-doctrine.md]
+  from: [/meta/threads/2026-07-20-localized-code-conversation-and-comprehension-doctrine.md, /meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md]
 ---
 
 # The operator must be able to reconstruct a mental model of code they did not write
@@ -82,6 +82,31 @@ the human comprehends what the agents produced. The orchestrator doctrine names
 *what the human does*; this one names *the comprehension without which they cannot
 do it*. Orchestration at broad scope is only real if the scope is understood, and
 understanding of generated code is exactly what no longer comes for free.
+
+## Sibling directions — the code-as-derived-artifact cluster
+
+This doctrine is one of three 2026-07-20 facets of a single question — *if code is
+an agent-generated, derived artifact, what must the human and the process still
+guarantee?* — each a child of
+[the engineer as orchestrator](/meta/doctrine/engineer-as-orchestrator.md):
+
+- [Intent is the source; opacity is earned by the oracle](/meta/doctrine/intent-is-the-source.md)
+  answers *what is authoritative*, and bounds this doctrine from the other side:
+  earned opacity says when the operator *need not* read generated code; this
+  doctrine holds they must stay *able* to reconstruct a model of it.
+- [Regenerate the change, not the system](/meta/doctrine/regenerate-the-change-not-the-system.md)
+  answers *how to change it safely*. Its **emergent load-bearing set** — the
+  unstated properties a live artifact accretes — is part of the mental model this
+  doctrine requires the process to produce; a from-scratch rebuild that discards the
+  one invalidates the other.
+- **This doctrine** answers *whether the human can still understand it*, naming the
+  comprehension without which the orchestrator cannot evaluate.
+
+The **causal** half of the model this doctrine requires — *why this and not the
+alternative* — is exactly what the
+[decision-records analysis](/meta/analysis/decision-records-as-history-abstraction.md)
+and its [decision-graph plan](/meta/plans/decision-extraction-and-compiled-decision-graph.md)
+propose to preserve as a navigable structure.
 
 ## Standing against this direction
 

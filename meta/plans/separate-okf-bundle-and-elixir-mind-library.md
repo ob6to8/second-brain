@@ -9,7 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, bundle/library separation planning session"
   why: "persists the operator's two-concerns framing and the doc-first delineation path per the persist-plans policy, so the boundary decision and the deferred spin-out survive the session"
-  from: [/meta/threads/2026-07-15-bundle-library-separation-plan.md]
+  from: [/meta/threads/2026-07-15-bundle-library-separation-plan.md, /meta/threads/2026-07-17-library-spin-out-spec.md]
 tags: [meta, plan, architecture, separation-of-concerns, okf, tooling, governance]
 timestamp: 2026-07-15
 ---
@@ -122,8 +122,12 @@ session, no code changes):
   reserved filenames. The oracle: the library compiles and its tests pass
   against a fixture bundle that is *not* this one.
 
-**Phase 4 — spin-out** (deferred; graduates into its own plan when built, per
-the persist-plans policy):
+**Phase 4 — spin-out** (deferred; graduated into its own plan 2026-07-17 —
+see
+[library-spin-out-and-dependency-distribution](/meta/plans/library-spin-out-and-dependency-distribution.md),
+which specs the target shape, decides the dependency mechanism weighed in open
+question 4 below (git-tag dep first, Hex when stable), and records why the
+bundle keeps this repo while the code leaves):
 
 - New repo for the library; a short demo OKF bundle inside it for tests and
   demonstration purposes only; this repo consumes the library as a dependency
@@ -149,7 +153,10 @@ the persist-plans policy):
    and hence the library; the operator's framing ("the remaining OKF
    collection I would maintain") suggests the library carries the name
    outward and the collection could keep it or take its own. Operator call at
-   spin-out time.
+   spin-out time. **Resolved 2026-07-17** (in the
+   [spin-out plan](/meta/plans/library-spin-out-and-dependency-distribution.md)):
+   this repo keeps **elixir-mind**; the library spins out as
+   **composable-beliefs-3**.
 2. **Where does the schema spec live post-spin-out?** In the library repo (it
    defines and enforces it) with the bundle citing a version, or duplicated as
    a governance doc here? Leaning library-side with a version pin here.

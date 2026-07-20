@@ -49,6 +49,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:068a32` | [beliefs/glossary/bm25](/beliefs/glossary/bm25.md) | concept | false |
 | `em:7c6ca8` | [beliefs/glossary/branch-transplant](/beliefs/glossary/branch-transplant.md) | concept | false |
 | `em:79ca74` | [beliefs/glossary/bundle-absolute-link](/beliefs/glossary/bundle-absolute-link.md) | concept | false |
+| `em:ad34c1` | [beliefs/glossary/bundle-manifest](/beliefs/glossary/bundle-manifest.md) | concept | false |
 | `em:ee8dfd` | [beliefs/glossary/candidate-feed](/beliefs/glossary/candidate-feed.md) | concept | false |
 | `em:50efa2` | [beliefs/glossary/capability-matched-model-selection](/beliefs/glossary/capability-matched-model-selection.md) | concept | false |
 | `em:0568b3` | [beliefs/glossary/capture-problem](/beliefs/glossary/capture-problem.md) | concept | false |
@@ -133,6 +134,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:13607e` | [beliefs/glossary/figure-ground-inversion](/beliefs/glossary/figure-ground-inversion.md) | concept | false |
 | `em:d818b8` | [beliefs/glossary/first-order-logic](/beliefs/glossary/first-order-logic.md) | concept | false |
 | `em:894631` | [beliefs/glossary/first-parent-history](/beliefs/glossary/first-parent-history.md) | concept | false |
+| `em:7f58e2` | [beliefs/glossary/fixture-bundle](/beliefs/glossary/fixture-bundle.md) | concept | false |
 | `em:950a55` | [beliefs/glossary/flow-touch-sequence](/beliefs/glossary/flow-touch-sequence.md) | concept | false |
 | `em:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
 | `em:27e7a7` | [beliefs/glossary/fresh-context-execution](/beliefs/glossary/fresh-context-execution.md) | concept | false |
@@ -144,6 +146,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:8b48c7` | [beliefs/glossary/generated-artifact](/beliefs/glossary/generated-artifact.md) | concept | false |
 | `em:10e9cb` | [beliefs/glossary/generative-model](/beliefs/glossary/generative-model.md) | concept | false |
 | `em:d94806` | [beliefs/glossary/genserver](/beliefs/glossary/genserver.md) | concept | false |
+| `em:15fa92` | [beliefs/glossary/git-dependency](/beliefs/glossary/git-dependency.md) | concept | false |
+| `em:8272bc` | [beliefs/glossary/git-filter-repo](/beliefs/glossary/git-filter-repo.md) | concept | false |
 | `em:816d17` | [beliefs/glossary/git-trailer](/beliefs/glossary/git-trailer.md) | concept | false |
 | `em:184bae` | [beliefs/glossary/git-worktree](/beliefs/glossary/git-worktree.md) | concept | false |
 | `em:680062` | [beliefs/glossary/github-flavored-markdown](/beliefs/glossary/github-flavored-markdown.md) | concept | false |
@@ -156,6 +160,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fe0ebd` | [beliefs/glossary/grounded-extension](/beliefs/glossary/grounded-extension.md) | concept | false |
 | `em:8c4c5c` | [beliefs/glossary/grounding-tier](/beliefs/glossary/grounding-tier.md) | concept | false |
 | `em:ac0e23` | [beliefs/glossary/harness](/beliefs/glossary/harness.md) | concept | false |
+| `em:11642d` | [beliefs/glossary/hex](/beliefs/glossary/hex.md) | concept | false |
 | `em:183eaa` | [beliefs/glossary/holdout-scenario](/beliefs/glossary/holdout-scenario.md) | concept | false |
 | `em:c12a2a` | [beliefs/glossary/hot-code-loading](/beliefs/glossary/hot-code-loading.md) | concept | false |
 | `em:00e798` | [beliefs/glossary/hot-module-reload](/beliefs/glossary/hot-module-reload.md) | concept | false |
@@ -182,6 +187,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:01be3a` | [beliefs/glossary/librarian-write-broker](/beliefs/glossary/librarian-write-broker.md) | concept | false |
 | `em:f97e44` | [beliefs/glossary/lineage](/beliefs/glossary/lineage.md) | concept | false |
 | `em:7ecfb6` | [beliefs/glossary/llm-as-judge](/beliefs/glossary/llm-as-judge.md) | concept | false |
+| `em:6a6b46` | [beliefs/glossary/lockfile](/beliefs/glossary/lockfile.md) | concept | false |
 | `em:720742` | [beliefs/glossary/loopback-daemon](/beliefs/glossary/loopback-daemon.md) | concept | false |
 | `em:5554e8` | [beliefs/glossary/lora](/beliefs/glossary/lora.md) | concept | false |
 | `em:19d8db` | [beliefs/glossary/macro](/beliefs/glossary/macro.md) | concept | false |
@@ -247,6 +253,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:4c3f16` | [beliefs/glossary/research-spike](/beliefs/glossary/research-spike.md) | concept | false |
 | `em:96a610` | [beliefs/glossary/residual-fragmentation](/beliefs/glossary/residual-fragmentation.md) | concept | false |
 | `em:fd9873` | [beliefs/glossary/restricted-boltzmann-machine](/beliefs/glossary/restricted-boltzmann-machine.md) | concept | false |
+| `em:2bcd9a` | [beliefs/glossary/reusable-workflow](/beliefs/glossary/reusable-workflow.md) | concept | false |
 | `em:490d9d` | [beliefs/glossary/round-trip](/beliefs/glossary/round-trip.md) | concept | false |
 | `em:e142e6` | [beliefs/glossary/route-tag](/beliefs/glossary/route-tag.md) | concept | false |
 | `em:0a43ba` | [beliefs/glossary/route-tag-sink](/beliefs/glossary/route-tag-sink.md) | concept | false |
