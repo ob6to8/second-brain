@@ -179,6 +179,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d49345` | [beliefs/glossary/markdown-renderer](/beliefs/glossary/markdown-renderer.md) | concept | false |
 | `em:15fe73` | [beliefs/glossary/materialize](/beliefs/glossary/materialize.md) | concept | false |
 | `em:9be927` | [beliefs/glossary/maturity-model](/beliefs/glossary/maturity-model.md) | concept | false |
+| `em:45649c` | [beliefs/glossary/mental-model](/beliefs/glossary/mental-model.md) | concept | false |
 | `em:5fdc55` | [beliefs/glossary/methodology-type](/beliefs/glossary/methodology-type.md) | concept | false |
 | `em:577155` | [beliefs/glossary/minimal-inconsistent-subset](/beliefs/glossary/minimal-inconsistent-subset.md) | concept | false |
 | `em:102785` | [beliefs/glossary/mix-task](/beliefs/glossary/mix-task.md) | concept | false |
@@ -259,6 +260,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:7c0b1d` | [beliefs/glossary/skill-to-skill-delegation](/beliefs/glossary/skill-to-skill-delegation.md) | concept | false |
 | `em:ceca0b` | [beliefs/glossary/software-factory](/beliefs/glossary/software-factory.md) | concept | false |
 | `em:2b6117` | [beliefs/glossary/soundness-and-completeness](/beliefs/glossary/soundness-and-completeness.md) | concept | false |
+| `em:1f7dca` | [beliefs/glossary/source-of-truth](/beliefs/glossary/source-of-truth.md) | concept | false |
 | `em:38d006` | [beliefs/glossary/speculative-decoding](/beliefs/glossary/speculative-decoding.md) | concept | false |
 | `em:c13e28` | [beliefs/glossary/spin-out](/beliefs/glossary/spin-out.md) | concept | false |
 | `em:c67f48` | [beliefs/glossary/spurious-warning](/beliefs/glossary/spurious-warning.md) | concept | false |
