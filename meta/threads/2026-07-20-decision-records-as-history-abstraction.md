@@ -5,6 +5,7 @@ description: Operator proposed that all development history reduces to a series 
 provenance: "Claude Code session, 2026-07-20; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, decision-records, design-rationale, session-capture, routing, agent-memory, analysis, plan]
 timestamp: 2026-07-20
+pr: 113
 ---
 
 # 2026-07-20-decision-records-as-history-abstraction
