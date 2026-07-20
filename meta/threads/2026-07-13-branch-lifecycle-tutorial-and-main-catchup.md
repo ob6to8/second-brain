@@ -5,6 +5,7 @@ description: Continuation of the create-pull-request session — merged PR #32, 
 provenance: "Claude Code session (Claude Opus 4.8, with a brief Sonnet 5 interlude), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, git, branches, pull-requests, tutorial, merge]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_01ULtRSZaxCbFw47DM5doom7
 pr: 77
 ---
 

@@ -5,6 +5,7 @@ description: Assessed what Elixir's AST and macro capabilities imply for LLM int
 provenance: "Claude Code session (Claude Fable), 2026-07-14; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, elixir, ast, macros, metaprogramming, dsl, jido, beam, loomkin, agents, harness, analysis]
 timestamp: 2026-07-14
+session: https://claude.ai/code/session_01Ri5inb6qNpH82CqNhi77zk
 pr: 85
 ---
 

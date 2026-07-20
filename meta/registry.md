@@ -131,6 +131,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:8b48c7` | [beliefs/glossary/generated-artifact](/beliefs/glossary/generated-artifact.md) | concept | false |
 | `em:10e9cb` | [beliefs/glossary/generative-model](/beliefs/glossary/generative-model.md) | concept | false |
 | `em:d94806` | [beliefs/glossary/genserver](/beliefs/glossary/genserver.md) | concept | false |
+| `em:816d17` | [beliefs/glossary/git-trailer](/beliefs/glossary/git-trailer.md) | concept | false |
 | `em:184bae` | [beliefs/glossary/git-worktree](/beliefs/glossary/git-worktree.md) | concept | false |
 | `em:680062` | [beliefs/glossary/github-flavored-markdown](/beliefs/glossary/github-flavored-markdown.md) | concept | false |
 | `em:7c640a` | [beliefs/glossary/github-pages](/beliefs/glossary/github-pages.md) | concept | false |
@@ -243,6 +244,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:425356` | [beliefs/glossary/separation-of-concerns](/beliefs/glossary/separation-of-concerns.md) | concept | false |
 | `em:243d56` | [beliefs/glossary/session-capture](/beliefs/glossary/session-capture.md) | concept | false |
 | `em:6f2442` | [beliefs/glossary/session-init-digest](/beliefs/glossary/session-init-digest.md) | concept | false |
+| `em:4b1d6d` | [beliefs/glossary/session-transcript](/beliefs/glossary/session-transcript.md) | concept | false |
 | `em:71f38a` | [beliefs/glossary/sessionstart-hook](/beliefs/glossary/sessionstart-hook.md) | concept | false |
 | `em:7580df` | [beliefs/glossary/shallow-clone](/beliefs/glossary/shallow-clone.md) | concept | false |
 | `em:eacc3f` | [beliefs/glossary/shared-state-dual-interfaces](/beliefs/glossary/shared-state-dual-interfaces.md) | concept | false |
@@ -265,6 +267,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:bb2968` | [beliefs/glossary/strand](/beliefs/glossary/strand.md) | concept | false |
 | `em:ea95e4` | [beliefs/glossary/supersession](/beliefs/glossary/supersession.md) | concept | false |
 | `em:40133e` | [beliefs/glossary/synonym-expansion](/beliefs/glossary/synonym-expansion.md) | concept | false |
+| `em:f5710f` | [beliefs/glossary/teleport](/beliefs/glossary/teleport.md) | concept | false |
 | `em:d2fd32` | [beliefs/glossary/terminal-emulator](/beliefs/glossary/terminal-emulator.md) | concept | false |
 | `em:3a30cd` | [beliefs/glossary/terminal-multiplexer](/beliefs/glossary/terminal-multiplexer.md) | concept | false |
 | `em:3d4be4` | [beliefs/glossary/test-oracle](/beliefs/glossary/test-oracle.md) | concept | false |

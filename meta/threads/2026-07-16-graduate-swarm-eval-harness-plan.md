@@ -5,6 +5,7 @@ description: The post-PR continuation of the Inkling/BEAM spike session — merg
 provenance: "Claude Code session (Claude Fable), 2026-07-16; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, evals, agents, swarm, plans, graduation, inkling, beam, merge]
 timestamp: 2026-07-16
+session: https://claude.ai/code/session_01HPyhA5S6pA3cra7nHhxnB7
 pr: 105
 ---
 
