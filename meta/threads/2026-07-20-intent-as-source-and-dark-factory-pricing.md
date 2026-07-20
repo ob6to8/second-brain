@@ -5,6 +5,7 @@ description: Assessed the operator's proposal that code — and the implementati
 provenance: "Claude Code session (Claude Fable 5), 2026-07-20; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, intent-as-source, doctrine, dark-factory, software-factory, oracles, verification, regeneration]
 timestamp: 2026-07-20
+pr: 112
 ---
 
 # 2026-07-20-intent-as-source-and-dark-factory-pricing
