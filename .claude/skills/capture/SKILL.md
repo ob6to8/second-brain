@@ -37,6 +37,7 @@ description: <one sentence: what the session covered and where it landed>
 provenance: "Claude Code session (<model name(s)>), <date>; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, <topic tags>]
 timestamp: <ISO 8601 date>
+session: <https://claude.ai/code/session_...>  # cloud sessions only; omit when unavailable
 # pr: <N>  ← added later by /create-pull-request once the PR is opened; not set here
 ```
 
@@ -45,6 +46,20 @@ timestamp: <ISO 8601 date>
 opening the PR (the PR is the thread's durable anchor; the ephemeral branch is
 not recorded — see the
 [session-capture policy](/meta/policy/session-capture.md)).
+
+`/capture` **does** set `session:` — the cloud session's transcript URL, the
+escape hatch to the raw (undistilled) transcript. Derive it from the
+environment, converting the id's `cse_` prefix to the URL's `session_` prefix:
+
+```bash
+echo "https://claude.ai/code/${CLAUDE_CODE_REMOTE_SESSION_ID/#cse_/session_}"
+```
+
+Write-once: stamp it when the thread doc is first written and never rewrite it.
+If `CLAUDE_CODE_REMOTE_SESSION_ID` is unset (a local-terminal session — no
+cloud transcript exists), **omit the key entirely**; never guess or fabricate a
+URL. It is the weaker, account-bound anchor beside `pr:` — see the
+session-capture policy.
 
 ## Build the doc, in this order
 

@@ -5,6 +5,7 @@ description: Investigated how to formalize the fresh-context plan execution plan
 provenance: "Claude Code session (claude-opus-4-8), 2026-07-16; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, orchestration, workflow, agents, execution, fresh-context]
 timestamp: 2026-07-16
+session: https://claude.ai/code/session_01MQ4BPc934kT63Z2M8TbrLo
 pr: 99
 ---
 

@@ -5,6 +5,7 @@ description: Clarified the branch-lifecycle mechanics of Option B (fresh base af
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, git, branches, transplant, ports]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_01MHv6q9awxJjAZvjAzCe2JK
 pr: 82
 ---
 

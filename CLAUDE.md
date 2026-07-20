@@ -273,9 +273,54 @@ the session ends.
 
 _Source: [`meta/policy/persist-plans.md`](/meta/policy/persist-plans.md)_
 
+**Two records of a change sit in different tenses.** A `type: plan`
+([persist-plans](/meta/policy/persist-plans.md)) is **prospective** — decisions
+and their rationale written *before* the work, so a session that lacks the
+context can execute it. A thread doc
+([session-capture](/meta/policy/session-capture.md)) is **retrospective** — the
+frozen record of what a session *actually did*, produced at its close. The
+commit graph ([merge-strategy](/meta/policy/merge-strategy.md)) is the third
+layer: the durable *what-changed*, cited by SHA. Choosing between "persist a
+plan" and "just do it" is choosing whether the work needs the prospective
+artifact or whether the retrospective ones suffice.
+
+**Default: execute in-session; the commit and the capture are the record.** When
+this session holds the context and can finish the work, a plan doc is a
+redundant third copy of decisions the commit message and thread render already
+carry. Persisting one then is pure overhead, and worse, it *invites* a future
+session to re-derive settled work.
+
+**Escalate to a prospective plan when any of these hold:**
+
+- **Deferred.** The work will not run in this session. Whatever context justified
+  it goes cold the moment the session ends, so the decisions must be written down
+  to survive — this is the core [persist-plans](/meta/policy/persist-plans.md)
+  case.
+- **Cold-context handoff.** The work will be executed by a *fresh* agent that
+  does not share this session's reasoning. A plan is the context-transfer
+  vehicle; without it the fresh agent restarts the thinking (and may re-land on a
+  worse answer).
+- **Cross-session build order.** The work is large enough to span sessions and
+  needs an explicit sequence — a new subsystem, a genre or policy change, a
+  multi-step migration — where the *order* itself is a decision worth recording.
+- **Substantial standalone design.** The decisions and alternatives are weighty
+  enough to deserve a first-class, queryable doc rather than being buried in a
+  thread render, *even if* the work also runs now.
+
+**The discriminator is context-transfer, not effort.** A mechanical task is not
+plan-worthy merely because it touches many files, once its approach is decided
+and validated in-session — hand a fresh agent a fully-solved task and the plan
+adds nothing but a re-derivation risk. Conversely, a small but *deferred* or
+*cold-handoff* decision is plan-worthy precisely because its context will not
+survive. Ask "will the executor share this session's context?" — if yes, execute
+and let the commit and capture record it; if no, persist the plan first.
+
+_Source: [`meta/policy/plan-vs-capture.md`](/meta/policy/plan-vs-capture.md)_
+
 **Merge with a true merge commit; never squash or rebase.** The commit graph is
-a **provenance layer**, not an implementation detail: every commit carries the
-session trailer linking it to the agent session that produced it, durable docs
+a **provenance layer**, not an implementation detail: session-authored commits
+carry the session trailer linking them to the agent session that produced them,
+durable docs
 (plans, thread docs, logs) cite commits by SHA, and `git blame` is the answer to
 "which session changed this and why". A squash-merge lands a brand-new commit
 and abandons the originals — severing commit → session traceability and turning
@@ -290,6 +335,32 @@ cited SHAs stay reachable forever and the branch is safe to delete (see
   apply here — agent commits are already atomic and deliberately messaged.
 - For a one-line-per-PR reading of `main`, use `git log --first-parent` instead
   of flattening history at the merge boundary.
+
+**The session trailer is harness-injected — protect the setting.** The
+`Claude-Session: <url>` git trailer that links a commit to the cloud session
+that produced it is added automatically by Claude Code (v2.1.179+) to commits
+Claude authors in web sessions, and the PR body gets the session URL on its own
+line — no agent action required. Since v2.1.182 the setting
+`attribution.sessionUrl: false` disables both. One innocuous-looking line in a
+committed settings file would therefore silently sever commit → session
+traceability for every future session:
+
+- **Never set `attribution.sessionUrl` to `false`** in any committed settings
+  file (`.claude/settings.json` or similar). An agent that finds it set does not
+  "clean it up" in either direction silently — it surfaces the finding and
+  proposes removal to the operator.
+
+**Known coverage gaps — the trailer is strong evidence, not an invariant.**
+Three classes of commit legitimately lack the trailer: commits predating the
+feature's arrival in this repo (before 2026-07-07); auto-generated merge
+commits (`git merge` default messages, the GitHub merge button) — the harness
+injects the trailer only into commit messages Claude authors; and commits from
+local-terminal sessions, which are authored under the operator's local git
+identity and have no cloud transcript URL. For all of these the **PR is the
+fallback anchor**: the PR body carries the session URL, and the thread doc's
+`pr:` stamp (see the session-capture policy) links the session record back to
+how it landed. Do not treat a missing trailer as evidence a commit bypassed an
+agent session.
 
 _Source: [`meta/policy/merge-strategy.md`](/meta/policy/merge-strategy.md)_
 
@@ -571,6 +642,26 @@ record so it can be resumed from the record instead of from memory.
   and the pre-policy squash era left the original branch commits unreachable
   entirely — so the PR number is the only stable link from a thread back to how
   it landed. The branch name is deliberately **not** recorded.
+- **The thread also records its session (`session:`) — the full-fidelity escape
+  hatch.** At capture time, `/capture` stamps the cloud session's transcript URL
+  into the thread's frontmatter as `session: <url>`, derived from the
+  `CLAUDE_CODE_REMOTE_SESSION_ID` environment variable (the id's `cse_` prefix
+  becomes the URL's `session_` prefix:
+  `https://claude.ai/code/session_<tail>`). The thread doc is the *distilled*
+  record; the session URL points at the *raw* transcript on claude.ai — useful
+  precisely when the distillation turns out to have dropped something later
+  needed. It is deliberately the **weaker anchor**: account-bound (viewable only
+  by the operator logged into claude.ai, unreadable by agents), and deletable —
+  it complements `pr:`, never substitutes for it. Write-once at capture, never
+  rewritten. When the variable is unset (local-terminal sessions have no cloud
+  transcript), the key is **omitted** — never invented, never guessed.
+  Threads captured before this rule were backfilled **only from recorded
+  evidence** — a thread's own capture commit carries the `Claude-Session:`
+  trailer, and a squash-era thread whose trailer was lost recovers the URL from
+  its PR body (found via the thread's `pr:` anchor). A thread predating the
+  trailer feature entirely, or produced by a local-terminal session, has no
+  recorded URL and correctly stays bare. Backfill from recorded evidence only;
+  never infer or guess a URL for a thread that lacks one.
 - **Freeze then tag.** Because capture runs once at close, the body is frozen
   when written; tagging and ledger upkeep are one finalization motion over that
   frozen body, not a per-turn rewrite.

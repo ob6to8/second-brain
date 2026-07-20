@@ -408,6 +408,8 @@ Unlike `Registry.scan/1` this walks the governance namespaces too (`meta/`,
 
 - `check/1` — Run both warning families over the tree rooted at `root`.
 - `doc_paths/1` — All `.md` docs in scope (relative paths), sorted.
+- `internal_targets/1` — Internal markdown link targets in `body`, minus code spans/blocks and external/mailto/anchor/placeholder targets — the same set the resolution check walks. Raw targets (a `#fragment` may still be attached); normalize with `resolve_target/2`.
+- `resolve_target/2` — Normalize an internal link `target` found in `from_path` to a repo-relative path (leading `#fragment` dropped): bundle-absolute targets lose their leading `/`, relative ones resolve against the source doc's directory.
 
 
 ### `ElixirMind.Markdown`
@@ -436,6 +438,34 @@ result so the link works from the page's depth in the output tree. External URLs
 
 - `slug/1` — Slugify a heading the way GitHub does: downcase, drop punctuation other than spaces and hyphens, then turn spaces into hyphens. Used for in-page `#anchor` targets so bundle links like `[x](#grounding)` resolve.
 - `to_html/2` — Render a markdown `body` to an HTML fragment.
+
+
+### `ElixirMind.Orphans`
+
+`lib/elixir_mind/orphans.ex`
+
+Find docs with **no inbound internal link** — filed but never referenced from
+another doc's prose.
+
+An *inbound link* is an internal markdown link in some other doc that resolves
+to the candidate (extraction and normalization are reused from
+`ElixirMind.Links`, so this can't drift from the link-resolution check).
+
+Two scoping decisions make the default output meaningful rather than noisy:
+
+  * **`index.md` links don't count** by default. Every filed doc is listed in
+    its directory's `index.md`, so counting those listings as inbound links
+    would mask every real orphan. Pass `include_index: true` to count them.
+  * **Anchored-by-design namespaces are not candidates** by default:
+    `meta/threads/` (anchored by `pr:`) and `inbox/` (dated digests) are
+    unreferenced on purpose, not orphaned. Pass `all: true` to include them.
+
+A doc that links *out* but has nothing linking *in* is still an orphan — only
+inbound edges matter here.
+
+**Functions**
+
+- `find/2` — Repo-relative paths (sorted) of candidate docs with no inbound link.
 
 
 ### `ElixirMind.Policy`
@@ -874,6 +904,23 @@ the cross-flow flowchart index at `meta/flows/lineage.md`.
     mix brain.lineage                # materialize blockquotes + write the index
     mix brain.lineage --materialize  # same (explicit)
     mix brain.lineage --check        # verify the views are current (non-zero exit if stale)
+
+
+
+### `Mix.Tasks.Brain.Orphans`
+
+`lib/mix/tasks/brain.orphans.ex`
+
+Report docs that nothing else links to — filed but never cross-referenced.
+
+    mix brain.orphans                 # knowledge + governance docs, index listings ignored
+    mix brain.orphans --include-index # also count links inside index.md listings
+    mix brain.orphans --all           # include meta/threads/ and inbox/ (anchored by design)
+
+By default `index.md` listings don't count as inbound links (every filed doc is
+listed in one, which would hide every real orphan), and the anchored-by-design
+namespaces `meta/threads/` and `inbox/` are excluded from candidates. See
+`ElixirMind.Orphans` for the scoping rules. Read-only.
 
 
 

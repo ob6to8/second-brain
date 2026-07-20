@@ -19,4 +19,4 @@ attribution:
 
 The drop rule is exact: an assistant text block is stripped only when it is both under ~300 characters and immediately followed by a tool call. Canonically defined by the [session-capture policy](/meta/policy/session-capture.md) and performed by [`/capture`](/.claude/skills/capture/SKILL.md).
 
-*Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md), [2026-07-12 ban-dialog-box-questions thread](/meta/threads/2026-07-12-ban-dialog-box-questions-in-threads.md), [2026-07-13 council-round thread](/meta/threads/2026-07-13-council-round-suitability-evaluation.md)
+*Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md), [2026-07-12 ban-dialog-box-questions thread](/meta/threads/2026-07-12-ban-dialog-box-questions-in-threads.md), [2026-07-13 council-round thread](/meta/threads/2026-07-13-council-round-suitability-evaluation.md), [2026-07-19 session-URL-persistence thread](/meta/threads/2026-07-19-session-url-persistence-and-plan-vs-capture-policy.md)

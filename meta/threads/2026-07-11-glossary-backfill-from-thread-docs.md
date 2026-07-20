@@ -5,6 +5,7 @@ description: Ran /add-to-glossary over the eleven previously-unprocessed thread 
 provenance: "Claude Code session (claude-opus-4-8), 2026-07-11; verbatim retained messages parsed from the host session log — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, glossary, capture, terminology]
 timestamp: 2026-07-11
+session: https://claude.ai/code/session_014HwjCwRBSfnoemNzQpfvTj
 pr: 38
 ---
 

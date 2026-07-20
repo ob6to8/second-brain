@@ -5,6 +5,7 @@ description: A session that evaluated this repo against the 2026 second-brain fi
 provenance: "Claude Code session (Claude Fable), 2026-07-10; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, second-brain-field, failure-modes, evals, dedup, composable-beliefs, epistemic-overlay, execution-path]
 timestamp: 2026-07-10
+session: https://claude.ai/code/session_01L9ydexp9srawtgZT8kBKGY
 pr: 34
 ---
 
