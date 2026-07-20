@@ -34,6 +34,12 @@ the oracle ([holdout scenarios](/beliefs/glossary/holdout-scenario.md), digital
 twins, [satisfaction metrics](/beliefs/glossary/satisfaction-metric.md)) is what
 the software-factory wave spends its capital on.
 
-*Seen in:* [tier-3-4-interface-and-trust-determination](/meta/analysis/tier-3-4-interface-and-trust-determination.md), [2026-07-17 tier-3/4 interface and trust](/meta/threads/2026-07-17-tier-3-4-interface-and-trust-with-adoption-intake.md), [2026-07-20 intent-as-source and dark-factory pricing](/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md), [2026-07-20 code as compilation target and DSP testing model](/meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md)
+Oracles are also the scarce resource of eval design — constructible
+[ground truth](/beliefs/glossary/ground-truth.md) makes them cheap, which is this
+bundle's structural advantage. They need not be answer keys: the
+[routing ledger](/beliefs/glossary/routing-ledger.md)'s per-strand bookkeeping acts
+as a *completion* oracle for multi-step agent work, judging whether everything
+started was finished and accounted for rather than whether a specific output
+matched.
 
-*See also:* [escape rate](/beliefs/glossary/escape-rate.md), [llm-as-judge](/beliefs/glossary/llm-as-judge.md), [gate suite](/beliefs/glossary/gate-suite.md)
+*Seen in:* [tier-3-4-interface-and-trust-determination](/meta/analysis/tier-3-4-interface-and-trust-determination.md), [2026-07-17 tier-3/4 interface and trust](/meta/threads/2026-07-17-tier-3-4-interface-and-trust-with-adoption-intake.md), [2026-07-20 intent-as-source and dark-factory pricing](/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md), [2026-07-20 code as compilation target and DSP testing model](/meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md), [2026-07-20 evals and observation-records thread](/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md), [harness-and-ledger analysis](/meta/analysis/harness-and-ledger-as-eval-infrastructure.md)

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, eve, vercel, agents, framework, typescript]
 sense: common
-timestamp: 2026-07-17
+timestamp: 2026-07-20
 attribution:
   when: 2026-07-17T20:30:00Z
   channel: glossary
@@ -30,4 +30,13 @@ OpenTelemetry tracing, and evals as defaults. The BEAM-native counterpart in
 this brain's evaluations is [Jido](/beliefs/glossary/jido.md), a framework you
 host yourself.
 
-*Seen in:* [2026-07-17 vercel-eve comparison thread](/meta/threads/2026-07-17-vercel-eve-comparison-and-jido-host-plan.md), [vercel-eve-comparison analysis](/meta/analysis/vercel-eve-comparison.md), https://vercel.com/blog/introducing-eve
+Its eval story is the exemplar of the continuous-automated model —
+[regression testing](/beliefs/glossary/regression-testing.md) transplanted onto
+agent behavior: scored rubric suites as files in the agent's own directory, run
+locally, in CI as a deploy gate, and on a schedule against the deployed agent.
+The harness-and-ledger analysis reads that shape as all-harness-no-ledger —
+trend lines without [adjudication](/beliefs/glossary/adjudication.md) or lineage
+records underneath, and an answer key living inside the directory the agent
+itself reads.
+
+*Seen in:* [2026-07-17 vercel-eve comparison thread](/meta/threads/2026-07-17-vercel-eve-comparison-and-jido-host-plan.md), [vercel-eve-comparison analysis](/meta/analysis/vercel-eve-comparison.md), https://vercel.com/blog/introducing-eve, [2026-07-20 evals and observation-records thread](/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md), [harness-and-ledger analysis](/meta/analysis/harness-and-ledger-as-eval-infrastructure.md)
