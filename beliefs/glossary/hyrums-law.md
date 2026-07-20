@@ -24,4 +24,6 @@ the surface consumers have quietly come to rely on. The intent-as-source
 discussion used an inverted form — a bundle whose own integrity tooling depends
 on its verifier's unspecified behavior is its own Hyrum-exposed consumer.
 
-*Seen in:* [dark-factory oracle-pricing analysis](/meta/analysis/dark-factory-oracle-pricing-intent-as-source.md), [2026-07-20 intent-as-source and dark-factory pricing](/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md)
+*Seen in:* [dark-factory oracle-pricing analysis](/meta/analysis/dark-factory-oracle-pricing-intent-as-source.md), [2026-07-20 intent-as-source and dark-factory pricing](/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md), [2026-07-20 code as compilation target and DSP testing model](/meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md)
+
+*See also:* [equivalence class of programs](/beliefs/glossary/equivalence-class-of-programs.md)

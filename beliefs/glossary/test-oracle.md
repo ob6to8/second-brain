@@ -34,6 +34,6 @@ the oracle ([holdout scenarios](/beliefs/glossary/holdout-scenario.md), digital
 twins, [satisfaction metrics](/beliefs/glossary/satisfaction-metric.md)) is what
 the software-factory wave spends its capital on.
 
-*Seen in:* [tier-3-4-interface-and-trust-determination](/meta/analysis/tier-3-4-interface-and-trust-determination.md), [2026-07-17 tier-3/4 interface and trust](/meta/threads/2026-07-17-tier-3-4-interface-and-trust-with-adoption-intake.md), [2026-07-20 intent-as-source and dark-factory pricing](/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md)
+*Seen in:* [tier-3-4-interface-and-trust-determination](/meta/analysis/tier-3-4-interface-and-trust-determination.md), [2026-07-17 tier-3/4 interface and trust](/meta/threads/2026-07-17-tier-3-4-interface-and-trust-with-adoption-intake.md), [2026-07-20 intent-as-source and dark-factory pricing](/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md), [2026-07-20 code as compilation target and DSP testing model](/meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md)
 
 *See also:* [escape rate](/beliefs/glossary/escape-rate.md), [llm-as-judge](/beliefs/glossary/llm-as-judge.md), [gate suite](/beliefs/glossary/gate-suite.md)
