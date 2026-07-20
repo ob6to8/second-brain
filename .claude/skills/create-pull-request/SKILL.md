@@ -110,6 +110,13 @@ as well — see step 9.
   thread's durable anchor; the ephemeral branch is deliberately not recorded).
   This is the *last* metadata motion, done after the PR exists because the
   number can't be known before. Skip if capture was skipped.
+  - **`pr:` is write-once — stamp only the *origin* PR.** If the thread doc
+    **already** carries a `pr:` (a session captured and PR'd earlier, now
+    continued and re-captured in place for a follow-up PR), do **not** overwrite
+    it. Leave `pr:` at its origin and record this follow-up PR in the thread's
+    **narrative prose** instead — the origin anchor is relied upon downstream and
+    rewriting it would orphan that linkage (see the
+    [session-capture policy](/meta/policy/session-capture.md)).
 - **Do not merge here.** Opening + stamping is the end of the default flow. Merging
   is gated behind the explicit opt-in in step 9 — without it, the open PR is handed
   back for the operator to merge.
