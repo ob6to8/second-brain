@@ -291,6 +291,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
 | `em:964c3a` | [beliefs/glossary/write-time-vs-build-time](/beliefs/glossary/write-time-vs-build-time.md) | concept | false |
 | `em:974060` | [knowledge/SWE/agentic/adoption/steps-of-ai-adoption](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | reference |  |
+| `em:221e3e` | [knowledge/SWE/agentic/agent-memory/experience-graphs-exg](/knowledge/SWE/agentic/agent-memory/experience-graphs-exg.md) | reference |  |
 | `em:97d2a8` | [knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop](/knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop.md) | reference |  |
 | `em:c29a22` | [knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md) | reference |  |
 | `em:06d95d` | [knowledge/SWE/agentic/agentic-loop/building-effective-agents](/knowledge/SWE/agentic/agentic-loop/building-effective-agents.md) | reference |  |
@@ -348,6 +349,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d72938` | [knowledge/knowledge-management/argumentation/dung-abstract-argumentation-frameworks](/knowledge/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md) | reference |  |
 | `em:01e477` | [knowledge/knowledge-management/argumentation/gsn-community-standard](/knowledge/knowledge-management/argumentation/gsn-community-standard.md) | source |  |
 | `em:5c3ab0` | [knowledge/knowledge-management/argumentation/toulmin-model-of-argument](/knowledge/knowledge-management/argumentation/toulmin-model-of-argument.md) | reference |  |
+| `em:6d6425` | [knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management](/knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management.md) | reference |  |
+| `em:7fa867` | [knowledge/knowledge-management/design-rationale/architecture-without-architects](/knowledge/knowledge-management/design-rationale/architecture-without-architects.md) | reference |  |
+| `em:4f5372` | [knowledge/knowledge-management/design-rationale/context-strategies-for-adr-generation](/knowledge/knowledge-management/design-rationale/context-strategies-for-adr-generation.md) | reference |  |
+| `em:2e4803` | [knowledge/knowledge-management/design-rationale/design-rationale](/knowledge/knowledge-management/design-rationale/design-rationale.md) | concept | false |
+| `em:ce51fc` | [knowledge/knowledge-management/design-rationale/llms-recovering-design-rationale](/knowledge/knowledge-management/design-rationale/llms-recovering-design-rationale.md) | reference |  |
 | `em:d82615` | [knowledge/knowledge-management/knowledge-representation/de-kleer-1986-an-assumption-based-tms](/knowledge/knowledge-management/knowledge-representation/de-kleer-1986-an-assumption-based-tms.md) | source |  |
 | `em:601006` | [knowledge/knowledge-management/knowledge-representation/doyle-1979-a-truth-maintenance-system](/knowledge/knowledge-management/knowledge-representation/doyle-1979-a-truth-maintenance-system.md) | source |  |
 | `em:8255b8` | [knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md) | reference |  |
