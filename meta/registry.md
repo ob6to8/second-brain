@@ -21,6 +21,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:37a83f` | [beliefs/glossary/agent-memory](/beliefs/glossary/agent-memory.md) | concept | false |
 | `em:76ccba` | [beliefs/glossary/agent-swarm](/beliefs/glossary/agent-swarm.md) | concept | false |
 | `em:2523b4` | [beliefs/glossary/agent-time-horizon](/beliefs/glossary/agent-time-horizon.md) | concept | false |
+| `em:e24e40` | [beliefs/glossary/ai-native](/beliefs/glossary/ai-native.md) | concept | false |
 | `em:c9e142` | [beliefs/glossary/aliasing](/beliefs/glossary/aliasing.md) | concept | false |
 | `em:4aa4da` | [beliefs/glossary/ambient-authority](/beliefs/glossary/ambient-authority.md) | concept | false |
 | `em:73e13b` | [beliefs/glossary/analysis-type](/beliefs/glossary/analysis-type.md) | concept | false |
@@ -215,6 +216,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fa15e7` | [beliefs/glossary/policy-type](/beliefs/glossary/policy-type.md) | concept | false |
 | `em:1ddce3` | [beliefs/glossary/posttooluse-hook](/beliefs/glossary/posttooluse-hook.md) | concept | false |
 | `em:e8c1a9` | [beliefs/glossary/probabilistic-enforcement](/beliefs/glossary/probabilistic-enforcement.md) | concept | false |
+| `em:d042c5` | [beliefs/glossary/product-market-fit](/beliefs/glossary/product-market-fit.md) | concept | false |
 | `em:8654d1` | [beliefs/glossary/prompt-injection](/beliefs/glossary/prompt-injection.md) | concept | false |
 | `em:4849ca` | [beliefs/glossary/property-based-testing](/beliefs/glossary/property-based-testing.md) | concept | false |
 | `em:573229` | [beliefs/glossary/proto-belief-document](/beliefs/glossary/proto-belief-document.md) | concept | false |
@@ -383,3 +385,4 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:401ff6` | [knowledge/knowledge-management/knowledge-representation/truth-maintenance-systems](/knowledge/knowledge-management/knowledge-representation/truth-maintenance-systems.md) | reference |  |
 | `em:24bd1e` | [knowledge/knowledge-management/open-knowledge-format](/knowledge/knowledge-management/open-knowledge-format.md) | reference |  |
 | `em:1370e8` | [knowledge/machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
+| `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
