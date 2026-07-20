@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, tooling, ci]
 sense: common
-timestamp: 2026-07-16
+timestamp: 2026-07-20
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -19,4 +19,4 @@ attribution:
 
 This brain's Elixir tooling is deliberately dependency-free so it can run in no-egress, snapshot-booted environments — a constraint load-bearing enough that any resident runtime must live in a separate application depending on the core, never the reverse.
 
-*Seen in:* [2026-07-09 GitHub Pages thread](/meta/threads/2026-07-09-github-pages-knowledge-base-site.md), [2026-07-09 live-render thread](/meta/threads/2026-07-09-live-render-appraisal-and-pages-hardening.md), [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md)
+*Seen in:* [2026-07-09 GitHub Pages thread](/meta/threads/2026-07-09-github-pages-knowledge-base-site.md), [2026-07-09 live-render thread](/meta/threads/2026-07-09-live-render-appraisal-and-pages-hardening.md), [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md), [2026-07-20 storage-format and frontmatter-parser thread](/meta/threads/2026-07-20-storage-format-verdict-and-frontmatter-parser-plan.md)

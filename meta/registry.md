@@ -93,6 +93,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:805816` | [beliefs/glossary/design-rationale](/beliefs/glossary/design-rationale.md) | concept | false |
 | `em:0da4a3` | [beliefs/glossary/detector](/beliefs/glossary/detector.md) | concept | false |
 | `em:d18504` | [beliefs/glossary/deterministic-spine](/beliefs/glossary/deterministic-spine.md) | concept | false |
+| `em:209429` | [beliefs/glossary/differential-testing](/beliefs/glossary/differential-testing.md) | concept | false |
 | `em:d4fc9d` | [beliefs/glossary/digest](/beliefs/glossary/digest.md) | concept | false |
 | `em:90e275` | [beliefs/glossary/digital-twin](/beliefs/glossary/digital-twin.md) | concept | false |
 | `em:802d4e` | [beliefs/glossary/directed-acyclic-graph](/beliefs/glossary/directed-acyclic-graph.md) | concept | false |
@@ -138,6 +139,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
 | `em:27e7a7` | [beliefs/glossary/fresh-context-execution](/beliefs/glossary/fresh-context-execution.md) | concept | false |
 | `em:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
+| `em:640701` | [beliefs/glossary/frontmatter](/beliefs/glossary/frontmatter.md) | concept | false |
 | `em:eec645` | [beliefs/glossary/function-calling](/beliefs/glossary/function-calling.md) | concept | false |
 | `em:83b180` | [beliefs/glossary/functional-core-imperative-shell](/beliefs/glossary/functional-core-imperative-shell.md) | concept | false |
 | `em:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
@@ -207,6 +209,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:724e2f` | [beliefs/glossary/non-monotonic-reasoning](/beliefs/glossary/non-monotonic-reasoning.md) | concept | false |
 | `em:760063` | [beliefs/glossary/nyquist-shannon-sampling-theorem](/beliefs/glossary/nyquist-shannon-sampling-theorem.md) | concept | false |
 | `em:617977` | [beliefs/glossary/observer-agent](/beliefs/glossary/observer-agent.md) | concept | false |
+| `em:a267ab` | [beliefs/glossary/okf-frontmatter-profile](/beliefs/glossary/okf-frontmatter-profile.md) | concept | false |
 | `em:da67e8` | [beliefs/glossary/ontology](/beliefs/glossary/ontology.md) | concept | false |
 | `em:02dc95` | [beliefs/glossary/open-weights](/beliefs/glossary/open-weights.md) | concept | false |
 | `em:1349cb` | [beliefs/glossary/operating-contract](/beliefs/glossary/operating-contract.md) | concept | false |
@@ -240,6 +243,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:5e7da1` | [beliefs/glossary/recall](/beliefs/glossary/recall.md) | concept | false |
 | `em:0b95ed` | [beliefs/glossary/recall-at-k](/beliefs/glossary/recall-at-k.md) | concept | false |
 | `em:c86162` | [beliefs/glossary/recall-probe](/beliefs/glossary/recall-probe.md) | concept | false |
+| `em:d8f3bb` | [beliefs/glossary/recursive-descent-parser](/beliefs/glossary/recursive-descent-parser.md) | concept | false |
 | `em:ae9b26` | [beliefs/glossary/red-test](/beliefs/glossary/red-test.md) | concept | false |
 | `em:eb67ce` | [beliefs/glossary/reducer](/beliefs/glossary/reducer.md) | concept | false |
 | `em:7247f3` | [beliefs/glossary/remote-procedure-call](/beliefs/glossary/remote-procedure-call.md) | concept | false |
@@ -250,6 +254,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:96a610` | [beliefs/glossary/residual-fragmentation](/beliefs/glossary/residual-fragmentation.md) | concept | false |
 | `em:fd9873` | [beliefs/glossary/restricted-boltzmann-machine](/beliefs/glossary/restricted-boltzmann-machine.md) | concept | false |
 | `em:2bcd9a` | [beliefs/glossary/reusable-workflow](/beliefs/glossary/reusable-workflow.md) | concept | false |
+| `em:490d9d` | [beliefs/glossary/round-trip](/beliefs/glossary/round-trip.md) | concept | false |
 | `em:e142e6` | [beliefs/glossary/route-tag](/beliefs/glossary/route-tag.md) | concept | false |
 | `em:0a43ba` | [beliefs/glossary/route-tag-sink](/beliefs/glossary/route-tag-sink.md) | concept | false |
 | `em:ba6759` | [beliefs/glossary/routine](/beliefs/glossary/routine.md) | concept | false |
@@ -326,6 +331,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d8d057` | [beliefs/glossary/well-founded-support](/beliefs/glossary/well-founded-support.md) | concept | false |
 | `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
 | `em:964c3a` | [beliefs/glossary/write-time-vs-build-time](/beliefs/glossary/write-time-vs-build-time.md) | concept | false |
+| `em:751e4e` | [beliefs/glossary/yaml](/beliefs/glossary/yaml.md) | concept | false |
 | `em:974060` | [knowledge/SWE/agentic/adoption/steps-of-ai-adoption](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | reference |  |
 | `em:efab03` | [knowledge/SWE/agentic/adoption/strongdm-software-factory](/knowledge/SWE/agentic/adoption/strongdm-software-factory.md) | reference |  |
 | `em:221e3e` | [knowledge/SWE/agentic/agent-memory/experience-graphs-exg](/knowledge/SWE/agentic/agent-memory/experience-graphs-exg.md) | reference |  |
