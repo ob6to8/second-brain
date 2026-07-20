@@ -5,6 +5,7 @@ description: Created the /sync-branch-with-main skill (fetch/pull origin/main an
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-10; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, skills, git, tooling]
 timestamp: 2026-07-10
+session: https://claude.ai/code/session_01MHv6q9awxJjAZvjAzCe2JK
 ---
 
 # 2026-07-10-sync-branch-with-main-skill

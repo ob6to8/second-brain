@@ -5,6 +5,7 @@ description: Evaluated the operator-supplied "council round" adversarial draft-P
 provenance: "Claude Code session (Claude Fable, then Claude Sonnet 5 after a mid-session /model switch), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped; earlier turns parsed from the host session log with one gap reinstated from live context, later turns (main-reconciliation, PR merge, plan authoring) rendered from live context"
 tags: [meta, thread, council, review, adversarial, analysis, distillation]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_017LXaQmsBGVNofviVhtTLp9
 pr: 72
 ---
 

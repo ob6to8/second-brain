@@ -31,6 +31,7 @@ the start if siblings are plausible.
 - [link-processing](/meta/policy/link-processing.md) — links enter only once processed; summarize oversized sources
 - [maintain-reserved-files](/meta/policy/maintain-reserved-files.md) — update `index.md` after filing; the commit carries the change narrative
 - [persist-plans](/meta/policy/persist-plans.md) — approved plans are persisted as `type: plan` docs under `meta/plans/`, not left in chat
+- [plan-vs-capture](/meta/policy/plan-vs-capture.md) — persist a prospective plan only for deferred/cold-handoff/cross-session work; in-session work is recorded by its commit and thread capture
 - [merge-strategy](/meta/policy/merge-strategy.md) — PRs land via a true merge commit only; squash/rebase disallowed because commit history is provenance
 
 ## type-vocabulary

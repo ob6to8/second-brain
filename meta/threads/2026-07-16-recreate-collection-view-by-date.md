@@ -5,6 +5,7 @@ description: Investigated whether PR #68 (date-ordered governance indexes) was w
 provenance: "Claude Code session, 2026-07-16; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, indexes, collections, recency, timestamp, pr-recreation]
 timestamp: 2026-07-16
+session: https://claude.ai/code/session_01JioXXApyLZWoAnCYwru5bG
 pr: 95
 ---
 
