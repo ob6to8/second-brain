@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, interactive session"
   why: "operator asked to persist the eve-vs-bundle comparison developed over the session as an analysis document"
+  from: [/meta/threads/2026-07-17-vercel-eve-comparison-and-jido-host-plan.md]
 ---
 
 # Vercel eve and this bundle: the same substrate with figure and ground inverted

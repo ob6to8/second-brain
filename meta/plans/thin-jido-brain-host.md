@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, interactive session"
   why: "persists the operator-commissioned host-layer design surfaced by the eve comparison per the persist-plans policy, folding it into the standing tiered BEAM/Jido path rather than forking a parallel direction"
+  from: [/meta/threads/2026-07-17-vercel-eve-comparison-and-jido-host-plan.md, /meta/analysis/vercel-eve-comparison.md]
 ---
 
 # A thin Jido-based host that treats the brain as its world

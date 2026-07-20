@@ -95,6 +95,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f5523f` | [beliefs/glossary/draft-pull-request](/beliefs/glossary/draft-pull-request.md) | concept | false |
 | `em:683301` | [beliefs/glossary/drift-class](/beliefs/glossary/drift-class.md) | concept | false |
 | `em:9074c1` | [beliefs/glossary/dry](/beliefs/glossary/dry.md) | concept | false |
+| `em:b528d9` | [beliefs/glossary/durable-execution](/beliefs/glossary/durable-execution.md) | concept | false |
 | `em:16e171` | [beliefs/glossary/elaboration-type](/beliefs/glossary/elaboration-type.md) | concept | false |
 | `em:d907fd` | [beliefs/glossary/elixir-mind](/beliefs/glossary/elixir-mind.md) | concept | false |
 | `em:da21de` | [beliefs/glossary/embeddings](/beliefs/glossary/embeddings.md) | concept | false |
@@ -114,12 +115,14 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f518a7` | [beliefs/glossary/fault-injection](/beliefs/glossary/fault-injection.md) | concept | false |
 | `em:f382b0` | [beliefs/glossary/featuring](/beliefs/glossary/featuring.md) | concept | false |
 | `em:c0ed08` | [beliefs/glossary/feeding-pairs](/beliefs/glossary/feeding-pairs.md) | concept | false |
+| `em:13607e` | [beliefs/glossary/figure-ground-inversion](/beliefs/glossary/figure-ground-inversion.md) | concept | false |
 | `em:d818b8` | [beliefs/glossary/first-order-logic](/beliefs/glossary/first-order-logic.md) | concept | false |
 | `em:894631` | [beliefs/glossary/first-parent-history](/beliefs/glossary/first-parent-history.md) | concept | false |
 | `em:950a55` | [beliefs/glossary/flow-touch-sequence](/beliefs/glossary/flow-touch-sequence.md) | concept | false |
 | `em:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
 | `em:27e7a7` | [beliefs/glossary/fresh-context-execution](/beliefs/glossary/fresh-context-execution.md) | concept | false |
 | `em:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
+| `em:eec645` | [beliefs/glossary/function-calling](/beliefs/glossary/function-calling.md) | concept | false |
 | `em:83b180` | [beliefs/glossary/functional-core-imperative-shell](/beliefs/glossary/functional-core-imperative-shell.md) | concept | false |
 | `em:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
 | `em:8b48c7` | [beliefs/glossary/generated-artifact](/beliefs/glossary/generated-artifact.md) | concept | false |
@@ -262,6 +265,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:927eb2` | [beliefs/glossary/typed-edge](/beliefs/glossary/typed-edge.md) | concept | false |
 | `em:570738` | [beliefs/glossary/ungrounded-inference](/beliefs/glossary/ungrounded-inference.md) | concept | false |
 | `em:36436d` | [beliefs/glossary/vector-database](/beliefs/glossary/vector-database.md) | concept | false |
+| `em:4c6c63` | [beliefs/glossary/vendoring](/beliefs/glossary/vendoring.md) | concept | false |
+| `em:f6c3c2` | [beliefs/glossary/vercel-eve](/beliefs/glossary/vercel-eve.md) | concept | false |
 | `em:4f4baf` | [beliefs/glossary/verification-grounding](/beliefs/glossary/verification-grounding.md) | concept | false |
 | `em:c6e78a` | [beliefs/glossary/verified-by](/beliefs/glossary/verified-by.md) | concept | false |
 | `em:34fbe3` | [beliefs/glossary/von-neumann-architecture](/beliefs/glossary/von-neumann-architecture.md) | concept | false |

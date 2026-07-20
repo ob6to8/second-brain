@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, agents, harness, agent-loop, anthropic]
 sense: common
-timestamp: 2026-07-16
+timestamp: 2026-07-17
 attribution:
   when: 2026-07-13T12:00:00Z
   channel: glossary
@@ -27,6 +27,6 @@ Choosing to build your own harness rather than use a vendor's turnkey feature
 trades that convenience for control over prompts, context, call timing, model
 pairing, and observability.
 
-*Seen in:* [when-to-roll-your-own-advisor-harness analysis](/meta/analysis/when-to-roll-your-own-advisor-harness.md), [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md)
+*Seen in:* [when-to-roll-your-own-advisor-harness analysis](/meta/analysis/when-to-roll-your-own-advisor-harness.md), [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md), [2026-07-17 vercel-eve comparison thread](/meta/threads/2026-07-17-vercel-eve-comparison-and-jido-host-plan.md) (the harness semantics — contract loader, skill loader, bundle tools — as the novel work of the [thin Jido host plan](/meta/plans/thin-jido-brain-host.md), with Jido as chassis)
 
 *See also:* [Claude Agent SDK](/beliefs/glossary/claude-agent-sdk.md), [Claude Managed Agents](/beliefs/glossary/claude-managed-agents.md), [orchestration](/beliefs/glossary/orchestration.md)
