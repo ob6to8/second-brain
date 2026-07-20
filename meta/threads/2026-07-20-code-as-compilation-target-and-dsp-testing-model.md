@@ -55,7 +55,8 @@ what must the human and process still guarantee?* — each a child of
 worked-example note in the
 [decision-records analysis](/meta/analysis/decision-records-as-history-abstraction.md)
 naming the cluster as exactly the connected-lineage view its decision-graph plan
-would surface automatically.
+would surface automatically. That reconciliation-and-cross-linking follow-up
+shipped as **PR #120** (this thread's `pr:` frontmatter stays at its origin, #115).
 
 ## Routing
 
