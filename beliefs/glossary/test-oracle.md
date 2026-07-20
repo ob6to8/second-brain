@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, Claude Code session"
 verified: false
 sense: common
 tags: [testing, verification, trust]
-timestamp: 2026-07-17
+timestamp: 2026-07-20
 attribution:
   when: 2026-07-17T18:24:00Z
   channel: glossary
@@ -26,6 +26,14 @@ human-written specification, or a different model prompted to refute. The streng
 [escape rate](/beliefs/glossary/escape-rate.md) as a trust signal is bounded by how
 independent this checker actually is.
 
-*Seen in:* [tier-3-4-interface-and-trust-determination](/meta/analysis/tier-3-4-interface-and-trust-determination.md), [2026-07-17 tier-3/4 interface and trust](/meta/threads/2026-07-17-tier-3-4-interface-and-trust-with-adoption-intake.md)
+Its *completeness* matters as much as its independence: the intent-as-source
+doctrine makes oracle coverage the price of artifact opacity — a generated
+artifact may go unread only to the degree the oracle pins its behavior, and
+where coverage is partial the artifact must stay inspectable. Industrializing
+the oracle ([holdout scenarios](/beliefs/glossary/holdout-scenario.md), digital
+twins, [satisfaction metrics](/beliefs/glossary/satisfaction-metric.md)) is what
+the software-factory wave spends its capital on.
+
+*Seen in:* [tier-3-4-interface-and-trust-determination](/meta/analysis/tier-3-4-interface-and-trust-determination.md), [2026-07-17 tier-3/4 interface and trust](/meta/threads/2026-07-17-tier-3-4-interface-and-trust-with-adoption-intake.md), [2026-07-20 intent-as-source and dark-factory pricing](/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md)
 
 *See also:* [escape rate](/beliefs/glossary/escape-rate.md), [llm-as-judge](/beliefs/glossary/llm-as-judge.md), [gate suite](/beliefs/glossary/gate-suite.md)
