@@ -5,6 +5,7 @@ description: Operator asked whether markdown is still the right storage format f
 provenance: "Claude Code session (claude-fable-5), 2026-07-20; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, storage-format, markdown, frontmatter, parser, serializer, yaml, tooling, plan]
 timestamp: 2026-07-20
+pr: 119
 ---
 
 # 2026-07-20-storage-format-verdict-and-frontmatter-parser-plan
