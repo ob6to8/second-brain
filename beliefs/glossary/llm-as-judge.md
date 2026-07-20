@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, evals, llm, annotation, methodology]
 sense: common
-timestamp: 2026-07-16
+timestamp: 2026-07-20
 attribution:
   when: 2026-07-11T20:14:11+00:00
   channel: glossary
@@ -25,4 +25,4 @@ adjudicated disagreements at more than 20× lower cost. The same pattern
 underlies per-edge belief-graph judgments: local, cacheable model verdicts
 composed by mechanical aggregation.
 
-*Seen in:* [decompose-then-verify factuality reference](/knowledge/SWE/evals/decompose-then-verify-factuality.md), [belief-decomposition plan](/meta/plans/belief-decomposition-analysis-mode.md)
+*Seen in:* [decompose-then-verify factuality reference](/knowledge/SWE/evals/decompose-then-verify-factuality.md), [belief-decomposition plan](/meta/plans/belief-decomposition-analysis-mode.md), [2026-07-20 evals and observation-records thread](/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md)

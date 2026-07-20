@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, agents, harness, agent-loop, anthropic]
 sense: common
-timestamp: 2026-07-16
+timestamp: 2026-07-20
 attribution:
   when: 2026-07-13T12:00:00Z
   channel: glossary
@@ -27,6 +27,6 @@ Choosing to build your own harness rather than use a vendor's turnkey feature
 trades that convenience for control over prompts, context, call timing, model
 pairing, and observability.
 
-*Seen in:* [when-to-roll-your-own-advisor-harness analysis](/meta/analysis/when-to-roll-your-own-advisor-harness.md), [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md)
+*Seen in:* [when-to-roll-your-own-advisor-harness analysis](/meta/analysis/when-to-roll-your-own-advisor-harness.md), [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md), [2026-07-20 evals and observation-records thread](/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md)
 
 *See also:* [Claude Agent SDK](/beliefs/glossary/claude-agent-sdk.md), [Claude Managed Agents](/beliefs/glossary/claude-managed-agents.md), [orchestration](/beliefs/glossary/orchestration.md)

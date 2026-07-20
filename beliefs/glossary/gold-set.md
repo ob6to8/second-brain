@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, evaluation, search]
 sense: common
-timestamp: 2026-07-16
+timestamp: 2026-07-20
 attribution:
   when: 2026-07-12T10:25:03+00:00
   channel: glossary
@@ -19,6 +19,6 @@ attribution:
 
 The cases generalize beyond retrieval queries to any test input, each keyed to its hand-adjudicated correct answer. For a [recall probe](/beliefs/glossary/recall-probe.md) the cases are natural-phrasing queries and each is keyed to the acceptable target item(s), so [recall](/beliefs/glossary/recall.md) can be measured mechanically. The pairing is by stable identifier where possible (so it survives renames), and rows can be banded by role — straightforward positives, labeled negatives, and quarantined cases whose right answer is undefined. Distinct from a [golden test](/beliefs/glossary/golden-test.md), which pins a program's *output* against a stored snapshot rather than judging retrieval against known-correct answers.
 
-*Seen in:* [2026-07-12 dedup recall probe thread](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md)
+*Seen in:* [2026-07-12 dedup recall probe thread](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md), [2026-07-20 evals and observation-records thread](/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md)
 
 *See also:* [recall probe](/beliefs/glossary/recall-probe.md), [recall](/beliefs/glossary/recall.md), [deduplication](/beliefs/glossary/deduplication.md)

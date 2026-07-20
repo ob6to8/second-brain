@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator-commissioned analysis of the session's eval-infrastructure findings"
   why: "the operator asked to commit the session's layered reasoning — harness/ledger applicability, conflict-of-interest conditions, observation-media grounding, and the continuous-eval comparison — so the judgment persists beyond the session"
+  from: [/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md]
 ---
 
 # Harness and ledger as eval infrastructure
