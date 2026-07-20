@@ -9,6 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, library spin-out spec session"
   why: "graduates the deferred Phase 4 spin-out of the bundle/library separation plan into its own executable spec, recording the dependency-distribution decision the operator asked about"
+  from: [/meta/threads/2026-07-17-library-spin-out-spec.md]
 tags: [meta, plan, architecture, separation-of-concerns, spin-out, hex, dependency, tooling]
 timestamp: 2026-07-17
 ---

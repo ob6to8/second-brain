@@ -9,7 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, bundle/library separation planning session"
   why: "persists the operator's two-concerns framing and the doc-first delineation path per the persist-plans policy, so the boundary decision and the deferred spin-out survive the session"
-  from: [/meta/threads/2026-07-15-bundle-library-separation-plan.md]
+  from: [/meta/threads/2026-07-15-bundle-library-separation-plan.md, /meta/threads/2026-07-17-library-spin-out-spec.md]
 tags: [meta, plan, architecture, separation-of-concerns, okf, tooling, governance]
 timestamp: 2026-07-15
 ---
