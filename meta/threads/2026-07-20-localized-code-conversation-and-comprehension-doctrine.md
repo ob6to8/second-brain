@@ -5,7 +5,7 @@ description: Operator proposed breaking development conversation out into locati
 provenance: "Claude Code session (claude-opus-4-8), 2026-07-20; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, comprehension, mental-model, route-tagging, session-capture, generated-code, presentation, hunk, nvim, doctrine]
 timestamp: 2026-07-20
-# pr: <N>  ← added by /create-pull-request once the PR is opened
+pr: 114
 ---
 
 # 2026-07-20-localized-code-conversation-and-comprehension-doctrine
