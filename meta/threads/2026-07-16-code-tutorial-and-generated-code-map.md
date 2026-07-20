@@ -5,6 +5,7 @@ description: Designing and building documentation for the elixir_mind tooling â€
 provenance: "Claude Code session (Claude Opus 4.8 driving; Claude Sonnet 5 fan-out readers), 2026-07-16; verbatim retained messages â€” tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, tooling, documentation, code-map, tutorial, workflow]
 timestamp: 2026-07-16
+session: https://claude.ai/code/session_01QzSoZSjsA29z2SkwrYeTBC
 pr: 103
 ---
 

@@ -5,6 +5,7 @@ description: Operator questioned whether /render-contract is a failure-prone ope
 provenance: "Claude Code session (claude-opus-4-8), 2026-07-16; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, contract, compiled-artifact, render-contract, ci, pre-commit, automation, analysis]
 timestamp: 2026-07-16
+session: https://claude.ai/code/session_018SKrCF2rgKpTiP87h3onAC
 pr: 102
 ---
 

@@ -5,6 +5,7 @@ description: Generated the 2026-07-11 inbox digest in two passes, intaked six SW
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-11; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, news, inbox, intake, daily-read, agentic-coding, ai-industry]
 timestamp: 2026-07-11
+session: https://claude.ai/code/session_01Hv16dAhaxTkaRqdWc7G8zY
 pr: 41
 ---
 

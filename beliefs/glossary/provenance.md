@@ -21,7 +21,7 @@ The documented origin and history of an artifact — where data, a claim, or an 
 
 **In this brain:** the frontmatter field recording the immutable origin/history of a statement (e.g. "Claude Opus 4.8, chat thread") — distinct from `resource`, which is a canonical asset URI. Provenance is orthogonal to verification: checking a statement never rewrites where it came from. Defined by the [frontmatter-schema policy](/meta/policy/frontmatter-schema.md).
 
-*Seen in:* [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-12 news→research rename thread](/meta/threads/2026-07-12-rename-news-skill-to-research.md), [2026-07-13 resource-attribution property thread](/meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md)
+*Seen in:* [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-12 news→research rename thread](/meta/threads/2026-07-12-rename-news-skill-to-research.md), [2026-07-13 resource-attribution property thread](/meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md), [2026-07-19 session-URL-persistence thread](/meta/threads/2026-07-19-session-url-persistence-and-plan-vs-capture-policy.md)
 
 *See also:* [attribution](/beliefs/glossary/attribution.md)
 

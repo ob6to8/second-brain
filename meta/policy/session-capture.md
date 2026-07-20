@@ -6,12 +6,12 @@ section: session-workflow
 order: 1
 status: active
 tags: [meta, governance, threads, capture, workflow]
-timestamp: 2026-07-12
+timestamp: 2026-07-18
 attribution:
   when: 2026-07-08T11:54:45+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md]
+  from: [/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md, /meta/threads/2026-07-19-session-url-persistence-and-plan-vs-capture-policy.md]
 ---
 A working session (a **thread**) is non-linear: it touches many matters, pauses
 some on open questions, and routes each matter's synthesized content into a
@@ -56,6 +56,26 @@ record so it can be resumed from the record instead of from memory.
   and the pre-policy squash era left the original branch commits unreachable
   entirely — so the PR number is the only stable link from a thread back to how
   it landed. The branch name is deliberately **not** recorded.
+- **The thread also records its session (`session:`) — the full-fidelity escape
+  hatch.** At capture time, `/capture` stamps the cloud session's transcript URL
+  into the thread's frontmatter as `session: <url>`, derived from the
+  `CLAUDE_CODE_REMOTE_SESSION_ID` environment variable (the id's `cse_` prefix
+  becomes the URL's `session_` prefix:
+  `https://claude.ai/code/session_<tail>`). The thread doc is the *distilled*
+  record; the session URL points at the *raw* transcript on claude.ai — useful
+  precisely when the distillation turns out to have dropped something later
+  needed. It is deliberately the **weaker anchor**: account-bound (viewable only
+  by the operator logged into claude.ai, unreadable by agents), and deletable —
+  it complements `pr:`, never substitutes for it. Write-once at capture, never
+  rewritten. When the variable is unset (local-terminal sessions have no cloud
+  transcript), the key is **omitted** — never invented, never guessed.
+  Threads captured before this rule were backfilled **only from recorded
+  evidence** — a thread's own capture commit carries the `Claude-Session:`
+  trailer, and a squash-era thread whose trailer was lost recovers the URL from
+  its PR body (found via the thread's `pr:` anchor). A thread predating the
+  trailer feature entirely, or produced by a local-terminal session, has no
+  recorded URL and correctly stays bare. Backfill from recorded evidence only;
+  never infer or guess a URL for a thread that lacks one.
 - **Freeze then tag.** Because capture runs once at close, the body is frozen
   when written; tagging and ledger upkeep are one finalization motion over that
   frozen body, not a per-turn rewrite.

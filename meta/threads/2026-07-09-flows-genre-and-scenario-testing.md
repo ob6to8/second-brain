@@ -5,6 +5,7 @@ description: Designed and built the meta/flows/ genre (per-flow touch-sequence d
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped (parse-the-log render)"
 tags: [meta, thread, flows, scenario-testing, plans, intake, testing, elixir]
 timestamp: 2026-07-09
+session: https://claude.ai/code/session_01BLM9y7P3szYcL1gcuh7uss
 pr: 27
 ---
 

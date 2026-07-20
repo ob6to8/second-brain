@@ -24,4 +24,4 @@ Contrast [squash merge](/beliefs/glossary/squash-merge.md) and
 [fast-forward merge](/beliefs/glossary/fast-forward-merge.md); the underlying
 property is [reachability](/beliefs/glossary/reachability.md).
 
-*Seen in:* [2026-07-10 merge-tutorial thread](/meta/threads/2026-07-10-merge-commit-reachability-tutorial.md), [2026-07-11 session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md), [2026-07-13 branch-lifecycle tutorial and main catch-up](/meta/threads/2026-07-13-branch-lifecycle-tutorial-and-main-catchup.md)
+*Seen in:* [2026-07-10 merge-tutorial thread](/meta/threads/2026-07-10-merge-commit-reachability-tutorial.md), [2026-07-11 session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md), [2026-07-13 branch-lifecycle tutorial and main catch-up](/meta/threads/2026-07-13-branch-lifecycle-tutorial-and-main-catchup.md), [2026-07-19 session-URL-persistence thread](/meta/threads/2026-07-19-session-url-persistence-and-plan-vs-capture-policy.md)

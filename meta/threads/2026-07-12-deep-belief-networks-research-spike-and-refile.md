@@ -5,6 +5,7 @@ description: A research spike into Hinton's deep belief networks and whether the
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, deep-learning, deep-belief-networks, taxonomy, machine-learning, epistemic-overlay]
 timestamp: 2026-07-12
+session: https://claude.ai/code/session_015j4EJbcxmv9mvoukpod2Jw
 pr: 54
 ---
 
