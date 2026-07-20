@@ -90,45 +90,36 @@ to zero; it is *the reason the target must be a class rather than a point.*
 
 ## Intuition frame 1 — sampling, and where Nyquist rescues audio but not code
 
-The tests-pin-points claim is the digital-audio sampling problem exactly. Tests are
-samples of behavior at discrete points; the true behavior is the continuous signal;
-between the samples anything can be happening. **Inter-sample peaks** are the
-sharpest case: a true-peak over sits *between* samples, every sample reads clean,
-and the reconstructed signal still clips. The code analog is precise — any metric
-computed only at tested points (max latency observed, peak memory, worst case seen)
-can systematically under-report the real extremum, because the real worst case lives
-in the gap.
+The tests-pin-points claim is the digital-audio sampling problem exactly: tests are
+samples of a continuous behavior-signal at discrete input points, and between the
+samples anything can be happening. **Inter-sample peaks** are the sharpest case — a
+true-peak over sits *between* samples, every sample reads clean, and the
+reconstructed signal still clips; the code analog is that any metric computed only at
+tested points (max latency, peak memory, worst case seen) can systematically
+under-report the real extremum, which lives in the gap.
 
 The disanalogy is the payload. **Audio has the Nyquist–Shannon theorem; code does
-not.** A band-limited signal is *perfectly* determined by its samples — the
-between-sample values are recoverable by reconstruction, so the gaps are an illusion
-and even the inter-sample peak is fully encoded. Code has no band-limit: program
-behavior can change arbitrarily on a measure-zero set of inputs (`if (x == 42)
-launch_missiles()` is a Dirac spike of infinite bandwidth between two test points),
-and **no sampling rate saves you.** This is why audio reconstruction is a solved
-linear problem and exhaustive testing is undecidable-hard.
+not.** A band-limited signal is *perfectly* determined by its samples; code has no
+band-limit — behavior can change arbitrarily on a measure-zero set of inputs
+(`if (x == 42) launch_missiles()` is an infinite-bandwidth spike between two test
+points), and **no sampling rate saves you.** So the productive move is to ask what a
+band-limit for code would be, and it names why the thesis pairs *invariants* with
+*tests*: a **test is a sample** (one point in the domain); an **invariant is a
+band-limit** (a global constraint that folds the whole domain at once — *the output
+is always sorted* pins no single input, exactly as Nyquist's band-limit is a spectral
+condition rather than extra samples); a **type is a coarse band-limit**. To the
+extent you can state enough global constraints, regeneration behaves like
+reconstruction-from-samples; to the extent you cannot — the `x == 42` spike proves
+you cannot in general — the gaps stay real, and an under-sampled suite does worse than
+miss cases, it **aliases**: everything passes, the pattern looks coherent, and the
+un-sampled behavior folds into an appearance of correctness that was never there. The
+one-liner: *tests are time-domain samples, invariants are the band-limit, and the
+LLM-coding chaos is people trying to reconstruct a signal they never band-limited.*
 
-The productive move is to ask what a band-limit for code looks like, and it names
-why the original thesis said *invariants* alongside *tests*:
-
-- **A test is a sample** — one point in the time domain.
-- **An invariant is a band-limit** — a global constraint in the "frequency domain."
-  "The output is always sorted" does not pin one input; it folds the entire domain
-  at once. Not a denser sample — a *different kind* of constraint, exactly as
-  Nyquist's band-limit is a global spectral condition rather than extra samples.
-- **Types are a coarse band-limit** — they forbid whole regions of the signal
-  before you sample at all.
-
-So: to the extent you can state enough global constraints, regeneration-to-spec
-behaves like reconstruction-from-samples and the prior does real work collapsing the
-class; to the extent you cannot — and the `x == 42` spike proves you fundamentally
-cannot in general — the gaps stay real and unbounded. Worse than gaps is
-**aliasing**: an under-sampled suite does not merely miss cases, it manufactures a
-false-but-coherent mental model — everything passes, the pattern looks regular, and
-the untested frequencies fold down and impersonate correctness that was never there.
-The tightest one-liner: *tests are time-domain samples, invariants are the
-band-limit, and the LLM-coding chaos is people trying to reconstruct a signal they
-never band-limited.*
+This is developed in full — with the second, orthogonal **quantization** axis (how
+sharply each assertion pins its output, dither as the case for property-based inputs,
+and the noise floor of an oracle) — in the tutorial
+[Sampling and quantization as a model of software testing](/meta/tutorials/sampling-and-quantization-as-a-model-of-testing.md).
 
 ## Intuition frame 2 — snapshot vs. trajectory, and the concession it forces
 
