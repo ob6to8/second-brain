@@ -5,6 +5,7 @@ description: Spec'd the library spin-out as its own plan — graduating Phase 4 
 provenance: "Claude Code session (Fable), 2026-07-17; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, architecture, separation-of-concerns, spin-out, hex, dependency, id-namespace]
 timestamp: 2026-07-17
+pr: 118
 ---
 
 # 2026-07-17-library-spin-out-spec
