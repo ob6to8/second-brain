@@ -1,9 +1,9 @@
 ---
 type: reference
 title: 2026-07-20-code-as-compilation-target-and-dsp-testing-model
-description: Worked the operator's proposal that a codebase is regeneratable from its specs, tests, and invariants (code as a natural-language compilation target) through a for/against into an equivalence-class reframe, then two intuition frames — DSP sampling/Nyquist and snapshot-vs-trajectory — and on ratification filed the pair (the regenerate-the-change doctrine and the compilation-target analysis) plus a sampling-and-quantization tutorial, reconciling all three with the sibling intent-is-source work merged as PR #112.
+description: Worked the operator's proposal that a codebase is regeneratable from its specs, tests, and invariants (code as a natural-language compilation target) through a for/against into an equivalence-class reframe, then two intuition frames — DSP sampling/Nyquist and snapshot-vs-trajectory — filing the regenerate-the-change doctrine, the compilation-target analysis, and a sampling-and-quantization tutorial (PR #115); then, across follow-up turns, merged that PR (true-merge, after syncing in the parallel #112/#113/#114 sessions) and cross-linked the four 2026-07-20 code-as-derived-artifact facets into a coherent doctrine cluster.
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-20; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
-tags: [meta, thread, regeneration, equivalence-class, specs, tests, invariants, dsp, sampling, nyquist, quantization, code-as-artifact]
+tags: [meta, thread, regeneration, equivalence-class, specs, tests, invariants, dsp, sampling, nyquist, quantization, code-as-artifact, doctrine-cluster]
 timestamp: 2026-07-20
 pr: 115
 ---
@@ -33,13 +33,29 @@ system). On ratification the session filed a doctrine
 and its derivation analysis
 ([code-as-natural-language-compilation-target](/meta/analysis/code-as-natural-language-compilation-target.md)),
 discovered a sibling session had merged a parallel take on the identical proposal
-(PR #112: the [intent-is-the-source doctrine](/meta/doctrine/intent-is-the-source.md)
-and its dark-factory analysis), synced `main` and reconciled the two as complementary
-facets (vertical: artifact status + oracle-opacity; horizontal: regeneration
-dynamics) — folding in Hyrum's law and the shared boundary — and finally gave the DSP
-analogy a standalone home as a tutorial
-([sampling-and-quantization-as-a-model-of-testing](/meta/tutorials/sampling-and-quantization-as-a-model-of-testing.md)),
-developing the previously-undeveloped quantization axis.
+(the [intent-is-the-source doctrine](/meta/doctrine/intent-is-the-source.md) and its
+dark-factory analysis, PR #112), synced `main` and reconciled the two as
+complementary facets (vertical: artifact status + oracle-opacity; horizontal:
+regeneration dynamics), and gave the DSP analogy a standalone
+[sampling-and-quantization tutorial](/meta/tutorials/sampling-and-quantization-as-a-model-of-testing.md),
+developing the previously-undeveloped quantization axis. All of that shipped as
+**PR #115**.
+
+Follow-up turns closed the loop. PR #115 was **true-merged** — but only after a
+`mergeable_state: dirty` on first attempt, caused by `main` advancing past the sync
+with two more parallel sessions ([#114](/meta/doctrine/comprehension-of-generated-code.md)
+comprehension-of-generated-code, and #113 decision-records); those were merged in,
+the one `meta/threads/index.md` conflict resolved (all three 2026-07-20 entries
+kept), gates re-run, and the PR merged with the head branch auto-deleted. A final
+pass then **cross-linked the four 2026-07-20 code-as-derived-artifact sessions into
+a coherent cluster**: a tailored *Sibling directions* section in each of the three
+doctrines (framing them as facets of one question — *if code is a derived artifact,
+what must the human and process still guarantee?* — each a child of
+[engineer-as-orchestrator](/meta/doctrine/engineer-as-orchestrator.md)), plus a
+worked-example note in the
+[decision-records analysis](/meta/analysis/decision-records-as-history-abstraction.md)
+naming the cluster as exactly the connected-lineage view its decision-graph plan
+would surface automatically.
 
 ## Routing
 
@@ -49,6 +65,7 @@ developing the previously-undeveloped quantization axis.
 | Regeneration dynamics: the change is the unit, the artifact is an input, stability is load-bearing | closed | [regenerate-the-change-not-the-system](/meta/doctrine/regenerate-the-change-not-the-system.md) | - |
 | DSP as a model of testing: sampling + quantization axes, Nyquist band-limit, aliasing, dither | closed | [sampling-and-quantization-as-a-model-of-testing](/meta/tutorials/sampling-and-quantization-as-a-model-of-testing.md) | - |
 | Overlap with the sibling intent-as-source pair (PR #112): reconcile as complementary facets, fold in Hyrum's law | closed | [intent-is-the-source](/meta/doctrine/intent-is-the-source.md) | - |
+| Reconcile #115 with #113/#114 on merge; cross-link the four code-as-derived-artifact facets into a doctrine cluster | closed | [comprehension-of-generated-code](/meta/doctrine/comprehension-of-generated-code.md) | - |
 
 ## User
 
@@ -360,3 +377,85 @@ Done — the tutorial is filed and pushed.
 The cluster now stands as: **doctrine** (`regenerate-the-change-not-the-system`) ← **analysis** (`code-as-natural-language-compilation-target`) → **tutorial** (`sampling-and-quantization…`), all stitched into the sibling `intent-is-the-source` pair.
 
 Whenever you're ready to close the session, `/create-pull-request` will capture the thread, glossary the new terms (equivalence class, band-limit, inter-sample peak, dither, aliasing-as-false-model — pointing "load-bearing property" at the existing `hyrums-law`), stamp `attribution.from` into the analysis and tutorial, and open the PR.
+
+Done. The full `/create-pull-request` flow completed — PR open, handed back to you (no merge, per the bare invocation).
+
+## PR #115 — https://github.com/ob6to8/elixir-mind/pull/115
+
+**Captured thread doc:** `meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md` (stamped `pr: 115`).
+
+**What shipped in the PR:**
+- **Capture** — verbatim render of all 8 operator turns and their replies (only tool calls, reasoning, and short pre-tool narration stripped, parsed mechanically from the session log), a routing ledger (4 strands, all `closed`), and three path-ref route tags back to the doctrine/analysis/tutorial.
+- **Glossary** — 6 new terms (equivalence class of programs, Nyquist–Shannon sampling theorem, aliasing, quantization, dither, inter-sample peak) + thread citations merged into the existing `hyrums-law` and `test-oracle` entries.
+- **`attribution.from`** stamped onto the three governance docs this session created (doctrine, analysis, tutorial), plus the earlier-committed doctrine/analysis/tutorial and #112 reconciliation already on the branch.
+
+**Gates:** `contract --check`, `registry --check`, `verify`, `route_tags`, `glossary`, and `mix test` (177 tests) all green. The only warnings are the pre-existing `inbox/2026-07-11.md` broken links, which this branch doesn't touch.
+
+**A note on one judgment call:** I dropped the standalone stop-hook feedback message and the `/create-pull-request` slash wrapper from the render as non-operator system content, keeping every real operator message verbatim.
+
+Two options from here:
+- **Want me to watch #115?** I can subscribe to its CI and review activity so failures/comments come back into this session — say the word (I won't subscribe unprompted).
+- **Ready to merge?** Re-invoke as `/create-pull-request merge` and I'll drive CI green and true-merge it.
+
+## User
+
+Merge
+
+## Assistant
+
+
+Merged and cleaned up. 
+
+## PR #115 merged ✅
+
+- **Merge method:** true merge commit `251de7f` (per the merge-strategy policy — never squash/rebase, so the session trailers and cited SHAs stay reachable).
+- **Head branch** `claude/codebase-regeneration-specs-aqebw2` auto-deleted.
+- **CI:** both `verify` checks green on the merged head before merging.
+
+### One thing worth flagging
+
+`mergeable_state` came back `dirty` on the first attempt — `main` had advanced past my earlier sync with **two more sibling sessions** on adjacent themes:
+- **#114** — `comprehension-of-generated-code` doctrine + `localized-code-conversation-vs-linear-thread` analysis (localized/PR-style code conversation to build a mental model of generated code).
+- **#113** — `decision-records-as-history-abstraction` analysis + a decision-graph plan.
+
+I synced them in, resolved the one conflict (`meta/threads/index.md` — all three 2026-07-20 thread entries kept), regenerated the generated artifacts so the `--check` gates passed, re-verified (177 tests green), and only then merged.
+
+I did **not** reconcile #115's docs against #114/#113 — that was outside "Merge," and #115 already reconciles with #112. But there's now a **cluster of four related doctrines/analyses from 2026-07-20** all circling code-as-derived-artifact (intent-is-source, regenerate-the-change, comprehension-of-generated-code, decision-records). If you want, I can do a pass that cross-links the four into a coherent set — several of them would benefit from `See also` edges and a shared framing. Just say the word.
+
+## User
+
+Yes proceed
+
+## Assistant
+
+
+I now have the full cluster. Here's the shared framing I'll encode: all three doctrines (plus the decision-records work) are **2026-07-20 facets of one question — *if code is an agent-generated, derived artifact, what must the human and the process still guarantee?*** — each a child of `engineer-as-orchestrator`:
+
+- **intent-is-source** → *what is authoritative* (intent; code opaque to the degree the oracle covers it)
+- **regenerate-the-change** → *how to change it safely* (regenerate the delta; the artifact accretes unstated load-bearing properties)
+- **comprehension-of-generated-code** → *whether the human can still understand it*
+- **decision-records** → *how to preserve the why*
+
+Let me read the exact current text of the three doctrines to place tailored sibling-links.
+
+Done. The four 2026-07-20 sessions are now a coherent, cross-linked cluster.
+
+## What I added
+
+**A "Sibling directions — the code-as-derived-artifact cluster" section in each of the three doctrines**, each written from its own vantage but encoding one shared frame: *if code is an agent-generated, derived artifact, what must the human and the process still guarantee?* — each a child of `engineer-as-orchestrator`:
+
+| Doctrine | Answers |
+|---|---|
+| **intent-is-source** | *what is authoritative* — intent; code opaque to the degree the oracle covers it |
+| **regenerate-the-change** | *how to change it safely* — the delta, not the system; the artifact accretes unstated load-bearing properties |
+| **comprehension-of-generated-code** | *whether the human can still understand it* |
+
+The two tightest links are stated in prose, not just listed:
+- **intent-is-source ↔ comprehension** — they bound artifact invisibility from opposite sides: earned opacity says when the operator *need not* read generated code; comprehension says they must stay *able* to. "A licence to skip reading, never a licence to become unable to."
+- **regenerate-the-change ↔ comprehension** — the *emergent load-bearing set* a rebuild mustn't discard **is** part of the mental model the process must produce; a from-scratch regeneration invalidates both at once.
+
+**A note in the decision-records analysis** naming this very cluster as a *live example of the missing connected-lineage view* — four sibling facets I had to connect by hand-authored cross-links, which is exactly what its proposed compiled decision-graph would surface automatically.
+
+**Gates:** every new cross-link resolves (clean `verify`), contract/registry current, 177 tests pass. Pushed to `claude/codebase-regeneration-specs-aqebw2` (freshly restarted from the merged `main`, since #115 was already merged).
+
+**Not yet done — the landing motions**, since you asked me to *proceed with the cross-linking*, not to PR it. When you're ready, `/create-pull-request` will re-capture this session (extending the existing thread doc in place), stamp this session's thread into the `attribution.from` of the three docs I revised from other sessions (#112/#113/#114), and open the PR; add `merge` to drive it green and land it. Want me to?

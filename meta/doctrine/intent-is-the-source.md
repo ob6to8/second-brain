@@ -10,7 +10,7 @@ attribution:
   channel: agent-authored
   why: "operator proposed the direction, the session's assessment bounded it, and the operator ratified persisting it as standing doctrine"
   agent: "Claude Code agent, code-is-an-implementation-detail session"
-  from: [/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md]
+  from: [/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md, /meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md]
 ---
 
 # Intent is the source; artifacts are derived — and opacity is earned by the oracle
