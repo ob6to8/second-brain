@@ -5,6 +5,7 @@ description: Q&A distilling Claude Artifacts into a filed concept, then a taxono
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, artifacts, anthropic, taxonomy, restructure]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_01SKJWTcVS1XocHQdEZrjLHc
 pr: 75
 ---
 

@@ -5,6 +5,7 @@ description: The session that ported session capture, a routing ledger, and rout
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-08–2026-07-09; verbatim retained messages parsed from the host session log — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, capture, routing, route-tagging, workflow]
 timestamp: 2026-07-09
+session: https://claude.ai/code/session_018uKND3Ycc71z55zPUqU86M
 pr: 13
 ---
 

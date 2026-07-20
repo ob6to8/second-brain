@@ -5,6 +5,7 @@ description: Intook Boris Cherny's "Steps of AI Adoption" post verbatim as a ref
 provenance: "Claude Code session (Claude Fable 5, then Claude Opus 4.8 via /model), 2026-07-17; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, ai-adoption, tier-3, tier-4, interface, trust, verification, jido, beam, warp, intake]
 timestamp: 2026-07-17
+session: https://claude.ai/code/session_01BpuP5CeA1sFEetYU4eFykn
 pr: 107
 ---
 

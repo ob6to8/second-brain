@@ -91,6 +91,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:0da4a3` | [beliefs/glossary/detector](/beliefs/glossary/detector.md) | concept | false |
 | `em:d18504` | [beliefs/glossary/deterministic-spine](/beliefs/glossary/deterministic-spine.md) | concept | false |
 | `em:d4fc9d` | [beliefs/glossary/digest](/beliefs/glossary/digest.md) | concept | false |
+| `em:90e275` | [beliefs/glossary/digital-twin](/beliefs/glossary/digital-twin.md) | concept | false |
 | `em:802d4e` | [beliefs/glossary/directed-acyclic-graph](/beliefs/glossary/directed-acyclic-graph.md) | concept | false |
 | `em:537412` | [beliefs/glossary/disposition](/beliefs/glossary/disposition.md) | concept | false |
 | `em:bec37f` | [beliefs/glossary/distill-dont-dump](/beliefs/glossary/distill-dont-dump.md) | concept | false |
@@ -134,6 +135,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:8b48c7` | [beliefs/glossary/generated-artifact](/beliefs/glossary/generated-artifact.md) | concept | false |
 | `em:10e9cb` | [beliefs/glossary/generative-model](/beliefs/glossary/generative-model.md) | concept | false |
 | `em:d94806` | [beliefs/glossary/genserver](/beliefs/glossary/genserver.md) | concept | false |
+| `em:816d17` | [beliefs/glossary/git-trailer](/beliefs/glossary/git-trailer.md) | concept | false |
 | `em:184bae` | [beliefs/glossary/git-worktree](/beliefs/glossary/git-worktree.md) | concept | false |
 | `em:680062` | [beliefs/glossary/github-flavored-markdown](/beliefs/glossary/github-flavored-markdown.md) | concept | false |
 | `em:7c640a` | [beliefs/glossary/github-pages](/beliefs/glossary/github-pages.md) | concept | false |
@@ -145,15 +147,18 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fe0ebd` | [beliefs/glossary/grounded-extension](/beliefs/glossary/grounded-extension.md) | concept | false |
 | `em:8c4c5c` | [beliefs/glossary/grounding-tier](/beliefs/glossary/grounding-tier.md) | concept | false |
 | `em:ac0e23` | [beliefs/glossary/harness](/beliefs/glossary/harness.md) | concept | false |
+| `em:183eaa` | [beliefs/glossary/holdout-scenario](/beliefs/glossary/holdout-scenario.md) | concept | false |
 | `em:c12a2a` | [beliefs/glossary/hot-code-loading](/beliefs/glossary/hot-code-loading.md) | concept | false |
 | `em:00e798` | [beliefs/glossary/hot-module-reload](/beliefs/glossary/hot-module-reload.md) | concept | false |
 | `em:8fda94` | [beliefs/glossary/html-escaping](/beliefs/glossary/html-escaping.md) | concept | false |
 | `em:3c44a8` | [beliefs/glossary/hunk](/beliefs/glossary/hunk.md) | concept | false |
 | `em:3983f2` | [beliefs/glossary/hybrid-search](/beliefs/glossary/hybrid-search.md) | concept | false |
+| `em:41dbfd` | [beliefs/glossary/hyrums-law](/beliefs/glossary/hyrums-law.md) | concept | false |
 | `em:f07159` | [beliefs/glossary/id-namespace-migration](/beliefs/glossary/id-namespace-migration.md) | concept | false |
 | `em:5b2e0f` | [beliefs/glossary/inbox-namespace](/beliefs/glossary/inbox-namespace.md) | concept | false |
 | `em:1c0310` | [beliefs/glossary/inference-belief-role](/beliefs/glossary/inference-belief-role.md) | concept | false |
 | `em:2015c6` | [beliefs/glossary/inkling](/beliefs/glossary/inkling.md) | concept | false |
+| `em:85d15c` | [beliefs/glossary/intent-as-source](/beliefs/glossary/intent-as-source.md) | concept | false |
 | `em:e08db0` | [beliefs/glossary/invisible-degradation](/beliefs/glossary/invisible-degradation.md) | concept | false |
 | `em:e9a82b` | [beliefs/glossary/issue-type](/beliefs/glossary/issue-type.md) | concept | false |
 | `em:44f899` | [beliefs/glossary/jido](/beliefs/glossary/jido.md) | concept | false |
@@ -232,6 +237,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:570e22` | [beliefs/glossary/routing-ledger](/beliefs/glossary/routing-ledger.md) | concept | false |
 | `em:e55bda` | [beliefs/glossary/run](/beliefs/glossary/run.md) | concept | false |
 | `em:371597` | [beliefs/glossary/safe](/beliefs/glossary/safe.md) | concept | false |
+| `em:c50864` | [beliefs/glossary/satisfaction-metric](/beliefs/glossary/satisfaction-metric.md) | concept | false |
 | `em:4f4f5c` | [beliefs/glossary/scenario-test](/beliefs/glossary/scenario-test.md) | concept | false |
 | `em:9fdaf8` | [beliefs/glossary/second-mind](/beliefs/glossary/second-mind.md) | concept | false |
 | `em:23844f` | [beliefs/glossary/section-terminator](/beliefs/glossary/section-terminator.md) | concept | false |
@@ -242,6 +248,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:425356` | [beliefs/glossary/separation-of-concerns](/beliefs/glossary/separation-of-concerns.md) | concept | false |
 | `em:243d56` | [beliefs/glossary/session-capture](/beliefs/glossary/session-capture.md) | concept | false |
 | `em:6f2442` | [beliefs/glossary/session-init-digest](/beliefs/glossary/session-init-digest.md) | concept | false |
+| `em:4b1d6d` | [beliefs/glossary/session-transcript](/beliefs/glossary/session-transcript.md) | concept | false |
 | `em:71f38a` | [beliefs/glossary/sessionstart-hook](/beliefs/glossary/sessionstart-hook.md) | concept | false |
 | `em:7580df` | [beliefs/glossary/shallow-clone](/beliefs/glossary/shallow-clone.md) | concept | false |
 | `em:eacc3f` | [beliefs/glossary/shared-state-dual-interfaces](/beliefs/glossary/shared-state-dual-interfaces.md) | concept | false |
@@ -250,6 +257,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:aa0003` | [beliefs/glossary/skill](/beliefs/glossary/skill.md) | concept | false |
 | `em:3be9b0` | [beliefs/glossary/skill-namespacing](/beliefs/glossary/skill-namespacing.md) | concept | false |
 | `em:7c0b1d` | [beliefs/glossary/skill-to-skill-delegation](/beliefs/glossary/skill-to-skill-delegation.md) | concept | false |
+| `em:ceca0b` | [beliefs/glossary/software-factory](/beliefs/glossary/software-factory.md) | concept | false |
 | `em:2b6117` | [beliefs/glossary/soundness-and-completeness](/beliefs/glossary/soundness-and-completeness.md) | concept | false |
 | `em:38d006` | [beliefs/glossary/speculative-decoding](/beliefs/glossary/speculative-decoding.md) | concept | false |
 | `em:c13e28` | [beliefs/glossary/spin-out](/beliefs/glossary/spin-out.md) | concept | false |
@@ -263,6 +271,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:bb2968` | [beliefs/glossary/strand](/beliefs/glossary/strand.md) | concept | false |
 | `em:ea95e4` | [beliefs/glossary/supersession](/beliefs/glossary/supersession.md) | concept | false |
 | `em:40133e` | [beliefs/glossary/synonym-expansion](/beliefs/glossary/synonym-expansion.md) | concept | false |
+| `em:f5710f` | [beliefs/glossary/teleport](/beliefs/glossary/teleport.md) | concept | false |
 | `em:d2fd32` | [beliefs/glossary/terminal-emulator](/beliefs/glossary/terminal-emulator.md) | concept | false |
 | `em:3a30cd` | [beliefs/glossary/terminal-multiplexer](/beliefs/glossary/terminal-multiplexer.md) | concept | false |
 | `em:3d4be4` | [beliefs/glossary/test-oracle](/beliefs/glossary/test-oracle.md) | concept | false |
@@ -296,6 +305,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
 | `em:964c3a` | [beliefs/glossary/write-time-vs-build-time](/beliefs/glossary/write-time-vs-build-time.md) | concept | false |
 | `em:974060` | [knowledge/SWE/agentic/adoption/steps-of-ai-adoption](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | reference |  |
+| `em:efab03` | [knowledge/SWE/agentic/adoption/strongdm-software-factory](/knowledge/SWE/agentic/adoption/strongdm-software-factory.md) | reference |  |
 | `em:221e3e` | [knowledge/SWE/agentic/agent-memory/experience-graphs-exg](/knowledge/SWE/agentic/agent-memory/experience-graphs-exg.md) | reference |  |
 | `em:97d2a8` | [knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop](/knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop.md) | reference |  |
 | `em:c29a22` | [knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md) | reference |  |

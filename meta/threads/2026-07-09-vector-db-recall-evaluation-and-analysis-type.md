@@ -5,6 +5,7 @@ description: Stress-tested whether a vector DB would improve recall as the bundl
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, recall, dedup, vector-database, embeddings, search, intake, governance]
 timestamp: 2026-07-09
+session: https://claude.ai/code/session_017rL4RtyVSs4sGPasyAQiRd
 pr: 25
 ---
 

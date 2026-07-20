@@ -5,6 +5,7 @@ description: The tail of the second-mind taxonomy session — merged PR #80 (rec
 provenance: "Claude Code session (Claude Opus 4.8; one merge-reconciliation turn Claude Fable 5), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, todos, routing-ledger, priorities, provenance, git]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_01HJPV4LC84LSauxspwapUw9
 pr: 84
 ---
 

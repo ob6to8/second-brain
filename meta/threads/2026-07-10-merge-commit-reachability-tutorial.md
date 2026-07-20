@@ -5,6 +5,7 @@ description: Turned a session quote — deliberately true-merging a port branch 
 provenance: "Claude Code session (claude-fable-5), 2026-07-10; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, tutorial, git, merge, reachability]
 timestamp: 2026-07-10
+session: https://claude.ai/code/session_01TR5rM79egMj4QBQtqfTxf5
 pr: 36
 ---
 

@@ -5,6 +5,7 @@ description: The operator recalled changing the OKF unit's name from "concept" t
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-15; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, terminology, types, vocabulary, glossary, replication]
 timestamp: 2026-07-15
+session: https://claude.ai/code/session_01HMrGTKTdnnVUi5EwbXXDUw
 pr: 93
 ---
 

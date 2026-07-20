@@ -6,6 +6,7 @@ provenance: "Claude Code session, 2026-07-20; verbatim retained messages — too
 tags: [meta, thread, decision-records, design-rationale, session-capture, routing, agent-memory, analysis, plan]
 timestamp: 2026-07-20
 pr: 113
+session: https://claude.ai/code/session_017QVqisck312JJ3o86iLVCk
 ---
 
 # 2026-07-20-decision-records-as-history-abstraction
