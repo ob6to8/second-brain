@@ -10,7 +10,7 @@ attribution:
   channel: agent-authored
   why: "operator proposed the direction, the session's assessment bounded it, and the operator ratified persisting it as standing doctrine"
   agent: "Claude Code agent, code-is-an-implementation-detail session"
-  from: [/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md]
+  from: [/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md, /meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md]
 ---
 
 # Intent is the source; artifacts are derived — and opacity is earned by the oracle
@@ -73,6 +73,30 @@ readable because our verification layer cannot yet make it safely opaque.*
   the verifiers that *are* the oracle — demands boolean conformance and stays
   on the inspectable side of the ratchet indefinitely. Who verifies the
   verifier is the one question this doctrine never lets an agent wave away.
+
+## Sibling directions — the code-as-derived-artifact cluster
+
+This doctrine is one of three 2026-07-20 facets of a single question — *if code is
+an agent-generated, derived artifact, what must the human and the process still
+guarantee?* — each a child of
+[the engineer as orchestrator](/meta/doctrine/engineer-as-orchestrator.md):
+
+- **This doctrine** answers *what is authoritative* — intent, with code opaque to
+  the degree a mechanical oracle covers its behavior.
+- [Regenerate the change, not the system](/meta/doctrine/regenerate-the-change-not-the-system.md)
+  answers *how to change it safely* — the temporal companion, where a live artifact
+  accretes unstated load-bearing properties a rebuild must not discard.
+- [The operator must reconstruct a mental model of code they did not write](/meta/doctrine/comprehension-of-generated-code.md)
+  answers *whether the human can still understand it*, and bounds this doctrine's
+  opacity from the other side: the oracle sets when the operator *need not* read
+  generated code, while comprehension holds they must remain *able* to reconstruct a
+  model of it — earned opacity is a licence to skip reading, never a licence to
+  become unable to read.
+
+The *why* behind the changes intent authorizes — the causal decision chain — is the
+subject of the
+[decision-records analysis](/meta/analysis/decision-records-as-history-abstraction.md)
+and its [decision-graph plan](/meta/plans/decision-extraction-and-compiled-decision-graph.md).
 
 ## Standing against this direction
 
