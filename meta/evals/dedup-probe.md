@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-12T09:50:13+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md]
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md]
 ---
 
 # Dedup recall probe — gold set
@@ -69,6 +69,8 @@ being mechanically rewritten.
 | kv cache | em:266c5e em:1cac23 | negative | — | A non-duplicate pair: kv-cache-compression-history (survey of eviction/quantization) vs vericache-lossless-kv-cache (one lossless technique). They share heavy vocabulary but must **not** be judged duplicates. Seeded for the later duplicate-judgment tiers; not scored in v1. |
 | context rot | em:77d68a em:c0961a | negative | — | Another non-duplicate pair: the context-rot capture vs effective-context-engineering-for-agents, which merely discusses the phenomenon. Overlapping vocabulary, distinct concepts. Not scored in v1. |
 | lossless kv cache | em:1cac23 | quarantine | — | Gold answer is time-relative: once supersession is modeled, a newer lossless-KV concept could supersede VeriCache and become the correct dedup target. Undefined until then (see the [epistemic overlay plan](/meta/plans/epistemic-overlay.md)); parsed and reported, never scored. |
+| what is the new observer subagent pattern in claude code | em:02731b | target | observer agents; watchdog agent; agent watching another agent; advisory oversight subagent | harvested at intake 2026-07-18 |
+| the founders playbook - building an ai native startup | em:54cf3c | target | anthropic founder playbook; ai-native startup playbook; startup lifecycle playbook | harvested at intake 2026-07-20 |
 
 ## Baseline
 
@@ -82,8 +84,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 3 | 10 |
-| expanded | 10 | 10 |
+| plain | 3 | 12 |
+| expanded | 11 | 12 |
 
 The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
 of how much recall the tier-1 `/intake` synonym-expansion change is expected to

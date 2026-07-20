@@ -5,6 +5,7 @@ description: Spec'd the second-brain → elixir-mind rename as a type:plan doc (
 provenance: "Claude Code session (Claude Fable 5, then Claude Opus 4.8 via /model), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, rename, identity, migration, model-selection, orchestration, planning]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_01B38TshNtviAnrWYJ3agTqq
 pr: 65
 ---
 

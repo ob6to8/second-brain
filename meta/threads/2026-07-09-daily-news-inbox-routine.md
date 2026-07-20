@@ -5,6 +5,7 @@ description: Created a daily scheduled trigger (Routine) that fires a fresh sess
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, inbox, news, automation, scheduling]
 timestamp: 2026-07-09
+session: https://claude.ai/code/session_01ApehodRgmk12tpfeAytt9D
 pr: 20
 ---
 

@@ -86,7 +86,13 @@ defmodule ElixirMind.Links do
     |> Enum.join("\n")
   end
 
-  defp internal_targets(body) do
+  @doc """
+  Internal markdown link targets in `body`, minus code spans/blocks and
+  external/mailto/anchor/placeholder targets — the same set the resolution
+  check walks. Raw targets (a `#fragment` may still be attached); normalize
+  with `resolve_target/2`.
+  """
+  def internal_targets(body) do
     body = body |> String.replace(~r/```.*?```/s, "") |> String.replace(~r/`[^`\n]*`/, "")
 
     ~r/\]\(([^)\s]+)\)/
@@ -98,19 +104,25 @@ defmodule ElixirMind.Links do
     end)
   end
 
-  defp resolves?(target, from_path, root) do
+  @doc """
+  Normalize an internal link `target` found in `from_path` to a repo-relative
+  path (leading `#fragment` dropped): bundle-absolute targets lose their leading
+  `/`, relative ones resolve against the source doc's directory.
+  """
+  def resolve_target(target, from_path) do
     target = target |> String.split("#") |> hd()
 
-    rel =
-      case target do
-        "/" <> rest ->
-          rest
+    case target do
+      "/" <> rest ->
+        rest
 
-        _ ->
-          Path.join(Path.dirname(from_path), target) |> Path.expand("/") |> String.slice(1..-1//1)
-      end
+      _ ->
+        Path.join(Path.dirname(from_path), target) |> Path.expand("/") |> String.slice(1..-1//1)
+    end
+  end
 
-    File.exists?(Path.join(root, rel))
+  defp resolves?(target, from_path, root) do
+    File.exists?(Path.join(root, resolve_target(target, from_path)))
   end
 
   # --- index coverage --------------------------------------------------------

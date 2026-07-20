@@ -5,6 +5,7 @@ description: A top-down code review + docs staleness audit that grew five flow d
 provenance: "Rendered by /capture from the live session context, 2026-07-12; operator messages and retained agent responses verbatim, tool noise stripped"
 tags: [meta, thread, code-review, flows, elaborations, glossary, route-tagging, hardening]
 timestamp: 2026-07-12
+session: https://claude.ai/code/session_01APaYt6QS5tzN2BKo6Yncyc
 pr: 48
 ---
 

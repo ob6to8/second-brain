@@ -5,6 +5,7 @@ description: Executed the accepted second-brain to elixir-mind rename as two ato
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-14; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, rename, elixir-mind, identity, migration, tooling, governance]
 timestamp: 2026-07-14
+session: https://claude.ai/code/session_01Ecg4gRC7V3vPM3YHJjkpNu
 pr: 88
 ---
 

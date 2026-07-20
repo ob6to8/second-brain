@@ -5,6 +5,7 @@ description: Reconciled PR #73 (the belief-decomposition branch) against main's 
 provenance: "Claude Code session, 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, pull-request, merge-reconciliation, attribution, glossary, belief-decomposition]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_012EwRKVTRMCQFfJQsa4dCiK
 pr: 74
 ---
 

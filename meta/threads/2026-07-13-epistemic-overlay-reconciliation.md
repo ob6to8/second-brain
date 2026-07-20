@@ -5,6 +5,7 @@ description: A session that verified the 2026-07-10 evaluation thread's output s
 provenance: "Claude Code session (Claude Sonnet 5), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, epistemic-overlay, composable-beliefs, belief-decomposition, drift, reconciliation]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_01L9ydexp9srawtgZT8kBKGY
 pr: 78
 ---
 

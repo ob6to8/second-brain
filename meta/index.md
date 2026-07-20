@@ -35,6 +35,10 @@ taxonomy. This is where the rules that compile into the operating contract live.
     index-coverage gaps) that never fail the gate.
   - `mix brain.evidence <em:id|path>` — derive a concept's verification narrative
     (the prose is never committed; only the edges are).
+  - `mix brain.orphans [--include-index] [--all]` — list docs with no inbound
+    internal link (filed but never referenced). Read-only and advisory;
+    `index.md` listings and the anchored `meta/threads/`+`inbox/` namespaces are
+    excluded by default (widen with the flags).
   - `mix brain.route_tags [--materialize]` — verify `<routes ref="em:…">` tags on
     threads and the excerpt logs they materialize into concepts (re-derives each
     log from the current tags and fails on divergence); `--materialize` writes the
