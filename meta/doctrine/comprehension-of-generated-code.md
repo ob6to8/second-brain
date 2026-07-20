@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, localized-code-conversation session"
   why: "names the standing intention the capture/routing/tagging apparatus instrumentally serves, so plans and policies for operator comprehension have a direction to cite"
+  from: [/meta/threads/2026-07-20-localized-code-conversation-and-comprehension-doctrine.md]
 ---
 
 # The operator must be able to reconstruct a mental model of code they did not write

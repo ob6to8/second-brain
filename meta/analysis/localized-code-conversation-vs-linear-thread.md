@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, localized-code-conversation session"
   why: "persists the session's reasoning and recommendation on location-primary vs. thread-primary conversation storage before it scrolls off, as the design judgment the comprehension doctrine is scored against"
+  from: [/meta/threads/2026-07-20-localized-code-conversation-and-comprehension-doctrine.md]
 ---
 
 # Should development conversation be stored co-located with the code it concerns, rather than as a linear thread projected to topical sinks?
