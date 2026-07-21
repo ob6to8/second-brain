@@ -5,6 +5,7 @@ description: The third slice of the Inkling session — merged PR #105 (the harn
 provenance: "Claude Code session (Claude Fable), 2026-07-16; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, evals, inkling, open-weights, landscape, llm-as-judge, thinking-machines, industry]
 timestamp: 2026-07-16
+pr: 124
 ---
 
 # 2026-07-16-inkling-evals-landscape-spike
