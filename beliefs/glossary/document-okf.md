@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, pointer to the defining policy
 verified: false
 tags: [glossary, okf, bundle]
 sense: repo
-timestamp: 2026-07-15
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-10T23:09:18+00:00
   channel: glossary
@@ -17,8 +17,7 @@ attribution:
 
 # document (OKF)
 
-A single markdown file with YAML frontmatter that is the unit of knowledge in
-this bundle; its id is its path minus `.md`. Canonically defined by the
+Canonically defined by the
 [document-anatomy policy](/meta/policy/document-anatomy.md).
 
 The OKF spec calls this unit a *concept document*. This bundle deliberately says

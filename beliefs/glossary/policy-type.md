@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, types, governance]
 sense: repo
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T19:58:08+02:00
   channel: glossary
@@ -17,7 +17,7 @@ attribution:
 
 # policy (type)
 
-The controlled `type` for a standing governance rule about how the brain operates — the layer that binds every agent session. Policy documents live under `meta/policy/` and are the source from which the [operating contract](/beliefs/glossary/operating-contract.md) (`CLAUDE.md`) is compiled (`mix brain.contract`). Distinct from a [plan](/beliefs/glossary/plan-type.md) (a one-off intended change), an [issue](/beliefs/glossary/issue-type.md) (a problem to track), and a [methodology](/beliefs/glossary/methodology-type.md) (a repeatable how-to): a policy is a durable *rule*, not a task or a procedure. Defined in the [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md).
+As a governance rule, it is the layer that binds every agent session. Each policy document under `meta/policy/` compiles into the [operating contract](/beliefs/glossary/operating-contract.md) (`CLAUDE.md`) via `mix brain.contract`. Distinct from a [plan](/beliefs/glossary/plan-type.md) (a one-off intended change), an [issue](/beliefs/glossary/issue-type.md) (a problem to track), and a [methodology](/beliefs/glossary/methodology-type.md) (a repeatable how-to): a policy is a durable *rule*, not a task or a procedure. Defined in the [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md).
 
 *Seen in:* [2026-07-05 bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-11 doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md)
 

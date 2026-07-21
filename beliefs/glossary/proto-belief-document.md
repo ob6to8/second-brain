@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, composable-beliefs, routing]
 sense: repo
-timestamp: 2026-07-10
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # proto-belief document
 
-A durable, maintained single page that accretes synthesized knowledge about exactly one matter over time (its Composable Beliefs name). This brain maps it onto an OKF `concept` doc, which serves as the per-topic sink that routed session content lands in.
+In this brain, that OKF `concept` doc serves as the per-topic sink that routed session content lands in.
 
 *Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md)

@@ -5,6 +5,7 @@ description: Traced an Instagram post back to Anthropic's advisor/orchestrator b
 provenance: "Claude Code session (Claude Sonnet 5, then Claude Opus 4.8), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, anthropic, advisor-tool, orchestration, managed-agents, build-vs-buy, agents]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_011No6T6tQoaV17R76v38UZ9
 pr: 79
 ---
 

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search]
 sense: common
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T10:25:03+00:00
   channel: glossary
@@ -17,7 +17,7 @@ attribution:
 
 # lexical search
 
-Search that matches on the literal surface form of text — tokens or substrings, case-folded at most — rather than on meaning. It is fast, deterministic, and dependency-free (a `grep`-class match, or a ranked variant like [BM25](/beliefs/glossary/bm25.md)), which is why it is the default backend for intake [deduplication](/beliefs/glossary/deduplication.md) here. Its blind spot is vocabulary mismatch: it cannot bridge synonym/jargon gaps the way [semantic search](/beliefs/glossary/semantic-search.md) or [hybrid search](/beliefs/glossary/hybrid-search.md) can — the gap that [synonym expansion](/beliefs/glossary/synonym-expansion.md) papers over without embeddings.
+Concretely it is a deterministic `grep`-class match — or a ranked variant like [BM25](/beliefs/glossary/bm25.md) — which is why it is the default backend for intake [deduplication](/beliefs/glossary/deduplication.md) here. Where it falls down is vocabulary mismatch: [semantic search](/beliefs/glossary/semantic-search.md) and [hybrid search](/beliefs/glossary/hybrid-search.md) close that gap, and [synonym expansion](/beliefs/glossary/synonym-expansion.md) papers over it without embeddings.
 
 *Seen in:* [2026-07-12 dedup recall probe thread](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md)
 

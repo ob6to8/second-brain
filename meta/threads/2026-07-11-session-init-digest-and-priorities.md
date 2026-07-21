@@ -5,6 +5,7 @@ description: Built the session-init digest (SecondBrain.SessionInit + mix brain.
 provenance: "Claude Code session (Claude Fable 5), 2026-07-11; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, session-init, hooks, priorities, tooling]
 timestamp: 2026-07-11
+session: https://claude.ai/code/session_013Zoqs81apKu8AmPkUk7dW2
 pr: 39
 ---
 

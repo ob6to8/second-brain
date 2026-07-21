@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, research, inbox]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # candidate feed
 
-A regenerated list of external items (research, articles, papers, resources) surfaced as candidates for possible inclusion in a knowledge store, deliberately held in a waiting area outside the curated bundle until a human explicitly accepts one (here, via `/intake`).
+The items are research, articles, papers, and resources; here the accept action is `/intake`.
 
 *Seen in:* [2026-07-09 news-inbox thread](/meta/threads/2026-07-09-home-page-news-filter-inbox.md), [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md)

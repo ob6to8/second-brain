@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, knowledge-representation, ontology, semantic-web]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T20:14:11+00:00
   channel: glossary
@@ -17,10 +17,10 @@ attribution:
 
 # ontology (knowledge representation)
 
-A machine-readable vocabulary for a domain: its classes (categories),
-properties (relations), individuals (instances), and the axioms constraining
-how they relate — with formally defined meaning, so consistency and
-subsumption can be checked mechanically rather than editorially. [OWL](/beliefs/glossary/owl.md)
+Its classes are categories, properties are relations, individuals are
+instances, and axioms constrain how these relate; because the meaning is
+formally defined, consistency and subsumption can be checked mechanically
+rather than editorially. [OWL](/beliefs/glossary/owl.md)
 is the W3C standard language for publishing them. The authoring cost of formal
 ontologies — every distinction must be legislated up front — is the standing
 argument for semiformal alternatives that keep content in natural language.

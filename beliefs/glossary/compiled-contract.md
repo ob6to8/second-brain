@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, governance, tooling]
 sense: repo
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,11 +17,11 @@ attribution:
 
 # compiled contract
 
-A configuration or policy file treated as build output rather than hand-edited source: a compiler task regenerates it from canonical source documents (each contributing a traceable section), so there is one source of truth and the artifact cannot silently drift. Editing the artifact by hand is prohibited — you edit the sources and recompile. In this brain, `CLAUDE.md` is compiled from `meta/preamble.md` + `meta/policy/*.md` via `mix brain.contract`.
+Editing the artifact by hand is prohibited — you edit the sources and recompile, each source contributing a traceable section. In this brain, `CLAUDE.md` is compiled from `meta/preamble.md` + `meta/policy/*.md` via `mix brain.contract`.
 
 Mechanically: each `type: policy` source declares the contract `section` it renders into and its `order` within it; the compiler (`lib/elixir_mind/contract.ex`) groups and orders the policies under a fixed, ordered section list, and emits a *Source:* trace link under every rendered rule back to its `meta/policy/<id>.md`. Drift is caught structurally, not procedurally: `mix brain.contract --check` re-renders and diffs against the on-disk artifact in CI, so a hand edit or a forgotten recompile fails the gate. One consequence: adding a new contract *section* (as opposed to a new rule in an existing one) is a compiler change — the section list is code, not frontmatter. The same pattern governs [`meta/registry.md`](/meta/registry.md) (`mix brain.registry`) and the route-tagged excerpt logs (`mix brain.route_tags --materialize`).
 
-*Seen in:* [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 remove-email thread](/meta/threads/2026-07-09-remove-operator-email-from-contract.md), [2026-07-11 branch-deletion/contract thread](/meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md), [2026-07-12 ban-dialog-box-questions thread](/meta/threads/2026-07-12-ban-dialog-box-questions-in-threads.md), [2026-07-13 response-resource-links thread](/meta/threads/2026-07-13-response-resource-links-policy-and-site-config.md) (the compiler expands a config token into the rendered rule)
+*Seen in:* [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 remove-email thread](/meta/threads/2026-07-09-remove-operator-email-from-contract.md), [2026-07-11 branch-deletion/contract thread](/meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md), [2026-07-12 ban-dialog-box-questions thread](/meta/threads/2026-07-12-ban-dialog-box-questions-in-threads.md), [2026-07-13 response-resource-links thread](/meta/threads/2026-07-13-response-resource-links-policy-and-site-config.md) (the compiler expands a config token into the rendered rule), [2026-07-16 render-contract-invocation thread](/meta/threads/2026-07-16-render-contract-invocation-and-auto-render.md) (the render is a mix task, the `--check` drift gate a fail-don't-fix verifier)
 
 ## Thread excerpts — route-tagged log
 

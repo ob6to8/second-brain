@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, epistemics, atms, truth-maintenance]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T20:14:11+00:00
   channel: glossary
@@ -17,14 +17,12 @@ attribution:
 
 # label (ATMS)
 
-The set of [environments](/beliefs/glossary/environment-atms.md) attached to a belief:
-every minimal, consistent combination of assumptions from which it derivably
-follows. The ATMS's core invariant is keeping every label **consistent** (no
-inconsistent environments), **sound** (the belief really follows from each),
-**complete** (any consistent environment entailing the belief is a superset of
-one listed), and **minimal** (no listed environment contains another). Because
-labels are precomputed, asking "does this belief hold in this context?"
-reduces to a subset test — the efficiency that makes multi-context reasoning
-practical.
+The ATMS holds four invariants over a label's [environments](/beliefs/glossary/environment-atms.md):
+**sound** — the belief really follows from every one; **complete** — any
+environment entailing the belief is a superset of one already listed;
+**minimal** — no listed environment contains another; **consistent** — none is
+self-contradictory. Precomputing labels this way is what turns a
+context-membership query into a cheap superset check and makes multi-context
+reasoning practical.
 
 *Seen in:* [de Kleer 1986 capture](/knowledge/knowledge-management/knowledge-representation/de-kleer-1986-an-assumption-based-tms.md), [TMS reference](/knowledge/knowledge-management/knowledge-representation/truth-maintenance-systems.md)

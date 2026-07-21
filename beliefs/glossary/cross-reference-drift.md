@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, failure-modes, links, corpus-health]
 sense: common
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T09:43:37+00:00
   channel: glossary
@@ -17,7 +17,7 @@ attribution:
 
 # cross-reference drift
 
-The failure mode in which a change that should touch many interlinked documents — Karpathy's arithmetic puts one ingested source at 10–15 affected wiki pages — only updates some of them, leaving the rest pointing at retired facts, renamed files, or superseded claims. A partial-view agent updates what it retrieved; the rest rots silently ([invisible degradation](/beliefs/glossary/invisible-degradation.md)). It is the known killer of LLM-maintained wikis and stage 3 of the 500+ concept failure chain; the advisory countermeasure (a periodic LLM lint pass) has the same context ceiling as the agent that caused the drift. This brain's defenses are structural where possible — compiled artifacts can't drift from their sources, and the docs-freshness [warn pass](/beliefs/glossary/warn-pass.md) announces unresolved links — with the remainder held editorially. The causing agent need not be an LLM at all: a mechanical, non-agentic rewrite tool (a global find-replace during a root reorganization) can corrupt a quoted *external* path by blind string-matching just as an under-context agent corrupts an internal one — the failure mode is about the absence of a detector, not about who or what made the edit.
+Karpathy's arithmetic puts one ingested source at 10–15 affected wiki pages; a partial-view agent updates only what it retrieved, and the rest rots silently, pointing at retired facts, renamed files, or superseded claims ([invisible degradation](/beliefs/glossary/invisible-degradation.md)). The advisory countermeasure — a periodic LLM lint pass — has the same context ceiling as the agent that caused the drift. This brain's defenses are structural where possible — compiled artifacts can't drift from their sources, and the docs-freshness [warn pass](/beliefs/glossary/warn-pass.md) announces unresolved links — with the remainder held editorially. The causing agent need not be an LLM at all: a mechanical, non-agentic rewrite tool (a global find-replace during a root reorganization) can corrupt a quoted *external* path by blind string-matching just as an under-context agent corrupts an internal one — the failure mode is about the absence of a detector, not about who or what made the edit.
 
 *Seen in:* [comparison with the 2026 second-brain field](/meta/analysis/comparison-with-the-2026-second-brain-field.md), [docs-surface evaluation and the wiki question](/meta/analysis/docs-surface-evaluation-and-wiki-question.md), [2026-07-12 docs-audit thread](/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md), [2026-07-13 epistemic-overlay reconciliation](/meta/threads/2026-07-13-epistemic-overlay-reconciliation.md)
 

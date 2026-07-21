@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, epistemics, belief-decomposition, composable-beliefs]
 sense: repo
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13T20:34:46+00:00
   channel: glossary
@@ -17,9 +17,8 @@ attribution:
 
 # inference (belief role)
 
-In a belief graph, a belief **derived from other beliefs** rather than asserted
-directly — a genuine leap licensed to exceed its premises ("apples reproduce,"
-from "apples are fruits" + "fruits reproduce"). The counterpart to an
+A genuine leap: from "apples are fruits" + "fruits reproduce" one derives
+"apples reproduce," a conclusion the premises support but do not contain. The counterpart to an
 [attestation](/beliefs/glossary/attestation.md), and the node an
 [ungrounded inference](/beliefs/glossary/ungrounded-inference.md) check targets: every
 inference must resolve transitively to at least one attestation. Corresponds to

@@ -11,3 +11,4 @@ observations.
 - [ai-industry](/knowledge/ai-industry/index.md) — market, economic, and competitive analysis of the AI industry
 - [machine-learning](/knowledge/machine-learning/index.md) — technical ML knowledge: models, architectures, and training methods
 - [knowledge-management](/knowledge/knowledge-management/index.md) — knowledge representation, PKM, and knowledge formats (incl. OKF, the format this brain uses)
+- [startups](/knowledge/startups/index.md) — startup-building methodology and founder playbooks: the lifecycle of building and growing a company

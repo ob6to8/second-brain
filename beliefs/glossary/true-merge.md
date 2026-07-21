@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition; pointer to the reachability tu
 verified: false
 tags: [glossary, git, merge, provenance]
 sense: common
-timestamp: 2026-07-11
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T18:09:19+00:00
   channel: glossary
@@ -17,14 +17,11 @@ attribution:
 
 # true merge
 
-A merge that creates a two-parent merge commit, wiring the source branch's real
-history into the target branch's ancestry — every original commit, message, and
-SHA stays permanently reachable from `main` even after the branch ref is
-deleted. Canonically explained in
+Canonically explained in
 [why a true merge keeps cited commits reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md);
 mandated here by the [merge-strategy policy](/meta/policy/merge-strategy.md).
 Contrast [squash merge](/beliefs/glossary/squash-merge.md) and
 [fast-forward merge](/beliefs/glossary/fast-forward-merge.md); the underlying
 property is [reachability](/beliefs/glossary/reachability.md).
 
-*Seen in:* [2026-07-10 merge-tutorial thread](/meta/threads/2026-07-10-merge-commit-reachability-tutorial.md), [2026-07-11 session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md), [2026-07-13 branch-lifecycle tutorial and main catch-up](/meta/threads/2026-07-13-branch-lifecycle-tutorial-and-main-catchup.md)
+*Seen in:* [2026-07-10 merge-tutorial thread](/meta/threads/2026-07-10-merge-commit-reachability-tutorial.md), [2026-07-11 session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md), [2026-07-13 branch-lifecycle tutorial and main catch-up](/meta/threads/2026-07-13-branch-lifecycle-tutorial-and-main-catchup.md), [2026-07-19 session-URL-persistence thread](/meta/threads/2026-07-19-session-url-persistence-and-plan-vs-capture-policy.md)

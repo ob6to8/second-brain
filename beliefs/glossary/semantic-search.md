@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, embeddings]
 sense: common
-timestamp: 2026-07-10
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # semantic search
 
-Retrieval based on meaning rather than surface tokens, typically via embedding similarity. It can bridge synonym/jargon mismatches (e.g. "lost in the middle" vs "context rot") that lexical or typo-tolerant search cannot — the recall gap that motivates a vector database.
+The gap it closes shows up in pairs like "lost in the middle" vs "context rot" — same idea, no shared tokens — the recall problem that motivates a vector database.
 
 *Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)

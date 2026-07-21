@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing, elixir]
 sense: common
-timestamp: 2026-07-10
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # scenario test
 
-An automated test that drives an entire workflow end-to-end against a realistic fixture (a representative mini-environment) and asserts on the resulting state, rather than exercising a single function in isolation. It pins a flow's deterministic spine.
+The fixture is a representative mini-environment; a scenario test pins a flow's deterministic spine.
 
 *Seen in:* [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md)

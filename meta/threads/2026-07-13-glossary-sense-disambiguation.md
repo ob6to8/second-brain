@@ -5,6 +5,7 @@ description: Ratified and executed the glossary sense-disambiguation proposal â€
 provenance: "Claude Code session, 2026-07-13; verbatim retained messages â€” tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, glossary, terminology, verification]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_01CH4Z23tz1ThNy9fYYA3iBo
 pr: 63
 ---
 

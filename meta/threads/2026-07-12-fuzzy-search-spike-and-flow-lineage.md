@@ -5,6 +5,7 @@ description: Located the "fuzzy search above grep" research spike (the vector-DB
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, flows, lineage, provenance, dedup, recall, fuzzy-search, tooling]
 timestamp: 2026-07-12
+session: https://claude.ai/code/session_01RiBxtQQbyiWPW39PkhByij
 pr: 56
 ---
 

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, security]
 sense: common
-timestamp: 2026-07-10
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-11T08:41:24+02:00
   channel: glossary
@@ -17,6 +17,6 @@ attribution:
 
 # cross-site scripting (XSS)
 
-A web vulnerability class in which unescaped attacker-controlled content is interpreted by the browser as markup or script rather than inert text. An unescaped HTML attribute value (like an un-escaped link `href`) is one common injection vector, which HTML escaping closes.
+The un-escaped `href` of a link is one such vector, closed by HTML escaping.
 
 *Seen in:* [2026-07-09 live-render thread](/meta/threads/2026-07-09-live-render-appraisal-and-pages-hardening.md)

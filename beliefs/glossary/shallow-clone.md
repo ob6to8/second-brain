@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, git, ci]
 sense: common
-timestamp: 2026-07-13
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-13T17:18:00Z
   channel: glossary
@@ -17,9 +17,8 @@ attribution:
 
 # shallow clone
 
-A git clone whose history is truncated to a limited depth rather than fetched
-in full — the default for CI checkouts (`actions/checkout` fetches depth 1)
-and common in sandboxes. `git rev-parse --is-shallow-repository` detects the
+The default for CI checkouts (`actions/checkout` fetches only depth 1) and
+common in sandboxes. `git rev-parse --is-shallow-repository` detects the
 state, and `git fetch --unshallow` completes the history. Tooling that derives
 views from history — like `mix brain.dev_history` reading the
 [first-parent](/beliefs/glossary/first-parent-history.md) merge graph — would
