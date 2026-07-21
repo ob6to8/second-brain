@@ -5,6 +5,7 @@ description: "Intake of Yos Riady's ECS-in-Elixir article into three documents (
 provenance: "Claude Code session (Fable 5), 2026-07-18 → 2026-07-21; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, ecs, elixir, intake, technical-communication, agents, orchestration]
 timestamp: 2026-07-21T00:01:43Z
+pr: 123
 ---
 
 # 2026-07-21-ecs-intake-and-agent-entity-substitution
