@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 4.8), 2026-07-21; verbatim retaine
 tags: [meta, thread, multi-model, coding-agents, code-review, provider-lock-in]
 timestamp: 2026-07-21
 session: https://claude.ai/code/session_01MTAzdLbAf5ha5SznLgPJWJ
+pr: 126
 ---
 
 # 2026-07-21-multi-model-dev-environment-and-cross-model-pr-review
