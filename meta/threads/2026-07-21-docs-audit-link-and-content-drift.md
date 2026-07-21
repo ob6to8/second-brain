@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 4.8), 2026-07-21; verbatim retaine
 tags: [meta, thread, docs-audit, link-audit, drift, verification]
 timestamp: 2026-07-21
 session: https://claude.ai/code/session_01TKU4LdfJv9r7j9ZnH1WDhQ
+pr: 125
 ---
 
 # 2026-07-21-docs-audit-link-and-content-drift
