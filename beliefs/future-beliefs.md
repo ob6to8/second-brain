@@ -58,3 +58,26 @@ worth remembering but not yet formalized into a tutorial, policy, or concept.
   (the knowledge-layer filing rule the slogan validly carried); the is-to-ought
   structure of the move is recorded in the
   [is-to-ought analysis](/meta/analysis/is-to-ought-belief-grounds-doctrine.md).
+- **An artifact states what it *is*, not what it replaced or changed from — the
+  commit graph is the change-narrative layer.** A document should read as a
+  standing statement of its current shape and rationale. It must not narrate its
+  own genesis or supersession: "this retires X", "previously Y", "reframed from
+  Z", "formerly the … slogan" all belong in the commit message and git history —
+  which already carry the change, cited by SHA — not in the artifact body or
+  frontmatter. In-artifact change-narration is redundant on write and goes stale
+  as the thing it references recedes. This generalizes the principle already held
+  for logs — [no hand-kept `log.md`](/meta/policy/reserved-filenames.md), the
+  [true-merge commit graph as the single provenance layer](/meta/policy/merge-strategy.md)
+  — from logs to artifact bodies at large. Deliberate exception: a glossary entry
+  *about* a retired term, where explaining that the term is retired *is* the
+  entry's subject, not gratuitous self-narration. Recurring failure mode: agents
+  write "what this replaces" into the very artifact being created (this session's
+  first draft of the fit-each-layer doctrine did exactly that).
+
+  _Note — this belief is itself an **ought** (a prescriptive/normative rule), not
+  a descriptive observation like the entries above it. So when formalized it
+  becomes a [`doctrine`](/meta/doctrine/index.md) (or a `policy` implementing
+  one), never a `note`/`concept` — see [normative conclusion](/beliefs/glossary/normative-conclusion.md)
+  vs. [descriptive premise](/beliefs/glossary/descriptive-premise.md). The
+  descriptive premise underneath it: the commit graph already records what
+  changed, so in-artifact change-narration is duplicative and staleness-prone._
