@@ -202,6 +202,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:01be3a` | [beliefs/glossary/librarian-write-broker](/beliefs/glossary/librarian-write-broker.md) | concept | false |
 | `em:f97e44` | [beliefs/glossary/lineage](/beliefs/glossary/lineage.md) | concept | false |
 | `em:7ecfb6` | [beliefs/glossary/llm-as-judge](/beliefs/glossary/llm-as-judge.md) | concept | false |
+| `em:27ea1b` | [beliefs/glossary/llm-gateway](/beliefs/glossary/llm-gateway.md) | concept | false |
 | `em:6a6b46` | [beliefs/glossary/lockfile](/beliefs/glossary/lockfile.md) | concept | false |
 | `em:720742` | [beliefs/glossary/loopback-daemon](/beliefs/glossary/loopback-daemon.md) | concept | false |
 | `em:5554e8` | [beliefs/glossary/lora](/beliefs/glossary/lora.md) | concept | false |
@@ -228,6 +229,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a267ab` | [beliefs/glossary/okf-frontmatter-profile](/beliefs/glossary/okf-frontmatter-profile.md) | concept | false |
 | `em:da67e8` | [beliefs/glossary/ontology](/beliefs/glossary/ontology.md) | concept | false |
 | `em:02dc95` | [beliefs/glossary/open-weights](/beliefs/glossary/open-weights.md) | concept | false |
+| `em:c40dab` | [beliefs/glossary/openai-compatible-api](/beliefs/glossary/openai-compatible-api.md) | concept | false |
 | `em:1349cb` | [beliefs/glossary/operating-contract](/beliefs/glossary/operating-contract.md) | concept | false |
 | `em:83ea50` | [beliefs/glossary/orchestration](/beliefs/glossary/orchestration.md) | concept | false |
 | `em:121072` | [beliefs/glossary/orchestrator-pattern](/beliefs/glossary/orchestrator-pattern.md) | concept | false |
@@ -251,6 +253,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:4849ca` | [beliefs/glossary/property-based-testing](/beliefs/glossary/property-based-testing.md) | concept | false |
 | `em:573229` | [beliefs/glossary/proto-belief-document](/beliefs/glossary/proto-belief-document.md) | concept | false |
 | `em:ea7acc` | [beliefs/glossary/provenance](/beliefs/glossary/provenance.md) | concept | false |
+| `em:1341c6` | [beliefs/glossary/provider-lock-in](/beliefs/glossary/provider-lock-in.md) | concept | false |
 | `em:b74c61` | [beliefs/glossary/pure-function](/beliefs/glossary/pure-function.md) | concept | false |
 | `em:ca9f72` | [beliefs/glossary/quantization](/beliefs/glossary/quantization.md) | concept | false |
 | `em:fb0bfb` | [beliefs/glossary/query-profile](/beliefs/glossary/query-profile.md) | concept | false |

@@ -29,9 +29,16 @@ own text-based review surface.
 
 ## Setup
 
-1. Add repo secret **`OPENROUTER_API_KEY`** (Settings → Secrets → Actions). To
-   review with a native provider instead, swap the endpoint/base URL and use that
-   provider's key.
+1. Add repo secret **`OPENROUTER_API_KEY`** (Settings → Secrets → Actions).
+   **Gateway-agnostic:** the reviewer call is a plain OpenAI-compatible
+   `chat/completions` POST, so any endpoint of that shape drops in by changing the
+   base URL + key — [LiteLLM](https://github.com/BerriAI/litellm) (self-hosted,
+   own your keys), [Portkey](https://portkey.ai) or Cloudflare AI Gateway (managed,
+   with logging/caching/key control), or a **provider's native endpoint** if you
+   only ever want one reviewer family. OpenRouter is chosen here only because one
+   key spans GPT/Codex, Kimi, and GLM, making a switch of reviewer family a
+   one-line change. A single-family assistant API (e.g. Inflection's Pi) works as a
+   reviewer but forfeits that cross-family switch.
 2. Pick the reviewer model in `env.REVIEWER_MODEL` (e.g. `openai/gpt-5.2`,
    `moonshotai/kimi-k2`, `z-ai/glm-4.6`). Choose a **different family** than your
    usual author so the review adds an independent perspective.
@@ -159,3 +166,38 @@ jobs:
               });
             }
 ```
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:9b5d41">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-21-multi-model-dev-environment-and-cross-model-pr-review (2026-07-21)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:9b5d41`]**  (co-feeds: `em:db4e6c`)
+
+**Shape C — The code-review workflow (your fallback — and honestly the strongest near-term answer)**
+
+Your instinct here is right, and **yes — a cross-model review looks exactly like you pictured.** When Codex (or GLM, or Kimi) reviews a PR that Fable authored, it shows up on the PR as:
+
+- a **top-level summary review**, plus
+- **inline comments anchored to specific diff lines**, and
+- optionally **`suggestion` blocks** that GitHub renders with an "Apply suggestion" button.
+
+That's the standard shape, and it's the *most* decoupled-from-provider pattern of everything here, because **GitHub is the shared surface** — the author and the reviewer never need to live in the same harness, they just need to touch the same PR. Off-the-shelf Actions already do this: [tag1consulting/ai-pr-review](https://github.com/tag1consulting/ai-pr-review) (multi-agent, posts summary + inline suggestion blocks), the multi-provider [LLM Code Reviewer](https://github.com/tusgino/llm-code-reviewer/) (GPT / Gemini / Claude selectable), and the [gh-pr-review](https://github.com/agynio/gh-pr-review) CLI extension built specifically to give automated agents full inline-comment support.
+
+Two ways to wire it:
+
+- **CI-driven (simplest):** Fable/Claude Code authors and pushes a PR. A GitHub Action triggered `on: pull_request` calls a *different* provider's API with the diff + a review prompt and posts the review back via the GitHub API. Fully cross-model, zero shared harness, and it survives whatever you change about your authoring tool.
+- **Interactive:** OpenCode with a "reviewer" agent pinned to a different model family, or two terminals, handing off through the PR.
+
+And note — **you're already half-way to this pattern.** The harness you're in right now subscribes to PR activity (`subscribe_pr_activity`) and drives reviews through the GitHub MCP tools (`add_comment_to_pending_review`, `pull_request_review_write`). Today the author and reviewer are both Anthropic (you *can* already split roles across Fable/Opus/Sonnet via subagents). Swapping the reviewer step to Codex or GLM is a **change of API endpoint in an Action, not a re-architecture.**
+
+---
+
+**[`em:9b5d41`]**
+
+Done. Both are filed in the brain and pushed to `claude/multi-model-dev-environment-pbxdv7`.
+
+**How the Action works, briefly** — on every PR open/update it fetches the diff, sends it to a reviewer model of a *different* family than the author (routed through OpenRouter so `openai/gpt-5.2` → `moonshotai/kimi-k2` → `z-ai/glm-4.6` is a one-line change), and posts a review with **inline comments anchored to diff lines** plus a summary. The one real failure mode — GitHub rejecting the whole review if a comment points at a line not in the diff — is handled with a summary-only fallback. To use it you just add an `OPENROUTER_API_KEY` secret and pick `REVIEWER_MODEL`.

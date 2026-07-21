@@ -92,3 +92,51 @@ feel once the review loop is in place.
 - Multi-agent AI PR review Action (summary + inline suggestions) — <https://github.com/tag1consulting/ai-pr-review>
 - Multi-provider LLM code reviewer (GPT/Gemini/Claude) — <https://github.com/tusgino/llm-code-reviewer/>
 - gh-pr-review CLI (inline review support for automated agents) — <https://github.com/agynio/gh-pr-review>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:db4e6c">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-21-multi-model-dev-environment-and-cross-model-pr-review (2026-07-21)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:db4e6c`]**
+
+**First, untangle two things the Claude app bundles together**
+
+What you love is actually **two separate capabilities** that Anthropic happens to ship as one product:
+
+1. **A multi-model *chat* surface** — several models answering in one readable, persisted, archivable thread.
+2. **A multi-model *coding agent* surface** — the ephemeral sandbox-per-session, the mobile mirror, and the PR-review GUI.
+
+No single open tool today gives you *all six* of your loved features **and** cross-provider models. So the real decision is **which layer you optimize for**, and accept a seam somewhere. Below are the three realistic shapes.
+
+---
+
+**[`em:db4e6c`]**  (co-feeds: `em:9b5d41`)
+
+**Shape C — The code-review workflow (your fallback — and honestly the strongest near-term answer)**
+
+Your instinct here is right, and **yes — a cross-model review looks exactly like you pictured.** When Codex (or GLM, or Kimi) reviews a PR that Fable authored, it shows up on the PR as:
+
+- a **top-level summary review**, plus
+- **inline comments anchored to specific diff lines**, and
+- optionally **`suggestion` blocks** that GitHub renders with an "Apply suggestion" button.
+
+That's the standard shape, and it's the *most* decoupled-from-provider pattern of everything here, because **GitHub is the shared surface** — the author and the reviewer never need to live in the same harness, they just need to touch the same PR. Off-the-shelf Actions already do this: [tag1consulting/ai-pr-review](https://github.com/tag1consulting/ai-pr-review) (multi-agent, posts summary + inline suggestion blocks), the multi-provider [LLM Code Reviewer](https://github.com/tusgino/llm-code-reviewer/) (GPT / Gemini / Claude selectable), and the [gh-pr-review](https://github.com/agynio/gh-pr-review) CLI extension built specifically to give automated agents full inline-comment support.
+
+Two ways to wire it:
+
+- **CI-driven (simplest):** Fable/Claude Code authors and pushes a PR. A GitHub Action triggered `on: pull_request` calls a *different* provider's API with the diff + a review prompt and posts the review back via the GitHub API. Fully cross-model, zero shared harness, and it survives whatever you change about your authoring tool.
+- **Interactive:** OpenCode with a "reviewer" agent pinned to a different model family, or two terminals, handing off through the PR.
+
+And note — **you're already half-way to this pattern.** The harness you're in right now subscribes to PR activity (`subscribe_pr_activity`) and drives reviews through the GitHub MCP tools (`add_comment_to_pending_review`, `pull_request_review_write`). Today the author and reviewer are both Anthropic (you *can* already split roles across Fable/Opus/Sonnet via subagents). Swapping the reviewer step to Codex or GLM is a **change of API endpoint in an Action, not a re-architecture.**
+
+---
+
+**[`em:db4e6c`]**
+
+If I had to name one starting move: **stand up the cross-model PR reviewer (Shape C) first.** It's a weekend of YAML, it's provider-agnostic by construction, it plugs into the PR-review GUI you already love, and it doesn't force you to abandon Claude Code as your authoring cockpit. Then, if you want the *interactive* multi-model feel, add OpenCode alongside.
+
+One structural point worth internalizing: the Claude app's magic is that Anthropic controls the harness *and* the model, so tool-calling is flawless. The moment you go multi-provider, **the harness↔model tool-calling seam is where quality leaks** — which is exactly why routing reviews through GitHub (a neutral, text-based surface) is more robust than routing foreign models through an Anthropic-shaped agent loop.
