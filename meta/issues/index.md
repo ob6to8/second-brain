@@ -12,6 +12,7 @@ fixed. Entries within each section are ordered by `timestamp`, most recent first
 
 ## Open
 
+- [Generated/shared artifacts are recurring merge-conflict magnets across parallel sessions](/meta/issues/generated-artifact-merge-conflicts.md) — worktree isolation prevents working-tree collisions but not merge-level ones; parallel sessions that each regenerate `CLAUDE.md`, [`registry.md`](/meta/registry.md), `code-map.md`, or a derived `index.md` 3-way-conflict at merge time (PRs #97/#98). Fix is rebuild-on-merge (a merge driver or a post-merge regeneration step) plus laning by domain, not hand-merging re-derivations. Surfaced by the [version-control audit](/meta/analysis/version-control-workflow-vs-trunk-based-reference.md). `status: open`.
 - [Orphaned remote branches: 15 merged undeleted, 6 unmerged untriaged](/meta/issues/orphaned-remote-branches-cleanup.md) — merged-branch deletion **executed by the operator 2026-07-13** (zero merged `claude/*` remain); unmerged-branch dispositions audited into the [triage todo](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md) (four small ports + one big transplant, two false orphans to ratify deleting); resolves once the auto-delete setting is confirmed on. `status: open`.
 - [Daily /research Routine: automated runs not landing on `main`](/meta/issues/daily-news-routine-runs-not-landing.md) — the scheduled Routine's fresh-session runs produce no commit/push; an environment-wide tool-approval gate is the suspected cause. Workaround: run `/research` manually. `status: open`.
 
