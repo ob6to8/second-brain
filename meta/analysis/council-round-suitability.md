@@ -32,7 +32,7 @@ Is it suitable for integration into this bundle, and in what form?
 **Bottom line.** Yes — integrate it, as a skill (`/council`) plus a
 skills-registry policy edit, after operator ratification. The protocol is
 unusually well matched to this bundle: its distillation rule is a restatement of
-[distill-don't-dump](/meta/policy/distill-dont-dump.md), its hand-off artifact is
+[distill-don't-dump](/meta/policy/capture-knowledge-cite-the-source.md), its hand-off artifact is
 exactly a [persisted plan](/meta/policy/persist-plans.md), and its
 cite-by-SHA provenance rule *depends on* the
 [merge-strategy policy](/meta/policy/merge-strategy.md) this repo already
@@ -70,7 +70,7 @@ in the appendix.
 ## Where it aligns (strong)
 
 - **Distillation rule ≙ existing policy.** Ground rule 2 is
-  [distill-don't-dump](/meta/policy/distill-dont-dump.md) applied to review
+  [distill-don't-dump](/meta/policy/capture-knowledge-cite-the-source.md) applied to review
   exchanges, and "the distilled plan — not this conversation — is what the
   implementer receives" is the exact motivation of
   [persist-plans](/meta/policy/persist-plans.md). The protocol's "rejected: X

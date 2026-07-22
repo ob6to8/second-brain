@@ -25,7 +25,7 @@ to which files — and points at the three artifacts that make it work. It does
 
 > **The three artifacts (and the sources of truth — point, don't restate):**
 > - **Rules** → the filing + identity policies:
->   [distill-dont-dump](/meta/policy/distill-dont-dump.md) ·
+>   [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md) ·
 >   [update-in-place](/meta/policy/update-in-place.md) ·
 >   [link-processing](/meta/policy/link-processing.md) ·
 >   [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md) ·
@@ -65,7 +65,7 @@ toolchain (registry, verifier, site) will accept.
    a concept doc, filed by the taxonomy protocol
    ┌───────────────────────────────────────────────┐
    │ frontmatter (type, title, description, …)      │
-   │ distilled body; links → resource / # Citations │◄── distill, don't dump
+   │ distilled body; links → resource / # Citations │◄── capture knowledge, cite source
    └──────┬─────────────────────────────────────────┘
           │  mix brain.id          (mint em: id if absent)
           │  mix brain.registry    (compile id→path view)
@@ -113,10 +113,10 @@ instrument (the [dedup probe](/meta/evals/dedup-probe.md)).
 
 Condensed; the rules live in the linked policies.
 
-- **Distill, don't dump.** Capture the *knowledge*, not the raw noise — a clear
-  title, a one-sentence `description`, a clean body; the original stays as a
-  `resource` URI and/or under `# Citations`. See
-  [distill-dont-dump](/meta/policy/distill-dont-dump.md) and
+- **Capture the knowledge, cite the source.** Capture the *knowledge*, not the
+  raw noise — a clear title, a one-sentence `description`, a clean body; the
+  original stays as a `resource` URI and/or under `# Citations`. See
+  [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md) and
   [link-processing](/meta/policy/link-processing.md). For a **technical
   paper/article/spec**, distillation delegates to
   [`/summarize-technical`](/.claude/skills/summarize-technical/SKILL.md) — its

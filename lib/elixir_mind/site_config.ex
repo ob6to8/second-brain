@@ -77,6 +77,29 @@ defmodule ElixirMind.SiteConfig do
   end
 
   @doc """
+  Map a bundle path to its file view on GitHub at a given ref (branch, tag, or
+  SHA): `repo_url/0` + `/blob/<ref>/<path>`.
+
+  Unlike `live_url/1` this keeps the `.md` extension (GitHub renders the markdown
+  itself) and works for **any** in-repo path, including directories the site does
+  not render. It is the citation form for a document that is **not yet live on the
+  deployed site** — new or modified on an unmerged branch — because Pages deploys
+  only from the default branch, so the Pages URL would 404 (new) or show stale
+  content (modified) until the branch merges. Returns `{:error, :no_repo}` when
+  `repo_url/0` is unconfigured, `{:error, :empty}` for a blank path.
+  """
+  @spec blob_url(String.t(), String.t()) :: {:ok, String.t()} | {:error, :no_repo | :empty}
+  def blob_url(bundle_path, ref) when is_binary(ref) do
+    rel = bundle_path |> to_string() |> String.trim_leading("/")
+
+    cond do
+      rel == "" -> {:error, :empty}
+      repo_url() == nil -> {:error, :no_repo}
+      true -> {:ok, repo_url() <> "/blob/" <> ref <> "/" <> rel}
+    end
+  end
+
+  @doc """
   Expand deploy tokens in a markdown body. Currently `{{site_base_url}}` →
   `base_url/0`. Applied by both the contract compiler and the site renderer so the
   one config value reaches every rendered surface.

@@ -29,7 +29,7 @@ of segment/distill/file-by-taxonomy), but the deterministic spine is the same
 > **The three artifacts (and the sources of truth — point, don't restate):**
 > - **Rules** → [update-in-place](/meta/policy/update-in-place.md) (one term,
 >   one file; pointer entries instead of duplicate definitions) ·
->   [distill-dont-dump](/meta/policy/distill-dont-dump.md) ·
+>   [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md) ·
 >   [stable-identity](/meta/policy/stable-identity.md). The system itself is
 >   described in the [glossary hub](/beliefs/glossary.md).
 > - **Procedure** → the [`/add-to-glossary` skill](/.claude/skills/add-to-glossary/SKILL.md).

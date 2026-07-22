@@ -24,7 +24,7 @@ the start if siblings are plausible.
 - [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md) — subdirs autonomous; new top-level dirs ratified
 
 ## filing
-- [distill-dont-dump](/meta/policy/distill-dont-dump.md) — capture the knowledge, not the raw noise
+- [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md) — capture the distilled knowledge, keep the raw source as a citation (the knowledge-layer half of [fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md))
 - [update-in-place](/meta/policy/update-in-place.md) — search first; update rather than fragment
 - [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — kebab-case slugs; bundle-absolute links
 - [response-resource-links](/meta/policy/response-resource-links.md) — in delivered responses, cite resources by their deployed Pages URL, not repo paths

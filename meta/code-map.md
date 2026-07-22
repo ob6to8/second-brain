@@ -706,6 +706,7 @@ re-run `mix brain.contract` and `mix brain.site`.
 **Functions**
 
 - `base_url/0` — The canonical base URL the site is published under, normalized to a single trailing slash. Reads `:elixir_mind, :site_base_url`, defaulting to the GitHub Pages URL.
+- `blob_url/2` — Map a bundle path to its file view on GitHub at a given ref (branch, tag, or SHA): `repo_url/0` + `/blob/<ref>/<path>`.
 - `excluded_dirs/0` — Top-level directories the site excludes (no page, no live URL).
 - `expand_tokens/1` — Expand deploy tokens in a markdown body. Currently `{{site_base_url}}` → `base_url/0`. Applied by both the contract compiler and the site renderer so the one config value reaches every rendered surface.
 - `live_url/1` — Map a bundle path to its page on the deployed site.
@@ -992,16 +993,30 @@ GitHub Pages by `.github/workflows/pages.yml`.
 
 `lib/mix/tasks/brain.url.ex`
 
-Map a bundle path to its page on the deployed Pages site.
+Map a bundle path to a URL that **actually resolves right now**, so a link in a
+response is never dead.
 
-    mix brain.url knowledge/knowledge-management/open-knowledge-format.md
+    mix brain.url meta/doctrine/fit-each-layer-to-its-purpose.md
     mix brain.url /meta/policy/response-resource-links.md
+    mix brain.url --pages meta/policy/response-resource-links.md   # force canonical Pages URL
 
-The mechanical form of the response-resource-links policy: use it to cite a brain
-resource by its live URL instead of hand-constructing one. The base URL comes from
-config (`ElixirMind.SiteConfig.base_url/0`). Paths under non-rendered directories
-(`deprecated/`, `.claude/`, `lib/`, `test/`, …) have no page and print a notice —
-cite those by repo path.
+The mechanical form of the response-resource-links policy. Pages deploys **only
+from the default branch** (`pages.yml`), so a document created or modified on an
+unmerged branch has no live page yet — its Pages URL would 404 (new) or show
+stale content (modified) until the branch merges. This task resolves that
+automatically:
+
+  * **Rendered and unchanged vs `origin/main`** → the live Pages URL
+    (`ElixirMind.SiteConfig.live_url/1`) — canonical and current.
+  * **New or modified on this branch, or under a non-rendered directory**
+    (`deprecated/`, `.claude/`, `lib/`, `test/`, …) → the GitHub **blob URL** at
+    the ref whose tree holds the current content (this branch, else `main`) —
+    `ElixirMind.SiteConfig.blob_url/2`.
+
+`--pages` forces the canonical Pages URL regardless of branch state (use when
+citing something you know will be merged). When `origin/main` is unavailable
+(bare checkout with no remote) the task can't judge liveness and falls back to
+the blob URL at the current branch.
 
 
 
