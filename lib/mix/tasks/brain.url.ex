@@ -97,7 +97,9 @@ defmodule Mix.Tasks.Brain.Url do
   end
 
   defp print({:error, :no_repo}, path) do
-    Mix.shell().error("#{path}: repo_url is unconfigured (config/config.exs) — cannot build a blob URL.")
+    Mix.shell().error(
+      "#{path}: repo_url is unconfigured (config/config.exs) — cannot build a blob URL."
+    )
   end
 
   defp print({:error, :empty}, _path), do: usage()

@@ -46,14 +46,18 @@ defmodule ElixirMind.SiteConfigTest do
   describe "blob_url/2" do
     test "maps a path to its GitHub blob view at a ref, keeping the .md extension" do
       assert {:ok, url} =
-               SiteConfig.blob_url("meta/doctrine/fit-each-layer-to-its-purpose.md", "some-branch")
+               SiteConfig.blob_url(
+                 "meta/doctrine/fit-each-layer-to-its-purpose.md",
+                 "some-branch"
+               )
 
       assert url ==
                "https://github.com/ob6to8/elixir-mind/blob/some-branch/meta/doctrine/fit-each-layer-to-its-purpose.md"
     end
 
     test "accepts a bundle-absolute path and works for non-rendered directories" do
-      assert {:ok, "https://github.com/ob6to8/elixir-mind/blob/main/.claude/skills/intake/SKILL.md"} =
+      assert {:ok,
+              "https://github.com/ob6to8/elixir-mind/blob/main/.claude/skills/intake/SKILL.md"} =
                SiteConfig.blob_url("/.claude/skills/intake/SKILL.md", "main")
     end
 
