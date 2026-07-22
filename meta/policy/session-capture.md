@@ -6,7 +6,7 @@ section: session-workflow
 order: 1
 status: active
 tags: [meta, governance, threads, capture, workflow]
-timestamp: 2026-07-18
+timestamp: 2026-07-22
 attribution:
   when: 2026-07-08T11:54:45+00:00
   channel: backfill
@@ -34,15 +34,20 @@ record so it can be resumed from the record instead of from memory.
   `len < 300 and followed_by_tool`. "Distilled" here means the *noise* is dropped,
   not that the kept text is condensed; `/capture` strips noise, not substance, and
   is the sole session-persistence skill.
-- **Ask the operator in the chat, not the dialog box.** Pose every question to
-  the operator as ordinary `## Assistant` chat text — never through the
-  dialog-box question UI (`AskUserQuestion`). `/capture` renders only the
-  delivered message stream, so a question raised in the dialog box, and the
-  answer the operator selects in it, never enter that stream: both are lost from
+- **Interact with the operator in the chat, not a UI element — this covers
+  permission requests too.** Pose every question, and every request for
+  permission or approval, to the operator as ordinary `## Assistant` chat
+  text — never rely on a UI dialog element (the `AskUserQuestion` question box,
+  or a tool-permission popup) as the channel. `/capture` renders only the
+  delivered message stream, so anything raised in a dialog element, and the
+  answer the operator gives in it, never enter that stream: both are lost from
   the thread doc and every downstream artifact routed from it. Keeping the
-  exchange inline is what lets capture retain the question and its answer
-  verbatim. (The dialog UI has also proven flaky in these sessions — a second
-  reason to keep questions in the chat.)
+  exchange inline is what lets capture retain it verbatim. The UI elements have
+  also proven **flaky** in these sessions — a tool-permission popup can misfire
+  and register as a rejection the operator never made — so routine tools are
+  allowlisted in [`.claude/settings.json`](/.claude/settings.json)
+  (`permissions.allow`) to keep that popup out of the loop, and any decision the
+  agent still needs is asked in text.
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `em:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
