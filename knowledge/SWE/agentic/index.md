@@ -12,3 +12,4 @@ and the practices they change.
 - [code-context](/knowledge/SWE/agentic/code-context/index.md) — tools that build and serve structured codebase context (knowledge graphs, indexes) to coding agents
 - [context-engineering](/knowledge/SWE/agentic/context-engineering/index.md) — structuring, curating, and managing LLM conversation/agent context
 - [frameworks](/knowledge/SWE/agentic/frameworks/index.md) — libraries for building and orchestrating agents
+- [multi-model](/knowledge/SWE/agentic/multi-model/index.md) — working across multiple model providers in coding-agent workflows: escaping single-provider lock-in while keeping the dev ergonomics

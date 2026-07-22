@@ -179,8 +179,9 @@ registry (`mix brain.registry`).
 
 ## Guardrails
 
-- Distill, don't dump: no copying the source's own definitions verbatim into
-  entries (verbatim excerpts belong in `type: source` captures, not here).
+- Capture the knowledge, don't copy: no copying the source's own definitions
+  verbatim into entries (verbatim excerpts belong in `type: source` captures,
+  not here).
 - One term, one file — dedup before writing, merge instead of creating
   near-duplicates.
 - Don't glossary the incidental: plain English used plainly is not a term of art.

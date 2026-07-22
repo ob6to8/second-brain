@@ -34,9 +34,10 @@ attribution:
 - **Promotion is the bridge back to the taxonomy.** A surveyed bookmark graduates to a
   filed `reference` via [`/intake`](/.claude/skills/intake/SKILL.md) (driven by
   `/bookmarks promote`); that is the single point where the full distill pass runs and
-  [distill, don't dump](/meta/policy/distill-dont-dump.md) re-engages. The register row
-  records the graduation (`status: promoted → <link>`) so the staging debt stays
-  visible and countable rather than all-or-nothing.
+  the knowledge-layer filing rule
+  ([capture the knowledge, cite the source](/meta/policy/capture-knowledge-cite-the-source.md))
+  re-engages. The register row records the graduation (`status: promoted → <link>`) so
+  the staging debt stays visible and countable rather than all-or-nothing.
 - **Oversized linked resources**: if a linked source is too large to reasonably copy,
   **write a faithful summary** as the document body and **persist the link** in the
   `resource` frontmatter field (and/or `# Citations`) so nothing is lost.

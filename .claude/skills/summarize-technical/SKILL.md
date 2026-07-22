@@ -89,8 +89,8 @@ exist to close.
 - Don't let section 3 just repeat section 1 with terms swapped in as synonyms —
   it should read like someone who *knows* the vocabulary explaining the same
   material, more precisely and more densely.
-- Distill, don't dump: this is not a transcription of the source's abstract and
-  conclusion sections back-to-back. Write all three sections from understanding,
+- Capture the knowledge, don't transcribe: this is not a transcription of the
+  source's abstract and conclusion sections back-to-back. Write all three sections from understanding,
   the same way `/intake` distills rather than copies.
 - When updating an existing bundle concept, don't fragment — this replaces that
   concept's distilled body, it doesn't create a sibling "breakdown" file for the

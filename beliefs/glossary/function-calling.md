@@ -26,6 +26,12 @@ objects, filesystem discovery as in [eve](/beliefs/glossary/vercel-eve.md), or
 runtime protocol enumeration as in
 [MCP](/beliefs/glossary/model-context-protocol.md)) and in the execution
 lifecycle around the call, while the descriptor contract itself stays uniform
-across providers.
+across providers. That uniform *descriptor* contract hides a fidelity seam,
+though: each model is trained to emit calls in its own provider's conventions, so
+a harness whose call format is tuned to one model family (Claude Code to
+Anthropic's) can see complex, multi-step tool chains degrade when the same loop
+drives a non-native model — the reason provider-neutral agent work favors a
+neutral integration layer over routing one provider's call shape to another's
+model.
 
-*Seen in:* [2026-07-17 vercel-eve comparison thread](/meta/threads/2026-07-17-vercel-eve-comparison-and-jido-host-plan.md), [vercel-eve-comparison analysis](/meta/analysis/vercel-eve-comparison.md)
+*Seen in:* [2026-07-17 vercel-eve comparison thread](/meta/threads/2026-07-17-vercel-eve-comparison-and-jido-host-plan.md), [vercel-eve-comparison analysis](/meta/analysis/vercel-eve-comparison.md), [2026-07-21 multi-model dev environment thread](/meta/threads/2026-07-21-multi-model-dev-environment-and-cross-model-pr-review.md) (the harness↔model tool-calling seam as the quality leak in multi-provider agentic work)

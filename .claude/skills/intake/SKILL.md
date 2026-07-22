@@ -141,7 +141,7 @@ Summarize concisely:
 - **A dedup-recall regression**, if step 8 flagged one (else omit).
 
 ## Guardrails
-- Distill, don't dump. Update in place, don't fragment.
+- Capture the knowledge, cite the source. Update in place, don't fragment.
 - Never create a new directory or a new `type` without operator ratification.
 - Keep every concept OKF-conformant: parseable frontmatter, non-empty `type`.
 - Never touch `deprecated/`.

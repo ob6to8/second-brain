@@ -24,7 +24,9 @@ Two tiers, one bridge:
 
 The bridge is [`/intake`](/.claude/skills/intake/SKILL.md), driven by
 [`/bookmarks promote`](/.claude/skills/bookmarks/SKILL.md): that is the single point
-where [distill, don't dump](/meta/policy/distill-dont-dump.md) re-engages.
+where the knowledge-layer filing rule
+([capture the knowledge, cite the source](/meta/policy/capture-knowledge-cite-the-source.md))
+re-engages.
 
 ## Pending
 

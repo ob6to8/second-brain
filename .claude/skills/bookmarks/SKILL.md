@@ -109,8 +109,10 @@ is the record of intent even if processing is interrupted), then run **Process**
 
 ## Promote
 
-Graduate a surveyed bookmark into a filed bundle `reference` — the bridge where
-[distill, don't dump](/meta/policy/distill-dont-dump.md) re-engages.
+Graduate a surveyed bookmark into a filed bundle `reference` — the bridge where the
+knowledge-layer filing rule
+([capture the knowledge, cite the source](/meta/policy/capture-knowledge-cite-the-source.md))
+re-engages.
 
 1. **Locate** the bookmark in the register by URL or title.
 2. **Run [`/intake`](/.claude/skills/intake/SKILL.md)** on its URL — the full pass:

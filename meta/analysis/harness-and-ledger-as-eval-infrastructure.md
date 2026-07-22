@@ -140,7 +140,7 @@ the ledger, and each of its reasons maps to a digital design requirement:
   full-bandwidth capture defers coding until the phenomenon is understood.
 - **Distillation pressure.** Handwriting's slowness forces selection — the
   first pass of analysis. The bundle's
-  [distill-don't-dump](/meta/policy/distill-dont-dump.md) policy is the same
+  [distill-don't-dump](/meta/policy/capture-knowledge-cite-the-source.md) policy is the same
   principle as prose.
 
 **Dictation into transcription software** trades along these axes: it wins

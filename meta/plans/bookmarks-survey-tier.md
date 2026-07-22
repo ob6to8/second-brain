@@ -32,9 +32,12 @@ level the model had no room for.
 - **Two levels, one bridge.** *Ingested* = a filed `reference` in the taxonomy (today's
   `/intake`: fetched, distilled, cross-linked, `em:` id). *Surveyed* = a bookmark: fetched,
   one-line-summarized, tagged, parked outside the tree. The bridge is **promotion** — a
-  surveyed link graduates to a filed reference via `/intake`, the single point where
-  [distill, don't dump](/meta/policy/distill-dont-dump.md) re-engages. `distill-dont-dump`
-  is **not** amended: it governs documents, and a bookmark isn't one until promotion.
+  surveyed link graduates to a filed reference via `/intake`, the single point where the
+  knowledge-layer filing rule
+  ([capture the knowledge, cite the source](/meta/policy/capture-knowledge-cite-the-source.md))
+  re-engages. The survey tier is its own staging layer under
+  [fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md); the
+  knowledge-layer rule governs documents, and a bookmark isn't one until promotion.
 - **Register, not one-file-per-bookmark.** Bookmarks are **rows in a register**
   (`survey/bookmarks.md`), not individual documents. One-file-per-bookmark was the wrong
   weight — it fights the bulk-drop use case (hundreds of tiny files) and pollutes the
@@ -55,8 +58,8 @@ level the model had no room for.
   register has a `## Pending` dropzone the operator pastes into and a `## Surveyed` section
   the skill populates, emptying Pending as it processes.
 - **Debt stays visible.** `status: surveyed` vs `promoted → <link>` makes un-promoted links
-  countable rather than all-or-nothing — the mitigation for relaxing "distill, don't dump"
-  at the edges.
+  countable rather than all-or-nothing — the mitigation for relaxing the knowledge base's
+  distillation standard at the edges.
 
 ## Artifact shape
 

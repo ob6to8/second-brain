@@ -31,11 +31,14 @@ The tier lives in a [non-bundle namespace](/beliefs/glossary/non-bundle-namespac
 the [inbox namespace](/beliefs/glossary/inbox-namespace.md) for durable, topical staging
 rather than dated candidate feeds. It is the one sanctioned exception carved into the
 [link-processing policy](/meta/policy/link-processing.md)'s otherwise flat "process it or
-don't file it" rule, and it deliberately does **not** relax
-[distill, don't dump](/beliefs/glossary/distill-dont-dump.md): that rule re-engages the
-moment a bookmark is promoted. Promotion — a surveyed bookmark becoming a filed reference
-via `/intake` — is a [graduation](/beliefs/glossary/graduation.md), and the register row
-records it (`status: promoted → <link>`) so the staging debt stays visible and countable.
+don't file it" rule. The survey tier is its own staging layer under
+[fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md) — enough
+metadata to be found, no more — so it does **not** invoke the knowledge layer's filing
+rule ([capture the knowledge, cite the source](/meta/policy/capture-knowledge-cite-the-source.md));
+that rule re-engages the moment a bookmark is promoted. Promotion — a surveyed bookmark
+becoming a filed reference via `/intake` — is a [graduation](/beliefs/glossary/graduation.md),
+and the register row records it (`status: promoted → <link>`) so the staging debt stays
+visible and countable.
 
 *Seen in:* [2026-07-22 survey-tier thread](/meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md)
 
@@ -78,7 +81,7 @@ Adding a `type` and amending `link-processing` is a change to the *shape* of the
 
 **3. Surfacing — tags + a generated index.** `mix brain.*` already reads frontmatter; a `bookmark`'s tags + summary would be queryable exactly like any doc's, so an LLM asking "what do I have on topic X" pulls both tiers, with tier visible via `type`.
 
-The real trade-off to weigh: this **relaxes "distill, don't dump"** at the edges. The mitigation is that `status: surveyed` makes the debt *visible and countable* — you can always query "how many un-promoted bookmarks in area X" — rather than the current all-or-nothing.
+The real trade-off to weigh: this **relaxes the knowledge base's distillation standard** at the edges. The mitigation is that `status: surveyed` makes the debt *visible and countable* — you can always query "how many un-promoted bookmarks in area X" — rather than the current all-or-nothing.
 
 **Two questions before I'd write anything**
 
@@ -89,21 +92,7 @@ This is exactly the kind of deferred, shape-changing design that's worth a `type
 
 ---
 
-**[`em:60e22c`]**  (co-feeds: `/meta/plans/bookmarks-survey-tier.md /meta/policy/distill-dont-dump.md`)
-
-**"Distill, don't dump" — where it is, and no, it hasn't been amended**
-
-It's a real, foundational policy: `meta/policy/distill-dont-dump.md`, `section: filing`, `order: 1` — literally the first filing rule. Full text is just that one paragraph I quoted.
-
-On whether it was recently amended: **no.** Its entire history is three commits, and none touched the doctrine's substance:
-
-- `2113193` — the concept→document terminology sweep (mechanical, bundle-wide)
-- `cb2d837` — attribution backfill (added the frontmatter block, not the body)
-- `4960c48` — its arrival
-
-The body text is untouched since it was written. Recent policy churn has all been elsewhere — `session-capture`, `merge-strategy`, `plan-vs-capture`. So it's stable ground, and good instinct to check.
-
-The important nuance: what we're building **doesn't amend `distill-dont-dump` at all.** That doctrine governs *documents* — things that have earned a place in the tree. Our bookmark tier sits *before* distillation, so the honest move is a narrow carve-out in its sibling `link-processing` ("no bookmark type" → "one explicit staging tier, which does not enter the taxonomy"), leaving `distill-dont-dump` fully intact and still the rule the moment a bookmark is *promoted*.
+**[`em:60e22c`]**  (co-feeds: `/meta/plans/bookmarks-survey-tier.md`)
 
 **One-per-file vs. listed in a doc — I've flipped to **listed in a doc****
 
@@ -118,7 +107,7 @@ So the revised shape:
 - **A `survey/` namespace, outside the bundle-id system** (like `inbox/` and `meta/`). No `em:` ids for bookmarks.
 - **The register is the storage, not just the input.** `survey/bookmarks.md` holds a table — one row per bookmark: `URL | summary | tags | status`. You append raw URLs (bare, maybe with a scribbled note) to the bottom; `/bookmarks` finds the un-enriched rows, does a light fetch → one-line summary + tags, and rewrites them in place with `status: surveyed`. Same doc in, same doc out — no separate inbox/register split to keep in sync.
 - **Surfacing is the tags in the rows.** The register is small enough to load whole; an LLM topic query reads the tags/summaries directly. When it grows, we shard by top-level domain (`survey/ai.md`, `survey/swe.md`) — tags still do the work.
-- **Promotion is the one bridge back to the tree.** `/intake <url>` on a surveyed row does the full distill-file-crosslink pass, mints the `em:` id, and flips the row to `status: promoted → [link to the new reference]`. That's the single point where `distill-dont-dump` re-engages, and where a bookmark becomes a real document.
+- **Promotion is the one bridge back to the tree.** `/intake <url>` on a surveyed row does the full distill-file-crosslink pass, mints the `em:` id, and flips the row to `status: promoted → [link to the new reference]`. That's the single point where the knowledge-layer filing rule re-engages, and where a bookmark becomes a real document.
 
 Net effect on the type vocabulary: we probably **don't** need a new `type: bookmark` after all — the register is one doc (I'd give *it* a light type, `reference` or a new `register`, TBD), and individual bookmarks are rows, not documents. That's a nice simplification your register framing bought us.
 
@@ -141,7 +130,7 @@ Your brain now distinguishes exactly the two tiers you asked for:
 | **Ingested** | Fetched, distilled, cross-linked, `em:` id — today's `/intake` | The taxonomy tree |
 | **Surveyed** (new) | Fetched, one-line-summarized, tagged — bulk-droppable | `survey/bookmarks.md`, outside the bundle |
 
-A link is now always *ingested* or *surveyed*, **never dumped raw** — the summary + tags are mandatory, so the tier can't rot into a link graveyard. Surveyed links are queryable by topic (tags + summary are search-indexed) and promote to filed references via `/intake` — the single bridge where "distill, don't dump" re-engages.
+A link is now always *ingested* or *surveyed*, **never dumped raw** — the summary + tags are mandatory, so the tier can't rot into a link graveyard. Surveyed links are queryable by topic (tags + summary are search-indexed) and promote to filed references via `/intake` — the single bridge where the knowledge-layer filing rule re-engages.
 
 **How you'll use it**
 
@@ -154,10 +143,6 @@ A link is now always *ingested* or *surveyed*, **never dumped raw** — the summ
 - **Register, not one-file-per-bookmark** — your instinct was right; per-file would've minted an `em:` id per staging link and fought bulk drops.
 - **No new `type`** — the register reuses `type: reference` exactly as `inbox/` digests do, since bookmarks are rows, not documents. This kept the type vocabulary untouched (no ratification needed). The one call you didn't explicitly make — say the word if you'd rather have a distinct `type: bookmark`.
 - **`survey/` mirrors `inbox/` mechanically** — non-bundle, no ids, attribution-exempt, but still link-checked and rendered to the Pages site.
-
-**On your grounding question**
-
-"Distill, don't dump" is real (`meta/policy/distill-dont-dump.md`, the *first* filing rule) and **has never been amended** — its three commits were all mechanical (terminology sweep, attribution backfill). Importantly, this change **doesn't touch it**: I carved the exception into its sibling `link-processing` instead, leaving the distillation doctrine fully intact and still the rule at promotion time.
 
 Full design record is in `meta/plans/bookmarks-survey-tier.md`. All 178 tests + every `mix brain.*` gate pass. No PR opened — the branch is pushed and waiting. Want me to open one (`/create-pull-request`), or try a `/bookmarks` dry run on a few URLs first?
 

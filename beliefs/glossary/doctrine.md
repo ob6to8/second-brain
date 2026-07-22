@@ -19,7 +19,7 @@ attribution:
 
 A [policy](/beliefs/glossary/policy-type.md) implements doctrine as a concrete, enforceable rule — the direction runs one way, doctrine informing policy and not the reverse.
 
-**In this brain:** a controlled `type` and a [`meta/doctrine/`](/meta/doctrine/index.md) genre (since 2026-07-12) for standing intention statements (first document: [the engineer as orchestrator](/meta/doctrine/engineer-as-orchestrator.md)); the *worldview* doctrine — "the tree is the taxonomy", "distill, don't dump" — still lives distributed across the preamble and compiled [operating contract](/beliefs/glossary/operating-contract.md) read as a whole, while each `type: policy` file is a single standing rule.
+**In this brain:** a controlled `type` and a [`meta/doctrine/`](/meta/doctrine/index.md) genre (since 2026-07-12) for standing intention statements (first document: [the engineer as orchestrator](/meta/doctrine/engineer-as-orchestrator.md)); worldview once carried only as slogans in the preamble is progressively promoted into first-class doctrine docs as it is examined — e.g. "distill, don't dump" was found miscast and formalized as [fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md) (2026-07-21) — while residual worldview ("the tree is the taxonomy") still lives distributed across the preamble and compiled [operating contract](/beliefs/glossary/operating-contract.md) read as a whole, and each `type: policy` file is a single standing rule.
 
 *Seen in:* [2026-07-11 doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md), [engineer-as-orchestrator doctrine](/meta/doctrine/engineer-as-orchestrator.md), [2026-07-12 doctrine-genre-and-orchestrator-alignment thread](/meta/threads/2026-07-12-doctrine-genre-and-orchestrator-alignment.md), [2026-07-13 three-level-documentation thread](/meta/threads/2026-07-13-three-level-documentation-plan-and-model-doctrine.md) (doctrine as the home for runtime guidance a verifier cannot gate), [2026-07-13 second-mind-taxonomy thread](/meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md) (doctrine's governance scope vs. operator-level priors)
 
@@ -57,3 +57,13 @@ Done — [`doctrine`](glossary/doctrine.md) is committed and pushed (`5a57194`, 
 **[`em:6a9e78`]**  (co-feeds: `meta/doctrine/engineer-as-orchestrator.md`)
 
 You're right that this is neither analysis nor concept — it's an *intention statement*: a direction that shapes judgment without prescribing action. The brain already named exactly this layer and noted the vocabulary was missing it. From [`/beliefs/glossary/doctrine.md`](/beliefs/glossary/doctrine.md):
+
+### 2026-07-22-qiju-thread-storage-and-fit-each-layer-doctrine (2026-07-22)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:6a9e78`]**  (co-feeds: `em:0c343a em:ca7b27`)
+
+**Doctrine vs. belief**
+
+The cleanest way to separate them is by **register** — what kind of statement each one *is*. A **belief** is descriptive (the *is* register): it answers "what is the case?", is truth-apt (true/false, verifiable), and if wrong it is *false* → corrected against evidence. A **doctrine** is normative (the *ought* register): it answers "what should guide design and priorities?", is a commitment (adhered-to, not verified), and if wrong it is *misguided* → the direction is re-decided. In the stack, belief *grounds* doctrine (the *is* that motivates the *ought*), and doctrine *sits above* policy (a policy implements it as an enforceable rule). "Belief" isn't a type while "doctrine" is — because the descriptive register is already covered by `claim`/`note`/`concept`; the normative-direction register had no type, and that gap is what `doctrine` fills. The bridge — each of your two bullets is shaped `descriptive premise → normative conclusion`, and that `→` is the is-to-ought step. Tidy statement of the contrast: **a belief is something the brain holds *true*; a doctrine is something the brain holds *to*.**

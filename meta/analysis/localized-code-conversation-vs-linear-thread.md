@@ -107,7 +107,7 @@ Three load-bearing objections, plus a constraint that reframes the whole problem
    on.
 
 3. **It fights "the artifact stays clean."**
-   [Distill, don't dump](/meta/policy/distill-dont-dump.md) deliberately keeps
+   [Distill, don't dump](/meta/policy/capture-knowledge-cite-the-source.md) deliberately keeps
    conversation *out* of the artifact — the code and the doc are the distilled
    signal, the noise lives elsewhere. Embedding the conversation *in* the code
    (literally, e.g. as markers to make anchors stable) re-dumps the noise back into
