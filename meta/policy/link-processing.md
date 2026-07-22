@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md]
 ---
 - **No bare URLs as bundle documents.** A link becomes a bundle
   [`reference`](/meta/policy/controlled-type-vocabulary.md) — filed into the taxonomy,

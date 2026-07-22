@@ -9,6 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, survey-tier design session"
   why: "persists the two-level resource model, the register-over-per-file and no-new-type decisions, and the namespace-mirrors-inbox mechanics per the persist-plans policy, as a first-class queryable record of a shape change to the brain"
+  from: [/meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md]
 tags: [meta, plan, filing, links, survey, bookmarks, namespaces, skill]
 timestamp: 2026-07-22
 ---
@@ -60,8 +61,10 @@ level the model had no room for.
 ## Artifact shape
 
 - `survey/bookmarks.md` — the register: frontmatter (`type: reference`, no id/attribution),
-  a `## Pending` dropzone, a `## Surveyed` block list (`### [title](url)` + status/tags +
-  one-line summary).
+  a `## Pending` dropzone (operator groups URLs under `### YYYY-MM-DD` date-added
+  headings), a `## Surveyed` block list (`### [title](url)` + an **Added** date carried
+  from the Pending heading + status/tags + one-line summary). `Added` is the operator's
+  date-added, preserved on promotion — distinct from the register's `timestamp`.
 - `survey/index.md` — namespace landing page (reserved file, no frontmatter).
 - `.claude/skills/bookmarks/SKILL.md` — dispatch: `process` (default), `add`, `list`,
   `promote`.

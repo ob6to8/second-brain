@@ -315,6 +315,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:efad31` | [beliefs/glossary/static-site-generator](/beliefs/glossary/static-site-generator.md) | concept | false |
 | `em:bb2968` | [beliefs/glossary/strand](/beliefs/glossary/strand.md) | concept | false |
 | `em:ea95e4` | [beliefs/glossary/supersession](/beliefs/glossary/supersession.md) | concept | false |
+| `em:60e22c` | [beliefs/glossary/survey-tier](/beliefs/glossary/survey-tier.md) | concept | false |
 | `em:40133e` | [beliefs/glossary/synonym-expansion](/beliefs/glossary/synonym-expansion.md) | concept | false |
 | `em:f5710f` | [beliefs/glossary/teleport](/beliefs/glossary/teleport.md) | concept | false |
 | `em:d2fd32` | [beliefs/glossary/terminal-emulator](/beliefs/glossary/terminal-emulator.md) | concept | false |

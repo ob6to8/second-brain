@@ -37,18 +37,32 @@ Turn raw links in the register's **Pending** section into summarized, tagged **S
 entries.
 
 1. **Read the register.** Open [`survey/bookmarks.md`](/survey/bookmarks.md). Collect the
-   raw URLs listed under `## Pending` (one per line; a trailing `— note` is optional
-   operator context to weave into the summary). If Pending is empty and no URLs were
-   passed, tell the operator there is nothing to process and stop.
+   raw URLs listed under `## Pending`. The operator groups them under **date-added
+   headings** — an `### YYYY-MM-DD` line marks when the URLs beneath it were added;
+   carry that date as each bookmark's **Added** date (below), *not* today's processing
+   date. A URL with no date heading above it defaults its Added date to today. Each URL
+   is one per line; a trailing `— note` is optional operator context to weave into the
+   summary. If Pending is empty and no URLs were passed, tell the operator there is
+   nothing to process and stop.
 2. **Dedup.** For each URL, check it is not already present: grep `survey/bookmarks.md`
    for the URL, and grep the bundle (`rg <url> --glob '!survey/**'`) for an existing
    filed `reference` with that `resource`. Skip duplicates, noting which and why. If it
    is already a filed reference, say so — no need to survey what's ingested.
 3. **Fetch and summarize each** (this is the tier's defining work — *auto-generate*,
    don't ask the operator to write summaries):
-   - `WebFetch` the URL. If the fetch fails (dead link, paywall, timeout), still record
-     the bookmark but mark the summary `(unfetched: <reason>)` so nothing is silently
-     dropped — the operator can retry or supply context later.
+   - **Aggregator links → resolve to the underlying resource.** If the URL is a
+     discussion-aggregator item — a Hacker News item
+     (`news.ycombinator.com/item?id=…`), and by the same logic a Lobsters/Reddit
+     discussion — fetch it, **extract the actual submitted resource URL** (the link at
+     the top of the HN item), and treat the two as **one bookmark**: the underlying
+     resource is the primary link and gets the title/summary/tags, while the discussion
+     is kept alongside it as a `Discussion:` link. If the item has no external URL (an
+     Ask HN / Show HN / text post), the discussion page *is* the resource — no
+     extraction needed.
+   - `WebFetch` the URL (the underlying resource for an aggregator link). If the fetch
+     fails (dead link, paywall, timeout), still record the bookmark but mark the summary
+     `(unfetched: <reason>)` so nothing is silently dropped — the operator can retry or
+     supply context later.
    - Write a **one-sentence** summary: what the resource *is* and why it might matter.
      Distillation-light — a locator, not a digest. Fold in the operator's `— note` if
      given.
@@ -60,11 +74,16 @@ entries.
 4. **Write the Surveyed entries.** Under `## Surveyed`, prepend each new bookmark
    (newest first) in this shape:
    ```
-   ### [<page title>](<url>)
-   - **Added:** <today, ISO date> · **Status:** surveyed · **Tags:** `tag-a` `tag-b`
+   ### [<page title>](<underlying resource url>)
+   - **Added:** <date-added from the Pending heading; today if none> · **Status:** surveyed · **Tags:** `tag-a` `tag-b`
    - <one-sentence summary>
    ```
-   Remove the `_No bookmarks surveyed yet._` placeholder on first use.
+   `Added` is the operator's date-added, carried from the Pending date heading — it is
+   the bookmark's stable "when I flagged this" property and is **preserved on
+   promotion** (only `Status` changes). For an aggregator link, append a discussion
+   pointer to the metadata line — ` · **Discussion:** [HN](<hn item url>)` — so the
+   resource and its discussion stay one bookmark. Remove the `_No bookmarks surveyed
+   yet._` placeholder on first use.
 5. **Clear Pending.** Delete the processed URLs from `## Pending`, restoring the
    `_(none pending)_` placeholder if it is now empty. Leave any URL you skipped or could
    not fetch only if the operator should revisit it, with a one-line reason.

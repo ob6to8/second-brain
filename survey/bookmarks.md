@@ -29,10 +29,17 @@ where [distill, don't dump](/meta/policy/distill-dont-dump.md) re-engages.
 ## Pending
 
 <!--
-  Drop raw URLs here, one per line (a trailing " — note" is optional context).
-  Then run `/bookmarks` (no argument) to fetch each, generate a one-line summary
-  and tags, and move it to Surveyed below. This section is the dropzone; the skill
-  empties it as it processes.
+  Drop raw URLs here under a date-added heading — an `### YYYY-MM-DD` line marking
+  when you added them — one URL per line (a trailing " — note" is optional context):
+
+    ### 2026-07-22
+    https://example.com/article
+    https://example.com/other — focus on the eval section
+
+  Then run `/bookmarks` (no argument) to fetch each, generate a one-line summary and
+  tags, and move it to Surveyed below, carrying that heading date as the bookmark's
+  **Added** date. The skill empties this section as it processes. A URL with no date
+  heading defaults its Added date to the day it is processed.
 -->
 
 _(none pending)_
@@ -40,13 +47,21 @@ _(none pending)_
 ## Surveyed
 
 <!--
-  Each entry is appended by /bookmarks in this shape — newest first:
+  Each entry is appended by /bookmarks in this shape — newest first. **Added** is the
+  date-added the operator flagged in Pending (its `### YYYY-MM-DD` heading), not the
+  day it was processed:
 
   ### [Page title](https://example.com/article)
   - **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `tag-a` `tag-b`
   - One-sentence summary of what the resource is and why it might matter.
 
-  On promotion, /bookmarks flips the line to:
+  For a Hacker News (or similar) link, /bookmarks extracts the underlying resource as
+  the primary link and keeps the discussion alongside it — one bookmark, two URLs:
+  ### [Page title](https://example.com/the-actual-article)
+  - **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `tag-a` · **Discussion:** [HN](https://news.ycombinator.com/item?id=48623434)
+  - One-sentence summary.
+
+  On promotion, /bookmarks flips the Status (Added is preserved):
   - **Added:** 2026-07-22 · **Status:** promoted → [filed reference](/knowledge/…/x.md) · **Tags:** …
 -->
 
