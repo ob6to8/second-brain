@@ -3,16 +3,16 @@ id: em:0c343a
 type: concept
 title: normative conclusion
 description: A statement of what ought to be done or aimed for — not true or false but adhered-to or abandoned; in this brain it lives as doctrine (a standing direction) and, made concrete and enforceable, as policy.
-provenance: "Agent-distilled glossary definition; term introduced by operator request during the 2026-07-21 fit-each-layer doctrine session"
+provenance: "Agent-distilled glossary definition; term introduced by operator request during the 2026-07-22 fit-each-layer doctrine session"
 verified: false
 tags: [glossary, epistemics, normativity, governance]
 sense: dual
-timestamp: 2026-07-21
+timestamp: 2026-07-22
 attribution:
-  when: 2026-07-21T00:00:00Z
+  when: 2026-07-22T00:00:00Z
   channel: glossary
   agent: "Claude Code agent, /add-to-glossary"
-  why: "term surfaced by the is-to-ought analysis authored in the 2026-07-21 qiju/thread-storage session"
+  why: "term surfaced by the is-to-ought analysis authored in the 2026-07-22 qiju/thread-storage session"
 ---
 
 # normative conclusion

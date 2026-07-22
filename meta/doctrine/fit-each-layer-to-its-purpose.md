@@ -2,11 +2,11 @@
 type: doctrine
 title: "Fit each layer to its purpose: distill the knowledge, preserve the record"
 description: The brain's direction for how much of the raw material each layer keeps — judged by the function that layer must serve, not by one global standard. The knowledge layer optimizes for concision and queryability (distill hard, cite the raw); the provenance/record layer optimizes for fidelity (keep it verbatim-minus-noise, because a condensed record is a worse record).
-provenance: "Claude Code session (Claude Opus 4.8), 2026-07-21 — ratified by the operator as a standing doctrine"
+provenance: "Claude Code session (Claude Opus 4.8), 2026-07-22 — ratified by the operator as a standing doctrine"
 tags: [meta, doctrine, direction, filing, provenance, distillation, fitness-for-purpose, retention]
-timestamp: 2026-07-21
+timestamp: 2026-07-22
 attribution:
-  when: 2026-07-21T00:00:00Z
+  when: 2026-07-22T00:00:00Z
   channel: agent-authored
   why: "the operator ratified persisting this per-layer retention direction as standing doctrine"
   agent: "Claude Code agent, qiju-thread-storage session"

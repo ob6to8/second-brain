@@ -4,7 +4,7 @@ type: note
 title: Future beliefs
 description: A running scratch list of facts and observations about the brain's tooling and governance worth formalizing later (into a tutorial, policy, or concept).
 tags: [meta, governance, scratch]
-timestamp: 2026-07-21
+timestamp: 2026-07-22
 attribution:
   when: 2026-07-09T12:18:50+00:00
   channel: backfill
@@ -39,7 +39,7 @@ worth remembering but not yet formalized into a tutorial, policy, or concept.
   `phrase` type would be the first keyed on surface form. Revisit only if a
   concrete need with real examples emerges — then propose for ratification like
   any new type.
-- **"Distill, don't dump" was miscast — formalized 2026-07-21 as a doctrine.**
+- **"Distill, don't dump" was miscast — formalized 2026-07-22 as a doctrine.**
   The slogan read as a single dump-vs-distill axis, but the two are neither
   accurate nor mutually exclusive here: thread docs are near-*dumps* (verbatim,
   only tool-noise stripped) and knowledge docs are near-*distillations* — yet
@@ -93,7 +93,7 @@ worth remembering but not yet formalized into a tutorial, policy, or concept.
   bypasses that tool. Asserting the rule harder in prose does **not** move
   reliability. Proof: the
   [response-resource-links](/meta/policy/response-resource-links.md) link bug
-  (2026-07-21) — the contract already said "use `mix brain.url`", yet a dead Pages
+  (2026-07-22) — the contract already said "use `mix brain.url`", yet a dead Pages
   URL shipped, because the *tool* was wrong (not branch-aware) and the policy also
   taught a hand-mapping an agent could apply instead. The fix landed in the tool
   (liveness-aware `mix brain.url`) plus an explicit no-hand-construction clause,

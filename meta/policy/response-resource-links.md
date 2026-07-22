@@ -6,7 +6,7 @@ section: filing
 order: 4
 status: active
 tags: [meta, governance, filing, links, responses]
-timestamp: 2026-07-21
+timestamp: 2026-07-22
 attribution:
   when: 2026-07-13T07:50:19+00:00
   channel: backfill

@@ -2,11 +2,11 @@
 type: analysis
 title: "The is-to-ought layer: how a belief grounds a doctrine"
 description: A point-in-time account, prompted by the "distill, don't dump" rewrite, of the is-to-ought structure in this brain — descriptive premises (beliefs about how the brain and its material behave) ground normative conclusions (doctrine, the standing directions), which policy then implements as enforceable rules. Locates this structure in the existing type vocabulary and works the distill-dont-dump case as the example.
-provenance: "Claude Code session (Claude Opus 4.8), 2026-07-21 — operator asked to define normative conclusions and descriptive premises and to persist an analysis of the is-to-ought layer as presented in-session"
+provenance: "Claude Code session (Claude Opus 4.8), 2026-07-22 — operator asked to define normative conclusions and descriptive premises and to persist an analysis of the is-to-ought layer as presented in-session"
 tags: [meta, analysis, epistemics, is-ought, doctrine, policy, belief, normativity, governance]
-timestamp: 2026-07-21
+timestamp: 2026-07-22
 attribution:
-  when: 2026-07-21T00:00:00Z
+  when: 2026-07-22T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, qiju-thread-storage session"
   why: "authored at operator request to persist the is-to-ought account that underlay the distill-dont-dump rewrite, so the reasoning survives the session"

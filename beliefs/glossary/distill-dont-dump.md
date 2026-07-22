@@ -2,7 +2,7 @@
 id: em:bec37f
 type: concept
 title: distill, don't dump
-description: A retired slogan (through 2026-07-21) that framed the brain's whole retention stance as a single distill-vs-dump axis; reframed as the per-layer doctrine "fit each layer to its purpose", with its one true filing injunction preserved in the capture-knowledge-cite-the-source policy.
+description: A retired slogan (through 2026-07-22) that framed the brain's whole retention stance as a single distill-vs-dump axis; reframed as the per-layer doctrine "fit each layer to its purpose", with its one true filing injunction preserved in the capture-knowledge-cite-the-source policy.
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, filing, distillation, governance]
