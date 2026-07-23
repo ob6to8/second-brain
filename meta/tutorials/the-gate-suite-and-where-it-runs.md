@@ -1,14 +1,14 @@
 ---
 type: tutorial
 title: The gate suite — what the checks prove and where they run
-description: The repository's integrity gates — compile, format, tests, the three generated-artifact freshness checks (contract/registry/codemap --check), the two bundle validators (verify, route_tags), and the site build — what each one proves, and the three surfaces they run on (an agent's manual pass, the pre-commit hook, and the authoritative CI job).
+description: The repository's integrity gates — compile, format, the xref coupling check, tests (warnings as errors), the three generated-artifact freshness checks (contract/registry/codemap --check), the two bundle validators (verify, route_tags), and the site build — what each one proves, and the three surfaces they run on (an agent's manual pass, the pre-commit hook, and the authoritative CI job).
 tags: [meta, tooling, elixir, ci, gates, verification, pre-commit, workflow]
-timestamp: 2026-07-12
+timestamp: 2026-07-23
 attribution:
   when: 2026-07-10T10:41:12+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-10-todo-skill-and-gate-suite-tutorial.md, /meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md]
+  from: [/meta/threads/2026-07-10-todo-skill-and-gate-suite-tutorial.md, /meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md]
 ---
 
 # The gate suite — what the checks prove and where they run
@@ -37,32 +37,37 @@ sandbox.
 |---|------|------|--------|
 | 1 | `mix compile --warnings-as-errors` | build | the Elixir toolchain compiles clean |
 | 2 | `mix format --check-formatted` | build | all Elixir source is canonically formatted |
-| 3 | `mix test` | build | the compiler, parser, and scenario tests pass |
-| 4 | `mix brain.contract --check` | freshness | `CLAUDE.md` matches its policy sources |
-| 5 | `mix brain.registry --check` | freshness | `meta/registry.md` matches the on-disk ids |
-| 6 | `mix brain.codemap --check` | freshness | `meta/code-map.md` matches the `lib/` docstrings |
-| 7 | `mix brain.verify` | validation | ids, evidence edges, and grounding all hold |
-| 8 | `mix brain.route_tags` | validation | route tags resolve and sink logs are faithful |
-| 9 | `mix brain.site` | build-artifact | the static site renders without error |
+| 3 | `mix xref graph --label compile-connected --fail-above 0` | build | no compile-time coupling between modules (the count is zero and stays there) |
+| 4 | `mix test --warnings-as-errors` | build | the compiler, parser, and scenario tests pass, warning-free |
+| 5 | `mix brain.contract --check` | freshness | `CLAUDE.md` matches its policy sources |
+| 6 | `mix brain.registry --check` | freshness | `meta/registry.md` matches the on-disk ids |
+| 7 | `mix brain.codemap --check` | freshness | `meta/code-map.md` matches the `lib/` docstrings |
+| 8 | `mix brain.verify` | validation | ids, evidence edges, and grounding all hold |
+| 9 | `mix brain.route_tags` | validation | route tags resolve and sink logs are faithful |
+| 10 | `mix brain.site` | build-artifact | the static site renders without error |
 
 ## The four kinds of gate
 
-**Build gates (1–3)** are the ordinary Elixir ones: it compiles, it's formatted,
-the tests are green. `mix test` is where the scenario suite lives, so a broken
-flow spine trips here.
+**Build gates (1–4)** are the ordinary Elixir ones: it compiles warning-free,
+it's formatted, no module leans on another at compile time, and the tests are
+green without warnings. `mix test` is where the scenario suite lives, so a
+broken flow spine trips here. The xref gate (3) bans compile-time coupling
+outright — the compile-connected count is zero today, and `--fail-above 0`
+keeps any creep from merging quietly (see the
+[elixir-coding-standards policy](/meta/policy/elixir-coding-standards.md)).
 
-**Freshness gates (4–6)** guard the three **generated artifacts**. `CLAUDE.md` is
+**Freshness gates (5–7)** guard the three **generated artifacts**. `CLAUDE.md` is
 compiled from `meta/preamble.md` + `meta/policy/*.md`, `meta/registry.md` from the
 ids on disk, and `meta/code-map.md` from each `lib/` module's docstrings — none may
 be hand-edited. The `--check` variant re-runs the compile *in memory* and compares
 it byte-for-byte against the checked-in file; any drift fails. This is what converts
 "remember to re-render after editing a policy" from a discipline into a structural
-guarantee: forget to run `mix brain.contract`, and gate 4 catches it. **The fix is
+guarantee: forget to run `mix brain.contract`, and gate 5 catches it. **The fix is
 never to edit the artifact** — it is to run the generator (`mix brain.contract` /
 `mix brain.registry` / `mix brain.codemap`, no `--check`) and commit the regenerated
 file alongside its source.
 
-**Validation gates (7–8)** are the two bundle scanners that judge content rather
+**Validation gates (8–9)** are the two bundle scanners that judge content rather
 than regenerate a file. They share one crawler and differ in what they read and
 enforce — the mechanics are laid out in
 [the three bundle scanners](/meta/tutorials/the-three-bundle-scanners.md); here it
@@ -85,7 +90,7 @@ is enough to know what turns them red:
   cross-check only *warns*.) When a tag or thread legitimately changed, the fix is
   `mix brain.route_tags --materialize`, which rewrites the logs from the tags.
 
-**The build-artifact gate (9)** actually runs `mix brain.site` to prove the whole
+**The build-artifact gate (10)** actually runs `mix brain.site` to prove the whole
 bundle renders. CI can't `needs:`-depend the Pages deploy on this job across
 workflow files, so the Pages build repeats the integrity checks itself — see
 [gating the Pages deploy on a verified bundle](/meta/tutorials/gating-the-pages-deploy-on-a-verified-bundle.md).
@@ -95,7 +100,7 @@ workflow files, so the Pages build repeats the integrity checks itself — see
 The same commands run in three places, with widening scope:
 
 1. **The agent, by hand, mid-session.** After editing bundle content the useful
-   subset is gates 7, 4, and 8 — `mix brain.verify`, `mix brain.contract --check`,
+   subset is gates 8, 5, and 9 — `mix brain.verify`, `mix brain.contract --check`,
    `mix brain.route_tags` — because content edits are what move *those* three. That
    is the "all three gates pass" report. If the change touched ids you also want
    `mix brain.registry --check` (and `mix brain.codemap --check` if it touched a
@@ -111,10 +116,16 @@ The same commands run in three places, with widening scope:
    convenience for contributors who opt in, not a hard dependency.
 
 3. **CI** ([`.github/workflows/ci.yml`](/.github/workflows/ci.yml)) is the
-   authoritative gate. It runs the **full superset** — including the two build gates
+   authoritative gate. It runs the **full superset** — including the build gates
    the quick manual pass skips and the `mix brain.site` render — on a clean checkout
    with pinned OTP/Elixir. This is the one that actually blocks a merge; the other
-   two surfaces exist so you find a red gate *before* CI does.
+   two surfaces exist so you find a red gate *before* CI does. CI also carries one
+   check that is deliberately **outside** the mix suite: **actionlint** over the
+   workflow files themselves. It runs CI-only because its subject (the CI
+   configuration) exists only there — the offline-mix-suite symmetry rule doesn't
+   apply (see the
+   [elixir-coding-standards policy](/meta/policy/elixir-coding-standards.md)'s
+   admission rule).
 
 The layering is deliberate: the manual subset is fast and scoped to the edit, the
 pre-commit hook catches the common misses locally, and CI is the exhaustive
@@ -124,22 +135,24 @@ backstop no change can route around.
 
 Each gate names its own failure, and the fix follows the gate's *kind*:
 
-- **A freshness gate (4/5/6) is red** → you edited a source but not its artifact.
+- **A freshness gate (5/6/7) is red** → you edited a source but not its artifact.
   Run the generator without `--check` (`mix brain.contract` / `mix brain.registry` /
   `mix brain.codemap`) and commit the regenerated file. Never hand-edit `CLAUDE.md`,
   `meta/registry.md`, or `meta/code-map.md`.
-- **`verify` (7) is red** → the message points at the offending id/edge. Fix the
+- **`verify` (8) is red** → the message points at the offending id/edge. Fix the
   frontmatter: mint a missing id (`mix brain.id`), repair a dangling `verified_by`,
   or drop `verified: true` from a capture.
-- **`route_tags` (8) is red** → either a tag is malformed / points nowhere (fix the
+- **`route_tags` (9) is red** → either a tag is malformed / points nowhere (fix the
   ref) or a sink log drifted (`mix brain.route_tags --materialize`).
-- **A build gate (1–3) is red** → ordinary Elixir: read the compiler/formatter/test
-  output.
+- **A build gate (1–4) is red** → ordinary Elixir: read the compiler/formatter/xref/
+  test output. A red xref gate means a new compile-time dependency between modules —
+  break the coupling (usually by moving a compile-time reference behind a runtime
+  call) rather than raising the threshold.
 
 ## In one sentence
 
-The gate suite is nine offline `mix` checks in four kinds — build, generated-artifact
+The gate suite is ten offline `mix` checks in four kinds — build, generated-artifact
 freshness, bundle validation, and site render — run at three widening scopes (an
 agent's scoped manual pass, the opt-in pre-commit hook, and the authoritative CI
-job), so that a change that would break the bundle is caught before it reaches
-`main`.
+job), plus a CI-only actionlint pass over the workflow files, so that a change
+that would break the bundle is caught before it reaches `main`.

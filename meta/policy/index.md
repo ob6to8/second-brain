@@ -54,3 +54,6 @@ the start if siblings are plausible.
 
 ## git-workflow
 - [git-branch-deletion](/meta/policy/git-branch-deletion.md) — head branches are deleted on PR merge; the default branch and unmerged branches need operator approval
+
+## tooling-standards
+- [elixir-coding-standards](/meta/policy/elixir-coding-standards.md) — coding conventions for the Elixir tooling and the admission rule for new guardrails; a recurring agent miss updates this policy, never only the offending change

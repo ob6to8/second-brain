@@ -27,7 +27,8 @@ defmodule ElixirMind.Contract do
     {"conformance", "Conformance (keep the bundle valid)"},
     {"skills", "Skills"},
     {"session-workflow", "Session capture, routing & route tags"},
-    {"git-workflow", "Git workflow"}
+    {"git-workflow", "Git workflow"},
+    {"tooling-standards", "Elixir tooling — coding standards"}
   ]
 
   @banner """

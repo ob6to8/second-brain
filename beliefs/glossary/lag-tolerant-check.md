@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, tooling, generated-artifact, ci]
 sense: repo
-timestamp: 2026-07-13
+timestamp: 2026-07-23
 attribution:
   when: 2026-07-13T17:18:00Z
   channel: glossary
@@ -28,4 +28,4 @@ equality (the discipline of `mix brain.registry --check`) would fail on `main`
 after every merge. The complementary freshness mechanism is re-deriving the
 artifact where the source is complete — e.g. at deploy time in `pages.yml`.
 
-*Seen in:* [2026-07-13 derived-dev-history thread](/meta/threads/2026-07-13-derived-dev-history-from-merge-graph.md), [derived-dev-history plan](/meta/plans/derived-dev-history.md)
+*Seen in:* [2026-07-13 derived-dev-history thread](/meta/threads/2026-07-13-derived-dev-history-from-merge-graph.md), [derived-dev-history plan](/meta/plans/derived-dev-history.md), [2026-07-23 ai-drift intake thread](/meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md)

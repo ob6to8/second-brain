@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-12T09:50:13+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md]
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md]
 ---
 
 # Dedup recall probe — gold set
@@ -71,6 +71,8 @@ being mechanically rewritten.
 | lossless kv cache | em:1cac23 | quarantine | — | Gold answer is time-relative: once supersession is modeled, a newer lossless-KV concept could supersede VeriCache and become the correct dedup target. Undefined until then (see the [epistemic overlay plan](/meta/plans/epistemic-overlay.md)); parsed and reported, never scored. |
 | what is the new observer subagent pattern in claude code | em:02731b | target | observer agents; watchdog agent; agent watching another agent; advisory oversight subagent | harvested at intake 2026-07-18 |
 | the founders playbook - building an ai native startup | em:54cf3c | target | anthropic founder playbook; ai-native startup playbook; startup lifecycle playbook | harvested at intake 2026-07-20 |
+| guarding against ai drift | em:8d9b89 | target | ai code quality drift; guardrails against ai degradation; automated quality checks for ai coding | harvested at intake 2026-07-23 |
+| coding standards worth absorbing | em:1ec778 | target | elixir coding conventions; @spec argument naming; typespec and documentation standards | harvested at intake 2026-07-23 |
 
 ## Baseline
 
@@ -84,8 +86,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 4 | 12 |
-| expanded | 12 | 12 |
+| plain | 5 | 14 |
+| expanded | 14 | 14 |
 
 The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
 of how much recall the tier-1 `/intake` synonym-expansion change is expected to

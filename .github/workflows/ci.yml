@@ -15,6 +15,14 @@ jobs:
           # first-parent merge graph (its --check skips itself on shallow clones).
           fetch-depth: 0
 
+      # Workflow hygiene: lint the workflow files themselves. CI-only by design —
+      # the subject exists only here, so the offline-mix-suite rule doesn't apply
+      # (see the elixir-coding-standards policy's admission rule).
+      - name: Workflow files lint (actionlint)
+        uses: docker://rhysd/actionlint:1.7.7
+        with:
+          args: -color
+
       - uses: erlef/setup-beam@v1
         with:
           otp-version: "25"
@@ -26,8 +34,11 @@ jobs:
       - name: Format check
         run: mix format --check-formatted
 
-      - name: Tests
-        run: mix test
+      - name: No compile-time coupling between modules
+        run: mix xref graph --label compile-connected --fail-above 0
+
+      - name: Tests (warnings as errors)
+        run: mix test --warnings-as-errors
 
       - name: CLAUDE.md is compiled and current
         run: mix brain.contract --check

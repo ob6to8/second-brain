@@ -14,6 +14,274 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #132](https://github.com/ob6to8/elixir-mind/pull/132) — Refresh bookmarks collection *(2026-07-23)*
+
+- Reorganize bookmarks by primary topic with section headings
+
+## [PR #131](https://github.com/ob6to8/elixir-mind/pull/131) — Process pending bookmarks: intake 580 surveyed entries *(2026-07-23)*
+
+- process pending bookmarks: intake 580 surveyed entries via parallel batch processing
+
+## [PR #130](https://github.com/ob6to8/elixir-mind/pull/130) — Survey the 2026-07-22 bookmark batch *(2026-07-22)*
+
+- Survey the 2026-07-22 bookmark batch
+
+## [PR #129](https://github.com/ob6to8/elixir-mind/pull/129) — Follow-up: reconciliation analysis + faithful survey-tier transcript *(2026-07-22)*
+
+- Add analysis: reconciling a mid-flight doctrine retirement into an open branch
+- Bring the survey-tier thread transcript up to date (faithful record)
+- Record follow-up PR #129 in the survey-tier thread narrative
+
+## [PR #128](https://github.com/ob6to8/elixir-mind/pull/128) — Add the survey tier: a /bookmarks staging register beneath filed references *(2026-07-22)*
+
+- Add the survey tier: a /bookmarks staging register beneath filed references
+- Capture the survey-tier session; glossary it; add date-added and HN handling
+- Stamp pr: 128 into the survey-tier thread doc
+
+## [PR #127](https://github.com/ob6to8/elixir-mind/pull/127) — Retire "distill, don't dump" → fit-each-layer doctrine; liveness-aware brain.url *(2026-07-22)*
+
+- beliefs: record fitness-for-purpose principles; flag "distill, don't dump" for rewrite
+- doctrine: retire "distill, don't dump"; add fit-each-layer-to-its-purpose
+- doctrine: strip change-narration from fit-each-layer; add "artifacts state what is" belief
+- brain.url: emit a working URL — Pages when live on main, branch blob until merged
+- response-links: lead with the tool, demote the hand-mapping; capture the off-repo-rule belief
+- sync main into branch; correct this session's date stamps 07-21 -> 07-22
+- capture: 2026-07-22 qiju thread-storage and fit-each-layer doctrine session
+- capture: stamp pr: 127 into the qiju/fit-each-layer thread doc
+- format brain.url and site_config_test per mix format (CI --check-formatted)
+- regenerate code-map for brain.url + SiteConfig.blob_url changes
+
+## [PR #126](https://github.com/ob6to8/elixir-mind/pull/126) — Multi-model dev tooling: landscape note + cross-model PR review Action *(2026-07-21)*
+
+- intake multi-model coding-agent tooling note + cross-model PR review snippet
+- capture session + glossary; note gateway-agnosticism in review Action
+- stamp pr: 126 into the multi-model dev thread doc
+- correct pi (pi.dev) as a Shape B harness, not a gateway
+- capture glossary-design and graduation continuation
+
+## [PR #125](https://github.com/ob6to8/elixir-mind/pull/125) — Docs overhaul: link + content-drift audit since the 2026-07-11/12 pass *(2026-07-21)*
+
+- Docs link audit: fix stale agentic-coding paths in the 2026-07-11 inbox digest
+- Content audit: fix stale SessionStart framing in the session-init tutorial index entry
+- Capture the 2026-07-21 docs-audit session (link + content drift)
+- Stamp pr: 125 into the docs-audit thread doc
+
+## [PR #101](https://github.com/ob6to8/elixir-mind/pull/101) — Analysis: Dynamic Workflows vs. BEAM/Jido 2 *(2026-07-20)*
+
+- intake: Dynamic Workflows vs. BEAM/Jido 2 as an analysis
+- capture: 2026-07-16 Dynamic Workflows vs. BEAM/Jido 2 session + glossary
+- capture: stamp pr: 101 into the Dynamic Workflows thread doc
+
+## [PR #124](https://github.com/ob6to8/elixir-mind/pull/124) — Research spike: Inkling's eval-industry impact, open-weights landscape position, and the Thinking Machines bet *(2026-07-20)*
+
+- File research spike: Inkling's eval-industry impact, open-weights landscape position, and the Thinking Machines bet
+- Capture the evals-landscape spike slice, glossary its terms, stamp attribution.from
+- Stamp pr: 124 into the evals-landscape spike thread doc
+
+## [PR #123](https://github.com/ob6to8/elixir-mind/pull/123) — Intake ECS-in-Elixir article: viability analysis, exposition methodology, agent-fleet follow-up *(2026-07-20)*
+
+- intake: ECS-in-Elixir article, viability analysis, and exposition methodology
+- capture session; file agent-for-entity ECS analysis; glossary the thread
+- stamp pr: 123 into the captured thread doc
+
+## [PR #122](https://github.com/ob6to8/elixir-mind/pull/122) — session-capture: a thread's pr: is write-once (records the origin PR) *(2026-07-20)*
+
+- session-capture: pr: is write-once, records the origin PR
+- Capture the pr-write-once turn; stamp thread into the policy's from
+- Record follow-up PR #122 in the thread narrative (pr: stays at origin #115)
+
+## [PR #121](https://github.com/ob6to8/elixir-mind/pull/121) — Evals via harness and ledger: analysis, session capture, and 16 glossary terms *(2026-07-20)*
+
+- File analysis: harness and ledger as eval infrastructure
+- Capture the evals-harness-ledger session, glossary its terms, stamp attribution.from
+- Stamp pr: 121 into the evals-harness-ledger thread doc
+
+## [PR #119](https://github.com/ob6to8/elixir-mind/pull/119) — File the frontmatter-parser rewrite plan; capture the storage-format session *(2026-07-20)*
+
+- File the frontmatter-parser rewrite plan, capture the session, glossary its terms
+- Stamp pr: 119 into the storage-format thread doc
+
+## [PR #120](https://github.com/ob6to8/elixir-mind/pull/120) — Cross-link the 2026-07-20 code-as-derived-artifact doctrine cluster *(2026-07-20)*
+
+- Cross-link the 2026-07-20 code-as-derived-artifact doctrine cluster
+- Capture the cluster cross-linking; stamp thread into revised docs' from
+- Record follow-up PR #120 in the thread narrative
+
+## [PR #118](https://github.com/ob6to8/elixir-mind/pull/118) — Spec the library spin-out: knowledge repos consume the library as a versioned dep *(2026-07-20)*
+
+- Spec the library spin-out: knowledge repos consume Elixir Mind as a versioned dep
+- Record the naming decision and per-bundle id namespaces in the spin-out plan
+- Capture the library spin-out spec session, glossary its terms, stamp attribution.from
+- Stamp pr: 118 into the library spin-out spec thread doc
+
+## [PR #117](https://github.com/ob6to8/elixir-mind/pull/117) — Vercel eve comparison analysis + thin Jido brain-host plan *(2026-07-20)*
+
+- Analyze vercel eve against the bundle; plan the thin Jido brain host
+- Capture the eve-comparison session, glossary its terms, stamp attribution.from
+- Stamp pr: 117 into the eve-comparison thread doc
+
+## [PR #116](https://github.com/ob6to8/elixir-mind/pull/116) — Intake: Anthropic's Founder's Playbook for AI-native startups *(2026-07-20)*
+
+- intake: Anthropic's Founder's Playbook for AI-native startups
+- capture: 2026-07-20 Founder's Playbook AI-native startup intake session
+- stamp pr: 116 on the founders-playbook-ai-native-startup-intake thread
+
+## [PR #115](https://github.com/ob6to8/elixir-mind/pull/115) — Code as an equivalence-class compilation target: doctrine, analysis, and a DSP-testing tutorial *(2026-07-20)*
+
+- Add regenerate-the-change doctrine and its compilation-target analysis
+- Add sampling-and-quantization tutorial; thin analysis Frame 1 to a pointer
+- Capture the compilation-target/DSP-testing session; glossary its terms
+- Stamp pr: 115 into the session thread doc
+
+## [PR #113](https://github.com/ob6to8/elixir-mind/pull/113) — Decision records as an abstraction over development history: analysis, decision-graph plan, research intake, and session capture *(2026-07-20)*
+
+- analysis + plan: decision records as an abstraction over development history
+- capture: 2026-07-20 decision-records session; glossary the thread; stamp attribution.from
+- stamp pr: 113 into the 2026-07-20 decision-records thread
+
+## [PR #114](https://github.com/ob6to8/elixir-mind/pull/114) — localized code conversation — comprehension doctrine + source-vs-derived analysis *(2026-07-20)*
+
+- Add comprehension doctrine and localized-conversation analysis
+- Capture localized-code-conversation session; glossary and stamp from
+- Stamp PR #114 into thread doc
+
+## [PR #111](https://github.com/ob6to8/elixir-mind/pull/111) — session-URL persistence, trailer guard, and plan-vs-capture policy *(2026-07-20)*
+
+- Ratified: merge-strategy policy — pin the attribution.sessionUrl dependency and document trailer coverage gaps
+- Ratified: session-capture policy — /capture stamps the session transcript URL as session: frontmatter
+- Backfill session: URLs into 70 thread docs; amend backfill rule; add plan-vs-capture policy
+- capture: 2026-07-19 session-URL-persistence and plan-vs-capture thread + glossary
+- capture: stamp pr: 111 into the thread doc
+
+## [PR #112](https://github.com/ob6to8/elixir-mind/pull/112) — Ratify intent-is-the-source doctrine with dark-factory evidence pair *(2026-07-20)*
+
+- Ratify intent-is-the-source doctrine with dark-factory evidence pair
+- Capture intent-as-source session; glossary its terms; stamp from links
+- Stamp pr: 112 into the session thread doc
+
+## [PR #110](https://github.com/ob6to8/elixir-mind/pull/110) — intake: observer subagent pattern in Claude Code (em:02731b) *(2026-07-18)*
+
+- intake: observer subagent pattern in Claude Code (em:02731b)
+- capture: 2026-07-18 observer-subagent-pattern intake session
+- stamp pr: 110 on the observer-subagent-pattern intake thread
+
+## [PR #109](https://github.com/ob6to8/elixir-mind/pull/109) — Capture the agent-drivable-apps session: analysis, thread doc, glossary *(2026-07-18)*
+
+- Capture the agent-drivable-apps session: analysis, thread doc, glossary
+- capture: stamp pr: 109 into the thread doc
+
+## [PR #106](https://github.com/ob6to8/elixir-mind/pull/106) — Add mix brain.orphans — list docs with no inbound link *(2026-07-18)*
+
+- Add mix brain.orphans — list docs with no inbound link
+- Stamp pr: 106 into the brain-orphans thread doc
+- Join the OptionParser.parse assignment onto one line for the format gate
+
+## [PR #108](https://github.com/ob6to8/elixir-mind/pull/108) — escape-rate sampling plan + agents-as-GenServers two-tier-memory analysis *(2026-07-17)*
+
+- plan: auto-intake escape-rate sampling (proposed)
+- analysis: agents as GenServers with a per-agent OKF mind (two-tier memory)
+- capture: stamp pr: 108 into the thread doc
+
+## [PR #107](https://github.com/ob6to8/elixir-mind/pull/107) — Steps of AI Adoption intake + tier-3/4 interface & trust analysis *(2026-07-17)*
+
+- intake: Boris Cherny's 'Steps of AI Adoption' (verbatim capture)
+- analysis: tier-3/4 interface inversion and trust-as-measured-escape-rate
+- capture: stamp pr: 107 into the thread doc
+
+## [PR #105](https://github.com/ob6to8/elixir-mind/pull/105) — Graduate the swarm-eval harness into a plan, linked to its analysis *(2026-07-16)*
+
+- Graduate the swarm-eval harness into a plan, linked to its analysis
+- Capture the harness-plan graduation slice, extend graduation sense 3, stamp attribution.from
+- Stamp pr: 105 into the harness-plan graduation thread doc
+
+## [PR #104](https://github.com/ob6to8/elixir-mind/pull/104) — Research spike: Inkling + Elixir/BEAM as an agent-swarm eval substrate *(2026-07-16)*
+
+- File research spike: Inkling + Elixir/BEAM as an agent-swarm eval substrate
+- Expand the Inkling/BEAM swarm-eval spike: stack, fine-tuning path, eval-run anatomy
+- Capture the Inkling/BEAM swarm-eval spike session, glossary its terms, stamp attribution.from
+- Stamp pr: 104 into the Inkling/BEAM swarm-eval spike thread doc
+
+## [PR #100](https://github.com/ob6to8/elixir-mind/pull/100) — Plan: separate the OKF knowledge bundle from the Elixir Mind library *(2026-07-16)*
+
+- Plan: separate the OKF knowledge bundle from the Elixir Mind library
+- Capture the bundle-library separation planning session
+- Stamp pr: 100 into the separation-plan thread doc
+
+## [PR #102](https://github.com/ob6to8/elixir-mind/pull/102) — Analyze /render-contract invocation and the auto-render question *(2026-07-16)*
+
+- Analyze /render-contract invocation and the auto-render question
+- Stamp PR #102 into the render-contract-invocation thread doc
+
+## [PR #103](https://github.com/ob6to8/elixir-mind/pull/103) — Code tutorial and generated code-map for the elixir_mind tooling *(2026-07-16)*
+
+- plan: code tutorial + generated code-map
+- codemap: compile meta/code-map.md from lib/ docstrings
+- tutorial: the tooling architecture spine + code-map wiring
+- capture: 2026-07-16 code-tutorial-and-generated-code-map thread + glossary
+- capture: stamp pr: 103 into the thread doc
+
+## [PR #99](https://github.com/ob6to8/elixir-mind/pull/99) — analysis — executing ratified plans via Workflow fresh-context fan-out *(2026-07-16)*
+
+- Propose Workflow-driven plan-execution convention (status: proposed)
+- Reframe Workflow-execution write-up as an analysis (from proposed plan)
+- Capture the Workflow-execution-convention session; glossary its terms
+- Stamp pr: 99 into the workflow-execution-convention thread doc
+
+## [PR #94](https://github.com/ob6to8/elixir-mind/pull/94) — Extend the concept→document thread doc with the merge/supersede tail *(2026-07-16)*
+
+- Extend the concept→document thread doc with the merge/supersede tail
+
+## [PR #98](https://github.com/ob6to8/elixir-mind/pull/98) — Glossary: single canonical overview, expansion-only bodies, and mix brain.glossary *(2026-07-16)*
+
+- Glossary: single canonical overview, expansion-only bodies, and mix brain.glossary
+- Capture the glossary single-overview recreation session
+- Stamp pr: 98 into the glossary single-overview thread doc
+
+## [PR #97](https://github.com/ob6to8/elixir-mind/pull/97) — Plan: derived index listings — compile Contents sections from frontmatter, with write-time summaries *(2026-07-16)*
+
+- Plan: derive index listings from frontmatter; supersede PR #70
+- Plan: extend PR disposition to cover PR #68 and its salvage
+- Plan: record PR #68's salvage landing via PR #95; fix date stamps
+- Capture the derived-index-listings session; glossary + from-stamping
+- capture: stamp pr: 97 into the derived-index-listings thread doc
+
+## [PR #95](https://github.com/ob6to8/elixir-mind/pull/95) — Collection views by date (recreated from PR #68) *(2026-07-16)*
+
+- Recreate PR #68 on post-rename main: date-ordered governance indexes
+- Capture the PR-68 recreation session as a verbatim thread doc
+- Stamp pr: 95 into the collection-view-by-date recreation thread doc
+
+## [PR #96](https://github.com/ob6to8/elixir-mind/pull/96) — analysis: unpack Jido's distribution gap and req_llm cognition dependency *(2026-07-16)*
+
+- analysis: unpack Jido's distribution gap and req_llm cognition dependency
+- capture: 2026-07-16 Jido-caveats session + glossary terms
+- capture: stamp pr: 96 into the thread doc
+
+## [PR #93](https://github.com/ob6to8/elixir-mind/pull/93) — Concept terminology: adopt "document" for the OKF unit (replicate PR #71 onto current main) *(2026-07-15)*
+
+- Adopt "document" for the OKF unit; reserve "concept" for the type
+- Capture the concept→document terminology replication session + glossary
+- Stamp pr: 93 into the concept→document replication thread doc
+
+## [PR #92](https://github.com/ob6to8/elixir-mind/pull/92) — Gate /create-pull-request merging behind an explicit `merge` argument *(2026-07-15)*
+
+- Gate /create-pull-request merging behind an explicit `merge` argument
+- Drop the --merge alias; capture the merge-opt-in decision as a thread doc
+
+## [PR #90](https://github.com/ob6to8/elixir-mind/pull/90) — Phase 3 rename verification *(2026-07-15)*
+
+- capture: Phase 3 rename verification thread
+- capture: stamp pr: 90 into Phase 3 verification thread
+
+## [PR #91](https://github.com/ob6to8/elixir-mind/pull/91) — Capture the elixir-mind config-flip + Phase 3 verification continuation *(2026-07-15)*
+
+- Capture the elixir-mind config-flip + Phase 3 verification continuation
+- Stamp pr: 91 into the config-flip + Phase 3 verification thread doc
+
+## [PR #89](https://github.com/ob6to8/elixir-mind/pull/89) — Point config URLs at the renamed elixir-mind repo (Phase 2) *(2026-07-15)*
+
+- Point config URLs at the renamed elixir-mind repo (Phase 2)
+
 ## [PR #88](https://github.com/ob6to8/elixir-mind/pull/88) — Capture the second-brain → elixir-mind rename-execution session *(2026-07-14)*
 
 - Capture the second-brain → elixir-mind rename-execution session
@@ -550,6 +818,7 @@ deployed site is regenerated at deploy time and is always current.
 Commits made straight to the default branch before the PR workflow was
 adopted (the brain's precursor era), listed by commit subject.
 
+- 2026-07-22 — bookmarks
 - 2026-03-04 — Add plans 008 (ITS thesis revision) and 009 (Elixir+Postgres migration)
 - 2026-03-03 — Rename "Second Brain" to "Assertion Graph" across codebase
 - 2026-03-03 — Add README, fix plan numbering, update CLAUDE.md for new scripts

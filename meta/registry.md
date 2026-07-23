@@ -17,11 +17,13 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:35c992` | [beliefs/glossary/abstract-syntax-tree](/beliefs/glossary/abstract-syntax-tree.md) | concept | false |
 | `em:8f37a6` | [beliefs/glossary/actor-model](/beliefs/glossary/actor-model.md) | concept | false |
 | `em:1d61f9` | [beliefs/glossary/adjudication](/beliefs/glossary/adjudication.md) | concept | false |
+| `em:27e6ac` | [beliefs/glossary/admission-rule](/beliefs/glossary/admission-rule.md) | concept | false |
 | `em:bb0ef0` | [beliefs/glossary/advisor-pattern](/beliefs/glossary/advisor-pattern.md) | concept | false |
 | `em:dbaf55` | [beliefs/glossary/agent-as-presenter](/beliefs/glossary/agent-as-presenter.md) | concept | false |
 | `em:37a83f` | [beliefs/glossary/agent-memory](/beliefs/glossary/agent-memory.md) | concept | false |
 | `em:76ccba` | [beliefs/glossary/agent-swarm](/beliefs/glossary/agent-swarm.md) | concept | false |
 | `em:2523b4` | [beliefs/glossary/agent-time-horizon](/beliefs/glossary/agent-time-horizon.md) | concept | false |
+| `em:45fda5` | [beliefs/glossary/ai-drift](/beliefs/glossary/ai-drift.md) | concept | false |
 | `em:e24e40` | [beliefs/glossary/ai-native](/beliefs/glossary/ai-native.md) | concept | false |
 | `em:c9e142` | [beliefs/glossary/aliasing](/beliefs/glossary/aliasing.md) | concept | false |
 | `em:4aa4da` | [beliefs/glossary/ambient-authority](/beliefs/glossary/ambient-authority.md) | concept | false |
@@ -62,6 +64,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:5b3608` | [beliefs/glossary/code-map](/beliefs/glossary/code-map.md) | concept | false |
 | `em:d676f0` | [beliefs/glossary/cognitive-debt](/beliefs/glossary/cognitive-debt.md) | concept | false |
 | `em:d07ed9` | [beliefs/glossary/commoditize-your-complement](/beliefs/glossary/commoditize-your-complement.md) | concept | false |
+| `em:25711c` | [beliefs/glossary/compile-time-coupling](/beliefs/glossary/compile-time-coupling.md) | concept | false |
 | `em:23f009` | [beliefs/glossary/compiled-contract](/beliefs/glossary/compiled-contract.md) | concept | false |
 | `em:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
 | `em:04f8dd` | [beliefs/glossary/composable-beliefs](/beliefs/glossary/composable-beliefs.md) | concept | false |
@@ -392,6 +395,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a142be` | [knowledge/SWE/agentic/anthropic/claude/artifacts](/knowledge/SWE/agentic/anthropic/claude/artifacts.md) | concept | false |
 | `em:532b22` | [knowledge/SWE/agentic/code-context/codebase-memory-mcp](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md) | reference |  |
 | `em:b89ea1` | [knowledge/SWE/agentic/code-context/gitnexus](/knowledge/SWE/agentic/code-context/gitnexus.md) | reference |  |
+| `em:1ec778` | [knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents](/knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents.md) | reference |  |
+| `em:8d9b89` | [knowledge/SWE/agentic/code-quality/guarding-against-ai-drift](/knowledge/SWE/agentic/code-quality/guarding-against-ai-drift.md) | reference |  |
 | `em:41a1e3` | [knowledge/SWE/agentic/context-engineering/ai-agent-memory-management-markdown-files](/knowledge/SWE/agentic/context-engineering/ai-agent-memory-management-markdown-files.md) | reference |  |
 | `em:bf8a85` | [knowledge/SWE/agentic/context-engineering/claude-context-editing-and-memory-tool](/knowledge/SWE/agentic/context-engineering/claude-context-editing-and-memory-tool.md) | reference |  |
 | `em:77d68a` | [knowledge/SWE/agentic/context-engineering/context-rot-chroma-research](/knowledge/SWE/agentic/context-engineering/context-rot-chroma-research.md) | reference |  |
