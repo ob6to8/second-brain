@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, git, provenance, metadata]
 sense: common
-timestamp: 2026-07-19
+timestamp: 2026-07-23
 attribution:
   when: 2026-07-19T15:27:08Z
   channel: glossary
@@ -31,4 +31,4 @@ what makes the commit graph a [provenance](/beliefs/glossary/provenance.md) laye
 is one reason merges must be [true merges](/beliefs/glossary/true-merge.md) — a squash
 would abandon the trailered commits.
 
-*Seen in:* [2026-07-19 session-URL-persistence thread](/meta/threads/2026-07-19-session-url-persistence-and-plan-vs-capture-policy.md)
+*Seen in:* [2026-07-19 session-URL-persistence thread](/meta/threads/2026-07-19-session-url-persistence-and-plan-vs-capture-policy.md), [2026-07-23 dev-history-drift thread](/meta/threads/2026-07-23-dev-history-drift-and-regeneration-flow.md)

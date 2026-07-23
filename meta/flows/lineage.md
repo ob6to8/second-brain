@@ -25,7 +25,7 @@ flowchart LR
   f0f["flow: add-to-glossary"]
   f0t --> f0r
   f0r --> f0f
-  f1t["thread: 2026-07-10-create-pull-request-skill-and-intake-delegation"]
+  f1t["thread: 2026-07-10-create-pull-request-skill-and-intake-delegation, 2026-07-23-dev-history-drift-and-regeneration-flow"]
   f1r["PR #32"]
   f1f["flow: create-pull-request"]
   f1t --> f1r
@@ -77,7 +77,7 @@ flowchart LR
 | Flow | Analysis | Plan | Thread | PR |
 |------|----------|------|--------|----|
 | [Add to glossary — accrete per-term definition concepts](/meta/flows/add-to-glossary.md) | — | — | [2026-07-10-add-to-glossary-skill-and-pr-wiring](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md) | PR #35 |
-| [Create pull request — capture, glossary, commit, push, open](/meta/flows/create-pull-request.md) | — | — | [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md) | PR #32 |
+| [Create pull request — capture, glossary, commit, push, open](/meta/flows/create-pull-request.md) | — | — | [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)<br>[2026-07-23-dev-history-drift-and-regeneration-flow](/meta/threads/2026-07-23-dev-history-drift-and-regeneration-flow.md) | PR #32 |
 | [Dedup recall probe — measuring and maintaining intake dedup recall](/meta/flows/dedup-recall-probe.md) | [Would a vector DB improve recall as this bundle scales? A dedup-recall probe says fix intake first](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md) | [Dedup recall probe: a gold set of natural-phrasing queries and a mix task that measures intake dedup recall](/meta/plans/dedup-recall-probe.md) | [2026-07-12-dedup-recall-probe-and-synonym-intake](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md) | PR #50 |
 | [Intake — capture pasted material into a filed concept](/meta/flows/intake.md) | — | [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md) | [2026-07-09-flows-genre-and-scenario-testing](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md) | PR #27 |
 | [Render-contract — compile the operating contract from its policy sources](/meta/flows/render-contract.md) | — | — | [2026-07-11-branch-deletion-policy-and-contract-as-abstraction](/meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md) | PR #46 |

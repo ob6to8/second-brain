@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, dev-history CI-failure session"
   why: "operator asked to persist the drift root-cause and the CI-bot-vs-skill-step tradeoff analysis so the reasoning survives past the fix"
+  from: [/meta/threads/2026-07-23-dev-history-drift-and-regeneration-flow.md]
 ---
 
 # Why `meta/dev-history.md` drifted, and why the fix isn't a CI auto-commit bot

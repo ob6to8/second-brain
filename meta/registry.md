@@ -296,6 +296,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:9fdaf8` | [beliefs/glossary/second-mind](/beliefs/glossary/second-mind.md) | concept | false |
 | `em:23844f` | [beliefs/glossary/section-terminator](/beliefs/glossary/section-terminator.md) | concept | false |
 | `em:4e01f8` | [beliefs/glossary/self-consistency-check](/beliefs/glossary/self-consistency-check.md) | concept | false |
+| `em:81a3ae` | [beliefs/glossary/self-referential-lag](/beliefs/glossary/self-referential-lag.md) | concept | false |
 | `em:98acc0` | [beliefs/glossary/semantic-search](/beliefs/glossary/semantic-search.md) | concept | false |
 | `em:b7760e` | [beliefs/glossary/semidecidability](/beliefs/glossary/semidecidability.md) | concept | false |
 | `em:60220a` | [beliefs/glossary/sense](/beliefs/glossary/sense.md) | concept | false |
