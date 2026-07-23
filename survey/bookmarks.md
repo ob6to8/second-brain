@@ -4,7 +4,7 @@ title: "Bookmarks — survey register"
 description: The survey tier — links parked with a one-line summary and topical tags, awaiting full intake. A lower-effort staging register than a filed reference; process with /bookmarks, promote with /intake.
 provenance: "Maintained by /bookmarks — the operator drops raw URLs under Pending; the skill fetches each and writes a summarized, tagged Surveyed entry."
 tags: [survey, bookmark]
-timestamp: 2026-07-22
+timestamp: 2026-07-23
 ---
 
 # Bookmarks — survey register
@@ -43,96 +43,6 @@ re-engages.
   **Added** date. The skill empties this section as it processes. A URL with no date
   heading defaults its Added date to the day it is processed.
 -->
-
-7/22/26
-https://news.ycombinator.com/item?id=48623434
-https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/
-https://news.ycombinator.com/item?id=48979269
-https://news.ycombinator.com/item?id=48981206
-https://runtimewire.com/article/jack-dorsey-block-buzz-team-chat-ai-agents-git
-https://luma.com/8g05zj69
-https://spiced-self-play.com/?utm_source=luma
-https://github.com/GoogleCloudPlatform/scion
-https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/toolbox/mdcode/demo
-https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf
-https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
-https://www.reddit.com/r/LLMDevs/comments/1uc8qub/detecting_hallucinations_and_prompt_injections_in/
-https://yos.io/2016/09/17/entity-component-systems/
-https://www.theerlangelist.com/article/spawn_or_not
-https://www.reddit.com/r/AgentsOfAI/comments/1uz8m6s/i_ran_an_agent_autonomously_for_300_hours_the_way/
-https://news.ycombinator.com/item?id=48636377
-https://news.ycombinator.com/item?id=48631726
-https://www.hunk.dev/
-https://github.com/modem-dev/hunk
-https://code.claude.com/docs/en/agent-teams.md
-https://code.claude.com/docs/en/agent-teams.md
-https://www.youtube.com/watch?v=FFfz81XM57k
-https://www.youtube.com/watch?v=JzVXK0WorpI
-https://www.youtube.com/watch?v=WkBPX-oDMnA
-https://www.youtube.com/watch?v=5GtkyPvuvbQ
-https://www.youtube.com/watch?v=3L8htHUzAI4
-https://vercel.com/eve
-https://www.youtube.com/watch?v=m8VC2SV2igM
-https://www.youtube.com/watch?v=WAFUMBLOjHo
-https://www.youtube.com/watch?v=jPuN4ilZLdU
-https://www.youtube.com/watch?v=AQl5Q-0l7FQ
-https://www.youtube.com/watch?v=WkBPX-oDMnA
-https://www.youtube.com/watch?v=a3-vf78ZwTc
-https://www.youtube.com/watch?v=n97BCfyFIvw
-https://www.youtube.com/watch?v=0vphxNt4wyk
-https://www.youtube.com/watch?v=pMggiOb18tc
-https://www.youtube.com/watch?v=VrpEyglYgeU
-https://www.youtube.com/watch?v=wEc9aG7cRQc
-https://www.youtube.com/watch?v=m24UKZomm7k
-https://www.youtube.com/watch?v=B8l81jhvHbI
-https://www.youtube.com/watch?v=maTp79FD9gI
-https://www.youtube.com/watch?v=JJGbw4ggaFs
-https://www.youtube.com/watch?v=3z2uT5aDx_Y
-https://www.youtube.com/watch?v=3ySF0I5iE_0
-https://www.youtube.com/watch?v=bZISsg7H7DA
-https://www.youtube.com/watch?v=c35YoMdnI78
-https://www.youtube.com/watch?v=Zo20PVvcIXg
-https://transformer-circuits.pub/2026/workspace/
-https://transformer-circuits.pub/2026/emotions/index.html
-https://medium.com/@saurabbhatia/how-i-coordinate-19-ai-agents-across-4-model-families-with-opencode-and-recallium-00bc14fb8ccb
-https://github.com/musistudio/claude-code-router
-https://ccrdesk.top/
-https://www.warp.dev/blog/a-guide-to-cloud-software-factories-for-engineering-leaders
-https://www.warp.dev/blog/we-are-now-factory-engineers-not-product-engineers
-https://www.warp.dev/blog/rectangle-health-self-improving-ai-teammate
-https://www.warp.dev/blog/the-virtuous-loop-of-open-agentic-development
-https://www.warp.dev/blog/how-to-build-a-cloud-software-factory-add-spec-driven-development-skills
-https://www.warp.dev/blog/how-to-build-a-cloud-software-factory-self-improving-code-review
-https://www.warp.dev/blog/how-to-build-a-cloud-software-factory-the-automatic-triage-skill
-https://fly.io/blog/unfortunately-mcp/
-https://www.reddit.com/r/LLMDevs/comments/1uxzquu/stopped_trusting_what_my_agent_says_it_did/
-https://www.reddit.com/r/LLMDevs/comments/1uxh14x/how_do_you_know_your_agent_actually_did_the_thing/
-https://www.reddit.com/r/LLMDevs/comments/1ux306l/i_studied_how_cognee_graphiti_and_neo4j_build/
-https://github.com/carsteneu/ai-memory-comparison
-https://www.reddit.com/r/LLMDevs/comments/1uy4sca/let_claude_code_search_your_repo_not_crawl_it/
-https://www.reddit.com/r/LLMDevs/comments/1uxua8u/samefamily_selfgrading_inflated_my_eval_by_176/
-https://www.reddit.com/r/LLMDevs/comments/1uxv3tk/skills_evals/
-https://github.com/ahnafyy/skills-evals
-https://blog.cloudflare.com/oauth-for-all/
-https://news.ycombinator.com/item?id=48668033
-https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development
-https://github.com/jasonshrepo/qiju
-https://claude.ai/code/artifact/4394e12e-677b-4ccf-af11-477e38c3e0e7?via=auto_preview
-https://www.reddit.com/r/ClaudeAI/comments/1v28snk/if_youre_not_already_using_a_ci_pipeline_with/
-https://www.reddit.com/r/LLMDevs/comments/1v0aw41/i_stopped_building_a_database_for_my_ai_agents/
-https://www.reddit.com/r/warpdotdev/comments/1us28d5/i_made_a_modern_dark_pro_theme_for_warp_terminal/
-https://www.kaggle.com/competitions/kaggle-measuring-agi/discussion/724918#3498423
-https://news.ycombinator.com/item?id=48946010
-https://huggingface.co/LatitudeGames
-https://immersivemath.com/ila/
-https://news.ycombinator.com/item?id=48935951
-https://arxiv.org/abs/2607.11938
-https://news.ycombinator.com/item?id=48939896
-https://www.youtube.com/watch?v=VQy50fuxI34&t=393s
-https://metr.org/
-https://www.linkedin.com/posts/bcherny_steps-of-ai-adoption-activity-7483695059843043328-LBg_/
-https://claude.ai/code/artifact/bfdfaef9-bc62-4dfe-ba9e-c58a26c9accf
-
 
 5/28/26
 https://medium.com/jonathans-musings/what-warps-open-source-release-tells-us-about-the-future-of-agentic-software-development-5d4409726bf1
@@ -1015,4 +925,306 @@ https://new.express.adobe.com/
   - **Added:** 2026-07-22 · **Status:** promoted → [filed reference](/knowledge/…/x.md) · **Tags:** …
 -->
 
-_No bookmarks surveyed yet._
+### [Fine Tuning a Local LLM to Categorize Questions](https://www.teachmecoolstuff.com/viewarticle/fine-tuning-a-local-llm-to-categorize-questions)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `fine-tuning` `local-llm` `qwen` `rag` `classification` · **Discussion:** [HN](https://news.ycombinator.com/item?id=48623434)
+- A hands-on walkthrough of fine-tuning a tiny 600M-parameter Qwen model to classify household questions into metadata categories for a RAG chatbot.
+
+### [American AI is locked down and proprietary. It's losing.](https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `open-weights` `ai-strategy` `china-ai` `proprietary-ai` `ai-policy` · **Discussion:** [HN](https://news.ycombinator.com/item?id=48979269)
+- Ben Werdmuller argues China's open-weight AI strategy is outcompeting America's closed/proprietary approach.
+
+### [Over 30% of papers submitted on arXiv read as AI-written](https://unslop.run/blog/measuring-ai-writing-on-arxiv)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-writing-detection` `arxiv` `evals` `llm-text-analysis` `measurement` · **Discussion:** [HN](https://news.ycombinator.com/item?id=48981206)
+- A study of 12,750 arXiv papers estimating ~30% read as AI-written, with a look at where such measurement breaks down.
+
+### [Jack Dorsey launches Buzz to combine team chat, AI agents and Git hosting](https://runtimewire.com/article/jack-dorsey-block-buzz-team-chat-ai-agents-git)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `git-hosting` `team-chat` `jack-dorsey` `developer-tools`
+- News that Jack Dorsey's Block launched Buzz, a platform merging team chat, AI agents, and Git hosting.
+
+### [Human-like autonomy emerges from self-play and a pinch of human data (talk)](https://luma.com/8g05zj69)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `self-play` `reinforcement-learning` `autonomous-driving` `research-talk`
+- Event listing for a talk on training autonomous-driving policies via self-play plus ~30 minutes of human data, without reward engineering.
+
+### [SPICED: self-play autonomous driving](https://spiced-self-play.com/?utm_source=luma)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `self-play` `reinforcement-learning` `autonomous-driving` `simulation`
+- Project/paper landing page for "SPICED," combining large-scale simulation with minimal human driving data to produce policies that coordinate with human drivers.
+
+### [GoogleCloudPlatform/scion](https://github.com/GoogleCloudPlatform/scion)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `multi-agent-orchestration` `ai-agents` `containers` `claude-code` `developer-tools`
+- A Google Cloud multi-agent orchestration testbed running deep agents (Claude Code, Gemini CLI) concurrently in isolated containers on one project.
+
+### [knowledge-catalog / toolbox/mdcode/demo](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/toolbox/mdcode/demo)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `mdcode` `metadata-as-code` `okf` `bigquery` `google-cloud`
+- Demo scripts for mdcode, a "metadata as code" tool that pulls/edits/pushes metadata snapshots for BigQuery and knowledge/wiki bundles via local files.
+
+### [knowledge-catalog / okf (source tree)](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `okf` `knowledge-management` `google-cloud`
+- Source tree for the Open Knowledge Format spec — the already-filed [OKF reference](/knowledge/knowledge-management/open-knowledge-format.md) cites the parent repo, not this exact subtree, so it's kept as a bookmark rather than treated as a duplicate.
+
+### [Introducing the Open Knowledge Format](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `okf` `knowledge-management` `data-sharing` `google-cloud` `ai-agents`
+- Google Cloud's announcement blog for OKF v0.1, a vendor-neutral markdown+YAML standard for portable, shareable knowledge across agents and orgs.
+
+### [Detecting hallucinations and prompt injections in LLMs](https://www.reddit.com/r/LLMDevs/comments/1uc8qub/detecting_hallucinations_and_prompt_injections_in/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `llm` `evals` `prompt-injection` `hallucination` `ai-safety`
+- (unfetched: reddit.com blocked to fetch) r/LLMDevs discussion on techniques for detecting hallucinations and prompt-injection attacks in LLM applications.
+
+### [To spawn, or not to spawn?](https://www.theerlangelist.com/article/spawn_or_not)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `elixir` `erlang` `beam` `concurrency` `software-design`
+- Saša Jurić's argument that processes should separate runtime concerns from thought concerns, illustrated with a blackjack implementation keeping domain logic in pure functions and adding processes only for scaling/fault isolation.
+
+### [I ran an agent autonomously for 300 hours](https://www.reddit.com/r/AgentsOfAI/comments/1uz8m6s/i_ran_an_agent_autonomously_for_300_hours_the_way/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `autonomous-agents` `agent-orchestration` `llm`
+- (unfetched: reddit.com blocked to fetch) r/AgentsOfAI first-hand account of running an AI agent autonomously for ~300 hours.
+
+### [GLM-5.2 – How to Run Locally](https://unsloth.ai/docs/models/glm-5.2)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `llm` `local-inference` `open-weights` `glm` `unsloth` · **Discussion:** [HN](https://news.ycombinator.com/item?id=48636377)
+- Unsloth's guide to running the GLM-5.2 open-weight model locally, covering hardware requirements and quantization.
+
+### [Show HN: Oak – Git alternative designed for agents](https://oak.space/oak/oak)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `version-control` `ai-agents` `developer-tools` `git` · **Discussion:** [HN](https://news.ycombinator.com/item?id=48631726)
+- Oak is a version-control system pitched as a Git alternative purpose-built for AI coding agents.
+
+### [hunk — review-first terminal diff viewer](https://www.hunk.dev/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `developer-tools` `code-review` `ai-agents` `terminal` `diff`
+- Landing page for Hunk, a review-first terminal diff viewer built for reviewing agent-authored changesets (split view, multi-file sidebar, inline AI annotations).
+
+### [modem-dev/hunk](https://github.com/modem-dev/hunk)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `developer-tools` `code-review` `ai-agents` `typescript` `diff`
+- GitHub source for Hunk (TypeScript, built on OpenTUI and Pierre diffs), with Git/Jujutsu/Sapling support.
+
+### [Orchestrate teams of Claude Code sessions](https://code.claude.com/docs/en/agent-teams.md)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-code` `ai-agents` `agent-orchestration` `multi-agent` `developer-tools`
+- Official Claude Code docs for the experimental "agent teams" feature — multiple sessions coordinating via a shared task list and inter-agent mailbox, contrasted with subagents.
+
+### [Verbalizable Representations Form a Global Workspace in Language Models](https://transformer-circuits.pub/2026/workspace/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `interpretability` `llm` `mechanistic-interpretability` `global-workspace` `ai-safety`
+- Anthropic interpretability paper introducing the Jacobian lens to identify "verbalizable representations," arguing LLMs have a privileged global-workspace-like set of internal representations, with alignment-auditing applications.
+
+### [Emotion Concepts and their Function in a Large Language Model](https://transformer-circuits.pub/2026/emotions/index.html)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `interpretability` `llm` `mechanistic-interpretability` `emotion` `ai-safety`
+- Anthropic interpretability paper finding internal "emotion vectors" in Claude Sonnet 4.5 that causally influence behavior and can be decoupled from output text.
+
+### [How I Coordinate 19 AI Agents Across 4 Model Families With OpenCode and Recallium](https://medium.com/@saurabbhatia/how-i-coordinate-19-ai-agents-across-4-model-families-with-opencode-and-recallium-00bc14fb8ccb)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `multi-agent` `multi-model` `orchestration` `shared-memory`
+- An architecture coordinating 19 AI agents across four model families, using OpenCode for orchestration and Recallium as persistent shared memory instead of direct inter-agent messaging.
+
+### [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-code` `multi-model` `llm-router` `proxy` `provider-agnostic`
+- A local control-plane/gateway giving Claude Code (and other CLIs) one stable endpoint while routing each request to the best backend model across providers with per-task rules and failover.
+
+### [Claude Code Router Docs](https://ccrdesk.top/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-code` `llm-router` `documentation` `multi-model`
+- Official documentation site for the claude-code-router project, covering providers, routing rules, and configuration.
+
+### [A guide to cloud software factories for engineering leaders](https://www.warp.dev/blog/a-guide-to-cloud-software-factories-for-engineering-leaders)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `software-factory` `ai-agents` `engineering-leadership` `devops` `warp`
+- Leader-oriented explainer on "cloud software factories" automating the SDLC through centralized, orchestrated agent systems.
+
+### [We are now factory engineers, not product engineers](https://www.warp.dev/blog/we-are-now-factory-engineers-not-product-engineers)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `software-factory` `ai-agents` `engineering-culture` `warp`
+- Opinion piece arguing engineers should shift from building products directly to building automated cloud software factories where agents handle triage-to-deployment.
+
+### [How Rectangle Health Built an AI Teammate That Writes Its Own Code](https://www.warp.dev/blog/rectangle-health-self-improving-ai-teammate)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `software-factory` `ai-agents` `case-study` `self-improving` `warp`
+- Case study of Rectangle Health building "Rex," a self-improving agent on Warp's Oz platform that has generated 54% of its own codebase.
+
+### [The virtuous loop of open, automated development](https://www.warp.dev/blog/the-virtuous-loop-of-open-agentic-development)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `software-factory` `open-source` `agentic-development` `warp`
+- Warp introduces "Open Agentic Development," where users and agents collaboratively improve software through community contributions and automated verification.
+
+### [How to build a cloud software factory — add spec-driven development skills](https://www.warp.dev/blog/how-to-build-a-cloud-software-factory-add-spec-driven-development-skills)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `software-factory` `spec-driven-development` `ai-agents` `warp` `tutorial`
+- Tutorial on adding a Spec agent that writes product and technical specs for complex issues before implementation begins.
+
+### [How to build a cloud software factory — self-improving code review](https://www.warp.dev/blog/how-to-build-a-cloud-software-factory-self-improving-code-review)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `software-factory` `code-review` `ai-agents` `self-improving` `warp`
+- Tutorial on building an automated code-review agent that improves over time via human feedback and self-learning loops.
+
+### [How to build a cloud software factory — the automatic triage skill](https://www.warp.dev/blog/how-to-build-a-cloud-software-factory-the-automatic-triage-skill)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `software-factory` `issue-triage` `ai-agents` `warp` `tutorial`
+- Foundational tutorial on setting up agents to automatically triage GitHub issues and implement simple fixes.
+
+### [Unfortunately, Sprites Now Speak MCP](https://fly.io/blog/unfortunately-mcp/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `mcp` `fly-io` `sandboxing` `ai-agents` `disposable-vms`
+- Fly.io announces MCP support for its Sprites platform, letting AI agents provision and manage disposable VMs through an MCP interface.
+
+### [Stopped trusting what my agent says it did](https://www.reddit.com/r/LLMDevs/comments/1uxzquu/stopped_trusting_what_my_agent_says_it_did/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `agent-verification` `reliability` `llm-agents`
+- (unfetched: reddit.com blocked to fetch) r/LLMDevs post on not trusting an agent's self-reported "done" and building external verification instead.
+
+### [How do you know your agent actually did the thing?](https://www.reddit.com/r/LLMDevs/comments/1uxh14x/how_do_you_know_your_agent_actually_did_the_thing/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `agent-verification` `evals` `reliability`
+- (unfetched: reddit.com blocked to fetch) r/LLMDevs discussion on how practitioners verify an LLM agent genuinely completed a task.
+
+### [I studied how Cognee, Graphiti, and Neo4j build memory](https://www.reddit.com/r/LLMDevs/comments/1ux306l/i_studied_how_cognee_graphiti_and_neo4j_build/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `agent-memory` `knowledge-graph` `cognee` `graphiti` `neo4j`
+- (unfetched: reddit.com blocked to fetch) r/LLMDevs write-up comparing how Cognee, Graphiti, and Neo4j build agent memory/knowledge-graph layers.
+
+### [carsteneu/ai-memory-comparison](https://github.com/carsteneu/ai-memory-comparison)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `agent-memory` `knowledge-graph` `comparison` `ai-agents`
+- A feature-level comparison of memory systems for AI coding agents — 81 systems across 79 features, each claim backed by public source citations.
+
+### [Let Claude Code search your repo, not crawl it](https://www.reddit.com/r/LLMDevs/comments/1uy4sca/let_claude_code_search_your_repo_not_crawl_it/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-code` `code-search` `repo-context` `ai-agents`
+- (unfetched: reddit.com blocked to fetch) r/LLMDevs post arguing Claude Code should search a repo via Glob/Grep/Read rather than crawl or pre-index it.
+
+### [Same-family self-grading inflated my eval by 176%](https://www.reddit.com/r/LLMDevs/comments/1uxua8u/samefamily_selfgrading_inflated_my_eval_by_176/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `evals` `llm-as-judge` `self-bias` `model-evaluation`
+- (unfetched: reddit.com blocked to fetch) r/LLMDevs report that using a same-family model as LLM-judge inflated eval scores by 176%.
+
+### [Skills evals](https://www.reddit.com/r/LLMDevs/comments/1uxv3tk/skills_evals/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-code` `skills` `evals` `agent-testing`
+- (unfetched: reddit.com blocked to fetch) r/LLMDevs post on evaluating agent skills.
+
+### [ahnafyy/skills-evals](https://github.com/ahnafyy/skills-evals)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-code` `skills` `evals` `agent-testing` `regression-testing`
+- A tool that validates, trigger-tests, and regression-tests every agent skill in a repo to catch when skills stop working or triggering correctly.
+
+### [Unlocking the Cloudflare app ecosystem with OAuth for all](https://blog.cloudflare.com/oauth-for-all/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `oauth` `cloudflare` `api-auth` `zero-downtime-migration` · **Discussion:** [HN](https://news.ycombinator.com/item?id=48668033)
+- Cloudflare opened self-managed OAuth to all developers via a zero-downtime migration of its OAuth engine, letting customers create their own OAuth apps.
+
+### [Trunk-based Development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `trunk-based-development` `version-control` `ci-cd` `git-workflow`
+- Atlassian's CI/CD guide explaining trunk-based development, a practice of merging small, frequent updates to a single main trunk.
+
+### [jasonshrepo/qiju](https://github.com/jasonshrepo/qiju)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `session-records` `claude-code` `local-first` `agent-memory`
+- Qiju (起居) provides local-first, structured session records so Claude Code, Codex, Kiro, Cursor, and future agents can continue from verifiable development history.
+
+### [Claude Code artifact 4394e12e](https://claude.ai/code/artifact/4394e12e-677b-4ccf-af11-477e38c3e0e7)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-artifact`
+- (unfetched: artifact is auth-gated, not readable by a non-member fetch)
+
+### [If you're not already using a CI pipeline with Claude Code...](https://www.reddit.com/r/ClaudeAI/comments/1v28snk/if_youre_not_already_using_a_ci_pipeline_with/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-code` `ci-pipeline` `agentic-workflow`
+- (unfetched: reddit.com blocked to fetch) r/ClaudeAI post advocating running Claude Code inside a CI pipeline.
+
+### [I stopped building a database for my AI agents](https://www.reddit.com/r/LLMDevs/comments/1v0aw41/i_stopped_building_a_database_for_my_ai_agents/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `agent-memory` `database`
+- (unfetched: reddit.com blocked to fetch) r/LLMDevs post rethinking the memory/database layer for AI agents.
+
+### [I made a modern Dark Pro theme for Warp terminal](https://www.reddit.com/r/warpdotdev/comments/1us28d5/i_made_a_modern_dark_pro_theme_for_warp_terminal/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `warp-terminal` `terminal-theme` `dark-theme`
+- (unfetched: reddit.com blocked to fetch) r/warpdotdev post sharing a custom "Dark Pro" color theme for the Warp terminal.
+
+### [Evidence of inconsistencies in evaluation process and selection of winners](https://www.kaggle.com/competitions/kaggle-measuring-agi/discussion/724918#3498423)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `kaggle` `agi-benchmark` `competition-integrity` `evaluation` · **Discussion:** [HN](https://news.ycombinator.com/item?id=48946010)
+- A Kaggle "Measuring Progress Toward AGI" competition discussion thread alleging inconsistencies in the evaluation process and winner selection.
+
+### [Immersive Linear Algebra](https://immersivemath.com/ila/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `linear-algebra` `interactive-textbook` `mathematics` `education` · **Discussion:** [HN](https://news.ycombinator.com/item?id=48935951)
+- A free online textbook billed as the world's first linear algebra book with fully interactive figures.
+
+### [Mathematics of Data Science](https://arxiv.org/abs/2607.11938)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `data-science` `mathematics` `machine-learning` `arxiv` · **Discussion:** [HN](https://news.ycombinator.com/item?id=48939896)
+- An arXiv paper on the mathematical foundations of data science, from dimension reduction and linear regression through deep learning and matrix recovery.
+
+### [METR (Model Evaluation & Threat Research)](https://metr.org/)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-safety` `evaluation` `research-nonprofit` `frontier-models`
+- A research nonprofit that measures whether and when frontier AI systems might pose catastrophic risks.
+
+### [Claude Code artifact bfdfaef9](https://claude.ai/code/artifact/bfdfaef9-bc62-4dfe-ba9e-c58a26c9accf)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-artifact`
+- (unfetched: artifact is auth-gated, not readable by a non-member fetch)
+
+### [YouTube video — FFfz81XM57k](https://www.youtube.com/watch?v=FFfz81XM57k)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `claude-code` `developer-tools`
+- (unfetched: YouTube metadata unavailable)
+
+### [Atuin in about 6 minutes](https://www.youtube.com/watch?v=JzVXK0WorpI)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `shell-history` `atuin` `cli` `developer-tools` `terminal`
+- A quick walkthrough of Atuin, a tool that makes shell command history far more useful via import/sync features.
+
+### [YouTube video — WkBPX-oDMnA](https://www.youtube.com/watch?v=WkBPX-oDMnA)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `developer-tools` `terminal`
+- (unfetched: YouTube metadata unavailable)
+
+### [This Tmux "Rewrite" Is Actually Brilliant](https://www.youtube.com/watch?v=5GtkyPvuvbQ)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `tmux` `terminal-multiplexer` `rust` `developer-tools` `cli`
+- A look at Herdr, a Rust-based terminal multiplexer positioned as a modern rewrite of tmux with additional features.
+
+### [Terax: One Developer Built an AI Terminal Better Than Warp](https://www.youtube.com/watch?v=3L8htHUzAI4)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-terminal` `rust` `tauri` `developer-tools` `terminal`
+- Overview of Terax, a 7MB open-source AI-native terminal built with Tauri 2/Rust bundling a terminal, code editor, file explorer, and web preview.
+
+### [YouTube video — m8VC2SV2igM](https://www.youtube.com/watch?v=m8VC2SV2igM)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `claude-code` `developer-tools`
+- (unfetched: YouTube metadata unavailable)
+
+### [SEE CMUX SOLVE Multi-Agent Orchestration (Claude Code and Pi Agent)](https://www.youtube.com/watch?v=WAFUMBLOjHo)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `multi-agent-orchestration` `claude-code` `cmux` `terminal`
+- Demo of cmux, an open-source Ghostty-based macOS terminal for running agents like Claude Code and Pi Agent in parallel.
+
+### [YouTube video — jPuN4ilZLdU](https://www.youtube.com/watch?v=jPuN4ilZLdU)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `claude-code` `llm`
+- (unfetched: YouTube metadata unavailable)
+
+### [YouTube video — AQl5Q-0l7FQ](https://www.youtube.com/watch?v=AQl5Q-0l7FQ)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `llm` `claude-code`
+- (unfetched: YouTube metadata unavailable)
+
+### [No, AI is NOT like the DotCom bubble. Don't believe their B.S.](https://www.youtube.com/watch?v=a3-vf78ZwTc)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-industry` `ai-hype` `tech-economics` `commentary`
+- Internet of Bugs argues against the common comparison of the current AI boom to the DotCom bubble.
+
+### ["The engineer of the future is the person who is able to choose what is worth doing." — Addy Osmani](https://www.youtube.com/watch?v=n97BCfyFIvw)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-engineering` `software-engineering` `career` `conference-talk`
+- AI Engineer conference talk on how the engineer's role is shifting toward judgment about what work is worth doing in an AI-augmented world.
+
+### [Don't Ship Skills Without Evals — Philipp Schmid, Google DeepMind](https://www.youtube.com/watch?v=0vphxNt4wyk)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `evals` `agent-skills` `conference-talk`
+- Argues that agent skills must be backed by evaluations before shipping.
+
+### [The Golden Age of AI Engineering](https://www.youtube.com/watch?v=pMggiOb18tc)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-engineering` `openai` `conference-talk` `agentic-coding`
+- OpenAI panel discussing what makes the present a golden age of AI engineering and where agentic development is headed.
+
+### [In the Land of AI Agents, the Verifiers Are King — Tariq Shaukat, Sonar](https://www.youtube.com/watch?v=VrpEyglYgeU)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `verification` `code-quality` `conference-talk`
+- Argues that verification and verifiers are the decisive component for making AI agents reliable in production.
+
+### [Why Your Agent Disagrees With Itself (And What To Do About It) — Diane Lin, Datadog](https://www.youtube.com/watch?v=wEc9aG7cRQc)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `agent-reliability` `consistency` `conference-talk`
+- Examines why AI agents produce inconsistent or self-contradictory outputs and offers strategies to address it.
+
+### [Don't Let the LLM Drive — Ornella Bahidika & Joel Allou, Microsoft](https://www.youtube.com/watch?v=m24UKZomm7k)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `llm-orchestration` `agent-architecture` `conference-talk`
+- Makes the case for constraining LLM autonomy rather than letting the model control the overall flow of an agentic system.
+
+### [Enterprise Agents Have a Structure Problem — Ishita Daga, Tesla](https://www.youtube.com/watch?v=B8l81jhvHbI)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `enterprise` `agent-architecture` `conference-talk`
+- Argues that enterprise AI agents suffer from a structural design problem and discusses building them more soundly.
+
+### [Agent Output Is Not UX: The Rendering Layer Your LLM Pipeline Is Missing — Bala Ramdoss, Amazon Lens](https://www.youtube.com/watch?v=maTp79FD9gI)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `llm-pipeline` `ux` `rendering` `conference-talk`
+- Argues that raw agent output is not a user experience and that LLM pipelines need a dedicated rendering layer.
+
+### [From Blind Spots to Merged PRs: Continuous Agentic Performance Optimization — May Walter, Hud](https://www.youtube.com/watch?v=JJGbw4ggaFs)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `performance-optimization` `continuous-improvement` `conference-talk`
+- Presents a continuous approach to optimizing agentic performance, from surfacing blind spots to landing merged PRs.
+
+### [Build Evals That Actually Matter — Nick Ung & Akshay Sharma, Lyft](https://www.youtube.com/watch?v=3z2uT5aDx_Y)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `evals` `ai-agents` `measurement` `conference-talk`
+- Discusses how to design evaluations that meaningfully measure AI agent quality rather than vanity metrics.
+
+### [A Practitioner's Guide to Graphs — Tim Ainge, Good Collective](https://www.youtube.com/watch?v=3ySF0I5iE_0)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `knowledge-graphs` `ai-agents` `data-modeling` `conference-talk`
+- A practitioner-oriented guide to using graphs in AI/agentic systems.
+
+### [Your Agents Need a Save Button — Hamza Tahir, ZenML](https://www.youtube.com/watch?v=bZISsg7H7DA)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `state-management` `checkpointing` `conference-talk`
+- Argues that AI agents need durable state and checkpointing — a "save button" — to be reliable and resumable.
+
+### [The Great Loops Debate — Dex Horthy, Geoff Huntley, Ian Livingstone, Greg Pstrucha](https://www.youtube.com/watch?v=c35YoMdnI78)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-agents` `agentic-loops` `panel-debate` `conference-talk`
+- Panel debate on the role and design of agentic loops.
+
+### [We're Discovering Things We Can't Explain](https://www.youtube.com/watch?v=Zo20PVvcIXg)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-research` `interpretability` `emergent-behavior` `commentary`
+- Discusses emergent AI capabilities and phenomena that researchers are observing but cannot yet fully explain.
+
+### [FORGET Loop Engineering. Agentic Engineering is about THIS](https://www.youtube.com/watch?v=VQy50fuxI34)
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `agentic-engineering` `ai-agents` `claude-code` `workflow`
+- Argues that agentic engineering is about more than loop engineering, reframing what practitioners should focus on when building agentic coding workflows.
