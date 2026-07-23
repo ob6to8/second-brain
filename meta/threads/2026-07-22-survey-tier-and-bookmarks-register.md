@@ -42,7 +42,15 @@ onto each bookmark, preserved on promotion), and **Hacker News resolution** — 
 `news.ycombinator.com` item is fetched, its underlying resource extracted, and
 the two kept as one bookmark with the HN thread as a `Discussion:` pointer.
 (This thread was reconciled onto the `fit each layer to its purpose` doctrine at
-merge time, after PR #127 landed it on `main`.)
+merge time, after PR #127 landed it on `main` — retiring the filing doctrine the
+survey-tier work had been built on. The knowledge/deliverable artifacts were
+conformed to the new doctrine and the retired slogan dropped; the **transcript
+below is the faithful record**, so it keeps the slogan where it was actually said
+(record-layer fidelity, per the new doctrine). The reconciliation approach is
+filed as the
+[reconciling-a-mid-flight-doctrine-retirement analysis](/meta/analysis/reconciling-a-mid-flight-doctrine-retirement.md).
+The survey-tier feature landed in **PR #128** (this thread's origin `pr:`); this
+transcript-update and the analysis note land in a **follow-up PR**.)
 
 ## Routing
 
@@ -54,6 +62,8 @@ merge time, after PR #127 landed it on `main`.)
 | `survey/` namespace mechanics (mirror inbox/) | closed | [survey register](/survey/bookmarks.md) | - |
 | Date-added prop + Hacker News resource extraction (follow-up refinements) | closed | [bookmarks skill](/.claude/skills/bookmarks/SKILL.md) | - |
 | Register-vs-per-file, no-new-type decisions | closed | [survey-tier plan](/meta/plans/bookmarks-survey-tier.md) | - |
+| Filing-doctrine provenance question ("is it amended?") | closed | [reconciling analysis](/meta/analysis/reconciling-a-mid-flight-doctrine-retirement.md) | - |
+| Doctrine collision: main retired the filing doctrine mid-flight | closed | [reconciling analysis](/meta/analysis/reconciling-a-mid-flight-doctrine-retirement.md) | - |
 | Sharding / bulk-promote / frontmatter-native rows | paused | [survey-tier plan](/meta/plans/bookmarks-survey-tier.md) | Deferred until the register grows large enough to need them |
 
 ## User
@@ -111,8 +121,23 @@ This is exactly the kind of deferred, shape-changing design that's worth a `type
 agree with your suggestions, let's proceed
 I imagine a "bookmarks-registe.md" doc that I add to, then run a /bookmarks skill which then proceses them
 are you imagining them being one per flie, or listed in a doc?
+where are you seeing "distill, don't dump"? do you see a recent pr where that doctrine was amended?
 
 ## Assistant
+
+### "Distill, don't dump" — where it is, and no, it hasn't been amended
+
+It's a real, foundational policy: `meta/policy/distill-dont-dump.md`, `section: filing`, `order: 1` — literally the first filing rule. Full text is just that one paragraph I quoted.
+
+On whether it was recently amended: **no.** Its entire history is three commits, and none touched the doctrine's substance:
+
+- `2113193` — the concept→document terminology sweep (mechanical, bundle-wide)
+- `cb2d837` — attribution backfill (added the frontmatter block, not the body)
+- `4960c48` — its arrival
+
+The body text is untouched since it was written. Recent policy churn has all been elsewhere — `session-capture`, `merge-strategy`, `plan-vs-capture`. So it's stable ground, and good instinct to check.
+
+The important nuance: what we're building **doesn't amend `distill-dont-dump` at all.** That doctrine governs *documents* — things that have earned a place in the tree. Our bookmark tier sits *before* distillation, so the honest move is a narrow carve-out in its sibling `link-processing` ("no bookmark type" → "one explicit staging tier, which does not enter the taxonomy"), leaving `distill-dont-dump` fully intact and still the rule the moment a bookmark is *promoted*.
 
 <routes ref="em:60e22c /meta/plans/bookmarks-survey-tier.md">
 ### One-per-file vs. listed in a doc — I've flipped to **listed in a doc**
@@ -224,3 +249,89 @@ Both incorporated into the register and the `/bookmarks` skill, in the same PR.
 
 **Hacker News links.** When you drop a `news.ycombinator.com/item?id=…` URL, `/bookmarks` fetches the discussion, extracts the actual submitted resource at the top, and treats the two as **one bookmark**: the underlying resource is the primary link (it gets the title/summary/tags), and the HN thread rides along as a `Discussion:` pointer on the metadata line. Same logic covers Lobsters/Reddit; an Ask/Show/text post with no external URL just stays the resource itself. Both changes are also recorded in the plan's artifact shape.
 </routes>
+
+## Assistant
+
+Done — captured, glossaried, committed, pushed, and the PR is open. PR #128 carries the survey tier, the `/bookmarks` skill (with the date-added and Hacker News refinements), the captured thread doc, the new glossary term **survey tier**, and the `attribution.from` stamping. No merge — the open PR is handed back for you to merge. Want me to watch it, or leave it as pushed?
+
+## User
+
+merge
+
+## Assistant
+
+Merge aborted — the tree is clean and nothing is half-merged. I need to surface this before touching anything, because it's a **doctrine collision**, not a mechanical conflict.
+
+## What happened
+
+While this PR was open, **PR #127 merged to `main`** (the "qiju-thread-storage" session) and **retired "distill, don't dump"** — the exact doctrine my survey-tier work is built on. Specifically, main:
+
+- **Deleted** `meta/policy/distill-dont-dump.md`, replacing it with **`capture-knowledge-cite-the-source.md`** (same filing injunction, new name).
+- Added a new doctrine, **`fit each layer to its purpose`**: retention is judged per-layer — the knowledge layer distills hard, the record layer keeps verbatim — rather than by one global "distill" dial.
+- Turned the `distill-dont-dump` glossary entry into a retired-slogan stub.
+
+My branch references the old doctrine everywhere — the `link-processing` carve-out, the `survey-tier` glossary entry, the plan, and the thread all link `/meta/policy/distill-dont-dump.md`, which **no longer exists**. Merging as-is would land broken links and cite a retired slogan. Three files conflict directly (`distill-dont-dump.md`, `graduation.md`, `threads/index.md`); the rest are stale-by-reference.
+
+## The good news
+
+The new doctrine **fits the survey tier better than the old one did**. "Fit each layer to its purpose" is *exactly* the survey tier's argument — it's a new staging layer with its own retention purpose (light metadata, enough to surface), distinct from the knowledge layer. And the rule that re-engages on promotion is now precisely `capture-knowledge-cite-the-source` (the knowledge-layer half).
+
+## My recommended resolution
+
+Merge `main` in and reframe my work onto the new doctrine:
+
+1. **Conflicts:** take main's retired-slogan stub for `distill-dont-dump.md`; keep both citation sets in `graduation.md` (main's + my sense 4) and `threads/index.md`.
+2. **Reframe references** in `link-processing` (carve-out), `survey-tier`, and the plan: `distill, don't dump` → `capture the knowledge, cite the source`, positioned under the `fit each layer to its purpose` doctrine — and repoint the one route-tag ref off the deleted policy path so `route_tags` stays green.
+3. Leave the **thread body verbatim** (it's the frozen record of what was actually said, when the old doctrine was live) — only fix its route-tag ref resolution.
+4. Re-run every gate, then true-merge.
+
+This is doctrine-adjacent and you authored the new doctrine hours ago, so I don't want to silently reframe it. **Shall I proceed with that resolution** (reframe onto `fit each layer to its purpose` + `capture-knowledge-cite-the-source`), or do you want the survey tier to cite the new doctrine differently?
+
+## User
+
+all of your work should fit the new doctrine, refactor as necessary. there should be NO residual record or mention of "distill, don't dump"
+
+## Assistant
+
+Done. PR #128 is merged and the work is live on `main`.
+
+## Merged: PR #128 → `main` at `fa2e545`
+
+- **Merge method:** true merge commit (never squash/rebase, per the merge-strategy policy) — the branch's real history and session trailers are wired into `main`'s ancestry.
+- **Head branch:** auto-deleted on merge (confirmed gone from the branch list).
+- **CI:** both `verify` runs green on the merge commit before merging.
+
+## What landed
+
+The survey tier — `survey/` namespace + register, the `/bookmarks` skill (process/add/list/promote) with the date-added and Hacker News refinements, the `link-processing` carve-out, the glossary term, and the captured thread.
+
+## On the doctrine collision
+
+`main` had retired "distill, don't dump" under us (PR #127). I reconciled the entire branch onto the new **`fit each layer to its purpose`** doctrine + **`capture-knowledge-cite-the-source`** policy, and — per your directive — scrubbed **every trace of the retired slogan from my work**: the policy carve-out, glossary entry, plan, register, skill, and the thread doc (I dropped the now-moot "was it ever amended?" tangent rather than keep a stale claim). The only remaining mentions of the slogan anywhere are **main's own deliberate retirement artifacts** — the retired-slogan glossary stub and the qiju thread that did the retiring — which PR #127 intentionally kept and which aren't mine to erase.
+
+All 181 tests and every `mix brain.*` gate pass on the merged result. The site will redeploy from `main` shortly, after which the survey tier's pages go live.
+
+## User
+
+merge
+
+## Assistant
+
+Confirmed — the state is fully resolved and there's nothing for a follow-up PR to carry. PR #128 already merged (the `merge_pull_request` call returned success right as the worker restarted — you likely didn't see the confirmation): `origin/main` is at **`fa2e545`** = "Merge pull request #128", my branch's merge commit is an ancestor of it, the head branch was auto-deleted, and the working tree is clean. Everything this session produced — the survey-tier feature, the captured thread (`pr: 128`), and the doctrine reconciliation — is on `main`. The only session content *past* the last capture is the doctrine-collision discussion itself, which I'd kept out of the written record to honor your "no residual mention" directive. If you *do* want the doctrine-collision reasoning preserved, I can write it as a short slogan-free note (e.g. a governance doc recording "how a mid-flight doctrine retirement was reconciled into an open branch"). Otherwise the session is fully landed.
+
+## User
+
+yes process that
+and i am also just trying to bring the the thread transcript up to date
+
+## Assistant
+
+The analysis note is written and indexed (`meta/analysis/reconciling-a-mid-flight-doctrine-retirement.md`) — slogan-free. Bringing the transcript current means adding the recent turns — including the doctrine-collision exchange, which is *itself* where the retired slogan was discussed. That runs into your earlier "no residual record or mention," so I asked which you wanted: **A — faithful/verbatim** (add the recent turns as said, term and all, restore the earlier investigation exchange; the slogan reappears only in the transcript/record layer, as the new doctrine protects and as main's own qiju thread keeps it), or **B — slogan-free** (add the recent turns but paraphrase to keep the term out; current but not verbatim).
+
+## User
+
+a
+
+## Assistant
+
+A it is — the transcript is now the faithful record. I restored the "distill, don't dump" investigation exchange and appended the doctrine-collision arc verbatim (this section), so the record layer carries what was actually said, while every knowledge/deliverable artifact stays slogan-free. The layer-split reasoning is filed as the [reconciling-a-mid-flight-doctrine-retirement analysis](/meta/analysis/reconciling-a-mid-flight-doctrine-retirement.md). This thread keeps `pr: 128` as its origin anchor; the transcript-update and the analysis note land in a follow-up PR recorded here in prose.
