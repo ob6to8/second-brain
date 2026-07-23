@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator-directed session"
   why: "operator ratified absorbing the transferable coding standards and guardrails from the Zornek AI-drift/LocalCents intake into the contract"
+  from: [/meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md]
 ---
 **This contract is the coding-standards file.** The Elixir tooling (`lib/`,
 `test/`, the `mix brain.*` tasks) is held to the same anti-drift bar as the

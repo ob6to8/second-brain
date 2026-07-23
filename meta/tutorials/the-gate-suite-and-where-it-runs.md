@@ -8,7 +8,7 @@ attribution:
   when: 2026-07-10T10:41:12+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-10-todo-skill-and-gate-suite-tutorial.md, /meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md]
+  from: [/meta/threads/2026-07-10-todo-skill-and-gate-suite-tutorial.md, /meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md]
 ---
 
 # The gate suite — what the checks prove and where they run

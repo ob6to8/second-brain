@@ -139,3 +139,32 @@ inapplicable to this bundle's dependency-free mix-task tooling.
 - Mike Zornek, `CODING_STANDARDS.md`, LocalCents (`zorn/local_cents`), commit
   `4b5e4f4`.
   <https://github.com/zorn/local_cents/blob/4b5e4f4b190aa3b4e6803746a92d3a9a25c83401/CODING_STANDARDS.md>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:1ec778">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-23-ai-drift-intake-and-coding-standards-ratification (2026-07-23)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:1ec778`]**  (co-feeds: `em:8d9b89`)
+
+The full standards file is now captured. Notably, `local_cents` is Zornek's own repo — so this `CODING_STANDARDS.md` is literally the "standards doc the agent reads" that the AI-drift article's feedback loop feeds into. The two intakes are directly connected.
+
+---
+
+**[`em:1ec778`]**
+
+- **[Elixir coding conventions (Zornek's LocalCents standards)](https://github.com/ob6to8/elixir-mind/blob/claude/ai-drift-article-review-l04pr2/knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents.md)** (`em:1ec778`) — the transferable `@spec`/typespec/doc conventions, foregrounding the pinned L47–L70 section.
+
+---
+
+**[`em:1ec778`]**
+
+**From CODING_STANDARDS.md — transferable to this repo's plain Elixir tooling:**
+- **`@spec` argument naming** (name generic types like `binary()`/`String.t()`; leave domain types bare) — directly applicable; this repo's `@spec`s do carry unnamed primitives.
+- **Long-spec one-per-line layout**, and **don't restate the return tuple in `@doc` prose** — applicable.
+- **`_ = expr` for ignored returns**, and the **why-not-what moduledoc/comment style** — the latter matters because `mix brain.codemap` derives from `lib/` docstrings.
+- **Meta-principle match:** its "keep each fact in one place; the standards file is an index that links, not restates" *is* this brain's single-overview/compiled-contract move.
+- **Notable contrast, not to absorb:** LocalCents mandates **no AI attribution/co-authorship trailers** — the exact opposite of this bundle's `merge-strategy` policy relying on the `Claude-Session:` trailer for commit→session traceability.

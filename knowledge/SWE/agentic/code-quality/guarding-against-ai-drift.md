@@ -113,3 +113,30 @@ guardrails become targets).
 - Mike Zornek, "Guarding Against AI Drift: Automated Elixir Quality Checks",
   mikezornek.com, 2026-07-22.
   <https://mikezornek.com/posts/2026/7/guarding-against-ai-drift/>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:8d9b89">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-23-ai-drift-intake-and-coding-standards-ratification (2026-07-23)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:8d9b89`]**  (co-feeds: `em:1ec778`)
+
+The full standards file is now captured. Notably, `local_cents` is Zornek's own repo — so this `CODING_STANDARDS.md` is literally the "standards doc the agent reads" that the AI-drift article's feedback loop feeds into. The two intakes are directly connected.
+
+---
+
+**[`em:8d9b89`]**
+
+- **[Guarding Against AI Drift (Mike Zornek)](https://github.com/ob6to8/elixir-mind/blob/claude/ai-drift-article-review-l04pr2/knowledge/SWE/agentic/code-quality/guarding-against-ai-drift.md)** (`em:8d9b89`) — the AI-drift concept + the two-layer remedy (automated guardrails / non-delegated layered review) + the misses-update-the-standards-doc loop.
+
+---
+
+**[`em:8d9b89`]**
+
+**From the AI-drift article — mostly already covered or in tension:**
+- Already running: `mix compile --warnings-as-errors`, `mix format --check-formatted`, `mix test`, plus the brain-specific validators.
+- Design tension, not a drop-in: Credo/Dialyzer/Sobelow/mix_audit are dependency-based scanners; this repo is deliberately **dependency-free and offline**, and it has no Phoenix/deps to scan. Adopting them would break that stance for little signal.
+- **Genuinely worth considering** (all operator-ratifiable, none autonomous): `actionlint` on `.github/workflows/ci.yml`; test-warnings-as-errors (`mix test --warnings-as-errors`); `mix xref graph --label compile-connected` as a coupling check on `lib/`. `mix docs --warnings-as-errors`, coverage, Dependabot, usage_rules don't apply (no ExDoc, no deps).
